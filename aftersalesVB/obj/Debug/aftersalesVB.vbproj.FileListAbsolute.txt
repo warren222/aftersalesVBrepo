@@ -9,3 +9,20 @@ c:\users\kmdim\onedrive\documents\visual studio 2015\Projects\aftersalesVB\after
 c:\users\kmdim\onedrive\documents\visual studio 2015\Projects\aftersalesVB\aftersalesVB\obj\Debug\aftersalesVB.exe
 c:\users\kmdim\onedrive\documents\visual studio 2015\Projects\aftersalesVB\aftersalesVB\obj\Debug\aftersalesVB.xml
 c:\users\kmdim\onedrive\documents\visual studio 2015\Projects\aftersalesVB\aftersalesVB\obj\Debug\aftersalesVB.pdb
+C:\Users\kmdim\Desktop\aftersalesVB\aftersalesVBrepo\aftersalesVB\bin\Debug\aftersalesVB.exe.config
+C:\Users\kmdim\Desktop\aftersalesVB\aftersalesVBrepo\aftersalesVB\obj\Debug\aftersalesVB.exe
+C:\Users\kmdim\Desktop\aftersalesVB\aftersalesVBrepo\aftersalesVB\obj\Debug\aftersalesVB.xml
+C:\Users\kmdim\Desktop\aftersalesVB\aftersalesVBrepo\aftersalesVB\obj\Debug\aftersalesVB.pdb
+C:\Users\kmdim\Desktop\aftersalesVB\aftersalesVBrepo\aftersalesVB\bin\Debug\aftersalesVB.exe
+C:\Users\kmdim\Desktop\aftersalesVB\aftersalesVBrepo\aftersalesVB\bin\Debug\aftersalesVB.pdb
+C:\Users\kmdim\Desktop\aftersalesVB\aftersalesVBrepo\aftersalesVB\bin\Debug\aftersalesVB.xml
+C:\Users\kmdim\Desktop\aftersalesVB\aftersalesVBrepo\aftersalesVB\bin\Debug\ComponentFactory.Krypton.Toolkit.dll
+C:\Users\kmdim\Desktop\aftersalesVB\aftersalesVBrepo\aftersalesVB\bin\Debug\MetroFramework.Design.dll
+C:\Users\kmdim\Desktop\aftersalesVB\aftersalesVBrepo\aftersalesVB\bin\Debug\MetroFramework.dll
+C:\Users\kmdim\Desktop\aftersalesVB\aftersalesVBrepo\aftersalesVB\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\kmdim\Desktop\aftersalesVB\aftersalesVBrepo\aftersalesVB\obj\Debug\aftersalesVB.vbprojResolveAssemblyReference.cache
+C:\Users\kmdim\Desktop\aftersalesVB\aftersalesVBrepo\aftersalesVB\obj\Debug\aftersalesVB.mainform.resources
+C:\Users\kmdim\Desktop\aftersalesVB\aftersalesVBrepo\aftersalesVB\obj\Debug\aftersalesVB.Resources.resources
+C:\Users\kmdim\Desktop\aftersalesVB\aftersalesVBrepo\aftersalesVB\obj\Debug\aftersalesVB.vbproj.GenerateResource.Cache
+C:\Users\kmdim\Desktop\aftersalesVB\aftersalesVBrepo\aftersalesVB\obj\Debug\aftersalesVB.newcallinFRM.resources
+C:\Users\kmdim\Desktop\aftersalesVB\aftersalesVBrepo\aftersalesVB\obj\Debug\aftersalesVB.selectprojectFRM.resources

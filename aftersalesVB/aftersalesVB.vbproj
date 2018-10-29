@@ -47,6 +47,19 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ComponentFactory.Krypton.Toolkit, Version=4.4.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework">
+      <HintPath>packages\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design">
+      <HintPath>packages\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts">
+      <HintPath>packages\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -81,6 +94,18 @@
       <DependentUpon>mainform.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="forms\newcallinFRM.Designer.vb">
+      <DependentUpon>newcallinFRM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\newcallinFRM.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\selectprojectFRM.Designer.vb">
+      <DependentUpon>selectprojectFRM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\selectprojectFRM.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -100,6 +125,12 @@
   <ItemGroup>
     <EmbeddedResource Include="forms\mainform.resx">
       <DependentUpon>mainform.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\newcallinFRM.resx">
+      <DependentUpon>newcallinFRM.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\selectprojectFRM.resx">
+      <DependentUpon>selectprojectFRM.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
