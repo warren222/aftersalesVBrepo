@@ -1,0 +1,11 @@
+c:\users\kmdim\onedrive\documents\visual studio 2015\Projects\aftersalesVB\aftersalesVB\bin\Debug\aftersalesVB.exe.config
+c:\users\kmdim\onedrive\documents\visual studio 2015\Projects\aftersalesVB\aftersalesVB\bin\Debug\aftersalesVB.exe
+c:\users\kmdim\onedrive\documents\visual studio 2015\Projects\aftersalesVB\aftersalesVB\bin\Debug\aftersalesVB.pdb
+c:\users\kmdim\onedrive\documents\visual studio 2015\Projects\aftersalesVB\aftersalesVB\bin\Debug\aftersalesVB.xml
+c:\users\kmdim\onedrive\documents\visual studio 2015\Projects\aftersalesVB\aftersalesVB\obj\Debug\aftersalesVB.vbprojResolveAssemblyReference.cache
+c:\users\kmdim\onedrive\documents\visual studio 2015\Projects\aftersalesVB\aftersalesVB\obj\Debug\aftersalesVB.mainform.resources
+c:\users\kmdim\onedrive\documents\visual studio 2015\Projects\aftersalesVB\aftersalesVB\obj\Debug\aftersalesVB.Resources.resources
+c:\users\kmdim\onedrive\documents\visual studio 2015\Projects\aftersalesVB\aftersalesVB\obj\Debug\aftersalesVB.vbproj.GenerateResource.Cache
+c:\users\kmdim\onedrive\documents\visual studio 2015\Projects\aftersalesVB\aftersalesVB\obj\Debug\aftersalesVB.exe
+c:\users\kmdim\onedrive\documents\visual studio 2015\Projects\aftersalesVB\aftersalesVB\obj\Debug\aftersalesVB.xml
+c:\users\kmdim\onedrive\documents\visual studio 2015\Projects\aftersalesVB\aftersalesVB\obj\Debug\aftersalesVB.pdb
