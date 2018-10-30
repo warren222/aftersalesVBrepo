@@ -23,14 +23,15 @@ Partial Class newcallinFRM
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(newcallinFRM))
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.calldate = New MetroFramework.Controls.MetroTextBox()
         Me.calldategen = New MetroFramework.Controls.MetroDateTime()
         Me.KryptonLabel1 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.callername = New MetroFramework.Controls.MetroTextBox()
         Me.metroTextButton1 = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.updateBTN = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
         Me.addBTN = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
         Me.jo = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.address = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
@@ -154,7 +155,8 @@ Partial Class newcallinFRM
         'Panel1
         '
         Me.Panel1.AutoScroll = True
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Panel1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel1.Controls.Add(Me.updateBTN)
         Me.Panel1.Controls.Add(Me.addBTN)
         Me.Panel1.Controls.Add(Me.jo)
         Me.Panel1.Controls.Add(Me.address)
@@ -169,15 +171,30 @@ Partial Class newcallinFRM
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(20, 60)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(984, 588)
+        Me.Panel1.Size = New System.Drawing.Size(896, 588)
         Me.Panel1.TabIndex = 482
+        '
+        'updateBTN
+        '
+        Me.updateBTN.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.updateBTN.Image = CType(resources.GetObject("updateBTN.Image"), System.Drawing.Image)
+        Me.updateBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.updateBTN.Location = New System.Drawing.Point(764, 789)
+        Me.updateBTN.Name = "updateBTN"
+        Me.updateBTN.Size = New System.Drawing.Size(98, 35)
+        Me.updateBTN.Style = MetroFramework.MetroColorStyle.Green
+        Me.updateBTN.TabIndex = 488
+        Me.updateBTN.Text = "Update"
+        Me.updateBTN.UseSelectable = True
+        Me.updateBTN.UseVisualStyleBackColor = True
+        Me.updateBTN.Visible = False
         '
         'addBTN
         '
         Me.addBTN.Cursor = System.Windows.Forms.Cursors.Hand
         Me.addBTN.Image = CType(resources.GetObject("addBTN.Image"), System.Drawing.Image)
         Me.addBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.addBTN.Location = New System.Drawing.Point(837, 792)
+        Me.addBTN.Location = New System.Drawing.Point(764, 789)
         Me.addBTN.Name = "addBTN"
         Me.addBTN.Size = New System.Drawing.Size(98, 35)
         Me.addBTN.Style = MetroFramework.MetroColorStyle.Red
@@ -185,6 +202,7 @@ Partial Class newcallinFRM
         Me.addBTN.Text = "Add"
         Me.addBTN.UseSelectable = True
         Me.addBTN.UseVisualStyleBackColor = True
+        Me.addBTN.Visible = False
         '
         'jo
         '
@@ -223,14 +241,14 @@ Partial Class newcallinFRM
         Me.answerGV.AllowUserToOrderColumns = True
         Me.answerGV.AllowUserToResizeColumns = False
         Me.answerGV.AllowUserToResizeRows = False
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
-        Me.answerGV.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        Me.answerGV.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.answerGV.ColumnHeadersHeight = 30
         Me.answerGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.answerGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1})
         Me.answerGV.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.answerGV.Location = New System.Drawing.Point(515, 327)
+        Me.answerGV.Location = New System.Drawing.Point(442, 327)
         Me.answerGV.MultiSelect = False
         Me.answerGV.Name = "answerGV"
         Me.answerGV.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Silver
@@ -268,9 +286,9 @@ Partial Class newcallinFRM
         Me.questionGRID.AllowUserToOrderColumns = True
         Me.questionGRID.AllowUserToResizeColumns = False
         Me.questionGRID.AllowUserToResizeRows = False
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
-        Me.questionGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        Me.questionGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
         Me.questionGRID.ColumnHeadersHeight = 30
         Me.questionGRID.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.questionGRID.Cursor = System.Windows.Forms.Cursors.Hand
@@ -304,11 +322,10 @@ Partial Class newcallinFRM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1024, 668)
+        Me.ClientSize = New System.Drawing.Size(936, 668)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "newcallinFRM"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
-        Me.Text = "newcallinFRM"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.answerGV, System.ComponentModel.ISupportInitialize).EndInit()
@@ -330,4 +347,5 @@ Partial Class newcallinFRM
     Friend WithEvents projectname As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents jo As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents addBTN As MetroFramework.Controls.MetroTextBox.MetroTextButton
+    Friend WithEvents updateBTN As MetroFramework.Controls.MetroTextBox.MetroTextButton
 End Class

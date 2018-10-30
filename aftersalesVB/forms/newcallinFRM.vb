@@ -1,4 +1,6 @@
 ﻿Imports System.Data.SqlClient
+Imports MetroFramework
+
 Public Class newcallinFRM
     Dim sql As New sql
     Dim qid As String
@@ -9,8 +11,14 @@ Public Class newcallinFRM
     End Sub
     Public Sub loadconcern()
         questionGRID.ClearSelection()
-        Dim str As String = "update answertb set chk = '0'
+        Dim str As String
+        If Me.Text = "New" Then
+            str = "update answertb set chk = '0'
                              select * from questionnairetb order by item asc"
+        Else
+            str = "select * from questionnairetb order by item asc"
+        End If
+
         Dim ds As New DataSet
         ds.Clear()
         Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
@@ -141,7 +149,7 @@ Public Class newcallinFRM
                         .AddWithValue("@caller", callername.Text)
                     End With
                     sqlcmd.ExecuteNonQuery()
-                    MetroFramework.MetroMessageBox.Show(Me, "Record Added", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MetroMessageBox.Show(Me, "Record Added!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Catch ex As Exception
                     MsgBox(ex.ToString)
                 End Try
@@ -158,8 +166,32 @@ Public Class newcallinFRM
     End Sub
 
     Private Sub newcallinFRM_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-
         Me.Dispose()
+    End Sub
 
+    Private Sub updateBTN_Click(sender As Object, e As EventArgs) Handles updateBTN.Click
+        Dim str As String = "
+                            update callintb set
+                            cdate=@cdate,
+                            caller=@caller,
+                            jo=@jo
+                            where cin = @cin
+                            insert into qatb (cin,aid) select @cin,aid from answertb where chk = '1' and not aid in (select aid from qatb where cin = @cin)
+                            delete from qatb where cin = @cin and not aid in (select aid from answertb where chk = '1')"
+        Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
+            Using sqlcmd As New SqlCommand(str, sqlcon)
+                Try
+                    sqlcon.Open()
+                    sqlcmd.Parameters.AddWithValue("@cdate", calldate.Text)
+                    sqlcmd.Parameters.AddWithValue("@caller", callername.Text)
+                    sqlcmd.Parameters.AddWithValue("@jo", jo.Text)
+                    sqlcmd.Parameters.AddWithValue("@cin", mainform.tempcin)
+                    sqlcmd.ExecuteNonQuery()
+                    MetroMessageBox.Show(Me, "Data Updated!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Catch ex As Exception
+                    MsgBox(ex.ToString)
+                End Try
+            End Using
+        End Using
     End Sub
 End Class

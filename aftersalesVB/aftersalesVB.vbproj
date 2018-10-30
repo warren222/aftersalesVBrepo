@@ -60,10 +60,13 @@
     <Reference Include="MetroFramework.Fonts">
       <HintPath>packages\MetroFramework.Fonts.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -87,6 +90,23 @@
   <ItemGroup>
     <Compile Include="classes\sharedmethods.vb" />
     <Compile Include="classes\sql.vb" />
+    <Compile Include="asdbDS.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>asdbDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="forms\concernFRM.Designer.vb">
+      <DependentUpon>concernFRM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\concernFRM.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\concernsummaryFRM.Designer.vb">
+      <DependentUpon>concernsummaryFRM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\concernsummaryFRM.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="forms\mainform.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +126,12 @@
     <Compile Include="forms\selectprojectFRM.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="forms\servicingFRM.Designer.vb">
+      <DependentUpon>servicingFRM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\servicingFRM.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -123,6 +149,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="forms\concernFRM.resx">
+      <DependentUpon>concernFRM.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\concernsummaryFRM.resx">
+      <DependentUpon>concernsummaryFRM.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\mainform.resx">
       <DependentUpon>mainform.vb</DependentUpon>
     </EmbeddedResource>
@@ -132,14 +164,29 @@
     <EmbeddedResource Include="forms\selectprojectFRM.resx">
       <DependentUpon>selectprojectFRM.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms\servicingFRM.resx">
+      <DependentUpon>servicingFRM.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="reports\qareport.rdlc" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="asdbDS.xsc">
+      <DependentUpon>asdbDS.xsd</DependentUpon>
+    </None>
+    <None Include="asdbDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>asdbDS.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="asdbDS.xss">
+      <DependentUpon>asdbDS.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
