@@ -107,6 +107,12 @@
     <Compile Include="forms\concernsummaryFRM.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="forms\editpersonnelFRM.Designer.vb">
+      <DependentUpon>editpersonnelFRM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\editpersonnelFRM.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="forms\mainform.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +124,18 @@
       <DependentUpon>newcallinFRM.vb</DependentUpon>
     </Compile>
     <Compile Include="forms\newcallinFRM.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\newservicingFRM.Designer.vb">
+      <DependentUpon>newservicingFRM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\newservicingFRM.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\personnelFRM.Designer.vb">
+      <DependentUpon>personnelFRM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\personnelFRM.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\selectprojectFRM.Designer.vb">
@@ -155,11 +173,20 @@
     <EmbeddedResource Include="forms\concernsummaryFRM.resx">
       <DependentUpon>concernsummaryFRM.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms\editpersonnelFRM.resx">
+      <DependentUpon>editpersonnelFRM.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\mainform.resx">
       <DependentUpon>mainform.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\newcallinFRM.resx">
       <DependentUpon>newcallinFRM.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\newservicingFRM.resx">
+      <DependentUpon>newservicingFRM.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\personnelFRM.resx">
+      <DependentUpon>personnelFRM.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\selectprojectFRM.resx">
       <DependentUpon>selectprojectFRM.vb</DependentUpon>

@@ -26,14 +26,14 @@ Partial Class concernFRM
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.metroTabControl1 = New MetroFramework.Controls.MetroTabControl()
         Me.metroTabPage1 = New MetroFramework.Controls.MetroTabPage()
-        Me.deleteBTN = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
-        Me.updateBTN = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
         Me.panel2 = New System.Windows.Forms.Panel()
         Me.itemTXT = New MetroFramework.Controls.MetroTextBox()
         Me.questionTXT = New MetroFramework.Controls.MetroTextBox()
+        Me.deleteBTN = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
         Me.refreshBTN = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
-        Me.questionGRID = New ComponentFactory.Krypton.Toolkit.KryptonDataGridView()
+        Me.updateBTN = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
         Me.addBTN = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
+        Me.questionGRID = New ComponentFactory.Krypton.Toolkit.KryptonDataGridView()
         Me.metroTabPage2 = New MetroFramework.Controls.MetroTabPage()
         Me.panel1 = New System.Windows.Forms.Panel()
         Me.question = New MetroFramework.Controls.MetroTextBox()
@@ -61,7 +61,7 @@ Partial Class concernFRM
         Me.metroTabControl1.ItemSize = New System.Drawing.Size(150, 34)
         Me.metroTabControl1.Location = New System.Drawing.Point(-2, 25)
         Me.metroTabControl1.Name = "metroTabControl1"
-        Me.metroTabControl1.SelectedIndex = 0
+        Me.metroTabControl1.SelectedIndex = 1
         Me.metroTabControl1.Size = New System.Drawing.Size(884, 679)
         Me.metroTabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
         Me.metroTabControl1.TabIndex = 473
@@ -84,36 +84,6 @@ Partial Class concernFRM
         Me.metroTabPage1.VerticalScrollbarBarColor = True
         Me.metroTabPage1.VerticalScrollbarHighlightOnWheel = False
         Me.metroTabPage1.VerticalScrollbarSize = 10
-        '
-        'deleteBTN
-        '
-        Me.deleteBTN.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.deleteBTN.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.deleteBTN.Image = Nothing
-        Me.deleteBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.deleteBTN.Location = New System.Drawing.Point(657, 51)
-        Me.deleteBTN.Name = "deleteBTN"
-        Me.deleteBTN.Size = New System.Drawing.Size(91, 31)
-        Me.deleteBTN.Style = MetroFramework.MetroColorStyle.Orange
-        Me.deleteBTN.TabIndex = 467
-        Me.deleteBTN.Text = "delete"
-        Me.deleteBTN.UseSelectable = True
-        Me.deleteBTN.UseVisualStyleBackColor = True
-        '
-        'updateBTN
-        '
-        Me.updateBTN.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.updateBTN.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.updateBTN.Image = Nothing
-        Me.updateBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.updateBTN.Location = New System.Drawing.Point(560, 51)
-        Me.updateBTN.Name = "updateBTN"
-        Me.updateBTN.Size = New System.Drawing.Size(91, 31)
-        Me.updateBTN.Style = MetroFramework.MetroColorStyle.Orange
-        Me.updateBTN.TabIndex = 468
-        Me.updateBTN.Text = "update"
-        Me.updateBTN.UseSelectable = True
-        Me.updateBTN.UseVisualStyleBackColor = True
         '
         'panel2
         '
@@ -203,6 +173,21 @@ Partial Class concernFRM
         Me.questionTXT.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.questionTXT.WaterMarkFont = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
+        'deleteBTN
+        '
+        Me.deleteBTN.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.deleteBTN.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.deleteBTN.Image = Nothing
+        Me.deleteBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.deleteBTN.Location = New System.Drawing.Point(657, 51)
+        Me.deleteBTN.Name = "deleteBTN"
+        Me.deleteBTN.Size = New System.Drawing.Size(91, 31)
+        Me.deleteBTN.Style = MetroFramework.MetroColorStyle.Orange
+        Me.deleteBTN.TabIndex = 467
+        Me.deleteBTN.Text = "delete"
+        Me.deleteBTN.UseSelectable = True
+        Me.deleteBTN.UseVisualStyleBackColor = True
+        '
         'refreshBTN
         '
         Me.refreshBTN.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -217,6 +202,36 @@ Partial Class concernFRM
         Me.refreshBTN.Text = "refresh"
         Me.refreshBTN.UseSelectable = True
         Me.refreshBTN.UseVisualStyleBackColor = True
+        '
+        'updateBTN
+        '
+        Me.updateBTN.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.updateBTN.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.updateBTN.Image = Nothing
+        Me.updateBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.updateBTN.Location = New System.Drawing.Point(560, 51)
+        Me.updateBTN.Name = "updateBTN"
+        Me.updateBTN.Size = New System.Drawing.Size(91, 31)
+        Me.updateBTN.Style = MetroFramework.MetroColorStyle.Orange
+        Me.updateBTN.TabIndex = 468
+        Me.updateBTN.Text = "update"
+        Me.updateBTN.UseSelectable = True
+        Me.updateBTN.UseVisualStyleBackColor = True
+        '
+        'addBTN
+        '
+        Me.addBTN.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.addBTN.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.addBTN.Image = Nothing
+        Me.addBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.addBTN.Location = New System.Drawing.Point(463, 51)
+        Me.addBTN.Name = "addBTN"
+        Me.addBTN.Size = New System.Drawing.Size(91, 31)
+        Me.addBTN.Style = MetroFramework.MetroColorStyle.Orange
+        Me.addBTN.TabIndex = 469
+        Me.addBTN.Text = "add"
+        Me.addBTN.UseSelectable = True
+        Me.addBTN.UseVisualStyleBackColor = True
         '
         'questionGRID
         '
@@ -260,21 +275,6 @@ Partial Class concernFRM
         Me.questionGRID.StateCommon.HeaderColumn.Content.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.questionGRID.StateCommon.HeaderColumn.Content.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias
         Me.questionGRID.TabIndex = 466
-        '
-        'addBTN
-        '
-        Me.addBTN.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.addBTN.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.addBTN.Image = Nothing
-        Me.addBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.addBTN.Location = New System.Drawing.Point(463, 51)
-        Me.addBTN.Name = "addBTN"
-        Me.addBTN.Size = New System.Drawing.Size(91, 31)
-        Me.addBTN.Style = MetroFramework.MetroColorStyle.Orange
-        Me.addBTN.TabIndex = 469
-        Me.addBTN.Text = "add"
-        Me.addBTN.UseSelectable = True
-        Me.addBTN.UseVisualStyleBackColor = True
         '
         'metroTabPage2
         '
@@ -488,8 +488,6 @@ Partial Class concernFRM
         Me.answerGRID.AllowUserToResizeRows = False
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
         DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Empty
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Empty
         Me.answerGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
         Me.answerGRID.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _

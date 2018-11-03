@@ -30,6 +30,7 @@ Partial Class mainform
         Me.fieldcombo = New MetroFramework.Controls.MetroComboBox()
         Me.reloadBTN = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
         Me.callinGRID = New ComponentFactory.Krypton.Toolkit.KryptonDataGridView()
+        Me.MetroTile3 = New MetroFramework.Controls.MetroTile()
         CType(Me.callinGRID, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -183,11 +184,28 @@ Partial Class mainform
         Me.callinGRID.StateCommon.HeaderColumn.Content.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias
         Me.callinGRID.TabIndex = 555
         '
+        'MetroTile3
+        '
+        Me.MetroTile3.ActiveControl = Nothing
+        Me.MetroTile3.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(126, Byte), Integer))
+        Me.MetroTile3.Location = New System.Drawing.Point(23, 334)
+        Me.MetroTile3.Name = "MetroTile3"
+        Me.MetroTile3.Size = New System.Drawing.Size(107, 71)
+        Me.MetroTile3.Style = MetroFramework.MetroColorStyle.Teal
+        Me.MetroTile3.TabIndex = 556
+        Me.MetroTile3.Text = "Personnel"
+        Me.MetroTile3.TileImage = CType(resources.GetObject("MetroTile3.TileImage"), System.Drawing.Image)
+        Me.MetroTile3.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.MetroTile3.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular
+        Me.MetroTile3.UseSelectable = True
+        Me.MetroTile3.UseTileImage = True
+        '
         'mainform
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(796, 484)
+        Me.Controls.Add(Me.MetroTile3)
         Me.Controls.Add(Me.callinGRID)
         Me.Controls.Add(Me.reloadBTN)
         Me.Controls.Add(Me.fieldcombo)
@@ -208,4 +226,5 @@ Partial Class mainform
     Friend WithEvents fieldcombo As MetroFramework.Controls.MetroComboBox
     Friend WithEvents reloadBTN As MetroFramework.Controls.MetroTextBox.MetroTextButton
     Friend WithEvents callinGRID As ComponentFactory.Krypton.Toolkit.KryptonDataGridView
+    Friend WithEvents MetroTile3 As MetroFramework.Controls.MetroTile
 End Class

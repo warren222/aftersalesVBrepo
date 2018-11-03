@@ -325,7 +325,6 @@ Partial Class newcallinFRM
         Me.ClientSize = New System.Drawing.Size(936, 668)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "newcallinFRM"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.answerGV, System.ComponentModel.ISupportInitialize).EndInit()

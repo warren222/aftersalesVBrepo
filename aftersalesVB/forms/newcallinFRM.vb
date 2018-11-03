@@ -5,7 +5,7 @@ Public Class newcallinFRM
     Dim sql As New sql
     Dim qid As String
     Private Sub newcallinFRM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.Location = New Point(0, 0)
+
         Me.Height = Screen.PrimaryScreen.Bounds.Height - 37
         loadconcern()
     End Sub

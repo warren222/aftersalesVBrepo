@@ -1,3 +1,173 @@
-﻿Public Class servicingFRM
+﻿Imports System.Data.SqlClient
 
+Public Class servicingFRM
+    Dim sql As New sql
+    Dim scount As String
+    Dim suffix As String
+    Public id As String
+
+    Private Sub servicingFRM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.Height = Screen.PrimaryScreen.Bounds.Height - 37
+        loadservicing()
+    End Sub
+    Public Sub loadservicing()
+        Dim str As String = "select ID,
+CIN,
+STATUS,
+STATUSDATE AS [STATUS DATE],
+SERVICING,
+SDATE AS [SERVICING DATE],
+ASSIGNEDPERSONNEL AS [ASSIGNED PERSONNEL]
+ from servicingtb where cin = @cin"
+        Dim ds As New DataSet
+        ds.Clear()
+        Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
+            Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
+                Using da As SqlDataAdapter = New SqlDataAdapter
+                    Try
+                        servicingGRID.Columns.Clear()
+                        sqlcon.Open()
+                        sqlcmd.Parameters.AddWithValue("@cin", mainform.tempcin)
+                        da.SelectCommand = sqlcmd
+                        da.Fill(ds, "servicingtb")
+                        servicingGRID.DataSource = ds.Tables("servicingtb")
+                        addbtn()
+                        servicingGRID.Columns("STATUS DATE").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+                        servicingGRID.Columns("SERVICING").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+                        servicingGRID.Columns("SERVICING DATE").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+                        servicingGRID.Columns("ASSIGNED PERSONNEL").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+                        servicingGRID.Columns("id").Visible = False
+                        servicingGRID.Columns("cin").Visible = False
+                        servicingGRID.Columns("STATUS").Visible = False
+                    Catch ex As Exception
+                        MsgBox(ex.ToString)
+                    End Try
+                End Using
+            End Using
+
+            Dim str2 As String = "select isnull(count(id),0)+1 from servicingtb where cin = @cin"
+            Using sqlcmd As SqlCommand = New SqlCommand(str2, sqlcon)
+                sqlcmd.Parameters.AddWithValue("@cin", mainform.tempcin)
+                Using rd As SqlDataReader = sqlcmd.ExecuteReader
+                    While rd.Read
+                        scount = rd(0).ToString
+                    End While
+                End Using
+            End Using
+        End Using
+        countservicing()
+    End Sub
+    Public Sub addbtn()
+        Dim statusbtn As New DataGridViewButtonColumn
+        Dim reportbtn As New DataGridViewButtonColumn
+        Dim addbtn As New DataGridViewButtonColumn
+        Dim updatebtn As New DataGridViewButtonColumn
+        Dim deletebtn As New DataGridViewButtonColumn
+
+        statusbtn.Name = "statusbtn"
+        statusbtn.HeaderText = "STATUS"
+
+
+        reportbtn.Name = "reportbtn"
+        reportbtn.HeaderText = ""
+        reportbtn.Text = "report"
+
+        addbtn.Name = "addbtn"
+        addbtn.HeaderText = ""
+        addbtn.Text = "new"
+
+        updatebtn.Name = "updatebtn"
+        updatebtn.HeaderText = ""
+        updatebtn.Text = "update"
+
+        deletebtn.Name = "deletebtn"
+        deletebtn.HeaderText = ""
+        deletebtn.Text = "delete"
+
+        statusbtn.UseColumnTextForButtonValue = False
+        reportbtn.UseColumnTextForButtonValue = True
+        addbtn.UseColumnTextForButtonValue = True
+        updatebtn.UseColumnTextForButtonValue = True
+        deletebtn.UseColumnTextForButtonValue = True
+
+        servicingGRID.Columns.Insert(0, statusbtn)
+        servicingGRID.Columns.Insert(7, reportbtn)
+        servicingGRID.Columns.Insert(9, addbtn)
+        servicingGRID.Columns.Insert(10, updatebtn)
+        servicingGRID.Columns.Insert(11, deletebtn)
+
+
+        For i As Integer = 0 To servicingGRID.RowCount - 1
+            servicingGRID.Rows(i).Cells.Item(0).Value = servicingGRID.Item("STATUS", i).Value.ToString
+        Next
+
+    End Sub
+
+    Public Sub countservicing()
+        If scount = 1 Then
+            suffixvalue()
+            Dim str As String = "declare @id as integer = (select isnull(max(id),0)+1 from servicingtb)
+                                 insert into servicingtb (id,cin,servicing)values(@id,@cin,@servicing)"
+            Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
+                Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
+                    Try
+                        sqlcon.Open()
+                        sqlcmd.Parameters.AddWithValue("@cin", mainform.tempcin)
+                        sqlcmd.Parameters.AddWithValue("@servicing", suffix)
+                        sqlcmd.ExecuteNonQuery()
+                    Catch ex As Exception
+                        MsgBox(ex.ToString)
+                    End Try
+                End Using
+            End Using
+            loadservicing()
+        Else
+            Return
+        End If
+    End Sub
+    Public Sub suffixvalue()
+        Dim x As String
+        Select Case scount
+            Case 1
+                x = "st"
+            Case 2
+                x = "nd"
+            Case 3
+                x = "rd"
+            Case Else
+                x = "th"
+        End Select
+        suffix = "" & scount & "" & x & " Servicing Schedule"
+
+    End Sub
+
+    Private Sub servicingGRID_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles servicingGRID.CellClick
+        If e.ColumnIndex = 9 Then
+            newservicingFRM.Text = "New"
+            newservicingFRM.save.Text = "add"
+            newservicingFRM.servicingdate.Text = ""
+            newservicingFRM.assignedpersonnelTXT.Text = ""
+            newservicingFRM.ShowDialog()
+        ElseIf e.ColumnIndex = 10 Then
+            newservicingFRM.Text = "Editing"
+            newservicingFRM.save.Text = "save"
+            id = servicingGRID.Item("id", e.RowIndex).Value.ToString
+            newservicingFRM.servicingdate.Text = servicingGRID.Item("sdate", e.RowIndex).Value.ToString
+            newservicingFRM.assignedpersonnelTXT.Text = servicingGRID.Item("ASSIGNEDPERSONNEL", e.RowIndex).Value.ToString
+            newservicingFRM.ShowDialog()
+        ElseIf e.ColumnIndex = 11 Then
+        End If
+    End Sub
+
+    Private Sub servicingFRM_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Me.Dispose()
+    End Sub
+
+    Private Sub refresh_Click(sender As Object, e As EventArgs) Handles refresh.Click
+        loadservicing()
+    End Sub
+
+    Private Sub metroTextButton1_Click(sender As Object, e As EventArgs)
+
+    End Sub
 End Class

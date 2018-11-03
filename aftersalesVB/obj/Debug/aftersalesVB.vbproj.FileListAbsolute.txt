@@ -43,3 +43,6 @@ C:\Users\kmdim\Desktop\aftersalesVB\aftersalesVBrepo\aftersalesVB\obj\Debug\afte
 C:\Users\kmdim\Desktop\aftersalesVB\aftersalesVBrepo\aftersalesVB\obj\Debug\RdlCompile.cache
 C:\Users\kmdim\Desktop\aftersalesVB\aftersalesVBrepo\aftersalesVB\obj\Debug\RdlCompile.compiled
 C:\Users\kmdim\Desktop\aftersalesVB\aftersalesVBrepo\aftersalesVB\obj\Debug\aftersalesVB.servicingFRM.resources
+C:\Users\kmdim\Desktop\aftersalesVB\aftersalesVBrepo\aftersalesVB\obj\Debug\aftersalesVB.personnelFRM.resources
+C:\Users\kmdim\Desktop\aftersalesVB\aftersalesVBrepo\aftersalesVB\obj\Debug\aftersalesVB.editpersonnelFRM.resources
+C:\Users\kmdim\Desktop\aftersalesVB\aftersalesVBrepo\aftersalesVB\obj\Debug\aftersalesVB.newservicingFRM.resources

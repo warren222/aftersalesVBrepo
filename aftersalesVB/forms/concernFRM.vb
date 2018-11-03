@@ -215,4 +215,8 @@ Public Class concernFRM
             answerTXT.Text = rows.Cells("answer").Value.ToString()
         Next
     End Sub
+
+    Private Sub metroTabPage2_Click(sender As Object, e As EventArgs) Handles metroTabPage2.Click
+
+    End Sub
 End Class

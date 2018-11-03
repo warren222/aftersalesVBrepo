@@ -96,6 +96,9 @@ Public Class mainform
         Dim selecteditems As DataGridViewSelectedRowCollection = callinGRID.SelectedRows
         For Each row As DataGridViewRow In selecteditems
             tempcin = row.Cells("cin").Value.ToString
+            servicingFRM.projectname.Text = row.Cells("project").Value.ToString
+            servicingFRM.address.Text = row.Cells("address").Value.ToString
+            servicingFRM.jo.Text = row.Cells("jo").Value.ToString
         Next
     End Sub
 
@@ -149,5 +152,9 @@ Public Class mainform
         ElseIf e.ColumnIndex = 8 Then
             servicingFRM.ShowDialog()
         End If
+    End Sub
+
+    Private Sub MetroTile3_Click(sender As Object, e As EventArgs) Handles MetroTile3.Click
+        personnelFRM.ShowDialog()
     End Sub
 End Class
