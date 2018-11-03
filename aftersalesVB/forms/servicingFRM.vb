@@ -12,13 +12,13 @@ Public Class servicingFRM
     End Sub
     Public Sub loadservicing()
         Dim str As String = "select ID,
-CIN,
-STATUS,
-STATUSDATE AS [STATUS DATE],
-SERVICING,
-SDATE AS [SERVICING DATE],
-ASSIGNEDPERSONNEL AS [ASSIGNED PERSONNEL]
- from servicingtb where cin = @cin"
+                            CIN,
+                            STATUS,
+                            STATUSDATE AS [STATUS DATE],
+                            SERVICING,
+                            SDATE AS [SERVICING DATE],
+                            ASSIGNEDPERSONNEL AS [ASSIGNED PERSONNEL]
+                             from servicingtb where cin = @cin"
         Dim ds As New DataSet
         ds.Clear()
         Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
@@ -142,21 +142,47 @@ ASSIGNEDPERSONNEL AS [ASSIGNED PERSONNEL]
     End Sub
 
     Private Sub servicingGRID_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles servicingGRID.CellClick
-        If e.ColumnIndex = 9 Then
-            newservicingFRM.Text = "New"
-            newservicingFRM.save.Text = "add"
-            newservicingFRM.servicingdate.Text = ""
-            newservicingFRM.assignedpersonnelTXT.Text = ""
-            newservicingFRM.ShowDialog()
-        ElseIf e.ColumnIndex = 10 Then
-            newservicingFRM.Text = "Editing"
-            newservicingFRM.save.Text = "save"
-            id = servicingGRID.Item("id", e.RowIndex).Value.ToString
-            newservicingFRM.servicingdate.Text = servicingGRID.Item("sdate", e.RowIndex).Value.ToString
-            newservicingFRM.assignedpersonnelTXT.Text = servicingGRID.Item("ASSIGNEDPERSONNEL", e.RowIndex).Value.ToString
-            newservicingFRM.ShowDialog()
-        ElseIf e.ColumnIndex = 11 Then
-        End If
+        If servicingGRID.RowCount >= 0 And e.RowIndex >= 0 Then
+
+            If e.ColumnIndex = 0 Then
+                id = servicingGRID.Item("id", e.RowIndex).Value.ToString
+                statusFRM.statusdate.Text = servicingGRID.Item("status date", e.RowIndex).Value.ToString
+                statusFRM.status.Text = servicingGRID.Item("status", e.RowIndex).Value.ToString
+                statusFRM.ShowDialog()
+            ElseIf e.ColumnIndex = 9 Then
+                newservicingFRM.Text = "New"
+                newservicingFRM.save.Text = "add"
+                newservicingFRM.servicingdate.Text = ""
+                newservicingFRM.assignedpersonnelTXT.Text = ""
+                newservicingFRM.ShowDialog()
+            ElseIf e.ColumnIndex = 10 Then
+                newservicingFRM.Text = "Editing"
+                newservicingFRM.save.Text = "save"
+                id = servicingGRID.Item("id", e.RowIndex).Value.ToString
+                newservicingFRM.servicingdate.Text = servicingGRID.Item("servicing date", e.RowIndex).Value.ToString
+                newservicingFRM.assignedpersonnelTXT.Text = servicingGRID.Item("ASSIGNED PERSONNEL", e.RowIndex).Value.ToString
+                newservicingFRM.ShowDialog()
+            ElseIf e.ColumnIndex = 11 Then
+                If MetroFramework.MetroMessageBox.Show(Me, "Delete " & servicingGRID.Item("servicing", e.RowIndex).Value.ToString & "?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
+                    Return
+                Else
+                    id = servicingGRID.Item("id", e.RowIndex).Value.ToString
+                    Dim str As String = "delete from servicingtb where id  = @id"
+                    Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
+                        Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
+                            Try
+                                sqlcon.Open()
+                                sqlcmd.Parameters.AddWithValue("@id", id)
+                                sqlcmd.ExecuteNonQuery()
+                            Catch ex As Exception
+                                MsgBox(ex.ToString)
+                            End Try
+                        End Using
+                    End Using
+                    refresh.PerformClick()
+                End If
+            End If
+            End If
     End Sub
 
     Private Sub servicingFRM_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing

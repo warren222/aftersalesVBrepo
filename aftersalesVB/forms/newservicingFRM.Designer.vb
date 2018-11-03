@@ -44,7 +44,7 @@ Partial Class newservicingFRM
         Me.MetroTextButton2.Size = New System.Drawing.Size(54, 28)
         Me.MetroTextButton2.Style = MetroFramework.MetroColorStyle.Yellow
         Me.MetroTextButton2.TabIndex = 489
-        Me.MetroTextButton2.Text = "remove"
+        Me.MetroTextButton2.Text = "-"
         Me.MetroTextButton2.UseCustomForeColor = True
         Me.MetroTextButton2.UseSelectable = True
         Me.MetroTextButton2.UseVisualStyleBackColor = True
@@ -61,7 +61,7 @@ Partial Class newservicingFRM
         Me.metroTextButton1.Size = New System.Drawing.Size(60, 28)
         Me.metroTextButton1.Style = MetroFramework.MetroColorStyle.Yellow
         Me.metroTextButton1.TabIndex = 488
-        Me.metroTextButton1.Text = "add"
+        Me.metroTextButton1.Text = "+"
         Me.metroTextButton1.UseCustomForeColor = True
         Me.metroTextButton1.UseSelectable = True
         Me.metroTextButton1.UseVisualStyleBackColor = True

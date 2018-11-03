@@ -35,10 +35,14 @@ Partial Class servicingFRM
         Me.servicingGRID.AllowUserToAddRows = False
         Me.servicingGRID.AllowUserToDeleteRows = False
         Me.servicingGRID.AllowUserToResizeRows = False
+        Me.servicingGRID.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.servicingGRID.ColumnHeadersHeight = 32
         Me.servicingGRID.Cursor = System.Windows.Forms.Cursors.Hand
         Me.servicingGRID.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.servicingGRID.Location = New System.Drawing.Point(23, 190)
+        Me.servicingGRID.MultiSelect = False
         Me.servicingGRID.Name = "servicingGRID"
         Me.servicingGRID.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Silver
         Me.servicingGRID.RowHeadersWidth = 30
@@ -65,7 +69,6 @@ Partial Class servicingFRM
         '
         'refresh
         '
-        Me.refresh.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.refresh.Cursor = System.Windows.Forms.Cursors.Hand
         Me.refresh.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.refresh.Image = Nothing

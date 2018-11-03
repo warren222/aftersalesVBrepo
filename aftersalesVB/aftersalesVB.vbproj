@@ -138,6 +138,12 @@
     <Compile Include="forms\personnelFRM.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="forms\reportFRM.Designer.vb">
+      <DependentUpon>reportFRM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\reportFRM.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="forms\selectprojectFRM.Designer.vb">
       <DependentUpon>selectprojectFRM.vb</DependentUpon>
     </Compile>
@@ -148,6 +154,12 @@
       <DependentUpon>servicingFRM.vb</DependentUpon>
     </Compile>
     <Compile Include="forms\servicingFRM.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\statusFRM.Designer.vb">
+      <DependentUpon>statusFRM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\statusFRM.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -188,11 +200,17 @@
     <EmbeddedResource Include="forms\personnelFRM.resx">
       <DependentUpon>personnelFRM.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms\reportFRM.resx">
+      <DependentUpon>reportFRM.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\selectprojectFRM.resx">
       <DependentUpon>selectprojectFRM.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\servicingFRM.resx">
       <DependentUpon>servicingFRM.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\statusFRM.resx">
+      <DependentUpon>statusFRM.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
