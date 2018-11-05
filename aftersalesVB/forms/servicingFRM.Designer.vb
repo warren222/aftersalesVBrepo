@@ -27,6 +27,7 @@ Partial Class servicingFRM
         Me.jo = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.address = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.projectname = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
+        Me.KryptonLabel1 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         CType(Me.servicingGRID, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -113,11 +114,23 @@ Partial Class servicingFRM
         Me.projectname.TabIndex = 559
         Me.projectname.Values.Text = "Project Name"
         '
+        'KryptonLabel1
+        '
+        Me.KryptonLabel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.KryptonLabel1.Location = New System.Drawing.Point(636, 147)
+        Me.KryptonLabel1.Name = "KryptonLabel1"
+        Me.KryptonLabel1.Size = New System.Drawing.Size(219, 37)
+        Me.KryptonLabel1.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.KryptonLabel1.StateCommon.ShortText.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KryptonLabel1.TabIndex = 562
+        Me.KryptonLabel1.Values.Text = "Servicing Schedule"
+        '
         'servicingFRM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(872, 723)
+        Me.Controls.Add(Me.KryptonLabel1)
         Me.Controls.Add(Me.jo)
         Me.Controls.Add(Me.address)
         Me.Controls.Add(Me.projectname)
@@ -135,4 +148,5 @@ Partial Class servicingFRM
     Friend WithEvents jo As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents address As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents projectname As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Friend WithEvents KryptonLabel1 As ComponentFactory.Krypton.Toolkit.KryptonLabel
 End Class

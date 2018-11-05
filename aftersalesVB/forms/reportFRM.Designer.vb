@@ -23,6 +23,9 @@ Partial Class reportFRM
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.reportGRID = New ComponentFactory.Krypton.Toolkit.KryptonDataGridView()
+        Me.refresh = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
+        Me.servicing = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
+        Me.KryptonLabel1 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         CType(Me.reportGRID, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -37,14 +40,14 @@ Partial Class reportFRM
         Me.reportGRID.ColumnHeadersHeight = 32
         Me.reportGRID.Cursor = System.Windows.Forms.Cursors.Hand
         Me.reportGRID.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
-        Me.reportGRID.Location = New System.Drawing.Point(23, 82)
+        Me.reportGRID.Location = New System.Drawing.Point(23, 96)
         Me.reportGRID.MultiSelect = False
         Me.reportGRID.Name = "reportGRID"
         Me.reportGRID.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Silver
         Me.reportGRID.RowHeadersWidth = 30
         Me.reportGRID.RowTemplate.Height = 30
         Me.reportGRID.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.reportGRID.Size = New System.Drawing.Size(703, 385)
+        Me.reportGRID.Size = New System.Drawing.Size(703, 371)
         Me.reportGRID.StateCommon.Background.Color1 = System.Drawing.Color.White
         Me.reportGRID.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
         Me.reportGRID.StateCommon.DataCell.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) _
@@ -63,18 +66,61 @@ Partial Class reportFRM
         Me.reportGRID.StateCommon.HeaderColumn.Content.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias
         Me.reportGRID.TabIndex = 557
         '
+        'refresh
+        '
+        Me.refresh.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.refresh.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.refresh.Image = Nothing
+        Me.refresh.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.refresh.Location = New System.Drawing.Point(23, 62)
+        Me.refresh.Name = "refresh"
+        Me.refresh.Size = New System.Drawing.Size(119, 24)
+        Me.refresh.Style = MetroFramework.MetroColorStyle.Yellow
+        Me.refresh.TabIndex = 558
+        Me.refresh.Text = "refresh"
+        Me.refresh.UseCustomForeColor = True
+        Me.refresh.UseSelectable = True
+        Me.refresh.UseVisualStyleBackColor = True
+        '
+        'servicing
+        '
+        Me.servicing.Location = New System.Drawing.Point(23, 22)
+        Me.servicing.Name = "servicing"
+        Me.servicing.Size = New System.Drawing.Size(101, 34)
+        Me.servicing.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.servicing.StateCommon.ShortText.Font = New System.Drawing.Font("Segoe UI", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.servicing.TabIndex = 560
+        Me.servicing.Values.Text = "Servicing"
+        '
+        'KryptonLabel1
+        '
+        Me.KryptonLabel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.KryptonLabel1.Location = New System.Drawing.Point(627, 53)
+        Me.KryptonLabel1.Name = "KryptonLabel1"
+        Me.KryptonLabel1.Size = New System.Drawing.Size(99, 37)
+        Me.KryptonLabel1.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.KryptonLabel1.StateCommon.ShortText.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KryptonLabel1.TabIndex = 563
+        Me.KryptonLabel1.Values.Text = "Reports"
+        '
         'reportFRM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(749, 490)
+        Me.Controls.Add(Me.KryptonLabel1)
+        Me.Controls.Add(Me.servicing)
+        Me.Controls.Add(Me.refresh)
         Me.Controls.Add(Me.reportGRID)
         Me.Name = "reportFRM"
-        Me.Text = "reportFRM"
         CType(Me.reportGRID, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents reportGRID As ComponentFactory.Krypton.Toolkit.KryptonDataGridView
+    Friend WithEvents refresh As MetroFramework.Controls.MetroTextBox.MetroTextButton
+    Friend WithEvents servicing As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Friend WithEvents KryptonLabel1 As ComponentFactory.Krypton.Toolkit.KryptonLabel
 End Class

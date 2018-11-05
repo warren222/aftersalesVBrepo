@@ -48,3 +48,4 @@ C:\Users\kmdim\Desktop\aftersalesVB\aftersalesVBrepo\aftersalesVB\obj\Debug\afte
 C:\Users\kmdim\Desktop\aftersalesVB\aftersalesVBrepo\aftersalesVB\obj\Debug\aftersalesVB.newservicingFRM.resources
 C:\Users\kmdim\Desktop\aftersalesVB\aftersalesVBrepo\aftersalesVB\obj\Debug\aftersalesVB.statusFRM.resources
 C:\Users\kmdim\Desktop\aftersalesVB\aftersalesVBrepo\aftersalesVB\obj\Debug\aftersalesVB.reportFRM.resources
+C:\Users\kmdim\Desktop\aftersalesVB\aftersalesVBrepo\aftersalesVB\obj\Debug\aftersalesVB.newreportFRM.resources

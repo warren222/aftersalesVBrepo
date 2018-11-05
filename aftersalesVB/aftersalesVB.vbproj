@@ -126,6 +126,12 @@
     <Compile Include="forms\newcallinFRM.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="forms\newreportFRM.Designer.vb">
+      <DependentUpon>newreportFRM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\newreportFRM.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="forms\newservicingFRM.Designer.vb">
       <DependentUpon>newservicingFRM.vb</DependentUpon>
     </Compile>
@@ -193,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\newcallinFRM.resx">
       <DependentUpon>newcallinFRM.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\newreportFRM.resx">
+      <DependentUpon>newreportFRM.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\newservicingFRM.resx">
       <DependentUpon>newservicingFRM.vb</DependentUpon>

@@ -149,6 +149,10 @@ Public Class servicingFRM
                 statusFRM.statusdate.Text = servicingGRID.Item("status date", e.RowIndex).Value.ToString
                 statusFRM.status.Text = servicingGRID.Item("status", e.RowIndex).Value.ToString
                 statusFRM.ShowDialog()
+            ElseIf e.ColumnIndex = 7 Then
+                id = servicingGRID.Item("id", e.RowIndex).Value.ToString
+                reportFRM.servicing.Text = servicingGRID.Item("servicing", e.RowIndex).Value.ToString
+                reportFRM.ShowDialog()
             ElseIf e.ColumnIndex = 9 Then
                 newservicingFRM.Text = "New"
                 newservicingFRM.save.Text = "add"

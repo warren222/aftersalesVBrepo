@@ -96,9 +96,6 @@ Public Class mainform
         Dim selecteditems As DataGridViewSelectedRowCollection = callinGRID.SelectedRows
         For Each row As DataGridViewRow In selecteditems
             tempcin = row.Cells("cin").Value.ToString
-            servicingFRM.projectname.Text = row.Cells("project").Value.ToString
-            servicingFRM.address.Text = row.Cells("address").Value.ToString
-            servicingFRM.jo.Text = row.Cells("jo").Value.ToString
         Next
     End Sub
 
@@ -147,11 +144,18 @@ Public Class mainform
         loadcallin(fieldcombo.Text, "")
     End Sub
     Private Sub callinGRID_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles callinGRID.CellClick
-        If e.ColumnIndex = 7 Then
-            concernsummaryFRM.ShowDialog()
-        ElseIf e.ColumnIndex = 8 Then
-            servicingFRM.ShowDialog()
+        If callinGRID.RowCount >= 0 And e.RowIndex >= 0 Then
+            Dim row As DataGridViewRow = callinGRID.Rows(e.RowIndex)
+            If e.ColumnIndex = 7 Then
+                concernsummaryFRM.ShowDialog()
+            ElseIf e.ColumnIndex = 8 Then
+                servicingFRM.projectname.Text = row.Cells("project").Value.ToString
+                servicingFRM.address.Text = row.Cells("address").Value.ToString
+                servicingFRM.jo.Text = row.Cells("jo").Value.ToString
+                servicingFRM.ShowDialog()
+            End If
         End If
+
     End Sub
 
     Private Sub MetroTile3_Click(sender As Object, e As EventArgs) Handles MetroTile3.Click
