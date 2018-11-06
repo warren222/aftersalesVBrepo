@@ -100,7 +100,7 @@ Public Class mainform
     End Sub
 
     Private Sub MetroTile1_Click(sender As Object, e As EventArgs) Handles MetroTile1.Click
-        newcallinFRM.Text = "Edit"
+        newcallinFRM.Text = "Editing"
         Dim selecteditems As DataGridViewSelectedRowCollection = callinGRID.SelectedRows
         For Each row As DataGridViewRow In selecteditems
             newcallinFRM.calldate.Text = row.Cells("date").Value.ToString
@@ -133,7 +133,7 @@ Public Class mainform
     End Sub
 
     Private Sub MetroTile2_Click(sender As Object, e As EventArgs) Handles MetroTile2.Click
-        concernFRM.ShowDialog()
+        qsFRM.ShowDialog()
     End Sub
 
     Private Sub searchtext_ButtonClick(sender As Object, e As EventArgs) Handles searchtext.ButtonClick

@@ -126,6 +126,18 @@
     <Compile Include="forms\newcallinFRM.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="forms\newconcernFRM.Designer.vb">
+      <DependentUpon>newconcernFRM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\newconcernFRM.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\newqsFRM.Designer.vb">
+      <DependentUpon>newqsFRM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\newqsFRM.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="forms\newreportFRM.Designer.vb">
       <DependentUpon>newreportFRM.vb</DependentUpon>
     </Compile>
@@ -142,6 +154,12 @@
       <DependentUpon>personnelFRM.vb</DependentUpon>
     </Compile>
     <Compile Include="forms\personnelFRM.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\qsFRM.Designer.vb">
+      <DependentUpon>qsFRM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\qsFRM.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\reportFRM.Designer.vb">
@@ -200,6 +218,12 @@
     <EmbeddedResource Include="forms\newcallinFRM.resx">
       <DependentUpon>newcallinFRM.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms\newconcernFRM.resx">
+      <DependentUpon>newconcernFRM.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\newqsFRM.resx">
+      <DependentUpon>newqsFRM.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\newreportFRM.resx">
       <DependentUpon>newreportFRM.vb</DependentUpon>
     </EmbeddedResource>
@@ -208,6 +232,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\personnelFRM.resx">
       <DependentUpon>personnelFRM.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\qsFRM.resx">
+      <DependentUpon>qsFRM.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\reportFRM.resx">
       <DependentUpon>reportFRM.vb</DependentUpon>

@@ -14,9 +14,9 @@ Public Class newcallinFRM
         Dim str As String
         If Me.Text = "New" Then
             str = "update answertb set chk = '0'
-                             select * from questionnairetb order by item asc"
+                   select qid,ITEM,QUESTION AS [(Specification) Question] from questionnairetb order by item asc"
         Else
-            str = "select * from questionnairetb order by item asc"
+            str = "select qid,ITEM,QUESTION AS [(Specification) Question] from questionnairetb order by item asc"
         End If
 
         Dim ds As New DataSet
@@ -40,7 +40,7 @@ Public Class newcallinFRM
     Public Sub setcolumns(ByVal dg As DataGridView)
         dg.Columns("qid").Visible = False
         dg.Columns("item").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-        dg.Columns("question").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+        dg.Columns("(Specification) Question").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
     End Sub
 
     Private Sub questionGRID_SelectionChanged(sender As Object, e As EventArgs) Handles questionGRID.SelectionChanged
@@ -51,7 +51,7 @@ Public Class newcallinFRM
         loadanswer()
     End Sub
     Public Sub loadanswer()
-        Dim str As String = "SELECT * FROM ANSWERTB WHERE QID = @qid"
+        Dim str As String = "SELECT aid,qid,chk,ITEM,ANSWER AS CONCERN FROM ANSWERTB WHERE QID = @qid"
         Dim ds As New DataSet
         ds.Clear()
         Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
@@ -68,7 +68,7 @@ Public Class newcallinFRM
                         answerGV.Columns("chk").Visible = False
                         answerGV.Columns(Column1.Name).AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
                         answerGV.Columns("item").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-                        answerGV.Columns("answer").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+                        answerGV.Columns("CONCERN").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
                         If answerGV.RowCount >= 0 Then
                             For i As Integer = 0 To answerGV.RowCount - 1
                                 Dim row As DataGridViewRow = answerGV.Rows(i)

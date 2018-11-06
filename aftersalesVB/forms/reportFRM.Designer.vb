@@ -23,9 +23,10 @@ Partial Class reportFRM
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.reportGRID = New ComponentFactory.Krypton.Toolkit.KryptonDataGridView()
-        Me.refresh = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
+        Me.refreshbtn = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
         Me.servicing = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.KryptonLabel1 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
+        Me.newbtn = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
         CType(Me.reportGRID, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -66,21 +67,21 @@ Partial Class reportFRM
         Me.reportGRID.StateCommon.HeaderColumn.Content.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias
         Me.reportGRID.TabIndex = 557
         '
-        'refresh
+        'refreshbtn
         '
-        Me.refresh.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.refresh.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.refresh.Image = Nothing
-        Me.refresh.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.refresh.Location = New System.Drawing.Point(23, 62)
-        Me.refresh.Name = "refresh"
-        Me.refresh.Size = New System.Drawing.Size(119, 24)
-        Me.refresh.Style = MetroFramework.MetroColorStyle.Yellow
-        Me.refresh.TabIndex = 558
-        Me.refresh.Text = "refresh"
-        Me.refresh.UseCustomForeColor = True
-        Me.refresh.UseSelectable = True
-        Me.refresh.UseVisualStyleBackColor = True
+        Me.refreshbtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.refreshbtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.refreshbtn.Image = Nothing
+        Me.refreshbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.refreshbtn.Location = New System.Drawing.Point(23, 62)
+        Me.refreshbtn.Name = "refreshbtn"
+        Me.refreshbtn.Size = New System.Drawing.Size(119, 24)
+        Me.refreshbtn.Style = MetroFramework.MetroColorStyle.Yellow
+        Me.refreshbtn.TabIndex = 558
+        Me.refreshbtn.Text = "refresh"
+        Me.refreshbtn.UseCustomForeColor = True
+        Me.refreshbtn.UseSelectable = True
+        Me.refreshbtn.UseVisualStyleBackColor = True
         '
         'servicing
         '
@@ -103,14 +104,31 @@ Partial Class reportFRM
         Me.KryptonLabel1.TabIndex = 563
         Me.KryptonLabel1.Values.Text = "Reports"
         '
+        'newbtn
+        '
+        Me.newbtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.newbtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.newbtn.Image = Nothing
+        Me.newbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.newbtn.Location = New System.Drawing.Point(148, 62)
+        Me.newbtn.Name = "newbtn"
+        Me.newbtn.Size = New System.Drawing.Size(119, 24)
+        Me.newbtn.Style = MetroFramework.MetroColorStyle.Yellow
+        Me.newbtn.TabIndex = 564
+        Me.newbtn.Text = "new"
+        Me.newbtn.UseCustomForeColor = True
+        Me.newbtn.UseSelectable = True
+        Me.newbtn.UseVisualStyleBackColor = True
+        '
         'reportFRM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(749, 490)
+        Me.Controls.Add(Me.newbtn)
         Me.Controls.Add(Me.KryptonLabel1)
         Me.Controls.Add(Me.servicing)
-        Me.Controls.Add(Me.refresh)
+        Me.Controls.Add(Me.refreshbtn)
         Me.Controls.Add(Me.reportGRID)
         Me.Name = "reportFRM"
         CType(Me.reportGRID, System.ComponentModel.ISupportInitialize).EndInit()
@@ -120,7 +138,8 @@ Partial Class reportFRM
     End Sub
 
     Friend WithEvents reportGRID As ComponentFactory.Krypton.Toolkit.KryptonDataGridView
-    Friend WithEvents refresh As MetroFramework.Controls.MetroTextBox.MetroTextButton
+    Friend WithEvents refreshbtn As MetroFramework.Controls.MetroTextBox.MetroTextButton
     Friend WithEvents servicing As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents KryptonLabel1 As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Friend WithEvents newbtn As MetroFramework.Controls.MetroTextBox.MetroTextButton
 End Class

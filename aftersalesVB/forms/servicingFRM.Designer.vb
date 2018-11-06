@@ -28,6 +28,7 @@ Partial Class servicingFRM
         Me.address = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.projectname = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.KryptonLabel1 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
+        Me.newbtn = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
         CType(Me.servicingGRID, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -125,11 +126,28 @@ Partial Class servicingFRM
         Me.KryptonLabel1.TabIndex = 562
         Me.KryptonLabel1.Values.Text = "Servicing Schedule"
         '
+        'newbtn
+        '
+        Me.newbtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.newbtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.newbtn.Image = Nothing
+        Me.newbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.newbtn.Location = New System.Drawing.Point(148, 156)
+        Me.newbtn.Name = "newbtn"
+        Me.newbtn.Size = New System.Drawing.Size(119, 24)
+        Me.newbtn.Style = MetroFramework.MetroColorStyle.Yellow
+        Me.newbtn.TabIndex = 563
+        Me.newbtn.Text = "new"
+        Me.newbtn.UseCustomForeColor = True
+        Me.newbtn.UseSelectable = True
+        Me.newbtn.UseVisualStyleBackColor = True
+        '
         'servicingFRM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(872, 723)
+        Me.Controls.Add(Me.newbtn)
         Me.Controls.Add(Me.KryptonLabel1)
         Me.Controls.Add(Me.jo)
         Me.Controls.Add(Me.address)
@@ -149,4 +167,5 @@ Partial Class servicingFRM
     Friend WithEvents address As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents projectname As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents KryptonLabel1 As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Friend WithEvents newbtn As MetroFramework.Controls.MetroTextBox.MetroTextButton
 End Class

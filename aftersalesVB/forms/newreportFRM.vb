@@ -11,7 +11,7 @@ Public Class newreportFRM
         ElseIf save.Text = "save" Then
             update()
         End If
-        reportFRM.refresh.PerformClick()
+        reportFRM.refreshbtn.PerformClick()
     End Sub
     Public Sub add()
         Dim str As String = "declare @id as integer = (select isnull(max(id),0)+1 from reporttb)

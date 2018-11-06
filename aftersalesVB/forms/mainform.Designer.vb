@@ -162,7 +162,7 @@ Partial Class mainform
         Me.callinGRID.Name = "callinGRID"
         Me.callinGRID.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Silver
         Me.callinGRID.RowHeadersWidth = 30
-        Me.callinGRID.RowTemplate.Height = 35
+        Me.callinGRID.RowTemplate.Height = 30
         Me.callinGRID.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.callinGRID.Size = New System.Drawing.Size(637, 358)
         Me.callinGRID.StateCommon.Background.Color1 = System.Drawing.Color.White
@@ -214,6 +214,7 @@ Partial Class mainform
         Me.Controls.Add(Me.newPNL)
         Me.Name = "mainform"
         Me.Text = "After Sales"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.callinGRID, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 

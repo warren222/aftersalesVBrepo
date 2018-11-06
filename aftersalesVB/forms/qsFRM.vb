@@ -1,47 +1,37 @@
 ﻿Imports System.Data.SqlClient
-Imports MetroFramework
-
-Public Class concernFRM
+Public Class qsFRM
     Dim sql As New sql
+    Public id As String
     Dim counter As String
-    Public aid As String
-
-    Private Sub concernFRM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub qsFRM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Height = Screen.PrimaryScreen.Bounds.Height - 37
-        loadconcern()
+        loadquestionnaire()
     End Sub
-
-    Private Sub refresh_Click(sender As Object, e As EventArgs) Handles refreshbtn.Click
-        loadconcern()
-    End Sub
-    Public Sub loadconcern()
-        Dim str As String = "select aid,qid,chk,ITEM,ANSWER AS CONCERN from answertb where qid = @qid"
+    Public Sub loadquestionnaire()
         Dim ds As New DataSet
         ds.Clear()
+        Dim str As String = "select QID,ITEM,QUESTION AS [(SPECIFICATION) QUESTION] from questionnairetb order by item asc"
         Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
             Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
-                Using da As SqlDataAdapter = New SqlDataAdapter()
+                Using da As SqlDataAdapter = New SqlDataAdapter
                     Try
                         sqlcon.Open()
-                        answerGRID.Columns.Clear()
-                        sqlcmd.Parameters.AddWithValue("@qid", qsFRM.id)
+                        questionGRID.Columns.Clear()
                         da.SelectCommand = sqlcmd
-                        da.Fill(ds, "answertb")
-                        answerGRID.DataSource = ds.Tables("answertb")
+                        da.Fill(ds, "questionnairetb")
+                        questionGRID.DataSource = ds.Tables("questionnairetb")
                         addcolumns()
-                        answerGRID.Columns("aid").Visible = False
-                        answerGRID.Columns("qid").Visible = False
-                        answerGRID.Columns("chk").Visible = False
-                        answerGRID.Columns("item").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-                        answerGRID.Columns("CONCERN").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+                        questionGRID.Columns("qid").Visible = False
+                        questionGRID.Columns("item").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+                        questionGRID.Columns("(SPECIFICATION) QUESTION").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
                     Catch ex As Exception
                         MsgBox(ex.ToString)
                     End Try
                 End Using
             End Using
-            Dim str1 As String = "select isnull(count(aid),0)+1 from answertb where qid = @qid"
+
+            Dim str1 As String = "select isnull(count(qid),0)+1 from questionnairetb"
             Using sqlcmd As SqlCommand = New SqlCommand(str1, sqlcon)
-                sqlcmd.Parameters.AddWithValue("@qid", qsFRM.id)
                 Using rd As SqlDataReader = sqlcmd.ExecuteReader
                     While rd.Read
                         counter = rd(0).ToString
@@ -53,20 +43,19 @@ Public Class concernFRM
     End Sub
     Public Sub addone()
         If counter = "1" Then
-            Dim str As String = "declare @id as integer = (select isnull(max(aid),0)+1 from answertb)
-                                 insert into answertb (aid,qid,chk,item,answer)values(@id,@qid,'0','','')"
+            Dim str As String = "declare @id as integer = (select isnull(max(qid),0)+1 from questionnairetb)
+                                 insert into questionnairetb (qid,item,question)values(@id,'','')"
             Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
                 Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
                     Try
                         sqlcon.Open()
-                        sqlcmd.Parameters.AddWithValue("@qid", qsFRM.id)
                         sqlcmd.ExecuteNonQuery()
                     Catch ex As Exception
                         MsgBox(ex.ToString)
                     End Try
                 End Using
             End Using
-            loadconcern()
+            loadquestionnaire()
         Else
             Return
         End If
@@ -96,35 +85,35 @@ Public Class concernFRM
             .UseColumnTextForButtonValue = True
         End With
 
-        answerGRID.Columns.Insert(5, updatebtn)
-        answerGRID.Columns.Insert(6, deletebtn)
-
+        questionGRID.Columns.Insert(3, updatebtn)
+        questionGRID.Columns.Insert(4, deletebtn)
+        questionGRID.Columns.Insert(5, concernbtn)
     End Sub
 
-    Private Sub concernFRM_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+    Private Sub qsFRM_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Me.Dispose()
     End Sub
 
-    Private Sub answerGRID_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles answerGRID.CellClick
-        If answerGRID.RowCount >= 0 And e.RowIndex >= 0 Then
-            If e.ColumnIndex = 5 Then
-                aid = answerGRID.Item("aid", e.RowIndex).Value.ToString
-                newconcernFRM.item.Text = answerGRID.Item("item", e.RowIndex).Value.ToString
-                newconcernFRM.concern.Text = answerGRID.Item("concern", e.RowIndex).Value.ToString
-                newconcernFRM.Text = "Editing"
-                newconcernFRM.save.Text = "save"
-                newconcernFRM.ShowDialog()
-            ElseIf e.ColumnIndex = 6 Then
+    Private Sub questionGRID_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles questionGRID.CellClick
+        If questionGRID.RowCount >= 0 And e.RowIndex >= 0 Then
+            If e.ColumnIndex = 3 Then
+                id = questionGRID.Item("qid", e.RowIndex).Value.ToString
+                newqsFRM.question.Text = questionGRID.Item("(specification) question", e.RowIndex).Value.ToString
+                newqsFRM.item.Text = questionGRID.Item("item", e.RowIndex).Value.ToString
+                newqsFRM.Text = "Editing"
+                newqsFRM.save.Text = "save"
+                newqsFRM.ShowDialog()
+            ElseIf e.ColumnIndex = 4 Then
                 If MetroFramework.MetroMessageBox.Show(Me, "Delete selected item?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
                     Return
                 Else
-                    aid = answerGRID.Item("aid", e.RowIndex).Value.ToString
-                    Dim str As String = "delete from answertb where aid = @aid"
+                    id = questionGRID.Item("qid", e.RowIndex).Value.ToString
+                    Dim str As String = "delete from questionnairetb where qid = @qid"
                     Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
                         Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
                             Try
                                 sqlcon.Open()
-                                sqlcmd.Parameters.AddWithValue("@aid", aid)
+                                sqlcmd.Parameters.AddWithValue("@qid", id)
                                 sqlcmd.ExecuteNonQuery()
                             Catch ex As Exception
                                 MsgBox(ex.ToString)
@@ -132,16 +121,24 @@ Public Class concernFRM
                         End Using
                     End Using
                 End If
-                loadconcern()
+                loadquestionnaire()
+            ElseIf e.ColumnIndex = 5 Then
+                id = questionGRID.Item("qid", e.RowIndex).Value.ToString
+                concernFRM.Text = questionGRID.Item("(specification) question", e.RowIndex).Value.ToString
+                concernFRM.ShowDialog()
             End If
         End If
     End Sub
 
+    Private Sub refresh_Click(sender As Object, e As EventArgs) Handles refreshbtn.Click
+        loadquestionnaire()
+    End Sub
+
     Private Sub newbtn_Click(sender As Object, e As EventArgs) Handles newbtn.Click
-        newconcernFRM.item.Text = ""
-        newconcernFRM.concern.Text = ""
-        newconcernFRM.Text = "New"
-        newconcernFRM.save.Text = "add"
-        newconcernFRM.ShowDialog()
+        newqsFRM.question.Text = ""
+        newqsFRM.item.Text = ""
+        newqsFRM.Text = "New"
+        newqsFRM.save.Text = "add"
+        newqsFRM.ShowDialog()
     End Sub
 End Class

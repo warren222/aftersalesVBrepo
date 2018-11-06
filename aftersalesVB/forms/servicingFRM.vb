@@ -60,7 +60,7 @@ Public Class servicingFRM
     Public Sub addbtn()
         Dim statusbtn As New DataGridViewButtonColumn
         Dim reportbtn As New DataGridViewButtonColumn
-        Dim addbtn As New DataGridViewButtonColumn
+
         Dim updatebtn As New DataGridViewButtonColumn
         Dim deletebtn As New DataGridViewButtonColumn
 
@@ -72,9 +72,6 @@ Public Class servicingFRM
         reportbtn.HeaderText = ""
         reportbtn.Text = "report"
 
-        addbtn.Name = "addbtn"
-        addbtn.HeaderText = ""
-        addbtn.Text = "new"
 
         updatebtn.Name = "updatebtn"
         updatebtn.HeaderText = ""
@@ -86,15 +83,15 @@ Public Class servicingFRM
 
         statusbtn.UseColumnTextForButtonValue = False
         reportbtn.UseColumnTextForButtonValue = True
-        addbtn.UseColumnTextForButtonValue = True
+
         updatebtn.UseColumnTextForButtonValue = True
         deletebtn.UseColumnTextForButtonValue = True
 
         servicingGRID.Columns.Insert(0, statusbtn)
         servicingGRID.Columns.Insert(7, reportbtn)
-        servicingGRID.Columns.Insert(9, addbtn)
-        servicingGRID.Columns.Insert(10, updatebtn)
-        servicingGRID.Columns.Insert(11, deletebtn)
+
+        servicingGRID.Columns.Insert(9, updatebtn)
+        servicingGRID.Columns.Insert(10, deletebtn)
 
 
         For i As Integer = 0 To servicingGRID.RowCount - 1
@@ -153,20 +150,15 @@ Public Class servicingFRM
                 id = servicingGRID.Item("id", e.RowIndex).Value.ToString
                 reportFRM.servicing.Text = servicingGRID.Item("servicing", e.RowIndex).Value.ToString
                 reportFRM.ShowDialog()
+
             ElseIf e.ColumnIndex = 9 Then
-                newservicingFRM.Text = "New"
-                newservicingFRM.save.Text = "add"
-                newservicingFRM.servicingdate.Text = ""
-                newservicingFRM.assignedpersonnelTXT.Text = ""
-                newservicingFRM.ShowDialog()
-            ElseIf e.ColumnIndex = 10 Then
                 newservicingFRM.Text = "Editing"
                 newservicingFRM.save.Text = "save"
                 id = servicingGRID.Item("id", e.RowIndex).Value.ToString
                 newservicingFRM.servicingdate.Text = servicingGRID.Item("servicing date", e.RowIndex).Value.ToString
                 newservicingFRM.assignedpersonnelTXT.Text = servicingGRID.Item("ASSIGNED PERSONNEL", e.RowIndex).Value.ToString
                 newservicingFRM.ShowDialog()
-            ElseIf e.ColumnIndex = 11 Then
+            ElseIf e.ColumnIndex = 10 Then
                 If MetroFramework.MetroMessageBox.Show(Me, "Delete " & servicingGRID.Item("servicing", e.RowIndex).Value.ToString & "?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
                     Return
                 Else
@@ -199,5 +191,13 @@ Public Class servicingFRM
 
     Private Sub metroTextButton1_Click(sender As Object, e As EventArgs)
 
+    End Sub
+
+    Private Sub newbtn_Click(sender As Object, e As EventArgs) Handles newbtn.Click
+        newservicingFRM.Text = "New"
+        newservicingFRM.save.Text = "add"
+        newservicingFRM.servicingdate.Text = ""
+        newservicingFRM.assignedpersonnelTXT.Text = ""
+        newservicingFRM.ShowDialog()
     End Sub
 End Class
