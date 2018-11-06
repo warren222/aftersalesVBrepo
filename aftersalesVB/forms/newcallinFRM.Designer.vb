@@ -156,7 +156,6 @@ Partial Class newcallinFRM
         '
         Me.Panel1.AutoScroll = True
         Me.Panel1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Panel1.Controls.Add(Me.updateBTN)
         Me.Panel1.Controls.Add(Me.addBTN)
         Me.Panel1.Controls.Add(Me.jo)
         Me.Panel1.Controls.Add(Me.address)
@@ -168,6 +167,7 @@ Partial Class newcallinFRM
         Me.Panel1.Controls.Add(Me.calldategen)
         Me.Panel1.Controls.Add(Me.callername)
         Me.Panel1.Controls.Add(Me.calldate)
+        Me.Panel1.Controls.Add(Me.updateBTN)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(20, 60)
         Me.Panel1.Name = "Panel1"
@@ -177,14 +177,14 @@ Partial Class newcallinFRM
         'updateBTN
         '
         Me.updateBTN.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.updateBTN.Image = CType(resources.GetObject("updateBTN.Image"), System.Drawing.Image)
+        Me.updateBTN.Image = Nothing
         Me.updateBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.updateBTN.Location = New System.Drawing.Point(764, 789)
         Me.updateBTN.Name = "updateBTN"
         Me.updateBTN.Size = New System.Drawing.Size(98, 35)
         Me.updateBTN.Style = MetroFramework.MetroColorStyle.Green
         Me.updateBTN.TabIndex = 488
-        Me.updateBTN.Text = "Update"
+        Me.updateBTN.Text = "save"
         Me.updateBTN.UseSelectable = True
         Me.updateBTN.UseVisualStyleBackColor = True
         Me.updateBTN.Visible = False
@@ -199,7 +199,7 @@ Partial Class newcallinFRM
         Me.addBTN.Size = New System.Drawing.Size(98, 35)
         Me.addBTN.Style = MetroFramework.MetroColorStyle.Red
         Me.addBTN.TabIndex = 487
-        Me.addBTN.Text = "Add"
+        Me.addBTN.Text = "add"
         Me.addBTN.UseSelectable = True
         Me.addBTN.UseVisualStyleBackColor = True
         Me.addBTN.Visible = False

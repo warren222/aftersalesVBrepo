@@ -3,7 +3,7 @@ Imports MetroFramework
 
 Public Class concernFRM
     Dim sql As New sql
-    Dim counter As String
+
     Public aid As String
 
     Private Sub concernFRM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -39,37 +39,7 @@ Public Class concernFRM
                     End Try
                 End Using
             End Using
-            Dim str1 As String = "select isnull(count(aid),0)+1 from answertb where qid = @qid"
-            Using sqlcmd As SqlCommand = New SqlCommand(str1, sqlcon)
-                sqlcmd.Parameters.AddWithValue("@qid", qsFRM.id)
-                Using rd As SqlDataReader = sqlcmd.ExecuteReader
-                    While rd.Read
-                        counter = rd(0).ToString
-                    End While
-                End Using
-            End Using
         End Using
-        addone()
-    End Sub
-    Public Sub addone()
-        If counter = "1" Then
-            Dim str As String = "declare @id as integer = (select isnull(max(aid),0)+1 from answertb)
-                                 insert into answertb (aid,qid,chk,item,answer)values(@id,@qid,'0','','')"
-            Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
-                Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
-                    Try
-                        sqlcon.Open()
-                        sqlcmd.Parameters.AddWithValue("@qid", qsFRM.id)
-                        sqlcmd.ExecuteNonQuery()
-                    Catch ex As Exception
-                        MsgBox(ex.ToString)
-                    End Try
-                End Using
-            End Using
-            loadconcern()
-        Else
-            Return
-        End If
     End Sub
     Public Sub addcolumns()
 

@@ -2,7 +2,7 @@
 Public Class qsFRM
     Dim sql As New sql
     Public id As String
-    Dim counter As String
+
     Private Sub qsFRM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Height = Screen.PrimaryScreen.Bounds.Height - 37
         loadquestionnaire()
@@ -29,37 +29,10 @@ Public Class qsFRM
                     End Try
                 End Using
             End Using
-
-            Dim str1 As String = "select isnull(count(qid),0)+1 from questionnairetb"
-            Using sqlcmd As SqlCommand = New SqlCommand(str1, sqlcon)
-                Using rd As SqlDataReader = sqlcmd.ExecuteReader
-                    While rd.Read
-                        counter = rd(0).ToString
-                    End While
-                End Using
-            End Using
         End Using
-        addone()
+
     End Sub
-    Public Sub addone()
-        If counter = "1" Then
-            Dim str As String = "declare @id as integer = (select isnull(max(qid),0)+1 from questionnairetb)
-                                 insert into questionnairetb (qid,item,question)values(@id,'','')"
-            Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
-                Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
-                    Try
-                        sqlcon.Open()
-                        sqlcmd.ExecuteNonQuery()
-                    Catch ex As Exception
-                        MsgBox(ex.ToString)
-                    End Try
-                End Using
-            End Using
-            loadquestionnaire()
-        Else
-            Return
-        End If
-    End Sub
+
     Public Sub addcolumns()
 
         Dim updatebtn As New DataGridViewButtonColumn

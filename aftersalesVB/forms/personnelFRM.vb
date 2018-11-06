@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Public Class personnelFRM
     Dim SQL As New sql
-    Dim rowcount As String
+
     Public id As String
     Public Sub loadpersonnel()
         Dim str As String = "select * from personneltb"
@@ -26,20 +26,8 @@ Public Class personnelFRM
                     End Try
                 End Using
             End Using
-            Dim str2 As String = "select isnull(count(id),0) from personneltb"
-            Using sqlcmd As SqlCommand = New SqlCommand(str2, sqlcon)
-                Using rd As SqlDataReader = sqlcmd.ExecuteReader
-                    Try
-                        While rd.Read
-                            rowcount = rd(0).ToString
-                        End While
-                    Catch ex As Exception
-                        MsgBox(ex.ToString)
-                    End Try
-                End Using
-            End Using
         End Using
-            countgrid()
+
     End Sub
     Public Sub addbtn()
 
@@ -65,25 +53,7 @@ Public Class personnelFRM
         Me.Height = Screen.PrimaryScreen.Bounds.Height - 37
         loadpersonnel()
     End Sub
-    Public Sub countgrid()
-        If rowcount = 0 Then
-            Dim str As String = "declare @id as integer =(select isnull(max(id),0)+1 from personneltb)
-                                 insert into personneltb (id,personnel)values(@id,'Personnel')"
-            Using sqlcon As SqlConnection = New SqlConnection(SQL.sqlcon1str)
-                Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
-                    Try
-                        sqlcon.Open()
-                        sqlcmd.ExecuteNonQuery()
-                    Catch ex As Exception
-                        MsgBox(ex.ToString)
-                    End Try
-                End Using
-            End Using
-            loadpersonnel()
-        Else
-            Return
-        End If
-    End Sub
+
 
     Private Sub personnelGRID_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles personnelGRID.CellClick
         If personnelGRID.RowCount >= 0 And e.RowIndex >= 0 Then

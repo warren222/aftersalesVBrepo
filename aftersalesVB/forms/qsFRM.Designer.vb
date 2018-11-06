@@ -66,7 +66,6 @@ Partial Class qsFRM
         '
         'refreshbtn
         '
-        Me.refreshbtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.refreshbtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.refreshbtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.refreshbtn.Image = Nothing
@@ -83,7 +82,6 @@ Partial Class qsFRM
         '
         'newbtn
         '
-        Me.newbtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.newbtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.newbtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.newbtn.Image = Nothing
