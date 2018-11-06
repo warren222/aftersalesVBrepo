@@ -19,7 +19,6 @@ Public Class personnelFRM
                         addbtn()
                         personnelGRID.Columns("ID").Visible = False
                         personnelGRID.Columns("PERSONNEL").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-                        personnelGRID.Columns("ADDBTN").Width = 70
                         personnelGRID.Columns("UPDATEBTN").Width = 70
                         personnelGRID.Columns("DELETEBTN").Width = 70
                     Catch ex As Exception
@@ -43,13 +42,9 @@ Public Class personnelFRM
             countgrid()
     End Sub
     Public Sub addbtn()
-        Dim addbtn As New DataGridViewButtonColumn
+
         Dim updatebtn As New DataGridViewButtonColumn
         Dim deletebtn As New DataGridViewButtonColumn
-
-        addbtn.Name = "addbtn"
-        addbtn.HeaderText = ""
-        addbtn.Text = "new"
 
         updatebtn.Name = "updatebtn"
         updatebtn.HeaderText = ""
@@ -59,14 +54,11 @@ Public Class personnelFRM
         deletebtn.HeaderText = ""
         deletebtn.Text = "delete"
 
-
-        addbtn.UseColumnTextForButtonValue = True
         updatebtn.UseColumnTextForButtonValue = True
         deletebtn.UseColumnTextForButtonValue = True
 
-        personnelGRID.Columns.Insert(2, addbtn)
-        personnelGRID.Columns.Insert(3, updatebtn)
-        personnelGRID.Columns.Insert(4, deletebtn)
+        personnelGRID.Columns.Insert(2, updatebtn)
+        personnelGRID.Columns.Insert(3, deletebtn)
     End Sub
 
     Private Sub personnelFRM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -96,17 +88,12 @@ Public Class personnelFRM
     Private Sub personnelGRID_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles personnelGRID.CellClick
         If personnelGRID.RowCount >= 0 And e.RowIndex >= 0 Then
             If e.ColumnIndex = 2 Then
-                editpersonnelFRM.PERSONNEL.Text = ""
-                editpersonnelFRM.Text = "New"
-                editpersonnelFRM.SAVE.Text = "add"
-                editpersonnelFRM.ShowDialog()
-            ElseIf e.ColumnIndex = 3 Then
                 id = personnelGRID.Item("id", e.RowIndex).Value.ToString
                 editpersonnelFRM.PERSONNEL.Text = personnelGRID.Item("personnel", e.RowIndex).Value.ToString
                 editpersonnelFRM.Text = "Editing"
                 editpersonnelFRM.SAVE.Text = "save"
                 editpersonnelFRM.ShowDialog()
-            ElseIf e.ColumnIndex = 4 Then
+            ElseIf e.ColumnIndex = 3 Then
                 id = personnelGRID.Item("id", e.RowIndex).Value.ToString
                 If MetroFramework.MetroMessageBox.Show(Me, "Delete " & personnelGRID.Item("personnel", e.RowIndex).Value.ToString & "?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
                     Return
@@ -123,17 +110,24 @@ Public Class personnelFRM
                             End Try
                         End Using
                     End Using
-                    refresh.PerformClick()
+                    refreshbtn.PerformClick()
                 End If
             End If
         End If
     End Sub
 
-    Private Sub refresh_Click(sender As Object, e As EventArgs) Handles refresh.Click
+    Private Sub refresh_Click(sender As Object, e As EventArgs) Handles refreshbtn.Click
         loadpersonnel()
     End Sub
 
     Private Sub personnelFRM_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Me.Dispose()
+    End Sub
+
+    Private Sub newbtn_Click(sender As Object, e As EventArgs) Handles newbtn.Click
+        editpersonnelFRM.PERSONNEL.Text = ""
+        editpersonnelFRM.Text = "New"
+        editpersonnelFRM.SAVE.Text = "add"
+        editpersonnelFRM.ShowDialog()
     End Sub
 End Class
