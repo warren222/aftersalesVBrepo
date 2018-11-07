@@ -55,7 +55,7 @@ Public Class servicingFRM
                 End Using
             End Using
         End Using
-        countservicing()
+
     End Sub
     Public Sub addbtn()
         Dim statusbtn As New DataGridViewButtonColumn
@@ -100,28 +100,7 @@ Public Class servicingFRM
 
     End Sub
 
-    Public Sub countservicing()
-        If scount = 1 Then
-            suffixvalue()
-            Dim str As String = "declare @id as integer = (select isnull(max(id),0)+1 from servicingtb)
-                                 insert into servicingtb (id,cin,servicing)values(@id,@cin,@servicing)"
-            Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
-                Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
-                    Try
-                        sqlcon.Open()
-                        sqlcmd.Parameters.AddWithValue("@cin", mainform.tempcin)
-                        sqlcmd.Parameters.AddWithValue("@servicing", suffix)
-                        sqlcmd.ExecuteNonQuery()
-                    Catch ex As Exception
-                        MsgBox(ex.ToString)
-                    End Try
-                End Using
-            End Using
-            loadservicing()
-        Else
-            Return
-        End If
-    End Sub
+
     Public Sub suffixvalue()
         Dim x As String
         Select Case scount

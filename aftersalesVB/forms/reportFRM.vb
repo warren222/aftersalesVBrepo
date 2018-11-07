@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Public Class reportFRM
     Dim sql As New sql
-    Dim rcount As String
+
     Public id As String
     Private Sub reportFRM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Height = Screen.PrimaryScreen.Bounds.Height - 37
@@ -34,32 +34,17 @@ Public Class reportFRM
                     End Try
                 End Using
             End Using
-
-            Dim str2 As String = "select isnull(count(id),0)+1 from reporttb where SID = @SID"
-            Using sqlcmd As SqlCommand = New SqlCommand(str2, sqlcon)
-                sqlcmd.Parameters.AddWithValue("@SID", servicingFRM.id)
-                Using rd As SqlDataReader = sqlcmd.ExecuteReader
-                    While rd.Read
-                        rcount = rd(0).ToString
-                    End While
-                End Using
-            End Using
         End Using
-        insertreport()
     End Sub
     Public Sub addcolumns()
-
-
         Dim updatebtn As New DataGridViewButtonColumn
         Dim deletebtn As New DataGridViewButtonColumn
-
         With updatebtn
             .Name = "updatebtn"
             .HeaderText = ""
             .Text = "update"
             .UseColumnTextForButtonValue = True
         End With
-
         With deletebtn
             .Name = "deletebtn"
             .HeaderText = ""
@@ -68,26 +53,6 @@ Public Class reportFRM
         End With
         reportGRID.Columns.Insert(5, updatebtn)
         reportGRID.Columns.Insert(6, deletebtn)
-    End Sub
-    Public Sub insertreport()
-        If rcount = 1 Then
-            Dim str As String = "declare @id as integer = (select isnull(max(id),0)+1 from reporttb)
-                                 insert into reporttb (id,sid,location,specification,assessment)values(@id,@sid,'','','')"
-            Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
-                Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
-                    Try
-                        sqlcon.Open()
-                        sqlcmd.Parameters.AddWithValue("@sid", servicingFRM.id)
-                        sqlcmd.ExecuteNonQuery()
-                    Catch ex As Exception
-                        MsgBox(ex.ToString)
-                    End Try
-                End Using
-            End Using
-            loadreport()
-        Else
-            Return
-        End If
     End Sub
 
     Private Sub reportFRM_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing

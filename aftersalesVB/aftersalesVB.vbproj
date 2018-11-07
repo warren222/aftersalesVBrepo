@@ -113,6 +113,12 @@
     <Compile Include="forms\editpersonnelFRM.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="forms\itemFRM.Designer.vb">
+      <DependentUpon>itemFRM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\itemFRM.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="forms\mainform.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -132,10 +138,22 @@
     <Compile Include="forms\newconcernFRM.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="forms\newitemFRM.Designer.vb">
+      <DependentUpon>newitemFRM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\newitemFRM.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="forms\newqsFRM.Designer.vb">
       <DependentUpon>newqsFRM.vb</DependentUpon>
     </Compile>
     <Compile Include="forms\newqsFRM.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\newquFRM.Designer.vb">
+      <DependentUpon>newquFRM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\newquFRM.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\newreportFRM.Designer.vb">
@@ -160,6 +178,12 @@
       <DependentUpon>qsFRM.vb</DependentUpon>
     </Compile>
     <Compile Include="forms\qsFRM.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\quotationFRM.Designer.vb">
+      <DependentUpon>quotationFRM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\quotationFRM.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\reportFRM.Designer.vb">
@@ -212,6 +236,9 @@
     <EmbeddedResource Include="forms\editpersonnelFRM.resx">
       <DependentUpon>editpersonnelFRM.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms\itemFRM.resx">
+      <DependentUpon>itemFRM.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\mainform.resx">
       <DependentUpon>mainform.vb</DependentUpon>
     </EmbeddedResource>
@@ -221,8 +248,14 @@
     <EmbeddedResource Include="forms\newconcernFRM.resx">
       <DependentUpon>newconcernFRM.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms\newitemFRM.resx">
+      <DependentUpon>newitemFRM.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\newqsFRM.resx">
       <DependentUpon>newqsFRM.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\newquFRM.resx">
+      <DependentUpon>newquFRM.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\newreportFRM.resx">
       <DependentUpon>newreportFRM.vb</DependentUpon>
@@ -235,6 +268,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\qsFRM.resx">
       <DependentUpon>qsFRM.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\quotationFRM.resx">
+      <DependentUpon>quotationFRM.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\reportFRM.resx">
       <DependentUpon>reportFRM.vb</DependentUpon>

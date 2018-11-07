@@ -69,6 +69,7 @@ Public Class mainform
     Public Sub addbtncolumns()
         Dim concernbtn As New DataGridViewButtonColumn
         Dim servicingbtn As New DataGridViewButtonColumn
+        Dim quotationbtn As New DataGridViewButtonColumn
         concernbtn.Name = "concern"
         concernbtn.HeaderText = ""
         concernbtn.Text = "concern"
@@ -79,9 +80,15 @@ Public Class mainform
         servicingbtn.Text = "servicing"
         servicingbtn.UseColumnTextForButtonValue = True
 
+        With quotationbtn
+            .Name = "quotation"
+            .HeaderText = ""
+            .Text = "quotation"
+            .UseColumnTextForButtonValue = True
+        End With
         callinGRID.Columns.Insert(7, concernbtn)
         callinGRID.Columns.Insert(8, servicingbtn)
-
+        callinGRID.Columns.Insert(9, quotationbtn)
 
     End Sub
     Private Sub newPNL_Click(sender As Object, e As EventArgs) Handles newPNL.Click
@@ -153,6 +160,11 @@ Public Class mainform
                 servicingFRM.address.Text = row.Cells("address").Value.ToString
                 servicingFRM.jo.Text = row.Cells("jo").Value.ToString
                 servicingFRM.ShowDialog()
+            ElseIf e.ColumnIndex = 9 Then
+                quotationFRM.projectname.Text = row.Cells("project").Value.ToString
+                quotationFRM.address.Text = row.Cells("address").Value.ToString
+                quotationFRM.jo.Text = row.Cells("jo").Value.ToString
+                quotationFRM.ShowDialog()
             End If
         End If
 
