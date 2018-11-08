@@ -372,8 +372,10 @@ Partial Class newitemFRM
         Me.Controls.Add(Me.unitprice)
         Me.Controls.Add(Me.qty)
         Me.Controls.Add(Me.netamount)
+        Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(729, 283)
+        Me.MinimizeBox = False
         Me.Name = "newitemFRM"
-        Me.Text = "newitemFRM"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

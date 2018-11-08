@@ -111,7 +111,7 @@ Public Class quotationFRM
                     loadquotation()
                 End If
             ElseIf e.ColumnIndex = 7 Then
-                aseno = quGRID.Item("id", e.RowIndex).Value.ToString
+                aseno = quGRID.Item("ASENO", e.RowIndex).Value.ToString
                 itemFRM.Text = quGRID.Item("ASENO", e.RowIndex).Value.ToString
                 itemFRM.ShowDialog()
             End If
