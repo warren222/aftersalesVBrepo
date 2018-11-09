@@ -3,10 +3,21 @@ Public Class itemFRM
     Dim sql As New sql
     Public id As String
     Private Sub itemFRM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.Height = Screen.PrimaryScreen.Bounds.Bottom - 37
         loaditems()
     End Sub
     Public Sub loaditems()
-        Dim str As String = "select * from itemtb where aseno = @aseno"
+        Dim str As String = "select 
+ID,
+ASENO,
+ITEM,
+KNO AS [K#],
+WDWLOC as [WDW/DOOR LOCATION],
+PARTS as [PARTS / ACCESSORIES USED],
+UNITPRICE as [UNIT PRICE],
+QTY,
+NETPRICE AS [NEW PRICE]
+from itemtb where aseno = @aseno"
         Dim ds As New DataSet
         ds.Clear()
         Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
@@ -20,6 +31,17 @@ Public Class itemFRM
                         da.Fill(ds, "itemtb")
                         itemGRID.DataSource = ds.Tables("itemtb")
                         addcolumns()
+                        With itemGRID
+                            .Columns("ID").Visible = False
+                            .Columns("ASENO").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+                            .Columns("ITEM").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+                            .Columns("K#").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+                            .Columns("WDW/DOOR LOCATION").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+                            .Columns("PARTS / ACCESSORIES USED").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+                            .Columns("UNIT PRICE").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+                            .Columns("QTY").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+                            .Columns("NEW PRICE").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+                        End With
                     Catch ex As Exception
                         MsgBox(ex.ToString)
                     End Try
@@ -30,7 +52,7 @@ Public Class itemFRM
     Public Sub addcolumns()
         Dim updatebtn As New DataGridViewButtonColumn
         Dim deletebtn As New DataGridViewButtonColumn
-
+        Dim partsbtn As New DataGridViewButtonColumn
         With updatebtn
             .Text = "update"
             .HeaderText = ""
@@ -43,9 +65,16 @@ Public Class itemFRM
             .Name = "deletebtn"
             .UseColumnTextForButtonValue = True
         End With
+        With partsbtn
+            .Text = "parts"
+            .HeaderText = ""
+            .Name = "partsbtn"
+            .UseColumnTextForButtonValue = True
+        End With
         With itemGRID
-            .Columns.Insert(9, updatebtn)
-            .Columns.Insert(10, deletebtn)
+            .Columns.Insert(9, partsbtn)
+            .Columns.Insert(10, updatebtn)
+            .Columns.Insert(11, deletebtn)
         End With
     End Sub
 
@@ -66,18 +95,18 @@ Public Class itemFRM
         If itemGRID.RowCount >= 0 And e.RowIndex >= 0 Then
             If e.ColumnIndex = 9 Then
                 id = itemGRID.Item("id", e.RowIndex).Value.ToString
-                newitemFRM.kno.Text = itemGRID.Item("kno", e.RowIndex).Value.ToString
+                partsFRM.Text = "" & itemGRID.Item("k#", e.RowIndex).Value.ToString & ", " & itemGRID.Item("item", e.RowIndex).Value.ToString & ", " & itemGRID.Item("WDW/DOOR LOCATION", e.RowIndex).Value.ToString & ""
+                partsFRM.ShowDialog()
+            ElseIf e.ColumnIndex = 10 Then
+                id = itemGRID.Item("id", e.RowIndex).Value.ToString
+                newitemFRM.kno.Text = itemGRID.Item("k#", e.RowIndex).Value.ToString
                 newitemFRM.itemno.Text = itemGRID.Item("item", e.RowIndex).Value.ToString
-                newitemFRM.wdwloc.Text = itemGRID.Item("wdwloc", e.RowIndex).Value.ToString
-                newitemFRM.parts.Text = itemGRID.Item("parts", e.RowIndex).Value.ToString
-                newitemFRM.unitprice.Text = itemGRID.Item("unitprice", e.RowIndex).Value.ToString
-                newitemFRM.qty.Text = itemGRID.Item("qty", e.RowIndex).Value.ToString
-                newitemFRM.netamount.Text = itemGRID.Item("netprice", e.RowIndex).Value.ToString
+                newitemFRM.wdwloc.Text = itemGRID.Item("WDW/DOOR LOCATION", e.RowIndex).Value.ToString
                 newitemFRM.Text = "Editing"
                 newitemFRM.save.Text = "save"
                 newitemFRM.ShowDialog()
-            ElseIf e.ColumnIndex = 10 Then
-                If MetroFramework.MetroMessageBox.Show(Me, "Delete " & itemGRID.Item("kno", e.RowIndex).Value.ToString & "", "Confirmatioon", MessageBoxButtons.YesNo, MessageBoxIcon.Information) = DialogResult.No Then
+            ElseIf e.ColumnIndex = 11 Then
+                If MetroFramework.MetroMessageBox.Show(Me, "Delete " & itemGRID.Item("k#", e.RowIndex).Value.ToString & "", "Confirmatioon", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
                     Return
                 Else
                     id = itemGRID.Item("id", e.RowIndex).Value.ToString

@@ -60,15 +60,15 @@ Public Class quotationFRM
             .UseColumnTextForButtonValue = True
         End With
         With itembtn
-            .Text = "item"
+            .Text = "items"
             .Name = "itembtn"
             .HeaderText = ""
             .UseColumnTextForButtonValue = True
         End With
         With quGRID
-            .Columns.Insert(5, updatebtn)
-            .Columns.Insert(6, deletebtn)
-            .Columns.Insert(7, itembtn)
+            .Columns.Insert(5, itembtn)
+            .Columns.Insert(6, updatebtn)
+            .Columns.Insert(7, deletebtn)
         End With
     End Sub
 
@@ -84,14 +84,14 @@ Public Class quotationFRM
 
     Private Sub quGRID_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles quGRID.CellClick
         If quGRID.RowCount >= 0 And e.RowIndex >= 0 Then
-            If e.ColumnIndex = 5 Then
+            If e.ColumnIndex = 6 Then
                 id = quGRID.Item("id", e.RowIndex).Value.ToString
                 newquFRM.qudate.Text = quGRID.Item("date", e.RowIndex).Value.ToString
                 newquFRM.aseno.Text = quGRID.Item("aseno", e.RowIndex).Value.ToString
                 newquFRM.Text = "Editing"
                 newquFRM.save.Text = "save"
                 newquFRM.ShowDialog()
-            ElseIf e.ColumnIndex = 6 Then
+            ElseIf e.ColumnIndex = 7 Then
                 id = quGRID.Item("id", e.RowIndex).Value.ToString
                 If MetroFramework.MetroMessageBox.Show(Me, "Delete " & quGRID.Item("aseno", e.RowIndex).Value.ToString & "?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
                     Return
@@ -110,7 +110,7 @@ Public Class quotationFRM
                     End Using
                     loadquotation()
                 End If
-            ElseIf e.ColumnIndex = 7 Then
+            ElseIf e.ColumnIndex = 5 Then
                 aseno = quGRID.Item("ASENO", e.RowIndex).Value.ToString
                 itemFRM.Text = quGRID.Item("ASENO", e.RowIndex).Value.ToString
                 itemFRM.ShowDialog()
