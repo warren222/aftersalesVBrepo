@@ -119,6 +119,7 @@ Partial Class itemFRM
         Me.Controls.Add(Me.itemGRID)
         Me.Name = "itemFRM"
         Me.Text = "itemFRM"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.itemGRID, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

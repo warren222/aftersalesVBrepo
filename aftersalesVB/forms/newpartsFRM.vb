@@ -7,12 +7,13 @@ Public Class newpartsFRM
             add()
             partsFRM.refreshbtn.PerformClick()
         ElseIf save.Text = "save" Then
-
+            update()
+            partsFRM.refreshbtn.PerformClick()
         End If
     End Sub
     Public Sub add()
         Dim str As String = "
-                    declare @id as integegr = (select isnull(max(id),0)+1 from partstb)
+                    declare @id as integer = (select isnull(max(id),0)+1 from partstb)
                     insert into partstb (id,iid,articleno,description,markup,unitprice,qty,netamount)
                     values (@id,@iid,@articleno,@description,@markup,@unitprice,@qty,@netamount)"
         Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
@@ -34,7 +35,27 @@ Public Class newpartsFRM
         End Using
     End Sub
     Public Sub update()
-
+        Dim str As String = "
+                 
+                    update partstb set articleno=@articleno,description=@description,markup=@markup,unitprice=@unitprice,qty=@qty,netamount=@netamount
+                    where id = @id"
+        Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
+            Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
+                Try
+                    sqlcon.Open()
+                    sqlcmd.Parameters.AddWithValue("@id", partsFRM.id)
+                    sqlcmd.Parameters.AddWithValue("@articleno", articleno.Text)
+                    sqlcmd.Parameters.AddWithValue("@description", description.Text)
+                    sqlcmd.Parameters.AddWithValue("@markup", markup.Text)
+                    sqlcmd.Parameters.AddWithValue("@unitprice", unitprice.Text)
+                    sqlcmd.Parameters.AddWithValue("@qty", qty.Text)
+                    sqlcmd.Parameters.AddWithValue("@netamount", netamount.Text)
+                    sqlcmd.ExecuteNonQuery()
+                Catch ex As Exception
+                    MsgBox(ex.ToString)
+                End Try
+            End Using
+        End Using
     End Sub
 
     Public Sub zero(ByVal x As Object)
@@ -52,5 +73,9 @@ Public Class newpartsFRM
         Else
             netamount.Text = ""
         End If
+    End Sub
+
+    Private Sub newpartsFRM_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Me.Dispose()
     End Sub
 End Class

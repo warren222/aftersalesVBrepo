@@ -18,7 +18,6 @@ Public Class newitemFRM
 
 
     Public Sub add()
-
         Dim str As String = "declare @id as integer = (select isnull(max(id),0)+1 from itemtb)
 insert into itemtb (id,aseno,ITEM,kno,wdwloc)
 values(@id,@aseno,@item,@kno,@loc)"
