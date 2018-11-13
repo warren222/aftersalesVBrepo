@@ -59,7 +59,7 @@ Partial Class mainform
         Me.MetroTile1.Size = New System.Drawing.Size(107, 71)
         Me.MetroTile1.Style = MetroFramework.MetroColorStyle.Blue
         Me.MetroTile1.TabIndex = 468
-        Me.MetroTile1.Text = "Edit"
+        Me.MetroTile1.Text = "Accessories"
         Me.MetroTile1.TileImage = CType(resources.GetObject("MetroTile1.TileImage"), System.Drawing.Image)
         Me.MetroTile1.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.MetroTile1.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular

@@ -12,7 +12,13 @@ Public Class partsFRM
         loadparts()
     End Sub
     Public Sub loadparts()
-        Dim str As String = "select * from partstb where iid = @iid"
+        Dim str As String = "
+
+declare @unitprice as decimal(10,2) = (select sum(unitprice) from partstb where iid = @iid)
+declare @qty as decimal(10,2) = (select sum(qty) from partstb where iid = @iid)
+declare @netamount as decimal(10,2) = (select sum(netamount) from partstb where iid = @iid)
+select * from partstb where iid = @iid
+update itemtb set unitprice =@unitprice,qty=@qty,netprice=@netamount where id = @iid"
         Dim ds As New DataSet
         ds.Clear()
         Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)

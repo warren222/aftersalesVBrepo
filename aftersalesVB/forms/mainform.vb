@@ -67,6 +67,7 @@ Public Class mainform
         End Using
     End Sub
     Public Sub addbtncolumns()
+        Dim updatebtn As New DataGridViewButtonColumn
         Dim concernbtn As New DataGridViewButtonColumn
         Dim servicingbtn As New DataGridViewButtonColumn
         Dim quotationbtn As New DataGridViewButtonColumn
@@ -86,9 +87,16 @@ Public Class mainform
             .Text = "quotation"
             .UseColumnTextForButtonValue = True
         End With
-        callinGRID.Columns.Insert(7, concernbtn)
-        callinGRID.Columns.Insert(8, servicingbtn)
-        callinGRID.Columns.Insert(9, quotationbtn)
+        With updatebtn
+            .Name = "update"
+            .HeaderText = ""
+            .Text = "update"
+            .UseColumnTextForButtonValue = True
+        End With
+        callinGRID.Columns.Insert(7, updatebtn)
+        callinGRID.Columns.Insert(8, concernbtn)
+        callinGRID.Columns.Insert(9, servicingbtn)
+        callinGRID.Columns.Insert(10, quotationbtn)
 
     End Sub
     Private Sub newPNL_Click(sender As Object, e As EventArgs) Handles newPNL.Click
@@ -107,19 +115,7 @@ Public Class mainform
     End Sub
 
     Private Sub MetroTile1_Click(sender As Object, e As EventArgs) Handles MetroTile1.Click
-        newcallinFRM.Text = "Editing"
-        Dim selecteditems As DataGridViewSelectedRowCollection = callinGRID.SelectedRows
-        For Each row As DataGridViewRow In selecteditems
-            newcallinFRM.calldate.Text = row.Cells("date").Value.ToString
-            newcallinFRM.callername.Text = row.Cells("caller").Value.ToString
-            newcallinFRM.projectname.Text = row.Cells("project").Value.ToString
-            newcallinFRM.address.Text = row.Cells("address").Value.ToString
-            newcallinFRM.jo.Text = row.Cells("jo").Value.ToString
-            storeqa()
-        Next
-        newcallinFRM.addBTN.Visible = False
-        newcallinFRM.updateBTN.Visible = True
-        newcallinFRM.ShowDialog()
+        accessoriesFRM.ShowDialog()
     End Sub
     Public Sub storeqa()
         Dim str As String = "update answertb set chk = '0'
@@ -154,13 +150,24 @@ Public Class mainform
         If callinGRID.RowCount >= 0 And e.RowIndex >= 0 Then
             Dim row As DataGridViewRow = callinGRID.Rows(e.RowIndex)
             If e.ColumnIndex = 7 Then
-                concernsummaryFRM.ShowDialog()
+                newcallinFRM.Text = "Editing"
+                newcallinFRM.calldate.Text = row.Cells("date").Value.ToString
+                newcallinFRM.callername.Text = row.Cells("caller").Value.ToString
+                newcallinFRM.projectname.Text = row.Cells("project").Value.ToString
+                newcallinFRM.address.Text = row.Cells("address").Value.ToString
+                newcallinFRM.jo.Text = row.Cells("jo").Value.ToString
+                storeqa()
+                newcallinFRM.addBTN.Visible = False
+                newcallinFRM.updateBTN.Visible = True
+                newcallinFRM.ShowDialog()
             ElseIf e.ColumnIndex = 8 Then
+                concernsummaryFRM.ShowDialog()
+            ElseIf e.ColumnIndex = 9 Then
                 servicingFRM.projectname.Text = row.Cells("project").Value.ToString
                 servicingFRM.address.Text = row.Cells("address").Value.ToString
                 servicingFRM.jo.Text = row.Cells("jo").Value.ToString
                 servicingFRM.ShowDialog()
-            ElseIf e.ColumnIndex = 9 Then
+            ElseIf e.ColumnIndex = 10 Then
                 quotationFRM.projectname.Text = row.Cells("project").Value.ToString
                 quotationFRM.address.Text = row.Cells("address").Value.ToString
                 quotationFRM.jo.Text = row.Cells("jo").Value.ToString

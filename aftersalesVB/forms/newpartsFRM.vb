@@ -3,6 +3,10 @@ Public Class newpartsFRM
     Dim WithEvents timer1 As New Timer
     Dim sql As New sql
     Private Sub save_Click(sender As Object, e As EventArgs) Handles save.Click
+        zero(markup)
+        zero(unitprice)
+        zero(qty)
+        zero(netamount)
         If save.Text = "add" Then
             add()
             partsFRM.refreshbtn.PerformClick()
@@ -65,17 +69,25 @@ Public Class newpartsFRM
     End Sub
 
     Private Sub newpartsFRM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.Location = New Point(0, 0)
         timer1.Start()
     End Sub
     Private Sub TIMER1_TICK(sender As Object, e As EventArgs) Handles timer1.Tick
-        If IsNumeric(unitprice.Text) And IsNumeric(qty.Text) Then
-            netamount.Text = unitprice.Text * qty.Text
+        If IsNumeric(unitprice.Text) And IsNumeric(qty.Text) And IsNumeric(markup.Text) Then
+            Dim net As Double = unitprice.Text * qty.Text
+            Dim mup As Double = (markup.Text * 0.01) * net
+            netamount.Text = net + mup
         Else
             netamount.Text = ""
         End If
     End Sub
 
     Private Sub newpartsFRM_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        importpartsFRM.Dispose()
         Me.Dispose()
+    End Sub
+
+    Private Sub MetroTextButton1_Click(sender As Object, e As EventArgs) Handles MetroTextButton1.Click
+        importpartsFRM.Show()
     End Sub
 End Class

@@ -27,6 +27,8 @@ Partial Class newitemFRM
         Me.itemno = New MetroFramework.Controls.MetroTextBox()
         Me.wdwloc = New MetroFramework.Controls.MetroTextBox()
         Me.save = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'kno
@@ -46,7 +48,7 @@ Partial Class newitemFRM
         Me.kno.DisplayIcon = True
         Me.kno.FontSize = MetroFramework.MetroTextBoxSize.Medium
         Me.kno.Lines = New String(-1) {}
-        Me.kno.Location = New System.Drawing.Point(23, 118)
+        Me.kno.Location = New System.Drawing.Point(16, 63)
         Me.kno.MaxLength = 32767
         Me.kno.Multiline = True
         Me.kno.Name = "kno"
@@ -71,10 +73,10 @@ Partial Class newitemFRM
         Me.metroTextButton2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.metroTextButton2.Image = Nothing
         Me.metroTextButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.metroTextButton2.Location = New System.Drawing.Point(23, 84)
+        Me.metroTextButton2.Location = New System.Drawing.Point(16, 29)
         Me.metroTextButton2.Name = "metroTextButton2"
-        Me.metroTextButton2.Size = New System.Drawing.Size(106, 28)
-        Me.metroTextButton2.Style = MetroFramework.MetroColorStyle.Silver
+        Me.metroTextButton2.Size = New System.Drawing.Size(79, 28)
+        Me.metroTextButton2.Style = MetroFramework.MetroColorStyle.Yellow
         Me.metroTextButton2.TabIndex = 507
         Me.metroTextButton2.Text = "import"
         Me.metroTextButton2.UseCustomBackColor = True
@@ -98,7 +100,7 @@ Partial Class newitemFRM
         Me.itemno.DisplayIcon = True
         Me.itemno.FontSize = MetroFramework.MetroTextBoxSize.Medium
         Me.itemno.Lines = New String(-1) {}
-        Me.itemno.Location = New System.Drawing.Point(23, 152)
+        Me.itemno.Location = New System.Drawing.Point(16, 97)
         Me.itemno.MaxLength = 32767
         Me.itemno.Multiline = True
         Me.itemno.Name = "itemno"
@@ -134,7 +136,7 @@ Partial Class newitemFRM
         Me.wdwloc.DisplayIcon = True
         Me.wdwloc.FontSize = MetroFramework.MetroTextBoxSize.Medium
         Me.wdwloc.Lines = New String(-1) {}
-        Me.wdwloc.Location = New System.Drawing.Point(23, 186)
+        Me.wdwloc.Location = New System.Drawing.Point(16, 131)
         Me.wdwloc.MaxLength = 32767
         Me.wdwloc.Multiline = True
         Me.wdwloc.Name = "wdwloc"
@@ -160,30 +162,42 @@ Partial Class newitemFRM
         Me.save.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.save.Image = Nothing
         Me.save.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.save.Location = New System.Drawing.Point(166, 232)
+        Me.save.Location = New System.Drawing.Point(159, 177)
         Me.save.Name = "save"
         Me.save.Size = New System.Drawing.Size(119, 28)
-        Me.save.Style = MetroFramework.MetroColorStyle.Yellow
+        Me.save.Style = MetroFramework.MetroColorStyle.Green
         Me.save.TabIndex = 509
         Me.save.Text = "add"
         Me.save.UseCustomForeColor = True
         Me.save.UseSelectable = True
         Me.save.UseVisualStyleBackColor = True
         '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel1.Controls.Add(Me.metroTextButton2)
+        Me.Panel1.Controls.Add(Me.save)
+        Me.Panel1.Controls.Add(Me.wdwloc)
+        Me.Panel1.Controls.Add(Me.kno)
+        Me.Panel1.Controls.Add(Me.itemno)
+        Me.Panel1.Location = New System.Drawing.Point(23, 54)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(294, 214)
+        Me.Panel1.TabIndex = 510
+        '
         'newitemFRM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(306, 283)
-        Me.Controls.Add(Me.save)
-        Me.Controls.Add(Me.kno)
-        Me.Controls.Add(Me.metroTextButton2)
-        Me.Controls.Add(Me.itemno)
-        Me.Controls.Add(Me.wdwloc)
+        Me.ClientSize = New System.Drawing.Size(346, 283)
+        Me.Controls.Add(Me.Panel1)
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(729, 283)
+        Me.MaximumSize = New System.Drawing.Size(346, 283)
         Me.MinimizeBox = False
         Me.Name = "newitemFRM"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
+        Me.Style = MetroFramework.MetroColorStyle.Yellow
+        Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -193,4 +207,5 @@ Partial Class newitemFRM
     Friend WithEvents itemno As MetroFramework.Controls.MetroTextBox
     Friend WithEvents wdwloc As MetroFramework.Controls.MetroTextBox
     Friend WithEvents save As MetroFramework.Controls.MetroTextBox.MetroTextButton
+    Friend WithEvents Panel1 As Panel
 End Class

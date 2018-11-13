@@ -73,7 +73,9 @@ Partial Class importFRM
         Me.MinimizeBox = False
         Me.Name = "importFRM"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
+        Me.Style = MetroFramework.MetroColorStyle.Yellow
         Me.Text = "Select Item"
+        Me.TopMost = True
         CType(Me.knoGRID, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 

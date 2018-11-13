@@ -3,6 +3,7 @@ Public Class newitemFRM
     Dim sql As New sql
 
     Private Sub newitemFRM_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        importFRM.Dispose()
         Me.Dispose()
     End Sub
 
@@ -59,9 +60,10 @@ wdwloc=@loc WHERE ID = @ID"
     End Sub
 
     Private Sub newitemFRM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.Location = New Point(0, 0)
     End Sub
 
     Private Sub metroTextButton2_Click(sender As Object, e As EventArgs) Handles metroTextButton2.Click
-        importFRM.ShowDialog()
+        importFRM.Show()
     End Sub
 End Class

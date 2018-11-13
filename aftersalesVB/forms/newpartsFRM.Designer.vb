@@ -35,6 +35,9 @@ Partial Class newpartsFRM
         Me.description = New MetroFramework.Controls.MetroTextBox()
         Me.KryptonLabel6 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.markup = New MetroFramework.Controls.MetroTextBox()
+        Me.MetroTextButton1 = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'save
@@ -43,10 +46,10 @@ Partial Class newpartsFRM
         Me.save.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.save.Image = Nothing
         Me.save.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.save.Location = New System.Drawing.Point(622, 227)
+        Me.save.Location = New System.Drawing.Point(365, 271)
         Me.save.Name = "save"
         Me.save.Size = New System.Drawing.Size(119, 28)
-        Me.save.Style = MetroFramework.MetroColorStyle.Yellow
+        Me.save.Style = MetroFramework.MetroColorStyle.Green
         Me.save.TabIndex = 516
         Me.save.Text = "add"
         Me.save.UseCustomForeColor = True
@@ -55,7 +58,7 @@ Partial Class newpartsFRM
         '
         'kryptonLabel3
         '
-        Me.kryptonLabel3.Location = New System.Drawing.Point(509, 112)
+        Me.kryptonLabel3.Location = New System.Drawing.Point(127, 194)
         Me.kryptonLabel3.Name = "kryptonLabel3"
         Me.kryptonLabel3.Size = New System.Drawing.Size(72, 22)
         Me.kryptonLabel3.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
@@ -65,7 +68,7 @@ Partial Class newpartsFRM
         '
         'kryptonLabel5
         '
-        Me.kryptonLabel5.Location = New System.Drawing.Point(507, 180)
+        Me.kryptonLabel5.Location = New System.Drawing.Point(112, 262)
         Me.kryptonLabel5.Name = "kryptonLabel5"
         Me.kryptonLabel5.Size = New System.Drawing.Size(87, 22)
         Me.kryptonLabel5.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
@@ -75,7 +78,7 @@ Partial Class newpartsFRM
         '
         'kryptonLabel4
         '
-        Me.kryptonLabel4.Location = New System.Drawing.Point(507, 146)
+        Me.kryptonLabel4.Location = New System.Drawing.Point(164, 228)
         Me.kryptonLabel4.Name = "kryptonLabel4"
         Me.kryptonLabel4.Size = New System.Drawing.Size(35, 22)
         Me.kryptonLabel4.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
@@ -100,7 +103,7 @@ Partial Class newpartsFRM
         Me.unitprice.DisplayIcon = True
         Me.unitprice.FontSize = MetroFramework.MetroTextBoxSize.Medium
         Me.unitprice.Lines = New String(-1) {}
-        Me.unitprice.Location = New System.Drawing.Point(599, 106)
+        Me.unitprice.Location = New System.Drawing.Point(205, 194)
         Me.unitprice.MaxLength = 32767
         Me.unitprice.Multiline = True
         Me.unitprice.Name = "unitprice"
@@ -113,6 +116,7 @@ Partial Class newpartsFRM
         Me.unitprice.Size = New System.Drawing.Size(142, 28)
         Me.unitprice.Style = MetroFramework.MetroColorStyle.Red
         Me.unitprice.TabIndex = 510
+        Me.unitprice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.unitprice.UseCustomForeColor = True
         Me.unitprice.UseSelectable = True
         Me.unitprice.WaterMark = "Unit Price"
@@ -136,7 +140,7 @@ Partial Class newpartsFRM
         Me.qty.DisplayIcon = True
         Me.qty.FontSize = MetroFramework.MetroTextBoxSize.Medium
         Me.qty.Lines = New String(-1) {}
-        Me.qty.Location = New System.Drawing.Point(600, 140)
+        Me.qty.Location = New System.Drawing.Point(206, 228)
         Me.qty.MaxLength = 32767
         Me.qty.Multiline = True
         Me.qty.Name = "qty"
@@ -149,6 +153,7 @@ Partial Class newpartsFRM
         Me.qty.Size = New System.Drawing.Size(141, 28)
         Me.qty.Style = MetroFramework.MetroColorStyle.Red
         Me.qty.TabIndex = 511
+        Me.qty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.qty.UseCustomForeColor = True
         Me.qty.UseSelectable = True
         Me.qty.WaterMark = "Quantity"
@@ -173,7 +178,7 @@ Partial Class newpartsFRM
         Me.netamount.Enabled = False
         Me.netamount.FontSize = MetroFramework.MetroTextBoxSize.Medium
         Me.netamount.Lines = New String(-1) {}
-        Me.netamount.Location = New System.Drawing.Point(600, 174)
+        Me.netamount.Location = New System.Drawing.Point(206, 262)
         Me.netamount.MaxLength = 32767
         Me.netamount.Multiline = True
         Me.netamount.Name = "netamount"
@@ -186,6 +191,7 @@ Partial Class newpartsFRM
         Me.netamount.Size = New System.Drawing.Size(141, 28)
         Me.netamount.Style = MetroFramework.MetroColorStyle.Red
         Me.netamount.TabIndex = 512
+        Me.netamount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.netamount.UseCustomForeColor = True
         Me.netamount.UseSelectable = True
         Me.netamount.WaterMark = "Net Amount"
@@ -194,7 +200,7 @@ Partial Class newpartsFRM
         '
         'KryptonLabel1
         '
-        Me.KryptonLabel1.Location = New System.Drawing.Point(22, 135)
+        Me.KryptonLabel1.Location = New System.Drawing.Point(33, 66)
         Me.KryptonLabel1.Name = "KryptonLabel1"
         Me.KryptonLabel1.Size = New System.Drawing.Size(68, 22)
         Me.KryptonLabel1.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
@@ -219,7 +225,7 @@ Partial Class newpartsFRM
         Me.articleno.DisplayIcon = True
         Me.articleno.FontSize = MetroFramework.MetroTextBoxSize.Medium
         Me.articleno.Lines = New String(-1) {}
-        Me.articleno.Location = New System.Drawing.Point(112, 129)
+        Me.articleno.Location = New System.Drawing.Point(107, 66)
         Me.articleno.MaxLength = 32767
         Me.articleno.Multiline = True
         Me.articleno.Name = "articleno"
@@ -240,7 +246,7 @@ Partial Class newpartsFRM
         '
         'KryptonLabel2
         '
-        Me.KryptonLabel2.Location = New System.Drawing.Point(22, 180)
+        Me.KryptonLabel2.Location = New System.Drawing.Point(23, 100)
         Me.KryptonLabel2.Name = "KryptonLabel2"
         Me.KryptonLabel2.Size = New System.Drawing.Size(78, 22)
         Me.KryptonLabel2.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
@@ -265,7 +271,7 @@ Partial Class newpartsFRM
         Me.description.DisplayIcon = True
         Me.description.FontSize = MetroFramework.MetroTextBoxSize.Medium
         Me.description.Lines = New String(-1) {}
-        Me.description.Location = New System.Drawing.Point(112, 174)
+        Me.description.Location = New System.Drawing.Point(107, 100)
         Me.description.MaxLength = 32767
         Me.description.Multiline = True
         Me.description.Name = "description"
@@ -286,7 +292,7 @@ Partial Class newpartsFRM
         '
         'KryptonLabel6
         '
-        Me.KryptonLabel6.Location = New System.Drawing.Point(509, 78)
+        Me.KryptonLabel6.Location = New System.Drawing.Point(143, 160)
         Me.KryptonLabel6.Name = "KryptonLabel6"
         Me.KryptonLabel6.Size = New System.Drawing.Size(56, 22)
         Me.KryptonLabel6.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
@@ -311,7 +317,7 @@ Partial Class newpartsFRM
         Me.markup.DisplayIcon = True
         Me.markup.FontSize = MetroFramework.MetroTextBoxSize.Medium
         Me.markup.Lines = New String(-1) {}
-        Me.markup.Location = New System.Drawing.Point(599, 72)
+        Me.markup.Location = New System.Drawing.Point(205, 160)
         Me.markup.MaxLength = 32767
         Me.markup.Multiline = True
         Me.markup.Name = "markup"
@@ -324,37 +330,66 @@ Partial Class newpartsFRM
         Me.markup.Size = New System.Drawing.Size(142, 28)
         Me.markup.Style = MetroFramework.MetroColorStyle.Red
         Me.markup.TabIndex = 521
+        Me.markup.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.markup.UseCustomForeColor = True
         Me.markup.UseSelectable = True
         Me.markup.WaterMark = "Markup"
         Me.markup.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.markup.WaterMarkFont = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
+        'MetroTextButton1
+        '
+        Me.MetroTextButton1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.MetroTextButton1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.MetroTextButton1.Image = Nothing
+        Me.MetroTextButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.MetroTextButton1.Location = New System.Drawing.Point(17, 21)
+        Me.MetroTextButton1.Name = "MetroTextButton1"
+        Me.MetroTextButton1.Size = New System.Drawing.Size(84, 28)
+        Me.MetroTextButton1.Style = MetroFramework.MetroColorStyle.Yellow
+        Me.MetroTextButton1.TabIndex = 523
+        Me.MetroTextButton1.Text = "import"
+        Me.MetroTextButton1.UseCustomForeColor = True
+        Me.MetroTextButton1.UseSelectable = True
+        Me.MetroTextButton1.UseVisualStyleBackColor = True
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel1.Controls.Add(Me.KryptonLabel1)
+        Me.Panel1.Controls.Add(Me.MetroTextButton1)
+        Me.Panel1.Controls.Add(Me.netamount)
+        Me.Panel1.Controls.Add(Me.KryptonLabel6)
+        Me.Panel1.Controls.Add(Me.qty)
+        Me.Panel1.Controls.Add(Me.markup)
+        Me.Panel1.Controls.Add(Me.unitprice)
+        Me.Panel1.Controls.Add(Me.KryptonLabel2)
+        Me.Panel1.Controls.Add(Me.kryptonLabel4)
+        Me.Panel1.Controls.Add(Me.description)
+        Me.Panel1.Controls.Add(Me.kryptonLabel5)
+        Me.Panel1.Controls.Add(Me.kryptonLabel3)
+        Me.Panel1.Controls.Add(Me.articleno)
+        Me.Panel1.Controls.Add(Me.save)
+        Me.Panel1.Location = New System.Drawing.Point(9, 63)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(515, 321)
+        Me.Panel1.TabIndex = 524
+        '
         'newpartsFRM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(766, 278)
-        Me.Controls.Add(Me.KryptonLabel6)
-        Me.Controls.Add(Me.markup)
-        Me.Controls.Add(Me.KryptonLabel2)
-        Me.Controls.Add(Me.description)
-        Me.Controls.Add(Me.KryptonLabel1)
-        Me.Controls.Add(Me.articleno)
-        Me.Controls.Add(Me.save)
-        Me.Controls.Add(Me.kryptonLabel3)
-        Me.Controls.Add(Me.kryptonLabel5)
-        Me.Controls.Add(Me.kryptonLabel4)
-        Me.Controls.Add(Me.unitprice)
-        Me.Controls.Add(Me.qty)
-        Me.Controls.Add(Me.netamount)
+        Me.ClientSize = New System.Drawing.Size(531, 407)
+        Me.Controls.Add(Me.Panel1)
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(766, 278)
         Me.MinimizeBox = False
         Me.Name = "newpartsFRM"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
+        Me.Style = MetroFramework.MetroColorStyle.Orange
         Me.Text = "newpartsFRM"
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -371,4 +406,6 @@ Partial Class newpartsFRM
     Friend WithEvents description As MetroFramework.Controls.MetroTextBox
     Friend WithEvents KryptonLabel6 As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents markup As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents MetroTextButton1 As MetroFramework.Controls.MetroTextBox.MetroTextButton
+    Friend WithEvents Panel1 As Panel
 End Class

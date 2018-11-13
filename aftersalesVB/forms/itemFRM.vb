@@ -13,7 +13,6 @@ ASENO,
 ITEM,
 KNO AS [K#],
 WDWLOC as [WDW/DOOR LOCATION],
-PARTS as [PARTS / ACCESSORIES USED],
 UNITPRICE as [UNIT PRICE],
 QTY,
 NETPRICE AS [NEW PRICE]
@@ -37,7 +36,6 @@ from itemtb where aseno = @aseno"
                             .Columns("ITEM").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
                             .Columns("K#").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
                             .Columns("WDW/DOOR LOCATION").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-                            .Columns("PARTS / ACCESSORIES USED").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
                             .Columns("UNIT PRICE").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
                             .Columns("QTY").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
                             .Columns("NEW PRICE").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
@@ -72,9 +70,9 @@ from itemtb where aseno = @aseno"
             .UseColumnTextForButtonValue = True
         End With
         With itemGRID
-            .Columns.Insert(9, partsbtn)
-            .Columns.Insert(10, updatebtn)
-            .Columns.Insert(11, deletebtn)
+            .Columns.Insert(5, partsbtn)
+            .Columns.Insert(9, updatebtn)
+            .Columns.Insert(10, deletebtn)
         End With
     End Sub
 
@@ -93,11 +91,11 @@ from itemtb where aseno = @aseno"
     End Sub
     Private Sub itemGRID_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles itemGRID.CellClick
         If itemGRID.RowCount >= 0 And e.RowIndex >= 0 Then
-            If e.ColumnIndex = 9 Then
+            If e.ColumnIndex = 5 Then
                 id = itemGRID.Item("id", e.RowIndex).Value.ToString
                 partsFRM.Text = "" & itemGRID.Item("k#", e.RowIndex).Value.ToString & ", " & itemGRID.Item("item", e.RowIndex).Value.ToString & ", " & itemGRID.Item("WDW/DOOR LOCATION", e.RowIndex).Value.ToString & ""
                 partsFRM.ShowDialog()
-            ElseIf e.ColumnIndex = 10 Then
+            ElseIf e.ColumnIndex = 9 Then
                 id = itemGRID.Item("id", e.RowIndex).Value.ToString
                 newitemFRM.kno.Text = itemGRID.Item("k#", e.RowIndex).Value.ToString
                 newitemFRM.itemno.Text = itemGRID.Item("item", e.RowIndex).Value.ToString
@@ -105,7 +103,7 @@ from itemtb where aseno = @aseno"
                 newitemFRM.Text = "Editing"
                 newitemFRM.save.Text = "save"
                 newitemFRM.ShowDialog()
-            ElseIf e.ColumnIndex = 11 Then
+            ElseIf e.ColumnIndex = 10 Then
                 If MetroFramework.MetroMessageBox.Show(Me, "Delete " & itemGRID.Item("k#", e.RowIndex).Value.ToString & "", "Confirmatioon", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
                     Return
                 Else
