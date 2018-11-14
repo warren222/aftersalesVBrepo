@@ -2,6 +2,7 @@
 Public Class itemFRM
     Dim sql As New sql
     Public id As String
+
     Private Sub itemFRM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Height = Screen.PrimaryScreen.Bounds.Bottom - 37
         loaditems()

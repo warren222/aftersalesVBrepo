@@ -17,8 +17,9 @@ Public Class partsFRM
 declare @unitprice as decimal(10,2) = (select sum(unitprice) from partstb where iid = @iid)
 declare @qty as decimal(10,2) = (select sum(qty) from partstb where iid = @iid)
 declare @netamount as decimal(10,2) = (select sum(netamount) from partstb where iid = @iid)
+declare @parts as varchar(1000) = (select c=stuff((select ', '+[DESCRIPTION] from PARTSTB where iid = @iid for xml path('')),1,1,''))
 select * from partstb where iid = @iid
-update itemtb set unitprice =@unitprice,qty=@qty,netprice=@netamount where id = @iid"
+update itemtb set unitprice =@unitprice,qty=@qty,netprice=@netamount,parts=@parts where id = @iid"
         Dim ds As New DataSet
         ds.Clear()
         Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)

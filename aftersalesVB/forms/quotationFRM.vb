@@ -3,6 +3,8 @@ Public Class quotationFRM
     Dim sql As New sql
     Public id As String
     Public aseno As String
+    Public ase As String
+    Public d As String
     Private Sub quotationFRM_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Me.Dispose()
     End Sub
@@ -47,6 +49,7 @@ Public Class quotationFRM
         Dim updatebtn As New DataGridViewButtonColumn
         Dim deletebtn As New DataGridViewButtonColumn
         Dim itembtn As New DataGridViewButtonColumn
+        Dim prevbtn As New DataGridViewButtonColumn
         With updatebtn
             .Text = "update"
             .Name = "updatebtn"
@@ -65,10 +68,17 @@ Public Class quotationFRM
             .HeaderText = ""
             .UseColumnTextForButtonValue = True
         End With
+        With prevbtn
+            .Text = "preview"
+            .Name = "prevbtn"
+            .HeaderText = ""
+            .UseColumnTextForButtonValue = True
+        End With
         With quGRID
             .Columns.Insert(5, itembtn)
-            .Columns.Insert(6, updatebtn)
-            .Columns.Insert(7, deletebtn)
+            .Columns.Insert(6, prevbtn)
+            .Columns.Insert(7, updatebtn)
+            .Columns.Insert(8, deletebtn)
         End With
     End Sub
 
@@ -84,14 +94,19 @@ Public Class quotationFRM
 
     Private Sub quGRID_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles quGRID.CellClick
         If quGRID.RowCount >= 0 And e.RowIndex >= 0 Then
-            If e.ColumnIndex = 6 Then
+            If e.ColumnIndex = 7 Then
                 id = quGRID.Item("id", e.RowIndex).Value.ToString
                 newquFRM.qudate.Text = quGRID.Item("date", e.RowIndex).Value.ToString
                 newquFRM.aseno.Text = quGRID.Item("aseno", e.RowIndex).Value.ToString
                 newquFRM.Text = "Editing"
                 newquFRM.save.Text = "save"
                 newquFRM.ShowDialog()
-            ElseIf e.ColumnIndex = 7 Then
+            ElseIf e.ColumnIndex = 6 Then
+
+                d = quGRID.Item("date", e.RowIndex).Value.ToString
+                ase = quGRID.Item("aseno", e.RowIndex).Value.ToString
+                prevFRM.ShowDialog()
+            ElseIf e.ColumnIndex = 8 Then
                 id = quGRID.Item("id", e.RowIndex).Value.ToString
                 If MetroFramework.MetroMessageBox.Show(Me, "Delete " & quGRID.Item("aseno", e.RowIndex).Value.ToString & "?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
                     Return

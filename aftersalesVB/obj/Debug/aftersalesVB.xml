@@ -32,12 +32,27 @@ Represents a strongly typed in-memory cache of data.
 Represents the strongly named DataTable class.
 </summary>
 </member>
+<member name="T:aftersalesVB.asdbDS.ITEMTBDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
 <member name="T:aftersalesVB.asdbDS.QATBRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
 </member>
+<member name="T:aftersalesVB.asdbDS.ITEMTBRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
 <member name="T:aftersalesVB.asdbDS.QATBRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:aftersalesVB.asdbDS.ITEMTBRowChangeEvent">
 <summary>
 Row event argument class
 </summary>

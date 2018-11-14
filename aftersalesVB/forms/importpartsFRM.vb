@@ -11,7 +11,7 @@ Public Class importpartsFRM
         loadparts()
     End Sub
     Public Sub loadparts()
-        Dim str As String = "select * from partstb where iid = @iid"
+        Dim str As String = "select * from ACCESSORIESTB"
         Dim ds As New DataSet
         ds.Clear()
         Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
@@ -20,12 +20,11 @@ Public Class importpartsFRM
                     Try
                         sqlcon.Open()
                         partsGRID.Columns.Clear()
-                        sqlcmd.Parameters.AddWithValue("@iid", itemFRM.id)
                         da.SelectCommand = sqlcmd
-                        da.Fill(ds, "PARTSTB")
-                        partsGRID.DataSource = ds.Tables("PARTSTB")
+                        da.Fill(ds, "ACCESSORIESTB")
+                        partsGRID.DataSource = ds.Tables("ACCESSORIESTB")
                         partsGRID.Columns("ID").Visible = False
-                        partsGRID.Columns("IID").Visible = False
+
                     Catch ex As Exception
                         MsgBox(ex.ToString)
                     End Try
@@ -39,10 +38,7 @@ Public Class importpartsFRM
             Dim row As DataGridViewRow = partsGRID.Rows(e.RowIndex)
             newpartsFRM.articleno.Text = row.Cells("articleno").Value.ToString
             newpartsFRM.description.Text = row.Cells("description").Value.ToString
-            newpartsFRM.markup.Text = row.Cells("markup").Value.ToString
             newpartsFRM.unitprice.Text = row.Cells("unitprice").Value.ToString
-            newpartsFRM.qty.Text = row.Cells("qty").Value.ToString
-            newpartsFRM.netamount.Text = row.Cells("netamount").Value.ToString
         End If
     End Sub
 End Class
