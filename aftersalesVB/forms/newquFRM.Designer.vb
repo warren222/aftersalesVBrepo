@@ -27,6 +27,8 @@ Partial Class newquFRM
         Me.aseno = New MetroFramework.Controls.MetroTextBox()
         Me.save = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
         Me.KryptonLabel1 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
+        Me.othercharges = New MetroFramework.Controls.MetroTextBox()
+        Me.KryptonLabel2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.SuspendLayout()
         '
         'MetroDateTime1
@@ -119,7 +121,7 @@ Partial Class newquFRM
         Me.save.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.save.Image = Nothing
         Me.save.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.save.Location = New System.Drawing.Point(306, 176)
+        Me.save.Location = New System.Drawing.Point(306, 256)
         Me.save.Name = "save"
         Me.save.Size = New System.Drawing.Size(119, 28)
         Me.save.Style = MetroFramework.MetroColorStyle.Yellow
@@ -139,18 +141,65 @@ Partial Class newquFRM
         Me.KryptonLabel1.TabIndex = 492
         Me.KryptonLabel1.Values.Text = "Quotation Date"
         '
+        'othercharges
+        '
+        '
+        '
+        '
+        Me.othercharges.CustomButton.Image = Nothing
+        Me.othercharges.CustomButton.Location = New System.Drawing.Point(269, 1)
+        Me.othercharges.CustomButton.Name = ""
+        Me.othercharges.CustomButton.Size = New System.Drawing.Size(27, 27)
+        Me.othercharges.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.othercharges.CustomButton.TabIndex = 1
+        Me.othercharges.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.othercharges.CustomButton.UseSelectable = True
+        Me.othercharges.CustomButton.Visible = False
+        Me.othercharges.DisplayIcon = True
+        Me.othercharges.FontSize = MetroFramework.MetroTextBoxSize.Medium
+        Me.othercharges.Lines = New String(-1) {}
+        Me.othercharges.Location = New System.Drawing.Point(128, 206)
+        Me.othercharges.MaxLength = 32767
+        Me.othercharges.Multiline = True
+        Me.othercharges.Name = "othercharges"
+        Me.othercharges.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.othercharges.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.othercharges.SelectedText = ""
+        Me.othercharges.SelectionLength = 0
+        Me.othercharges.SelectionStart = 0
+        Me.othercharges.ShowClearButton = True
+        Me.othercharges.Size = New System.Drawing.Size(297, 29)
+        Me.othercharges.Style = MetroFramework.MetroColorStyle.Red
+        Me.othercharges.TabIndex = 493
+        Me.othercharges.UseCustomForeColor = True
+        Me.othercharges.UseSelectable = True
+        Me.othercharges.WaterMark = "Other charges"
+        Me.othercharges.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.othercharges.WaterMarkFont = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        '
+        'KryptonLabel2
+        '
+        Me.KryptonLabel2.Location = New System.Drawing.Point(23, 206)
+        Me.KryptonLabel2.Name = "KryptonLabel2"
+        Me.KryptonLabel2.Size = New System.Drawing.Size(99, 22)
+        Me.KryptonLabel2.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.KryptonLabel2.StateCommon.ShortText.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KryptonLabel2.TabIndex = 494
+        Me.KryptonLabel2.Values.Text = "Other Charges"
+        '
         'newquFRM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(444, 223)
+        Me.ClientSize = New System.Drawing.Size(444, 307)
+        Me.Controls.Add(Me.KryptonLabel2)
+        Me.Controls.Add(Me.othercharges)
         Me.Controls.Add(Me.KryptonLabel1)
         Me.Controls.Add(Me.save)
         Me.Controls.Add(Me.aseno)
         Me.Controls.Add(Me.MetroDateTime1)
         Me.Controls.Add(Me.qudate)
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(462, 223)
         Me.MinimizeBox = False
         Me.Name = "newquFRM"
         Me.Text = "newquFRM"
@@ -164,4 +213,6 @@ Partial Class newquFRM
     Public WithEvents aseno As MetroFramework.Controls.MetroTextBox
     Friend WithEvents save As MetroFramework.Controls.MetroTextBox.MetroTextButton
     Friend WithEvents KryptonLabel1 As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Public WithEvents othercharges As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents KryptonLabel2 As ComponentFactory.Krypton.Toolkit.KryptonLabel
 End Class

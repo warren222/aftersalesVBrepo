@@ -130,13 +130,17 @@ Public Class newcallinFRM
                                 cdate,
                                 cin,
                                 caller,
-                                jo)
+                                jo,
+                                TELNO,
+                                FAXNO)
                                 values
                                 (@autonum,
                                 @cdate,
                                 ((left(CONVERT([varchar](7),@autonum),(2))+'-')+right(CONVERT([varchar](7),@autonum),(5))),                           
                                 @caller,
-                                @jo)
+                                @jo,
+                                @TELNO,
+                                @FAXNO)
                                 INSERT INTO QATB (CIN,AID) SELECT ((left(CONVERT([varchar](7),@autonum),(2))+'-')+right(CONVERT([varchar](7),@autonum),(5))),AID FROM ANSWERTB WHERE CHK=1
                                 UPDATE ANSWERTB SET CHK=0"
         Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
@@ -147,6 +151,8 @@ Public Class newcallinFRM
                         .AddWithValue("@jo", jo.Text)
                         .AddWithValue("@cdate", calldate.Text)
                         .AddWithValue("@caller", callername.Text)
+                        .AddWithValue("@TELNO", telno.Text)
+                        .AddWithValue("@FAXNO", faxno.Text)
                     End With
                     sqlcmd.ExecuteNonQuery()
                     MetroMessageBox.Show(Me, "Record Added!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -155,6 +161,7 @@ Public Class newcallinFRM
                 End Try
             End Using
         End Using
+        mainform.reloadBTN.PerformClick()
     End Sub
 
     Private Sub calldategen_ValueChanged(sender As Object, e As EventArgs) Handles calldategen.ValueChanged
@@ -174,7 +181,9 @@ Public Class newcallinFRM
                             update callintb set
                             cdate=@cdate,
                             caller=@caller,
-                            jo=@jo
+                            jo=@jo,
+                            TELNO=@TELNO,
+                            FAXNO=@FAXNO
                             where cin = @cin
                             insert into qatb (cin,aid) select @cin,aid from answertb where chk = '1' and not aid in (select aid from qatb where cin = @cin)
                             delete from qatb where cin = @cin and not aid in (select aid from answertb where chk = '1')"
@@ -186,6 +195,8 @@ Public Class newcallinFRM
                     sqlcmd.Parameters.AddWithValue("@caller", callername.Text)
                     sqlcmd.Parameters.AddWithValue("@jo", jo.Text)
                     sqlcmd.Parameters.AddWithValue("@cin", mainform.tempcin)
+                    sqlcmd.Parameters.AddWithValue("@TELNO", telno.Text)
+                    sqlcmd.Parameters.AddWithValue("@FAXNO", faxno.Text)
                     sqlcmd.ExecuteNonQuery()
                     MetroMessageBox.Show(Me, "Data Updated!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Catch ex As Exception
@@ -193,5 +204,6 @@ Public Class newcallinFRM
                 End Try
             End Using
         End Using
+        mainform.reloadBTN.PerformClick()
     End Sub
 End Class

@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Public Class reportFRM
     Dim sql As New sql
-
+    Dim bs As New BindingSource
     Public id As String
     Private Sub reportFRM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Height = Screen.PrimaryScreen.Bounds.Height - 37
@@ -20,7 +20,9 @@ Public Class reportFRM
                         sqlcmd.Parameters.AddWithValue("@sid", servicingFRM.id)
                         da.SelectCommand = sqlcmd
                         da.Fill(ds, "reporttb")
-                        reportGRID.DataSource = ds.Tables("reporttb")
+                        bs.DataSource = ds
+                        bs.DataMember = "reporttb"
+                        reportGRID.DataSource = bs
                         addcolumns()
                         With reportGRID
                             .Columns("id").Visible = False
@@ -103,5 +105,9 @@ Public Class reportFRM
         newreportFRM.Text = "New"
         newreportFRM.save.Text = "add"
         newreportFRM.ShowDialog()
+    End Sub
+
+    Private Sub reportGRID_RowPostPaint(sender As Object, e As DataGridViewRowPostPaintEventArgs) Handles reportGRID.RowPostPaint
+        sql.rownum(sender, e)
     End Sub
 End Class

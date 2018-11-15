@@ -22,6 +22,7 @@ Partial Class reportFRM
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.reportGRID = New ComponentFactory.Krypton.Toolkit.KryptonDataGridView()
         Me.refreshbtn = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
         Me.servicing = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
@@ -35,6 +36,8 @@ Partial Class reportFRM
         Me.reportGRID.AllowUserToAddRows = False
         Me.reportGRID.AllowUserToDeleteRows = False
         Me.reportGRID.AllowUserToResizeRows = False
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.reportGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.reportGRID.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)

@@ -23,15 +23,14 @@ Partial Class newcallinFRM
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(newcallinFRM))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.calldate = New MetroFramework.Controls.MetroTextBox()
         Me.calldategen = New MetroFramework.Controls.MetroDateTime()
         Me.KryptonLabel1 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.callername = New MetroFramework.Controls.MetroTextBox()
         Me.metroTextButton1 = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.updateBTN = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
         Me.addBTN = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
         Me.jo = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.address = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
@@ -39,6 +38,9 @@ Partial Class newcallinFRM
         Me.answerGV = New ComponentFactory.Krypton.Toolkit.KryptonDataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.questionGRID = New ComponentFactory.Krypton.Toolkit.KryptonDataGridView()
+        Me.updateBTN = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
+        Me.telno = New MetroFramework.Controls.MetroTextBox()
+        Me.faxno = New MetroFramework.Controls.MetroTextBox()
         Me.Panel1.SuspendLayout()
         CType(Me.answerGV, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.questionGRID, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -142,7 +144,7 @@ Partial Class newcallinFRM
         Me.metroTextButton1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.metroTextButton1.Image = Nothing
         Me.metroTextButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.metroTextButton1.Location = New System.Drawing.Point(28, 172)
+        Me.metroTextButton1.Location = New System.Drawing.Point(28, 163)
         Me.metroTextButton1.Name = "metroTextButton1"
         Me.metroTextButton1.Size = New System.Drawing.Size(150, 24)
         Me.metroTextButton1.Style = MetroFramework.MetroColorStyle.Yellow
@@ -156,7 +158,8 @@ Partial Class newcallinFRM
         '
         Me.Panel1.AutoScroll = True
         Me.Panel1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Panel1.Controls.Add(Me.addBTN)
+        Me.Panel1.Controls.Add(Me.faxno)
+        Me.Panel1.Controls.Add(Me.telno)
         Me.Panel1.Controls.Add(Me.jo)
         Me.Panel1.Controls.Add(Me.address)
         Me.Panel1.Controls.Add(Me.projectname)
@@ -168,33 +171,19 @@ Partial Class newcallinFRM
         Me.Panel1.Controls.Add(Me.callername)
         Me.Panel1.Controls.Add(Me.calldate)
         Me.Panel1.Controls.Add(Me.updateBTN)
+        Me.Panel1.Controls.Add(Me.addBTN)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(20, 60)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(896, 588)
         Me.Panel1.TabIndex = 482
         '
-        'updateBTN
-        '
-        Me.updateBTN.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.updateBTN.Image = Nothing
-        Me.updateBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.updateBTN.Location = New System.Drawing.Point(764, 789)
-        Me.updateBTN.Name = "updateBTN"
-        Me.updateBTN.Size = New System.Drawing.Size(98, 35)
-        Me.updateBTN.Style = MetroFramework.MetroColorStyle.Green
-        Me.updateBTN.TabIndex = 488
-        Me.updateBTN.Text = "save"
-        Me.updateBTN.UseSelectable = True
-        Me.updateBTN.UseVisualStyleBackColor = True
-        Me.updateBTN.Visible = False
-        '
         'addBTN
         '
         Me.addBTN.Cursor = System.Windows.Forms.Cursors.Hand
         Me.addBTN.Image = CType(resources.GetObject("addBTN.Image"), System.Drawing.Image)
         Me.addBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.addBTN.Location = New System.Drawing.Point(764, 789)
+        Me.addBTN.Location = New System.Drawing.Point(764, 785)
         Me.addBTN.Name = "addBTN"
         Me.addBTN.Size = New System.Drawing.Size(98, 35)
         Me.addBTN.Style = MetroFramework.MetroColorStyle.Red
@@ -206,7 +195,7 @@ Partial Class newcallinFRM
         '
         'jo
         '
-        Me.jo.Location = New System.Drawing.Point(28, 288)
+        Me.jo.Location = New System.Drawing.Point(28, 279)
         Me.jo.Name = "jo"
         Me.jo.Size = New System.Drawing.Size(93, 22)
         Me.jo.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
@@ -216,7 +205,7 @@ Partial Class newcallinFRM
         '
         'address
         '
-        Me.address.Location = New System.Drawing.Point(28, 256)
+        Me.address.Location = New System.Drawing.Point(28, 247)
         Me.address.Name = "address"
         Me.address.Size = New System.Drawing.Size(70, 26)
         Me.address.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
@@ -226,7 +215,7 @@ Partial Class newcallinFRM
         '
         'projectname
         '
-        Me.projectname.Location = New System.Drawing.Point(28, 216)
+        Me.projectname.Location = New System.Drawing.Point(28, 207)
         Me.projectname.Name = "projectname"
         Me.projectname.Size = New System.Drawing.Size(145, 34)
         Me.projectname.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
@@ -241,14 +230,14 @@ Partial Class newcallinFRM
         Me.answerGV.AllowUserToOrderColumns = True
         Me.answerGV.AllowUserToResizeColumns = False
         Me.answerGV.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        Me.answerGV.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        Me.answerGV.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
         Me.answerGV.ColumnHeadersHeight = 30
         Me.answerGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.answerGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1})
         Me.answerGV.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.answerGV.Location = New System.Drawing.Point(442, 327)
+        Me.answerGV.Location = New System.Drawing.Point(442, 323)
         Me.answerGV.MultiSelect = False
         Me.answerGV.Name = "answerGV"
         Me.answerGV.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Silver
@@ -286,13 +275,13 @@ Partial Class newcallinFRM
         Me.questionGRID.AllowUserToOrderColumns = True
         Me.questionGRID.AllowUserToResizeColumns = False
         Me.questionGRID.AllowUserToResizeRows = False
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        Me.questionGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
+        Me.questionGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
         Me.questionGRID.ColumnHeadersHeight = 30
         Me.questionGRID.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.questionGRID.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.questionGRID.Location = New System.Drawing.Point(28, 327)
+        Me.questionGRID.Location = New System.Drawing.Point(28, 323)
         Me.questionGRID.MultiSelect = False
         Me.questionGRID.Name = "questionGRID"
         Me.questionGRID.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Silver
@@ -317,6 +306,93 @@ Partial Class newcallinFRM
         Me.questionGRID.StateCommon.HeaderColumn.Content.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.questionGRID.StateCommon.HeaderColumn.Content.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias
         Me.questionGRID.TabIndex = 482
+        '
+        'updateBTN
+        '
+        Me.updateBTN.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.updateBTN.Image = Nothing
+        Me.updateBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.updateBTN.Location = New System.Drawing.Point(764, 785)
+        Me.updateBTN.Name = "updateBTN"
+        Me.updateBTN.Size = New System.Drawing.Size(98, 35)
+        Me.updateBTN.Style = MetroFramework.MetroColorStyle.Green
+        Me.updateBTN.TabIndex = 488
+        Me.updateBTN.Text = "save"
+        Me.updateBTN.UseSelectable = True
+        Me.updateBTN.UseVisualStyleBackColor = True
+        Me.updateBTN.Visible = False
+        '
+        'telno
+        '
+        '
+        '
+        '
+        Me.telno.CustomButton.Image = Nothing
+        Me.telno.CustomButton.Location = New System.Drawing.Point(294, 2)
+        Me.telno.CustomButton.Name = ""
+        Me.telno.CustomButton.Size = New System.Drawing.Size(27, 27)
+        Me.telno.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.telno.CustomButton.TabIndex = 1
+        Me.telno.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.telno.CustomButton.UseSelectable = True
+        Me.telno.CustomButton.Visible = False
+        Me.telno.DisplayIcon = True
+        Me.telno.FontSize = MetroFramework.MetroTextBoxSize.Medium
+        Me.telno.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.telno.Lines = New String(-1) {}
+        Me.telno.Location = New System.Drawing.Point(538, 64)
+        Me.telno.MaxLength = 32767
+        Me.telno.Name = "telno"
+        Me.telno.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.telno.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.telno.SelectedText = ""
+        Me.telno.SelectionLength = 0
+        Me.telno.SelectionStart = 0
+        Me.telno.ShowClearButton = True
+        Me.telno.Size = New System.Drawing.Size(324, 32)
+        Me.telno.Style = MetroFramework.MetroColorStyle.Red
+        Me.telno.TabIndex = 489
+        Me.telno.UseCustomForeColor = True
+        Me.telno.UseSelectable = True
+        Me.telno.WaterMark = "Enter Tel No"
+        Me.telno.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.telno.WaterMarkFont = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        '
+        'faxno
+        '
+        '
+        '
+        '
+        Me.faxno.CustomButton.Image = Nothing
+        Me.faxno.CustomButton.Location = New System.Drawing.Point(294, 2)
+        Me.faxno.CustomButton.Name = ""
+        Me.faxno.CustomButton.Size = New System.Drawing.Size(27, 27)
+        Me.faxno.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.faxno.CustomButton.TabIndex = 1
+        Me.faxno.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.faxno.CustomButton.UseSelectable = True
+        Me.faxno.CustomButton.Visible = False
+        Me.faxno.DisplayIcon = True
+        Me.faxno.FontSize = MetroFramework.MetroTextBoxSize.Medium
+        Me.faxno.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.faxno.Lines = New String(-1) {}
+        Me.faxno.Location = New System.Drawing.Point(538, 102)
+        Me.faxno.MaxLength = 32767
+        Me.faxno.Name = "faxno"
+        Me.faxno.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.faxno.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.faxno.SelectedText = ""
+        Me.faxno.SelectionLength = 0
+        Me.faxno.SelectionStart = 0
+        Me.faxno.ShowClearButton = True
+        Me.faxno.Size = New System.Drawing.Size(324, 32)
+        Me.faxno.Style = MetroFramework.MetroColorStyle.Red
+        Me.faxno.TabIndex = 490
+        Me.faxno.UseCustomForeColor = True
+        Me.faxno.UseSelectable = True
+        Me.faxno.WaterMark = "Enter Fax No"
+        Me.faxno.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.faxno.WaterMarkFont = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'newcallinFRM
         '
@@ -347,4 +423,6 @@ Partial Class newcallinFRM
     Friend WithEvents jo As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents addBTN As MetroFramework.Controls.MetroTextBox.MetroTextButton
     Friend WithEvents updateBTN As MetroFramework.Controls.MetroTextBox.MetroTextButton
+    Friend WithEvents faxno As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents telno As MetroFramework.Controls.MetroTextBox
 End Class

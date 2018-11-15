@@ -5,6 +5,7 @@ Public Class servicingFRM
     Dim scount As String
     Dim suffix As String
     Public id As String
+    Dim bs As New BindingSource
 
     Private Sub servicingFRM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Height = Screen.PrimaryScreen.Bounds.Height - 37
@@ -30,7 +31,9 @@ Public Class servicingFRM
                         sqlcmd.Parameters.AddWithValue("@cin", mainform.tempcin)
                         da.SelectCommand = sqlcmd
                         da.Fill(ds, "servicingtb")
-                        servicingGRID.DataSource = ds.Tables("servicingtb")
+                        bs.DataSource = ds
+                        bs.DataMember = "servicingtb"
+                        servicingGRID.DataSource = bs
                         addbtn()
                         servicingGRID.Columns("STATUS DATE").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
                         servicingGRID.Columns("SERVICING").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
@@ -178,5 +181,9 @@ Public Class servicingFRM
         newservicingFRM.servicingdate.Text = ""
         newservicingFRM.assignedpersonnelTXT.Text = ""
         newservicingFRM.ShowDialog()
+    End Sub
+
+    Private Sub servicingGRID_RowPostPaint(sender As Object, e As DataGridViewRowPostPaintEventArgs) Handles servicingGRID.RowPostPaint
+        sql.rownum(sender, e)
     End Sub
 End Class

@@ -123,4 +123,9 @@
   <metadata name="asdbDS.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="dear.Text" xml:space="preserve">
+    <value>Dear Sir/Madam:
+           
+          Please find as follows actual cost of parts and / materials / accessories used and services conducted in reference to the service/repair works you have requested. However, do note that the labor / service is shall be free-of-charge unless otherwise not covered by usual servicing (i.e. re-installation and major repairs,etc.). only replaceable parts not covered by warranty will be billed accordingly after acceptance of works.</value>
+  </data>
 </root>

@@ -5,6 +5,9 @@ Public Class quotationFRM
     Public aseno As String
     Public ase As String
     Public d As String
+    Public oth As String
+    Dim bs As New BindingSource
+
     Private Sub quotationFRM_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Me.Dispose()
     End Sub
@@ -18,7 +21,7 @@ Public Class quotationFRM
                              CIN,
                              ASENO,
                              QDATE as [DATE],
-                             OTHERCHARGES
+                             OTHERCHARGES as [OTHER CHARGES]
                              from quotationtb where cin = @cin"
         Dim ds As New DataSet
         ds.Clear()
@@ -31,12 +34,16 @@ Public Class quotationFRM
                         da.SelectCommand = sqlcmd
                         sqlcmd.Parameters.AddWithValue("@cin", mainform.tempcin)
                         da.Fill(ds, "quotationtb")
-                        quGRID.DataSource = ds.Tables("quotationtb")
+                        bs.DataSource = ds
+                        bs.DataMember = "quotationtb"
+                        quGRID.DataSource = bs
+
                         addcolumns()
                         With quGRID
                             .Columns("ID").Visible = False
                             .Columns("CIN").Visible = False
-                            .Columns("OTHERCHARGES").Visible = False
+                            .Columns("other charges").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+                            .Columns("other charges").DefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomRight
                         End With
                     Catch ex As Exception
                         MsgBox(ex.ToString)
@@ -98,13 +105,14 @@ Public Class quotationFRM
                 id = quGRID.Item("id", e.RowIndex).Value.ToString
                 newquFRM.qudate.Text = quGRID.Item("date", e.RowIndex).Value.ToString
                 newquFRM.aseno.Text = quGRID.Item("aseno", e.RowIndex).Value.ToString
+                newquFRM.othercharges.Text = quGRID.Item("other charges", e.RowIndex).Value.ToString
                 newquFRM.Text = "Editing"
                 newquFRM.save.Text = "save"
                 newquFRM.ShowDialog()
             ElseIf e.ColumnIndex = 6 Then
-
                 d = quGRID.Item("date", e.RowIndex).Value.ToString
                 ase = quGRID.Item("aseno", e.RowIndex).Value.ToString
+                oth = quGRID.Item("other charges", e.RowIndex).Value.ToString
                 prevFRM.ShowDialog()
             ElseIf e.ColumnIndex = 8 Then
                 id = quGRID.Item("id", e.RowIndex).Value.ToString
@@ -131,5 +139,9 @@ Public Class quotationFRM
                 itemFRM.ShowDialog()
             End If
         End If
+    End Sub
+
+    Private Sub quGRID_RowPostPaint(sender As Object, e As DataGridViewRowPostPaintEventArgs) Handles quGRID.RowPostPaint
+        sql.rownum(sender, e)
     End Sub
 End Class

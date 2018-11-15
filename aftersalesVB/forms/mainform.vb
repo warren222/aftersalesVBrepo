@@ -2,6 +2,9 @@
 Public Class mainform
     Dim sql As New sql
     Public Shared tempcin As String
+    Public Shared telno As String
+    Public Shared faxno As String
+    Dim bs As New BindingSource
     Private Sub mainform_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         fieldcombo.SelectedIndex = 0
         reloadBTN.PerformClick()
@@ -30,7 +33,9 @@ Public Class mainform
                             A.CALLER,
                             A.JO,
                             b.PROJECT_LABEL AS PROJECT,
-                            B.FULLADD AS ADDRESS 
+                            B.FULLADD AS ADDRESS,
+                            A.TELNO,
+                            a.FAXNO
                             from callintb as a
                             inner join
                             HERETOSAVE.dbo.addendum_to_contract_tb as b
@@ -46,10 +51,14 @@ Public Class mainform
                         callinGRID.Columns.Clear()
                         da.SelectCommand = sqlcmd
                         da.Fill(ds, "callintb")
-                        callinGRID.DataSource = ds.Tables("callintb")
+                        bs.DataSource = ds
+                        bs.DataMember = "callintb"
+                        callinGRID.DataSource = bs
                         addbtncolumns()
                         With callinGRID
                             .Columns("autonum").Visible = False
+                            .Columns("TELNO").Visible = False
+                            .Columns("FAXNO").Visible = False
                             .Columns("concern").Width = 100
                             .Columns("servicing").Width = 100
                             .Columns("date").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
@@ -151,6 +160,8 @@ Public Class mainform
             Dim row As DataGridViewRow = callinGRID.Rows(e.RowIndex)
             If e.ColumnIndex = 7 Then
                 newcallinFRM.Text = "Editing"
+                newcallinFRM.telno.Text = row.Cells("TELNO").Value.ToString
+                newcallinFRM.faxno.Text = row.Cells("FAXNO").Value.ToString
                 newcallinFRM.calldate.Text = row.Cells("date").Value.ToString
                 newcallinFRM.callername.Text = row.Cells("caller").Value.ToString
                 newcallinFRM.projectname.Text = row.Cells("project").Value.ToString
@@ -168,6 +179,8 @@ Public Class mainform
                 servicingFRM.jo.Text = row.Cells("jo").Value.ToString
                 servicingFRM.ShowDialog()
             ElseIf e.ColumnIndex = 10 Then
+                telno = row.Cells("telno").Value.ToString
+                faxno = row.Cells("faxno").Value.ToString
                 quotationFRM.projectname.Text = row.Cells("project").Value.ToString
                 quotationFRM.address.Text = row.Cells("address").Value.ToString
                 quotationFRM.jo.Text = row.Cells("jo").Value.ToString
@@ -179,5 +192,9 @@ Public Class mainform
 
     Private Sub MetroTile3_Click(sender As Object, e As EventArgs) Handles MetroTile3.Click
         personnelFRM.ShowDialog()
+    End Sub
+
+    Private Sub callinGRID_RowPostPaint(sender As Object, e As DataGridViewRowPostPaintEventArgs) Handles callinGRID.RowPostPaint
+        sql.rownum(sender, e)
     End Sub
 End Class

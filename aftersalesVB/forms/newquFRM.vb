@@ -16,7 +16,7 @@ Public Class newquFRM
     End Sub
     Public Sub add()
         Dim str As String = "declare @id as integer = (select isnull(max(id),0)+1 from quotationtb)
-                             insert into quotationtb (id,cin,aseno,qdate)values(@id,@cin,@aseno,@qdate)"
+                             insert into quotationtb (id,cin,aseno,qdate,othercharges)values(@id,@cin,@aseno,@qdate,@othercharges)"
         Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
             Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
                 Try
@@ -24,6 +24,7 @@ Public Class newquFRM
                     sqlcmd.Parameters.AddWithValue("@cin", mainform.tempcin)
                     sqlcmd.Parameters.AddWithValue("@aseno", aseno.Text)
                     sqlcmd.Parameters.AddWithValue("@qdate", qudate.Text)
+                    sqlcmd.Parameters.AddWithValue("@othercharges", othercharges.Text)
                     sqlcmd.ExecuteNonQuery()
                 Catch ex As Exception
                     MsgBox(ex.ToString)
@@ -32,7 +33,7 @@ Public Class newquFRM
         End Using
     End Sub
     Public Sub update()
-        Dim str As String = "update quotationtb set aseno=@aseno,qdate=@qdate where id = @id"
+        Dim str As String = "update quotationtb set aseno=@aseno,qdate=@qdate,othercharges=@othercharges where id = @id"
         Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
             Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
                 Try
@@ -40,6 +41,7 @@ Public Class newquFRM
                     sqlcmd.Parameters.AddWithValue("@id", quotationFRM.id)
                     sqlcmd.Parameters.AddWithValue("@aseno", aseno.Text)
                     sqlcmd.Parameters.AddWithValue("@qdate", qudate.Text)
+                    sqlcmd.Parameters.AddWithValue("@othercharges", othercharges.Text)
                     sqlcmd.ExecuteNonQuery()
                 Catch ex As Exception
                     MsgBox(ex.ToString)

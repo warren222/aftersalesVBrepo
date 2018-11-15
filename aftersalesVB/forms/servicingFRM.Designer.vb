@@ -22,6 +22,7 @@ Partial Class servicingFRM
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.servicingGRID = New ComponentFactory.Krypton.Toolkit.KryptonDataGridView()
         Me.refresh = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
         Me.jo = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
@@ -37,6 +38,8 @@ Partial Class servicingFRM
         Me.servicingGRID.AllowUserToAddRows = False
         Me.servicingGRID.AllowUserToDeleteRows = False
         Me.servicingGRID.AllowUserToResizeRows = False
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.servicingGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.servicingGRID.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
