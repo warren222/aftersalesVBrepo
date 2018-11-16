@@ -2,7 +2,7 @@
 Public Class itemFRM
     Dim sql As New sql
     Public id As String
-
+    Dim bs As New BindingSource
     Private Sub itemFRM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Height = Screen.PrimaryScreen.Bounds.Bottom - 37
         loaditems()
@@ -29,7 +29,9 @@ from itemtb where aseno = @aseno"
                         sqlcmd.Parameters.AddWithValue("@aseno", quotationFRM.aseno)
                         da.SelectCommand = sqlcmd
                         da.Fill(ds, "itemtb")
-                        itemGRID.DataSource = ds.Tables("itemtb")
+                        bs.DataSource = ds
+                        bs.DataMember = "itemtb"
+                        itemGRID.DataSource = bs
                         addcolumns()
                         With itemGRID
                             .Columns("ID").Visible = False
@@ -125,5 +127,10 @@ from itemtb where aseno = @aseno"
                 End If
             End If
         End If
+    End Sub
+
+
+    Private Sub itemGRID_RowPostPaint(sender As Object, e As DataGridViewRowPostPaintEventArgs) Handles itemGRID.RowPostPaint
+        sql.rownum(sender, e)
     End Sub
 End Class

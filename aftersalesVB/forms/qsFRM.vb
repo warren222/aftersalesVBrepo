@@ -2,7 +2,7 @@
 Public Class qsFRM
     Dim sql As New sql
     Public id As String
-
+    Dim bs As New BindingSource
     Private Sub qsFRM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Height = Screen.PrimaryScreen.Bounds.Height - 37
         loadquestionnaire()
@@ -19,7 +19,9 @@ Public Class qsFRM
                         questionGRID.Columns.Clear()
                         da.SelectCommand = sqlcmd
                         da.Fill(ds, "questionnairetb")
-                        questionGRID.DataSource = ds.Tables("questionnairetb")
+                        bs.DataSource = ds
+                        bs.DataMember = "questionnairetb"
+                        questionGRID.DataSource = bs
                         addcolumns()
                         questionGRID.Columns("qid").Visible = False
                         questionGRID.Columns("item").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
@@ -113,5 +115,9 @@ Public Class qsFRM
         newqsFRM.Text = "New"
         newqsFRM.save.Text = "add"
         newqsFRM.ShowDialog()
+    End Sub
+
+    Private Sub questionGRID_RowPostPaint(sender As Object, e As DataGridViewRowPostPaintEventArgs) Handles questionGRID.RowPostPaint
+        sql.rownum(sender, e)
     End Sub
 End Class

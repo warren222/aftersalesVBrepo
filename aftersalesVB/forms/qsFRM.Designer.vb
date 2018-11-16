@@ -22,6 +22,7 @@ Partial Class qsFRM
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.questionGRID = New ComponentFactory.Krypton.Toolkit.KryptonDataGridView()
         Me.refreshbtn = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
         Me.newbtn = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
@@ -33,6 +34,8 @@ Partial Class qsFRM
         Me.questionGRID.AllowUserToAddRows = False
         Me.questionGRID.AllowUserToDeleteRows = False
         Me.questionGRID.AllowUserToResizeRows = False
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.questionGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.questionGRID.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)

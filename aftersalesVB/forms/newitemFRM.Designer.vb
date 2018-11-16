@@ -47,6 +47,7 @@ Partial Class newitemFRM
         Me.kno.CustomButton.Visible = False
         Me.kno.DisplayIcon = True
         Me.kno.FontSize = MetroFramework.MetroTextBoxSize.Medium
+        Me.kno.ForeColor = System.Drawing.Color.Black
         Me.kno.Lines = New String(-1) {}
         Me.kno.Location = New System.Drawing.Point(16, 63)
         Me.kno.MaxLength = 32767
@@ -99,6 +100,7 @@ Partial Class newitemFRM
         Me.itemno.CustomButton.Visible = False
         Me.itemno.DisplayIcon = True
         Me.itemno.FontSize = MetroFramework.MetroTextBoxSize.Medium
+        Me.itemno.ForeColor = System.Drawing.Color.Black
         Me.itemno.Lines = New String(-1) {}
         Me.itemno.Location = New System.Drawing.Point(16, 97)
         Me.itemno.MaxLength = 32767
@@ -135,6 +137,7 @@ Partial Class newitemFRM
         Me.wdwloc.CustomButton.Visible = False
         Me.wdwloc.DisplayIcon = True
         Me.wdwloc.FontSize = MetroFramework.MetroTextBoxSize.Medium
+        Me.wdwloc.ForeColor = System.Drawing.Color.Black
         Me.wdwloc.Lines = New String(-1) {}
         Me.wdwloc.Location = New System.Drawing.Point(16, 131)
         Me.wdwloc.MaxLength = 32767
@@ -162,9 +165,9 @@ Partial Class newitemFRM
         Me.save.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.save.Image = Nothing
         Me.save.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.save.Location = New System.Drawing.Point(159, 177)
+        Me.save.Location = New System.Drawing.Point(16, 177)
         Me.save.Name = "save"
-        Me.save.Size = New System.Drawing.Size(119, 28)
+        Me.save.Size = New System.Drawing.Size(262, 28)
         Me.save.Style = MetroFramework.MetroColorStyle.Green
         Me.save.TabIndex = 509
         Me.save.Text = "add"
@@ -197,6 +200,7 @@ Partial Class newitemFRM
         Me.Name = "newitemFRM"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Style = MetroFramework.MetroColorStyle.Yellow
+        Me.Theme = MetroFramework.MetroThemeStyle.[Default]
         Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
 

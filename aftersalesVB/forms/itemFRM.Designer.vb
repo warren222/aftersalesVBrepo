@@ -22,6 +22,7 @@ Partial Class itemFRM
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.itemGRID = New ComponentFactory.Krypton.Toolkit.KryptonDataGridView()
         Me.newbtn = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
         Me.refreshbtn = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
@@ -34,6 +35,8 @@ Partial Class itemFRM
         Me.itemGRID.AllowUserToAddRows = False
         Me.itemGRID.AllowUserToDeleteRows = False
         Me.itemGRID.AllowUserToResizeRows = False
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.itemGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.itemGRID.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)

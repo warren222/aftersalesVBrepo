@@ -37,14 +37,13 @@ Partial Class importFRM
         Me.knoGRID.ColumnHeadersHeight = 32
         Me.knoGRID.Cursor = System.Windows.Forms.Cursors.Hand
         Me.knoGRID.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
-        Me.knoGRID.Location = New System.Drawing.Point(23, 63)
-        Me.knoGRID.MultiSelect = False
+        Me.knoGRID.Location = New System.Drawing.Point(10, 74)
         Me.knoGRID.Name = "knoGRID"
         Me.knoGRID.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Silver
         Me.knoGRID.RowHeadersWidth = 30
         Me.knoGRID.RowTemplate.Height = 30
         Me.knoGRID.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.knoGRID.Size = New System.Drawing.Size(548, 369)
+        Me.knoGRID.Size = New System.Drawing.Size(575, 358)
         Me.knoGRID.StateCommon.Background.Color1 = System.Drawing.Color.White
         Me.knoGRID.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
         Me.knoGRID.StateCommon.DataCell.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) _
@@ -61,7 +60,7 @@ Partial Class importFRM
         Me.knoGRID.StateCommon.HeaderColumn.Content.Color1 = System.Drawing.Color.White
         Me.knoGRID.StateCommon.HeaderColumn.Content.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.knoGRID.StateCommon.HeaderColumn.Content.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias
-        Me.knoGRID.TabIndex = 560
+        Me.knoGRID.TabIndex = 567
         '
         'importFRM
         '
@@ -72,8 +71,8 @@ Partial Class importFRM
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "importFRM"
+        Me.Opacity = 0.95R
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
-        Me.Style = MetroFramework.MetroColorStyle.Yellow
         Me.Text = "Select Item"
         Me.TopMost = True
         CType(Me.knoGRID, System.ComponentModel.ISupportInitialize).EndInit()

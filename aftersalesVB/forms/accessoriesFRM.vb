@@ -2,6 +2,7 @@
 Public Class accessoriesFRM
     Dim sql As New sql
     Public id As String
+    Dim bs As New BindingSource
     Private Sub accessoriesFRM_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Me.Dispose()
     End Sub
@@ -9,15 +10,41 @@ Public Class accessoriesFRM
     Private Sub refreshBTN_Click(sender As Object, e As EventArgs) Handles refreshBTN.Click
         loadaccessories()
     End Sub
+    Public Sub loadsuggestion(ByVal col As String, ByVal od As Object)
+        Dim str As String = "select distinct " & col & " from ACCESSORIESTB order by " & col & " asc"
+        Dim ds As New DataSet
+        ds.Clear()
+        Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
+            Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
+                Using da As SqlDataAdapter = New SqlDataAdapter
+                    Try
+                        sqlcon.Open()
+                        da.SelectCommand = sqlcmd
+                        da.Fill(ds, "ACCESSORIESTB")
+                        od.datasource = ds.Tables("ACCESSORIESTB")
+                        od.displaymember = "" & col & ""
+                        od.selectedindex = -1
+                    Catch ex As Exception
+                        MsgBox(ex.ToString)
+                    End Try
+                End Using
+            End Using
+        End Using
+    End Sub
     Public Sub loadaccessories()
         Dim str As String = "select ID,
-SPECIFICATION,
-ARTICLENO,
-DESCRIPTION,
-UNIT,
-UNITPRICE as [UNIT PRICE],
-REMARKS
- from accessoriestb"
+                            SPECIFICATION,
+                            ARTICLENO,
+                            DESCRIPTION,
+                            UNIT,
+                            UNITPRICE as [UNIT PRICE],
+                            REMARKS
+                            from accessoriestb
+                            where 
+                            description like @description and
+                            articleno like @articleno and
+                            specification like @specification
+"
         Dim ds As New DataSet
         ds.Clear()
         Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
@@ -26,9 +53,14 @@ REMARKS
                     Try
                         sqlcon.Open()
                         accessoriesGRID.Columns.Clear()
+                        sqlcmd.Parameters.AddWithValue("@description", "%" & description.Text & "%")
+                        sqlcmd.Parameters.AddWithValue("@articleno", "%" & articleno.Text & "%")
+                        sqlcmd.Parameters.AddWithValue("@specification", "%" & specification.Text & "%")
                         da.SelectCommand = sqlcmd
                         da.Fill(ds, "accessoriestb")
-                        accessoriesGRID.DataSource = ds.Tables("accessoriestb")
+                        bs.DataSource = ds
+                        bs.DataMember = "accessoriestb"
+                        accessoriesGRID.DataSource = bs
                         addbuttons()
                         With accessoriesGRID
                             .Columns("id").Visible = False
@@ -45,6 +77,9 @@ REMARKS
                 End Using
             End Using
         End Using
+        loadsuggestion("specification", specification)
+        loadsuggestion("description", description)
+        loadsuggestion("articleno", articleno)
     End Sub
     Public Sub addbuttons()
         Dim updatebtn As New DataGridViewButtonColumn
@@ -112,5 +147,13 @@ REMARKS
                 refreshBTN.PerformClick()
             End If
         End If
+    End Sub
+
+    Private Sub accessoriesGRID_RowPostPaint(sender As Object, e As DataGridViewRowPostPaintEventArgs) Handles accessoriesGRID.RowPostPaint
+        sql.rownum(sender, e)
+    End Sub
+
+    Private Sub MetroTextButton1_Click(sender As Object, e As EventArgs) Handles MetroTextButton1.Click
+        loadaccessories()
     End Sub
 End Class

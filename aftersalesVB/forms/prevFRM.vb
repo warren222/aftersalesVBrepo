@@ -15,7 +15,6 @@ Public Class prevFRM
         Dim param5 As ReportParameter = New ReportParameter("telno", mainform.telno)
         Dim param6 As ReportParameter = New ReportParameter("faxno", mainform.faxno)
         Dim param7 As ReportParameter = New ReportParameter("oth", quotationFRM.oth)
-
         Dim param8 As ReportParameter = New ReportParameter("dear", dear.Text)
         Dim param9 As ReportParameter = New ReportParameter("note", note.Text)
         Dim param10 As ReportParameter = New ReportParameter("scopeofworks", scopeofworks.Text)
@@ -35,8 +34,8 @@ Public Class prevFRM
             .SetParameters(New ReportParameter() {param11})
             .SetParameters(New ReportParameter() {param12})
         End With
-        ReportViewer1.ZoomMode = ZoomMode.PageWidth
         ReportViewer1.SetDisplayMode(DisplayMode.PrintLayout)
+        ReportViewer1.ZoomMode = ZoomMode.PageWidth
         Me.ReportViewer1.RefreshReport()
     End Sub
     Public Sub loadrep()

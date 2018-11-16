@@ -3,7 +3,7 @@ Imports MetroFramework
 
 Public Class concernFRM
     Dim sql As New sql
-
+    Dim bs As New BindingSource
     Public aid As String
 
     Private Sub concernFRM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -27,7 +27,9 @@ Public Class concernFRM
                         sqlcmd.Parameters.AddWithValue("@qid", qsFRM.id)
                         da.SelectCommand = sqlcmd
                         da.Fill(ds, "answertb")
-                        answerGRID.DataSource = ds.Tables("answertb")
+                        bs.datasource = ds
+                        bs.DataMember = "answertb"
+                        answerGRID.DataSource = bs
                         addcolumns()
                         answerGRID.Columns("aid").Visible = False
                         answerGRID.Columns("qid").Visible = False
@@ -113,5 +115,9 @@ Public Class concernFRM
         newconcernFRM.Text = "New"
         newconcernFRM.save.Text = "add"
         newconcernFRM.ShowDialog()
+    End Sub
+
+    Private Sub answerGRID_RowPostPaint(sender As Object, e As DataGridViewRowPostPaintEventArgs) Handles answerGRID.RowPostPaint
+        sql.rownum(sender, e)
     End Sub
 End Class

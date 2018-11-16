@@ -22,6 +22,7 @@ Partial Class partsFRM
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.partsGRID = New ComponentFactory.Krypton.Toolkit.KryptonDataGridView()
         Me.newbtn = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
         Me.refreshbtn = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
@@ -34,6 +35,8 @@ Partial Class partsFRM
         Me.partsGRID.AllowUserToAddRows = False
         Me.partsGRID.AllowUserToDeleteRows = False
         Me.partsGRID.AllowUserToResizeRows = False
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.partsGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.partsGRID.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)

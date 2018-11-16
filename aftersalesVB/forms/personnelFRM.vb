@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Public Class personnelFRM
     Dim SQL As New sql
-
+    Dim bs As New BindingSource
     Public id As String
     Public Sub loadpersonnel()
         Dim str As String = "select * from personneltb"
@@ -15,7 +15,9 @@ Public Class personnelFRM
                         sqlcon.Open()
                         da.SelectCommand = sqlcmd
                         da.Fill(ds, "personneltb")
-                        personnelGRID.DataSource = ds.Tables("personneltb")
+                        bs.DataSource = ds
+                        bs.DataMember = "personneltb"
+                        personnelGRID.DataSource = bs
                         addbtn()
                         personnelGRID.Columns("ID").Visible = False
                         personnelGRID.Columns("PERSONNEL").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
@@ -99,5 +101,9 @@ Public Class personnelFRM
         editpersonnelFRM.Text = "New"
         editpersonnelFRM.SAVE.Text = "add"
         editpersonnelFRM.ShowDialog()
+    End Sub
+
+    Private Sub personnelGRID_RowPostPaint(sender As Object, e As DataGridViewRowPostPaintEventArgs) Handles personnelGRID.RowPostPaint
+        SQL.rownum(sender, e)
     End Sub
 End Class
