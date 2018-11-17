@@ -1,4 +1,6 @@
 ﻿Imports System.Data.SqlClient
+Imports Microsoft.Reporting.WinForms
+
 Public Class mainform
     Dim sql As New sql
     Public Shared tempcin As String
@@ -6,10 +8,18 @@ Public Class mainform
     Public Shared faxno As String
     Dim bs As New BindingSource
     Private Sub mainform_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        toprows.SelectedIndex = 0
         fieldcombo.SelectedIndex = 0
         reloadBTN.PerformClick()
     End Sub
     Public Sub loadcallin(ByVal field As String, ByVal txt As String)
+        Dim TR As String
+        Dim ROW As String = Trim(toprows.Text.Replace(",", ""))
+        If toprows.Text = "MAX" Then
+            TR = ""
+        Else
+            TR = " TOP " & ROW & " "
+        End If
 
         If field = "PROJECT" Then
             field = "B.PROJECT_LABEL"
@@ -26,8 +36,9 @@ Public Class mainform
         End If
 
         Dim str As String = "
-                            select 
+                            select " & TR & "
                             a.AUTONUM,
+                            a.STATUS,
                             A.CDATE as DATE,
                             A.CIN,
                             A.CALLER,
@@ -56,11 +67,13 @@ Public Class mainform
                         callinGRID.DataSource = bs
                         addbtncolumns()
                         With callinGRID
+                            .Columns("CALLER").Frozen = True
                             .Columns("autonum").Visible = False
                             .Columns("TELNO").Visible = False
                             .Columns("FAXNO").Visible = False
                             .Columns("concern").Width = 100
                             .Columns("servicing").Width = 100
+                            .Columns("STATUS").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
                             .Columns("date").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
                             .Columns("cin").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
                             .Columns("caller").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
@@ -102,10 +115,10 @@ Public Class mainform
             .Text = "update"
             .UseColumnTextForButtonValue = True
         End With
-        callinGRID.Columns.Insert(7, updatebtn)
-        callinGRID.Columns.Insert(8, concernbtn)
-        callinGRID.Columns.Insert(9, servicingbtn)
-        callinGRID.Columns.Insert(10, quotationbtn)
+        callinGRID.Columns.Insert(8, updatebtn)
+        callinGRID.Columns.Insert(9, concernbtn)
+        callinGRID.Columns.Insert(10, servicingbtn)
+        callinGRID.Columns.Insert(11, quotationbtn)
 
     End Sub
     Private Sub newPNL_Click(sender As Object, e As EventArgs) Handles newPNL.Click
@@ -158,7 +171,7 @@ Public Class mainform
     Private Sub callinGRID_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles callinGRID.CellClick
         If callinGRID.RowCount >= 0 And e.RowIndex >= 0 Then
             Dim row As DataGridViewRow = callinGRID.Rows(e.RowIndex)
-            If e.ColumnIndex = 7 Then
+            If e.ColumnIndex = 8 Then
                 newcallinFRM.Text = "Editing"
                 newcallinFRM.telno.Text = row.Cells("TELNO").Value.ToString
                 newcallinFRM.faxno.Text = row.Cells("FAXNO").Value.ToString
@@ -171,14 +184,18 @@ Public Class mainform
                 newcallinFRM.addBTN.Visible = False
                 newcallinFRM.updateBTN.Visible = True
                 newcallinFRM.ShowDialog()
-            ElseIf e.ColumnIndex = 8 Then
-                concernsummaryFRM.ShowDialog()
             ElseIf e.ColumnIndex = 9 Then
+                Dim param1 As ReportParameter = New ReportParameter("project", row.Cells("project").Value.ToString)
+                Dim param2 As ReportParameter = New ReportParameter("address", row.Cells("address").Value.ToString)
+                concernsummaryFRM.ReportViewer1.LocalReport.SetParameters(New ReportParameter() {param1})
+                concernsummaryFRM.ReportViewer1.LocalReport.SetParameters(New ReportParameter() {param2})
+                concernsummaryFRM.ShowDialog()
+            ElseIf e.ColumnIndex = 10 Then
                 servicingFRM.projectname.Text = row.Cells("project").Value.ToString
                 servicingFRM.address.Text = row.Cells("address").Value.ToString
                 servicingFRM.jo.Text = row.Cells("jo").Value.ToString
                 servicingFRM.ShowDialog()
-            ElseIf e.ColumnIndex = 10 Then
+            ElseIf e.ColumnIndex = 11 Then
                 telno = row.Cells("telno").Value.ToString
                 faxno = row.Cells("faxno").Value.ToString
                 quotationFRM.projectname.Text = row.Cells("project").Value.ToString

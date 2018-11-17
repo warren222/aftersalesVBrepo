@@ -3,8 +3,7 @@ Imports Microsoft.Reporting.WinForms
 
 Public Class prevFRM
     Dim sql As New sql
-    Private Sub prevFRM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        loadrep()
+    Public Sub re()
         If quotationFRM.oth = "" Then
             quotationFRM.oth = 0
         End If
@@ -38,6 +37,10 @@ Public Class prevFRM
         ReportViewer1.ZoomMode = ZoomMode.PageWidth
         Me.ReportViewer1.RefreshReport()
     End Sub
+    Private Sub prevFRM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        loadrep()
+        re()
+    End Sub
     Public Sub loadrep()
         Dim str As String = "select * from itemtb where aseno = @aseno"
         Dim ds As New asdbDS
@@ -61,5 +64,9 @@ Public Class prevFRM
 
     Private Sub prevFRM_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Me.Dispose()
+    End Sub
+
+    Private Sub ReportViewer1_ReportRefresh(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles ReportViewer1.ReportRefresh
+        re()
     End Sub
 End Class

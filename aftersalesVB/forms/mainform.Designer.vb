@@ -35,6 +35,7 @@ Partial Class mainform
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.toprows = New MetroFramework.Controls.MetroComboBox()
         CType(Me.callinGRID, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -106,7 +107,7 @@ Partial Class mainform
         Me.searchtext.DisplayIcon = True
         Me.searchtext.FontSize = MetroFramework.MetroTextBoxSize.Medium
         Me.searchtext.Lines = New String(-1) {}
-        Me.searchtext.Location = New System.Drawing.Point(184, 20)
+        Me.searchtext.Location = New System.Drawing.Point(442, 20)
         Me.searchtext.MaxLength = 32767
         Me.searchtext.Name = "searchtext"
         Me.searchtext.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -131,7 +132,7 @@ Partial Class mainform
         Me.fieldcombo.FormattingEnabled = True
         Me.fieldcombo.ItemHeight = 23
         Me.fieldcombo.Items.AddRange(New Object() {"PROJECT", "ADDRESS", "CALLER", "DATE", "JOB ORDER NO", "CIN"})
-        Me.fieldcombo.Location = New System.Drawing.Point(26, 20)
+        Me.fieldcombo.Location = New System.Drawing.Point(284, 20)
         Me.fieldcombo.Name = "fieldcombo"
         Me.fieldcombo.Size = New System.Drawing.Size(152, 29)
         Me.fieldcombo.TabIndex = 473
@@ -144,7 +145,7 @@ Partial Class mainform
         Me.reloadBTN.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.reloadBTN.Image = Nothing
         Me.reloadBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.reloadBTN.Location = New System.Drawing.Point(570, 20)
+        Me.reloadBTN.Location = New System.Drawing.Point(828, 20)
         Me.reloadBTN.Name = "reloadBTN"
         Me.reloadBTN.Size = New System.Drawing.Size(68, 29)
         Me.reloadBTN.Style = MetroFramework.MetroColorStyle.Yellow
@@ -173,7 +174,7 @@ Partial Class mainform
         Me.callinGRID.RowHeadersWidth = 30
         Me.callinGRID.RowTemplate.Height = 30
         Me.callinGRID.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.callinGRID.Size = New System.Drawing.Size(646, 340)
+        Me.callinGRID.Size = New System.Drawing.Size(904, 340)
         Me.callinGRID.StateCommon.Background.Color1 = System.Drawing.Color.White
         Me.callinGRID.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
         Me.callinGRID.StateCommon.DataCell.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) _
@@ -232,26 +233,38 @@ Partial Class mainform
         Me.Panel2.Controls.Add(Me.callinGRID)
         Me.Panel2.Location = New System.Drawing.Point(144, 72)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(652, 419)
+        Me.Panel2.Size = New System.Drawing.Size(910, 419)
         Me.Panel2.TabIndex = 558
         '
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel3.Controls.Add(Me.toprows)
         Me.Panel3.Controls.Add(Me.reloadBTN)
         Me.Panel3.Controls.Add(Me.searchtext)
         Me.Panel3.Controls.Add(Me.fieldcombo)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel3.Location = New System.Drawing.Point(0, 0)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(652, 69)
+        Me.Panel3.Size = New System.Drawing.Size(910, 69)
         Me.Panel3.TabIndex = 559
+        '
+        'toprows
+        '
+        Me.toprows.FormattingEnabled = True
+        Me.toprows.ItemHeight = 23
+        Me.toprows.Items.AddRange(New Object() {"100", "1,000", "5,000", "10,000", "50,000", "100,000", "500,000", "1,000,000", "1,500,000", "2,000,000"})
+        Me.toprows.Location = New System.Drawing.Point(12, 20)
+        Me.toprows.Name = "toprows"
+        Me.toprows.Size = New System.Drawing.Size(102, 29)
+        Me.toprows.TabIndex = 839
+        Me.toprows.UseSelectable = True
         '
         'mainform
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(796, 484)
+        Me.ClientSize = New System.Drawing.Size(1054, 484)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "mainform"
@@ -276,4 +289,5 @@ Partial Class mainform
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel3 As Panel
+    Friend WithEvents toprows As MetroFramework.Controls.MetroComboBox
 End Class

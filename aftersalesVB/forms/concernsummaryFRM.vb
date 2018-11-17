@@ -1,4 +1,6 @@
 ﻿Imports System.Data.SqlClient
+Imports Microsoft.Reporting.WinForms
+
 Public Class concernsummaryFRM
     Dim sql As New sql
     Private Sub concernsummaryFRM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -26,6 +28,12 @@ Public Class concernsummaryFRM
                 End Using
             End Using
         End Using
+        ReportViewer1.SetDisplayMode(DisplayMode.PrintLayout)
+        ReportViewer1.ZoomMode = ZoomMode.PageWidth
         Me.ReportViewer1.RefreshReport()
+    End Sub
+
+    Private Sub concernsummaryFRM_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Me.Dispose()
     End Sub
 End Class

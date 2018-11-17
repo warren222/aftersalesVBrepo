@@ -19,7 +19,7 @@ Public Class servicingFRM
                             SERVICING,
                             SDATE AS [SERVICING DATE],
                             ASSIGNEDPERSONNEL AS [ASSIGNED PERSONNEL]
-                             from servicingtb where cin = @cin"
+                            from servicingtb where cin = @cin ORDER BY SERVICING ASC"
         Dim ds As New DataSet
         ds.Clear()
         Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)

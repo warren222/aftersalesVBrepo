@@ -46,13 +46,13 @@ Partial Class quotationFRM
         Me.quGRID.ColumnHeadersHeight = 32
         Me.quGRID.Cursor = System.Windows.Forms.Cursors.Hand
         Me.quGRID.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
-        Me.quGRID.Location = New System.Drawing.Point(23, 186)
+        Me.quGRID.Location = New System.Drawing.Point(20, 187)
         Me.quGRID.Name = "quGRID"
         Me.quGRID.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Silver
         Me.quGRID.RowHeadersWidth = 30
         Me.quGRID.RowTemplate.Height = 30
         Me.quGRID.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.quGRID.Size = New System.Drawing.Size(817, 277)
+        Me.quGRID.Size = New System.Drawing.Size(834, 285)
         Me.quGRID.StateCommon.Background.Color1 = System.Drawing.Color.White
         Me.quGRID.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
         Me.quGRID.StateCommon.DataCell.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) _
@@ -77,10 +77,10 @@ Partial Class quotationFRM
         Me.newbtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.newbtn.Image = Nothing
         Me.newbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.newbtn.Location = New System.Drawing.Point(148, 156)
+        Me.newbtn.Location = New System.Drawing.Point(148, 148)
         Me.newbtn.Name = "newbtn"
         Me.newbtn.Size = New System.Drawing.Size(119, 24)
-        Me.newbtn.Style = MetroFramework.MetroColorStyle.Yellow
+        Me.newbtn.Style = MetroFramework.MetroColorStyle.Blue
         Me.newbtn.TabIndex = 565
         Me.newbtn.Text = "new"
         Me.newbtn.UseCustomForeColor = True
@@ -93,10 +93,10 @@ Partial Class quotationFRM
         Me.refreshBTN.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.refreshBTN.Image = Nothing
         Me.refreshBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.refreshBTN.Location = New System.Drawing.Point(23, 156)
+        Me.refreshBTN.Location = New System.Drawing.Point(23, 148)
         Me.refreshBTN.Name = "refreshBTN"
         Me.refreshBTN.Size = New System.Drawing.Size(119, 24)
-        Me.refreshBTN.Style = MetroFramework.MetroColorStyle.Yellow
+        Me.refreshBTN.Style = MetroFramework.MetroColorStyle.Blue
         Me.refreshBTN.TabIndex = 564
         Me.refreshBTN.Text = "refresh"
         Me.refreshBTN.UseCustomForeColor = True
@@ -105,7 +105,7 @@ Partial Class quotationFRM
         '
         'jo
         '
-        Me.jo.Location = New System.Drawing.Point(23, 121)
+        Me.jo.Location = New System.Drawing.Point(23, 113)
         Me.jo.Name = "jo"
         Me.jo.Size = New System.Drawing.Size(93, 22)
         Me.jo.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
@@ -115,7 +115,7 @@ Partial Class quotationFRM
         '
         'address
         '
-        Me.address.Location = New System.Drawing.Point(23, 89)
+        Me.address.Location = New System.Drawing.Point(23, 81)
         Me.address.Name = "address"
         Me.address.Size = New System.Drawing.Size(70, 26)
         Me.address.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
@@ -125,7 +125,7 @@ Partial Class quotationFRM
         '
         'projectname
         '
-        Me.projectname.Location = New System.Drawing.Point(23, 49)
+        Me.projectname.Location = New System.Drawing.Point(23, 41)
         Me.projectname.Name = "projectname"
         Me.projectname.Size = New System.Drawing.Size(145, 34)
         Me.projectname.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
@@ -136,7 +136,7 @@ Partial Class quotationFRM
         'KryptonLabel1
         '
         Me.KryptonLabel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.KryptonLabel1.Location = New System.Drawing.Point(729, 143)
+        Me.KryptonLabel1.Location = New System.Drawing.Point(729, 135)
         Me.KryptonLabel1.Name = "KryptonLabel1"
         Me.KryptonLabel1.Size = New System.Drawing.Size(125, 37)
         Me.KryptonLabel1.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
@@ -149,14 +149,15 @@ Partial Class quotationFRM
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(877, 486)
+        Me.Controls.Add(Me.quGRID)
+        Me.Controls.Add(Me.projectname)
         Me.Controls.Add(Me.KryptonLabel1)
+        Me.Controls.Add(Me.refreshBTN)
         Me.Controls.Add(Me.jo)
         Me.Controls.Add(Me.address)
-        Me.Controls.Add(Me.projectname)
         Me.Controls.Add(Me.newbtn)
-        Me.Controls.Add(Me.refreshBTN)
-        Me.Controls.Add(Me.quGRID)
         Me.Name = "quotationFRM"
+        Me.Theme = MetroFramework.MetroThemeStyle.[Default]
         CType(Me.quGRID, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
