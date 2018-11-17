@@ -5,9 +5,11 @@ Public Class newaccessoriesFRM
         zero(unitprice)
         If save.Text = "add" Then
             add()
+            accessoriesFRM.cc()
             accessoriesFRM.refreshBTN.PerformClick()
         Else save.Text = "save"
             updateme()
+            accessoriesFRM.cc()
             accessoriesFRM.refreshBTN.PerformClick()
         End If
     End Sub
@@ -87,7 +89,21 @@ Public Class newaccessoriesFRM
     End Sub
 
     Private Sub newaccessoriesFRM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Dim clr As Color
+        If Me.Text = "Editing" Then
+            clr = Color.Red
+        Else
+            clr = Color.Black
+        End If
+        ccolor(specification, clr)
+        ccolor(articleno, clr)
+        ccolor(description, clr)
+        ccolor(unit, clr)
+        ccolor(unitprice, clr)
+        ccolor(remarks, clr)
+    End Sub
+    Private Sub ccolor(ByVal ob As Object, ByVal c As Color)
+        ob.ForeColor = c
     End Sub
     Public Sub loadspecs()
         Dim ds As New DataSet

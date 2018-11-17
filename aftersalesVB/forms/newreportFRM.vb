@@ -52,6 +52,18 @@ Public Class newreportFRM
     Private Sub newreportFRM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         loadspecification()
         loadlocation()
+        Dim clr As Color
+        If Me.Text = "Editing" Then
+            clr = Color.Red
+        Else
+            clr = Color.Black
+        End If
+        ccolor(specification, clr)
+        ccolor(location, clr)
+        ccolor(assessment, clr)
+    End Sub
+    Private Sub ccolor(ByVal ob As Object, ByVal c As Color)
+        ob.ForeColor = c
     End Sub
     Public Sub loadlocation()
         Dim str As String = "select distinct location from reporttb"

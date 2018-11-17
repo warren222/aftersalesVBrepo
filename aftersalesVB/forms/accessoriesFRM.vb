@@ -77,9 +77,7 @@ Public Class accessoriesFRM
                 End Using
             End Using
         End Using
-        loadsuggestion("specification", specification)
-        loadsuggestion("description", description)
-        loadsuggestion("articleno", articleno)
+
     End Sub
     Public Sub addbuttons()
         Dim updatebtn As New DataGridViewButtonColumn
@@ -102,8 +100,14 @@ Public Class accessoriesFRM
         End With
     End Sub
     Private Sub accessoriesFRM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        cc()
         Me.Height = Screen.PrimaryScreen.Bounds.Height - 37
         refreshBTN.PerformClick()
+    End Sub
+    Public Sub cc()
+        loadsuggestion("specification", specification)
+        loadsuggestion("description", description)
+        loadsuggestion("articleno", articleno)
     End Sub
 
     Private Sub newbtn_Click(sender As Object, e As EventArgs) Handles newbtn.Click

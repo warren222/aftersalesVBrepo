@@ -32,17 +32,23 @@ Partial Class mainform
         Me.reloadBTN = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
         Me.callinGRID = New ComponentFactory.Krypton.Toolkit.KryptonDataGridView()
         Me.MetroTile3 = New MetroFramework.Controls.MetroTile()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Panel3 = New System.Windows.Forms.Panel()
         CType(Me.callinGRID, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
+        Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'newPNL
         '
         Me.newPNL.ActiveControl = Nothing
         Me.newPNL.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(126, Byte), Integer))
-        Me.newPNL.Location = New System.Drawing.Point(23, 103)
+        Me.newPNL.Location = New System.Drawing.Point(13, 5)
         Me.newPNL.Name = "newPNL"
         Me.newPNL.Size = New System.Drawing.Size(107, 71)
-        Me.newPNL.Style = MetroFramework.MetroColorStyle.Lime
+        Me.newPNL.Style = MetroFramework.MetroColorStyle.Green
         Me.newPNL.TabIndex = 467
         Me.newPNL.Text = "New"
         Me.newPNL.TileImage = CType(resources.GetObject("newPNL.TileImage"), System.Drawing.Image)
@@ -55,10 +61,10 @@ Partial Class mainform
         '
         Me.MetroTile1.ActiveControl = Nothing
         Me.MetroTile1.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(126, Byte), Integer))
-        Me.MetroTile1.Location = New System.Drawing.Point(23, 180)
+        Me.MetroTile1.Location = New System.Drawing.Point(13, 82)
         Me.MetroTile1.Name = "MetroTile1"
         Me.MetroTile1.Size = New System.Drawing.Size(107, 71)
-        Me.MetroTile1.Style = MetroFramework.MetroColorStyle.Blue
+        Me.MetroTile1.Style = MetroFramework.MetroColorStyle.Red
         Me.MetroTile1.TabIndex = 468
         Me.MetroTile1.Text = "Accessories"
         Me.MetroTile1.TileImage = CType(resources.GetObject("MetroTile1.TileImage"), System.Drawing.Image)
@@ -71,10 +77,10 @@ Partial Class mainform
         '
         Me.MetroTile2.ActiveControl = Nothing
         Me.MetroTile2.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(126, Byte), Integer))
-        Me.MetroTile2.Location = New System.Drawing.Point(23, 257)
+        Me.MetroTile2.Location = New System.Drawing.Point(13, 159)
         Me.MetroTile2.Name = "MetroTile2"
         Me.MetroTile2.Size = New System.Drawing.Size(107, 71)
-        Me.MetroTile2.Style = MetroFramework.MetroColorStyle.Purple
+        Me.MetroTile2.Style = MetroFramework.MetroColorStyle.Orange
         Me.MetroTile2.TabIndex = 469
         Me.MetroTile2.Text = "Concern"
         Me.MetroTile2.TileImage = CType(resources.GetObject("MetroTile2.TileImage"), System.Drawing.Image)
@@ -85,13 +91,12 @@ Partial Class mainform
         '
         'searchtext
         '
-        Me.searchtext.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.searchtext.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         '
         '
         '
         Me.searchtext.CustomButton.Image = Nothing
-        Me.searchtext.CustomButton.Location = New System.Drawing.Point(254, 1)
+        Me.searchtext.CustomButton.Location = New System.Drawing.Point(352, 1)
         Me.searchtext.CustomButton.Name = ""
         Me.searchtext.CustomButton.Size = New System.Drawing.Size(27, 27)
         Me.searchtext.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
@@ -101,7 +106,7 @@ Partial Class mainform
         Me.searchtext.DisplayIcon = True
         Me.searchtext.FontSize = MetroFramework.MetroTextBoxSize.Medium
         Me.searchtext.Lines = New String(-1) {}
-        Me.searchtext.Location = New System.Drawing.Point(417, 63)
+        Me.searchtext.Location = New System.Drawing.Point(184, 20)
         Me.searchtext.MaxLength = 32767
         Me.searchtext.Name = "searchtext"
         Me.searchtext.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -111,7 +116,7 @@ Partial Class mainform
         Me.searchtext.SelectionStart = 0
         Me.searchtext.ShowButton = True
         Me.searchtext.ShowClearButton = True
-        Me.searchtext.Size = New System.Drawing.Size(282, 29)
+        Me.searchtext.Size = New System.Drawing.Size(380, 29)
         Me.searchtext.Style = MetroFramework.MetroColorStyle.Red
         Me.searchtext.TabIndex = 472
         Me.searchtext.UseCustomForeColor = True
@@ -122,10 +127,11 @@ Partial Class mainform
         '
         'fieldcombo
         '
+        Me.fieldcombo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.fieldcombo.FormattingEnabled = True
         Me.fieldcombo.ItemHeight = 23
         Me.fieldcombo.Items.AddRange(New Object() {"PROJECT", "ADDRESS", "CALLER", "DATE", "JOB ORDER NO", "CIN"})
-        Me.fieldcombo.Location = New System.Drawing.Point(259, 63)
+        Me.fieldcombo.Location = New System.Drawing.Point(26, 20)
         Me.fieldcombo.Name = "fieldcombo"
         Me.fieldcombo.Size = New System.Drawing.Size(152, 29)
         Me.fieldcombo.TabIndex = 473
@@ -138,7 +144,7 @@ Partial Class mainform
         Me.reloadBTN.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.reloadBTN.Image = Nothing
         Me.reloadBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.reloadBTN.Location = New System.Drawing.Point(705, 63)
+        Me.reloadBTN.Location = New System.Drawing.Point(570, 20)
         Me.reloadBTN.Name = "reloadBTN"
         Me.reloadBTN.Size = New System.Drawing.Size(68, 29)
         Me.reloadBTN.Style = MetroFramework.MetroColorStyle.Yellow
@@ -161,13 +167,13 @@ Partial Class mainform
         Me.callinGRID.ColumnHeadersHeight = 32
         Me.callinGRID.Cursor = System.Windows.Forms.Cursors.Hand
         Me.callinGRID.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
-        Me.callinGRID.Location = New System.Drawing.Point(136, 103)
+        Me.callinGRID.Location = New System.Drawing.Point(3, 70)
         Me.callinGRID.Name = "callinGRID"
         Me.callinGRID.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Silver
         Me.callinGRID.RowHeadersWidth = 30
         Me.callinGRID.RowTemplate.Height = 30
         Me.callinGRID.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.callinGRID.Size = New System.Drawing.Size(637, 358)
+        Me.callinGRID.Size = New System.Drawing.Size(646, 340)
         Me.callinGRID.StateCommon.Background.Color1 = System.Drawing.Color.White
         Me.callinGRID.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
         Me.callinGRID.StateCommon.DataCell.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) _
@@ -190,7 +196,7 @@ Partial Class mainform
         '
         Me.MetroTile3.ActiveControl = Nothing
         Me.MetroTile3.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(126, Byte), Integer))
-        Me.MetroTile3.Location = New System.Drawing.Point(23, 334)
+        Me.MetroTile3.Location = New System.Drawing.Point(13, 236)
         Me.MetroTile3.Name = "MetroTile3"
         Me.MetroTile3.Size = New System.Drawing.Size(107, 71)
         Me.MetroTile3.Style = MetroFramework.MetroColorStyle.Teal
@@ -202,23 +208,60 @@ Partial Class mainform
         Me.MetroTile3.UseSelectable = True
         Me.MetroTile3.UseTileImage = True
         '
+        'Panel1
+        '
+        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.newPNL)
+        Me.Panel1.Controls.Add(Me.MetroTile3)
+        Me.Panel1.Controls.Add(Me.MetroTile1)
+        Me.Panel1.Controls.Add(Me.MetroTile2)
+        Me.Panel1.Location = New System.Drawing.Point(0, 72)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(138, 410)
+        Me.Panel1.TabIndex = 557
+        '
+        'Panel2
+        '
+        Me.Panel2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel2.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel2.Controls.Add(Me.Panel3)
+        Me.Panel2.Controls.Add(Me.callinGRID)
+        Me.Panel2.Location = New System.Drawing.Point(144, 72)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(652, 419)
+        Me.Panel2.TabIndex = 558
+        '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel3.Controls.Add(Me.reloadBTN)
+        Me.Panel3.Controls.Add(Me.searchtext)
+        Me.Panel3.Controls.Add(Me.fieldcombo)
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel3.Location = New System.Drawing.Point(0, 0)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(652, 69)
+        Me.Panel3.TabIndex = 559
+        '
         'mainform
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(796, 484)
-        Me.Controls.Add(Me.MetroTile3)
-        Me.Controls.Add(Me.callinGRID)
-        Me.Controls.Add(Me.reloadBTN)
-        Me.Controls.Add(Me.fieldcombo)
-        Me.Controls.Add(Me.searchtext)
-        Me.Controls.Add(Me.MetroTile2)
-        Me.Controls.Add(Me.MetroTile1)
-        Me.Controls.Add(Me.newPNL)
+        Me.Controls.Add(Me.Panel2)
+        Me.Controls.Add(Me.Panel1)
         Me.Name = "mainform"
         Me.Text = "After Sales"
+        Me.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.callinGRID, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel3.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -230,4 +273,7 @@ Partial Class mainform
     Friend WithEvents reloadBTN As MetroFramework.Controls.MetroTextBox.MetroTextButton
     Friend WithEvents callinGRID As ComponentFactory.Krypton.Toolkit.KryptonDataGridView
     Friend WithEvents MetroTile3 As MetroFramework.Controls.MetroTile
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Panel3 As Panel
 End Class

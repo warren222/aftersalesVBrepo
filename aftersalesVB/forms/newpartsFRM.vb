@@ -71,6 +71,21 @@ Public Class newpartsFRM
     Private Sub newpartsFRM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Location = New Point(0, 0)
         timer1.Start()
+        Dim clr As Color
+        If Me.Text = "Editing" Then
+            clr = Color.Red
+        Else
+            clr = Color.Black
+        End If
+        ccolor(articleno, clr)
+        ccolor(description, clr)
+        ccolor(markup, clr)
+        ccolor(unitprice, clr)
+        ccolor(qty, clr)
+        ccolor(netamount, clr)
+    End Sub
+    Private Sub ccolor(ByVal ob As Object, ByVal c As Color)
+        ob.ForeColor = c
     End Sub
     Private Sub TIMER1_TICK(sender As Object, e As EventArgs) Handles timer1.Tick
         If IsNumeric(unitprice.Text) And IsNumeric(qty.Text) And IsNumeric(markup.Text) Then

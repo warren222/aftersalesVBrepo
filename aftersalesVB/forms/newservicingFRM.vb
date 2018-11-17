@@ -6,6 +6,17 @@ Public Class newservicingFRM
     Dim suffix As String
     Private Sub newservicingFRM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         loadpersonnel()
+        Dim clr As Color
+        If Me.Text = "Editing" Then
+            clr = Color.Red
+        Else
+            clr = Color.Black
+        End If
+        ccolor(servicingdate, clr)
+        ccolor(assignedpersonnelTXT, clr)
+    End Sub
+    Private Sub ccolor(ByVal ob As Object, ByVal c As Color)
+        ob.ForeColor = c
     End Sub
 
     Private Sub metroTextButton1_Click(sender As Object, e As EventArgs) Handles metroTextButton1.Click

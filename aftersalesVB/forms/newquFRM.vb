@@ -57,4 +57,19 @@ Public Class newquFRM
     Private Sub MetroDateTime1_MouseDown(sender As Object, e As MouseEventArgs) Handles MetroDateTime1.MouseDown
         qudate.Text = MetroDateTime1.Text
     End Sub
+
+    Private Sub newquFRM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim clr As Color
+        If Me.Text = "Editing" Then
+            clr = Color.Red
+        Else
+            clr = Color.Black
+        End If
+        ccolor(qudate, clr)
+        ccolor(aseno, clr)
+        ccolor(othercharges, clr)
+    End Sub
+    Private Sub ccolor(ByVal ob As Object, ByVal c As Color)
+        ob.ForeColor = c
+    End Sub
 End Class

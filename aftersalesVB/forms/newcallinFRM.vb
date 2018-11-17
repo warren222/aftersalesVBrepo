@@ -8,6 +8,19 @@ Public Class newcallinFRM
 
         Me.Height = Screen.PrimaryScreen.Bounds.Height - 37
         loadconcern()
+        Dim clr As Color
+        If Me.Text = "Editing" Then
+            clr = Color.Red
+        Else
+            clr = Color.Black
+        End If
+        ccolor(calldate, clr)
+        ccolor(callername, clr)
+        ccolor(telno, clr)
+        ccolor(faxno, clr)
+    End Sub
+    Private Sub ccolor(ByVal ob As Object, ByVal c As Color)
+        ob.ForeColor = c
     End Sub
     Public Sub loadconcern()
         questionGRID.ClearSelection()

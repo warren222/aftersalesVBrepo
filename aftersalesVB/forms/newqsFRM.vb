@@ -54,4 +54,18 @@ Public Class newqsFRM
             End Using
         End Using
     End Sub
+
+    Private Sub newqsFRM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim clr As Color
+        If Me.Text = "Editing" Then
+            clr = Color.Red
+        Else
+            clr = Color.Black
+        End If
+        ccolor(item, clr)
+        ccolor(question, clr)
+    End Sub
+    Private Sub ccolor(ByVal ob As Object, ByVal c As Color)
+        ob.ForeColor = c
+    End Sub
 End Class

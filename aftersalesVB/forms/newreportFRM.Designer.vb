@@ -37,7 +37,7 @@ Partial Class newreportFRM
         Me.save.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.save.Image = Nothing
         Me.save.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.save.Location = New System.Drawing.Point(449, 212)
+        Me.save.Location = New System.Drawing.Point(449, 218)
         Me.save.Name = "save"
         Me.save.Size = New System.Drawing.Size(119, 28)
         Me.save.Style = MetroFramework.MetroColorStyle.Yellow
@@ -53,9 +53,9 @@ Partial Class newreportFRM
         '
         '
         Me.assessment.CustomButton.Image = Nothing
-        Me.assessment.CustomButton.Location = New System.Drawing.Point(237, 2)
+        Me.assessment.CustomButton.Location = New System.Drawing.Point(229, 2)
         Me.assessment.CustomButton.Name = ""
-        Me.assessment.CustomButton.Size = New System.Drawing.Size(79, 79)
+        Me.assessment.CustomButton.Size = New System.Drawing.Size(87, 87)
         Me.assessment.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
         Me.assessment.CustomButton.TabIndex = 1
         Me.assessment.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
@@ -73,7 +73,7 @@ Partial Class newreportFRM
         Me.assessment.SelectionLength = 0
         Me.assessment.SelectionStart = 0
         Me.assessment.ShowClearButton = True
-        Me.assessment.Size = New System.Drawing.Size(319, 84)
+        Me.assessment.Size = New System.Drawing.Size(319, 92)
         Me.assessment.Style = MetroFramework.MetroColorStyle.Red
         Me.assessment.TabIndex = 491
         Me.assessment.UseCustomForeColor = True
