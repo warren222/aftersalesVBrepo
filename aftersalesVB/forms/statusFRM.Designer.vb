@@ -38,6 +38,7 @@ Partial Class statusFRM
         Me.status.Name = "status"
         Me.status.Size = New System.Drawing.Size(152, 29)
         Me.status.TabIndex = 474
+        Me.status.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.status.UseSelectable = True
         '
         'KryptonLabel1
@@ -60,6 +61,7 @@ Partial Class statusFRM
         Me.MetroDateTime1.Size = New System.Drawing.Size(189, 29)
         Me.MetroDateTime1.Style = MetroFramework.MetroColorStyle.Red
         Me.MetroDateTime1.TabIndex = 487
+        Me.MetroDateTime1.Theme = MetroFramework.MetroThemeStyle.Dark
         '
         'statusdate
         '
@@ -77,6 +79,7 @@ Partial Class statusFRM
         Me.statusdate.CustomButton.Visible = False
         Me.statusdate.DisplayIcon = True
         Me.statusdate.FontSize = MetroFramework.MetroTextBoxSize.Medium
+        Me.statusdate.ForeColor = System.Drawing.Color.White
         Me.statusdate.Lines = New String(-1) {}
         Me.statusdate.Location = New System.Drawing.Point(35, 140)
         Me.statusdate.MaxLength = 32767
@@ -91,6 +94,7 @@ Partial Class statusFRM
         Me.statusdate.Size = New System.Drawing.Size(189, 28)
         Me.statusdate.Style = MetroFramework.MetroColorStyle.Red
         Me.statusdate.TabIndex = 489
+        Me.statusdate.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.statusdate.UseCustomForeColor = True
         Me.statusdate.UseSelectable = True
         Me.statusdate.WaterMark = "Enter Status Date"
@@ -104,12 +108,13 @@ Partial Class statusFRM
         Me.save.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.save.Image = Nothing
         Me.save.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.save.Location = New System.Drawing.Point(284, 140)
+        Me.save.Location = New System.Drawing.Point(251, 140)
         Me.save.Name = "save"
-        Me.save.Size = New System.Drawing.Size(119, 28)
+        Me.save.Size = New System.Drawing.Size(152, 28)
         Me.save.Style = MetroFramework.MetroColorStyle.Yellow
         Me.save.TabIndex = 491
-        Me.save.Text = "ok"
+        Me.save.Text = "save"
+        Me.save.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.save.UseCustomForeColor = True
         Me.save.UseSelectable = True
         Me.save.UseVisualStyleBackColor = True
@@ -127,7 +132,9 @@ Partial Class statusFRM
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "statusFRM"
+        Me.Style = MetroFramework.MetroColorStyle.Red
         Me.Text = "Status"
+        Me.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

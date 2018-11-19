@@ -22,7 +22,7 @@ Partial Class importpartsFRM
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.partsGRID = New ComponentFactory.Krypton.Toolkit.KryptonDataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.save = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
@@ -41,8 +41,8 @@ Partial Class importpartsFRM
         Me.partsGRID.AllowUserToAddRows = False
         Me.partsGRID.AllowUserToDeleteRows = False
         Me.partsGRID.AllowUserToResizeRows = False
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.partsGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.partsGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.partsGRID.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -77,6 +77,8 @@ Partial Class importpartsFRM
         '
         'Panel1
         '
+        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackColor = System.Drawing.Color.WhiteSmoke
         Me.Panel1.Controls.Add(Me.save)
         Me.Panel1.Controls.Add(Me.KryptonLabel3)
@@ -85,9 +87,9 @@ Partial Class importpartsFRM
         Me.Panel1.Controls.Add(Me.description)
         Me.Panel1.Controls.Add(Me.articleno)
         Me.Panel1.Controls.Add(Me.specification)
-        Me.Panel1.Location = New System.Drawing.Point(23, 63)
+        Me.Panel1.Location = New System.Drawing.Point(8, 63)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(639, 113)
+        Me.Panel1.Size = New System.Drawing.Size(672, 113)
         Me.Panel1.TabIndex = 562
         '
         'save
@@ -97,10 +99,10 @@ Partial Class importpartsFRM
         Me.save.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.save.Image = Nothing
         Me.save.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.save.Location = New System.Drawing.Point(516, 74)
+        Me.save.Location = New System.Drawing.Point(549, 74)
         Me.save.Name = "save"
         Me.save.Size = New System.Drawing.Size(102, 28)
-        Me.save.Style = MetroFramework.MetroColorStyle.Red
+        Me.save.Style = MetroFramework.MetroColorStyle.Silver
         Me.save.TabIndex = 524
         Me.save.Text = "find"
         Me.save.UseCustomForeColor = True
@@ -109,7 +111,8 @@ Partial Class importpartsFRM
         '
         'KryptonLabel3
         '
-        Me.KryptonLabel3.Location = New System.Drawing.Point(71, 12)
+        Me.KryptonLabel3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.KryptonLabel3.Location = New System.Drawing.Point(104, 12)
         Me.KryptonLabel3.Name = "KryptonLabel3"
         Me.KryptonLabel3.Size = New System.Drawing.Size(86, 22)
         Me.KryptonLabel3.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
@@ -119,7 +122,8 @@ Partial Class importpartsFRM
         '
         'KryptonLabel1
         '
-        Me.KryptonLabel1.Location = New System.Drawing.Point(89, 44)
+        Me.KryptonLabel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.KryptonLabel1.Location = New System.Drawing.Point(122, 44)
         Me.KryptonLabel1.Name = "KryptonLabel1"
         Me.KryptonLabel1.Size = New System.Drawing.Size(68, 22)
         Me.KryptonLabel1.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
@@ -129,7 +133,8 @@ Partial Class importpartsFRM
         '
         'KryptonLabel2
         '
-        Me.KryptonLabel2.Location = New System.Drawing.Point(79, 76)
+        Me.KryptonLabel2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.KryptonLabel2.Location = New System.Drawing.Point(112, 76)
         Me.KryptonLabel2.Name = "KryptonLabel2"
         Me.KryptonLabel2.Size = New System.Drawing.Size(78, 22)
         Me.KryptonLabel2.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
@@ -139,33 +144,36 @@ Partial Class importpartsFRM
         '
         'description
         '
+        Me.description.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.description.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.description.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.description.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.description.FormattingEnabled = True
-        Me.description.Location = New System.Drawing.Point(163, 76)
+        Me.description.Location = New System.Drawing.Point(196, 76)
         Me.description.Name = "description"
         Me.description.Size = New System.Drawing.Size(331, 26)
         Me.description.TabIndex = 2
         '
         'articleno
         '
+        Me.articleno.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.articleno.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.articleno.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.articleno.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.articleno.FormattingEnabled = True
-        Me.articleno.Location = New System.Drawing.Point(163, 44)
+        Me.articleno.Location = New System.Drawing.Point(196, 44)
         Me.articleno.Name = "articleno"
         Me.articleno.Size = New System.Drawing.Size(331, 26)
         Me.articleno.TabIndex = 1
         '
         'specification
         '
+        Me.specification.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.specification.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.specification.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.specification.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.specification.FormattingEnabled = True
-        Me.specification.Location = New System.Drawing.Point(163, 12)
+        Me.specification.Location = New System.Drawing.Point(196, 12)
         Me.specification.Name = "specification"
         Me.specification.Size = New System.Drawing.Size(331, 26)
         Me.specification.TabIndex = 0
@@ -179,7 +187,7 @@ Partial Class importpartsFRM
         Me.Controls.Add(Me.partsGRID)
         Me.Name = "importpartsFRM"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
-        Me.Style = MetroFramework.MetroColorStyle.Orange
+        Me.Style = MetroFramework.MetroColorStyle.Yellow
         Me.Text = "Select Accessories"
         Me.TopMost = True
         CType(Me.partsGRID, System.ComponentModel.ISupportInitialize).EndInit()

@@ -50,8 +50,7 @@ Public Class newreportFRM
     End Sub
 
     Private Sub newreportFRM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        loadspecification()
-        loadlocation()
+
         Dim clr As Color
         If Me.Text = "Editing" Then
             clr = Color.Red

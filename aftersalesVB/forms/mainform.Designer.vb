@@ -23,7 +23,7 @@ Partial Class mainform
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(mainform))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.newPNL = New MetroFramework.Controls.MetroTile()
         Me.MetroTile1 = New MetroFramework.Controls.MetroTile()
         Me.MetroTile2 = New MetroFramework.Controls.MetroTile()
@@ -36,6 +36,9 @@ Partial Class mainform
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.toprows = New MetroFramework.Controls.MetroComboBox()
+        Me.KryptonLabel1 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
+        Me.donecheckbox = New MetroFramework.Controls.MetroToggle()
+        Me.MetroTile4 = New MetroFramework.Controls.MetroTile()
         CType(Me.callinGRID, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -96,7 +99,9 @@ Partial Class mainform
         '
         '
         '
-        Me.searchtext.CustomButton.Image = Nothing
+        Me.searchtext.CustomButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.searchtext.CustomButton.Image = CType(resources.GetObject("resource.Image"), System.Drawing.Image)
+        Me.searchtext.CustomButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.searchtext.CustomButton.Location = New System.Drawing.Point(352, 1)
         Me.searchtext.CustomButton.Name = ""
         Me.searchtext.CustomButton.Size = New System.Drawing.Size(27, 27)
@@ -104,6 +109,7 @@ Partial Class mainform
         Me.searchtext.CustomButton.TabIndex = 1
         Me.searchtext.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
         Me.searchtext.CustomButton.UseSelectable = True
+        Me.searchtext.CustomButton.UseVisualStyleBackColor = False
         Me.searchtext.DisplayIcon = True
         Me.searchtext.FontSize = MetroFramework.MetroTextBoxSize.Medium
         Me.searchtext.Lines = New String(-1) {}
@@ -160,8 +166,8 @@ Partial Class mainform
         Me.callinGRID.AllowUserToAddRows = False
         Me.callinGRID.AllowUserToDeleteRows = False
         Me.callinGRID.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.callinGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.callinGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
         Me.callinGRID.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -214,6 +220,7 @@ Partial Class mainform
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.MetroTile4)
         Me.Panel1.Controls.Add(Me.newPNL)
         Me.Panel1.Controls.Add(Me.MetroTile3)
         Me.Panel1.Controls.Add(Me.MetroTile1)
@@ -239,6 +246,8 @@ Partial Class mainform
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel3.Controls.Add(Me.KryptonLabel1)
+        Me.Panel3.Controls.Add(Me.donecheckbox)
         Me.Panel3.Controls.Add(Me.toprows)
         Me.Panel3.Controls.Add(Me.reloadBTN)
         Me.Panel3.Controls.Add(Me.searchtext)
@@ -253,12 +262,52 @@ Partial Class mainform
         '
         Me.toprows.FormattingEnabled = True
         Me.toprows.ItemHeight = 23
-        Me.toprows.Items.AddRange(New Object() {"100", "1,000", "5,000", "10,000", "50,000", "100,000", "500,000", "1,000,000", "1,500,000", "2,000,000"})
-        Me.toprows.Location = New System.Drawing.Point(12, 20)
+        Me.toprows.Items.AddRange(New Object() {"100", "1,000", "5,000", "10,000", "50,000", "100,000", "500,000", "1,000,000", "1,500,000", "2,000,000", "MAX"})
+        Me.toprows.Location = New System.Drawing.Point(12, 8)
         Me.toprows.Name = "toprows"
-        Me.toprows.Size = New System.Drawing.Size(102, 29)
+        Me.toprows.Size = New System.Drawing.Size(122, 29)
         Me.toprows.TabIndex = 839
         Me.toprows.UseSelectable = True
+        '
+        'KryptonLabel1
+        '
+        Me.KryptonLabel1.Location = New System.Drawing.Point(12, 43)
+        Me.KryptonLabel1.Name = "KryptonLabel1"
+        Me.KryptonLabel1.Size = New System.Drawing.Size(36, 18)
+        Me.KryptonLabel1.StateCommon.ShortText.Color1 = System.Drawing.Color.DimGray
+        Me.KryptonLabel1.StateCommon.ShortText.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KryptonLabel1.TabIndex = 841
+        Me.KryptonLabel1.Values.Text = "Done"
+        '
+        'donecheckbox
+        '
+        Me.donecheckbox.AutoSize = True
+        Me.donecheckbox.Checked = True
+        Me.donecheckbox.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.donecheckbox.Location = New System.Drawing.Point(54, 43)
+        Me.donecheckbox.Name = "donecheckbox"
+        Me.donecheckbox.Size = New System.Drawing.Size(80, 17)
+        Me.donecheckbox.Style = MetroFramework.MetroColorStyle.Red
+        Me.donecheckbox.TabIndex = 840
+        Me.donecheckbox.Tag = ""
+        Me.donecheckbox.Text = "On"
+        Me.donecheckbox.UseSelectable = True
+        '
+        'MetroTile4
+        '
+        Me.MetroTile4.ActiveControl = Nothing
+        Me.MetroTile4.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(126, Byte), Integer))
+        Me.MetroTile4.Location = New System.Drawing.Point(13, 313)
+        Me.MetroTile4.Name = "MetroTile4"
+        Me.MetroTile4.Size = New System.Drawing.Size(107, 71)
+        Me.MetroTile4.Style = MetroFramework.MetroColorStyle.Purple
+        Me.MetroTile4.TabIndex = 557
+        Me.MetroTile4.Text = "Accounts"
+        Me.MetroTile4.TileImage = CType(resources.GetObject("MetroTile4.TileImage"), System.Drawing.Image)
+        Me.MetroTile4.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.MetroTile4.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular
+        Me.MetroTile4.UseSelectable = True
+        Me.MetroTile4.UseTileImage = True
         '
         'mainform
         '
@@ -275,6 +324,7 @@ Partial Class mainform
         Me.Panel1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -290,4 +340,7 @@ Partial Class mainform
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel3 As Panel
     Friend WithEvents toprows As MetroFramework.Controls.MetroComboBox
+    Friend WithEvents KryptonLabel1 As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Friend WithEvents donecheckbox As MetroFramework.Controls.MetroToggle
+    Friend WithEvents MetroTile4 As MetroFramework.Controls.MetroTile
 End Class

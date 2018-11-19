@@ -139,6 +139,7 @@ Partial Class newreportFRM
         Me.MaximumSize = New System.Drawing.Size(599, 269)
         Me.MinimizeBox = False
         Me.Name = "newreportFRM"
+        Me.Style = MetroFramework.MetroColorStyle.Yellow
         Me.Text = "newreportFRM"
         Me.ResumeLayout(False)
         Me.PerformLayout()

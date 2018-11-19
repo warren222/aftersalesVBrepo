@@ -49,7 +49,7 @@ Partial Class newpartsFRM
         Me.save.Location = New System.Drawing.Point(365, 271)
         Me.save.Name = "save"
         Me.save.Size = New System.Drawing.Size(119, 28)
-        Me.save.Style = MetroFramework.MetroColorStyle.Green
+        Me.save.Style = MetroFramework.MetroColorStyle.Yellow
         Me.save.TabIndex = 516
         Me.save.Text = "add"
         Me.save.UseCustomForeColor = True
@@ -346,7 +346,7 @@ Partial Class newpartsFRM
         Me.MetroTextButton1.Location = New System.Drawing.Point(17, 21)
         Me.MetroTextButton1.Name = "MetroTextButton1"
         Me.MetroTextButton1.Size = New System.Drawing.Size(84, 28)
-        Me.MetroTextButton1.Style = MetroFramework.MetroColorStyle.Yellow
+        Me.MetroTextButton1.Style = MetroFramework.MetroColorStyle.Silver
         Me.MetroTextButton1.TabIndex = 523
         Me.MetroTextButton1.Text = "import"
         Me.MetroTextButton1.UseCustomForeColor = True
@@ -382,10 +382,11 @@ Partial Class newpartsFRM
         Me.ClientSize = New System.Drawing.Size(531, 407)
         Me.Controls.Add(Me.Panel1)
         Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(531, 407)
         Me.MinimizeBox = False
         Me.Name = "newpartsFRM"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
-        Me.Style = MetroFramework.MetroColorStyle.Orange
+        Me.Style = MetroFramework.MetroColorStyle.Yellow
         Me.Text = "newpartsFRM"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()

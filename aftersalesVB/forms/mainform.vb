@@ -21,6 +21,13 @@ Public Class mainform
             TR = " TOP " & ROW & " "
         End If
 
+        Dim done As String
+        If donecheckbox.Checked = True Then
+            done = " and a.status = a.STATUS"
+        Else
+            done = " and not a.status = 'Done'"
+        End If
+
         If field = "PROJECT" Then
             field = "B.PROJECT_LABEL"
         ElseIf field = "ADDRESS" Then
@@ -51,7 +58,8 @@ Public Class mainform
                             inner join
                             HERETOSAVE.dbo.addendum_to_contract_tb as b
                             on b.job_order_no = a.jo
-                            where " & field & " like '%" & txt & "%'"
+                            where " & field & " like '%" & txt & "%' " & done & " order by 
+                            case when isdate(cdate)=1 then cast(cdate as date) else cdate end desc"
         Dim ds As New DataSet
         ds.Clear()
         Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
@@ -81,6 +89,37 @@ Public Class mainform
                             .Columns("jo").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
                             .Columns("address").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
                         End With
+
+
+                        For i As Integer = 0 To callinGRID.RowCount - 1
+                            Dim a As String = callinGRID.Rows(i).Cells("STATUS").Value.ToString()
+                            If a = "Done" Then
+                                With callinGRID
+                                    .Rows(i).Cells("STATUS").Style.Font = New Font("Century Gothic", 10, FontStyle.Bold)
+                                    .Rows(i).Cells("STATUS").Style.BackColor = System.Drawing.Color.Blue
+                                    .Rows(i).Cells("STATUS").Style.ForeColor = System.Drawing.Color.White
+                                    .Rows(i).Cells("STATUS").Style.SelectionBackColor = Color.Blue
+                                    .Rows(i).Cells("STATUS").Style.SelectionForeColor = Color.White
+                                End With
+                            ElseIf a = "Reschedule" Then
+                                With callinGRID
+                                    .Rows(i).Cells("STATUS").Style.Font = New Font("Century Gothic", 10, FontStyle.Bold)
+                                    .Rows(i).Cells("STATUS").Style.BackColor = System.Drawing.Color.LimeGreen
+                                    .Rows(i).Cells("STATUS").Style.ForeColor = System.Drawing.Color.White
+                                    .Rows(i).Cells("STATUS").Style.SelectionBackColor = Color.LimeGreen
+                                    .Rows(i).Cells("STATUS").Style.SelectionForeColor = Color.White
+                                End With
+                            ElseIf a = "For Costing" Then
+                                With callinGRID
+                                    .Rows(i).Cells("STATUS").Style.Font = New Font("Century Gothic", 10, FontStyle.Bold)
+                                    .Rows(i).Cells("STATUS").Style.BackColor = System.Drawing.Color.Green
+                                    .Rows(i).Cells("STATUS").Style.ForeColor = System.Drawing.Color.White
+                                    .Rows(i).Cells("STATUS").Style.SelectionBackColor = Color.Green
+                                    .Rows(i).Cells("STATUS").Style.SelectionForeColor = Color.White
+                                End With
+                            End If
+                        Next
+
                     Catch ex As Exception
                         MsgBox(ex.ToString)
                     End Try

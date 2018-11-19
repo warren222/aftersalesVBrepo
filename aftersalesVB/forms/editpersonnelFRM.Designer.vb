@@ -58,6 +58,7 @@ Partial Class editpersonnelFRM
         Me.PERSONNEL.CustomButton.Visible = False
         Me.PERSONNEL.DisplayIcon = True
         Me.PERSONNEL.FontSize = MetroFramework.MetroTextBoxSize.Medium
+        Me.PERSONNEL.ForeColor = System.Drawing.Color.Black
         Me.PERSONNEL.Lines = New String(-1) {}
         Me.PERSONNEL.Location = New System.Drawing.Point(23, 63)
         Me.PERSONNEL.MaxLength = 32767
@@ -88,6 +89,9 @@ Partial Class editpersonnelFRM
         Me.MaximumSize = New System.Drawing.Size(443, 119)
         Me.MinimizeBox = False
         Me.Name = "editpersonnelFRM"
+        Me.Opacity = 0.9R
+        Me.Style = MetroFramework.MetroColorStyle.Yellow
+        Me.Theme = MetroFramework.MetroThemeStyle.[Default]
         Me.ResumeLayout(False)
 
     End Sub

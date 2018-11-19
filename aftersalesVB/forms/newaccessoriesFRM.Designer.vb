@@ -30,6 +30,11 @@ Partial Class newaccessoriesFRM
         Me.unitprice = New MetroFramework.Controls.MetroTextBox()
         Me.remarks = New MetroFramework.Controls.MetroTextBox()
         Me.KryptonLabel1 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
+        Me.KryptonLabel2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
+        Me.KryptonLabel3 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
+        Me.KryptonLabel4 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
+        Me.KryptonLabel5 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
+        Me.KryptonLabel6 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.SuspendLayout()
         '
         'save
@@ -39,7 +44,7 @@ Partial Class newaccessoriesFRM
         Me.save.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.save.Image = Nothing
         Me.save.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.save.Location = New System.Drawing.Point(515, 219)
+        Me.save.Location = New System.Drawing.Point(518, 205)
         Me.save.Name = "save"
         Me.save.Size = New System.Drawing.Size(119, 28)
         Me.save.Style = MetroFramework.MetroColorStyle.Yellow
@@ -55,7 +60,7 @@ Partial Class newaccessoriesFRM
         '
         '
         Me.articleno.CustomButton.Image = Nothing
-        Me.articleno.CustomButton.Location = New System.Drawing.Point(167, 2)
+        Me.articleno.CustomButton.Location = New System.Drawing.Point(250, 2)
         Me.articleno.CustomButton.Name = ""
         Me.articleno.CustomButton.Size = New System.Drawing.Size(23, 23)
         Me.articleno.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
@@ -66,7 +71,7 @@ Partial Class newaccessoriesFRM
         Me.articleno.DisplayIcon = True
         Me.articleno.FontSize = MetroFramework.MetroTextBoxSize.Medium
         Me.articleno.Lines = New String(-1) {}
-        Me.articleno.Location = New System.Drawing.Point(34, 141)
+        Me.articleno.Location = New System.Drawing.Point(131, 127)
         Me.articleno.MaxLength = 32767
         Me.articleno.Multiline = True
         Me.articleno.Name = "articleno"
@@ -76,7 +81,7 @@ Partial Class newaccessoriesFRM
         Me.articleno.SelectionLength = 0
         Me.articleno.SelectionStart = 0
         Me.articleno.ShowClearButton = True
-        Me.articleno.Size = New System.Drawing.Size(193, 28)
+        Me.articleno.Size = New System.Drawing.Size(276, 28)
         Me.articleno.Style = MetroFramework.MetroColorStyle.Red
         Me.articleno.TabIndex = 513
         Me.articleno.UseCustomForeColor = True
@@ -91,7 +96,7 @@ Partial Class newaccessoriesFRM
         '
         '
         Me.description.CustomButton.Image = Nothing
-        Me.description.CustomButton.Location = New System.Drawing.Point(339, 2)
+        Me.description.CustomButton.Location = New System.Drawing.Point(250, 2)
         Me.description.CustomButton.Name = ""
         Me.description.CustomButton.Size = New System.Drawing.Size(23, 23)
         Me.description.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
@@ -102,7 +107,7 @@ Partial Class newaccessoriesFRM
         Me.description.DisplayIcon = True
         Me.description.FontSize = MetroFramework.MetroTextBoxSize.Medium
         Me.description.Lines = New String(-1) {}
-        Me.description.Location = New System.Drawing.Point(34, 175)
+        Me.description.Location = New System.Drawing.Point(131, 161)
         Me.description.MaxLength = 32767
         Me.description.Multiline = True
         Me.description.Name = "description"
@@ -112,7 +117,7 @@ Partial Class newaccessoriesFRM
         Me.description.SelectionLength = 0
         Me.description.SelectionStart = 0
         Me.description.ShowClearButton = True
-        Me.description.Size = New System.Drawing.Size(365, 28)
+        Me.description.Size = New System.Drawing.Size(276, 28)
         Me.description.Style = MetroFramework.MetroColorStyle.Red
         Me.description.TabIndex = 510
         Me.description.UseCustomForeColor = True
@@ -127,7 +132,7 @@ Partial Class newaccessoriesFRM
         '
         '
         Me.unit.CustomButton.Image = Nothing
-        Me.unit.CustomButton.Location = New System.Drawing.Point(156, 2)
+        Me.unit.CustomButton.Location = New System.Drawing.Point(112, 2)
         Me.unit.CustomButton.Name = ""
         Me.unit.CustomButton.Size = New System.Drawing.Size(23, 23)
         Me.unit.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
@@ -138,7 +143,7 @@ Partial Class newaccessoriesFRM
         Me.unit.DisplayIcon = True
         Me.unit.FontSize = MetroFramework.MetroTextBoxSize.Medium
         Me.unit.Lines = New String(-1) {}
-        Me.unit.Location = New System.Drawing.Point(452, 107)
+        Me.unit.Location = New System.Drawing.Point(499, 93)
         Me.unit.MaxLength = 32767
         Me.unit.Multiline = True
         Me.unit.Name = "unit"
@@ -148,7 +153,7 @@ Partial Class newaccessoriesFRM
         Me.unit.SelectionLength = 0
         Me.unit.SelectionStart = 0
         Me.unit.ShowClearButton = True
-        Me.unit.Size = New System.Drawing.Size(182, 28)
+        Me.unit.Size = New System.Drawing.Size(138, 28)
         Me.unit.Style = MetroFramework.MetroColorStyle.Red
         Me.unit.TabIndex = 511
         Me.unit.UseCustomForeColor = True
@@ -163,9 +168,9 @@ Partial Class newaccessoriesFRM
         Me.specification.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.specification.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.specification.FormattingEnabled = True
-        Me.specification.Location = New System.Drawing.Point(34, 107)
+        Me.specification.Location = New System.Drawing.Point(131, 93)
         Me.specification.Name = "specification"
-        Me.specification.Size = New System.Drawing.Size(193, 28)
+        Me.specification.Size = New System.Drawing.Size(276, 28)
         Me.specification.TabIndex = 515
         '
         'unitprice
@@ -174,7 +179,7 @@ Partial Class newaccessoriesFRM
         '
         '
         Me.unitprice.CustomButton.Image = Nothing
-        Me.unitprice.CustomButton.Location = New System.Drawing.Point(156, 2)
+        Me.unitprice.CustomButton.Location = New System.Drawing.Point(112, 2)
         Me.unitprice.CustomButton.Name = ""
         Me.unitprice.CustomButton.Size = New System.Drawing.Size(23, 23)
         Me.unitprice.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
@@ -185,7 +190,7 @@ Partial Class newaccessoriesFRM
         Me.unitprice.DisplayIcon = True
         Me.unitprice.FontSize = MetroFramework.MetroTextBoxSize.Medium
         Me.unitprice.Lines = New String(-1) {}
-        Me.unitprice.Location = New System.Drawing.Point(452, 141)
+        Me.unitprice.Location = New System.Drawing.Point(499, 127)
         Me.unitprice.MaxLength = 32767
         Me.unitprice.Multiline = True
         Me.unitprice.Name = "unitprice"
@@ -195,7 +200,7 @@ Partial Class newaccessoriesFRM
         Me.unitprice.SelectionLength = 0
         Me.unitprice.SelectionStart = 0
         Me.unitprice.ShowClearButton = True
-        Me.unitprice.Size = New System.Drawing.Size(182, 28)
+        Me.unitprice.Size = New System.Drawing.Size(138, 28)
         Me.unitprice.Style = MetroFramework.MetroColorStyle.Red
         Me.unitprice.TabIndex = 516
         Me.unitprice.UseCustomForeColor = True
@@ -210,7 +215,7 @@ Partial Class newaccessoriesFRM
         '
         '
         Me.remarks.CustomButton.Image = Nothing
-        Me.remarks.CustomButton.Location = New System.Drawing.Point(156, 2)
+        Me.remarks.CustomButton.Location = New System.Drawing.Point(112, 2)
         Me.remarks.CustomButton.Name = ""
         Me.remarks.CustomButton.Size = New System.Drawing.Size(23, 23)
         Me.remarks.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
@@ -221,7 +226,7 @@ Partial Class newaccessoriesFRM
         Me.remarks.DisplayIcon = True
         Me.remarks.FontSize = MetroFramework.MetroTextBoxSize.Medium
         Me.remarks.Lines = New String(-1) {}
-        Me.remarks.Location = New System.Drawing.Point(452, 175)
+        Me.remarks.Location = New System.Drawing.Point(499, 161)
         Me.remarks.MaxLength = 32767
         Me.remarks.Multiline = True
         Me.remarks.Name = "remarks"
@@ -231,7 +236,7 @@ Partial Class newaccessoriesFRM
         Me.remarks.SelectionLength = 0
         Me.remarks.SelectionStart = 0
         Me.remarks.ShowClearButton = True
-        Me.remarks.Size = New System.Drawing.Size(182, 28)
+        Me.remarks.Size = New System.Drawing.Size(138, 28)
         Me.remarks.Style = MetroFramework.MetroColorStyle.Red
         Me.remarks.TabIndex = 517
         Me.remarks.UseCustomForeColor = True
@@ -242,7 +247,7 @@ Partial Class newaccessoriesFRM
         '
         'KryptonLabel1
         '
-        Me.KryptonLabel1.Location = New System.Drawing.Point(34, 79)
+        Me.KryptonLabel1.Location = New System.Drawing.Point(37, 93)
         Me.KryptonLabel1.Name = "KryptonLabel1"
         Me.KryptonLabel1.Size = New System.Drawing.Size(88, 22)
         Me.KryptonLabel1.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
@@ -250,11 +255,66 @@ Partial Class newaccessoriesFRM
         Me.KryptonLabel1.TabIndex = 518
         Me.KryptonLabel1.Values.Text = "Specification"
         '
+        'KryptonLabel2
+        '
+        Me.KryptonLabel2.Location = New System.Drawing.Point(424, 93)
+        Me.KryptonLabel2.Name = "KryptonLabel2"
+        Me.KryptonLabel2.Size = New System.Drawing.Size(36, 22)
+        Me.KryptonLabel2.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.KryptonLabel2.StateCommon.ShortText.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KryptonLabel2.TabIndex = 519
+        Me.KryptonLabel2.Values.Text = "Unit"
+        '
+        'KryptonLabel3
+        '
+        Me.KryptonLabel3.Location = New System.Drawing.Point(424, 127)
+        Me.KryptonLabel3.Name = "KryptonLabel3"
+        Me.KryptonLabel3.Size = New System.Drawing.Size(69, 22)
+        Me.KryptonLabel3.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.KryptonLabel3.StateCommon.ShortText.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KryptonLabel3.TabIndex = 520
+        Me.KryptonLabel3.Values.Text = "Unit Price"
+        '
+        'KryptonLabel4
+        '
+        Me.KryptonLabel4.Location = New System.Drawing.Point(424, 161)
+        Me.KryptonLabel4.Name = "KryptonLabel4"
+        Me.KryptonLabel4.Size = New System.Drawing.Size(63, 22)
+        Me.KryptonLabel4.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.KryptonLabel4.StateCommon.ShortText.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KryptonLabel4.TabIndex = 521
+        Me.KryptonLabel4.Values.Text = "Remarks"
+        '
+        'KryptonLabel5
+        '
+        Me.KryptonLabel5.Location = New System.Drawing.Point(37, 127)
+        Me.KryptonLabel5.Name = "KryptonLabel5"
+        Me.KryptonLabel5.Size = New System.Drawing.Size(71, 22)
+        Me.KryptonLabel5.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.KryptonLabel5.StateCommon.ShortText.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KryptonLabel5.TabIndex = 522
+        Me.KryptonLabel5.Values.Text = "Article No"
+        '
+        'KryptonLabel6
+        '
+        Me.KryptonLabel6.Location = New System.Drawing.Point(37, 161)
+        Me.KryptonLabel6.Name = "KryptonLabel6"
+        Me.KryptonLabel6.Size = New System.Drawing.Size(80, 22)
+        Me.KryptonLabel6.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.KryptonLabel6.StateCommon.ShortText.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KryptonLabel6.TabIndex = 523
+        Me.KryptonLabel6.Values.Text = "Description"
+        '
         'newaccessoriesFRM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(662, 284)
+        Me.ClientSize = New System.Drawing.Size(662, 264)
+        Me.Controls.Add(Me.KryptonLabel6)
+        Me.Controls.Add(Me.KryptonLabel5)
+        Me.Controls.Add(Me.KryptonLabel4)
+        Me.Controls.Add(Me.KryptonLabel3)
+        Me.Controls.Add(Me.KryptonLabel2)
         Me.Controls.Add(Me.KryptonLabel1)
         Me.Controls.Add(Me.remarks)
         Me.Controls.Add(Me.unitprice)
@@ -264,9 +324,10 @@ Partial Class newaccessoriesFRM
         Me.Controls.Add(Me.description)
         Me.Controls.Add(Me.unit)
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(662, 284)
+        Me.MaximumSize = New System.Drawing.Size(662, 264)
         Me.MinimizeBox = False
         Me.Name = "newaccessoriesFRM"
+        Me.Style = MetroFramework.MetroColorStyle.Yellow
         Me.Text = "newaccessoriesFRM"
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -281,4 +342,9 @@ Partial Class newaccessoriesFRM
     Friend WithEvents unitprice As MetroFramework.Controls.MetroTextBox
     Friend WithEvents remarks As MetroFramework.Controls.MetroTextBox
     Friend WithEvents KryptonLabel1 As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Friend WithEvents KryptonLabel2 As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Friend WithEvents KryptonLabel3 As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Friend WithEvents KryptonLabel4 As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Friend WithEvents KryptonLabel5 As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Friend WithEvents KryptonLabel6 As ComponentFactory.Krypton.Toolkit.KryptonLabel
 End Class

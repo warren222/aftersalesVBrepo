@@ -58,7 +58,40 @@ Public Class servicingFRM
                 End Using
             End Using
         End Using
-
+        updatestatus()
+    End Sub
+    Public Sub updatestatus()
+        Dim c As String
+        Dim str As String = "SELECT id , x=SUBSTRING(servicing, PATINDEX('%[0-9]%', servicing), PATINDEX('%[0-9][^0-9]%', servicing + 't') - PATINDEX('%[0-9]%', 
+                                servicing) + 1)
+					            FROM SERVICINGTB where cin = @cin order by x asc "
+        Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
+            Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
+                Try
+                    sqlcon.Open()
+                    sqlcmd.Parameters.AddWithValue("@cin", mainform.tempcin)
+                    Using rd As SqlDataReader = sqlcmd.ExecuteReader
+                        While rd.Read
+                            c = rd(0).ToString
+                        End While
+                    End Using
+                Catch ex As Exception
+                    MsgBox(ex.ToString)
+                End Try
+            End Using
+            Dim STR2 As String = "
+                                declare @status as varchar(100) = (select status from servicingtb where id  = @id)
+                                update callintb set status = @status where cin = @cin"
+            Using sqlcmd As SqlCommand = New SqlCommand(STR2, sqlcon)
+                Try
+                    sqlcmd.Parameters.AddWithValue("id", c)
+                    sqlcmd.Parameters.AddWithValue("@cin", mainform.tempcin)
+                    sqlcmd.ExecuteNonQuery()
+                Catch ex As Exception
+                    MsgBox(ex.ToString)
+                End Try
+            End Using
+        End Using
     End Sub
     Public Sub addbtn()
         Dim statusbtn As New DataGridViewButtonColumn

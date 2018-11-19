@@ -22,7 +22,7 @@ Partial Class accessoriesFRM
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.newbtn = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
         Me.refreshBTN = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
         Me.accessoriesGRID = New ComponentFactory.Krypton.Toolkit.KryptonDataGridView()
@@ -75,8 +75,8 @@ Partial Class accessoriesFRM
         Me.accessoriesGRID.AllowUserToAddRows = False
         Me.accessoriesGRID.AllowUserToDeleteRows = False
         Me.accessoriesGRID.AllowUserToResizeRows = False
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.accessoriesGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.accessoriesGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.accessoriesGRID.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -187,7 +187,7 @@ Partial Class accessoriesFRM
         Me.MetroTextButton1.Location = New System.Drawing.Point(814, 42)
         Me.MetroTextButton1.Name = "MetroTextButton1"
         Me.MetroTextButton1.Size = New System.Drawing.Size(88, 26)
-        Me.MetroTextButton1.Style = MetroFramework.MetroColorStyle.Yellow
+        Me.MetroTextButton1.Style = MetroFramework.MetroColorStyle.Silver
         Me.MetroTextButton1.TabIndex = 575
         Me.MetroTextButton1.Text = "find"
         Me.MetroTextButton1.UseCustomForeColor = True

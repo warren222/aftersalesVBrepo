@@ -35,36 +35,40 @@ Partial Class newservicingFRM
         'MetroTextButton2
         '
         Me.MetroTextButton2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.MetroTextButton2.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.MetroTextButton2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.MetroTextButton2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.MetroTextButton2.Image = Nothing
         Me.MetroTextButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.MetroTextButton2.Location = New System.Drawing.Point(516, 91)
+        Me.MetroTextButton2.Location = New System.Drawing.Point(516, 98)
         Me.MetroTextButton2.Name = "MetroTextButton2"
         Me.MetroTextButton2.Size = New System.Drawing.Size(54, 28)
         Me.MetroTextButton2.Style = MetroFramework.MetroColorStyle.Yellow
         Me.MetroTextButton2.TabIndex = 489
         Me.MetroTextButton2.Text = "-"
+        Me.MetroTextButton2.UseCustomBackColor = True
         Me.MetroTextButton2.UseCustomForeColor = True
         Me.MetroTextButton2.UseSelectable = True
-        Me.MetroTextButton2.UseVisualStyleBackColor = True
+        Me.MetroTextButton2.UseVisualStyleBackColor = False
         '
         'metroTextButton1
         '
         Me.metroTextButton1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.metroTextButton1.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.metroTextButton1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.metroTextButton1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.metroTextButton1.Image = Nothing
         Me.metroTextButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.metroTextButton1.Location = New System.Drawing.Point(450, 91)
+        Me.metroTextButton1.Location = New System.Drawing.Point(450, 98)
         Me.metroTextButton1.Name = "metroTextButton1"
         Me.metroTextButton1.Size = New System.Drawing.Size(60, 28)
         Me.metroTextButton1.Style = MetroFramework.MetroColorStyle.Yellow
         Me.metroTextButton1.TabIndex = 488
         Me.metroTextButton1.Text = "+"
+        Me.metroTextButton1.UseCustomBackColor = True
         Me.metroTextButton1.UseCustomForeColor = True
         Me.metroTextButton1.UseSelectable = True
-        Me.metroTextButton1.UseVisualStyleBackColor = True
+        Me.metroTextButton1.UseVisualStyleBackColor = False
         '
         'personnel
         '
@@ -72,14 +76,14 @@ Partial Class newservicingFRM
         Me.personnel.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.personnel.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.personnel.FormattingEnabled = True
-        Me.personnel.Location = New System.Drawing.Point(251, 91)
+        Me.personnel.Location = New System.Drawing.Point(251, 98)
         Me.personnel.Name = "personnel"
         Me.personnel.Size = New System.Drawing.Size(193, 28)
         Me.personnel.TabIndex = 487
         '
         'KryptonLabel1
         '
-        Me.KryptonLabel1.Location = New System.Drawing.Point(23, 63)
+        Me.KryptonLabel1.Location = New System.Drawing.Point(23, 70)
         Me.KryptonLabel1.Name = "KryptonLabel1"
         Me.KryptonLabel1.Size = New System.Drawing.Size(98, 22)
         Me.KryptonLabel1.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
@@ -91,7 +95,7 @@ Partial Class newservicingFRM
         '
         Me.MetroDateTime1.CustomFormat = "yyyy-MMM-dd"
         Me.MetroDateTime1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.MetroDateTime1.Location = New System.Drawing.Point(23, 91)
+        Me.MetroDateTime1.Location = New System.Drawing.Point(23, 98)
         Me.MetroDateTime1.MinimumSize = New System.Drawing.Size(0, 29)
         Me.MetroDateTime1.Name = "MetroDateTime1"
         Me.MetroDateTime1.Size = New System.Drawing.Size(189, 29)
@@ -114,7 +118,7 @@ Partial Class newservicingFRM
         Me.assignedpersonnelTXT.CustomButton.Visible = False
         Me.assignedpersonnelTXT.DisplayIcon = True
         Me.assignedpersonnelTXT.Lines = New String(-1) {}
-        Me.assignedpersonnelTXT.Location = New System.Drawing.Point(251, 125)
+        Me.assignedpersonnelTXT.Location = New System.Drawing.Point(251, 132)
         Me.assignedpersonnelTXT.MaxLength = 32767
         Me.assignedpersonnelTXT.Multiline = True
         Me.assignedpersonnelTXT.Name = "assignedpersonnelTXT"
@@ -150,7 +154,7 @@ Partial Class newservicingFRM
         Me.servicingdate.DisplayIcon = True
         Me.servicingdate.FontSize = MetroFramework.MetroTextBoxSize.Medium
         Me.servicingdate.Lines = New String(-1) {}
-        Me.servicingdate.Location = New System.Drawing.Point(23, 126)
+        Me.servicingdate.Location = New System.Drawing.Point(23, 133)
         Me.servicingdate.MaxLength = 32767
         Me.servicingdate.Multiline = True
         Me.servicingdate.Name = "servicingdate"
@@ -203,6 +207,7 @@ Partial Class newservicingFRM
         Me.MaximumSize = New System.Drawing.Size(592, 266)
         Me.MinimizeBox = False
         Me.Name = "newservicingFRM"
+        Me.Style = MetroFramework.MetroColorStyle.Yellow
         Me.Text = "newservicingFRM"
         Me.ResumeLayout(False)
         Me.PerformLayout()

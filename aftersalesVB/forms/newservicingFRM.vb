@@ -14,6 +14,7 @@ Public Class newservicingFRM
         End If
         ccolor(servicingdate, clr)
         ccolor(assignedpersonnelTXT, clr)
+        ccolor(personnel, clr)
     End Sub
     Private Sub ccolor(ByVal ob As Object, ByVal c As Color)
         ob.ForeColor = c

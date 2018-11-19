@@ -25,6 +25,8 @@ Partial Class newqsFRM
         Me.question = New MetroFramework.Controls.MetroTextBox()
         Me.item = New MetroFramework.Controls.MetroTextBox()
         Me.save = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
+        Me.KryptonLabel1 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
+        Me.KryptonLabel2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.SuspendLayout()
         '
         'question
@@ -45,7 +47,7 @@ Partial Class newqsFRM
         Me.question.FontSize = MetroFramework.MetroTextBoxSize.Medium
         Me.question.ForeColor = System.Drawing.SystemColors.ControlText
         Me.question.Lines = New String(-1) {}
-        Me.question.Location = New System.Drawing.Point(23, 131)
+        Me.question.Location = New System.Drawing.Point(24, 148)
         Me.question.MaxLength = 32767
         Me.question.Name = "question"
         Me.question.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -80,7 +82,7 @@ Partial Class newqsFRM
         Me.item.DisplayIcon = True
         Me.item.FontSize = MetroFramework.MetroTextBoxSize.Medium
         Me.item.Lines = New String(-1) {}
-        Me.item.Location = New System.Drawing.Point(23, 93)
+        Me.item.Location = New System.Drawing.Point(24, 87)
         Me.item.MaxLength = 32767
         Me.item.Name = "item"
         Me.item.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -105,7 +107,7 @@ Partial Class newqsFRM
         Me.save.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.save.Image = Nothing
         Me.save.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.save.Location = New System.Drawing.Point(443, 175)
+        Me.save.Location = New System.Drawing.Point(444, 186)
         Me.save.Name = "save"
         Me.save.Size = New System.Drawing.Size(119, 28)
         Me.save.Style = MetroFramework.MetroColorStyle.Yellow
@@ -115,6 +117,26 @@ Partial Class newqsFRM
         Me.save.UseSelectable = True
         Me.save.UseVisualStyleBackColor = True
         '
+        'KryptonLabel1
+        '
+        Me.KryptonLabel1.Location = New System.Drawing.Point(24, 64)
+        Me.KryptonLabel1.Name = "KryptonLabel1"
+        Me.KryptonLabel1.Size = New System.Drawing.Size(38, 22)
+        Me.KryptonLabel1.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.KryptonLabel1.StateCommon.ShortText.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KryptonLabel1.TabIndex = 521
+        Me.KryptonLabel1.Values.Text = "Item"
+        '
+        'KryptonLabel2
+        '
+        Me.KryptonLabel2.Location = New System.Drawing.Point(24, 121)
+        Me.KryptonLabel2.Name = "KryptonLabel2"
+        Me.KryptonLabel2.Size = New System.Drawing.Size(160, 22)
+        Me.KryptonLabel2.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.KryptonLabel2.StateCommon.ShortText.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KryptonLabel2.TabIndex = 522
+        Me.KryptonLabel2.Values.Text = "(Specification) / Question"
+        '
         'newqsFRM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -123,16 +145,23 @@ Partial Class newqsFRM
         Me.Controls.Add(Me.save)
         Me.Controls.Add(Me.question)
         Me.Controls.Add(Me.item)
+        Me.Controls.Add(Me.KryptonLabel2)
+        Me.Controls.Add(Me.KryptonLabel1)
         Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(586, 226)
         Me.MinimizeBox = False
+        Me.MinimumSize = New System.Drawing.Size(586, 226)
         Me.Name = "newqsFRM"
+        Me.Style = MetroFramework.MetroColorStyle.Yellow
         Me.Text = "W"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents question As MetroFramework.Controls.MetroTextBox
     Friend WithEvents item As MetroFramework.Controls.MetroTextBox
     Friend WithEvents save As MetroFramework.Controls.MetroTextBox.MetroTextButton
+    Friend WithEvents KryptonLabel1 As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Friend WithEvents KryptonLabel2 As ComponentFactory.Krypton.Toolkit.KryptonLabel
 End Class

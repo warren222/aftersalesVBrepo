@@ -64,6 +64,7 @@ Public Class reportFRM
     Private Sub reportGRID_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles reportGRID.CellClick
         If reportGRID.RowCount >= 0 And e.RowIndex >= 0 Then
             If e.ColumnIndex = 5 Then
+
                 id = reportGRID.Item("id", e.RowIndex).Value.ToString
                 newreportFRM.location.Text = reportGRID.Item("location", e.RowIndex).Value.ToString
                 newreportFRM.specification.Text = reportGRID.Item("specification", e.RowIndex).Value.ToString
@@ -104,6 +105,8 @@ Public Class reportFRM
         newreportFRM.assessment.Text = ""
         newreportFRM.Text = "New"
         newreportFRM.save.Text = "add"
+        newreportFRM.loadspecification()
+        newreportFRM.loadlocation()
         newreportFRM.ShowDialog()
     End Sub
 

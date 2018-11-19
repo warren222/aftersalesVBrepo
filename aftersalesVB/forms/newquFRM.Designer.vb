@@ -200,8 +200,10 @@ Partial Class newquFRM
         Me.Controls.Add(Me.MetroDateTime1)
         Me.Controls.Add(Me.qudate)
         Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(444, 307)
         Me.MinimizeBox = False
         Me.Name = "newquFRM"
+        Me.Style = MetroFramework.MetroColorStyle.Yellow
         Me.Text = "newquFRM"
         Me.ResumeLayout(False)
         Me.PerformLayout()
