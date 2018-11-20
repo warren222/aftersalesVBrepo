@@ -212,6 +212,7 @@ Public Class mainform
             Dim row As DataGridViewRow = callinGRID.Rows(e.RowIndex)
             If e.ColumnIndex = 8 Then
                 newcallinFRM.Text = "Editing"
+                newcallinFRM.cin.Text = row.Cells("CIN").Value.ToString
                 newcallinFRM.telno.Text = row.Cells("TELNO").Value.ToString
                 newcallinFRM.faxno.Text = row.Cells("FAXNO").Value.ToString
                 newcallinFRM.calldate.Text = row.Cells("date").Value.ToString

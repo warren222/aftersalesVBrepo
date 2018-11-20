@@ -49,4 +49,8 @@ Public Class selectprojectFRM
             newcallinFRM.jo.Text = row.Cells("jo").Value.ToString
         Next
     End Sub
+
+    Private Sub projectGRID_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles projectGRID.CellDoubleClick
+        Me.Close()
+    End Sub
 End Class

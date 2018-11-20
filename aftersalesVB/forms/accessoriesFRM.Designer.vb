@@ -221,7 +221,7 @@ Partial Class accessoriesFRM
         Me.Controls.Add(Me.refreshBTN)
         Me.Controls.Add(Me.accessoriesGRID)
         Me.Name = "accessoriesFRM"
-        Me.Text = "Accessories"
+        Me.Text = "Accessories / Materials"
         CType(Me.accessoriesGRID, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()

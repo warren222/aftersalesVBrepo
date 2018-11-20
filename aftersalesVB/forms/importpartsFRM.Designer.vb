@@ -188,7 +188,7 @@ Partial Class importpartsFRM
         Me.Name = "importpartsFRM"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Style = MetroFramework.MetroColorStyle.Yellow
-        Me.Text = "Select Accessories"
+        Me.Text = "Select Accessories / Materials"
         Me.TopMost = True
         CType(Me.partsGRID, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)

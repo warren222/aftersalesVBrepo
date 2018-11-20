@@ -22,16 +22,17 @@ Partial Class newcallinFRM
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(newcallinFRM))
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.calldate = New MetroFramework.Controls.MetroTextBox()
         Me.calldategen = New MetroFramework.Controls.MetroDateTime()
         Me.KryptonLabel1 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.callername = New MetroFramework.Controls.MetroTextBox()
         Me.metroTextButton1 = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.addBTN = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
+        Me.faxno = New MetroFramework.Controls.MetroTextBox()
+        Me.telno = New MetroFramework.Controls.MetroTextBox()
         Me.jo = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.address = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.projectname = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
@@ -39,8 +40,11 @@ Partial Class newcallinFRM
         Me.Column1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.questionGRID = New ComponentFactory.Krypton.Toolkit.KryptonDataGridView()
         Me.updateBTN = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
-        Me.telno = New MetroFramework.Controls.MetroTextBox()
-        Me.faxno = New MetroFramework.Controls.MetroTextBox()
+        Me.addBTN = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
+        Me.cin = New MetroFramework.Controls.MetroTextBox()
+        Me.KryptonLabel2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
+        Me.KryptonLabel3 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
+        Me.KryptonLabel4 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.Panel1.SuspendLayout()
         CType(Me.answerGV, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.questionGRID, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -147,7 +151,7 @@ Partial Class newcallinFRM
         Me.metroTextButton1.Location = New System.Drawing.Point(28, 163)
         Me.metroTextButton1.Name = "metroTextButton1"
         Me.metroTextButton1.Size = New System.Drawing.Size(150, 24)
-        Me.metroTextButton1.Style = MetroFramework.MetroColorStyle.Yellow
+        Me.metroTextButton1.Style = MetroFramework.MetroColorStyle.Silver
         Me.metroTextButton1.TabIndex = 481
         Me.metroTextButton1.Text = "select project"
         Me.metroTextButton1.UseCustomForeColor = True
@@ -156,8 +160,15 @@ Partial Class newcallinFRM
         '
         'Panel1
         '
+        Me.Panel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.AutoScroll = True
         Me.Panel1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel1.Controls.Add(Me.KryptonLabel4)
+        Me.Panel1.Controls.Add(Me.KryptonLabel3)
+        Me.Panel1.Controls.Add(Me.KryptonLabel2)
+        Me.Panel1.Controls.Add(Me.cin)
         Me.Panel1.Controls.Add(Me.faxno)
         Me.Panel1.Controls.Add(Me.telno)
         Me.Panel1.Controls.Add(Me.jo)
@@ -170,28 +181,82 @@ Partial Class newcallinFRM
         Me.Panel1.Controls.Add(Me.calldategen)
         Me.Panel1.Controls.Add(Me.callername)
         Me.Panel1.Controls.Add(Me.calldate)
-        Me.Panel1.Controls.Add(Me.updateBTN)
-        Me.Panel1.Controls.Add(Me.addBTN)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(20, 60)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(896, 588)
         Me.Panel1.TabIndex = 482
         '
-        'addBTN
+        'faxno
         '
-        Me.addBTN.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.addBTN.Image = CType(resources.GetObject("addBTN.Image"), System.Drawing.Image)
-        Me.addBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.addBTN.Location = New System.Drawing.Point(764, 785)
-        Me.addBTN.Name = "addBTN"
-        Me.addBTN.Size = New System.Drawing.Size(98, 35)
-        Me.addBTN.Style = MetroFramework.MetroColorStyle.Red
-        Me.addBTN.TabIndex = 487
-        Me.addBTN.Text = "add"
-        Me.addBTN.UseSelectable = True
-        Me.addBTN.UseVisualStyleBackColor = True
-        Me.addBTN.Visible = False
+        '
+        '
+        '
+        Me.faxno.CustomButton.Image = Nothing
+        Me.faxno.CustomButton.Location = New System.Drawing.Point(294, 2)
+        Me.faxno.CustomButton.Name = ""
+        Me.faxno.CustomButton.Size = New System.Drawing.Size(27, 27)
+        Me.faxno.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.faxno.CustomButton.TabIndex = 1
+        Me.faxno.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.faxno.CustomButton.UseSelectable = True
+        Me.faxno.CustomButton.Visible = False
+        Me.faxno.DisplayIcon = True
+        Me.faxno.FontSize = MetroFramework.MetroTextBoxSize.Medium
+        Me.faxno.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.faxno.Lines = New String(-1) {}
+        Me.faxno.Location = New System.Drawing.Point(538, 102)
+        Me.faxno.MaxLength = 32767
+        Me.faxno.Name = "faxno"
+        Me.faxno.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.faxno.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.faxno.SelectedText = ""
+        Me.faxno.SelectionLength = 0
+        Me.faxno.SelectionStart = 0
+        Me.faxno.ShowClearButton = True
+        Me.faxno.Size = New System.Drawing.Size(324, 32)
+        Me.faxno.Style = MetroFramework.MetroColorStyle.Red
+        Me.faxno.TabIndex = 490
+        Me.faxno.UseCustomForeColor = True
+        Me.faxno.UseSelectable = True
+        Me.faxno.WaterMark = "Enter Fax No"
+        Me.faxno.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.faxno.WaterMarkFont = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        '
+        'telno
+        '
+        '
+        '
+        '
+        Me.telno.CustomButton.Image = Nothing
+        Me.telno.CustomButton.Location = New System.Drawing.Point(294, 2)
+        Me.telno.CustomButton.Name = ""
+        Me.telno.CustomButton.Size = New System.Drawing.Size(27, 27)
+        Me.telno.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.telno.CustomButton.TabIndex = 1
+        Me.telno.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.telno.CustomButton.UseSelectable = True
+        Me.telno.CustomButton.Visible = False
+        Me.telno.DisplayIcon = True
+        Me.telno.FontSize = MetroFramework.MetroTextBoxSize.Medium
+        Me.telno.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.telno.Lines = New String(-1) {}
+        Me.telno.Location = New System.Drawing.Point(538, 64)
+        Me.telno.MaxLength = 32767
+        Me.telno.Name = "telno"
+        Me.telno.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.telno.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.telno.SelectedText = ""
+        Me.telno.SelectionLength = 0
+        Me.telno.SelectionStart = 0
+        Me.telno.ShowClearButton = True
+        Me.telno.Size = New System.Drawing.Size(324, 32)
+        Me.telno.Style = MetroFramework.MetroColorStyle.Red
+        Me.telno.TabIndex = 489
+        Me.telno.UseCustomForeColor = True
+        Me.telno.UseSelectable = True
+        Me.telno.WaterMark = "Enter Tel No"
+        Me.telno.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.telno.WaterMarkFont = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'jo
         '
@@ -230,9 +295,9 @@ Partial Class newcallinFRM
         Me.answerGV.AllowUserToOrderColumns = True
         Me.answerGV.AllowUserToResizeColumns = False
         Me.answerGV.AllowUserToResizeRows = False
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        Me.answerGV.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black
+        Me.answerGV.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
         Me.answerGV.ColumnHeadersHeight = 30
         Me.answerGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.answerGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1})
@@ -275,9 +340,9 @@ Partial Class newcallinFRM
         Me.questionGRID.AllowUserToOrderColumns = True
         Me.questionGRID.AllowUserToResizeColumns = False
         Me.questionGRID.AllowUserToResizeRows = False
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
-        Me.questionGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black
+        Me.questionGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle8
         Me.questionGRID.ColumnHeadersHeight = 30
         Me.questionGRID.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.questionGRID.Cursor = System.Windows.Forms.Cursors.Hand
@@ -309,10 +374,11 @@ Partial Class newcallinFRM
         '
         'updateBTN
         '
+        Me.updateBTN.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.updateBTN.Cursor = System.Windows.Forms.Cursors.Hand
         Me.updateBTN.Image = Nothing
         Me.updateBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.updateBTN.Location = New System.Drawing.Point(764, 785)
+        Me.updateBTN.Location = New System.Drawing.Point(797, 664)
         Me.updateBTN.Name = "updateBTN"
         Me.updateBTN.Size = New System.Drawing.Size(98, 35)
         Me.updateBTN.Style = MetroFramework.MetroColorStyle.Green
@@ -322,85 +388,98 @@ Partial Class newcallinFRM
         Me.updateBTN.UseVisualStyleBackColor = True
         Me.updateBTN.Visible = False
         '
-        'telno
+        'addBTN
+        '
+        Me.addBTN.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.addBTN.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.addBTN.Image = CType(resources.GetObject("addBTN.Image"), System.Drawing.Image)
+        Me.addBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.addBTN.Location = New System.Drawing.Point(797, 664)
+        Me.addBTN.Name = "addBTN"
+        Me.addBTN.Size = New System.Drawing.Size(98, 35)
+        Me.addBTN.Style = MetroFramework.MetroColorStyle.Red
+        Me.addBTN.TabIndex = 487
+        Me.addBTN.Text = "add"
+        Me.addBTN.UseSelectable = True
+        Me.addBTN.UseVisualStyleBackColor = True
+        Me.addBTN.Visible = False
+        '
+        'cin
         '
         '
         '
         '
-        Me.telno.CustomButton.Image = Nothing
-        Me.telno.CustomButton.Location = New System.Drawing.Point(294, 2)
-        Me.telno.CustomButton.Name = ""
-        Me.telno.CustomButton.Size = New System.Drawing.Size(27, 27)
-        Me.telno.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.telno.CustomButton.TabIndex = 1
-        Me.telno.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.telno.CustomButton.UseSelectable = True
-        Me.telno.CustomButton.Visible = False
-        Me.telno.DisplayIcon = True
-        Me.telno.FontSize = MetroFramework.MetroTextBoxSize.Medium
-        Me.telno.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.telno.Lines = New String(-1) {}
-        Me.telno.Location = New System.Drawing.Point(538, 64)
-        Me.telno.MaxLength = 32767
-        Me.telno.Name = "telno"
-        Me.telno.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.telno.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.telno.SelectedText = ""
-        Me.telno.SelectionLength = 0
-        Me.telno.SelectionStart = 0
-        Me.telno.ShowClearButton = True
-        Me.telno.Size = New System.Drawing.Size(324, 32)
-        Me.telno.Style = MetroFramework.MetroColorStyle.Red
-        Me.telno.TabIndex = 489
-        Me.telno.UseCustomForeColor = True
-        Me.telno.UseSelectable = True
-        Me.telno.WaterMark = "Enter Tel No"
-        Me.telno.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.telno.WaterMarkFont = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        Me.cin.CustomButton.Image = Nothing
+        Me.cin.CustomButton.Location = New System.Drawing.Point(134, 2)
+        Me.cin.CustomButton.Name = ""
+        Me.cin.CustomButton.Size = New System.Drawing.Size(27, 27)
+        Me.cin.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.cin.CustomButton.TabIndex = 1
+        Me.cin.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.cin.CustomButton.UseSelectable = True
+        Me.cin.CustomButton.Visible = False
+        Me.cin.DisplayIcon = True
+        Me.cin.FontSize = MetroFramework.MetroTextBoxSize.Medium
+        Me.cin.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.cin.Lines = New String(-1) {}
+        Me.cin.Location = New System.Drawing.Point(698, 25)
+        Me.cin.MaxLength = 32767
+        Me.cin.Name = "cin"
+        Me.cin.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.cin.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.cin.SelectedText = ""
+        Me.cin.SelectionLength = 0
+        Me.cin.SelectionStart = 0
+        Me.cin.ShowClearButton = True
+        Me.cin.Size = New System.Drawing.Size(164, 32)
+        Me.cin.Style = MetroFramework.MetroColorStyle.Red
+        Me.cin.TabIndex = 491
+        Me.cin.UseCustomForeColor = True
+        Me.cin.UseSelectable = True
+        Me.cin.WaterMark = "CIN"
+        Me.cin.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.cin.WaterMarkFont = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
-        'faxno
+        'KryptonLabel2
         '
+        Me.KryptonLabel2.Location = New System.Drawing.Point(479, 64)
+        Me.KryptonLabel2.Name = "KryptonLabel2"
+        Me.KryptonLabel2.Size = New System.Drawing.Size(51, 22)
+        Me.KryptonLabel2.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.KryptonLabel2.StateCommon.ShortText.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KryptonLabel2.TabIndex = 492
+        Me.KryptonLabel2.Values.Text = "Tel No"
         '
+        'KryptonLabel3
         '
+        Me.KryptonLabel3.Location = New System.Drawing.Point(479, 102)
+        Me.KryptonLabel3.Name = "KryptonLabel3"
+        Me.KryptonLabel3.Size = New System.Drawing.Size(53, 22)
+        Me.KryptonLabel3.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.KryptonLabel3.StateCommon.ShortText.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KryptonLabel3.TabIndex = 493
+        Me.KryptonLabel3.Values.Text = "Fax No"
         '
-        Me.faxno.CustomButton.Image = Nothing
-        Me.faxno.CustomButton.Location = New System.Drawing.Point(294, 2)
-        Me.faxno.CustomButton.Name = ""
-        Me.faxno.CustomButton.Size = New System.Drawing.Size(27, 27)
-        Me.faxno.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.faxno.CustomButton.TabIndex = 1
-        Me.faxno.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.faxno.CustomButton.UseSelectable = True
-        Me.faxno.CustomButton.Visible = False
-        Me.faxno.DisplayIcon = True
-        Me.faxno.FontSize = MetroFramework.MetroTextBoxSize.Medium
-        Me.faxno.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.faxno.Lines = New String(-1) {}
-        Me.faxno.Location = New System.Drawing.Point(538, 102)
-        Me.faxno.MaxLength = 32767
-        Me.faxno.Name = "faxno"
-        Me.faxno.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.faxno.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.faxno.SelectedText = ""
-        Me.faxno.SelectionLength = 0
-        Me.faxno.SelectionStart = 0
-        Me.faxno.ShowClearButton = True
-        Me.faxno.Size = New System.Drawing.Size(324, 32)
-        Me.faxno.Style = MetroFramework.MetroColorStyle.Red
-        Me.faxno.TabIndex = 490
-        Me.faxno.UseCustomForeColor = True
-        Me.faxno.UseSelectable = True
-        Me.faxno.WaterMark = "Enter Fax No"
-        Me.faxno.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.faxno.WaterMarkFont = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        'KryptonLabel4
+        '
+        Me.KryptonLabel4.Location = New System.Drawing.Point(661, 25)
+        Me.KryptonLabel4.Name = "KryptonLabel4"
+        Me.KryptonLabel4.Size = New System.Drawing.Size(31, 22)
+        Me.KryptonLabel4.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.KryptonLabel4.StateCommon.ShortText.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KryptonLabel4.TabIndex = 494
+        Me.KryptonLabel4.Values.Text = "Cin"
         '
         'newcallinFRM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(936, 668)
+        Me.ClientSize = New System.Drawing.Size(936, 722)
         Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.updateBTN)
+        Me.Controls.Add(Me.addBTN)
         Me.Name = "newcallinFRM"
+        Me.Style = MetroFramework.MetroColorStyle.Red
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.answerGV, System.ComponentModel.ISupportInitialize).EndInit()
@@ -425,4 +504,8 @@ Partial Class newcallinFRM
     Friend WithEvents updateBTN As MetroFramework.Controls.MetroTextBox.MetroTextButton
     Friend WithEvents faxno As MetroFramework.Controls.MetroTextBox
     Friend WithEvents telno As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents cin As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents KryptonLabel4 As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Friend WithEvents KryptonLabel3 As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Friend WithEvents KryptonLabel2 As ComponentFactory.Krypton.Toolkit.KryptonLabel
 End Class

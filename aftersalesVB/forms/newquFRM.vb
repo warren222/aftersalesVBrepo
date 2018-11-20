@@ -1,11 +1,16 @@
 ﻿Imports System.Data.SqlClient
 Public Class newquFRM
     Dim sql As New sql
+    Public tempaseno As String
     Private Sub newquFRM_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Me.Dispose()
     End Sub
 
     Private Sub save_Click(sender As Object, e As EventArgs) Handles save.Click
+        If Not IsNumeric(othercharges.Text) Then
+            Return
+            MetroFramework.MetroMessageBox.Show(Me, "", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
         If save.Text = "add" Then
             add()
             quotationFRM.refreshBTN.PerformClick()
@@ -33,13 +38,40 @@ Public Class newquFRM
         End Using
     End Sub
     Public Sub update()
-        Dim str As String = "update quotationtb set aseno=@aseno,qdate=@qdate,othercharges=@othercharges where id = @id"
+        Dim dup As Boolean
+        Dim find As String = "select * from quotationtb where not id = @id and aseno = @aseno"
+        Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
+            Using sqlcmd As SqlCommand = New SqlCommand(find, sqlcon)
+                Try
+                    sqlcon.Open()
+                    sqlcmd.Parameters.AddWithValue("@id", quotationFRM.id)
+                    sqlcmd.Parameters.AddWithValue("@aseno", aseno.Text)
+                    Using rd As SqlDataReader = sqlcmd.ExecuteReader
+                        If rd.HasRows = True Then
+                            dup = True
+                        Else
+                            dup = False
+                        End If
+                    End Using
+                Catch ex As Exception
+                    MsgBox(ex.ToString)
+                End Try
+            End Using
+        End Using
+        If dup = True Then
+            MetroFramework.MetroMessageBox.Show(Me, "Duplicate ASENO detected!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+        Dim str As String = "
+                            update itemtb set aseno = @aseno where aseno = @tempaseno
+                            update quotationtb set aseno=@aseno,qdate=@qdate,othercharges=@othercharges where id = @id"
         Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
             Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
                 Try
                     sqlcon.Open()
                     sqlcmd.Parameters.AddWithValue("@id", quotationFRM.id)
                     sqlcmd.Parameters.AddWithValue("@aseno", aseno.Text)
+                    sqlcmd.Parameters.AddWithValue("@tempaseno", tempaseno)
                     sqlcmd.Parameters.AddWithValue("@qdate", qudate.Text)
                     sqlcmd.Parameters.AddWithValue("@othercharges", othercharges.Text)
                     sqlcmd.ExecuteNonQuery()

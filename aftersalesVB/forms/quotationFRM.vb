@@ -105,6 +105,7 @@ Public Class quotationFRM
                 id = quGRID.Item("id", e.RowIndex).Value.ToString
                 newquFRM.qudate.Text = quGRID.Item("date", e.RowIndex).Value.ToString
                 newquFRM.aseno.Text = quGRID.Item("aseno", e.RowIndex).Value.ToString
+                newquFRM.tempaseno = quGRID.Item("aseno", e.RowIndex).Value.ToString
                 newquFRM.othercharges.Text = quGRID.Item("other charges", e.RowIndex).Value.ToString
                 newquFRM.Text = "Editing"
                 newquFRM.save.Text = "save"

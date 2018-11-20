@@ -11,13 +11,18 @@ Public Class newcallinFRM
         Dim clr As Color
         If Me.Text = "Editing" Then
             clr = Color.Red
+            cin.Visible = True
+            KryptonLabel4.Visible = True
         Else
             clr = Color.Black
+            cin.Visible = False
+            KryptonLabel4.Visible = False
         End If
         ccolor(calldate, clr)
         ccolor(callername, clr)
         ccolor(telno, clr)
         ccolor(faxno, clr)
+        ccolor(cin, clr)
     End Sub
     Private Sub ccolor(ByVal ob As Object, ByVal c As Color)
         ob.ForeColor = c
@@ -190,6 +195,38 @@ Public Class newcallinFRM
     End Sub
 
     Private Sub updateBTN_Click(sender As Object, e As EventArgs) Handles updateBTN.Click
+
+        Dim bol As Boolean
+        Dim find As String = "select * from callintb where cin=@newcin and not cin=@cin"
+        Using SQLCON As SqlConnection = New SqlConnection(sql.sqlcon1str)
+            Using sqlcmd As SqlCommand = New SqlCommand(find, SQLCON)
+                Try
+                    SQLCON.Open()
+                    sqlcmd.Parameters.AddWithValue("cin", mainform.tempcin)
+                    sqlcmd.Parameters.AddWithValue("newcin", cin.Text)
+                    Using rd As SqlDataReader = sqlcmd.ExecuteReader
+                        If rd.HasRows = True Then
+                            bol = True
+                        Else
+                            bol = False
+                        End If
+                    End Using
+                Catch ex As Exception
+                    MsgBox(ex.ToString)
+                End Try
+            End Using
+        End Using
+
+        Dim anum As String = cin.Text.Replace("-", "")
+        If bol = True Then
+            MetroMessageBox.Show(Me, "Duplicate CIN#!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
+        End If
+        If Not IsNumeric(anum) Then
+            MetroMessageBox.Show(Me, "Invalid CIN# Format", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
+        End If
+
         Dim str As String = "
                             update callintb set
                             cdate=@cdate,
@@ -199,7 +236,12 @@ Public Class newcallinFRM
                             FAXNO=@FAXNO
                             where cin = @cin
                             insert into qatb (cin,aid) select @cin,aid from answertb where chk = '1' and not aid in (select aid from qatb where cin = @cin)
-                            delete from qatb where cin = @cin and not aid in (select aid from answertb where chk = '1')"
+                            delete from qatb where cin = @cin and not aid in (select aid from answertb where chk = '1')
+
+                            update callintb set cin=@newcin,autonum=@anum where cin = @cin
+                            update qatb set cin=@newcin where cin = @cin
+                            update quotationtb set cin=@newcin where cin = @cin
+                            update servicingtb set cin=@newcin where cin = @cin"
         Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
             Using sqlcmd As New SqlCommand(str, sqlcon)
                 Try
@@ -208,6 +250,8 @@ Public Class newcallinFRM
                     sqlcmd.Parameters.AddWithValue("@caller", callername.Text)
                     sqlcmd.Parameters.AddWithValue("@jo", jo.Text)
                     sqlcmd.Parameters.AddWithValue("@cin", mainform.tempcin)
+                    sqlcmd.Parameters.AddWithValue("@newcin", cin.Text)
+                    sqlcmd.Parameters.AddWithValue("@anum", anum)
                     sqlcmd.Parameters.AddWithValue("@TELNO", telno.Text)
                     sqlcmd.Parameters.AddWithValue("@FAXNO", faxno.Text)
                     sqlcmd.ExecuteNonQuery()
