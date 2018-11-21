@@ -132,6 +132,7 @@ Public Class mainform
         Dim concernbtn As New DataGridViewButtonColumn
         Dim servicingbtn As New DataGridViewButtonColumn
         Dim quotationbtn As New DataGridViewButtonColumn
+        Dim deletebtn As New DataGridViewButtonColumn
         concernbtn.Name = "concern"
         concernbtn.HeaderText = ""
         concernbtn.Text = "concern"
@@ -154,10 +155,17 @@ Public Class mainform
             .Text = "update"
             .UseColumnTextForButtonValue = True
         End With
+        With deletebtn
+            .Name = "delete"
+            .HeaderText = ""
+            .Text = "delete"
+            .UseColumnTextForButtonValue = True
+        End With
         callinGRID.Columns.Insert(8, updatebtn)
-        callinGRID.Columns.Insert(9, concernbtn)
-        callinGRID.Columns.Insert(10, servicingbtn)
-        callinGRID.Columns.Insert(11, quotationbtn)
+        callinGRID.Columns.Insert(9, deletebtn)
+        callinGRID.Columns.Insert(10, concernbtn)
+        callinGRID.Columns.Insert(11, servicingbtn)
+        callinGRID.Columns.Insert(12, quotationbtn)
 
     End Sub
     Private Sub newPNL_Click(sender As Object, e As EventArgs) Handles newPNL.Click
@@ -225,17 +233,34 @@ Public Class mainform
                 newcallinFRM.updateBTN.Visible = True
                 newcallinFRM.ShowDialog()
             ElseIf e.ColumnIndex = 9 Then
+                If MetroFramework.MetroMessageBox.Show(Me, "" & row.Cells("project").Value.ToString & "" & vbCrLf & "" & row.Cells("address").Value.ToString & "" & vbCrLf & "Continue?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Error) = DialogResult.No Then
+                    Return
+                End If
+                Dim str As String = "delete from callintb where cin = @cin"
+                Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
+                    Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
+                        Try
+                            sqlcon.Open()
+                            sqlcmd.Parameters.AddWithValue("cin", tempcin)
+                            sqlcmd.ExecuteNonQuery()
+                        Catch ex As Exception
+                            MsgBox(ex.ToString)
+                        End Try
+                    End Using
+                End Using
+                reloadBTN.PerformClick()
+            ElseIf e.ColumnIndex = 10 Then
                 Dim param1 As ReportParameter = New ReportParameter("project", row.Cells("project").Value.ToString)
                 Dim param2 As ReportParameter = New ReportParameter("address", row.Cells("address").Value.ToString)
                 concernsummaryFRM.ReportViewer1.LocalReport.SetParameters(New ReportParameter() {param1})
                 concernsummaryFRM.ReportViewer1.LocalReport.SetParameters(New ReportParameter() {param2})
                 concernsummaryFRM.ShowDialog()
-            ElseIf e.ColumnIndex = 10 Then
+            ElseIf e.ColumnIndex = 11 Then
                 servicingFRM.projectname.Text = row.Cells("project").Value.ToString
                 servicingFRM.address.Text = row.Cells("address").Value.ToString
                 servicingFRM.jo.Text = row.Cells("jo").Value.ToString
                 servicingFRM.ShowDialog()
-            ElseIf e.ColumnIndex = 11 Then
+            ElseIf e.ColumnIndex = 12 Then
                 telno = row.Cells("telno").Value.ToString
                 faxno = row.Cells("faxno").Value.ToString
                 quotationFRM.projectname.Text = row.Cells("project").Value.ToString

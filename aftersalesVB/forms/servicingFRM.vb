@@ -61,7 +61,7 @@ Public Class servicingFRM
         updatestatus()
     End Sub
     Public Sub updatestatus()
-        Dim c As String
+        Dim c As String = ""
         Dim str As String = "SELECT id , x=SUBSTRING(servicing, PATINDEX('%[0-9]%', servicing), PATINDEX('%[0-9][^0-9]%', servicing + 't') - PATINDEX('%[0-9]%', 
                                 servicing) + 1)
 					            FROM SERVICINGTB where cin = @cin order by x asc "
