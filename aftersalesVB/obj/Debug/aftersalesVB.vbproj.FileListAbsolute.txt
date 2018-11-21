@@ -63,3 +63,7 @@ C:\Users\kmdim\Desktop\aftersalesVB\aftersalesVBrepo\aftersalesVB\obj\Debug\afte
 C:\Users\kmdim\Desktop\aftersalesVB\aftersalesVBrepo\aftersalesVB\obj\Debug\aftersalesVB.newaccessoriesFRM.resources
 C:\Users\kmdim\Desktop\aftersalesVB\aftersalesVBrepo\aftersalesVB\obj\Debug\aftersalesVB.importpartsFRM.resources
 C:\Users\kmdim\Desktop\aftersalesVB\aftersalesVBrepo\aftersalesVB\obj\Debug\aftersalesVB.prevFRM.resources
+C:\Users\kmdim\Desktop\aftersalesVB\aftersalesVBrepo\aftersalesVB\bin\Debug\aftersalesVB.exe.manifest
+C:\Users\kmdim\Desktop\aftersalesVB\aftersalesVBrepo\aftersalesVB\bin\Debug\aftersalesVB.application
+C:\Users\kmdim\Desktop\aftersalesVB\aftersalesVBrepo\aftersalesVB\obj\Debug\aftersalesVB.exe.manifest
+C:\Users\kmdim\Desktop\aftersalesVB\aftersalesVBrepo\aftersalesVB\obj\Debug\aftersalesVB.application
