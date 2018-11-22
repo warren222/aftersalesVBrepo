@@ -292,13 +292,13 @@ Partial Class newpartsFRM
         '
         'KryptonLabel6
         '
-        Me.KryptonLabel6.Location = New System.Drawing.Point(143, 160)
+        Me.KryptonLabel6.Location = New System.Drawing.Point(123, 160)
         Me.KryptonLabel6.Name = "KryptonLabel6"
-        Me.KryptonLabel6.Size = New System.Drawing.Size(56, 22)
+        Me.KryptonLabel6.Size = New System.Drawing.Size(76, 22)
         Me.KryptonLabel6.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.KryptonLabel6.StateCommon.ShortText.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.KryptonLabel6.TabIndex = 522
-        Me.KryptonLabel6.Values.Text = "Markup"
+        Me.KryptonLabel6.Values.Text = "Markup(%)"
         '
         'markup
         '
@@ -316,7 +316,7 @@ Partial Class newpartsFRM
         Me.markup.CustomButton.Visible = False
         Me.markup.DisplayIcon = True
         Me.markup.FontSize = MetroFramework.MetroTextBoxSize.Medium
-        Me.markup.Lines = New String(-1) {}
+        Me.markup.Lines = New String() {"30"}
         Me.markup.Location = New System.Drawing.Point(205, 160)
         Me.markup.MaxLength = 32767
         Me.markup.Multiline = True
@@ -330,6 +330,7 @@ Partial Class newpartsFRM
         Me.markup.Size = New System.Drawing.Size(142, 28)
         Me.markup.Style = MetroFramework.MetroColorStyle.Red
         Me.markup.TabIndex = 521
+        Me.markup.Text = "30"
         Me.markup.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.markup.UseCustomForeColor = True
         Me.markup.UseSelectable = True

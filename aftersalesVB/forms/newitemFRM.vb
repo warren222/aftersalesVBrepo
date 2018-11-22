@@ -22,7 +22,7 @@ Public Class newitemFRM
         Dim str As String = "declare @id as integer = (select isnull(max(id),0)+1 from itemtb)
 insert into itemtb (id,aseno,ITEM,kno,wdwloc)
 values(@id,@aseno,@item,@kno,@loc)"
-        Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon2str)
+        Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
             Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
                 Try
                     sqlcon.Open()

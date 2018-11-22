@@ -28,9 +28,9 @@ Partial Class newitemFRM
         Me.wdwloc = New MetroFramework.Controls.MetroTextBox()
         Me.save = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.KryptonLabel3 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.KryptonLabel1 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.KryptonLabel2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
-        Me.KryptonLabel3 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -130,7 +130,7 @@ Partial Class newitemFRM
         '
         '
         Me.wdwloc.CustomButton.Image = Nothing
-        Me.wdwloc.CustomButton.Location = New System.Drawing.Point(236, 2)
+        Me.wdwloc.CustomButton.Location = New System.Drawing.Point(214, 2)
         Me.wdwloc.CustomButton.Name = ""
         Me.wdwloc.CustomButton.Size = New System.Drawing.Size(23, 23)
         Me.wdwloc.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
@@ -194,6 +194,16 @@ Partial Class newitemFRM
         Me.Panel1.Size = New System.Drawing.Size(377, 214)
         Me.Panel1.TabIndex = 510
         '
+        'KryptonLabel3
+        '
+        Me.KryptonLabel3.Location = New System.Drawing.Point(14, 144)
+        Me.KryptonLabel3.Name = "KryptonLabel3"
+        Me.KryptonLabel3.Size = New System.Drawing.Size(100, 22)
+        Me.KryptonLabel3.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.KryptonLabel3.StateCommon.ShortText.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KryptonLabel3.TabIndex = 523
+        Me.KryptonLabel3.Values.Text = "Wdw/ Location"
+        '
         'KryptonLabel1
         '
         Me.KryptonLabel1.Location = New System.Drawing.Point(14, 76)
@@ -208,21 +218,11 @@ Partial Class newitemFRM
         '
         Me.KryptonLabel2.Location = New System.Drawing.Point(14, 110)
         Me.KryptonLabel2.Name = "KryptonLabel2"
-        Me.KryptonLabel2.Size = New System.Drawing.Size(78, 22)
+        Me.KryptonLabel2.Size = New System.Drawing.Size(64, 22)
         Me.KryptonLabel2.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.KryptonLabel2.StateCommon.ShortText.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.KryptonLabel2.TabIndex = 522
-        Me.KryptonLabel2.Values.Text = "Description"
-        '
-        'KryptonLabel3
-        '
-        Me.KryptonLabel3.Location = New System.Drawing.Point(14, 144)
-        Me.KryptonLabel3.Name = "KryptonLabel3"
-        Me.KryptonLabel3.Size = New System.Drawing.Size(100, 22)
-        Me.KryptonLabel3.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.KryptonLabel3.StateCommon.ShortText.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.KryptonLabel3.TabIndex = 523
-        Me.KryptonLabel3.Values.Text = "Wdw/ Location"
+        Me.KryptonLabel2.Values.Text = "ITEM NO"
         '
         'newitemFRM
         '
