@@ -115,7 +115,7 @@ Partial Class newpartsFRM
         Me.unitprice.ShowClearButton = True
         Me.unitprice.Size = New System.Drawing.Size(142, 28)
         Me.unitprice.Style = MetroFramework.MetroColorStyle.Red
-        Me.unitprice.TabIndex = 510
+        Me.unitprice.TabIndex = 4
         Me.unitprice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.unitprice.UseCustomForeColor = True
         Me.unitprice.UseSelectable = True
@@ -152,7 +152,7 @@ Partial Class newpartsFRM
         Me.qty.ShowClearButton = True
         Me.qty.Size = New System.Drawing.Size(141, 28)
         Me.qty.Style = MetroFramework.MetroColorStyle.Red
-        Me.qty.TabIndex = 511
+        Me.qty.TabIndex = 5
         Me.qty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.qty.UseCustomForeColor = True
         Me.qty.UseSelectable = True
@@ -190,7 +190,7 @@ Partial Class newpartsFRM
         Me.netamount.ShowClearButton = True
         Me.netamount.Size = New System.Drawing.Size(141, 28)
         Me.netamount.Style = MetroFramework.MetroColorStyle.Red
-        Me.netamount.TabIndex = 512
+        Me.netamount.TabIndex = 6
         Me.netamount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.netamount.UseCustomForeColor = True
         Me.netamount.UseSelectable = True
@@ -237,7 +237,7 @@ Partial Class newpartsFRM
         Me.articleno.ShowClearButton = True
         Me.articleno.Size = New System.Drawing.Size(164, 28)
         Me.articleno.Style = MetroFramework.MetroColorStyle.Red
-        Me.articleno.TabIndex = 517
+        Me.articleno.TabIndex = 1
         Me.articleno.UseCustomForeColor = True
         Me.articleno.UseSelectable = True
         Me.articleno.WaterMark = "Article no"
@@ -283,7 +283,7 @@ Partial Class newpartsFRM
         Me.description.ShowClearButton = True
         Me.description.Size = New System.Drawing.Size(378, 28)
         Me.description.Style = MetroFramework.MetroColorStyle.Red
-        Me.description.TabIndex = 519
+        Me.description.TabIndex = 2
         Me.description.UseCustomForeColor = True
         Me.description.UseSelectable = True
         Me.description.WaterMark = "Description"
@@ -329,7 +329,7 @@ Partial Class newpartsFRM
         Me.markup.ShowClearButton = True
         Me.markup.Size = New System.Drawing.Size(142, 28)
         Me.markup.Style = MetroFramework.MetroColorStyle.Red
-        Me.markup.TabIndex = 521
+        Me.markup.TabIndex = 3
         Me.markup.Text = "30"
         Me.markup.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.markup.UseCustomForeColor = True

@@ -58,7 +58,7 @@ Partial Class newqsFRM
         Me.question.ShowClearButton = True
         Me.question.Size = New System.Drawing.Size(539, 32)
         Me.question.Style = MetroFramework.MetroColorStyle.Red
-        Me.question.TabIndex = 16
+        Me.question.TabIndex = 2
         Me.question.UseCustomForeColor = True
         Me.question.UseSelectable = True
         Me.question.WaterMark = "(Specification) Question"
@@ -93,7 +93,7 @@ Partial Class newqsFRM
         Me.item.ShowClearButton = True
         Me.item.Size = New System.Drawing.Size(157, 32)
         Me.item.Style = MetroFramework.MetroColorStyle.Red
-        Me.item.TabIndex = 15
+        Me.item.TabIndex = 1
         Me.item.UseCustomForeColor = True
         Me.item.UseSelectable = True
         Me.item.WaterMark = "Item"

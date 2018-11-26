@@ -75,7 +75,7 @@ Partial Class newreportFRM
         Me.assessment.ShowClearButton = True
         Me.assessment.Size = New System.Drawing.Size(319, 92)
         Me.assessment.Style = MetroFramework.MetroColorStyle.Red
-        Me.assessment.TabIndex = 491
+        Me.assessment.TabIndex = 3
         Me.assessment.UseCustomForeColor = True
         Me.assessment.UseSelectable = True
         Me.assessment.WaterMark = "Enter Assessment"
@@ -86,12 +86,14 @@ Partial Class newreportFRM
         '
         Me.specification.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.specification.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.specification.DropDownHeight = 200
         Me.specification.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.specification.FormattingEnabled = True
+        Me.specification.IntegralHeight = False
         Me.specification.Location = New System.Drawing.Point(37, 186)
         Me.specification.Name = "specification"
         Me.specification.Size = New System.Drawing.Size(193, 28)
-        Me.specification.TabIndex = 495
+        Me.specification.TabIndex = 2
         '
         'KryptonLabel1
         '
@@ -117,12 +119,14 @@ Partial Class newreportFRM
         '
         Me.location.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.location.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.location.DropDownHeight = 200
         Me.location.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.location.FormattingEnabled = True
+        Me.location.IntegralHeight = False
         Me.location.Location = New System.Drawing.Point(37, 124)
         Me.location.Name = "location"
         Me.location.Size = New System.Drawing.Size(193, 28)
-        Me.location.TabIndex = 497
+        Me.location.TabIndex = 1
         '
         'newreportFRM
         '

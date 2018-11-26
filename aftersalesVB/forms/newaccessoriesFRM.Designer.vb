@@ -83,7 +83,7 @@ Partial Class newaccessoriesFRM
         Me.articleno.ShowClearButton = True
         Me.articleno.Size = New System.Drawing.Size(276, 28)
         Me.articleno.Style = MetroFramework.MetroColorStyle.Red
-        Me.articleno.TabIndex = 513
+        Me.articleno.TabIndex = 2
         Me.articleno.UseCustomForeColor = True
         Me.articleno.UseSelectable = True
         Me.articleno.WaterMark = "Articleno"
@@ -119,7 +119,7 @@ Partial Class newaccessoriesFRM
         Me.description.ShowClearButton = True
         Me.description.Size = New System.Drawing.Size(276, 28)
         Me.description.Style = MetroFramework.MetroColorStyle.Red
-        Me.description.TabIndex = 510
+        Me.description.TabIndex = 3
         Me.description.UseCustomForeColor = True
         Me.description.UseSelectable = True
         Me.description.WaterMark = "Description"
@@ -155,7 +155,7 @@ Partial Class newaccessoriesFRM
         Me.unit.ShowClearButton = True
         Me.unit.Size = New System.Drawing.Size(138, 28)
         Me.unit.Style = MetroFramework.MetroColorStyle.Red
-        Me.unit.TabIndex = 511
+        Me.unit.TabIndex = 4
         Me.unit.UseCustomForeColor = True
         Me.unit.UseSelectable = True
         Me.unit.WaterMark = "Unit"
@@ -166,12 +166,14 @@ Partial Class newaccessoriesFRM
         '
         Me.specification.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.specification.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.specification.DropDownHeight = 200
         Me.specification.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.specification.FormattingEnabled = True
+        Me.specification.IntegralHeight = False
         Me.specification.Location = New System.Drawing.Point(131, 93)
         Me.specification.Name = "specification"
         Me.specification.Size = New System.Drawing.Size(276, 28)
-        Me.specification.TabIndex = 515
+        Me.specification.TabIndex = 1
         '
         'unitprice
         '
@@ -202,7 +204,7 @@ Partial Class newaccessoriesFRM
         Me.unitprice.ShowClearButton = True
         Me.unitprice.Size = New System.Drawing.Size(138, 28)
         Me.unitprice.Style = MetroFramework.MetroColorStyle.Red
-        Me.unitprice.TabIndex = 516
+        Me.unitprice.TabIndex = 5
         Me.unitprice.UseCustomForeColor = True
         Me.unitprice.UseSelectable = True
         Me.unitprice.WaterMark = "Unit Price"
@@ -238,7 +240,7 @@ Partial Class newaccessoriesFRM
         Me.remarks.ShowClearButton = True
         Me.remarks.Size = New System.Drawing.Size(138, 28)
         Me.remarks.Style = MetroFramework.MetroColorStyle.Red
-        Me.remarks.TabIndex = 517
+        Me.remarks.TabIndex = 6
         Me.remarks.UseCustomForeColor = True
         Me.remarks.UseSelectable = True
         Me.remarks.WaterMark = "Remarks"

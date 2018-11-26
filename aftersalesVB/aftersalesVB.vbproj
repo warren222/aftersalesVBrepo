@@ -27,7 +27,7 @@
     <InstallUrl>http://121.58.229.248:8083/aftersales/</InstallUrl>
     <ProductName>After Sales System</ProductName>
     <PublisherName>warren</PublisherName>
-    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationRevision>4</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -136,6 +136,12 @@
     <Compile Include="forms\accessoriesFRM.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="forms\acctFRM.Designer.vb">
+      <DependentUpon>acctFRM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\acctFRM.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="forms\concernFRM.Designer.vb">
       <DependentUpon>concernFRM.vb</DependentUpon>
     </Compile>
@@ -183,6 +189,12 @@
       <DependentUpon>newaccessoriesFRM.vb</DependentUpon>
     </Compile>
     <Compile Include="forms\newaccessoriesFRM.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\newacctFRM.Designer.vb">
+      <DependentUpon>newacctFRM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\newacctFRM.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\newcallinFRM.Designer.vb">
@@ -307,6 +319,9 @@
     <EmbeddedResource Include="forms\accessoriesFRM.resx">
       <DependentUpon>accessoriesFRM.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms\acctFRM.resx">
+      <DependentUpon>acctFRM.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\concernFRM.resx">
       <DependentUpon>concernFRM.vb</DependentUpon>
     </EmbeddedResource>
@@ -330,6 +345,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\newaccessoriesFRM.resx">
       <DependentUpon>newaccessoriesFRM.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\newacctFRM.resx">
+      <DependentUpon>newacctFRM.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\newcallinFRM.resx">
       <DependentUpon>newcallinFRM.vb</DependentUpon>

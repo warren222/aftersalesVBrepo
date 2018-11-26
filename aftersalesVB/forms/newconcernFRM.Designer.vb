@@ -52,7 +52,7 @@ Partial Class newconcernFRM
         '
         '
         Me.concern.CustomButton.Image = Nothing
-        Me.concern.CustomButton.Location = New System.Drawing.Point(509, 2)
+        Me.concern.CustomButton.Location = New System.Drawing.Point(442, 2)
         Me.concern.CustomButton.Name = ""
         Me.concern.CustomButton.Size = New System.Drawing.Size(27, 27)
         Me.concern.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
@@ -75,7 +75,7 @@ Partial Class newconcernFRM
         Me.concern.ShowClearButton = True
         Me.concern.Size = New System.Drawing.Size(472, 32)
         Me.concern.Style = MetroFramework.MetroColorStyle.Red
-        Me.concern.TabIndex = 493
+        Me.concern.TabIndex = 2
         Me.concern.UseCustomForeColor = True
         Me.concern.UseSelectable = True
         Me.concern.WaterMark = "Concern"
@@ -88,7 +88,7 @@ Partial Class newconcernFRM
         '
         '
         Me.item.CustomButton.Image = Nothing
-        Me.item.CustomButton.Location = New System.Drawing.Point(127, 2)
+        Me.item.CustomButton.Location = New System.Drawing.Point(140, 2)
         Me.item.CustomButton.Name = ""
         Me.item.CustomButton.Size = New System.Drawing.Size(27, 27)
         Me.item.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
@@ -110,7 +110,7 @@ Partial Class newconcernFRM
         Me.item.ShowClearButton = True
         Me.item.Size = New System.Drawing.Size(170, 32)
         Me.item.Style = MetroFramework.MetroColorStyle.Red
-        Me.item.TabIndex = 492
+        Me.item.TabIndex = 1
         Me.item.UseCustomForeColor = True
         Me.item.UseSelectable = True
         Me.item.WaterMark = "Item"

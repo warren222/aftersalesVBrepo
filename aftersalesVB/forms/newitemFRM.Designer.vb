@@ -64,7 +64,7 @@ Partial Class newitemFRM
         Me.kno.ShowClearButton = True
         Me.kno.Size = New System.Drawing.Size(106, 28)
         Me.kno.Style = MetroFramework.MetroColorStyle.Red
-        Me.kno.TabIndex = 508
+        Me.kno.TabIndex = 1
         Me.kno.UseCustomForeColor = True
         Me.kno.UseSelectable = True
         Me.kno.WaterMark = "k #"
@@ -117,7 +117,7 @@ Partial Class newitemFRM
         Me.itemno.ShowClearButton = True
         Me.itemno.Size = New System.Drawing.Size(106, 28)
         Me.itemno.Style = MetroFramework.MetroColorStyle.Red
-        Me.itemno.TabIndex = 498
+        Me.itemno.TabIndex = 2
         Me.itemno.UseCustomForeColor = True
         Me.itemno.UseSelectable = True
         Me.itemno.WaterMark = "Item #"
@@ -154,7 +154,7 @@ Partial Class newitemFRM
         Me.wdwloc.ShowClearButton = True
         Me.wdwloc.Size = New System.Drawing.Size(240, 28)
         Me.wdwloc.Style = MetroFramework.MetroColorStyle.Red
-        Me.wdwloc.TabIndex = 499
+        Me.wdwloc.TabIndex = 3
         Me.wdwloc.UseCustomForeColor = True
         Me.wdwloc.UseSelectable = True
         Me.wdwloc.WaterMark = "Wdw / Door Location"

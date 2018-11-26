@@ -292,4 +292,8 @@ Public Class mainform
         End If
         Me.Refresh()
     End Sub
+
+    Private Sub MetroTile4_Click(sender As Object, e As EventArgs) Handles MetroTile4.Click
+        acctFRM.ShowDialog()
+    End Sub
 End Class

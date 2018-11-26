@@ -74,8 +74,10 @@ Partial Class newservicingFRM
         '
         Me.personnel.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.personnel.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.personnel.DropDownHeight = 200
         Me.personnel.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.personnel.FormattingEnabled = True
+        Me.personnel.IntegralHeight = False
         Me.personnel.Location = New System.Drawing.Point(251, 98)
         Me.personnel.Name = "personnel"
         Me.personnel.Size = New System.Drawing.Size(193, 28)

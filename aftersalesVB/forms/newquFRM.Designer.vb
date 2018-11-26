@@ -71,7 +71,7 @@ Partial Class newquFRM
         Me.qudate.ShowClearButton = True
         Me.qudate.Size = New System.Drawing.Size(189, 29)
         Me.qudate.Style = MetroFramework.MetroColorStyle.Red
-        Me.qudate.TabIndex = 33
+        Me.qudate.TabIndex = 1
         Me.qudate.UseCustomForeColor = True
         Me.qudate.UseSelectable = True
         Me.qudate.WaterMark = "Quotation Date"
@@ -107,7 +107,7 @@ Partial Class newquFRM
         Me.aseno.ShowClearButton = True
         Me.aseno.Size = New System.Drawing.Size(189, 29)
         Me.aseno.Style = MetroFramework.MetroColorStyle.Red
-        Me.aseno.TabIndex = 34
+        Me.aseno.TabIndex = 2
         Me.aseno.UseCustomForeColor = True
         Me.aseno.UseSelectable = True
         Me.aseno.WaterMark = "ASE NO"
@@ -170,7 +170,7 @@ Partial Class newquFRM
         Me.othercharges.ShowClearButton = True
         Me.othercharges.Size = New System.Drawing.Size(297, 29)
         Me.othercharges.Style = MetroFramework.MetroColorStyle.Red
-        Me.othercharges.TabIndex = 493
+        Me.othercharges.TabIndex = 3
         Me.othercharges.UseCustomForeColor = True
         Me.othercharges.UseSelectable = True
         Me.othercharges.WaterMark = "Other charges"

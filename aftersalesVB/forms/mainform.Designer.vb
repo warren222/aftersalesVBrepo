@@ -23,7 +23,7 @@ Partial Class mainform
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(mainform))
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.newPNL = New MetroFramework.Controls.MetroTile()
         Me.MetroTile1 = New MetroFramework.Controls.MetroTile()
         Me.MetroTile2 = New MetroFramework.Controls.MetroTile()
@@ -36,12 +36,12 @@ Partial Class mainform
         Me.MetroTile4 = New MetroFramework.Controls.MetroTile()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.KryptonLabel3 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.MetroToggle1 = New MetroFramework.Controls.MetroToggle()
         Me.KryptonLabel1 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
-        Me.donecheckbox = New MetroFramework.Controls.MetroToggle()
         Me.toprows = New MetroFramework.Controls.MetroComboBox()
+        Me.donecheckbox = New MetroFramework.Controls.MetroToggle()
         Me.KryptonLabel2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
-        Me.KryptonLabel3 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         CType(Me.callinGRID, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -169,8 +169,8 @@ Partial Class mainform
         Me.callinGRID.AllowUserToAddRows = False
         Me.callinGRID.AllowUserToDeleteRows = False
         Me.callinGRID.AllowUserToResizeRows = False
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.callinGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.callinGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.callinGRID.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -279,6 +279,16 @@ Partial Class mainform
         Me.Panel3.Size = New System.Drawing.Size(927, 69)
         Me.Panel3.TabIndex = 559
         '
+        'KryptonLabel3
+        '
+        Me.KryptonLabel3.Location = New System.Drawing.Point(10, 35)
+        Me.KryptonLabel3.Name = "KryptonLabel3"
+        Me.KryptonLabel3.Size = New System.Drawing.Size(33, 18)
+        Me.KryptonLabel3.StateCommon.ShortText.Color1 = System.Drawing.Color.DimGray
+        Me.KryptonLabel3.StateCommon.ShortText.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KryptonLabel3.TabIndex = 843
+        Me.KryptonLabel3.Values.Text = "Dark"
+        '
         'MetroToggle1
         '
         Me.MetroToggle1.AutoSize = True
@@ -301,6 +311,18 @@ Partial Class mainform
         Me.KryptonLabel1.TabIndex = 841
         Me.KryptonLabel1.Values.Text = "Done"
         '
+        'toprows
+        '
+        Me.toprows.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.toprows.FormattingEnabled = True
+        Me.toprows.ItemHeight = 23
+        Me.toprows.Items.AddRange(New Object() {"100", "1,000", "5,000", "10,000", "50,000", "100,000", "500,000", "1,000,000", "1,500,000", "2,000,000", "MAX"})
+        Me.toprows.Location = New System.Drawing.Point(173, 20)
+        Me.toprows.Name = "toprows"
+        Me.toprows.Size = New System.Drawing.Size(122, 29)
+        Me.toprows.TabIndex = 839
+        Me.toprows.UseSelectable = True
+        '
         'donecheckbox
         '
         Me.donecheckbox.AutoSize = True
@@ -315,18 +337,6 @@ Partial Class mainform
         Me.donecheckbox.Text = "On"
         Me.donecheckbox.UseSelectable = True
         '
-        'toprows
-        '
-        Me.toprows.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.toprows.FormattingEnabled = True
-        Me.toprows.ItemHeight = 23
-        Me.toprows.Items.AddRange(New Object() {"100", "1,000", "5,000", "10,000", "50,000", "100,000", "500,000", "1,000,000", "1,500,000", "2,000,000", "MAX"})
-        Me.toprows.Location = New System.Drawing.Point(173, 20)
-        Me.toprows.Name = "toprows"
-        Me.toprows.Size = New System.Drawing.Size(122, 29)
-        Me.toprows.TabIndex = 839
-        Me.toprows.UseSelectable = True
-        '
         'KryptonLabel2
         '
         Me.KryptonLabel2.Location = New System.Drawing.Point(13, 20)
@@ -336,16 +346,6 @@ Partial Class mainform
         Me.KryptonLabel2.StateCommon.ShortText.Font = New System.Drawing.Font("Segoe UI", 17.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.KryptonLabel2.TabIndex = 842
         Me.KryptonLabel2.Values.Text = "AFTER SALES"
-        '
-        'KryptonLabel3
-        '
-        Me.KryptonLabel3.Location = New System.Drawing.Point(10, 35)
-        Me.KryptonLabel3.Name = "KryptonLabel3"
-        Me.KryptonLabel3.Size = New System.Drawing.Size(33, 18)
-        Me.KryptonLabel3.StateCommon.ShortText.Color1 = System.Drawing.Color.DimGray
-        Me.KryptonLabel3.StateCommon.ShortText.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.KryptonLabel3.TabIndex = 843
-        Me.KryptonLabel3.Values.Text = "Dark"
         '
         'mainform
         '
