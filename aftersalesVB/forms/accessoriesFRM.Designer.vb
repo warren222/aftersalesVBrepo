@@ -220,6 +220,7 @@ Partial Class accessoriesFRM
         Me.Controls.Add(Me.newbtn)
         Me.Controls.Add(Me.refreshBTN)
         Me.Controls.Add(Me.accessoriesGRID)
+        Me.MinimizeBox = False
         Me.Name = "accessoriesFRM"
         Me.Text = "Accessories / Materials"
         CType(Me.accessoriesGRID, System.ComponentModel.ISupportInitialize).EndInit()

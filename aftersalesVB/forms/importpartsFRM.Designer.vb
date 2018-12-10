@@ -185,6 +185,7 @@ Partial Class importpartsFRM
         Me.ClientSize = New System.Drawing.Size(685, 509)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.partsGRID)
+        Me.MinimizeBox = False
         Me.Name = "importpartsFRM"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Style = MetroFramework.MetroColorStyle.Yellow

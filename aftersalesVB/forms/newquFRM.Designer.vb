@@ -29,6 +29,8 @@ Partial Class newquFRM
         Me.KryptonLabel1 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.othercharges = New MetroFramework.Controls.MetroTextBox()
         Me.KryptonLabel2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
+        Me.KryptonLabel3 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
+        Me.particular = New MetroFramework.Controls.MetroTextBox()
         Me.SuspendLayout()
         '
         'MetroDateTime1
@@ -121,7 +123,7 @@ Partial Class newquFRM
         Me.save.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.save.Image = Nothing
         Me.save.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.save.Location = New System.Drawing.Point(306, 256)
+        Me.save.Location = New System.Drawing.Point(306, 302)
         Me.save.Name = "save"
         Me.save.Size = New System.Drawing.Size(119, 28)
         Me.save.Style = MetroFramework.MetroColorStyle.Yellow
@@ -173,7 +175,7 @@ Partial Class newquFRM
         Me.othercharges.TabIndex = 3
         Me.othercharges.UseCustomForeColor = True
         Me.othercharges.UseSelectable = True
-        Me.othercharges.WaterMark = "Other charges"
+        Me.othercharges.WaterMark = "Enter Other charges"
         Me.othercharges.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.othercharges.WaterMarkFont = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
@@ -187,11 +189,59 @@ Partial Class newquFRM
         Me.KryptonLabel2.TabIndex = 494
         Me.KryptonLabel2.Values.Text = "Other Charges"
         '
+        'KryptonLabel3
+        '
+        Me.KryptonLabel3.Location = New System.Drawing.Point(23, 241)
+        Me.KryptonLabel3.Name = "KryptonLabel3"
+        Me.KryptonLabel3.Size = New System.Drawing.Size(68, 22)
+        Me.KryptonLabel3.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.KryptonLabel3.StateCommon.ShortText.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KryptonLabel3.TabIndex = 496
+        Me.KryptonLabel3.Values.Text = "Particular"
+        '
+        'particular
+        '
+        '
+        '
+        '
+        Me.particular.CustomButton.Image = Nothing
+        Me.particular.CustomButton.Location = New System.Drawing.Point(269, 1)
+        Me.particular.CustomButton.Name = ""
+        Me.particular.CustomButton.Size = New System.Drawing.Size(27, 27)
+        Me.particular.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.particular.CustomButton.TabIndex = 1
+        Me.particular.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.particular.CustomButton.UseSelectable = True
+        Me.particular.CustomButton.Visible = False
+        Me.particular.DisplayIcon = True
+        Me.particular.FontSize = MetroFramework.MetroTextBoxSize.Medium
+        Me.particular.Lines = New String(-1) {}
+        Me.particular.Location = New System.Drawing.Point(128, 241)
+        Me.particular.MaxLength = 32767
+        Me.particular.Multiline = True
+        Me.particular.Name = "particular"
+        Me.particular.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.particular.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.particular.SelectedText = ""
+        Me.particular.SelectionLength = 0
+        Me.particular.SelectionStart = 0
+        Me.particular.ShowClearButton = True
+        Me.particular.Size = New System.Drawing.Size(297, 29)
+        Me.particular.Style = MetroFramework.MetroColorStyle.Red
+        Me.particular.TabIndex = 495
+        Me.particular.UseCustomForeColor = True
+        Me.particular.UseSelectable = True
+        Me.particular.WaterMark = "Enter Particular"
+        Me.particular.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.particular.WaterMarkFont = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        '
         'newquFRM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(444, 307)
+        Me.ClientSize = New System.Drawing.Size(444, 353)
+        Me.Controls.Add(Me.KryptonLabel3)
+        Me.Controls.Add(Me.particular)
         Me.Controls.Add(Me.KryptonLabel2)
         Me.Controls.Add(Me.othercharges)
         Me.Controls.Add(Me.KryptonLabel1)
@@ -200,7 +250,6 @@ Partial Class newquFRM
         Me.Controls.Add(Me.MetroDateTime1)
         Me.Controls.Add(Me.qudate)
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(444, 307)
         Me.MinimizeBox = False
         Me.Name = "newquFRM"
         Me.Style = MetroFramework.MetroColorStyle.Yellow
@@ -217,4 +266,6 @@ Partial Class newquFRM
     Friend WithEvents KryptonLabel1 As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Public WithEvents othercharges As MetroFramework.Controls.MetroTextBox
     Friend WithEvents KryptonLabel2 As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Friend WithEvents KryptonLabel3 As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Public WithEvents particular As MetroFramework.Controls.MetroTextBox
 End Class

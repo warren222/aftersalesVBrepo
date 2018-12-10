@@ -120,6 +120,7 @@ Partial Class concernFRM
         Me.Controls.Add(Me.KryptonLabel1)
         Me.Controls.Add(Me.refreshbtn)
         Me.Controls.Add(Me.answerGRID)
+        Me.MinimizeBox = False
         Me.Name = "concernFRM"
         Me.Text = "W"
         CType(Me.answerGRID, System.ComponentModel.ISupportInitialize).EndInit()

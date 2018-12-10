@@ -55,7 +55,7 @@ Public Class newacctFRM
         End If
         ccolor(fullname, clr)
         ccolor(accttype, clr)
-        ccolor(password, clr)
+
     End Sub
     Private Sub ccolor(ByVal ob As Object, ByVal c As Color)
         ob.ForeColor = c

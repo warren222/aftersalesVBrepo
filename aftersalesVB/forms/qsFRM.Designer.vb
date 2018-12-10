@@ -107,6 +107,7 @@ Partial Class qsFRM
         Me.Controls.Add(Me.newbtn)
         Me.Controls.Add(Me.refreshbtn)
         Me.Controls.Add(Me.questionGRID)
+        Me.MinimizeBox = False
         Me.Name = "qsFRM"
         Me.Text = "(Specification) Question"
         CType(Me.questionGRID, System.ComponentModel.ISupportInitialize).EndInit()

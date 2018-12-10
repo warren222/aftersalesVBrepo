@@ -141,6 +141,7 @@ Partial Class selectprojectFRM
         Me.ClientSize = New System.Drawing.Size(772, 454)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.projectGRID)
+        Me.MinimizeBox = False
         Me.Name = "selectprojectFRM"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Select Project"

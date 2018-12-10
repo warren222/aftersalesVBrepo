@@ -109,6 +109,7 @@ Partial Class personnelFRM
         Me.Controls.Add(Me.newbtn)
         Me.Controls.Add(Me.refreshbtn)
         Me.Controls.Add(Me.personnelGRID)
+        Me.MinimizeBox = False
         Me.Name = "personnelFRM"
         Me.Text = "Personnel"
         CType(Me.personnelGRID, System.ComponentModel.ISupportInitialize).EndInit()

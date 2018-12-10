@@ -120,6 +120,7 @@ Partial Class partsFRM
         Me.Controls.Add(Me.newbtn)
         Me.Controls.Add(Me.refreshbtn)
         Me.Controls.Add(Me.partsGRID)
+        Me.MinimizeBox = False
         Me.Name = "partsFRM"
         Me.Text = "Parts and Accessories"
         CType(Me.partsGRID, System.ComponentModel.ISupportInitialize).EndInit()

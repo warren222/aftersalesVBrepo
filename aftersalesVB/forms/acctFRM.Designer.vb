@@ -108,6 +108,7 @@ Partial Class acctFRM
         Me.Controls.Add(Me.newbtn)
         Me.Controls.Add(Me.refreshbtn)
         Me.Controls.Add(Me.acctGRID)
+        Me.MinimizeBox = False
         Me.Name = "acctFRM"
         Me.Style = MetroFramework.MetroColorStyle.Green
         Me.Text = "Manage Accounts"

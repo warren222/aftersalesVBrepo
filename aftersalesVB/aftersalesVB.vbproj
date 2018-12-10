@@ -27,7 +27,7 @@
     <InstallUrl>http://121.58.229.248:8083/aftersales/</InstallUrl>
     <ProductName>After Sales System</ProductName>
     <PublisherName>warren</PublisherName>
-    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationRevision>7</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>

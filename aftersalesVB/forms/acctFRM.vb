@@ -26,7 +26,6 @@ Public Class acctFRM
                         bs.DataMember = "accttb"
                         acctGRID.DataSource = bs
                         addbutton()
-                        acctGRID.Columns("id").Visible = False
                         acctGRID.Columns("password").Visible = False
                     Catch ex As Exception
                         MsgBox(ex.ToString)

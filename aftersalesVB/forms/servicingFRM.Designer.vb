@@ -157,6 +157,7 @@ Partial Class servicingFRM
         Me.Controls.Add(Me.projectname)
         Me.Controls.Add(Me.refresh)
         Me.Controls.Add(Me.servicingGRID)
+        Me.MinimizeBox = False
         Me.Name = "servicingFRM"
         CType(Me.servicingGRID, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

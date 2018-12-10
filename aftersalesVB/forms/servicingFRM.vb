@@ -197,6 +197,7 @@ Public Class servicingFRM
     End Sub
 
     Private Sub servicingFRM_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        mainform.reloadBTN.PerformClick()
         Me.Dispose()
     End Sub
 

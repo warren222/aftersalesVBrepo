@@ -22,24 +22,12 @@ Partial Class newacctFRM
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.KryptonLabel6 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.KryptonLabel5 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.KryptonLabel1 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.fullname = New MetroFramework.Controls.MetroTextBox()
-        Me.password = New MetroFramework.Controls.MetroTextBox()
         Me.accttype = New MetroFramework.Controls.MetroComboBox()
         Me.save = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
         Me.SuspendLayout()
-        '
-        'KryptonLabel6
-        '
-        Me.KryptonLabel6.Location = New System.Drawing.Point(23, 158)
-        Me.KryptonLabel6.Name = "KryptonLabel6"
-        Me.KryptonLabel6.Size = New System.Drawing.Size(68, 22)
-        Me.KryptonLabel6.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.KryptonLabel6.StateCommon.ShortText.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.KryptonLabel6.TabIndex = 529
-        Me.KryptonLabel6.Values.Text = "Password"
         '
         'KryptonLabel5
         '
@@ -97,42 +85,6 @@ Partial Class newacctFRM
         Me.fullname.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.fullname.WaterMarkFont = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
-        'password
-        '
-        '
-        '
-        '
-        Me.password.CustomButton.Image = Nothing
-        Me.password.CustomButton.Location = New System.Drawing.Point(250, 2)
-        Me.password.CustomButton.Name = ""
-        Me.password.CustomButton.Size = New System.Drawing.Size(23, 23)
-        Me.password.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.password.CustomButton.TabIndex = 1
-        Me.password.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.password.CustomButton.UseSelectable = True
-        Me.password.CustomButton.Visible = False
-        Me.password.DisplayIcon = True
-        Me.password.FontSize = MetroFramework.MetroTextBoxSize.Medium
-        Me.password.Lines = New String(-1) {}
-        Me.password.Location = New System.Drawing.Point(140, 158)
-        Me.password.MaxLength = 32767
-        Me.password.Multiline = True
-        Me.password.Name = "password"
-        Me.password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.password.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.password.SelectedText = ""
-        Me.password.SelectionLength = 0
-        Me.password.SelectionStart = 0
-        Me.password.ShowClearButton = True
-        Me.password.Size = New System.Drawing.Size(276, 28)
-        Me.password.Style = MetroFramework.MetroColorStyle.Red
-        Me.password.TabIndex = 526
-        Me.password.UseCustomForeColor = True
-        Me.password.UseSelectable = True
-        Me.password.WaterMark = "password"
-        Me.password.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.password.WaterMarkFont = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
-        '
         'accttype
         '
         Me.accttype.FormattingEnabled = True
@@ -150,7 +102,7 @@ Partial Class newacctFRM
         Me.save.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.save.Image = Nothing
         Me.save.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.save.Location = New System.Drawing.Point(297, 206)
+        Me.save.Location = New System.Drawing.Point(298, 158)
         Me.save.Name = "save"
         Me.save.Size = New System.Drawing.Size(119, 28)
         Me.save.Style = MetroFramework.MetroColorStyle.Yellow
@@ -164,14 +116,12 @@ Partial Class newacctFRM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(440, 270)
+        Me.ClientSize = New System.Drawing.Size(440, 206)
         Me.Controls.Add(Me.save)
         Me.Controls.Add(Me.accttype)
-        Me.Controls.Add(Me.KryptonLabel6)
         Me.Controls.Add(Me.KryptonLabel5)
         Me.Controls.Add(Me.KryptonLabel1)
         Me.Controls.Add(Me.fullname)
-        Me.Controls.Add(Me.password)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "newacctFRM"
@@ -181,12 +131,9 @@ Partial Class newacctFRM
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents KryptonLabel6 As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents KryptonLabel5 As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents KryptonLabel1 As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents fullname As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents password As MetroFramework.Controls.MetroTextBox
     Friend WithEvents accttype As MetroFramework.Controls.MetroComboBox
     Friend WithEvents save As MetroFramework.Controls.MetroTextBox.MetroTextButton
 End Class

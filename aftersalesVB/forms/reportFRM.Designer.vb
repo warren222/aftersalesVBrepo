@@ -133,6 +133,7 @@ Partial Class reportFRM
         Me.Controls.Add(Me.servicing)
         Me.Controls.Add(Me.refreshbtn)
         Me.Controls.Add(Me.reportGRID)
+        Me.MinimizeBox = False
         Me.Name = "reportFRM"
         CType(Me.reportGRID, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

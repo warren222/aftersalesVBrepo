@@ -175,6 +175,7 @@ Partial Class prevFRM
         Me.Controls.Add(Me.note)
         Me.Controls.Add(Me.dear)
         Me.Controls.Add(Me.ReportViewer1)
+        Me.MinimizeBox = False
         Me.Name = "prevFRM"
         CType(Me.ITEMTBBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.asdbDS, System.ComponentModel.ISupportInitialize).EndInit()

@@ -156,6 +156,7 @@ Partial Class quotationFRM
         Me.Controls.Add(Me.jo)
         Me.Controls.Add(Me.address)
         Me.Controls.Add(Me.newbtn)
+        Me.MinimizeBox = False
         Me.Name = "quotationFRM"
         Me.Theme = MetroFramework.MetroThemeStyle.[Default]
         CType(Me.quGRID, System.ComponentModel.ISupportInitialize).EndInit()

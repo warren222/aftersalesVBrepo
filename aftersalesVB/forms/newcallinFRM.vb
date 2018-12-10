@@ -5,7 +5,6 @@ Public Class newcallinFRM
     Dim sql As New sql
     Dim qid As String
     Private Sub newcallinFRM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
         Me.Height = Screen.PrimaryScreen.Bounds.Height - 37
         loadconcern()
         Dim clr As Color
@@ -142,6 +141,10 @@ Public Class newcallinFRM
     End Sub
 
     Private Sub addBTN_Click(sender As Object, e As EventArgs) Handles addBTN.Click
+        If jo.Text = "Job Order No" Then
+            MetroMessageBox.Show(Me, "Select Project", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
+        End If
         Dim str As String = "Declare @autonum as integer = (select isnull(max(autonum),0)+1 from callintb)
                                 insert into callintb
                                 (autonum,
@@ -195,7 +198,10 @@ Public Class newcallinFRM
     End Sub
 
     Private Sub updateBTN_Click(sender As Object, e As EventArgs) Handles updateBTN.Click
-
+        If jo.Text = "Job Order No" Then
+            MetroMessageBox.Show(Me, "Select Project", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
+        End If
         Dim bol As Boolean
         Dim find As String = "select * from callintb where cin=@newcin and not cin=@cin"
         Using SQLCON As SqlConnection = New SqlConnection(sql.sqlcon1str)

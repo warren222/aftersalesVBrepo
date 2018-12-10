@@ -120,6 +120,7 @@ Partial Class itemFRM
         Me.Controls.Add(Me.newbtn)
         Me.Controls.Add(Me.refreshbtn)
         Me.Controls.Add(Me.itemGRID)
+        Me.MinimizeBox = False
         Me.Name = "itemFRM"
         Me.Text = "itemFRM"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

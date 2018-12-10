@@ -22,8 +22,8 @@ Partial Class newcallinFRM
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(newcallinFRM))
         Me.calldate = New MetroFramework.Controls.MetroTextBox()
         Me.calldategen = New MetroFramework.Controls.MetroDateTime()
@@ -31,6 +31,10 @@ Partial Class newcallinFRM
         Me.callername = New MetroFramework.Controls.MetroTextBox()
         Me.metroTextButton1 = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.KryptonLabel4 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
+        Me.KryptonLabel3 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
+        Me.KryptonLabel2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
+        Me.cin = New MetroFramework.Controls.MetroTextBox()
         Me.faxno = New MetroFramework.Controls.MetroTextBox()
         Me.telno = New MetroFramework.Controls.MetroTextBox()
         Me.jo = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
@@ -41,10 +45,6 @@ Partial Class newcallinFRM
         Me.questionGRID = New ComponentFactory.Krypton.Toolkit.KryptonDataGridView()
         Me.updateBTN = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
         Me.addBTN = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
-        Me.cin = New MetroFramework.Controls.MetroTextBox()
-        Me.KryptonLabel2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
-        Me.KryptonLabel3 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
-        Me.KryptonLabel4 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.Panel1.SuspendLayout()
         CType(Me.answerGV, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.questionGRID, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -186,6 +186,72 @@ Partial Class newcallinFRM
         Me.Panel1.Size = New System.Drawing.Size(896, 588)
         Me.Panel1.TabIndex = 482
         '
+        'KryptonLabel4
+        '
+        Me.KryptonLabel4.Location = New System.Drawing.Point(661, 25)
+        Me.KryptonLabel4.Name = "KryptonLabel4"
+        Me.KryptonLabel4.Size = New System.Drawing.Size(31, 22)
+        Me.KryptonLabel4.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.KryptonLabel4.StateCommon.ShortText.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KryptonLabel4.TabIndex = 494
+        Me.KryptonLabel4.Values.Text = "Cin"
+        '
+        'KryptonLabel3
+        '
+        Me.KryptonLabel3.Location = New System.Drawing.Point(479, 102)
+        Me.KryptonLabel3.Name = "KryptonLabel3"
+        Me.KryptonLabel3.Size = New System.Drawing.Size(53, 22)
+        Me.KryptonLabel3.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.KryptonLabel3.StateCommon.ShortText.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KryptonLabel3.TabIndex = 493
+        Me.KryptonLabel3.Values.Text = "Fax No"
+        '
+        'KryptonLabel2
+        '
+        Me.KryptonLabel2.Location = New System.Drawing.Point(479, 64)
+        Me.KryptonLabel2.Name = "KryptonLabel2"
+        Me.KryptonLabel2.Size = New System.Drawing.Size(51, 22)
+        Me.KryptonLabel2.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.KryptonLabel2.StateCommon.ShortText.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KryptonLabel2.TabIndex = 492
+        Me.KryptonLabel2.Values.Text = "Tel No"
+        '
+        'cin
+        '
+        '
+        '
+        '
+        Me.cin.CustomButton.Image = Nothing
+        Me.cin.CustomButton.Location = New System.Drawing.Point(134, 2)
+        Me.cin.CustomButton.Name = ""
+        Me.cin.CustomButton.Size = New System.Drawing.Size(27, 27)
+        Me.cin.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.cin.CustomButton.TabIndex = 1
+        Me.cin.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.cin.CustomButton.UseSelectable = True
+        Me.cin.CustomButton.Visible = False
+        Me.cin.DisplayIcon = True
+        Me.cin.FontSize = MetroFramework.MetroTextBoxSize.Medium
+        Me.cin.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.cin.Lines = New String(-1) {}
+        Me.cin.Location = New System.Drawing.Point(698, 25)
+        Me.cin.MaxLength = 32767
+        Me.cin.Name = "cin"
+        Me.cin.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.cin.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.cin.SelectedText = ""
+        Me.cin.SelectionLength = 0
+        Me.cin.SelectionStart = 0
+        Me.cin.ShowClearButton = True
+        Me.cin.Size = New System.Drawing.Size(164, 32)
+        Me.cin.Style = MetroFramework.MetroColorStyle.Red
+        Me.cin.TabIndex = 491
+        Me.cin.UseCustomForeColor = True
+        Me.cin.UseSelectable = True
+        Me.cin.WaterMark = "CIN"
+        Me.cin.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.cin.WaterMarkFont = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        '
         'faxno
         '
         '
@@ -295,9 +361,9 @@ Partial Class newcallinFRM
         Me.answerGV.AllowUserToOrderColumns = True
         Me.answerGV.AllowUserToResizeColumns = False
         Me.answerGV.AllowUserToResizeRows = False
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black
-        Me.answerGV.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
+        Me.answerGV.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
         Me.answerGV.ColumnHeadersHeight = 30
         Me.answerGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.answerGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1})
@@ -340,9 +406,9 @@ Partial Class newcallinFRM
         Me.questionGRID.AllowUserToOrderColumns = True
         Me.questionGRID.AllowUserToResizeColumns = False
         Me.questionGRID.AllowUserToResizeRows = False
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black
-        Me.questionGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
+        Me.questionGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle6
         Me.questionGRID.ColumnHeadersHeight = 30
         Me.questionGRID.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.questionGRID.Cursor = System.Windows.Forms.Cursors.Hand
@@ -404,72 +470,6 @@ Partial Class newcallinFRM
         Me.addBTN.UseVisualStyleBackColor = True
         Me.addBTN.Visible = False
         '
-        'cin
-        '
-        '
-        '
-        '
-        Me.cin.CustomButton.Image = Nothing
-        Me.cin.CustomButton.Location = New System.Drawing.Point(134, 2)
-        Me.cin.CustomButton.Name = ""
-        Me.cin.CustomButton.Size = New System.Drawing.Size(27, 27)
-        Me.cin.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.cin.CustomButton.TabIndex = 1
-        Me.cin.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.cin.CustomButton.UseSelectable = True
-        Me.cin.CustomButton.Visible = False
-        Me.cin.DisplayIcon = True
-        Me.cin.FontSize = MetroFramework.MetroTextBoxSize.Medium
-        Me.cin.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cin.Lines = New String(-1) {}
-        Me.cin.Location = New System.Drawing.Point(698, 25)
-        Me.cin.MaxLength = 32767
-        Me.cin.Name = "cin"
-        Me.cin.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.cin.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.cin.SelectedText = ""
-        Me.cin.SelectionLength = 0
-        Me.cin.SelectionStart = 0
-        Me.cin.ShowClearButton = True
-        Me.cin.Size = New System.Drawing.Size(164, 32)
-        Me.cin.Style = MetroFramework.MetroColorStyle.Red
-        Me.cin.TabIndex = 491
-        Me.cin.UseCustomForeColor = True
-        Me.cin.UseSelectable = True
-        Me.cin.WaterMark = "CIN"
-        Me.cin.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.cin.WaterMarkFont = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
-        '
-        'KryptonLabel2
-        '
-        Me.KryptonLabel2.Location = New System.Drawing.Point(479, 64)
-        Me.KryptonLabel2.Name = "KryptonLabel2"
-        Me.KryptonLabel2.Size = New System.Drawing.Size(51, 22)
-        Me.KryptonLabel2.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.KryptonLabel2.StateCommon.ShortText.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.KryptonLabel2.TabIndex = 492
-        Me.KryptonLabel2.Values.Text = "Tel No"
-        '
-        'KryptonLabel3
-        '
-        Me.KryptonLabel3.Location = New System.Drawing.Point(479, 102)
-        Me.KryptonLabel3.Name = "KryptonLabel3"
-        Me.KryptonLabel3.Size = New System.Drawing.Size(53, 22)
-        Me.KryptonLabel3.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.KryptonLabel3.StateCommon.ShortText.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.KryptonLabel3.TabIndex = 493
-        Me.KryptonLabel3.Values.Text = "Fax No"
-        '
-        'KryptonLabel4
-        '
-        Me.KryptonLabel4.Location = New System.Drawing.Point(661, 25)
-        Me.KryptonLabel4.Name = "KryptonLabel4"
-        Me.KryptonLabel4.Size = New System.Drawing.Size(31, 22)
-        Me.KryptonLabel4.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.KryptonLabel4.StateCommon.ShortText.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.KryptonLabel4.TabIndex = 494
-        Me.KryptonLabel4.Values.Text = "Cin"
-        '
         'newcallinFRM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -478,6 +478,7 @@ Partial Class newcallinFRM
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.updateBTN)
         Me.Controls.Add(Me.addBTN)
+        Me.MinimizeBox = False
         Me.Name = "newcallinFRM"
         Me.Style = MetroFramework.MetroColorStyle.Red
         Me.Panel1.ResumeLayout(False)

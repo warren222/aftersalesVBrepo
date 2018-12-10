@@ -21,7 +21,7 @@ Public Class newquFRM
     End Sub
     Public Sub add()
         Dim str As String = "declare @id as integer = (select isnull(max(id),0)+1 from quotationtb)
-                             insert into quotationtb (id,cin,aseno,qdate,othercharges)values(@id,@cin,@aseno,@qdate,@othercharges)"
+                             insert into quotationtb (id,cin,aseno,qdate,particular,othercharges)values(@id,@cin,@aseno,@qdate,@particular,@othercharges)"
         Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
             Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
                 Try
@@ -29,6 +29,7 @@ Public Class newquFRM
                     sqlcmd.Parameters.AddWithValue("@cin", mainform.tempcin)
                     sqlcmd.Parameters.AddWithValue("@aseno", aseno.Text)
                     sqlcmd.Parameters.AddWithValue("@qdate", qudate.Text)
+                    sqlcmd.Parameters.AddWithValue("@particular", particular.Text)
                     sqlcmd.Parameters.AddWithValue("@othercharges", othercharges.Text)
                     sqlcmd.ExecuteNonQuery()
                 Catch ex As Exception
@@ -64,7 +65,7 @@ Public Class newquFRM
         End If
         Dim str As String = "
                             update itemtb set aseno = @aseno where aseno = @tempaseno
-                            update quotationtb set aseno=@aseno,qdate=@qdate,othercharges=@othercharges where id = @id"
+                            update quotationtb set aseno=@aseno,qdate=@qdate,particular=@particular,othercharges=@othercharges where id = @id"
         Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
             Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
                 Try
@@ -73,6 +74,7 @@ Public Class newquFRM
                     sqlcmd.Parameters.AddWithValue("@aseno", aseno.Text)
                     sqlcmd.Parameters.AddWithValue("@tempaseno", tempaseno)
                     sqlcmd.Parameters.AddWithValue("@qdate", qudate.Text)
+                    sqlcmd.Parameters.AddWithValue("@particular", particular.Text)
                     sqlcmd.Parameters.AddWithValue("@othercharges", othercharges.Text)
                     sqlcmd.ExecuteNonQuery()
                 Catch ex As Exception
