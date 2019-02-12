@@ -22,7 +22,7 @@ Public Class quotationFRM
                              ASENO,
                              QDATE as [DATE],
                              OTHERCHARGES as [OTHER CHARGES],
-                             PARTICULAR
+                             PARTICULAR,ACCEPTED
                              from quotationtb where cin = @cin"
         Dim ds As New DataSet
         ds.Clear()
@@ -43,6 +43,7 @@ Public Class quotationFRM
                         With quGRID
                             .Columns("ID").Visible = False
                             .Columns("CIN").Visible = False
+                            .Columns("ACCEPTED").Visible = False
                             .Columns("other charges").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
                             .Columns("other charges").DefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomRight
                         End With
@@ -54,10 +55,17 @@ Public Class quotationFRM
         End Using
     End Sub
     Public Sub addcolumns()
+        Dim acceptedbtn As New DataGridViewButtonColumn
         Dim updatebtn As New DataGridViewButtonColumn
         Dim deletebtn As New DataGridViewButtonColumn
         Dim itembtn As New DataGridViewButtonColumn
         Dim prevbtn As New DataGridViewButtonColumn
+        With acceptedbtn
+            .Text = "accepted"
+            .Name = "acceptedbtn"
+            .HeaderText = "ACCEPTED"
+            .UseColumnTextForButtonValue = False
+        End With
         With updatebtn
             .Text = "update"
             .Name = "updatebtn"
@@ -83,11 +91,16 @@ Public Class quotationFRM
             .UseColumnTextForButtonValue = True
         End With
         With quGRID
-            .Columns.Insert(6, itembtn)
-            .Columns.Insert(7, prevbtn)
-            .Columns.Insert(8, updatebtn)
-            .Columns.Insert(9, deletebtn)
+            .Columns.Insert(0, acceptedbtn)
+            .Columns.Insert(7, itembtn)
+            .Columns.Insert(8, prevbtn)
+            .Columns.Insert(9, updatebtn)
+            .Columns.Insert(10, deletebtn)
         End With
+
+        For i As Integer = 0 To quGRID.RowCount - 1
+            quGRID.Rows(i).Cells.Item(0).Value = quGRID.Item("accepted", i).Value.ToString
+        Next
     End Sub
 
     Private Sub newbtn_Click(sender As Object, e As EventArgs) Handles newbtn.Click
@@ -102,8 +115,11 @@ Public Class quotationFRM
 
     Private Sub quGRID_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles quGRID.CellClick
         If quGRID.RowCount >= 0 And e.RowIndex >= 0 Then
-            If e.ColumnIndex = 8 Then
-                id = quGRID.Item("id", e.RowIndex).Value.ToString
+            id = quGRID.Item("id", e.RowIndex).Value.ToString
+            If e.ColumnIndex = 0 Then
+                quotationstatusFRM.ShowDialog()
+            ElseIf e.ColumnIndex = 9 Then
+
                 newquFRM.qudate.Text = quGRID.Item("date", e.RowIndex).Value.ToString
                 newquFRM.aseno.Text = quGRID.Item("aseno", e.RowIndex).Value.ToString
                 newquFRM.tempaseno = quGRID.Item("aseno", e.RowIndex).Value.ToString
@@ -112,13 +128,13 @@ Public Class quotationFRM
                 newquFRM.Text = "Editing"
                 newquFRM.save.Text = "save"
                 newquFRM.ShowDialog()
-            ElseIf e.ColumnIndex = 7 Then
+            ElseIf e.ColumnIndex = 8 Then
                 d = quGRID.Item("date", e.RowIndex).Value.ToString
                 ase = quGRID.Item("aseno", e.RowIndex).Value.ToString
                 oth = quGRID.Item("other charges", e.RowIndex).Value.ToString
                 prevFRM.ShowDialog()
-            ElseIf e.ColumnIndex = 9 Then
-                id = quGRID.Item("id", e.RowIndex).Value.ToString
+            ElseIf e.ColumnIndex = 10 Then
+
                 If MetroFramework.MetroMessageBox.Show(Me, "Delete " & quGRID.Item("aseno", e.RowIndex).Value.ToString & "?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
                     Return
                 Else
@@ -136,7 +152,7 @@ Public Class quotationFRM
                     End Using
                     loadquotation()
                 End If
-            ElseIf e.ColumnIndex = 6 Then
+            ElseIf e.ColumnIndex = 7 Then
                 aseno = quGRID.Item("ASENO", e.RowIndex).Value.ToString
                 itemFRM.Text = quGRID.Item("ASENO", e.RowIndex).Value.ToString
                 itemFRM.ShowDialog()

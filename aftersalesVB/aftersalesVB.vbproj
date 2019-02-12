@@ -27,7 +27,7 @@
     <InstallUrl>http://121.58.229.248:8083/aftersales/</InstallUrl>
     <ProductName>After Sales System</ProductName>
     <PublisherName>warren</PublisherName>
-    <ApplicationRevision>7</ApplicationRevision>
+    <ApplicationRevision>8</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -142,6 +142,12 @@
     <Compile Include="forms\acctFRM.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="forms\assessmentFRM.Designer.vb">
+      <DependentUpon>assessmentFRM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\assessmentFRM.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="forms\concernFRM.Designer.vb">
       <DependentUpon>concernFRM.vb</DependentUpon>
     </Compile>
@@ -195,6 +201,12 @@
       <DependentUpon>newacctFRM.vb</DependentUpon>
     </Compile>
     <Compile Include="forms\newacctFRM.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\newassessmentFRM.Designer.vb">
+      <DependentUpon>newassessmentFRM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\newassessmentFRM.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\newcallinFRM.Designer.vb">
@@ -275,10 +287,28 @@
     <Compile Include="forms\quotationFRM.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="forms\quotationstatusFRM.Designer.vb">
+      <DependentUpon>quotationstatusFRM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\quotationstatusFRM.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\reportassessmentFRM.Designer.vb">
+      <DependentUpon>reportassessmentFRM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\reportassessmentFRM.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="forms\reportFRM.Designer.vb">
       <DependentUpon>reportFRM.vb</DependentUpon>
     </Compile>
     <Compile Include="forms\reportFRM.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\scannedreportFRM.Designer.vb">
+      <DependentUpon>scannedreportFRM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\scannedreportFRM.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\selectprojectFRM.Designer.vb">
@@ -322,6 +352,9 @@
     <EmbeddedResource Include="forms\acctFRM.resx">
       <DependentUpon>acctFRM.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms\assessmentFRM.resx">
+      <DependentUpon>assessmentFRM.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\concernFRM.resx">
       <DependentUpon>concernFRM.vb</DependentUpon>
     </EmbeddedResource>
@@ -348,6 +381,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\newacctFRM.resx">
       <DependentUpon>newacctFRM.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\newassessmentFRM.resx">
+      <DependentUpon>newassessmentFRM.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\newcallinFRM.resx">
       <DependentUpon>newcallinFRM.vb</DependentUpon>
@@ -388,8 +424,17 @@
     <EmbeddedResource Include="forms\quotationFRM.resx">
       <DependentUpon>quotationFRM.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms\quotationstatusFRM.resx">
+      <DependentUpon>quotationstatusFRM.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\reportassessmentFRM.resx">
+      <DependentUpon>reportassessmentFRM.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\reportFRM.resx">
       <DependentUpon>reportFRM.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\scannedreportFRM.resx">
+      <DependentUpon>scannedreportFRM.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\selectprojectFRM.resx">
       <DependentUpon>selectprojectFRM.vb</DependentUpon>

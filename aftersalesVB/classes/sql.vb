@@ -6,7 +6,7 @@ Public Class sql
                                                                    user id='kmdiadmin';
                                                                    password='kmdiadmin';"}
     Public sqlcon2 As New SqlConnection With {.ConnectionString = "data source='192.168.1.21,49107';
-                                                                   initial catalog='heretosave';
+                                                                   initial catalog='kmdidata';
                                                                    network library='DBMSSOCN';
                                                                    user id='kmdiadmin';
                                                                    password='kmdiadmin';"}

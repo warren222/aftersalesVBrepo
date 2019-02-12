@@ -115,7 +115,7 @@ Partial Class selectprojectFRM
         '
         Me.fieldcombo.FormattingEnabled = True
         Me.fieldcombo.ItemHeight = 23
-        Me.fieldcombo.Items.AddRange(New Object() {"PROJECT NAME", "CLIENTS NAME", "COMPANY NAME", "ADDRESS", "SALES"})
+        Me.fieldcombo.Items.AddRange(New Object() {"ALL", "PROJECT NAME", "CLIENTS NAME", "COMPANY NAME", "ADDRESS", "SALES"})
         Me.fieldcombo.Location = New System.Drawing.Point(125, 10)
         Me.fieldcombo.Name = "fieldcombo"
         Me.fieldcombo.Size = New System.Drawing.Size(202, 29)

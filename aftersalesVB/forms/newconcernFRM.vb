@@ -1,7 +1,9 @@
 ﻿Imports System.Data.SqlClient
 Public Class newconcernFRM
     Dim sql As New sql
+    Public Shared fromcallin As Boolean = False
     Private Sub newconcernFRM_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+
         Me.Dispose()
     End Sub
 
@@ -12,6 +14,11 @@ Public Class newconcernFRM
             End If
             add()
             concernFRM.refreshbtn.PerformClick()
+            Select Case fromcallin
+                Case True
+                    newcallinFRM.loadanswer()
+            End Select
+
         ElseIf save.Text = "save" Then
             If Not IsNumeric(item.Text) Then
                 Return

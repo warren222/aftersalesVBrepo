@@ -3,17 +3,19 @@ Public Class newquFRM
     Dim sql As New sql
     Public tempaseno As String
     Private Sub newquFRM_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+
         Me.Dispose()
     End Sub
 
     Private Sub save_Click(sender As Object, e As EventArgs) Handles save.Click
         If Not IsNumeric(othercharges.Text) Then
+            MetroFramework.MetroMessageBox.Show(Me, "numeric format", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
-            MetroFramework.MetroMessageBox.Show(Me, "", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
         If save.Text = "add" Then
             add()
             quotationFRM.refreshBTN.PerformClick()
+            newcallinFRM.loadconcern()
         ElseIf save.Text = "save" Then
             update()
             quotationFRM.refreshBTN.PerformClick()

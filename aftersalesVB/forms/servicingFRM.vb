@@ -19,7 +19,7 @@ Public Class servicingFRM
                             SERVICING,
                             SDATE AS [SERVICING DATE],
                             ASSIGNEDPERSONNEL AS [ASSIGNED PERSONNEL]
-                            from servicingtb where cin = @cin ORDER BY SERVICING ASC"
+                            from servicingtb where cin = @cin ORDER BY SERVICING desc"
         Dim ds As New DataSet
         ds.Clear()
         Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
@@ -80,8 +80,9 @@ Public Class servicingFRM
                 End Try
             End Using
             Dim STR2 As String = "
-                                declare @status as varchar(100) = (select status from servicingtb where id  = @id)
-                                update callintb set status = @status where cin = @cin"
+                                declare @status as varchar(100) = (select case when status is null then '' else status end from servicingtb where id  = @id)
+                                update callintb set status = @status where cin = @cin
+                                update callintb set status = '' where status is null"
             Using sqlcmd As SqlCommand = New SqlCommand(STR2, sqlcon)
                 Try
                     sqlcmd.Parameters.AddWithValue("id", c)
@@ -96,18 +97,20 @@ Public Class servicingFRM
     Public Sub addbtn()
         Dim statusbtn As New DataGridViewButtonColumn
         Dim reportbtn As New DataGridViewButtonColumn
-
+        Dim rd As New DataGridViewButtonColumn
         Dim updatebtn As New DataGridViewButtonColumn
         Dim deletebtn As New DataGridViewButtonColumn
 
         statusbtn.Name = "statusbtn"
         statusbtn.HeaderText = "STATUS"
 
-
         reportbtn.Name = "reportbtn"
         reportbtn.HeaderText = ""
         reportbtn.Text = "report"
 
+        rd.Name = "rd"
+        rd.HeaderText = ""
+        rd.Text = "scanned report"
 
         updatebtn.Name = "updatebtn"
         updatebtn.HeaderText = ""
@@ -119,16 +122,15 @@ Public Class servicingFRM
 
         statusbtn.UseColumnTextForButtonValue = False
         reportbtn.UseColumnTextForButtonValue = True
-
+        rd.UseColumnTextForButtonValue = True
         updatebtn.UseColumnTextForButtonValue = True
         deletebtn.UseColumnTextForButtonValue = True
 
         servicingGRID.Columns.Insert(0, statusbtn)
         servicingGRID.Columns.Insert(7, reportbtn)
-
-        servicingGRID.Columns.Insert(9, updatebtn)
-        servicingGRID.Columns.Insert(10, deletebtn)
-
+        servicingGRID.Columns.Insert(8, rd)
+        servicingGRID.Columns.Insert(10, updatebtn)
+        servicingGRID.Columns.Insert(11, deletebtn)
 
         For i As Integer = 0 To servicingGRID.RowCount - 1
             servicingGRID.Rows(i).Cells.Item(0).Value = servicingGRID.Item("STATUS", i).Value.ToString
@@ -165,15 +167,18 @@ Public Class servicingFRM
                 id = servicingGRID.Item("id", e.RowIndex).Value.ToString
                 reportFRM.servicing.Text = servicingGRID.Item("servicing", e.RowIndex).Value.ToString
                 reportFRM.ShowDialog()
-
-            ElseIf e.ColumnIndex = 9 Then
+            ElseIf e.ColumnIndex = 8 Then
+                id = servicingGRID.Item("id", e.RowIndex).Value.ToString
+                scannedreportFRM.id = servicingGRID.Item("servicing", e.RowIndex).Value.ToString
+                scannedreportFRM.ShowDialog()
+            ElseIf e.ColumnIndex = 10 Then
                 newservicingFRM.Text = "Editing"
                 newservicingFRM.save.Text = "save"
                 id = servicingGRID.Item("id", e.RowIndex).Value.ToString
                 newservicingFRM.servicingdate.Text = servicingGRID.Item("servicing date", e.RowIndex).Value.ToString
                 newservicingFRM.assignedpersonnelTXT.Text = servicingGRID.Item("ASSIGNED PERSONNEL", e.RowIndex).Value.ToString
                 newservicingFRM.ShowDialog()
-            ElseIf e.ColumnIndex = 10 Then
+            ElseIf e.ColumnIndex = 11 Then
                 If MetroFramework.MetroMessageBox.Show(Me, "Delete " & servicingGRID.Item("servicing", e.RowIndex).Value.ToString & "?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
                     Return
                 Else

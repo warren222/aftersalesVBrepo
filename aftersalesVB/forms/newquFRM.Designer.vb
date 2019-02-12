@@ -159,7 +159,7 @@ Partial Class newquFRM
         Me.othercharges.CustomButton.Visible = False
         Me.othercharges.DisplayIcon = True
         Me.othercharges.FontSize = MetroFramework.MetroTextBoxSize.Medium
-        Me.othercharges.Lines = New String(-1) {}
+        Me.othercharges.Lines = New String() {"0"}
         Me.othercharges.Location = New System.Drawing.Point(128, 206)
         Me.othercharges.MaxLength = 32767
         Me.othercharges.Multiline = True
@@ -173,6 +173,7 @@ Partial Class newquFRM
         Me.othercharges.Size = New System.Drawing.Size(297, 29)
         Me.othercharges.Style = MetroFramework.MetroColorStyle.Red
         Me.othercharges.TabIndex = 3
+        Me.othercharges.Text = "0"
         Me.othercharges.UseCustomForeColor = True
         Me.othercharges.UseSelectable = True
         Me.othercharges.WaterMark = "Enter Other charges"

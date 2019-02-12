@@ -22,8 +22,8 @@ Partial Class newcallinFRM
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(newcallinFRM))
         Me.calldate = New MetroFramework.Controls.MetroTextBox()
         Me.calldategen = New MetroFramework.Controls.MetroDateTime()
@@ -31,6 +31,9 @@ Partial Class newcallinFRM
         Me.callername = New MetroFramework.Controls.MetroTextBox()
         Me.metroTextButton1 = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.MetroTextButton4 = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
+        Me.MetroTextButton3 = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
+        Me.MetroTextButton2 = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
         Me.KryptonLabel4 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.KryptonLabel3 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.KryptonLabel2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
@@ -165,6 +168,9 @@ Partial Class newcallinFRM
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.AutoScroll = True
         Me.Panel1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel1.Controls.Add(Me.MetroTextButton4)
+        Me.Panel1.Controls.Add(Me.MetroTextButton3)
+        Me.Panel1.Controls.Add(Me.MetroTextButton2)
         Me.Panel1.Controls.Add(Me.KryptonLabel4)
         Me.Panel1.Controls.Add(Me.KryptonLabel3)
         Me.Panel1.Controls.Add(Me.KryptonLabel2)
@@ -185,6 +191,54 @@ Partial Class newcallinFRM
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(896, 588)
         Me.Panel1.TabIndex = 482
+        '
+        'MetroTextButton4
+        '
+        Me.MetroTextButton4.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.MetroTextButton4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.MetroTextButton4.Image = Nothing
+        Me.MetroTextButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.MetroTextButton4.Location = New System.Drawing.Point(442, 318)
+        Me.MetroTextButton4.Name = "MetroTextButton4"
+        Me.MetroTextButton4.Size = New System.Drawing.Size(48, 24)
+        Me.MetroTextButton4.Style = MetroFramework.MetroColorStyle.Green
+        Me.MetroTextButton4.TabIndex = 497
+        Me.MetroTextButton4.Text = "+"
+        Me.MetroTextButton4.UseCustomForeColor = True
+        Me.MetroTextButton4.UseSelectable = True
+        Me.MetroTextButton4.UseVisualStyleBackColor = True
+        '
+        'MetroTextButton3
+        '
+        Me.MetroTextButton3.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.MetroTextButton3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.MetroTextButton3.Image = Nothing
+        Me.MetroTextButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.MetroTextButton3.Location = New System.Drawing.Point(28, 318)
+        Me.MetroTextButton3.Name = "MetroTextButton3"
+        Me.MetroTextButton3.Size = New System.Drawing.Size(48, 24)
+        Me.MetroTextButton3.Style = MetroFramework.MetroColorStyle.Green
+        Me.MetroTextButton3.TabIndex = 496
+        Me.MetroTextButton3.Text = "+"
+        Me.MetroTextButton3.UseCustomForeColor = True
+        Me.MetroTextButton3.UseSelectable = True
+        Me.MetroTextButton3.UseVisualStyleBackColor = True
+        '
+        'MetroTextButton2
+        '
+        Me.MetroTextButton2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.MetroTextButton2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.MetroTextButton2.Image = Nothing
+        Me.MetroTextButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.MetroTextButton2.Location = New System.Drawing.Point(184, 163)
+        Me.MetroTextButton2.Name = "MetroTextButton2"
+        Me.MetroTextButton2.Size = New System.Drawing.Size(150, 24)
+        Me.MetroTextButton2.Style = MetroFramework.MetroColorStyle.Yellow
+        Me.MetroTextButton2.TabIndex = 495
+        Me.MetroTextButton2.Text = "cancel selected project"
+        Me.MetroTextButton2.UseCustomForeColor = True
+        Me.MetroTextButton2.UseSelectable = True
+        Me.MetroTextButton2.UseVisualStyleBackColor = True
         '
         'KryptonLabel4
         '
@@ -361,14 +415,14 @@ Partial Class newcallinFRM
         Me.answerGV.AllowUserToOrderColumns = True
         Me.answerGV.AllowUserToResizeColumns = False
         Me.answerGV.AllowUserToResizeRows = False
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
-        Me.answerGV.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        Me.answerGV.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.answerGV.ColumnHeadersHeight = 30
         Me.answerGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.answerGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1})
         Me.answerGV.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.answerGV.Location = New System.Drawing.Point(442, 323)
+        Me.answerGV.Location = New System.Drawing.Point(442, 348)
         Me.answerGV.MultiSelect = False
         Me.answerGV.Name = "answerGV"
         Me.answerGV.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Silver
@@ -378,7 +432,7 @@ Partial Class newcallinFRM
         Me.answerGV.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black
         Me.answerGV.RowTemplate.Height = 27
         Me.answerGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.answerGV.Size = New System.Drawing.Size(420, 433)
+        Me.answerGV.Size = New System.Drawing.Size(420, 408)
         Me.answerGV.StateCommon.Background.Color1 = System.Drawing.Color.White
         Me.answerGV.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
         Me.answerGV.StateCommon.DataCell.Border.DrawBorders = CType((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right), ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
@@ -406,13 +460,13 @@ Partial Class newcallinFRM
         Me.questionGRID.AllowUserToOrderColumns = True
         Me.questionGRID.AllowUserToResizeColumns = False
         Me.questionGRID.AllowUserToResizeRows = False
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
-        Me.questionGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        Me.questionGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
         Me.questionGRID.ColumnHeadersHeight = 30
         Me.questionGRID.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.questionGRID.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.questionGRID.Location = New System.Drawing.Point(28, 323)
+        Me.questionGRID.Location = New System.Drawing.Point(28, 348)
         Me.questionGRID.MultiSelect = False
         Me.questionGRID.Name = "questionGRID"
         Me.questionGRID.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Silver
@@ -422,7 +476,7 @@ Partial Class newcallinFRM
         Me.questionGRID.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black
         Me.questionGRID.RowTemplate.Height = 40
         Me.questionGRID.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.questionGRID.Size = New System.Drawing.Size(408, 433)
+        Me.questionGRID.Size = New System.Drawing.Size(408, 408)
         Me.questionGRID.StateCommon.Background.Color1 = System.Drawing.Color.White
         Me.questionGRID.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
         Me.questionGRID.StateCommon.DataCell.Border.DrawBorders = CType((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right), ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
@@ -476,8 +530,8 @@ Partial Class newcallinFRM
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(936, 722)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.updateBTN)
         Me.Controls.Add(Me.addBTN)
+        Me.Controls.Add(Me.updateBTN)
         Me.MinimizeBox = False
         Me.Name = "newcallinFRM"
         Me.Style = MetroFramework.MetroColorStyle.Red
@@ -509,4 +563,7 @@ Partial Class newcallinFRM
     Friend WithEvents KryptonLabel4 As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents KryptonLabel3 As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents KryptonLabel2 As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Friend WithEvents MetroTextButton2 As MetroFramework.Controls.MetroTextBox.MetroTextButton
+    Friend WithEvents MetroTextButton3 As MetroFramework.Controls.MetroTextBox.MetroTextButton
+    Friend WithEvents MetroTextButton4 As MetroFramework.Controls.MetroTextBox.MetroTextButton
 End Class

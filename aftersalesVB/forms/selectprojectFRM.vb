@@ -10,18 +10,31 @@ Public Class selectprojectFRM
     Private Sub projectTXT_ButtonClick(sender As Object, e As EventArgs) Handles projectTXT.ButtonClick
         Dim FIELD As String = ""
         If fieldcombo.Text = "PROJECT NAME" Then
-            FIELD = "PROJECT_LABEL"
+            FIELD = "PROJECT_LABEL like @pl"
         ElseIf fieldcombo.Text = "CLIENTS NAME" Then
-            FIELD = "CLIENTS_NAME"
+            FIELD = "CLIENTS_NAME like @pl"
         ElseIf fieldcombo.Text = "COMPANY NAME" Then
-            FIELD = "COMPANY_NAME"
+            FIELD = "COMPANY_NAME like @pl"
         ElseIf fieldcombo.Text = "ADDRESS" Then
-            FIELD = "FULLADD"
+            FIELD = "FULLADD like @pl"
         ElseIf fieldcombo.Text = "SALES" Then
-            FIELD = "SALES"
+            FIELD = "ACCT_EXEC_INCHARGE like @p00l"
+        ElseIf fieldcombo.Text = "ALL" Then
+            FIELD = "
+                    (PROJECT_LABEL like @pl OR 
+                    CLIENTS_NAME like @pl OR
+JOB_ORDER_NO like @pl OR
+SUB_JO like @pl OR
+JOB_ORDER_NO_DATE like @pl OR
+                    COMPANY_NAME like @pl OR
+                    FULLADD like @pl OR
+                    ACCT_EXEC_INCHARGE like @pl)"
         End If
+
+
+
         Dim str As String = "select JOB_ORDER_NO AS JO,project_label as [PROJECT NAME],FULLADD AS ADDRESS from addendum_to_contract_tb
-                             where " & FIELD & "  like @pl and contract_type = 'original contract'"
+                             where " & FIELD & " and contract_type = 'original contract'"
         Dim ds As New DataSet
         ds.Clear()
         Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon2str)
@@ -52,5 +65,11 @@ Public Class selectprojectFRM
 
     Private Sub projectGRID_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles projectGRID.CellDoubleClick
         Me.Close()
+    End Sub
+
+    Private Sub projectTXT_KeyDown(sender As Object, e As KeyEventArgs) Handles projectTXT.KeyDown
+        If e.KeyData = Keys.Enter Then
+            projectTXT.CustomButton.PerformClick()
+        End If
     End Sub
 End Class

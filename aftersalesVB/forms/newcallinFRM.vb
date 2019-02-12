@@ -4,6 +4,8 @@ Imports MetroFramework
 Public Class newcallinFRM
     Dim sql As New sql
     Dim qid As String
+    Dim qbs As New BindingSource
+    Dim abs As New BindingSource
     Private Sub newcallinFRM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Height = Screen.PrimaryScreen.Bounds.Height - 37
         loadconcern()
@@ -45,7 +47,9 @@ Public Class newcallinFRM
                         sqlcon.Open()
                         da.SelectCommand = sqlcmd
                         da.Fill(ds, "questionnairetb")
-                        questionGRID.DataSource = ds.Tables("questionnairetb")
+                        qbs.DataSource = ds
+                        qbs.DataMember = "questionnairetb"
+                        questionGRID.DataSource = qbs
                         setcolumns(questionGRID)
                     Catch ex As Exception
                         MsgBox(ex.ToString)
@@ -64,9 +68,11 @@ Public Class newcallinFRM
         Dim selecteditems As DataGridViewSelectedRowCollection = questionGRID.SelectedRows
         For Each row As DataGridViewRow In selecteditems
             qid = row.Cells("qid").Value.ToString
+            qsFRM.id = row.Cells("qid").Value.ToString
         Next
         loadanswer()
     End Sub
+
     Public Sub loadanswer()
         Dim str As String = "SELECT aid,qid,chk,ITEM,ANSWER AS CONCERN FROM ANSWERTB WHERE QID = @qid"
         Dim ds As New DataSet
@@ -79,7 +85,9 @@ Public Class newcallinFRM
                         sqlcmd.Parameters.AddWithValue("@qid", qid)
                         da.SelectCommand = sqlcmd
                         da.Fill(ds, "ANSWERTB")
-                        answerGV.DataSource = ds.Tables("ANSWERTB")
+                        abs.DataSource = ds
+                        abs.DataMember = "ANSWERTB"
+                        answerGV.DataSource = abs
                         answerGV.Columns("aid").Visible = False
                         answerGV.Columns("qid").Visible = False
                         answerGV.Columns("chk").Visible = False
@@ -268,5 +276,29 @@ Public Class newcallinFRM
             End Using
         End Using
         mainform.reloadBTN.PerformClick()
+    End Sub
+
+    Private Sub MetroTextButton2_Click(sender As Object, e As EventArgs) Handles MetroTextButton2.Click
+        projectname.Text = "Project Name"
+        address.Text = "Address"
+        jo.Text = "Job Order No"
+    End Sub
+
+    Private Sub MetroTextButton3_Click(sender As Object, e As EventArgs) Handles MetroTextButton3.Click
+        newqsFRM.fromcallin = True
+        newqsFRM.question.Text = ""
+        newqsFRM.item.Text = ""
+        newqsFRM.Text = "New"
+        newqsFRM.save.Text = "add"
+        newqsFRM.ShowDialog()
+    End Sub
+
+    Private Sub MetroTextButton4_Click(sender As Object, e As EventArgs) Handles MetroTextButton4.Click
+        newconcernFRM.fromcallin = True
+        newconcernFRM.item.Text = ""
+        newconcernFRM.concern.Text = ""
+        newconcernFRM.Text = "New"
+        newconcernFRM.save.Text = "add"
+        newconcernFRM.ShowDialog()
     End Sub
 End Class

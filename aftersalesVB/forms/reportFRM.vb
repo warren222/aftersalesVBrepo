@@ -29,7 +29,6 @@ Public Class reportFRM
                             .Columns("sid").Visible = False
                             .Columns("location").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
                             .Columns("specification").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-                            .Columns("assessment").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
                         End With
                     Catch ex As Exception
                         MsgBox(ex.ToString)
@@ -39,8 +38,15 @@ Public Class reportFRM
         End Using
     End Sub
     Public Sub addcolumns()
+        Dim assessmentbtn As New DataGridViewButtonColumn
         Dim updatebtn As New DataGridViewButtonColumn
         Dim deletebtn As New DataGridViewButtonColumn
+        With assessmentbtn
+            .Name = "assessmentbtn"
+            .HeaderText = ""
+            .Text = "assessment"
+            .UseColumnTextForButtonValue = True
+        End With
         With updatebtn
             .Name = "updatebtn"
             .HeaderText = ""
@@ -53,6 +59,7 @@ Public Class reportFRM
             .Text = "delete"
             .UseColumnTextForButtonValue = True
         End With
+        reportGRID.Columns.Insert(4, assessmentbtn)
         reportGRID.Columns.Insert(5, updatebtn)
         reportGRID.Columns.Insert(6, deletebtn)
     End Sub
@@ -63,17 +70,16 @@ Public Class reportFRM
 
     Private Sub reportGRID_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles reportGRID.CellClick
         If reportGRID.RowCount >= 0 And e.RowIndex >= 0 Then
-            If e.ColumnIndex = 5 Then
-
-                id = reportGRID.Item("id", e.RowIndex).Value.ToString
-                newreportFRM.location.Text = reportGRID.Item("location", e.RowIndex).Value.ToString
+            id = reportGRID.Item("id", e.RowIndex).Value.ToString
+            If e.ColumnIndex = 4 Then
+                reportassessmentFRM.ShowDialog()
+            ElseIf e.ColumnIndex = 5 Then
+                newreportFRM.locations.Text = reportGRID.Item("location", e.RowIndex).Value.ToString
                 newreportFRM.specification.Text = reportGRID.Item("specification", e.RowIndex).Value.ToString
-                newreportFRM.assessment.Text = reportGRID.Item("assessment", e.RowIndex).Value.ToString
                 newreportFRM.Text = "Editing"
                 newreportFRM.save.Text = "save"
                 newreportFRM.ShowDialog()
             ElseIf e.ColumnIndex = 6 Then
-                id = reportGRID.Item("id", e.RowIndex).Value.ToString
                 If MetroFramework.MetroMessageBox.Show(Me, "Delete selected report?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
                     Return
                 Else
@@ -100,9 +106,8 @@ Public Class reportFRM
     End Sub
 
     Private Sub newbtn_Click(sender As Object, e As EventArgs) Handles newbtn.Click
-        newreportFRM.location.Text = ""
+        newreportFRM.locations.Text = ""
         newreportFRM.specification.Text = ""
-        newreportFRM.assessment.Text = ""
         newreportFRM.Text = "New"
         newreportFRM.save.Text = "add"
         newreportFRM.loadspecification()

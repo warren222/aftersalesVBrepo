@@ -42,6 +42,17 @@ Public Class mainform
             field = "A.CIN"
         End If
 
+
+
+        Dim condition As String
+        Select Case field
+            Case "All"
+                condition = "(b.PROJECT_LABEL like '%" & txt & "%' or b.fulladd like '%" & txt & "%' 
+                              or a.caller like '%" & txt & "%' or a.cdate like '%" & txt & "%'
+                              or a.jo like '%" & txt & "%' or a.cin like '%" & txt & "%')"
+            Case Else
+                condition = "" & field & " like '%" & txt & "%'"
+        End Select
         Dim str As String = "
                             select " & TR & "
                             a.AUTONUM,
@@ -58,7 +69,7 @@ Public Class mainform
                             inner join
                             HERETOSAVE.dbo.addendum_to_contract_tb as b
                             on b.job_order_no = a.jo
-                            where " & field & " like '%" & txt & "%' " & done & " order by 
+                            where " & condition & " " & done & " order by 
                             case when isdate(cdate)=1 then cast(cdate as date) else cdate end desc"
         Dim ds As New DataSet
         ds.Clear()
@@ -75,7 +86,7 @@ Public Class mainform
                         callinGRID.DataSource = bs
                         addbtncolumns()
                         With callinGRID
-                            .Columns("CALLER").Frozen = True
+                            '.Columns("CALLER").Frozen = true
                             .Columns("autonum").Visible = False
                             .Columns("TELNO").Visible = False
                             .Columns("FAXNO").Visible = False
@@ -213,7 +224,13 @@ Public Class mainform
     End Sub
 
     Private Sub reloadBTN_Click(sender As Object, e As EventArgs) Handles reloadBTN.Click
-        loadcallin(fieldcombo.Text, "")
+        If callinGRID.RowCount <= 0 Then
+            loadcallin(fieldcombo.Text, "")
+        Else
+            Dim cindex As Integer = callinGRID.FirstDisplayedScrollingColumnIndex
+            loadcallin(fieldcombo.Text, "")
+            callinGRID.FirstDisplayedScrollingColumnIndex = cindex
+        End If
     End Sub
     Private Sub callinGRID_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles callinGRID.CellClick
         If callinGRID.RowCount >= 0 And e.RowIndex >= 0 Then
@@ -295,5 +312,15 @@ Public Class mainform
 
     Private Sub MetroTile4_Click(sender As Object, e As EventArgs) Handles MetroTile4.Click
         acctFRM.ShowDialog()
+    End Sub
+
+    Private Sub searchtext_KeyDown(sender As Object, e As KeyEventArgs) Handles searchtext.KeyDown
+        If e.KeyData = Keys.Enter Then
+            searchtext.CustomButton.PerformClick()
+        End If
+    End Sub
+
+    Private Sub MetroTile5_Click(sender As Object, e As EventArgs) Handles MetroTile5.Click
+        assessmentFRM.ShowDialog()
     End Sub
 End Class
