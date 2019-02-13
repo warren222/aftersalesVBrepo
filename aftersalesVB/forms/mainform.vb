@@ -64,10 +64,10 @@ Public Class mainform
                             b.PROJECT_LABEL AS PROJECT,
                             B.FULLADD AS ADDRESS,
                             A.TELNO,
-                            a.FAXNO
+                            a.FAXNO,A.VALIDATED
                             from callintb as a
                             inner join
-                            HERETOSAVE.dbo.addendum_to_contract_tb as b
+                            kmdidata.dbo.addendum_to_contract_tb as b
                             on b.job_order_no = a.jo
                             where " & condition & " " & done & " order by 
                             case when isdate(cdate)=1 then cast(cdate as date) else cdate end desc"
@@ -86,10 +86,11 @@ Public Class mainform
                         callinGRID.DataSource = bs
                         addbtncolumns()
                         With callinGRID
-                            '.Columns("CALLER").Frozen = true
+                            '.Columns("CALLER").Frozen = True
                             .Columns("autonum").Visible = False
                             .Columns("TELNO").Visible = False
                             .Columns("FAXNO").Visible = False
+                            .Columns("VALIDATED").Visible = False
                             .Columns("concern").Width = 100
                             .Columns("servicing").Width = 100
                             .Columns("STATUS").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
@@ -143,7 +144,14 @@ Public Class mainform
         Dim concernbtn As New DataGridViewButtonColumn
         Dim servicingbtn As New DataGridViewButtonColumn
         Dim quotationbtn As New DataGridViewButtonColumn
-        Dim deletebtn As New DataGridViewButtonColumn
+        Dim validatebtn As New DataGridViewButtonColumn
+        Dim addressbtn As New DataGridViewButtonColumn
+
+        addressbtn.Name = "address"
+        addressbtn.HeaderText = ""
+        addressbtn.Text = "editaddress"
+        addressbtn.UseColumnTextForButtonValue = True
+
         concernbtn.Name = "concern"
         concernbtn.HeaderText = ""
         concernbtn.Text = "concern"
@@ -166,17 +174,22 @@ Public Class mainform
             .Text = "update"
             .UseColumnTextForButtonValue = True
         End With
-        With deletebtn
-            .Name = "delete"
-            .HeaderText = ""
-            .Text = "delete"
-            .UseColumnTextForButtonValue = True
+        With validatebtn
+            .Name = "validatebtn"
+            .HeaderText = "VALIDATED"
+            .Text = ""
+            .UseColumnTextForButtonValue = False
         End With
         callinGRID.Columns.Insert(8, updatebtn)
-        callinGRID.Columns.Insert(9, deletebtn)
+        callinGRID.Columns.Insert(9, validatebtn)
         callinGRID.Columns.Insert(10, concernbtn)
         callinGRID.Columns.Insert(11, servicingbtn)
         callinGRID.Columns.Insert(12, quotationbtn)
+        callinGRID.Columns.Insert(13, addressbtn)
+
+        For I As Integer = 0 To callinGRID.RowCount - 1
+            callinGRID.Rows(I).Cells.Item(9).Value = callinGRID.Item("validated", I).Value.ToString
+        Next
 
     End Sub
     Private Sub newPNL_Click(sender As Object, e As EventArgs) Handles newPNL.Click
@@ -227,9 +240,9 @@ Public Class mainform
         If callinGRID.RowCount <= 0 Then
             loadcallin(fieldcombo.Text, "")
         Else
-            Dim cindex As Integer = callinGRID.FirstDisplayedScrollingColumnIndex
+
             loadcallin(fieldcombo.Text, "")
-            callinGRID.FirstDisplayedScrollingColumnIndex = cindex
+            'callinGRID.FirstDisplayedScrollingColumnIndex = 3
         End If
     End Sub
     Private Sub callinGRID_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles callinGRID.CellClick
@@ -250,15 +263,25 @@ Public Class mainform
                 newcallinFRM.updateBTN.Visible = True
                 newcallinFRM.ShowDialog()
             ElseIf e.ColumnIndex = 9 Then
-                If MetroFramework.MetroMessageBox.Show(Me, "" & row.Cells("project").Value.ToString & "" & vbCrLf & "" & row.Cells("address").Value.ToString & "" & vbCrLf & "Continue?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Error) = DialogResult.No Then
+                Dim vali As String
+                Select Case row.Cells("validated").Value.ToString
+                    Case "no"
+                        vali = "yes"
+                    Case "yes"
+                        vali = "no"
+                End Select
+                If MetroFramework.MetroMessageBox.Show(Me, "" & row.Cells("project").Value.ToString & "" & vbCrLf & "" & row.Cells("address").Value.ToString & "" & vbCrLf & "Continue?", "Validated : Mark as " & vali & "?", MessageBoxButtons.YesNo, MessageBoxIcon.Error) = DialogResult.No Then
                     Return
                 End If
-                Dim str As String = "delete from callintb where cin = @cin"
+
+
+                Dim str As String = "update callintb set validated=@vali where cin = @cin"
                 Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
                     Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
                         Try
                             sqlcon.Open()
                             sqlcmd.Parameters.AddWithValue("cin", tempcin)
+                            sqlcmd.Parameters.AddWithValue("vali", vali)
                             sqlcmd.ExecuteNonQuery()
                         Catch ex As Exception
                             MsgBox(ex.ToString)
@@ -284,6 +307,9 @@ Public Class mainform
                 quotationFRM.address.Text = row.Cells("address").Value.ToString
                 quotationFRM.jo.Text = row.Cells("jo").Value.ToString
                 quotationFRM.ShowDialog()
+            ElseIf e.ColumnIndex = 13 Then
+                editaddressFRM.parentjo = row.Cells("jo").Value.ToString
+                editaddressFRM.ShowDialog()
             End If
         End If
 

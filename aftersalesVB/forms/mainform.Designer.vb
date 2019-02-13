@@ -23,7 +23,7 @@ Partial Class mainform
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(mainform))
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.newPNL = New MetroFramework.Controls.MetroTile()
         Me.MetroTile1 = New MetroFramework.Controls.MetroTile()
         Me.MetroTile2 = New MetroFramework.Controls.MetroTile()
@@ -33,6 +33,7 @@ Partial Class mainform
         Me.callinGRID = New ComponentFactory.Krypton.Toolkit.KryptonDataGridView()
         Me.MetroTile3 = New MetroFramework.Controls.MetroTile()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.MetroTile5 = New MetroFramework.Controls.MetroTile()
         Me.MetroTile4 = New MetroFramework.Controls.MetroTile()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -42,7 +43,6 @@ Partial Class mainform
         Me.toprows = New MetroFramework.Controls.MetroComboBox()
         Me.donecheckbox = New MetroFramework.Controls.MetroToggle()
         Me.KryptonLabel2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
-        Me.MetroTile5 = New MetroFramework.Controls.MetroTile()
         CType(Me.callinGRID, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -170,8 +170,8 @@ Partial Class mainform
         Me.callinGRID.AllowUserToAddRows = False
         Me.callinGRID.AllowUserToDeleteRows = False
         Me.callinGRID.AllowUserToResizeRows = False
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.callinGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.callinGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.callinGRID.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -185,14 +185,13 @@ Partial Class mainform
         Me.callinGRID.RowTemplate.Height = 30
         Me.callinGRID.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.callinGRID.Size = New System.Drawing.Size(921, 490)
-        Me.callinGRID.StateCommon.Background.Color1 = System.Drawing.Color.White
         Me.callinGRID.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
         Me.callinGRID.StateCommon.DataCell.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right), ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
         Me.callinGRID.StateCommon.DataCell.Content.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.callinGRID.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.callinGRID.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(185, Byte), Integer))
+        Me.callinGRID.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.callinGRID.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.callinGRID.StateCommon.HeaderColumn.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Dashed
         Me.callinGRID.StateCommon.HeaderColumn.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) _
@@ -234,6 +233,22 @@ Partial Class mainform
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(126, 561)
         Me.Panel1.TabIndex = 557
+        '
+        'MetroTile5
+        '
+        Me.MetroTile5.ActiveControl = Nothing
+        Me.MetroTile5.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(126, Byte), Integer))
+        Me.MetroTile5.Location = New System.Drawing.Point(10, 236)
+        Me.MetroTile5.Name = "MetroTile5"
+        Me.MetroTile5.Size = New System.Drawing.Size(107, 71)
+        Me.MetroTile5.Style = MetroFramework.MetroColorStyle.Black
+        Me.MetroTile5.TabIndex = 558
+        Me.MetroTile5.Text = "Assessment"
+        Me.MetroTile5.TileImage = CType(resources.GetObject("MetroTile5.TileImage"), System.Drawing.Image)
+        Me.MetroTile5.TileImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.MetroTile5.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular
+        Me.MetroTile5.UseSelectable = True
+        Me.MetroTile5.UseTileImage = True
         '
         'MetroTile4
         '
@@ -349,22 +364,6 @@ Partial Class mainform
         Me.KryptonLabel2.TabIndex = 842
         Me.KryptonLabel2.Values.Text = "AFTER SALES"
         '
-        'MetroTile5
-        '
-        Me.MetroTile5.ActiveControl = Nothing
-        Me.MetroTile5.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(126, Byte), Integer))
-        Me.MetroTile5.Location = New System.Drawing.Point(10, 236)
-        Me.MetroTile5.Name = "MetroTile5"
-        Me.MetroTile5.Size = New System.Drawing.Size(107, 71)
-        Me.MetroTile5.Style = MetroFramework.MetroColorStyle.Black
-        Me.MetroTile5.TabIndex = 558
-        Me.MetroTile5.Text = "Assessment"
-        Me.MetroTile5.TileImage = CType(resources.GetObject("MetroTile5.TileImage"), System.Drawing.Image)
-        Me.MetroTile5.TileImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.MetroTile5.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular
-        Me.MetroTile5.UseSelectable = True
-        Me.MetroTile5.UseTileImage = True
-        '
         'mainform
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -374,6 +373,7 @@ Partial Class mainform
         Me.Controls.Add(Me.KryptonLabel2)
         Me.Controls.Add(Me.Panel2)
         Me.Name = "mainform"
+        Me.Style = MetroFramework.MetroColorStyle.Purple
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.callinGRID, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
