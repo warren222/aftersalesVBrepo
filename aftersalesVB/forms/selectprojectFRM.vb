@@ -72,4 +72,8 @@ JOB_ORDER_NO_DATE like @pl OR
             projectTXT.CustomButton.PerformClick()
         End If
     End Sub
+
+    Private Sub addBTN_Click(sender As Object, e As EventArgs) Handles addBTN.Click
+        Me.Close()
+    End Sub
 End Class

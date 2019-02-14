@@ -118,4 +118,11 @@ Public Class reportFRM
     Private Sub reportGRID_RowPostPaint(sender As Object, e As DataGridViewRowPostPaintEventArgs) Handles reportGRID.RowPostPaint
         sql.rownum(sender, e)
     End Sub
+
+    Private Sub reportGRID_SelectionChanged(sender As Object, e As EventArgs) Handles reportGRID.SelectionChanged
+        Dim rows As DataGridViewSelectedRowCollection = reportGRID.SelectedRows
+        For Each row As DataGridViewRow In rows
+            id = row.Cells("id").Value.ToString
+        Next
+    End Sub
 End Class

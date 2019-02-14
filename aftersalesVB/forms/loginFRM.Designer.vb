@@ -36,7 +36,7 @@ Partial Class loginFRM
         Me.save.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.save.Image = Nothing
         Me.save.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.save.Location = New System.Drawing.Point(261, 204)
+        Me.save.Location = New System.Drawing.Point(261, 180)
         Me.save.Name = "save"
         Me.save.Size = New System.Drawing.Size(116, 28)
         Me.save.Style = MetroFramework.MetroColorStyle.Yellow
@@ -83,11 +83,10 @@ Partial Class loginFRM
         Me.password.CustomButton.Visible = False
         Me.password.DisplayIcon = True
         Me.password.FontSize = MetroFramework.MetroTextBoxSize.Medium
-        Me.password.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.password.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.password.Lines = New String(-1) {}
         Me.password.Location = New System.Drawing.Point(173, 134)
         Me.password.MaxLength = 32767
-        Me.password.Multiline = True
         Me.password.Name = "password"
         Me.password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.password.ScrollBars = System.Windows.Forms.ScrollBars.None
@@ -98,7 +97,6 @@ Partial Class loginFRM
         Me.password.Size = New System.Drawing.Size(204, 28)
         Me.password.Style = MetroFramework.MetroColorStyle.Red
         Me.password.TabIndex = 515
-        Me.password.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.password.UseCustomForeColor = True
         Me.password.UseSelectable = True
         Me.password.WaterMark = "Enter Password"
@@ -121,7 +119,7 @@ Partial Class loginFRM
         Me.username.CustomButton.Visible = False
         Me.username.DisplayIcon = True
         Me.username.FontSize = MetroFramework.MetroTextBoxSize.Medium
-        Me.username.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.username.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.username.Lines = New String(-1) {}
         Me.username.Location = New System.Drawing.Point(173, 100)
         Me.username.MaxLength = 32767
@@ -136,7 +134,6 @@ Partial Class loginFRM
         Me.username.Size = New System.Drawing.Size(204, 28)
         Me.username.Style = MetroFramework.MetroColorStyle.Red
         Me.username.TabIndex = 514
-        Me.username.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.username.UseCustomForeColor = True
         Me.username.UseSelectable = True
         Me.username.WaterMark = "Enter UserName"
@@ -147,7 +144,7 @@ Partial Class loginFRM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(409, 255)
+        Me.ClientSize = New System.Drawing.Size(409, 217)
         Me.Controls.Add(Me.save)
         Me.Controls.Add(Me.KryptonLabel9)
         Me.Controls.Add(Me.KryptonLabel6)
@@ -158,8 +155,8 @@ Partial Class loginFRM
         Me.Name = "loginFRM"
         Me.Opacity = 0.92R
         Me.Style = MetroFramework.MetroColorStyle.Orange
-        Me.Text = "After Sales Log In"
-        Me.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.Text = "After Sales System Log In"
+        Me.Theme = MetroFramework.MetroThemeStyle.[Default]
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

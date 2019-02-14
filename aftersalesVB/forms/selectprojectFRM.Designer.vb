@@ -28,6 +28,7 @@ Partial Class selectprojectFRM
         Me.projectTXT = New MetroFramework.Controls.MetroTextBox()
         Me.fieldcombo = New MetroFramework.Controls.MetroComboBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.addBTN = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
         CType(Me.projectGRID, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -59,7 +60,7 @@ Partial Class selectprojectFRM
         Me.projectGRID.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black
         Me.projectGRID.RowTemplate.Height = 40
         Me.projectGRID.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.projectGRID.Size = New System.Drawing.Size(758, 311)
+        Me.projectGRID.Size = New System.Drawing.Size(758, 288)
         Me.projectGRID.StateCommon.Background.Color1 = System.Drawing.Color.White
         Me.projectGRID.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
         Me.projectGRID.StateCommon.DataCell.Border.DrawBorders = CType((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right), ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
@@ -134,11 +135,28 @@ Partial Class selectprojectFRM
         Me.Panel1.Size = New System.Drawing.Size(773, 54)
         Me.Panel1.TabIndex = 486
         '
+        'addBTN
+        '
+        Me.addBTN.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.addBTN.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.addBTN.Image = Nothing
+        Me.addBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.addBTN.Location = New System.Drawing.Point(684, 417)
+        Me.addBTN.Name = "addBTN"
+        Me.addBTN.Size = New System.Drawing.Size(65, 25)
+        Me.addBTN.Style = MetroFramework.MetroColorStyle.Red
+        Me.addBTN.TabIndex = 488
+        Me.addBTN.Text = "ok"
+        Me.addBTN.UseSelectable = True
+        Me.addBTN.UseVisualStyleBackColor = True
+        Me.addBTN.Visible = False
+        '
         'selectprojectFRM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(772, 454)
+        Me.Controls.Add(Me.addBTN)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.projectGRID)
         Me.MinimizeBox = False
@@ -155,4 +173,5 @@ Partial Class selectprojectFRM
     Friend WithEvents projectTXT As MetroFramework.Controls.MetroTextBox
     Friend WithEvents fieldcombo As MetroFramework.Controls.MetroComboBox
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents addBTN As MetroFramework.Controls.MetroTextBox.MetroTextButton
 End Class

@@ -96,8 +96,8 @@ Partial Class accessoriesFRM
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right), ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
         Me.accessoriesGRID.StateCommon.DataCell.Content.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.accessoriesGRID.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.accessoriesGRID.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(185, Byte), Integer))
+        Me.accessoriesGRID.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.Red
+        Me.accessoriesGRID.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.accessoriesGRID.StateCommon.HeaderColumn.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Dashed
         Me.accessoriesGRID.StateCommon.HeaderColumn.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) _
@@ -187,7 +187,7 @@ Partial Class accessoriesFRM
         Me.MetroTextButton1.Location = New System.Drawing.Point(814, 42)
         Me.MetroTextButton1.Name = "MetroTextButton1"
         Me.MetroTextButton1.Size = New System.Drawing.Size(88, 26)
-        Me.MetroTextButton1.Style = MetroFramework.MetroColorStyle.Silver
+        Me.MetroTextButton1.Style = MetroFramework.MetroColorStyle.Orange
         Me.MetroTextButton1.TabIndex = 575
         Me.MetroTextButton1.Text = "find"
         Me.MetroTextButton1.UseCustomForeColor = True
@@ -222,6 +222,7 @@ Partial Class accessoriesFRM
         Me.Controls.Add(Me.accessoriesGRID)
         Me.MinimizeBox = False
         Me.Name = "accessoriesFRM"
+        Me.Style = MetroFramework.MetroColorStyle.Red
         Me.Text = "Accessories / Materials"
         CType(Me.accessoriesGRID, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)

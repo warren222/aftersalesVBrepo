@@ -5,8 +5,6 @@ Imports System.Text
 
 Public Class loginFRM
     Dim sql As New sql
-    Public user As String
-    Public accttype As String
     Private Sub loginFRM_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Me.Dispose()
     End Sub
@@ -32,13 +30,25 @@ Public Class loginFRM
         Return clearText
     End Function
     Private Sub login()
-        Dim str As String = "select * from kmdi_acct_tb where username = @username and password COLLATE Latin1_General_CS_AS = @password"
+        Dim str As String = "select FULLNAME,ASACCT from kmdi_acct_tb where username = @username and password COLLATE Latin1_General_CS_AS = @password and not asacct = ''"
         Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon2str)
             Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
                 Try
                     sqlcon.Open()
                     sqlcmd.Parameters.AddWithValue("@UserName", username.Text)
                     sqlcmd.Parameters.AddWithValue("@Password", Encrypt(password.Text))
+                    Using rd As SqlDataReader = sqlcmd.ExecuteReader
+                        If rd.HasRows = True Then
+                            While rd.Read
+                                accttype = rd(1).ToString
+                                fullname = rd(0).ToString
+                            End While
+                            mainform.Show()
+                            Me.Hide()
+                        Else
+                            MessageBox.Show("Invalid Login", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                        End If
+                    End Using
                 Catch ex As Exception
                     MsgBox(ex.ToString)
                 End Try
@@ -47,6 +57,12 @@ Public Class loginFRM
     End Sub
 
     Private Sub save_Click(sender As Object, e As EventArgs) Handles save.Click
+        login()
+    End Sub
 
+    Private Sub password_KeyDown(sender As Object, e As KeyEventArgs) Handles password.KeyDown
+        If e.KeyData = Keys.Enter Then
+            save.PerformClick()
+        End If
     End Sub
 End Class

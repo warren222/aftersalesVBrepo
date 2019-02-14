@@ -1,4 +1,5 @@
 ﻿Imports System.Data.SqlClient
+Imports MetroFramework
 Imports Microsoft.Reporting.WinForms
 
 Public Class mainform
@@ -86,7 +87,7 @@ Public Class mainform
                         callinGRID.DataSource = bs
                         addbtncolumns()
                         With callinGRID
-                            '.Columns("CALLER").Frozen = True
+                            .Columns("CALLER").Frozen = True
                             .Columns("autonum").Visible = False
                             .Columns("TELNO").Visible = False
                             .Columns("FAXNO").Visible = False
@@ -208,7 +209,12 @@ Public Class mainform
     End Sub
 
     Private Sub MetroTile1_Click(sender As Object, e As EventArgs) Handles MetroTile1.Click
-        accessoriesFRM.ShowDialog()
+        Select Case accttype
+            Case "Admin"
+                accessoriesFRM.ShowDialog()
+            Case Else
+                MetroMessageBox.Show(Me, "Invalid access", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End Select
     End Sub
     Public Sub storeqa()
         Dim str As String = "update answertb set chk = '0'
@@ -335,11 +341,6 @@ Public Class mainform
         End If
         Me.Refresh()
     End Sub
-
-    Private Sub MetroTile4_Click(sender As Object, e As EventArgs) Handles MetroTile4.Click
-        acctFRM.ShowDialog()
-    End Sub
-
     Private Sub searchtext_KeyDown(sender As Object, e As KeyEventArgs) Handles searchtext.KeyDown
         If e.KeyData = Keys.Enter Then
             searchtext.CustomButton.PerformClick()
@@ -348,5 +349,10 @@ Public Class mainform
 
     Private Sub MetroTile5_Click(sender As Object, e As EventArgs) Handles MetroTile5.Click
         assessmentFRM.ShowDialog()
+    End Sub
+
+    Private Sub mainform_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Me.Dispose()
+        loginFRM.Close()
     End Sub
 End Class

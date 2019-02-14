@@ -34,7 +34,6 @@ Partial Class mainform
         Me.MetroTile3 = New MetroFramework.Controls.MetroTile()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.MetroTile5 = New MetroFramework.Controls.MetroTile()
-        Me.MetroTile4 = New MetroFramework.Controls.MetroTile()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.KryptonLabel3 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
@@ -224,7 +223,6 @@ Partial Class mainform
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackColor = System.Drawing.Color.White
         Me.Panel1.Controls.Add(Me.MetroTile5)
-        Me.Panel1.Controls.Add(Me.MetroTile4)
         Me.Panel1.Controls.Add(Me.newPNL)
         Me.Panel1.Controls.Add(Me.MetroTile3)
         Me.Panel1.Controls.Add(Me.MetroTile1)
@@ -249,22 +247,6 @@ Partial Class mainform
         Me.MetroTile5.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular
         Me.MetroTile5.UseSelectable = True
         Me.MetroTile5.UseTileImage = True
-        '
-        'MetroTile4
-        '
-        Me.MetroTile4.ActiveControl = Nothing
-        Me.MetroTile4.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(126, Byte), Integer))
-        Me.MetroTile4.Location = New System.Drawing.Point(10, 390)
-        Me.MetroTile4.Name = "MetroTile4"
-        Me.MetroTile4.Size = New System.Drawing.Size(107, 71)
-        Me.MetroTile4.Style = MetroFramework.MetroColorStyle.Purple
-        Me.MetroTile4.TabIndex = 557
-        Me.MetroTile4.Text = "Accounts"
-        Me.MetroTile4.TileImage = CType(resources.GetObject("MetroTile4.TileImage"), System.Drawing.Image)
-        Me.MetroTile4.TileImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.MetroTile4.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular
-        Me.MetroTile4.UseSelectable = True
-        Me.MetroTile4.UseTileImage = True
         '
         'Panel2
         '
@@ -398,7 +380,6 @@ Partial Class mainform
     Friend WithEvents toprows As MetroFramework.Controls.MetroComboBox
     Friend WithEvents KryptonLabel1 As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents donecheckbox As MetroFramework.Controls.MetroToggle
-    Friend WithEvents MetroTile4 As MetroFramework.Controls.MetroTile
     Friend WithEvents KryptonLabel2 As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents MetroToggle1 As MetroFramework.Controls.MetroToggle
     Friend WithEvents KryptonLabel3 As ComponentFactory.Krypton.Toolkit.KryptonLabel
