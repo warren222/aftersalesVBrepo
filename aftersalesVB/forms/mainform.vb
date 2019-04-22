@@ -9,7 +9,7 @@ Public Class mainform
     Public Shared faxno As String
     Dim bs As New BindingSource
     Private Sub mainform_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        toprows.SelectedIndex = 0
+        toprows.SelectedIndex = 10
         fieldcombo.SelectedIndex = 0
         reloadBTN.PerformClick()
     End Sub
@@ -71,7 +71,7 @@ Public Class mainform
                             kmdidata.dbo.addendum_to_contract_tb as b
                             on b.job_order_no = a.jo
                             where " & condition & " " & done & " order by 
-                            case when isdate(cdate)=1 then cast(cdate as date) else cdate end desc"
+                            case when isdate(cdate)=1 then cast(cdate as date) else cdate end asc, autonum asc"
         Dim ds As New DataSet
         ds.Clear()
         Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)

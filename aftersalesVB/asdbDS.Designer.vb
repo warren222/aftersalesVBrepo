@@ -324,7 +324,7 @@ Partial Public Class asdbDS
         
         Private columnQID As Global.System.Data.DataColumn
         
-        Private columnITEM As Global.System.Data.DataColumn
+        Private columnCDATE As Global.System.Data.DataColumn
         
         Private columnANSWER As Global.System.Data.DataColumn
         
@@ -391,9 +391,9 @@ Partial Public Class asdbDS
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property ITEMColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property CDATEColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnITEM
+                Return Me.columnCDATE
             End Get
         End Property
         
@@ -450,9 +450,9 @@ Partial Public Class asdbDS
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddQATBRow(ByVal CIN As String, ByVal AID As String, ByVal QID As String, ByVal ITEM As String, ByVal ANSWER As String, ByVal QUESTION As String) As QATBRow
+        Public Overloads Function AddQATBRow(ByVal CIN As String, ByVal AID As String, ByVal QID As String, ByVal _CDATE As String, ByVal ANSWER As String, ByVal QUESTION As String) As QATBRow
             Dim rowQATBRow As QATBRow = CType(Me.NewRow,QATBRow)
-            Dim columnValuesArray() As Object = New Object() {CIN, AID, QID, ITEM, ANSWER, QUESTION}
+            Dim columnValuesArray() As Object = New Object() {CIN, AID, QID, _CDATE, ANSWER, QUESTION}
             rowQATBRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowQATBRow)
             Return rowQATBRow
@@ -478,7 +478,7 @@ Partial Public Class asdbDS
             Me.columnCIN = MyBase.Columns("CIN")
             Me.columnAID = MyBase.Columns("AID")
             Me.columnQID = MyBase.Columns("QID")
-            Me.columnITEM = MyBase.Columns("ITEM")
+            Me.columnCDATE = MyBase.Columns("CDATE")
             Me.columnANSWER = MyBase.Columns("ANSWER")
             Me.columnQUESTION = MyBase.Columns("QUESTION")
         End Sub
@@ -492,8 +492,11 @@ Partial Public Class asdbDS
             MyBase.Columns.Add(Me.columnAID)
             Me.columnQID = New Global.System.Data.DataColumn("QID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnQID)
-            Me.columnITEM = New Global.System.Data.DataColumn("ITEM", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnITEM)
+            Me.columnCDATE = New Global.System.Data.DataColumn("CDATE", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnCDATE.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "CDATEColumn")
+            Me.columnCDATE.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnCDATE")
+            Me.columnCDATE.ExtendedProperties.Add("Generator_UserColumnName", "CDATE")
+            MyBase.Columns.Add(Me.columnCDATE)
             Me.columnANSWER = New Global.System.Data.DataColumn("ANSWER", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnANSWER)
             Me.columnQUESTION = New Global.System.Data.DataColumn("QUESTION", GetType(String), Nothing, Global.System.Data.MappingType.Element)
@@ -1032,16 +1035,16 @@ Partial Public Class asdbDS
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property ITEM() As String
+        Public Property _CDATE() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableQATB.ITEMColumn),String)
+                    Return CType(Me(Me.tableQATB.CDATEColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'ITEM' in table 'QATB' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'CDATE' in table 'QATB' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableQATB.ITEMColumn) = value
+                Me(Me.tableQATB.CDATEColumn) = value
             End Set
         End Property
         
@@ -1113,14 +1116,14 @@ Partial Public Class asdbDS
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsITEMNull() As Boolean
-            Return Me.IsNull(Me.tableQATB.ITEMColumn)
+        Public Function Is_CDATENull() As Boolean
+            Return Me.IsNull(Me.tableQATB.CDATEColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetITEMNull()
-            Me(Me.tableQATB.ITEMColumn) = Global.System.Convert.DBNull
+        Public Sub Set_CDATENull()
+            Me(Me.tableQATB.CDATEColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _

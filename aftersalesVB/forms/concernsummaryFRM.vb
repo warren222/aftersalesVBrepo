@@ -4,13 +4,23 @@ Imports Microsoft.Reporting.WinForms
 Public Class concernsummaryFRM
     Dim sql As New sql
     Private Sub concernsummaryFRM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim STR As String = "  
-                              SELECT * FROM QATB AS A 
+        'Dim STR As String = " declare @jo as varchar(20) = (select jo from callintb where cin  = '" & mainform.tempcin & "')  
+        '                      (SELECT * FROM QATB AS A 
+        '                      INNER JOIN ANSWERTB AS B
+        '                      ON A.AID = B.AID
+        '                      INNER JOIN QUESTIONNAIRETB AS C
+        '                      ON B.QID = C.QID
+        '                      WHERE A.CIN in (select cin from callintb where jo = @jo)"
+        Dim STR As String = " declare @jo as varchar(20) = (select jo from callintb where cin  = '" & mainform.tempcin & "')  
+                              SELECT ABC.CIN,aBC.AID,ABc.QID,CTB.CDATE,ABC.ANSWER,ABC.QUESTION FROM 
+						      (SELECT a.CIN,a.AID,c.QID,B.ANSWER,C.QUESTION FROM QATB AS A 
                               INNER JOIN ANSWERTB AS B
                               ON A.AID = B.AID
                               INNER JOIN QUESTIONNAIRETB AS C
                               ON B.QID = C.QID
-                              WHERE A.CIN = '" & mainform.tempcin & "'"
+                              WHERE A.CIN in (select cin from callintb where jo = @jo)) AS ABC
+							  INNER JOIN CALLINTB AS CTB 
+							  ON CTB.CIN = ABC.CIN ORDER BY CAST(CDATE AS DATE) ASC"
         Dim ds As New asdbDS
         ds.Clear()
 
