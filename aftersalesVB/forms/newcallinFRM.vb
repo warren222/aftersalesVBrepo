@@ -6,14 +6,37 @@ Public Class newcallinFRM
     Dim qid As String
     Dim qbs As New BindingSource
     Dim abs As New BindingSource
+    Public Shared concern As String = ""
     Private Sub newcallinFRM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.Height = Screen.PrimaryScreen.Bounds.Height - 37
+        'Me.Height = Screen.PrimaryScreen.Bounds.Height - 37
         loadconcern()
         Dim clr As Color
+
+
+
+
         If Me.Text = "Editing" Then
             clr = Color.Red
             cin.Visible = True
             KryptonLabel4.Visible = True
+            If concern.Contains("Window") Then
+                Windowchk.Checked = True
+            End If
+            If concern.Contains("Door") Then
+                doorchk.Checked = True
+            End If
+            If concern.Contains("Screen") Then
+                screenchk.Checked = True
+            End If
+            If concern.Contains("Glass") Then
+                glasschk.Checked = True
+            End If
+            If concern.Contains("Mechanism") Then
+                mechanismchk.Checked = True
+            End If
+            If concern.Contains("Not Specified") Then
+                notspecifiedchk.Checked = True
+            End If
         Else
             clr = Color.Black
             cin.Visible = False
@@ -24,6 +47,7 @@ Public Class newcallinFRM
         ccolor(telno, clr)
         ccolor(faxno, clr)
         ccolor(cin, clr)
+        ccolor(conversation, clr)
     End Sub
     Private Sub ccolor(ByVal ob As Object, ByVal c As Color)
         ob.ForeColor = c
@@ -153,6 +177,32 @@ Public Class newcallinFRM
             MetroMessageBox.Show(Me, "Select Project", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return
         End If
+        Dim wndwtxt As String
+        Dim doortxt As String
+        Dim screentxt As String
+        Dim glasstxt As String
+        Dim mechanismtxt As String
+        Dim notspecifiedtxt As String
+        concern = ""
+        If Windowchk.Checked = True Then
+            wndwtxt = " Window "
+        End If
+        If doorchk.Checked = True Then
+            doortxt = " Door "
+        End If
+        If screenchk.Checked = True Then
+            screentxt = " Screen "
+        End If
+        If glasschk.Checked = True Then
+            glasstxt = " Glass "
+        End If
+        If mechanismchk.Checked = True Then
+            mechanismtxt = " Mechanism "
+        End If
+        If notspecifiedchk.Checked = True Then
+            notspecifiedtxt = " Not Specified "
+        End If
+        concern = wndwtxt + doortxt + screentxt + glasstxt + mechanismtxt + notspecifiedtxt
         Dim str As String = "Declare @autonum as integer = (select isnull(max(autonum),0)+1 from callintb)
                                 insert into callintb
                                 (autonum,
@@ -161,7 +211,9 @@ Public Class newcallinFRM
                                 caller,
                                 jo,
                                 TELNO,
-                                FAXNO)
+                                FAXNO,
+                                concern,
+                                conversation)
                                 values
                                 (@autonum,
                                 @cdate,
@@ -169,7 +221,9 @@ Public Class newcallinFRM
                                 @caller,
                                 @jo,
                                 @TELNO,
-                                @FAXNO)
+                                @FAXNO,
+                                @concern,
+                                @conversation)
                                 INSERT INTO QATB (CIN,AID) SELECT ((left(CONVERT([varchar](7),@autonum),(2))+'-')+right(CONVERT([varchar](7),@autonum),(5))),AID FROM ANSWERTB WHERE CHK=1
                                 UPDATE ANSWERTB SET CHK=0"
         Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
@@ -182,6 +236,8 @@ Public Class newcallinFRM
                         .AddWithValue("@caller", callername.Text)
                         .AddWithValue("@TELNO", telno.Text)
                         .AddWithValue("@FAXNO", faxno.Text)
+                        .AddWithValue("@concern", concern)
+                        .AddWithValue("@conversation", conversation.Text)
                     End With
                     sqlcmd.ExecuteNonQuery()
                     MetroMessageBox.Show(Me, "Record Added!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -241,13 +297,42 @@ Public Class newcallinFRM
             Return
         End If
 
+        Dim wndwtxt As String
+        Dim doortxt As String
+        Dim screentxt As String
+        Dim glasstxt As String
+        Dim mechanismtxt As String
+        Dim notspecifiedtxt As String
+        concern = ""
+        If Windowchk.Checked = True Then
+            wndwtxt = " Window "
+        End If
+        If doorchk.Checked = True Then
+            doortxt = " Door "
+        End If
+        If screenchk.Checked = True Then
+            screentxt = " Screen "
+        End If
+        If glasschk.Checked = True Then
+            glasstxt = " Glass "
+        End If
+        If mechanismchk.Checked = True Then
+            mechanismtxt = " Mechanism "
+        End If
+        If notspecifiedchk.Checked = True Then
+            notspecifiedtxt = " Not Specified "
+        End If
+        concern = wndwtxt + doortxt + screentxt + glasstxt + mechanismtxt + notspecifiedtxt
+
         Dim str As String = "
                             update callintb set
                             cdate=@cdate,
                             caller=@caller,
                             jo=@jo,
                             TELNO=@TELNO,
-                            FAXNO=@FAXNO
+                            FAXNO=@FAXNO,
+                            concern = @concern,
+                            conversation=@conversation
                             where cin = @cin
                             insert into qatb (cin,aid) select @cin,aid from answertb where chk = '1' and not aid in (select aid from qatb where cin = @cin)
                             delete from qatb where cin = @cin and not aid in (select aid from answertb where chk = '1')
@@ -268,6 +353,8 @@ Public Class newcallinFRM
                     sqlcmd.Parameters.AddWithValue("@anum", anum)
                     sqlcmd.Parameters.AddWithValue("@TELNO", telno.Text)
                     sqlcmd.Parameters.AddWithValue("@FAXNO", faxno.Text)
+                    sqlcmd.Parameters.AddWithValue("@concern", concern)
+                    sqlcmd.Parameters.AddWithValue("@conversation", conversation.Text)
                     sqlcmd.ExecuteNonQuery()
                     MetroMessageBox.Show(Me, "Data Updated!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Catch ex As Exception
@@ -279,9 +366,9 @@ Public Class newcallinFRM
     End Sub
 
     Private Sub MetroTextButton2_Click(sender As Object, e As EventArgs) Handles MetroTextButton2.Click
-        projectname.Text = "Project Name"
-        address.Text = "Address"
-        jo.Text = "Job Order No"
+        projectname.Text = "null"
+        address.Text = "null"
+        jo.Text = "null"
     End Sub
 
     Private Sub MetroTextButton3_Click(sender As Object, e As EventArgs) Handles MetroTextButton3.Click
@@ -301,4 +388,6 @@ Public Class newcallinFRM
         newconcernFRM.save.Text = "add"
         newconcernFRM.ShowDialog()
     End Sub
+
+
 End Class

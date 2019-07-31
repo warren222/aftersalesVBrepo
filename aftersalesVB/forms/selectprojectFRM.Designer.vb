@@ -1,6 +1,6 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
 Partial Class selectprojectFRM
-    Inherits MetroFramework.Forms.MetroForm
+    Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
     <System.Diagnostics.DebuggerNonUserCode()> _
@@ -22,13 +22,15 @@ Partial Class selectprojectFRM
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(selectprojectFRM))
         Me.projectGRID = New ComponentFactory.Krypton.Toolkit.KryptonDataGridView()
         Me.projectTXT = New MetroFramework.Controls.MetroTextBox()
         Me.fieldcombo = New MetroFramework.Controls.MetroComboBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.addBTN = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         CType(Me.projectGRID, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -40,17 +42,15 @@ Partial Class selectprojectFRM
         Me.projectGRID.AllowUserToOrderColumns = True
         Me.projectGRID.AllowUserToResizeColumns = False
         Me.projectGRID.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        Me.projectGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        Me.projectGRID.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        Me.projectGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
         Me.projectGRID.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
-        Me.projectGRID.ColumnHeadersHeight = 30
+        Me.projectGRID.ColumnHeadersHeight = 25
         Me.projectGRID.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.projectGRID.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.projectGRID.Location = New System.Drawing.Point(9, 123)
+        Me.projectGRID.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.projectGRID.Location = New System.Drawing.Point(0, 0)
         Me.projectGRID.MultiSelect = False
         Me.projectGRID.Name = "projectGRID"
         Me.projectGRID.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Silver
@@ -58,14 +58,13 @@ Partial Class selectprojectFRM
         Me.projectGRID.RowHeadersVisible = False
         Me.projectGRID.RowHeadersWidth = 40
         Me.projectGRID.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black
-        Me.projectGRID.RowTemplate.Height = 40
         Me.projectGRID.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.projectGRID.Size = New System.Drawing.Size(758, 288)
-        Me.projectGRID.StateCommon.Background.Color1 = System.Drawing.Color.White
+        Me.projectGRID.Size = New System.Drawing.Size(558, 332)
+        Me.projectGRID.StateCommon.Background.Color1 = System.Drawing.Color.WhiteSmoke
         Me.projectGRID.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
         Me.projectGRID.StateCommon.DataCell.Border.DrawBorders = CType((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right), ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
-        Me.projectGRID.StateCommon.DataCell.Content.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Italic)
-        Me.projectGRID.StateCommon.DataCell.Content.Padding = New System.Windows.Forms.Padding(-1, 10, -1, 10)
+        Me.projectGRID.StateCommon.DataCell.Content.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.projectGRID.StateCommon.DataCell.Content.Padding = New System.Windows.Forms.Padding(0)
         Me.projectGRID.StateCommon.HeaderColumn.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Dashed
         Me.projectGRID.StateCommon.HeaderColumn.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) _
@@ -78,22 +77,22 @@ Partial Class selectprojectFRM
         '
         'projectTXT
         '
+        Me.projectTXT.BackColor = System.Drawing.Color.WhiteSmoke
         '
         '
         '
         Me.projectTXT.CustomButton.Image = CType(resources.GetObject("resource.Image"), System.Drawing.Image)
-        Me.projectTXT.CustomButton.Location = New System.Drawing.Point(347, 2)
+        Me.projectTXT.CustomButton.Location = New System.Drawing.Point(289, 1)
         Me.projectTXT.CustomButton.Name = ""
-        Me.projectTXT.CustomButton.Size = New System.Drawing.Size(27, 27)
+        Me.projectTXT.CustomButton.Size = New System.Drawing.Size(25, 25)
         Me.projectTXT.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
         Me.projectTXT.CustomButton.TabIndex = 1
         Me.projectTXT.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
         Me.projectTXT.CustomButton.UseSelectable = True
         Me.projectTXT.DisplayIcon = True
-        Me.projectTXT.FontSize = MetroFramework.MetroTextBoxSize.Medium
         Me.projectTXT.ForeColor = System.Drawing.SystemColors.ControlText
         Me.projectTXT.Lines = New String(-1) {}
-        Me.projectTXT.Location = New System.Drawing.Point(333, 10)
+        Me.projectTXT.Location = New System.Drawing.Point(267, 23)
         Me.projectTXT.MaxLength = 32767
         Me.projectTXT.Name = "projectTXT"
         Me.projectTXT.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -103,9 +102,10 @@ Partial Class selectprojectFRM
         Me.projectTXT.SelectionStart = 0
         Me.projectTXT.ShowButton = True
         Me.projectTXT.ShowClearButton = True
-        Me.projectTXT.Size = New System.Drawing.Size(377, 32)
+        Me.projectTXT.Size = New System.Drawing.Size(315, 27)
         Me.projectTXT.Style = MetroFramework.MetroColorStyle.Red
         Me.projectTXT.TabIndex = 484
+        Me.projectTXT.UseCustomBackColor = True
         Me.projectTXT.UseCustomForeColor = True
         Me.projectTXT.UseSelectable = True
         Me.projectTXT.WaterMark = "Enter Project Name"
@@ -114,25 +114,28 @@ Partial Class selectprojectFRM
         '
         'fieldcombo
         '
+        Me.fieldcombo.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.fieldcombo.FontSize = MetroFramework.MetroComboBoxSize.Small
         Me.fieldcombo.FormattingEnabled = True
-        Me.fieldcombo.ItemHeight = 23
+        Me.fieldcombo.ItemHeight = 19
         Me.fieldcombo.Items.AddRange(New Object() {"ALL", "PROJECT NAME", "CLIENTS NAME", "COMPANY NAME", "ADDRESS", "SALES"})
-        Me.fieldcombo.Location = New System.Drawing.Point(125, 10)
+        Me.fieldcombo.Location = New System.Drawing.Point(88, 23)
         Me.fieldcombo.Name = "fieldcombo"
-        Me.fieldcombo.Size = New System.Drawing.Size(202, 29)
+        Me.fieldcombo.Size = New System.Drawing.Size(173, 25)
         Me.fieldcombo.TabIndex = 485
+        Me.fieldcombo.UseCustomBackColor = True
         Me.fieldcombo.UseSelectable = True
         '
         'Panel1
         '
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Panel1.Controls.Add(Me.projectTXT)
-        Me.Panel1.Controls.Add(Me.fieldcombo)
-        Me.Panel1.Location = New System.Drawing.Point(0, 63)
+        Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.projectGRID)
+        Me.Panel1.Location = New System.Drawing.Point(22, 90)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(773, 54)
+        Me.Panel1.Size = New System.Drawing.Size(560, 334)
         Me.Panel1.TabIndex = 486
         '
         'addBTN
@@ -141,31 +144,53 @@ Partial Class selectprojectFRM
         Me.addBTN.Cursor = System.Windows.Forms.Cursors.Hand
         Me.addBTN.Image = Nothing
         Me.addBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.addBTN.Location = New System.Drawing.Point(684, 417)
+        Me.addBTN.Location = New System.Drawing.Point(594, 90)
         Me.addBTN.Name = "addBTN"
-        Me.addBTN.Size = New System.Drawing.Size(65, 25)
+        Me.addBTN.Size = New System.Drawing.Size(107, 25)
         Me.addBTN.Style = MetroFramework.MetroColorStyle.Red
         Me.addBTN.TabIndex = 488
         Me.addBTN.Text = "ok"
         Me.addBTN.UseSelectable = True
         Me.addBTN.UseVisualStyleBackColor = True
-        Me.addBTN.Visible = False
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(22, 66)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(143, 13)
+        Me.Label1.TabIndex = 489
+        Me.Label1.Text = "Select project from contract :"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(22, 23)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(53, 13)
+        Me.Label2.TabIndex = 490
+        Me.Label2.Text = "keyword :"
         '
         'selectprojectFRM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(772, 454)
+        Me.ClientSize = New System.Drawing.Size(712, 454)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.projectTXT)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.fieldcombo)
         Me.Controls.Add(Me.addBTN)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.projectGRID)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.MinimizeBox = False
         Me.Name = "selectprojectFRM"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
-        Me.Text = "Select Project"
+        Me.Text = "Import"
         CType(Me.projectGRID, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -174,4 +199,6 @@ Partial Class selectprojectFRM
     Friend WithEvents fieldcombo As MetroFramework.Controls.MetroComboBox
     Friend WithEvents Panel1 As Panel
     Friend WithEvents addBTN As MetroFramework.Controls.MetroTextBox.MetroTextButton
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
 End Class

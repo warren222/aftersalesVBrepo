@@ -63,12 +63,17 @@ Public Class mainform
                             A.CALLER,
                             A.JO,
                             b.PROJECT_LABEL AS PROJECT,
+                            b.job_order_no_date as [JO DATE],
+                            b.profile_finish as [PROFILE FINISH],
                             B.FULLADD AS ADDRESS,
                             A.TELNO,
-                            a.FAXNO,A.VALIDATED
+                            a.FAXNO,
+                            A.VALIDATED,
+                            a.CONCERN,
+                            A.CONVERSATION
                             from callintb as a
                             inner join
-                            kmdidata.dbo.addendum_to_contract_tb as b
+                            heretosave.dbo.addendum_to_contract_tb as b
                             on b.job_order_no = a.jo
                             where " & condition & " " & done & " order by 
                             case when isdate(cdate)=1 then cast(cdate as date) else cdate end asc, autonum asc"
@@ -92,9 +97,11 @@ Public Class mainform
                             .Columns("TELNO").Visible = False
                             .Columns("FAXNO").Visible = False
                             .Columns("VALIDATED").Visible = False
-                            .Columns("concern").Width = 100
+                            .Columns("concernbtn").Width = 100
                             .Columns("servicing").Width = 100
                             .Columns("STATUS").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+                            .Columns("profile finish").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+                            .Columns("jo date").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
                             .Columns("date").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
                             .Columns("cin").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
                             .Columns("caller").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
@@ -153,7 +160,7 @@ Public Class mainform
         addressbtn.Text = "editaddress"
         addressbtn.UseColumnTextForButtonValue = True
 
-        concernbtn.Name = "concern"
+        concernbtn.Name = "concernbtn"
         concernbtn.HeaderText = ""
         concernbtn.Text = "concern"
         concernbtn.UseColumnTextForButtonValue = True
@@ -181,15 +188,15 @@ Public Class mainform
             .Text = ""
             .UseColumnTextForButtonValue = False
         End With
-        callinGRID.Columns.Insert(8, updatebtn)
-        callinGRID.Columns.Insert(9, validatebtn)
-        callinGRID.Columns.Insert(10, concernbtn)
-        callinGRID.Columns.Insert(11, servicingbtn)
-        callinGRID.Columns.Insert(12, quotationbtn)
-        callinGRID.Columns.Insert(13, addressbtn)
+        callinGRID.Columns.Insert(10, updatebtn)
+        callinGRID.Columns.Insert(11, validatebtn)
+        callinGRID.Columns.Insert(12, concernbtn)
+        callinGRID.Columns.Insert(13, servicingbtn)
+        callinGRID.Columns.Insert(14, quotationbtn)
+        callinGRID.Columns.Insert(15, addressbtn)
 
         For I As Integer = 0 To callinGRID.RowCount - 1
-            callinGRID.Rows(I).Cells.Item(9).Value = callinGRID.Item("validated", I).Value.ToString
+            callinGRID.Rows(I).Cells.Item(11).Value = callinGRID.Item("validated", I).Value.ToString
         Next
 
     End Sub
@@ -254,7 +261,7 @@ Public Class mainform
     Private Sub callinGRID_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles callinGRID.CellClick
         If callinGRID.RowCount >= 0 And e.RowIndex >= 0 Then
             Dim row As DataGridViewRow = callinGRID.Rows(e.RowIndex)
-            If e.ColumnIndex = 8 Then
+            If e.ColumnIndex = 10 Then
                 newcallinFRM.Text = "Editing"
                 newcallinFRM.cin.Text = row.Cells("CIN").Value.ToString
                 newcallinFRM.telno.Text = row.Cells("TELNO").Value.ToString
@@ -264,11 +271,13 @@ Public Class mainform
                 newcallinFRM.projectname.Text = row.Cells("project").Value.ToString
                 newcallinFRM.address.Text = row.Cells("address").Value.ToString
                 newcallinFRM.jo.Text = row.Cells("jo").Value.ToString
+                newcallinFRM.concern = row.Cells("concern").Value.ToString
+                newcallinFRM.conversation.Text = row.Cells("conversation").Value.ToString
                 storeqa()
                 newcallinFRM.addBTN.Visible = False
                 newcallinFRM.updateBTN.Visible = True
                 newcallinFRM.ShowDialog()
-            ElseIf e.ColumnIndex = 9 Then
+            ElseIf e.ColumnIndex = 11 Then
                 Dim vali As String
                 Select Case row.Cells("validated").Value.ToString
                     Case "no"
@@ -295,25 +304,25 @@ Public Class mainform
                     End Using
                 End Using
                 reloadBTN.PerformClick()
-            ElseIf e.ColumnIndex = 10 Then
+            ElseIf e.ColumnIndex = 12 Then
                 Dim param1 As ReportParameter = New ReportParameter("project", row.Cells("project").Value.ToString)
                 Dim param2 As ReportParameter = New ReportParameter("address", row.Cells("address").Value.ToString)
                 concernsummaryFRM.ReportViewer1.LocalReport.SetParameters(New ReportParameter() {param1})
                 concernsummaryFRM.ReportViewer1.LocalReport.SetParameters(New ReportParameter() {param2})
                 concernsummaryFRM.ShowDialog()
-            ElseIf e.ColumnIndex = 11 Then
+            ElseIf e.ColumnIndex = 13 Then
                 servicingFRM.projectname.Text = row.Cells("project").Value.ToString
                 servicingFRM.address.Text = row.Cells("address").Value.ToString
                 servicingFRM.jo.Text = row.Cells("jo").Value.ToString
                 servicingFRM.ShowDialog()
-            ElseIf e.ColumnIndex = 12 Then
+            ElseIf e.ColumnIndex = 14 Then
                 telno = row.Cells("telno").Value.ToString
                 faxno = row.Cells("faxno").Value.ToString
                 quotationFRM.projectname.Text = row.Cells("project").Value.ToString
                 quotationFRM.address.Text = row.Cells("address").Value.ToString
                 quotationFRM.jo.Text = row.Cells("jo").Value.ToString
                 quotationFRM.ShowDialog()
-            ElseIf e.ColumnIndex = 13 Then
+            ElseIf e.ColumnIndex = 15 Then
                 editaddressFRM.parentjo = row.Cells("jo").Value.ToString
                 editaddressFRM.ShowDialog()
             End If

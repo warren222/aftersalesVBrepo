@@ -4,7 +4,7 @@ Public Class selectprojectFRM
     Private Sub selectprojectFRM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         fieldcombo.SelectedIndex = 0
         Me.Location = New Point(Screen.PrimaryScreen.Bounds.Width - Me.Width, 0)
-        Me.Height = Screen.PrimaryScreen.Bounds.Height - 37
+        'Me.Height = Screen.PrimaryScreen.Bounds.Height - 37
     End Sub
 
     Private Sub projectTXT_ButtonClick(sender As Object, e As EventArgs) Handles projectTXT.ButtonClick

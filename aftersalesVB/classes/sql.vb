@@ -1,12 +1,12 @@
 ﻿Imports System.Data.SqlClient
 Public Class sql
-    Public sqlcon1 As New SqlConnection With {.ConnectionString = "data source='192.168.1.21,49107';
+    Public sqlcon1 As New SqlConnection With {.ConnectionString = "data source='192.168.1.58,1433';
                                                                    initial catalog='ASDB';
                                                                    network library='DBMSSOCN';
                                                                    user id='kmdiadmin';
                                                                    password='kmdiadmin';"}
-    Public sqlcon2 As New SqlConnection With {.ConnectionString = "data source='192.168.1.21,49107';
-                                                                   initial catalog='kmdidata';
+    Public sqlcon2 As New SqlConnection With {.ConnectionString = "data source='192.168.1.58,1433';
+                                                                   initial catalog='HERETOSAVE';
                                                                    network library='DBMSSOCN';
                                                                    user id='kmdiadmin';
                                                                    password='kmdiadmin';"}

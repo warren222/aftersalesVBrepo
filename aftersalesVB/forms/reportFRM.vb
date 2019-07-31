@@ -2,7 +2,7 @@
 Public Class reportFRM
     Dim sql As New sql
     Dim bs As New BindingSource
-    Public id As String
+    Public id As String = ""
     Private Sub reportFRM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Height = Screen.PrimaryScreen.Bounds.Height - 37
         loadreport()

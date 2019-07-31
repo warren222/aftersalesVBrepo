@@ -202,7 +202,7 @@ Public Class servicingFRM
     End Sub
 
     Private Sub servicingFRM_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        mainform.searchtext.CustomButton.PerformClick()
+        'mainform.searchtext.CustomButton.PerformClick()
         Me.Dispose()
     End Sub
 

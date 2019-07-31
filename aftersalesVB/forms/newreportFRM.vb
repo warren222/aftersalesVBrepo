@@ -65,7 +65,7 @@ delete from relrepass where repid = @id and not assid in (select id from assessm
         If Me.Text = "Editing" Then
             clr = Color.Red
             fromid("update assessmenttb set chk=0  update assessmenttb set chk = 1 where id in (select ASSID FROM RELREPASS WHERE REPID = @REPID)")
-        Else
+        ElseIf Me.Text = "New" Then
             fromid("update assessmenttb set chk = 0")
             clr = Color.Black
         End If
