@@ -172,12 +172,6 @@
     <Compile Include="forms\editpersonnelFRM.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
-    </Compile>
-    <Compile Include="forms\Form1.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="forms\importFRM.Designer.vb">
       <DependentUpon>importFRM.vb</DependentUpon>
     </Compile>
@@ -207,6 +201,12 @@
     </Compile>
     <Compile Include="forms\mainform.Designer.vb">
       <DependentUpon>mainform.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\memberFRM.Designer.vb">
+      <DependentUpon>memberFRM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\memberFRM.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\newaccessoriesFRM.Designer.vb">
@@ -335,6 +335,12 @@
     <Compile Include="forms\servicingFRM.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="forms\ServicingScheduleFRM.Designer.vb">
+      <DependentUpon>ServicingScheduleFRM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\ServicingScheduleFRM.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="forms\statusFRM.Designer.vb">
       <DependentUpon>statusFRM.vb</DependentUpon>
     </Compile>
@@ -391,6 +397,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\mainform.resx">
       <DependentUpon>mainform.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\memberFRM.resx">
+      <DependentUpon>memberFRM.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\newaccessoriesFRM.resx">
       <DependentUpon>newaccessoriesFRM.vb</DependentUpon>
@@ -454,6 +463,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\servicingFRM.resx">
       <DependentUpon>servicingFRM.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\ServicingScheduleFRM.resx">
+      <DependentUpon>ServicingScheduleFRM.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\statusFRM.resx">
       <DependentUpon>statusFRM.vb</DependentUpon>

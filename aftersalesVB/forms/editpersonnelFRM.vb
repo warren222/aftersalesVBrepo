@@ -11,12 +11,13 @@ Public Class editpersonnelFRM
     End Sub
     Public Sub add()
         Dim str As String = "declare @id as integer = (select isnull(max(id),0)+1 from personneltb)
-                             insert into personneltb (id,personnel) values(@id,@personnel)"
+                             insert into personneltb (id,personnel,position) values(@id,@personnel,@position)"
         Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
             Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
                 Try
                     sqlcon.Open()
                     sqlcmd.Parameters.AddWithValue("@personnel", PERSONNEL.Text)
+                    sqlcmd.Parameters.AddWithValue("@position", positions.Text)
                     sqlcmd.ExecuteNonQuery()
                 Catch ex As Exception
                     MsgBox(ex.ToString)
@@ -25,13 +26,14 @@ Public Class editpersonnelFRM
         End Using
     End Sub
     Public Sub update()
-        Dim str As String = "update personneltb set personnel  = @personnel where id = @id"
+        Dim str As String = "update personneltb set personnel  = @personnel , position = @position where id = @id"
         Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
             Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
                 Try
                     sqlcon.Open()
                     sqlcmd.Parameters.AddWithValue("@id", personnelFRM.id)
                     sqlcmd.Parameters.AddWithValue("@personnel", PERSONNEL.Text)
+                    sqlcmd.Parameters.AddWithValue("@position", positions.Text)
                     sqlcmd.ExecuteNonQuery()
                 Catch ex As Exception
                     MsgBox(ex.ToString)

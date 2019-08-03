@@ -42,12 +42,10 @@ Partial Class newcallinFRM
         Me.doorchk = New System.Windows.Forms.CheckBox()
         Me.Windowchk = New System.Windows.Forms.CheckBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.KryptonLabel1 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
+        Me.KryptonLabel11 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.telno = New MetroFramework.Controls.MetroTextBox()
         Me.faxno = New MetroFramework.Controls.MetroTextBox()
-        Me.KryptonLabel2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
-        Me.KryptonLabel3 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.KryptonLabel7 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
@@ -59,9 +57,13 @@ Partial Class newcallinFRM
         Me.jo = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.KryptonLabel5 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.KryptonLabel6 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
+        Me.KryptonLabel2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
+        Me.KryptonLabel3 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
+        Me.MetroTextButton2 = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.MetroTextButton4 = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
         Me.MetroTextButton3 = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
-        Me.MetroTextButton2 = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
         Me.KryptonLabel4 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.cin = New MetroFramework.Controls.MetroTextBox()
         Me.answerGV = New ComponentFactory.Krypton.Toolkit.KryptonDataGridView()
@@ -69,8 +71,6 @@ Partial Class newcallinFRM
         Me.questionGRID = New ComponentFactory.Krypton.Toolkit.KryptonDataGridView()
         Me.updateBTN = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
         Me.addBTN = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
-        Me.KryptonLabel1 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
-        Me.KryptonLabel11 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.bodypnl.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -339,6 +339,26 @@ Partial Class newcallinFRM
         Me.Panel3.Size = New System.Drawing.Size(849, 224)
         Me.Panel3.TabIndex = 508
         '
+        'KryptonLabel1
+        '
+        Me.KryptonLabel1.Location = New System.Drawing.Point(15, 17)
+        Me.KryptonLabel1.Name = "KryptonLabel1"
+        Me.KryptonLabel1.Size = New System.Drawing.Size(38, 20)
+        Me.KryptonLabel1.StateCommon.ShortText.Color1 = System.Drawing.Color.Black
+        Me.KryptonLabel1.StateCommon.ShortText.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KryptonLabel1.TabIndex = 506
+        Me.KryptonLabel1.Values.Text = "Date"
+        '
+        'KryptonLabel11
+        '
+        Me.KryptonLabel11.Location = New System.Drawing.Point(15, 50)
+        Me.KryptonLabel11.Name = "KryptonLabel11"
+        Me.KryptonLabel11.Size = New System.Drawing.Size(74, 20)
+        Me.KryptonLabel11.StateCommon.ShortText.Color1 = System.Drawing.Color.Black
+        Me.KryptonLabel11.StateCommon.ShortText.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KryptonLabel11.TabIndex = 507
+        Me.KryptonLabel11.Values.Text = "Caller/Title"
+        '
         'telno
         '
         '
@@ -411,48 +431,10 @@ Partial Class newcallinFRM
         Me.faxno.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.faxno.WaterMarkFont = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
-        'KryptonLabel2
-        '
-        Me.KryptonLabel2.Location = New System.Drawing.Point(447, 17)
-        Me.KryptonLabel2.Name = "KryptonLabel2"
-        Me.KryptonLabel2.Size = New System.Drawing.Size(49, 20)
-        Me.KryptonLabel2.StateCommon.ShortText.Color1 = System.Drawing.Color.Black
-        Me.KryptonLabel2.StateCommon.ShortText.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.KryptonLabel2.TabIndex = 492
-        Me.KryptonLabel2.Values.Text = "Tel No"
-        '
-        'KryptonLabel3
-        '
-        Me.KryptonLabel3.Location = New System.Drawing.Point(445, 50)
-        Me.KryptonLabel3.Name = "KryptonLabel3"
-        Me.KryptonLabel3.Size = New System.Drawing.Size(52, 20)
-        Me.KryptonLabel3.StateCommon.ShortText.Color1 = System.Drawing.Color.Black
-        Me.KryptonLabel3.StateCommon.ShortText.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.KryptonLabel3.TabIndex = 493
-        Me.KryptonLabel3.Values.Text = "Fax No"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(13, 51)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(55, 13)
-        Me.Label3.TabIndex = 507
-        Me.Label3.Text = "For fill-up :"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(16, 14)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(101, 13)
-        Me.Label2.TabIndex = 506
-        Me.Label2.Text = "Caller's Information :"
-        '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 92)
+        Me.Label1.Location = New System.Drawing.Point(41, 92)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(79, 13)
         Me.Label1.TabIndex = 505
@@ -471,9 +453,9 @@ Partial Class newcallinFRM
         Me.Panel2.Controls.Add(Me.jo)
         Me.Panel2.Controls.Add(Me.KryptonLabel5)
         Me.Panel2.Controls.Add(Me.KryptonLabel6)
-        Me.Panel2.Location = New System.Drawing.Point(12, 108)
+        Me.Panel2.Location = New System.Drawing.Point(41, 108)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(725, 100)
+        Me.Panel2.Size = New System.Drawing.Size(696, 100)
         Me.Panel2.TabIndex = 504
         '
         'KryptonLabel7
@@ -566,6 +548,61 @@ Partial Class newcallinFRM
         Me.KryptonLabel6.TabIndex = 499
         Me.KryptonLabel6.Values.Text = "Address"
         '
+        'KryptonLabel2
+        '
+        Me.KryptonLabel2.Location = New System.Drawing.Point(447, 17)
+        Me.KryptonLabel2.Name = "KryptonLabel2"
+        Me.KryptonLabel2.Size = New System.Drawing.Size(49, 20)
+        Me.KryptonLabel2.StateCommon.ShortText.Color1 = System.Drawing.Color.Black
+        Me.KryptonLabel2.StateCommon.ShortText.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KryptonLabel2.TabIndex = 492
+        Me.KryptonLabel2.Values.Text = "Tel No"
+        '
+        'KryptonLabel3
+        '
+        Me.KryptonLabel3.Location = New System.Drawing.Point(445, 50)
+        Me.KryptonLabel3.Name = "KryptonLabel3"
+        Me.KryptonLabel3.Size = New System.Drawing.Size(52, 20)
+        Me.KryptonLabel3.StateCommon.ShortText.Color1 = System.Drawing.Color.Black
+        Me.KryptonLabel3.StateCommon.ShortText.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KryptonLabel3.TabIndex = 493
+        Me.KryptonLabel3.Values.Text = "Fax No"
+        '
+        'MetroTextButton2
+        '
+        Me.MetroTextButton2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.MetroTextButton2.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MetroTextButton2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.MetroTextButton2.Image = Nothing
+        Me.MetroTextButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.MetroTextButton2.Location = New System.Drawing.Point(743, 138)
+        Me.MetroTextButton2.Name = "MetroTextButton2"
+        Me.MetroTextButton2.Size = New System.Drawing.Size(99, 24)
+        Me.MetroTextButton2.Style = MetroFramework.MetroColorStyle.Silver
+        Me.MetroTextButton2.TabIndex = 495
+        Me.MetroTextButton2.Text = "clear"
+        Me.MetroTextButton2.UseCustomForeColor = True
+        Me.MetroTextButton2.UseSelectable = True
+        Me.MetroTextButton2.UseVisualStyleBackColor = True
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(13, 51)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(55, 13)
+        Me.Label3.TabIndex = 507
+        Me.Label3.Text = "For fill-up :"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(16, 14)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(101, 13)
+        Me.Label2.TabIndex = 506
+        Me.Label2.Text = "Caller's Information :"
+        '
         'MetroTextButton4
         '
         Me.MetroTextButton4.Cursor = System.Windows.Forms.Cursors.Hand
@@ -599,23 +636,6 @@ Partial Class newcallinFRM
         Me.MetroTextButton3.UseSelectable = True
         Me.MetroTextButton3.UseVisualStyleBackColor = True
         Me.MetroTextButton3.Visible = False
-        '
-        'MetroTextButton2
-        '
-        Me.MetroTextButton2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.MetroTextButton2.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MetroTextButton2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.MetroTextButton2.Image = Nothing
-        Me.MetroTextButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.MetroTextButton2.Location = New System.Drawing.Point(743, 138)
-        Me.MetroTextButton2.Name = "MetroTextButton2"
-        Me.MetroTextButton2.Size = New System.Drawing.Size(99, 24)
-        Me.MetroTextButton2.Style = MetroFramework.MetroColorStyle.Silver
-        Me.MetroTextButton2.TabIndex = 495
-        Me.MetroTextButton2.Text = "clear"
-        Me.MetroTextButton2.UseCustomForeColor = True
-        Me.MetroTextButton2.UseSelectable = True
-        Me.MetroTextButton2.UseVisualStyleBackColor = True
         '
         'KryptonLabel4
         '
@@ -779,26 +799,6 @@ Partial Class newcallinFRM
         Me.addBTN.UseSelectable = True
         Me.addBTN.UseVisualStyleBackColor = True
         Me.addBTN.Visible = False
-        '
-        'KryptonLabel1
-        '
-        Me.KryptonLabel1.Location = New System.Drawing.Point(15, 17)
-        Me.KryptonLabel1.Name = "KryptonLabel1"
-        Me.KryptonLabel1.Size = New System.Drawing.Size(38, 20)
-        Me.KryptonLabel1.StateCommon.ShortText.Color1 = System.Drawing.Color.Black
-        Me.KryptonLabel1.StateCommon.ShortText.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.KryptonLabel1.TabIndex = 506
-        Me.KryptonLabel1.Values.Text = "Date"
-        '
-        'KryptonLabel11
-        '
-        Me.KryptonLabel11.Location = New System.Drawing.Point(15, 50)
-        Me.KryptonLabel11.Name = "KryptonLabel11"
-        Me.KryptonLabel11.Size = New System.Drawing.Size(74, 20)
-        Me.KryptonLabel11.StateCommon.ShortText.Color1 = System.Drawing.Color.Black
-        Me.KryptonLabel11.StateCommon.ShortText.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.KryptonLabel11.TabIndex = 507
-        Me.KryptonLabel11.Values.Text = "Caller/Title"
         '
         'Panel1
         '

@@ -42,6 +42,7 @@ Partial Class mainform
         Me.toprows = New MetroFramework.Controls.MetroComboBox()
         Me.donecheckbox = New MetroFramework.Controls.MetroToggle()
         Me.KryptonLabel2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
+        Me.MetroTile4 = New MetroFramework.Controls.MetroTile()
         CType(Me.callinGRID, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -222,6 +223,7 @@ Partial Class mainform
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.Controls.Add(Me.MetroTile4)
         Me.Panel1.Controls.Add(Me.MetroTile5)
         Me.Panel1.Controls.Add(Me.newPNL)
         Me.Panel1.Controls.Add(Me.MetroTile3)
@@ -346,6 +348,22 @@ Partial Class mainform
         Me.KryptonLabel2.TabIndex = 842
         Me.KryptonLabel2.Values.Text = "AFTER SALES"
         '
+        'MetroTile4
+        '
+        Me.MetroTile4.ActiveControl = Nothing
+        Me.MetroTile4.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(126, Byte), Integer))
+        Me.MetroTile4.Location = New System.Drawing.Point(10, 390)
+        Me.MetroTile4.Name = "MetroTile4"
+        Me.MetroTile4.Size = New System.Drawing.Size(107, 71)
+        Me.MetroTile4.Style = MetroFramework.MetroColorStyle.Teal
+        Me.MetroTile4.TabIndex = 559
+        Me.MetroTile4.Text = "Schedule"
+        Me.MetroTile4.TileImage = CType(resources.GetObject("MetroTile4.TileImage"), System.Drawing.Image)
+        Me.MetroTile4.TileImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.MetroTile4.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular
+        Me.MetroTile4.UseSelectable = True
+        Me.MetroTile4.UseTileImage = True
+        '
         'mainform
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -384,4 +402,5 @@ Partial Class mainform
     Friend WithEvents MetroToggle1 As MetroFramework.Controls.MetroToggle
     Friend WithEvents KryptonLabel3 As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents MetroTile5 As MetroFramework.Controls.MetroTile
+    Friend WithEvents MetroTile4 As MetroFramework.Controls.MetroTile
 End Class

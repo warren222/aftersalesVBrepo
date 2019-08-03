@@ -258,9 +258,11 @@ Public Class mainform
             'callinGRID.FirstDisplayedScrollingColumnIndex = 3
         End If
     End Sub
+    Public jo As String
     Private Sub callinGRID_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles callinGRID.CellClick
         If callinGRID.RowCount >= 0 And e.RowIndex >= 0 Then
             Dim row As DataGridViewRow = callinGRID.Rows(e.RowIndex)
+            jo = row.Cells("jo").Value.ToString
             If e.ColumnIndex = 10 Then
                 newcallinFRM.Text = "Editing"
                 newcallinFRM.cin.Text = row.Cells("CIN").Value.ToString
@@ -363,5 +365,9 @@ Public Class mainform
     Private Sub mainform_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Me.Dispose()
         loginFRM.Close()
+    End Sub
+
+    Private Sub MetroTile4_Click(sender As Object, e As EventArgs) Handles MetroTile4.Click
+        ServicingScheduleFRM.Show()
     End Sub
 End Class

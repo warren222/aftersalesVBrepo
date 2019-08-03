@@ -4,7 +4,7 @@ Public Class reportFRM
     Dim bs As New BindingSource
     Public id As String = ""
     Private Sub reportFRM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.Height = Screen.PrimaryScreen.Bounds.Height - 37
+
         loadreport()
     End Sub
     Public Sub loadreport()
@@ -59,9 +59,9 @@ Public Class reportFRM
             .Text = "delete"
             .UseColumnTextForButtonValue = True
         End With
-        reportGRID.Columns.Insert(4, assessmentbtn)
-        reportGRID.Columns.Insert(5, updatebtn)
-        reportGRID.Columns.Insert(6, deletebtn)
+        reportGRID.Columns.Insert(6, assessmentbtn)
+        reportGRID.Columns.Insert(7, updatebtn)
+        reportGRID.Columns.Insert(8, deletebtn)
     End Sub
 
     Private Sub reportFRM_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
@@ -71,15 +71,17 @@ Public Class reportFRM
     Private Sub reportGRID_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles reportGRID.CellClick
         If reportGRID.RowCount >= 0 And e.RowIndex >= 0 Then
             id = reportGRID.Item("id", e.RowIndex).Value.ToString
-            If e.ColumnIndex = 4 Then
+            If e.ColumnIndex = 6 Then
                 reportassessmentFRM.ShowDialog()
-            ElseIf e.ColumnIndex = 5 Then
+            ElseIf e.ColumnIndex = 7 Then
                 newreportFRM.locations.Text = reportGRID.Item("location", e.RowIndex).Value.ToString
                 newreportFRM.specification.Text = reportGRID.Item("specification", e.RowIndex).Value.ToString
+                newreportFRM.KNO.Text = reportGRID.Item("kno", e.RowIndex).Value.ToString
+                newreportFRM.itemno.Text = reportGRID.Item("itemno", e.RowIndex).Value.ToString
                 newreportFRM.Text = "Editing"
                 newreportFRM.save.Text = "save"
                 newreportFRM.ShowDialog()
-            ElseIf e.ColumnIndex = 6 Then
+            ElseIf e.ColumnIndex = 8 Then
                 If MetroFramework.MetroMessageBox.Show(Me, "Delete selected report?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
                     Return
                 Else
@@ -111,7 +113,6 @@ Public Class reportFRM
         newreportFRM.Text = "New"
         newreportFRM.save.Text = "add"
         newreportFRM.loadspecification()
-        newreportFRM.loadlocation()
         newreportFRM.ShowDialog()
     End Sub
 
