@@ -53,7 +53,7 @@ Partial Class servicingFRM
         Me.servicingGRID.RowHeadersWidth = 30
         Me.servicingGRID.RowTemplate.Height = 30
         Me.servicingGRID.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.servicingGRID.Size = New System.Drawing.Size(824, 512)
+        Me.servicingGRID.Size = New System.Drawing.Size(1102, 298)
         Me.servicingGRID.StateCommon.Background.Color1 = System.Drawing.Color.White
         Me.servicingGRID.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
         Me.servicingGRID.StateCommon.DataCell.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) _
@@ -121,7 +121,7 @@ Partial Class servicingFRM
         'KryptonLabel1
         '
         Me.KryptonLabel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.KryptonLabel1.Location = New System.Drawing.Point(636, 147)
+        Me.KryptonLabel1.Location = New System.Drawing.Point(914, 147)
         Me.KryptonLabel1.Name = "KryptonLabel1"
         Me.KryptonLabel1.Size = New System.Drawing.Size(219, 37)
         Me.KryptonLabel1.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
@@ -154,14 +154,14 @@ Partial Class servicingFRM
         Me.Panel1.Controls.Add(Me.servicingGRID)
         Me.Panel1.Location = New System.Drawing.Point(23, 186)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(826, 514)
+        Me.Panel1.Size = New System.Drawing.Size(1104, 300)
         Me.Panel1.TabIndex = 564
         '
         'servicingFRM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(872, 723)
+        Me.ClientSize = New System.Drawing.Size(1150, 509)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.newbtn)
         Me.Controls.Add(Me.KryptonLabel1)

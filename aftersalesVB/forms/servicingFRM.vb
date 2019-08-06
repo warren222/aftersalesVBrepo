@@ -8,7 +8,7 @@ Public Class servicingFRM
     Dim bs As New BindingSource
 
     Private Sub servicingFRM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.Height = Screen.PrimaryScreen.Bounds.Height - 37
+
         loadservicing()
     End Sub
     Public Sub loadservicing()
@@ -18,7 +18,8 @@ Public Class servicingFRM
                             STATUSDATE AS [STATUS DATE],
                             SERVICING,
                             SDATE AS [SERVICING DATE],
-                            ASSIGNEDPERSONNEL AS [ASSIGNED PERSONNEL]
+                            ASSIGNEDPERSONNEL AS [ASSIGNED PERSONNEL],
+                            teamid
                             from servicingtb where cin = @cin ORDER BY SERVICING desc"
         Dim ds As New DataSet
         ds.Clear()
@@ -42,6 +43,7 @@ Public Class servicingFRM
                         servicingGRID.Columns("id").Visible = False
                         servicingGRID.Columns("cin").Visible = False
                         servicingGRID.Columns("STATUS").Visible = False
+                        servicingGRID.Columns("teamid").Visible = False
                     Catch ex As Exception
                         MsgBox(ex.ToString)
                     End Try
@@ -127,8 +129,8 @@ Public Class servicingFRM
         deletebtn.UseColumnTextForButtonValue = True
 
         servicingGRID.Columns.Insert(0, statusbtn)
-        servicingGRID.Columns.Insert(7, reportbtn)
-        servicingGRID.Columns.Insert(8, rd)
+        servicingGRID.Columns.Insert(8, reportbtn)
+        servicingGRID.Columns.Insert(9, rd)
         servicingGRID.Columns.Insert(10, updatebtn)
         servicingGRID.Columns.Insert(11, deletebtn)
 
@@ -163,20 +165,22 @@ Public Class servicingFRM
                 statusFRM.statusdate.Text = servicingGRID.Item("status date", e.RowIndex).Value.ToString
                 statusFRM.status.Text = servicingGRID.Item("status", e.RowIndex).Value.ToString
                 statusFRM.ShowDialog()
-            ElseIf e.ColumnIndex = 7 Then
+            ElseIf e.ColumnIndex = 8 Then
                 id = servicingGRID.Item("id", e.RowIndex).Value.ToString
                 reportFRM.servicing.Text = servicingGRID.Item("servicing", e.RowIndex).Value.ToString
                 reportFRM.ShowDialog()
-            ElseIf e.ColumnIndex = 8 Then
+            ElseIf e.ColumnIndex = 9 Then
                 id = servicingGRID.Item("id", e.RowIndex).Value.ToString
                 scannedreportFRM.id = servicingGRID.Item("servicing", e.RowIndex).Value.ToString
                 scannedreportFRM.ShowDialog()
             ElseIf e.ColumnIndex = 10 Then
+                newservicingFRM.loadteam()
                 newservicingFRM.Text = "Editing"
                 newservicingFRM.save.Text = "save"
                 id = servicingGRID.Item("id", e.RowIndex).Value.ToString
                 newservicingFRM.servicingdate.Text = servicingGRID.Item("servicing date", e.RowIndex).Value.ToString
-                newservicingFRM.assignedpersonnelTXT.Text = servicingGRID.Item("ASSIGNED PERSONNEL", e.RowIndex).Value.ToString
+                newservicingFRM.TEAM.Text = servicingGRID.Item("ASSIGNED PERSONNEL", e.RowIndex).Value.ToString
+                newservicingFRM.teamid.Text = servicingGRID.Item("teamid", e.RowIndex).Value.ToString
                 newservicingFRM.ShowDialog()
             ElseIf e.ColumnIndex = 11 Then
                 If MetroFramework.MetroMessageBox.Show(Me, "Delete " & servicingGRID.Item("servicing", e.RowIndex).Value.ToString & "?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
@@ -215,10 +219,10 @@ Public Class servicingFRM
     End Sub
 
     Private Sub newbtn_Click(sender As Object, e As EventArgs) Handles newbtn.Click
+        newservicingFRM.loadteam()
         newservicingFRM.Text = "New"
         newservicingFRM.save.Text = "add"
         newservicingFRM.servicingdate.Text = ""
-        newservicingFRM.assignedpersonnelTXT.Text = ""
         newservicingFRM.ShowDialog()
     End Sub
 

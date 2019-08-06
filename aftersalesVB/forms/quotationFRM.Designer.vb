@@ -30,7 +30,9 @@ Partial Class quotationFRM
         Me.address = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.projectname = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.KryptonLabel1 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         CType(Me.quGRID, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'quGRID
@@ -40,19 +42,17 @@ Partial Class quotationFRM
         Me.quGRID.AllowUserToResizeRows = False
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
         Me.quGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        Me.quGRID.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.quGRID.ColumnHeadersHeight = 32
         Me.quGRID.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.quGRID.Dock = System.Windows.Forms.DockStyle.Fill
         Me.quGRID.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
-        Me.quGRID.Location = New System.Drawing.Point(20, 187)
+        Me.quGRID.Location = New System.Drawing.Point(0, 0)
         Me.quGRID.Name = "quGRID"
         Me.quGRID.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Silver
         Me.quGRID.RowHeadersWidth = 30
         Me.quGRID.RowTemplate.Height = 30
         Me.quGRID.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.quGRID.Size = New System.Drawing.Size(834, 285)
+        Me.quGRID.Size = New System.Drawing.Size(1049, 283)
         Me.quGRID.StateCommon.Background.Color1 = System.Drawing.Color.White
         Me.quGRID.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
         Me.quGRID.StateCommon.DataCell.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) _
@@ -136,7 +136,7 @@ Partial Class quotationFRM
         'KryptonLabel1
         '
         Me.KryptonLabel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.KryptonLabel1.Location = New System.Drawing.Point(729, 135)
+        Me.KryptonLabel1.Location = New System.Drawing.Point(949, 135)
         Me.KryptonLabel1.Name = "KryptonLabel1"
         Me.KryptonLabel1.Size = New System.Drawing.Size(125, 37)
         Me.KryptonLabel1.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
@@ -144,12 +144,24 @@ Partial Class quotationFRM
         Me.KryptonLabel1.TabIndex = 569
         Me.KryptonLabel1.Values.Text = "Quotation"
         '
+        'Panel1
+        '
+        Me.Panel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.quGRID)
+        Me.Panel1.Location = New System.Drawing.Point(23, 178)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1051, 285)
+        Me.Panel1.TabIndex = 570
+        '
         'quotationFRM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(877, 486)
-        Me.Controls.Add(Me.quGRID)
+        Me.ClientSize = New System.Drawing.Size(1097, 486)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.projectname)
         Me.Controls.Add(Me.KryptonLabel1)
         Me.Controls.Add(Me.refreshBTN)
@@ -161,6 +173,7 @@ Partial Class quotationFRM
         Me.Style = MetroFramework.MetroColorStyle.Red
         Me.Theme = MetroFramework.MetroThemeStyle.[Default]
         CType(Me.quGRID, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -173,4 +186,5 @@ Partial Class quotationFRM
     Friend WithEvents address As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents projectname As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents KryptonLabel1 As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Friend WithEvents Panel1 As Panel
 End Class

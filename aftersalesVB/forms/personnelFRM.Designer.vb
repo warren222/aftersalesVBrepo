@@ -22,8 +22,8 @@ Partial Class personnelFRM
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.personnelGRID = New ComponentFactory.Krypton.Toolkit.KryptonDataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -31,8 +31,8 @@ Partial Class personnelFRM
         Me.newbtn = New System.Windows.Forms.Button()
         Me.refreshbtn = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.teamgv = New ComponentFactory.Krypton.Toolkit.KryptonDataGridView()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.KryptonLabel1 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.KryptonLabel3 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.team = New MetroFramework.Controls.MetroTextBox()
@@ -43,6 +43,7 @@ Partial Class personnelFRM
         Me.Button1 = New System.Windows.Forms.Button()
         Me.KryptonLabel2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Button3 = New System.Windows.Forms.Button()
         CType(Me.personnelGRID, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -55,8 +56,8 @@ Partial Class personnelFRM
         Me.personnelGRID.AllowUserToAddRows = False
         Me.personnelGRID.AllowUserToDeleteRows = False
         Me.personnelGRID.AllowUserToResizeRows = False
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.personnelGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.personnelGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
         Me.personnelGRID.ColumnHeadersHeight = 32
         Me.personnelGRID.Cursor = System.Windows.Forms.Cursors.Hand
         Me.personnelGRID.Dock = System.Windows.Forms.DockStyle.Fill
@@ -152,23 +153,13 @@ Partial Class personnelFRM
         Me.Panel2.Size = New System.Drawing.Size(426, 206)
         Me.Panel2.TabIndex = 564
         '
-        'Button2
-        '
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.Button2.Location = New System.Drawing.Point(454, 199)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(83, 23)
-        Me.Button2.TabIndex = 575
-        Me.Button2.Text = "refresh"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
         'teamgv
         '
         Me.teamgv.AllowUserToAddRows = False
         Me.teamgv.AllowUserToDeleteRows = False
         Me.teamgv.AllowUserToResizeRows = False
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.teamgv.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.teamgv.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle6
         Me.teamgv.ColumnHeadersHeight = 32
         Me.teamgv.Cursor = System.Windows.Forms.Cursors.Hand
         Me.teamgv.Dock = System.Windows.Forms.DockStyle.Fill
@@ -199,6 +190,16 @@ Partial Class personnelFRM
         Me.teamgv.StateCommon.HeaderColumn.Content.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.teamgv.StateCommon.HeaderColumn.Content.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias
         Me.teamgv.TabIndex = 557
+        '
+        'Button2
+        '
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.Button2.Location = New System.Drawing.Point(454, 199)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(83, 23)
+        Me.Button2.TabIndex = 575
+        Me.Button2.Text = "refresh"
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'KryptonLabel1
         '
@@ -356,11 +357,22 @@ Partial Class personnelFRM
         Me.Panel4.Size = New System.Drawing.Size(1, 409)
         Me.Panel4.TabIndex = 575
         '
+        'Button3
+        '
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.Button3.Location = New System.Drawing.Point(454, 81)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(83, 23)
+        Me.Button3.TabIndex = 576
+        Me.Button3.Text = "update"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
         'personnelFRM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(984, 424)
+        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Panel4)
@@ -408,4 +420,5 @@ Partial Class personnelFRM
     Friend WithEvents Button1 As Button
     Friend WithEvents KryptonLabel2 As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents Panel4 As Panel
+    Friend WithEvents Button3 As Button
 End Class

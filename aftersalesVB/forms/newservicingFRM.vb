@@ -5,64 +5,46 @@ Public Class newservicingFRM
     Dim scount As String
     Dim suffix As String
     Private Sub newservicingFRM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        loadpersonnel()
+
         Dim clr As Color
         If Me.Text = "Editing" Then
             clr = Color.Red
         Else
             clr = Color.Black
+
         End If
         ccolor(servicingdate, clr)
-        ccolor(assignedpersonnelTXT, clr)
-        ccolor(personnel, clr)
+        ccolor(TEAM, clr)
+
     End Sub
     Private Sub ccolor(ByVal ob As Object, ByVal c As Color)
         ob.ForeColor = c
     End Sub
 
-    Private Sub metroTextButton1_Click(sender As Object, e As EventArgs) Handles metroTextButton1.Click
-        If assignedpersonnelTXT.Text.Contains(personnel.Text) Then
-            MessageBox.Show("Already exist")
-        Else
-            assignedpersonnelTXT.Text += " ," + personnel.Text
-            If assignedpersonnelTXT.Text.Substring(0, 2) = " ," Then
-                assignedpersonnelTXT.Text = Trim(assignedpersonnelTXT.Text.Remove(0, 2))
-            End If
-        End If
-    End Sub
 
-    Private Sub MetroTextButton2_Click(sender As Object, e As EventArgs) Handles MetroTextButton2.Click
-        If Not personnel.Text = "" Then
-            If assignedpersonnelTXT.Text.Contains(personnel.Text) Then
-                assignedpersonnelTXT.Text = assignedpersonnelTXT.Text.Replace(personnel.Text, "")
-            End If
-            If assignedpersonnelTXT.Text.Length >= 2 Then
-                If assignedpersonnelTXT.Text.Substring(0, 2) = " ," Then
-                    assignedpersonnelTXT.Text = Trim(assignedpersonnelTXT.Text.Remove(0, 2))
-                End If
-                If assignedpersonnelTXT.Text.Substring(assignedpersonnelTXT.Text.Length - 2, 2) = " ," Then
-                    assignedpersonnelTXT.Text = Trim(assignedpersonnelTXT.Text.Remove(assignedpersonnelTXT.Text.Length - 2, 2))
-                End If
-                If assignedpersonnelTXT.Text.Contains(", ,") Then
-                    assignedpersonnelTXT.Text = Trim(assignedpersonnelTXT.Text.Replace(", ,", ","))
-                End If
-            End If
-        End If
-    End Sub
-    Public Sub loadpersonnel()
-        Dim str As String = "select * from personneltb"
+
+
+    Public Sub loadteam()
+        Dim str As String = "SELECT DISTINCT 
+                            A.TEAM,
+                            (SELECT MAX(ID) FROM TEAMTB WHERE TEAM = A.TEAM) AS ID
+                            FROM TEAMTB AS A"
         Dim ds As New DataSet
         ds.Clear()
-        Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
+        Using sqlcon As SqlConnection = New SqlConnection(SQL.sqlcon1str)
             Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
                 Using da As SqlDataAdapter = New SqlDataAdapter
                     Try
                         sqlcon.Open()
                         da.SelectCommand = sqlcmd
-                        da.Fill(ds, "personneltb")
-                        personnel.DataSource = ds.Tables("personneltb")
-                        personnel.DisplayMember = "personnel"
-                        personnel.SelectedIndex = -1
+                        da.Fill(ds, "TEAMTB")
+                        TEAM.DataSource = ds.Tables("TEAMTB")
+                        TEAM.DisplayMember = "TEAM"
+                        'TEAM.SelectedIndex = -1
+
+                        teamid.DataBindings.Clear()
+                        teamid.DataBindings.Add("text", ds.Tables("TEAMTB"), "id")
+
                     Catch ex As Exception
                         MsgBox(ex.ToString)
                     End Try
@@ -93,7 +75,7 @@ Public Class newservicingFRM
     End Sub
     Public Sub add()
         Dim str As String = " declare @id as integer = (select isnull(max(id),0)+1 from servicingtb)
-                              insert into servicingtb (id,cin,servicing,sdate,assignedpersonnel)values(@id,@cin,@servicing,@sdate,@assignedpersonnel)"
+                              insert into servicingtb (id,cin,servicing,sdate,assignedpersonnel,teamid)values(@id,@cin,@servicing,@sdate,@team,@teamid)"
         Dim str2 As String = "select isnull(count(id),0)+1 from servicingtb where cin = @cin"
         Using sqlcon As SqlConnection = New SqlConnection(SQL.sqlcon1str)
             Using sqlcmd As SqlCommand = New SqlCommand(str2, sqlcon)
@@ -122,26 +104,32 @@ Public Class newservicingFRM
                 sqlcmd.Parameters.AddWithValue("@cin", mainform.tempcin)
                 sqlcmd.Parameters.AddWithValue("@servicing", suffix)
                 sqlcmd.Parameters.AddWithValue("@sdate", servicingdate.Text)
-                sqlcmd.Parameters.AddWithValue("@assignedpersonnel", assignedpersonnelTXT.Text)
+                sqlcmd.Parameters.AddWithValue("@team", TEAM.Text)
+                sqlcmd.Parameters.AddWithValue("@teamid", teamid.Text)
                 sqlcmd.ExecuteNonQuery()
             End Using
         End Using
     End Sub
 
     Public Sub update()
-        Dim str As String = "update servicingtb set sdate=@sdate,assignedpersonnel=@assignedpersonnel where id = @id"
+        Dim str As String = "update servicingtb set sdate=@sdate,assignedpersonnel=@team,teamid=@teamid where id = @id"
         Using sqlcon As SqlConnection = New SqlConnection(SQL.sqlcon1str)
             Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
                 Try
                     sqlcon.Open()
                     sqlcmd.Parameters.AddWithValue("@id", servicingFRM.id)
                     sqlcmd.Parameters.AddWithValue("@sdate", servicingdate.Text)
-                    sqlcmd.Parameters.AddWithValue("@assignedpersonnel", assignedpersonnelTXT.Text)
+                    sqlcmd.Parameters.AddWithValue("@team", TEAM.Text)
+                    sqlcmd.Parameters.AddWithValue("@teamid", teamid.Text)
                     sqlcmd.ExecuteNonQuery()
                 Catch ex As Exception
                     MsgBox(ex.ToString)
                 End Try
             End Using
         End Using
+    End Sub
+
+    Private Sub TEAM_MouseDown(sender As Object, e As MouseEventArgs) Handles TEAM.MouseDown
+
     End Sub
 End Class

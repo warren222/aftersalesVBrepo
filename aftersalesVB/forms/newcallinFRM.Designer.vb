@@ -22,13 +22,12 @@ Partial Class newcallinFRM
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(newcallinFRM))
         Me.calldate = New MetroFramework.Controls.MetroTextBox()
         Me.calldategen = New MetroFramework.Controls.MetroDateTime()
         Me.callername = New MetroFramework.Controls.MetroTextBox()
-        Me.metroTextButton1 = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
         Me.bodypnl = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
@@ -42,6 +41,8 @@ Partial Class newcallinFRM
         Me.doorchk = New System.Windows.Forms.CheckBox()
         Me.Windowchk = New System.Windows.Forms.CheckBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.KryptonLabel1 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.KryptonLabel11 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.telno = New MetroFramework.Controls.MetroTextBox()
@@ -59,7 +60,6 @@ Partial Class newcallinFRM
         Me.KryptonLabel6 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.KryptonLabel2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.KryptonLabel3 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
-        Me.MetroTextButton2 = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.MetroTextButton4 = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
@@ -163,23 +163,6 @@ Partial Class newcallinFRM
         Me.callername.WaterMark = "Enter Caller Name"
         Me.callername.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.callername.WaterMarkFont = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
-        '
-        'metroTextButton1
-        '
-        Me.metroTextButton1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.metroTextButton1.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.metroTextButton1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.metroTextButton1.Image = Nothing
-        Me.metroTextButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.metroTextButton1.Location = New System.Drawing.Point(743, 108)
-        Me.metroTextButton1.Name = "metroTextButton1"
-        Me.metroTextButton1.Size = New System.Drawing.Size(99, 24)
-        Me.metroTextButton1.Style = MetroFramework.MetroColorStyle.Silver
-        Me.metroTextButton1.TabIndex = 481
-        Me.metroTextButton1.Text = "import project"
-        Me.metroTextButton1.UseCustomForeColor = True
-        Me.metroTextButton1.UseSelectable = True
-        Me.metroTextButton1.UseVisualStyleBackColor = True
         '
         'bodypnl
         '
@@ -321,6 +304,8 @@ Partial Class newcallinFRM
         '
         Me.Panel3.BackColor = System.Drawing.Color.WhiteSmoke
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel3.Controls.Add(Me.Button2)
+        Me.Panel3.Controls.Add(Me.Button1)
         Me.Panel3.Controls.Add(Me.KryptonLabel1)
         Me.Panel3.Controls.Add(Me.KryptonLabel11)
         Me.Panel3.Controls.Add(Me.calldategen)
@@ -332,12 +317,30 @@ Partial Class newcallinFRM
         Me.Panel3.Controls.Add(Me.Panel2)
         Me.Panel3.Controls.Add(Me.KryptonLabel2)
         Me.Panel3.Controls.Add(Me.KryptonLabel3)
-        Me.Panel3.Controls.Add(Me.metroTextButton1)
-        Me.Panel3.Controls.Add(Me.MetroTextButton2)
         Me.Panel3.Location = New System.Drawing.Point(16, 67)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(849, 224)
         Me.Panel3.TabIndex = 508
+        '
+        'Button2
+        '
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.Button2.Location = New System.Drawing.Point(743, 141)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(99, 23)
+        Me.Button2.TabIndex = 576
+        Me.Button2.Text = "clear"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.Button1.Location = New System.Drawing.Point(743, 108)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(99, 23)
+        Me.Button1.TabIndex = 575
+        Me.Button1.Text = "import"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'KryptonLabel1
         '
@@ -463,7 +466,7 @@ Partial Class newcallinFRM
         Me.KryptonLabel7.Location = New System.Drawing.Point(12, 13)
         Me.KryptonLabel7.Name = "KryptonLabel7"
         Me.KryptonLabel7.Size = New System.Drawing.Size(84, 18)
-        Me.KryptonLabel7.StateCommon.ShortText.Color1 = System.Drawing.Color.Black
+        Me.KryptonLabel7.StateCommon.ShortText.Color1 = System.Drawing.Color.DimGray
         Me.KryptonLabel7.StateCommon.ShortText.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.KryptonLabel7.TabIndex = 498
         Me.KryptonLabel7.Values.Text = "Project Name"
@@ -533,7 +536,7 @@ Partial Class newcallinFRM
         Me.KryptonLabel5.Location = New System.Drawing.Point(12, 63)
         Me.KryptonLabel5.Name = "KryptonLabel5"
         Me.KryptonLabel5.Size = New System.Drawing.Size(83, 18)
-        Me.KryptonLabel5.StateCommon.ShortText.Color1 = System.Drawing.Color.Black
+        Me.KryptonLabel5.StateCommon.ShortText.Color1 = System.Drawing.Color.DimGray
         Me.KryptonLabel5.StateCommon.ShortText.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.KryptonLabel5.TabIndex = 500
         Me.KryptonLabel5.Values.Text = "Job Order No"
@@ -543,7 +546,7 @@ Partial Class newcallinFRM
         Me.KryptonLabel6.Location = New System.Drawing.Point(12, 38)
         Me.KryptonLabel6.Name = "KryptonLabel6"
         Me.KryptonLabel6.Size = New System.Drawing.Size(54, 18)
-        Me.KryptonLabel6.StateCommon.ShortText.Color1 = System.Drawing.Color.Black
+        Me.KryptonLabel6.StateCommon.ShortText.Color1 = System.Drawing.Color.DimGray
         Me.KryptonLabel6.StateCommon.ShortText.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.KryptonLabel6.TabIndex = 499
         Me.KryptonLabel6.Values.Text = "Address"
@@ -567,23 +570,6 @@ Partial Class newcallinFRM
         Me.KryptonLabel3.StateCommon.ShortText.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.KryptonLabel3.TabIndex = 493
         Me.KryptonLabel3.Values.Text = "Fax No"
-        '
-        'MetroTextButton2
-        '
-        Me.MetroTextButton2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.MetroTextButton2.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MetroTextButton2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.MetroTextButton2.Image = Nothing
-        Me.MetroTextButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.MetroTextButton2.Location = New System.Drawing.Point(743, 138)
-        Me.MetroTextButton2.Name = "MetroTextButton2"
-        Me.MetroTextButton2.Size = New System.Drawing.Size(99, 24)
-        Me.MetroTextButton2.Style = MetroFramework.MetroColorStyle.Silver
-        Me.MetroTextButton2.TabIndex = 495
-        Me.MetroTextButton2.Text = "clear"
-        Me.MetroTextButton2.UseCustomForeColor = True
-        Me.MetroTextButton2.UseSelectable = True
-        Me.MetroTextButton2.UseVisualStyleBackColor = True
         '
         'Label3
         '
@@ -689,9 +675,9 @@ Partial Class newcallinFRM
         Me.answerGV.AllowUserToOrderColumns = True
         Me.answerGV.AllowUserToResizeColumns = False
         Me.answerGV.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        Me.answerGV.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        Me.answerGV.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
         Me.answerGV.ColumnHeadersHeight = 30
         Me.answerGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.answerGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1})
@@ -735,9 +721,9 @@ Partial Class newcallinFRM
         Me.questionGRID.AllowUserToOrderColumns = True
         Me.questionGRID.AllowUserToResizeColumns = False
         Me.questionGRID.AllowUserToResizeRows = False
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        Me.questionGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
+        Me.questionGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
         Me.questionGRID.ColumnHeadersHeight = 30
         Me.questionGRID.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.questionGRID.Cursor = System.Windows.Forms.Cursors.Hand
@@ -774,9 +760,9 @@ Partial Class newcallinFRM
         Me.updateBTN.Cursor = System.Windows.Forms.Cursors.Hand
         Me.updateBTN.Image = Nothing
         Me.updateBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.updateBTN.Location = New System.Drawing.Point(799, 5)
+        Me.updateBTN.Location = New System.Drawing.Point(774, 5)
         Me.updateBTN.Name = "updateBTN"
-        Me.updateBTN.Size = New System.Drawing.Size(67, 26)
+        Me.updateBTN.Size = New System.Drawing.Size(92, 26)
         Me.updateBTN.Style = MetroFramework.MetroColorStyle.Green
         Me.updateBTN.TabIndex = 488
         Me.updateBTN.Text = "save"
@@ -790,9 +776,9 @@ Partial Class newcallinFRM
         Me.addBTN.Cursor = System.Windows.Forms.Cursors.Hand
         Me.addBTN.Image = CType(resources.GetObject("addBTN.Image"), System.Drawing.Image)
         Me.addBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.addBTN.Location = New System.Drawing.Point(799, 5)
+        Me.addBTN.Location = New System.Drawing.Point(774, 5)
         Me.addBTN.Name = "addBTN"
-        Me.addBTN.Size = New System.Drawing.Size(67, 26)
+        Me.addBTN.Size = New System.Drawing.Size(92, 26)
         Me.addBTN.Style = MetroFramework.MetroColorStyle.Red
         Me.addBTN.TabIndex = 487
         Me.addBTN.Text = "add"
@@ -802,7 +788,7 @@ Partial Class newcallinFRM
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.Panel1.BackColor = System.Drawing.Color.WhiteSmoke
         Me.Panel1.Controls.Add(Me.updateBTN)
         Me.Panel1.Controls.Add(Me.addBTN)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
@@ -841,7 +827,6 @@ Partial Class newcallinFRM
     Friend WithEvents calldate As MetroFramework.Controls.MetroTextBox
     Friend WithEvents calldategen As MetroFramework.Controls.MetroDateTime
     Friend WithEvents callername As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents metroTextButton1 As MetroFramework.Controls.MetroTextBox.MetroTextButton
     Friend WithEvents bodypnl As Panel
     Friend WithEvents answerGV As ComponentFactory.Krypton.Toolkit.KryptonDataGridView
     Private WithEvents Column1 As DataGridViewCheckBoxColumn
@@ -857,7 +842,6 @@ Partial Class newcallinFRM
     Friend WithEvents KryptonLabel4 As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents KryptonLabel3 As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents KryptonLabel2 As ComponentFactory.Krypton.Toolkit.KryptonLabel
-    Friend WithEvents MetroTextButton2 As MetroFramework.Controls.MetroTextBox.MetroTextButton
     Friend WithEvents MetroTextButton3 As MetroFramework.Controls.MetroTextBox.MetroTextButton
     Friend WithEvents MetroTextButton4 As MetroFramework.Controls.MetroTextBox.MetroTextButton
     Friend WithEvents Label1 As Label
@@ -885,4 +869,6 @@ Partial Class newcallinFRM
     Friend WithEvents KryptonLabel1 As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents KryptonLabel11 As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button1 As Button
 End Class

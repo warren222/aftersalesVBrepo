@@ -6,7 +6,7 @@ Public Class personnelFRM
     Dim teambs As New BindingSource
     Public id As String
     Public Sub loadpersonnel()
-        Dim str As String = "select * from personneltb where teamid = '' or teamid is null"
+        Dim str As String = "select DISTINCT ID,PERSONNEL,POSITION from personneltb where teamid = '' or teamid is null"
         Dim ds As New DataSet
         ds.Clear()
         Using sqlcon As SqlConnection = New SqlConnection(SQL.sqlcon1str)
@@ -22,7 +22,6 @@ Public Class personnelFRM
                         personnelGRID.DataSource = bs
                         addbtn()
                         personnelGRID.Columns("ID").Visible = False
-                        personnelGRID.Columns("teamid").Visible = False
                         personnelGRID.Columns("PERSONNEL").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
                         personnelGRID.Columns("UPDATEBTN").Width = 70
                         personnelGRID.Columns("DELETEBTN").Width = 70
@@ -183,14 +182,46 @@ Public Class personnelFRM
         End Using
         Button2.PerformClick()
     End Sub
-
+    Dim teamid As String
     Private Sub teamgv_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles teamgv.CellClick
         If teamgv.RowCount >= 0 And e.RowIndex >= 0 Then
             Dim rows As DataGridViewRow = teamgv.Rows(e.RowIndex)
+            teamid = rows.Cells("id").Value.ToString
+            team.Text = rows.Cells("team").Value.ToString
+            teamdate.Text = rows.Cells("dated").Value.ToString
             If e.ColumnIndex = 3 Then
                 memberFRM.teamid = rows.Cells("id").Value.ToString
+                memberFRM.teamname.Text = rows.Cells("team").Value.ToString
                 memberFRM.Show()
             End If
         End If
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Dim str As String = "
+                            update teamtb
+                            set team=@team,dated=@dated where id = @id"
+        ds = New DataSet
+        ds.Clear()
+        Using sqlcon As SqlConnection = New SqlConnection(SQL.sqlcon1str)
+            Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
+                Try
+                    sqlcon.Open()
+                    sqlcmd.Parameters.AddWithValue("@id", teamid)
+                    sqlcmd.Parameters.AddWithValue("@team", team.Text)
+                    sqlcmd.Parameters.AddWithValue("@dated", teamdate.Text)
+                    sqlcmd.ExecuteNonQuery()
+                Catch ex As Exception
+                    MsgBox(ex.ToString)
+                Finally
+                    sqlcon.Close()
+                End Try
+
+            End Using
+        End Using
+
+        team.Text = ""
+        teamdate.Text = ""
+        Button2.PerformClick()
     End Sub
 End Class

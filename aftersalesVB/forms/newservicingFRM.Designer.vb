@@ -22,66 +22,14 @@ Partial Class newservicingFRM
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.MetroTextButton2 = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
-        Me.metroTextButton1 = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
-        Me.personnel = New System.Windows.Forms.ComboBox()
         Me.KryptonLabel1 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.MetroDateTime1 = New MetroFramework.Controls.MetroDateTime()
-        Me.assignedpersonnelTXT = New MetroFramework.Controls.MetroTextBox()
         Me.servicingdate = New MetroFramework.Controls.MetroTextBox()
         Me.save = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
+        Me.TEAM = New System.Windows.Forms.ComboBox()
+        Me.KryptonLabel2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
+        Me.teamid = New MetroFramework.Controls.MetroTextBox()
         Me.SuspendLayout()
-        '
-        'MetroTextButton2
-        '
-        Me.MetroTextButton2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.MetroTextButton2.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.MetroTextButton2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.MetroTextButton2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.MetroTextButton2.Image = Nothing
-        Me.MetroTextButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.MetroTextButton2.Location = New System.Drawing.Point(516, 98)
-        Me.MetroTextButton2.Name = "MetroTextButton2"
-        Me.MetroTextButton2.Size = New System.Drawing.Size(54, 28)
-        Me.MetroTextButton2.Style = MetroFramework.MetroColorStyle.Yellow
-        Me.MetroTextButton2.TabIndex = 489
-        Me.MetroTextButton2.Text = "-"
-        Me.MetroTextButton2.UseCustomBackColor = True
-        Me.MetroTextButton2.UseCustomForeColor = True
-        Me.MetroTextButton2.UseSelectable = True
-        Me.MetroTextButton2.UseVisualStyleBackColor = False
-        '
-        'metroTextButton1
-        '
-        Me.metroTextButton1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.metroTextButton1.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.metroTextButton1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.metroTextButton1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.metroTextButton1.Image = Nothing
-        Me.metroTextButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.metroTextButton1.Location = New System.Drawing.Point(450, 98)
-        Me.metroTextButton1.Name = "metroTextButton1"
-        Me.metroTextButton1.Size = New System.Drawing.Size(60, 28)
-        Me.metroTextButton1.Style = MetroFramework.MetroColorStyle.Yellow
-        Me.metroTextButton1.TabIndex = 488
-        Me.metroTextButton1.Text = "+"
-        Me.metroTextButton1.UseCustomBackColor = True
-        Me.metroTextButton1.UseCustomForeColor = True
-        Me.metroTextButton1.UseSelectable = True
-        Me.metroTextButton1.UseVisualStyleBackColor = False
-        '
-        'personnel
-        '
-        Me.personnel.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.personnel.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.personnel.DropDownHeight = 200
-        Me.personnel.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.personnel.FormattingEnabled = True
-        Me.personnel.IntegralHeight = False
-        Me.personnel.Location = New System.Drawing.Point(251, 98)
-        Me.personnel.Name = "personnel"
-        Me.personnel.Size = New System.Drawing.Size(193, 28)
-        Me.personnel.TabIndex = 487
         '
         'KryptonLabel1
         '
@@ -103,41 +51,6 @@ Partial Class newservicingFRM
         Me.MetroDateTime1.Size = New System.Drawing.Size(189, 29)
         Me.MetroDateTime1.Style = MetroFramework.MetroColorStyle.Red
         Me.MetroDateTime1.TabIndex = 484
-        '
-        'assignedpersonnelTXT
-        '
-        '
-        '
-        '
-        Me.assignedpersonnelTXT.CustomButton.Image = Nothing
-        Me.assignedpersonnelTXT.CustomButton.Location = New System.Drawing.Point(249, 2)
-        Me.assignedpersonnelTXT.CustomButton.Name = ""
-        Me.assignedpersonnelTXT.CustomButton.Size = New System.Drawing.Size(67, 67)
-        Me.assignedpersonnelTXT.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.assignedpersonnelTXT.CustomButton.TabIndex = 1
-        Me.assignedpersonnelTXT.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.assignedpersonnelTXT.CustomButton.UseSelectable = True
-        Me.assignedpersonnelTXT.CustomButton.Visible = False
-        Me.assignedpersonnelTXT.DisplayIcon = True
-        Me.assignedpersonnelTXT.Lines = New String(-1) {}
-        Me.assignedpersonnelTXT.Location = New System.Drawing.Point(251, 132)
-        Me.assignedpersonnelTXT.MaxLength = 32767
-        Me.assignedpersonnelTXT.Multiline = True
-        Me.assignedpersonnelTXT.Name = "assignedpersonnelTXT"
-        Me.assignedpersonnelTXT.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.assignedpersonnelTXT.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.assignedpersonnelTXT.SelectedText = ""
-        Me.assignedpersonnelTXT.SelectionLength = 0
-        Me.assignedpersonnelTXT.SelectionStart = 0
-        Me.assignedpersonnelTXT.ShowClearButton = True
-        Me.assignedpersonnelTXT.Size = New System.Drawing.Size(319, 72)
-        Me.assignedpersonnelTXT.Style = MetroFramework.MetroColorStyle.Red
-        Me.assignedpersonnelTXT.TabIndex = 483
-        Me.assignedpersonnelTXT.UseCustomForeColor = True
-        Me.assignedpersonnelTXT.UseSelectable = True
-        Me.assignedpersonnelTXT.WaterMark = "Enter Assigned Personnel"
-        Me.assignedpersonnelTXT.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.assignedpersonnelTXT.WaterMarkFont = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
         '
         'servicingdate
         '
@@ -182,9 +95,9 @@ Partial Class newservicingFRM
         Me.save.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.save.Image = Nothing
         Me.save.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.save.Location = New System.Drawing.Point(450, 215)
+        Me.save.Location = New System.Drawing.Point(410, 133)
         Me.save.Name = "save"
-        Me.save.Size = New System.Drawing.Size(119, 28)
+        Me.save.Size = New System.Drawing.Size(62, 28)
         Me.save.Style = MetroFramework.MetroColorStyle.Yellow
         Me.save.TabIndex = 490
         Me.save.Text = "add"
@@ -192,21 +105,79 @@ Partial Class newservicingFRM
         Me.save.UseSelectable = True
         Me.save.UseVisualStyleBackColor = True
         '
+        'TEAM
+        '
+        Me.TEAM.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.TEAM.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.TEAM.DropDownHeight = 200
+        Me.TEAM.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.TEAM.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TEAM.FormattingEnabled = True
+        Me.TEAM.IntegralHeight = False
+        Me.TEAM.Location = New System.Drawing.Point(279, 98)
+        Me.TEAM.Name = "TEAM"
+        Me.TEAM.Size = New System.Drawing.Size(193, 28)
+        Me.TEAM.TabIndex = 491
+        '
+        'KryptonLabel2
+        '
+        Me.KryptonLabel2.Location = New System.Drawing.Point(279, 70)
+        Me.KryptonLabel2.Name = "KryptonLabel2"
+        Me.KryptonLabel2.Size = New System.Drawing.Size(97, 22)
+        Me.KryptonLabel2.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.KryptonLabel2.StateCommon.ShortText.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KryptonLabel2.TabIndex = 492
+        Me.KryptonLabel2.Values.Text = "ASSIGN TEAM"
+        '
+        'teamid
+        '
+        '
+        '
+        '
+        Me.teamid.CustomButton.Image = Nothing
+        Me.teamid.CustomButton.Location = New System.Drawing.Point(99, 2)
+        Me.teamid.CustomButton.Name = ""
+        Me.teamid.CustomButton.Size = New System.Drawing.Size(23, 23)
+        Me.teamid.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.teamid.CustomButton.TabIndex = 1
+        Me.teamid.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.teamid.CustomButton.UseSelectable = True
+        Me.teamid.CustomButton.Visible = False
+        Me.teamid.DisplayIcon = True
+        Me.teamid.Enabled = False
+        Me.teamid.FontSize = MetroFramework.MetroTextBoxSize.Medium
+        Me.teamid.Lines = New String(-1) {}
+        Me.teamid.Location = New System.Drawing.Point(279, 132)
+        Me.teamid.MaxLength = 32767
+        Me.teamid.Multiline = True
+        Me.teamid.Name = "teamid"
+        Me.teamid.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.teamid.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.teamid.SelectedText = ""
+        Me.teamid.SelectionLength = 0
+        Me.teamid.SelectionStart = 0
+        Me.teamid.ShowClearButton = True
+        Me.teamid.Size = New System.Drawing.Size(125, 28)
+        Me.teamid.Style = MetroFramework.MetroColorStyle.Red
+        Me.teamid.TabIndex = 493
+        Me.teamid.UseCustomForeColor = True
+        Me.teamid.UseSelectable = True
+        Me.teamid.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.teamid.WaterMarkFont = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        '
         'newservicingFRM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(592, 266)
+        Me.ClientSize = New System.Drawing.Size(514, 212)
+        Me.Controls.Add(Me.teamid)
+        Me.Controls.Add(Me.KryptonLabel2)
+        Me.Controls.Add(Me.TEAM)
         Me.Controls.Add(Me.save)
-        Me.Controls.Add(Me.MetroTextButton2)
-        Me.Controls.Add(Me.metroTextButton1)
-        Me.Controls.Add(Me.personnel)
         Me.Controls.Add(Me.KryptonLabel1)
         Me.Controls.Add(Me.MetroDateTime1)
-        Me.Controls.Add(Me.assignedpersonnelTXT)
         Me.Controls.Add(Me.servicingdate)
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(592, 266)
         Me.MinimizeBox = False
         Me.Name = "newservicingFRM"
         Me.Style = MetroFramework.MetroColorStyle.Yellow
@@ -215,13 +186,11 @@ Partial Class newservicingFRM
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents MetroTextButton2 As MetroFramework.Controls.MetroTextBox.MetroTextButton
-    Friend WithEvents metroTextButton1 As MetroFramework.Controls.MetroTextBox.MetroTextButton
-    Friend WithEvents personnel As ComboBox
     Friend WithEvents KryptonLabel1 As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents MetroDateTime1 As MetroFramework.Controls.MetroDateTime
-    Friend WithEvents assignedpersonnelTXT As MetroFramework.Controls.MetroTextBox
     Friend WithEvents servicingdate As MetroFramework.Controls.MetroTextBox
     Friend WithEvents save As MetroFramework.Controls.MetroTextBox.MetroTextButton
+    Friend WithEvents TEAM As ComboBox
+    Friend WithEvents KryptonLabel2 As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Friend WithEvents teamid As MetroFramework.Controls.MetroTextBox
 End Class

@@ -167,7 +167,7 @@ Public Class newcallinFRM
         End If
     End Sub
 
-    Private Sub metroTextButton1_Click(sender As Object, e As EventArgs) Handles metroTextButton1.Click
+    Private Sub metroTextButton1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim f As selectprojectFRM = New selectprojectFRM
         f.ShowDialog()
     End Sub
@@ -365,7 +365,7 @@ Public Class newcallinFRM
         mainform.reloadBTN.PerformClick()
     End Sub
 
-    Private Sub MetroTextButton2_Click(sender As Object, e As EventArgs) Handles MetroTextButton2.Click
+    Private Sub MetroTextButton2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         projectname.Text = "null"
         address.Text = "null"
         jo.Text = "null"
@@ -388,6 +388,4 @@ Public Class newcallinFRM
         newconcernFRM.save.Text = "add"
         newconcernFRM.ShowDialog()
     End Sub
-
-
 End Class

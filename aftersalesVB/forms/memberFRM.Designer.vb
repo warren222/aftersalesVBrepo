@@ -23,31 +23,31 @@ Partial Class memberFRM
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.KryptonLabel11 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
+        Me.teamname = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.KryptonLabel1 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.gv = New ComponentFactory.Krypton.Toolkit.KryptonDataGridView()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.fullname = New System.Windows.Forms.ComboBox()
         Me.KryptonLabel2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.positions = New MetroFramework.Controls.MetroTextBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.fullname = New System.Windows.Forms.ComboBox()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.gv, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
-        'KryptonLabel11
+        'teamname
         '
-        Me.KryptonLabel11.Location = New System.Drawing.Point(12, 132)
-        Me.KryptonLabel11.Name = "KryptonLabel11"
-        Me.KryptonLabel11.Size = New System.Drawing.Size(44, 20)
-        Me.KryptonLabel11.StateCommon.ShortText.Color1 = System.Drawing.Color.Black
-        Me.KryptonLabel11.StateCommon.ShortText.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.KryptonLabel11.TabIndex = 509
-        Me.KryptonLabel11.Values.Text = "Team"
+        Me.teamname.Location = New System.Drawing.Point(12, 132)
+        Me.teamname.Name = "teamname"
+        Me.teamname.Size = New System.Drawing.Size(44, 20)
+        Me.teamname.StateCommon.ShortText.Color1 = System.Drawing.Color.Black
+        Me.teamname.StateCommon.ShortText.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.teamname.TabIndex = 509
+        Me.teamname.Values.Text = "Team"
         '
         'KryptonLabel1
         '
@@ -121,6 +121,17 @@ Partial Class memberFRM
         Me.Panel2.Size = New System.Drawing.Size(425, 86)
         Me.Panel2.TabIndex = 561
         '
+        'fullname
+        '
+        Me.fullname.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.fullname.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.fullname.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.fullname.FormattingEnabled = True
+        Me.fullname.Location = New System.Drawing.Point(83, 12)
+        Me.fullname.Name = "fullname"
+        Me.fullname.Size = New System.Drawing.Size(269, 24)
+        Me.fullname.TabIndex = 514
+        '
         'KryptonLabel2
         '
         Me.KryptonLabel2.Location = New System.Drawing.Point(3, 45)
@@ -187,17 +198,6 @@ Partial Class memberFRM
         Me.Button2.Text = "refresh"
         Me.Button2.UseVisualStyleBackColor = True
         '
-        'fullname
-        '
-        Me.fullname.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
-        Me.fullname.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.fullname.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.fullname.FormattingEnabled = True
-        Me.fullname.Location = New System.Drawing.Point(83, 12)
-        Me.fullname.Name = "fullname"
-        Me.fullname.Size = New System.Drawing.Size(269, 24)
-        Me.fullname.TabIndex = 514
-        '
         'Button3
         '
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.System
@@ -216,7 +216,7 @@ Partial Class memberFRM
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.KryptonLabel11)
+        Me.Controls.Add(Me.teamname)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
@@ -233,7 +233,7 @@ Partial Class memberFRM
 
     End Sub
 
-    Friend WithEvents KryptonLabel11 As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Friend WithEvents teamname As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents KryptonLabel1 As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents Panel1 As Panel
     Friend WithEvents gv As ComponentFactory.Krypton.Toolkit.KryptonDataGridView

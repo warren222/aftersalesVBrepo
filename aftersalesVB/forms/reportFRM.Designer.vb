@@ -51,7 +51,7 @@ Partial Class reportFRM
         Me.reportGRID.RowHeadersWidth = 30
         Me.reportGRID.RowTemplate.Height = 30
         Me.reportGRID.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.reportGRID.Size = New System.Drawing.Size(827, 389)
+        Me.reportGRID.Size = New System.Drawing.Size(827, 250)
         Me.reportGRID.StateCommon.Background.Color1 = System.Drawing.Color.White
         Me.reportGRID.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
         Me.reportGRID.StateCommon.DataCell.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) _
@@ -89,7 +89,7 @@ Partial Class reportFRM
         Me.Panel1.Controls.Add(Me.reportGRID)
         Me.Panel1.Location = New System.Drawing.Point(16, 78)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(829, 391)
+        Me.Panel1.Size = New System.Drawing.Size(829, 252)
         Me.Panel1.TabIndex = 565
         '
         'KryptonLabel7
@@ -128,7 +128,7 @@ Partial Class reportFRM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(981, 478)
+        Me.ClientSize = New System.Drawing.Size(981, 339)
         Me.Controls.Add(Me.refreshbtn)
         Me.Controls.Add(Me.newbtn)
         Me.Controls.Add(Me.KryptonLabel7)

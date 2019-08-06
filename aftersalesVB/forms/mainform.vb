@@ -68,7 +68,6 @@ Public Class mainform
                             B.FULLADD AS ADDRESS,
                             A.TELNO,
                             a.FAXNO,
-                            A.VALIDATED,
                             a.CONCERN,
                             A.CONVERSATION
                             from callintb as a
@@ -90,15 +89,17 @@ Public Class mainform
                         bs.DataSource = ds
                         bs.DataMember = "callintb"
                         callinGRID.DataSource = bs
-                        addbtncolumns()
+                        'addbtncolumns()
                         With callinGRID
                             .Columns("CALLER").Frozen = True
                             .Columns("autonum").Visible = False
                             .Columns("TELNO").Visible = False
                             .Columns("FAXNO").Visible = False
-                            .Columns("VALIDATED").Visible = False
-                            .Columns("concernbtn").Width = 100
-                            .Columns("servicing").Width = 100
+                            .Columns("concern").Visible = False
+                            .Columns("conversation").Visible = False
+                            '.Columns("VALIDATED").Visible = False
+                            '.Columns("concernbtn").Width = 100
+                            '.Columns("servicing").Width = 100
                             .Columns("STATUS").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
                             .Columns("profile finish").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
                             .Columns("jo date").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
@@ -212,6 +213,30 @@ Public Class mainform
         Dim selecteditems As DataGridViewSelectedRowCollection = callinGRID.SelectedRows
         For Each row As DataGridViewRow In selecteditems
             tempcin = row.Cells("cin").Value.ToString
+
+            jo = row.Cells("jo").Value.ToString
+            newcallinFRM.cin.Text = row.Cells("CIN").Value.ToString
+            newcallinFRM.telno.Text = row.Cells("TELNO").Value.ToString
+            newcallinFRM.faxno.Text = row.Cells("FAXNO").Value.ToString
+            newcallinFRM.calldate.Text = row.Cells("date").Value.ToString
+            newcallinFRM.callername.Text = row.Cells("caller").Value.ToString
+            newcallinFRM.projectname.Text = row.Cells("project").Value.ToString
+            newcallinFRM.address.Text = row.Cells("address").Value.ToString
+            newcallinFRM.jo.Text = row.Cells("jo").Value.ToString
+            newcallinFRM.concern = row.Cells("concern").Value.ToString
+            newcallinFRM.conversation.Text = row.Cells("conversation").Value.ToString
+
+            servicingFRM.projectname.Text = row.Cells("project").Value.ToString
+            servicingFRM.address.Text = row.Cells("address").Value.ToString
+            servicingFRM.jo.Text = row.Cells("jo").Value.ToString
+
+            telno = row.Cells("telno").Value.ToString
+            faxno = row.Cells("faxno").Value.ToString
+            quotationFRM.projectname.Text = row.Cells("project").Value.ToString
+            quotationFRM.address.Text = row.Cells("address").Value.ToString
+            quotationFRM.jo.Text = row.Cells("jo").Value.ToString
+
+            editaddressFRM.parentjo = row.Cells("jo").Value.ToString
         Next
     End Sub
 
@@ -263,72 +288,102 @@ Public Class mainform
         If callinGRID.RowCount >= 0 And e.RowIndex >= 0 Then
             Dim row As DataGridViewRow = callinGRID.Rows(e.RowIndex)
             jo = row.Cells("jo").Value.ToString
-            If e.ColumnIndex = 10 Then
-                newcallinFRM.Text = "Editing"
-                newcallinFRM.cin.Text = row.Cells("CIN").Value.ToString
-                newcallinFRM.telno.Text = row.Cells("TELNO").Value.ToString
-                newcallinFRM.faxno.Text = row.Cells("FAXNO").Value.ToString
-                newcallinFRM.calldate.Text = row.Cells("date").Value.ToString
-                newcallinFRM.callername.Text = row.Cells("caller").Value.ToString
-                newcallinFRM.projectname.Text = row.Cells("project").Value.ToString
-                newcallinFRM.address.Text = row.Cells("address").Value.ToString
-                newcallinFRM.jo.Text = row.Cells("jo").Value.ToString
-                newcallinFRM.concern = row.Cells("concern").Value.ToString
-                newcallinFRM.conversation.Text = row.Cells("conversation").Value.ToString
-                storeqa()
-                newcallinFRM.addBTN.Visible = False
-                newcallinFRM.updateBTN.Visible = True
-                newcallinFRM.ShowDialog()
-            ElseIf e.ColumnIndex = 11 Then
-                Dim vali As String
-                Select Case row.Cells("validated").Value.ToString
-                    Case "no"
-                        vali = "yes"
-                    Case "yes"
-                        vali = "no"
-                End Select
-                If MetroFramework.MetroMessageBox.Show(Me, "" & row.Cells("project").Value.ToString & "" & vbCrLf & "" & row.Cells("address").Value.ToString & "" & vbCrLf & "Continue?", "Validated : Mark as " & vali & "?", MessageBoxButtons.YesNo, MessageBoxIcon.Error) = DialogResult.No Then
-                    Return
-                End If
+            newcallinFRM.cin.Text = row.Cells("CIN").Value.ToString
+            newcallinFRM.telno.Text = row.Cells("TELNO").Value.ToString
+            newcallinFRM.faxno.Text = row.Cells("FAXNO").Value.ToString
+            newcallinFRM.calldate.Text = row.Cells("date").Value.ToString
+            newcallinFRM.callername.Text = row.Cells("caller").Value.ToString
+            newcallinFRM.projectname.Text = row.Cells("project").Value.ToString
+            newcallinFRM.address.Text = row.Cells("address").Value.ToString
+            newcallinFRM.jo.Text = row.Cells("jo").Value.ToString
+            newcallinFRM.concern = row.Cells("concern").Value.ToString
+            newcallinFRM.conversation.Text = row.Cells("conversation").Value.ToString
 
+            servicingFRM.projectname.Text = row.Cells("project").Value.ToString
+            servicingFRM.address.Text = row.Cells("address").Value.ToString
+            servicingFRM.jo.Text = row.Cells("jo").Value.ToString
 
-                Dim str As String = "update callintb set validated=@vali where cin = @cin"
-                Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
-                    Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
-                        Try
-                            sqlcon.Open()
-                            sqlcmd.Parameters.AddWithValue("cin", tempcin)
-                            sqlcmd.Parameters.AddWithValue("vali", vali)
-                            sqlcmd.ExecuteNonQuery()
-                        Catch ex As Exception
-                            MsgBox(ex.ToString)
-                        End Try
-                    End Using
-                End Using
-                reloadBTN.PerformClick()
-            ElseIf e.ColumnIndex = 12 Then
-                Dim param1 As ReportParameter = New ReportParameter("project", row.Cells("project").Value.ToString)
-                Dim param2 As ReportParameter = New ReportParameter("address", row.Cells("address").Value.ToString)
-                concernsummaryFRM.ReportViewer1.LocalReport.SetParameters(New ReportParameter() {param1})
-                concernsummaryFRM.ReportViewer1.LocalReport.SetParameters(New ReportParameter() {param2})
-                concernsummaryFRM.ShowDialog()
-            ElseIf e.ColumnIndex = 13 Then
-                servicingFRM.projectname.Text = row.Cells("project").Value.ToString
-                servicingFRM.address.Text = row.Cells("address").Value.ToString
-                servicingFRM.jo.Text = row.Cells("jo").Value.ToString
-                servicingFRM.ShowDialog()
-            ElseIf e.ColumnIndex = 14 Then
-                telno = row.Cells("telno").Value.ToString
-                faxno = row.Cells("faxno").Value.ToString
-                quotationFRM.projectname.Text = row.Cells("project").Value.ToString
-                quotationFRM.address.Text = row.Cells("address").Value.ToString
-                quotationFRM.jo.Text = row.Cells("jo").Value.ToString
-                quotationFRM.ShowDialog()
-            ElseIf e.ColumnIndex = 15 Then
-                editaddressFRM.parentjo = row.Cells("jo").Value.ToString
-                editaddressFRM.ShowDialog()
-            End If
+            telno = row.Cells("telno").Value.ToString
+            faxno = row.Cells("faxno").Value.ToString
+            quotationFRM.projectname.Text = row.Cells("project").Value.ToString
+            quotationFRM.address.Text = row.Cells("address").Value.ToString
+            quotationFRM.jo.Text = row.Cells("jo").Value.ToString
+
+            editaddressFRM.parentjo = row.Cells("jo").Value.ToString
         End If
+
+
+
+
+        'If callinGRID.RowCount >= 0 And e.RowIndex >= 0 Then
+        '    Dim row As DataGridViewRow = callinGRID.Rows(e.RowIndex)
+        '    jo = row.Cells("jo").Value.ToString
+        '    If e.ColumnIndex = 10 Then
+        '        newcallinFRM.Text = "Editing"
+        '        newcallinFRM.cin.Text = row.Cells("CIN").Value.ToString
+        '        newcallinFRM.telno.Text = row.Cells("TELNO").Value.ToString
+        '        newcallinFRM.faxno.Text = row.Cells("FAXNO").Value.ToString
+        '        newcallinFRM.calldate.Text = row.Cells("date").Value.ToString
+        '        newcallinFRM.callername.Text = row.Cells("caller").Value.ToString
+        '        newcallinFRM.projectname.Text = row.Cells("project").Value.ToString
+        '        newcallinFRM.address.Text = row.Cells("address").Value.ToString
+        '        newcallinFRM.jo.Text = row.Cells("jo").Value.ToString
+        '        newcallinFRM.concern = row.Cells("concern").Value.ToString
+        '        newcallinFRM.conversation.Text = row.Cells("conversation").Value.ToString
+        '        storeqa()
+        '        newcallinFRM.addBTN.Visible = False
+        '        newcallinFRM.updateBTN.Visible = True
+        '        newcallinFRM.ShowDialog()
+        '    ElseIf e.ColumnIndex = 11 Then
+        '        Dim vali As String
+        '        Select Case row.Cells("validated").Value.ToString
+        '            Case "no"
+        '                vali = "yes"
+        '            Case "yes"
+        '                vali = "no"
+        '        End Select
+        '        If MetroFramework.MetroMessageBox.Show(Me, "" & row.Cells("project").Value.ToString & "" & vbCrLf & "" & row.Cells("address").Value.ToString & "" & vbCrLf & "Continue?", "Validated : Mark as " & vali & "?", MessageBoxButtons.YesNo, MessageBoxIcon.Error) = DialogResult.No Then
+        '            Return
+        '        End If
+
+
+        '        Dim str As String = "update callintb set validated=@vali where cin = @cin"
+        '        Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
+        '            Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
+        '                Try
+        '                    sqlcon.Open()
+        '                    sqlcmd.Parameters.AddWithValue("cin", tempcin)
+        '                    sqlcmd.Parameters.AddWithValue("vali", vali)
+        '                    sqlcmd.ExecuteNonQuery()
+        '                Catch ex As Exception
+        '                    MsgBox(ex.ToString)
+        '                End Try
+        '            End Using
+        '        End Using
+        '        reloadBTN.PerformClick()
+        '    ElseIf e.ColumnIndex = 12 Then
+        '        Dim param1 As ReportParameter = New ReportParameter("project", row.Cells("project").Value.ToString)
+        '        Dim param2 As ReportParameter = New ReportParameter("address", row.Cells("address").Value.ToString)
+        '        concernsummaryFRM.ReportViewer1.LocalReport.SetParameters(New ReportParameter() {param1})
+        '        concernsummaryFRM.ReportViewer1.LocalReport.SetParameters(New ReportParameter() {param2})
+        '        concernsummaryFRM.ShowDialog()
+        '    ElseIf e.ColumnIndex = 13 Then
+        '        servicingFRM.projectname.Text = row.Cells("project").Value.ToString
+        '        servicingFRM.address.Text = row.Cells("address").Value.ToString
+        '        servicingFRM.jo.Text = row.Cells("jo").Value.ToString
+        '        servicingFRM.ShowDialog()
+        '    ElseIf e.ColumnIndex = 14 Then
+        '        telno = row.Cells("telno").Value.ToString
+        '        faxno = row.Cells("faxno").Value.ToString
+        '        quotationFRM.projectname.Text = row.Cells("project").Value.ToString
+        '        quotationFRM.address.Text = row.Cells("address").Value.ToString
+        '        quotationFRM.jo.Text = row.Cells("jo").Value.ToString
+        '        quotationFRM.ShowDialog()
+        '    ElseIf e.ColumnIndex = 15 Then
+        '        editaddressFRM.parentjo = row.Cells("jo").Value.ToString
+        '        editaddressFRM.ShowDialog()
+        '    End If
+        'End If
 
     End Sub
 
@@ -369,5 +424,31 @@ Public Class mainform
 
     Private Sub MetroTile4_Click(sender As Object, e As EventArgs) Handles MetroTile4.Click
         ServicingScheduleFRM.Show()
+    End Sub
+
+    Private Sub UpdateToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UpdateToolStripMenuItem.Click
+        newcallinFRM.Text = "Editing"
+        storeqa()
+        newcallinFRM.addBTN.Visible = False
+        newcallinFRM.updateBTN.Visible = True
+        newcallinFRM.ShowDialog()
+    End Sub
+
+    Private Sub ServicingToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ServicingToolStripMenuItem.Click
+        servicingFRM.ShowDialog()
+    End Sub
+
+    Private Sub QuotationToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QuotationToolStripMenuItem.Click
+        quotationFRM.ShowDialog()
+    End Sub
+
+    Private Sub EditAddressToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditAddressToolStripMenuItem.Click
+        editaddressFRM.ShowDialog()
+    End Sub
+
+    Private Sub callinGRID_MouseDown(sender As Object, e As MouseEventArgs) Handles callinGRID.MouseDown
+        If e.Button = MouseButtons.Right Then
+            mymenu.Show(callinGRID, e.X, e.Y)
+        End If
     End Sub
 End Class

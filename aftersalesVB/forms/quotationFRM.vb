@@ -13,7 +13,7 @@ Public Class quotationFRM
     End Sub
 
     Private Sub quotationFRM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.Height = Screen.PrimaryScreen.Bounds.Height - 37
+
         loadquotation()
     End Sub
     Public Sub loadquotation()
