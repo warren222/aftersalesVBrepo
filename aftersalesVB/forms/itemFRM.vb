@@ -96,7 +96,7 @@ from itemtb where aseno = @aseno"
 
             If e.ColumnIndex = 5 Then
                 id = itemGRID.Item("id", e.RowIndex).Value.ToString
-                partsFRM.Text = "" & itemGRID.Item("k#", e.RowIndex).Value.ToString & ", " & itemGRID.Item("item", e.RowIndex).Value.ToString & ", " & itemGRID.Item("WDW/DOOR LOCATION", e.RowIndex).Value.ToString & ""
+                partsFRM.KryptonLabel13.Text = "" & itemGRID.Item("k#", e.RowIndex).Value.ToString & ", " & itemGRID.Item("item", e.RowIndex).Value.ToString & ", " & itemGRID.Item("WDW/DOOR LOCATION", e.RowIndex).Value.ToString & ""
                 partsFRM.ShowDialog()
 
             ElseIf e.ColumnIndex = 9 Then

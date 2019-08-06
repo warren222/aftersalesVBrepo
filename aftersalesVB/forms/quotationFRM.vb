@@ -154,7 +154,7 @@ Public Class quotationFRM
                 End If
             ElseIf e.ColumnIndex = 7 Then
                 aseno = quGRID.Item("ASENO", e.RowIndex).Value.ToString
-                itemFRM.Text = quGRID.Item("ASENO", e.RowIndex).Value.ToString
+                itemFRM.KryptonLabel7.Text = quGRID.Item("ASENO", e.RowIndex).Value.ToString
                 itemFRM.ShowDialog()
             End If
         End If
