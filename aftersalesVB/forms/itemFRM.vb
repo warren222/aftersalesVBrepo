@@ -16,10 +16,10 @@ ASENO,
 ITEM,
 KNO AS [K#],
 WDWLOC as [WDW/DOOR LOCATION],
-UNITPRICE as [UNIT PRICE],
-QTY,
-NETPRICE AS [NEW PRICE]
-from itemtb where aseno = @aseno"
+PARTS
+from itemtb where aseno = @aseno
+
+"
         Dim ds As New DataSet
         ds.Clear()
         Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
@@ -28,6 +28,7 @@ from itemtb where aseno = @aseno"
                     Try
                         itemGRID.Columns.Clear()
                         sqlcon.Open()
+                        sqlcmd.Parameters.AddWithValue("@qid", quotationFRM.id)
                         sqlcmd.Parameters.AddWithValue("@aseno", quotationFRM.aseno)
                         da.SelectCommand = sqlcmd
                         da.Fill(ds, "itemtb")
@@ -41,9 +42,6 @@ from itemtb where aseno = @aseno"
                             .Columns("ITEM").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
                             .Columns("K#").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
                             .Columns("WDW/DOOR LOCATION").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-                            .Columns("UNIT PRICE").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-                            .Columns("QTY").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-                            .Columns("NEW PRICE").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
                         End With
                     Catch ex As Exception
                         MsgBox(ex.ToString)
@@ -51,6 +49,7 @@ from itemtb where aseno = @aseno"
                 End Using
             End Using
         End Using
+        totalsummary()
     End Sub
     Public Sub addcolumns()
 
@@ -70,9 +69,9 @@ from itemtb where aseno = @aseno"
             .UseColumnTextForButtonValue = True
         End With
         With itemGRID
-            .Columns.Insert(5, partsbtn)
+            .Columns.Insert(6, partsbtn)
 
-            .Columns.Insert(9, deletebtn)
+            .Columns.Insert(7, deletebtn)
         End With
     End Sub
 
@@ -83,7 +82,33 @@ from itemtb where aseno = @aseno"
     Private Sub refresh_Click(sender As Object, e As EventArgs) Handles refreshbtn.Click
         loaditems()
     End Sub
+    Private Sub totalsummary()
+        Dim str As String = "declare @unitprice as decimal(10,2) = (select 
+                                                                      sum(b.UNITPRICE*b.qty) from ITEMTB as a
+                                                                      inner join partstb as b on a.id = b.iid and a.aseno = @aseno)
+                             declare @netprice as decimal(10,2) = (select 
+                                                                      sum(b.NETAMOUNT) from ITEMTB as a
+                                                                      inner join partstb as b on a.id = b.iid and a.aseno = @aseno)
 
+                             select @unitprice,@netprice
+"
+        Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
+            Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
+                Try
+                    sqlcon.Open()
+                    sqlcmd.Parameters.AddWithValue("@aseno", quotationFRM.aseno)
+                    Using rd As SqlDataReader = sqlcmd.ExecuteReader
+                        While rd.Read
+                            unitprice.Text = rd(0).ToString
+                            netprice.Text = rd(1).ToString
+                        End While
+                    End Using
+                Catch ex As Exception
+                    MsgBox(ex.ToString)
+                End Try
+            End Using
+        End Using
+    End Sub
 
     Private Sub itemGRID_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles itemGRID.CellClick
         If itemGRID.RowCount >= 0 And e.RowIndex >= 0 Then
@@ -92,14 +117,11 @@ from itemtb where aseno = @aseno"
             kno.Text = itemGRID.Item("k#", e.RowIndex).Value.ToString
             itemno.Text = itemGRID.Item("item", e.RowIndex).Value.ToString
             wdwloc.Text = itemGRID.Item("WDW/DOOR LOCATION", e.RowIndex).Value.ToString
-
-
-            If e.ColumnIndex = 5 Then
+            If e.ColumnIndex = 6 Then
                 id = itemGRID.Item("id", e.RowIndex).Value.ToString
                 partsFRM.KryptonLabel13.Text = "" & itemGRID.Item("k#", e.RowIndex).Value.ToString & ", " & itemGRID.Item("item", e.RowIndex).Value.ToString & ", " & itemGRID.Item("WDW/DOOR LOCATION", e.RowIndex).Value.ToString & ""
                 partsFRM.ShowDialog()
-
-            ElseIf e.ColumnIndex = 9 Then
+            ElseIf e.ColumnIndex = 7 Then
                 If MetroFramework.MetroMessageBox.Show(Me, "Delete " & itemGRID.Item("k#", e.RowIndex).Value.ToString & "", "Confirmatioon", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
                     Return
                 Else

@@ -42,7 +42,9 @@ Public Class prevFRM
         re()
     End Sub
     Public Sub loadrep()
-        Dim str As String = "select * from itemtb where aseno = @aseno"
+        Dim str As String = "select 
+  a.ASENO,a.ITEM,a.KNO,a.WDWLOC,b.UNITPRICE,b.qty,b.NETAMOUNT,b.MARKUP,b.ARTICLENO,b.DESCRIPTION from ITEMTB as a
+  inner join partstb as b on a.id = b.iid where A.aseno = @aseno"
         Dim ds As New asdbDS
         ds.Clear()
         Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)

@@ -22,8 +22,8 @@ Partial Class newreportFRM
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.specification = New System.Windows.Forms.ComboBox()
         Me.KryptonLabel1 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.KryptonLabel2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
@@ -94,9 +94,9 @@ Partial Class newreportFRM
         Me.answerGV.AllowUserToOrderColumns = True
         Me.answerGV.AllowUserToResizeColumns = False
         Me.answerGV.AllowUserToResizeRows = False
-        DataGridViewCellStyle9.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black
-        Me.answerGV.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        Me.answerGV.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.answerGV.ColumnHeadersHeight = 30
         Me.answerGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.answerGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1})
@@ -296,9 +296,9 @@ Partial Class newreportFRM
         Me.knogv.AllowUserToOrderColumns = True
         Me.knogv.AllowUserToResizeColumns = False
         Me.knogv.AllowUserToResizeRows = False
-        DataGridViewCellStyle10.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black
-        Me.knogv.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        Me.knogv.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
         Me.knogv.ColumnHeadersHeight = 30
         Me.knogv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.knogv.Cursor = System.Windows.Forms.Cursors.Hand
@@ -440,7 +440,7 @@ Partial Class newreportFRM
         Me.MinimizeBox = False
         Me.Name = "newreportFRM"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "newreportFRM"
+        Me.Text = "5"
         CType(Me.answerGV, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)

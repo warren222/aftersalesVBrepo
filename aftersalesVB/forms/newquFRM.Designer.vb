@@ -31,6 +31,7 @@ Partial Class newquFRM
         Me.KryptonLabel2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.KryptonLabel3 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.particular = New MetroFramework.Controls.MetroTextBox()
+        Me.KryptonLabel4 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.SuspendLayout()
         '
         'MetroDateTime1
@@ -50,7 +51,7 @@ Partial Class newquFRM
         '
         '
         Me.qudate.CustomButton.Image = Nothing
-        Me.qudate.CustomButton.Location = New System.Drawing.Point(161, 1)
+        Me.qudate.CustomButton.Location = New System.Drawing.Point(125, 1)
         Me.qudate.CustomButton.Name = ""
         Me.qudate.CustomButton.Size = New System.Drawing.Size(27, 27)
         Me.qudate.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
@@ -61,7 +62,7 @@ Partial Class newquFRM
         Me.qudate.DisplayIcon = True
         Me.qudate.FontSize = MetroFramework.MetroTextBoxSize.Medium
         Me.qudate.Lines = New String(-1) {}
-        Me.qudate.Location = New System.Drawing.Point(23, 141)
+        Me.qudate.Location = New System.Drawing.Point(155, 106)
         Me.qudate.MaxLength = 32767
         Me.qudate.Multiline = True
         Me.qudate.Name = "qudate"
@@ -71,7 +72,7 @@ Partial Class newquFRM
         Me.qudate.SelectionLength = 0
         Me.qudate.SelectionStart = 0
         Me.qudate.ShowClearButton = True
-        Me.qudate.Size = New System.Drawing.Size(189, 29)
+        Me.qudate.Size = New System.Drawing.Size(153, 29)
         Me.qudate.Style = MetroFramework.MetroColorStyle.Red
         Me.qudate.TabIndex = 1
         Me.qudate.UseCustomForeColor = True
@@ -86,7 +87,7 @@ Partial Class newquFRM
         '
         '
         Me.aseno.CustomButton.Image = Nothing
-        Me.aseno.CustomButton.Location = New System.Drawing.Point(161, 1)
+        Me.aseno.CustomButton.Location = New System.Drawing.Point(125, 1)
         Me.aseno.CustomButton.Name = ""
         Me.aseno.CustomButton.Size = New System.Drawing.Size(27, 27)
         Me.aseno.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
@@ -97,7 +98,7 @@ Partial Class newquFRM
         Me.aseno.DisplayIcon = True
         Me.aseno.FontSize = MetroFramework.MetroTextBoxSize.Medium
         Me.aseno.Lines = New String(-1) {}
-        Me.aseno.Location = New System.Drawing.Point(236, 141)
+        Me.aseno.Location = New System.Drawing.Point(155, 141)
         Me.aseno.MaxLength = 32767
         Me.aseno.Multiline = True
         Me.aseno.Name = "aseno"
@@ -107,7 +108,7 @@ Partial Class newquFRM
         Me.aseno.SelectionLength = 0
         Me.aseno.SelectionStart = 0
         Me.aseno.ShowClearButton = True
-        Me.aseno.Size = New System.Drawing.Size(189, 29)
+        Me.aseno.Size = New System.Drawing.Size(153, 29)
         Me.aseno.Style = MetroFramework.MetroColorStyle.Red
         Me.aseno.TabIndex = 2
         Me.aseno.UseCustomForeColor = True
@@ -123,7 +124,7 @@ Partial Class newquFRM
         Me.save.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.save.Image = Nothing
         Me.save.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.save.Location = New System.Drawing.Point(306, 302)
+        Me.save.Location = New System.Drawing.Point(333, 270)
         Me.save.Name = "save"
         Me.save.Size = New System.Drawing.Size(119, 28)
         Me.save.Style = MetroFramework.MetroColorStyle.Yellow
@@ -160,7 +161,7 @@ Partial Class newquFRM
         Me.othercharges.DisplayIcon = True
         Me.othercharges.FontSize = MetroFramework.MetroTextBoxSize.Medium
         Me.othercharges.Lines = New String() {"0"}
-        Me.othercharges.Location = New System.Drawing.Point(128, 206)
+        Me.othercharges.Location = New System.Drawing.Point(155, 190)
         Me.othercharges.MaxLength = 32767
         Me.othercharges.Multiline = True
         Me.othercharges.Name = "othercharges"
@@ -182,7 +183,7 @@ Partial Class newquFRM
         '
         'KryptonLabel2
         '
-        Me.KryptonLabel2.Location = New System.Drawing.Point(23, 206)
+        Me.KryptonLabel2.Location = New System.Drawing.Point(23, 190)
         Me.KryptonLabel2.Name = "KryptonLabel2"
         Me.KryptonLabel2.Size = New System.Drawing.Size(99, 22)
         Me.KryptonLabel2.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
@@ -192,7 +193,7 @@ Partial Class newquFRM
         '
         'KryptonLabel3
         '
-        Me.KryptonLabel3.Location = New System.Drawing.Point(23, 241)
+        Me.KryptonLabel3.Location = New System.Drawing.Point(23, 225)
         Me.KryptonLabel3.Name = "KryptonLabel3"
         Me.KryptonLabel3.Size = New System.Drawing.Size(68, 22)
         Me.KryptonLabel3.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
@@ -217,7 +218,7 @@ Partial Class newquFRM
         Me.particular.DisplayIcon = True
         Me.particular.FontSize = MetroFramework.MetroTextBoxSize.Medium
         Me.particular.Lines = New String(-1) {}
-        Me.particular.Location = New System.Drawing.Point(128, 241)
+        Me.particular.Location = New System.Drawing.Point(155, 225)
         Me.particular.MaxLength = 32767
         Me.particular.Multiline = True
         Me.particular.Name = "particular"
@@ -236,11 +237,22 @@ Partial Class newquFRM
         Me.particular.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.particular.WaterMarkFont = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
+        'KryptonLabel4
+        '
+        Me.KryptonLabel4.Location = New System.Drawing.Point(23, 141)
+        Me.KryptonLabel4.Name = "KryptonLabel4"
+        Me.KryptonLabel4.Size = New System.Drawing.Size(42, 22)
+        Me.KryptonLabel4.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.KryptonLabel4.StateCommon.ShortText.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KryptonLabel4.TabIndex = 497
+        Me.KryptonLabel4.Values.Text = "ASE#"
+        '
         'newquFRM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(444, 353)
+        Me.ClientSize = New System.Drawing.Size(468, 318)
+        Me.Controls.Add(Me.KryptonLabel4)
         Me.Controls.Add(Me.KryptonLabel3)
         Me.Controls.Add(Me.particular)
         Me.Controls.Add(Me.KryptonLabel2)
@@ -269,4 +281,5 @@ Partial Class newquFRM
     Friend WithEvents KryptonLabel2 As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents KryptonLabel3 As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Public WithEvents particular As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents KryptonLabel4 As ComponentFactory.Krypton.Toolkit.KryptonLabel
 End Class

@@ -119,7 +119,7 @@ Public Class quotationFRM
             If e.ColumnIndex = 0 Then
                 quotationstatusFRM.ShowDialog()
             ElseIf e.ColumnIndex = 9 Then
-
+                newquFRM.aseno.Enabled = False
                 newquFRM.qudate.Text = quGRID.Item("date", e.RowIndex).Value.ToString
                 newquFRM.aseno.Text = quGRID.Item("aseno", e.RowIndex).Value.ToString
                 newquFRM.tempaseno = quGRID.Item("aseno", e.RowIndex).Value.ToString

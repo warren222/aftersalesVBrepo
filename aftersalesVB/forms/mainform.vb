@@ -418,8 +418,9 @@ Public Class mainform
     End Sub
 
     Private Sub mainform_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        Me.Dispose()
         loginFRM.Close()
+        Me.Dispose()
+
     End Sub
 
     Private Sub MetroTile4_Click(sender As Object, e As EventArgs) Handles MetroTile4.Click

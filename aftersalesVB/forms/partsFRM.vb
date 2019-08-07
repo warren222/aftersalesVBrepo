@@ -7,6 +7,7 @@ Public Class partsFRM
     Dim bs As New BindingSource
     Dim bs2 As New BindingSource
     Private Sub partsFRM_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        itemFRM.refreshbtn.PerformClick()
         Me.Dispose()
     End Sub
 
@@ -52,10 +53,6 @@ Public Class partsFRM
     End Sub
     Public Sub loadparts()
         Dim str As String = "
-
-declare @unitprice as decimal(10,2) = (select sum(unitprice) from partstb where iid = @iid)
-declare @qty as decimal(10,2) = (select sum(qty) from partstb where iid = @iid)
-declare @netamount as decimal(10,2) = (select sum(netamount) from partstb where iid = @iid)
 declare @parts as varchar(1000) = (select c=stuff((select ', '+[DESCRIPTION] from PARTSTB where iid = @iid for xml path('')),1,2,''))
 select 
 ID,
@@ -67,7 +64,7 @@ UNITPRICE AS [UNIT PRICE],
 QTY,
 NETAMOUNT AS [NET AMOUNT]
  from partstb where iid = @iid
-update itemtb set unitprice =@unitprice,qty=@qty,netprice=@netamount,parts=@parts where id = @iid"
+update itemtb set parts=@parts where id = @iid"
         Dim ds As New DataSet
         ds.Clear()
         Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)

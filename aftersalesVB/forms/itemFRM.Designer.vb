@@ -22,8 +22,8 @@ Partial Class itemFRM
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.itemGRID = New ComponentFactory.Krypton.Toolkit.KryptonDataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.refreshbtn = New System.Windows.Forms.Button()
@@ -44,10 +44,8 @@ Partial Class itemFRM
         Me.Button3 = New System.Windows.Forms.Button()
         Me.KryptonLabel1 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.KryptonLabel3 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
-        Me.KryptonLabel4 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
-        Me.MetroTextBox1 = New MetroFramework.Controls.MetroTextBox()
-        Me.MetroTextBox2 = New MetroFramework.Controls.MetroTextBox()
-        Me.MetroTextBox3 = New MetroFramework.Controls.MetroTextBox()
+        Me.netprice = New MetroFramework.Controls.MetroTextBox()
+        Me.unitprice = New MetroFramework.Controls.MetroTextBox()
         CType(Me.itemGRID, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -60,8 +58,8 @@ Partial Class itemFRM
         Me.itemGRID.AllowUserToAddRows = False
         Me.itemGRID.AllowUserToDeleteRows = False
         Me.itemGRID.AllowUserToResizeRows = False
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.itemGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.itemGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.itemGRID.ColumnHeadersHeight = 32
         Me.itemGRID.Cursor = System.Windows.Forms.Cursors.Hand
         Me.itemGRID.Dock = System.Windows.Forms.DockStyle.Fill
@@ -72,7 +70,7 @@ Partial Class itemFRM
         Me.itemGRID.RowHeadersWidth = 30
         Me.itemGRID.RowTemplate.Height = 30
         Me.itemGRID.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.itemGRID.Size = New System.Drawing.Size(404, 218)
+        Me.itemGRID.Size = New System.Drawing.Size(404, 263)
         Me.itemGRID.StateCommon.Background.Color1 = System.Drawing.Color.White
         Me.itemGRID.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
         Me.itemGRID.StateCommon.DataCell.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) _
@@ -100,7 +98,7 @@ Partial Class itemFRM
         Me.Panel1.Controls.Add(Me.itemGRID)
         Me.Panel1.Location = New System.Drawing.Point(24, 134)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(406, 220)
+        Me.Panel1.Size = New System.Drawing.Size(406, 265)
         Me.Panel1.TabIndex = 571
         '
         'refreshbtn
@@ -323,9 +321,9 @@ Partial Class itemFRM
         Me.knogv.AllowUserToOrderColumns = True
         Me.knogv.AllowUserToResizeColumns = False
         Me.knogv.AllowUserToResizeRows = False
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
-        Me.knogv.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        Me.knogv.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
         Me.knogv.ColumnHeadersHeight = 30
         Me.knogv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.knogv.Cursor = System.Windows.Forms.Cursors.Hand
@@ -378,147 +376,100 @@ Partial Class itemFRM
         'KryptonLabel1
         '
         Me.KryptonLabel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.KryptonLabel1.Location = New System.Drawing.Point(25, 369)
+        Me.KryptonLabel1.Location = New System.Drawing.Point(25, 438)
         Me.KryptonLabel1.Name = "KryptonLabel1"
-        Me.KryptonLabel1.Size = New System.Drawing.Size(124, 20)
+        Me.KryptonLabel1.Size = New System.Drawing.Size(107, 20)
         Me.KryptonLabel1.StateCommon.ShortText.Color1 = System.Drawing.Color.Black
         Me.KryptonLabel1.StateCommon.ShortText.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.KryptonLabel1.TabIndex = 586
-        Me.KryptonLabel1.Values.Text = "Total Net Amount :"
+        Me.KryptonLabel1.Values.Text = "Total Net Price :"
         '
         'KryptonLabel3
         '
         Me.KryptonLabel3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.KryptonLabel3.Location = New System.Drawing.Point(297, 369)
+        Me.KryptonLabel3.Location = New System.Drawing.Point(25, 405)
         Me.KryptonLabel3.Name = "KryptonLabel3"
-        Me.KryptonLabel3.Size = New System.Drawing.Size(106, 20)
+        Me.KryptonLabel3.Size = New System.Drawing.Size(110, 20)
         Me.KryptonLabel3.StateCommon.ShortText.Color1 = System.Drawing.Color.Black
         Me.KryptonLabel3.StateCommon.ShortText.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.KryptonLabel3.TabIndex = 587
-        Me.KryptonLabel3.Values.Text = "Actual Amount :"
+        Me.KryptonLabel3.Values.Text = "Total Unit Price :"
         '
-        'KryptonLabel4
+        'netprice
         '
-        Me.KryptonLabel4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.KryptonLabel4.Location = New System.Drawing.Point(25, 435)
-        Me.KryptonLabel4.Name = "KryptonLabel4"
-        Me.KryptonLabel4.Size = New System.Drawing.Size(71, 20)
-        Me.KryptonLabel4.StateCommon.ShortText.Color1 = System.Drawing.Color.Black
-        Me.KryptonLabel4.StateCommon.ShortText.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.KryptonLabel4.TabIndex = 588
-        Me.KryptonLabel4.Values.Text = "Remarks :"
-        '
-        'MetroTextBox1
-        '
-        Me.MetroTextBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.netprice.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         '
         '
         '
-        Me.MetroTextBox1.CustomButton.Image = Nothing
-        Me.MetroTextBox1.CustomButton.Location = New System.Drawing.Point(250, 1)
-        Me.MetroTextBox1.CustomButton.Name = ""
-        Me.MetroTextBox1.CustomButton.Size = New System.Drawing.Size(25, 25)
-        Me.MetroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.MetroTextBox1.CustomButton.TabIndex = 1
-        Me.MetroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.MetroTextBox1.CustomButton.UseSelectable = True
-        Me.MetroTextBox1.CustomButton.Visible = False
-        Me.MetroTextBox1.DisplayIcon = True
-        Me.MetroTextBox1.Lines = New String(-1) {}
-        Me.MetroTextBox1.Location = New System.Drawing.Point(153, 369)
-        Me.MetroTextBox1.MaxLength = 32767
-        Me.MetroTextBox1.Name = "MetroTextBox1"
-        Me.MetroTextBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MetroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.MetroTextBox1.SelectedText = ""
-        Me.MetroTextBox1.SelectionLength = 0
-        Me.MetroTextBox1.SelectionStart = 0
-        Me.MetroTextBox1.ShowClearButton = True
-        Me.MetroTextBox1.Size = New System.Drawing.Size(138, 27)
-        Me.MetroTextBox1.Style = MetroFramework.MetroColorStyle.Teal
-        Me.MetroTextBox1.TabIndex = 589
-        Me.MetroTextBox1.UseCustomForeColor = True
-        Me.MetroTextBox1.UseSelectable = True
-        Me.MetroTextBox1.UseStyleColors = True
-        Me.MetroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.MetroTextBox1.WaterMarkFont = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        Me.netprice.CustomButton.Image = Nothing
+        Me.netprice.CustomButton.Location = New System.Drawing.Point(112, 1)
+        Me.netprice.CustomButton.Name = ""
+        Me.netprice.CustomButton.Size = New System.Drawing.Size(25, 25)
+        Me.netprice.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.netprice.CustomButton.TabIndex = 1
+        Me.netprice.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.netprice.CustomButton.UseSelectable = True
+        Me.netprice.CustomButton.Visible = False
+        Me.netprice.DisplayIcon = True
+        Me.netprice.Lines = New String(-1) {}
+        Me.netprice.Location = New System.Drawing.Point(153, 438)
+        Me.netprice.MaxLength = 32767
+        Me.netprice.Name = "netprice"
+        Me.netprice.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.netprice.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.netprice.SelectedText = ""
+        Me.netprice.SelectionLength = 0
+        Me.netprice.SelectionStart = 0
+        Me.netprice.ShowClearButton = True
+        Me.netprice.Size = New System.Drawing.Size(138, 27)
+        Me.netprice.Style = MetroFramework.MetroColorStyle.Teal
+        Me.netprice.TabIndex = 589
+        Me.netprice.UseCustomForeColor = True
+        Me.netprice.UseSelectable = True
+        Me.netprice.UseStyleColors = True
+        Me.netprice.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.netprice.WaterMarkFont = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
-        'MetroTextBox2
+        'unitprice
         '
-        Me.MetroTextBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        '
-        '
-        '
-        Me.MetroTextBox2.CustomButton.Image = Nothing
-        Me.MetroTextBox2.CustomButton.Location = New System.Drawing.Point(250, 1)
-        Me.MetroTextBox2.CustomButton.Name = ""
-        Me.MetroTextBox2.CustomButton.Size = New System.Drawing.Size(25, 25)
-        Me.MetroTextBox2.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.MetroTextBox2.CustomButton.TabIndex = 1
-        Me.MetroTextBox2.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.MetroTextBox2.CustomButton.UseSelectable = True
-        Me.MetroTextBox2.CustomButton.Visible = False
-        Me.MetroTextBox2.DisplayIcon = True
-        Me.MetroTextBox2.Lines = New String(-1) {}
-        Me.MetroTextBox2.Location = New System.Drawing.Point(409, 369)
-        Me.MetroTextBox2.MaxLength = 32767
-        Me.MetroTextBox2.Name = "MetroTextBox2"
-        Me.MetroTextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MetroTextBox2.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.MetroTextBox2.SelectedText = ""
-        Me.MetroTextBox2.SelectionLength = 0
-        Me.MetroTextBox2.SelectionStart = 0
-        Me.MetroTextBox2.ShowClearButton = True
-        Me.MetroTextBox2.Size = New System.Drawing.Size(138, 27)
-        Me.MetroTextBox2.Style = MetroFramework.MetroColorStyle.Teal
-        Me.MetroTextBox2.TabIndex = 590
-        Me.MetroTextBox2.UseCustomForeColor = True
-        Me.MetroTextBox2.UseSelectable = True
-        Me.MetroTextBox2.UseStyleColors = True
-        Me.MetroTextBox2.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.MetroTextBox2.WaterMarkFont = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
-        '
-        'MetroTextBox3
-        '
-        Me.MetroTextBox3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.unitprice.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         '
         '
         '
-        Me.MetroTextBox3.CustomButton.Image = Nothing
-        Me.MetroTextBox3.CustomButton.Location = New System.Drawing.Point(250, 1)
-        Me.MetroTextBox3.CustomButton.Name = ""
-        Me.MetroTextBox3.CustomButton.Size = New System.Drawing.Size(25, 25)
-        Me.MetroTextBox3.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.MetroTextBox3.CustomButton.TabIndex = 1
-        Me.MetroTextBox3.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.MetroTextBox3.CustomButton.UseSelectable = True
-        Me.MetroTextBox3.CustomButton.Visible = False
-        Me.MetroTextBox3.DisplayIcon = True
-        Me.MetroTextBox3.Lines = New String(-1) {}
-        Me.MetroTextBox3.Location = New System.Drawing.Point(153, 435)
-        Me.MetroTextBox3.MaxLength = 32767
-        Me.MetroTextBox3.Name = "MetroTextBox3"
-        Me.MetroTextBox3.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MetroTextBox3.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.MetroTextBox3.SelectedText = ""
-        Me.MetroTextBox3.SelectionLength = 0
-        Me.MetroTextBox3.SelectionStart = 0
-        Me.MetroTextBox3.ShowClearButton = True
-        Me.MetroTextBox3.Size = New System.Drawing.Size(394, 27)
-        Me.MetroTextBox3.Style = MetroFramework.MetroColorStyle.Teal
-        Me.MetroTextBox3.TabIndex = 591
-        Me.MetroTextBox3.UseCustomForeColor = True
-        Me.MetroTextBox3.UseSelectable = True
-        Me.MetroTextBox3.UseStyleColors = True
-        Me.MetroTextBox3.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.MetroTextBox3.WaterMarkFont = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        Me.unitprice.CustomButton.Image = Nothing
+        Me.unitprice.CustomButton.Location = New System.Drawing.Point(112, 1)
+        Me.unitprice.CustomButton.Name = ""
+        Me.unitprice.CustomButton.Size = New System.Drawing.Size(25, 25)
+        Me.unitprice.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.unitprice.CustomButton.TabIndex = 1
+        Me.unitprice.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.unitprice.CustomButton.UseSelectable = True
+        Me.unitprice.CustomButton.Visible = False
+        Me.unitprice.DisplayIcon = True
+        Me.unitprice.Lines = New String(-1) {}
+        Me.unitprice.Location = New System.Drawing.Point(153, 405)
+        Me.unitprice.MaxLength = 32767
+        Me.unitprice.Name = "unitprice"
+        Me.unitprice.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.unitprice.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.unitprice.SelectedText = ""
+        Me.unitprice.SelectionLength = 0
+        Me.unitprice.SelectionStart = 0
+        Me.unitprice.ShowClearButton = True
+        Me.unitprice.Size = New System.Drawing.Size(138, 27)
+        Me.unitprice.Style = MetroFramework.MetroColorStyle.Teal
+        Me.unitprice.TabIndex = 590
+        Me.unitprice.UseCustomForeColor = True
+        Me.unitprice.UseSelectable = True
+        Me.unitprice.UseStyleColors = True
+        Me.unitprice.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.unitprice.WaterMarkFont = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'itemFRM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1108, 471)
-        Me.Controls.Add(Me.KryptonLabel4)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Button2)
@@ -529,11 +480,10 @@ Partial Class itemFRM
         Me.Controls.Add(Me.refreshbtn)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.MetroTextBox1)
+        Me.Controls.Add(Me.netprice)
         Me.Controls.Add(Me.KryptonLabel3)
         Me.Controls.Add(Me.KryptonLabel1)
-        Me.Controls.Add(Me.MetroTextBox2)
-        Me.Controls.Add(Me.MetroTextBox3)
+        Me.Controls.Add(Me.unitprice)
         Me.MinimizeBox = False
         Me.Name = "itemFRM"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -569,8 +519,6 @@ Partial Class itemFRM
     Friend WithEvents Button3 As Button
     Friend WithEvents KryptonLabel1 As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents KryptonLabel3 As ComponentFactory.Krypton.Toolkit.KryptonLabel
-    Friend WithEvents KryptonLabel4 As ComponentFactory.Krypton.Toolkit.KryptonLabel
-    Friend WithEvents MetroTextBox1 As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents MetroTextBox2 As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents MetroTextBox3 As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents netprice As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents unitprice As MetroFramework.Controls.MetroTextBox
 End Class

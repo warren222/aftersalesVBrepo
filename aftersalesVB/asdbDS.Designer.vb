@@ -646,13 +646,15 @@ Partial Public Class asdbDS
         
         Private columnWDWLOC As Global.System.Data.DataColumn
         
-        Private columnPARTS As Global.System.Data.DataColumn
-        
         Private columnUNITPRICE As Global.System.Data.DataColumn
         
         Private columnQTY As Global.System.Data.DataColumn
         
-        Private columnNETPRICE As Global.System.Data.DataColumn
+        Private columnNETAMOUNT As Global.System.Data.DataColumn
+        
+        Private columnARTICLENO As Global.System.Data.DataColumn
+        
+        Private columnDESCRIPTION As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -723,14 +725,6 @@ Partial Public Class asdbDS
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property PARTSColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnPARTS
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property UNITPRICEColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnUNITPRICE
@@ -747,9 +741,25 @@ Partial Public Class asdbDS
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property NETPRICEColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property NETAMOUNTColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnNETPRICE
+                Return Me.columnNETAMOUNT
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property ARTICLENOColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnARTICLENO
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property DESCRIPTIONColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnDESCRIPTION
             End Get
         End Property
         
@@ -790,9 +800,9 @@ Partial Public Class asdbDS
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddITEMTBRow(ByVal ASENO As String, ByVal ITEM As String, ByVal KNO As String, ByVal WDWLOC As String, ByVal PARTS As String, ByVal UNITPRICE As Decimal, ByVal QTY As Decimal, ByVal NETPRICE As Decimal) As ITEMTBRow
+        Public Overloads Function AddITEMTBRow(ByVal ASENO As String, ByVal ITEM As String, ByVal KNO As String, ByVal WDWLOC As String, ByVal UNITPRICE As Decimal, ByVal QTY As Decimal, ByVal NETAMOUNT As Decimal, ByVal ARTICLENO As String, ByVal DESCRIPTION As String) As ITEMTBRow
             Dim rowITEMTBRow As ITEMTBRow = CType(Me.NewRow,ITEMTBRow)
-            Dim columnValuesArray() As Object = New Object() {ASENO, ITEM, KNO, WDWLOC, PARTS, UNITPRICE, QTY, NETPRICE}
+            Dim columnValuesArray() As Object = New Object() {ASENO, ITEM, KNO, WDWLOC, UNITPRICE, QTY, NETAMOUNT, ARTICLENO, DESCRIPTION}
             rowITEMTBRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowITEMTBRow)
             Return rowITEMTBRow
@@ -819,10 +829,11 @@ Partial Public Class asdbDS
             Me.columnITEM = MyBase.Columns("ITEM")
             Me.columnKNO = MyBase.Columns("KNO")
             Me.columnWDWLOC = MyBase.Columns("WDWLOC")
-            Me.columnPARTS = MyBase.Columns("PARTS")
             Me.columnUNITPRICE = MyBase.Columns("UNITPRICE")
             Me.columnQTY = MyBase.Columns("QTY")
-            Me.columnNETPRICE = MyBase.Columns("NETPRICE")
+            Me.columnNETAMOUNT = MyBase.Columns("NETAMOUNT")
+            Me.columnARTICLENO = MyBase.Columns("ARTICLENO")
+            Me.columnDESCRIPTION = MyBase.Columns("DESCRIPTION")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -836,14 +847,16 @@ Partial Public Class asdbDS
             MyBase.Columns.Add(Me.columnKNO)
             Me.columnWDWLOC = New Global.System.Data.DataColumn("WDWLOC", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnWDWLOC)
-            Me.columnPARTS = New Global.System.Data.DataColumn("PARTS", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnPARTS)
             Me.columnUNITPRICE = New Global.System.Data.DataColumn("UNITPRICE", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnUNITPRICE)
             Me.columnQTY = New Global.System.Data.DataColumn("QTY", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnQTY)
-            Me.columnNETPRICE = New Global.System.Data.DataColumn("NETPRICE", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnNETPRICE)
+            Me.columnNETAMOUNT = New Global.System.Data.DataColumn("NETAMOUNT", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNETAMOUNT)
+            Me.columnARTICLENO = New Global.System.Data.DataColumn("ARTICLENO", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnARTICLENO)
+            Me.columnDESCRIPTION = New Global.System.Data.DataColumn("DESCRIPTION", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDESCRIPTION)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1228,21 +1241,6 @@ Partial Public Class asdbDS
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property PARTS() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableITEMTB.PARTSColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'PARTS' in table 'ITEMTB' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableITEMTB.PARTSColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property UNITPRICE() As Decimal
             Get
                 Try 
@@ -1273,16 +1271,46 @@ Partial Public Class asdbDS
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property NETPRICE() As Decimal
+        Public Property NETAMOUNT() As Decimal
             Get
                 Try 
-                    Return CType(Me(Me.tableITEMTB.NETPRICEColumn),Decimal)
+                    Return CType(Me(Me.tableITEMTB.NETAMOUNTColumn),Decimal)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'NETPRICE' in table 'ITEMTB' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'NETAMOUNT' in table 'ITEMTB' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableITEMTB.NETPRICEColumn) = value
+                Me(Me.tableITEMTB.NETAMOUNTColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property ARTICLENO() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableITEMTB.ARTICLENOColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'ARTICLENO' in table 'ITEMTB' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableITEMTB.ARTICLENOColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property DESCRIPTION() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableITEMTB.DESCRIPTIONColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'DESCRIPTION' in table 'ITEMTB' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableITEMTB.DESCRIPTIONColumn) = value
             End Set
         End Property
         
@@ -1336,18 +1364,6 @@ Partial Public Class asdbDS
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsPARTSNull() As Boolean
-            Return Me.IsNull(Me.tableITEMTB.PARTSColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetPARTSNull()
-            Me(Me.tableITEMTB.PARTSColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsUNITPRICENull() As Boolean
             Return Me.IsNull(Me.tableITEMTB.UNITPRICEColumn)
         End Function
@@ -1372,14 +1388,38 @@ Partial Public Class asdbDS
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsNETPRICENull() As Boolean
-            Return Me.IsNull(Me.tableITEMTB.NETPRICEColumn)
+        Public Function IsNETAMOUNTNull() As Boolean
+            Return Me.IsNull(Me.tableITEMTB.NETAMOUNTColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetNETPRICENull()
-            Me(Me.tableITEMTB.NETPRICEColumn) = Global.System.Convert.DBNull
+        Public Sub SetNETAMOUNTNull()
+            Me(Me.tableITEMTB.NETAMOUNTColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsARTICLENONull() As Boolean
+            Return Me.IsNull(Me.tableITEMTB.ARTICLENOColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetARTICLENONull()
+            Me(Me.tableITEMTB.ARTICLENOColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsDESCRIPTIONNull() As Boolean
+            Return Me.IsNull(Me.tableITEMTB.DESCRIPTIONColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetDESCRIPTIONNull()
+            Me(Me.tableITEMTB.DESCRIPTIONColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     

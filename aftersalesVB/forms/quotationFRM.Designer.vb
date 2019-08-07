@@ -52,7 +52,7 @@ Partial Class quotationFRM
         Me.quGRID.RowHeadersWidth = 30
         Me.quGRID.RowTemplate.Height = 30
         Me.quGRID.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.quGRID.Size = New System.Drawing.Size(1049, 283)
+        Me.quGRID.Size = New System.Drawing.Size(789, 283)
         Me.quGRID.StateCommon.Background.Color1 = System.Drawing.Color.White
         Me.quGRID.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
         Me.quGRID.StateCommon.DataCell.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) _
@@ -136,7 +136,7 @@ Partial Class quotationFRM
         'KryptonLabel1
         '
         Me.KryptonLabel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.KryptonLabel1.Location = New System.Drawing.Point(949, 135)
+        Me.KryptonLabel1.Location = New System.Drawing.Point(689, 135)
         Me.KryptonLabel1.Name = "KryptonLabel1"
         Me.KryptonLabel1.Size = New System.Drawing.Size(125, 37)
         Me.KryptonLabel1.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
@@ -153,7 +153,7 @@ Partial Class quotationFRM
         Me.Panel1.Controls.Add(Me.quGRID)
         Me.Panel1.Location = New System.Drawing.Point(23, 178)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1051, 285)
+        Me.Panel1.Size = New System.Drawing.Size(791, 285)
         Me.Panel1.TabIndex = 570
         '
         'quotationFRM

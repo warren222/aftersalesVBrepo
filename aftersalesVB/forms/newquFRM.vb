@@ -12,14 +12,43 @@ Public Class newquFRM
             MetroFramework.MetroMessageBox.Show(Me, "numeric format", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
         End If
+        duplicatedetect()
+
         If save.Text = "add" Then
-            add()
-            quotationFRM.refreshBTN.PerformClick()
-            newcallinFRM.loadconcern()
+            If duplicate = True Then
+                MessageBox.Show("ASE# already used by another quotation!
+try a different ASE#", "Duplicate ASE#", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Else
+                add()
+                quotationFRM.refreshBTN.PerformClick()
+                newcallinFRM.loadconcern()
+            End If
+
         ElseIf save.Text = "save" Then
             update()
             quotationFRM.refreshBTN.PerformClick()
         End If
+    End Sub
+    Dim duplicate As Boolean
+    Private Sub duplicatedetect()
+        Dim str As String = "select aseno from quotationtb where aseno = @aseno"
+        Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
+            Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
+                Try
+                    sqlcon.Open()
+                    sqlcmd.Parameters.AddWithValue("@aseno", aseno.Text)
+                    Using dr As SqlDataReader = sqlcmd.ExecuteReader
+                        If dr.HasRows = True Then
+                            duplicate = True
+                        Else
+                            duplicate = False
+                        End If
+                    End Using
+                Catch ex As Exception
+                    MsgBox(ex.ToString)
+                End Try
+            End Using
+        End Using
     End Sub
     Public Sub add()
         Dim str As String = "declare @id as integer = (select isnull(max(id),0)+1 from quotationtb)
