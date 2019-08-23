@@ -25,10 +25,8 @@ Public Class newservicingFRM
 
 
     Public Sub loadteam()
-        Dim str As String = "SELECT DISTINCT 
-                            A.TEAM,
-                            (SELECT MAX(ID) FROM TEAMTB WHERE TEAM = A.TEAM) AS ID
-                            FROM TEAMTB AS A"
+        Dim str As String = "select * into #tbsb from (select max(DATED) as dated,TEAM from teamtb group by TEAM) as tb
+select dated,team, (select id from teamtb where dated = tb.dated and team = tb.team) as id from #tbsb as tb"
         Dim ds As New DataSet
         ds.Clear()
         Using sqlcon As SqlConnection = New SqlConnection(SQL.sqlcon1str)
@@ -37,13 +35,13 @@ Public Class newservicingFRM
                     Try
                         sqlcon.Open()
                         da.SelectCommand = sqlcmd
-                        da.Fill(ds, "TEAMTB")
-                        TEAM.DataSource = ds.Tables("TEAMTB")
+                        da.Fill(ds, "tb")
+                        TEAM.DataSource = ds.Tables("tb")
                         TEAM.DisplayMember = "TEAM"
                         'TEAM.SelectedIndex = -1
 
                         teamid.DataBindings.Clear()
-                        teamid.DataBindings.Add("text", ds.Tables("TEAMTB"), "id")
+                        teamid.DataBindings.Add("text", ds.Tables("tb"), "id")
 
                     Catch ex As Exception
                         MsgBox(ex.ToString)

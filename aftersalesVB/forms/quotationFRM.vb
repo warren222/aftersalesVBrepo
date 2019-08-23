@@ -21,8 +21,11 @@ Public Class quotationFRM
                              CIN,
                              ASENO,
                              QDATE as [DATE],
-                             OTHERCHARGES as [OTHER CHARGES],
-                             PARTICULAR,ACCEPTED
+                             format(OTHERCHARGES,'n2') as [OTHER CHARGES],
+                             PARTICULAR,
+                             ACCEPTED,
+                             format(NETPRICE,'n2') as NETPRICE,
+                             format(Actualprice,'n2') as [ACTUAL PRICE] 
                              from quotationtb where cin = @cin"
         Dim ds As New DataSet
         ds.Clear()
@@ -46,6 +49,10 @@ Public Class quotationFRM
                             .Columns("ACCEPTED").Visible = False
                             .Columns("other charges").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
                             .Columns("other charges").DefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomRight
+                            .Columns("netprice").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+                            .Columns("netprice").DefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomRight
+                            .Columns("actual price").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+                            .Columns("actual price").DefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomRight
                         End With
                     Catch ex As Exception
                         MsgBox(ex.ToString)
@@ -92,10 +99,10 @@ Public Class quotationFRM
         End With
         With quGRID
             .Columns.Insert(0, acceptedbtn)
-            .Columns.Insert(7, itembtn)
-            .Columns.Insert(8, prevbtn)
-            .Columns.Insert(9, updatebtn)
-            .Columns.Insert(10, deletebtn)
+            .Columns.Insert(10, itembtn)
+            .Columns.Insert(11, prevbtn)
+            .Columns.Insert(12, updatebtn)
+            .Columns.Insert(13, deletebtn)
         End With
 
         For i As Integer = 0 To quGRID.RowCount - 1
@@ -118,7 +125,7 @@ Public Class quotationFRM
             id = quGRID.Item("id", e.RowIndex).Value.ToString
             If e.ColumnIndex = 0 Then
                 quotationstatusFRM.ShowDialog()
-            ElseIf e.ColumnIndex = 9 Then
+            ElseIf e.ColumnIndex = 12 Then
                 newquFRM.aseno.Enabled = False
                 newquFRM.qudate.Text = quGRID.Item("date", e.RowIndex).Value.ToString
                 newquFRM.aseno.Text = quGRID.Item("aseno", e.RowIndex).Value.ToString
@@ -128,12 +135,12 @@ Public Class quotationFRM
                 newquFRM.Text = "Editing"
                 newquFRM.save.Text = "save"
                 newquFRM.ShowDialog()
-            ElseIf e.ColumnIndex = 8 Then
+            ElseIf e.ColumnIndex = 11 Then
                 d = quGRID.Item("date", e.RowIndex).Value.ToString
                 ase = quGRID.Item("aseno", e.RowIndex).Value.ToString
                 oth = quGRID.Item("other charges", e.RowIndex).Value.ToString
                 prevFRM.ShowDialog()
-            ElseIf e.ColumnIndex = 10 Then
+            ElseIf e.ColumnIndex = 13 Then
 
                 If MetroFramework.MetroMessageBox.Show(Me, "Delete " & quGRID.Item("aseno", e.RowIndex).Value.ToString & "?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
                     Return
@@ -152,9 +159,12 @@ Public Class quotationFRM
                     End Using
                     loadquotation()
                 End If
-            ElseIf e.ColumnIndex = 7 Then
+            ElseIf e.ColumnIndex = 10 Then
                 aseno = quGRID.Item("ASENO", e.RowIndex).Value.ToString
                 itemFRM.KryptonLabel7.Text = quGRID.Item("ASENO", e.RowIndex).Value.ToString
+                itemFRM.particular.Text = quGRID.Item("PARTICULAR", e.RowIndex).Value.ToString
+                itemFRM.othercharges.Text = quGRID.Item("other charges", e.RowIndex).Value.ToString
+                itemFRM.ActualPrice.Text = quGRID.Item("actual price", e.RowIndex).Value.ToString
                 itemFRM.ShowDialog()
             End If
         End If

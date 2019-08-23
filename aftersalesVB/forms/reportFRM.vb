@@ -2,9 +2,14 @@
 Public Class reportFRM
     Dim sql As New sql
     Dim bs As New BindingSource
-    Public id As String = ""
+    Dim bs1 As New BindingSource
+    Dim bs2 As New BindingSource
+    Public id As String
     Private Sub reportFRM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        reportGRID.DataSource = bs
+        mobgv.DataSource = bs1
+        teamgv.DataSource = bs2
+        Button3.PerformClick()
         loadreport()
     End Sub
     Public Sub loadreport()
@@ -22,7 +27,7 @@ Public Class reportFRM
                         da.Fill(ds, "reporttb")
                         bs.DataSource = ds
                         bs.DataMember = "reporttb"
-                        reportGRID.DataSource = bs
+
                         addcolumns()
                         With reportGRID
                             .Columns("id").Visible = False
@@ -125,5 +130,120 @@ Public Class reportFRM
         For Each row As DataGridViewRow In rows
             id = row.Cells("id").Value.ToString
         Next
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim str As String = "
+select * into #temptb1 from(
+SELECT a.[ID]
+      ,[SID]
+      ,[KNO]
+      ,[ITEMNO]
+      ,[LOCATION]
+      ,[SPECIFICATION]
+	  ,c.ASSESSMENT
+  FROM (([REPORTTB] as a
+  inner join relrepass as b
+  on a.id = b.REPID)
+  inner join ASSESSMENTTB as c
+  on b.ASSID = c.ID) where a.[sid] = @sid
+  ) as tb 
+  
+  select distinct kno,id,itemno,LOCATION,specification,stuff((select ' ,'+assessment from #temptb1 where id = a.id for xml path('')),1,2,'') as assessment from #temptb1 as a
+"
+        Dim DS As New asdbDS
+        DS.Clear()
+        Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
+            Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
+                Try
+                    sqlcon.Open()
+                    Dim da As SqlDataAdapter = New SqlDataAdapter
+                    sqlcmd.Parameters.AddWithValue("@sid", servicingFRM.id)
+                    Console.WriteLine(servicingFRM.id)
+                    da.SelectCommand = sqlcmd
+                    da.SelectCommand.CommandTimeout = 30000
+                    da.Fill(DS.ASSESSMENTTB)
+                    ServicingRPTfrm.ASSESSMENTTBBindingSource.DataSource = DS.ASSESSMENTTB.DefaultView
+                Catch ex As Exception
+                    MsgBox(ex.ToString)
+                End Try
+            End Using
+        End Using
+        ServicingRPTfrm.Show()
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        mobiizationFRM.insertbtn.Visible = True
+        mobiizationFRM.Show()
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Dim str As String = "
+       select TEAM
+      ,b.[DATED]
+      ,[PLATENO]
+      ,[SMILEAGE]
+      ,[EMILEAGE]
+      ,[TOLLFEE]
+      ,[BUSFARE]
+      ,[AIRFARE]
+      ,[MEALS]
+      ,[OVERTIME]
+      ,b.teamid
+	  
+	  from (RELMOBSER as a
+	  inner join MOBILIZATIONTB as b
+	  on a.MOBID=b.ID)
+	  left join TEAMTB as c 
+	  on b.teamid = c.id
+	  where a.serid = @sid"
+        Dim DS As New DataSet
+        DS.Clear()
+        Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
+            Using sqlcmd As SqlCommand = New SqlCommand(Str, sqlcon)
+                Try
+                    sqlcon.Open()
+                    Dim da As SqlDataAdapter = New SqlDataAdapter
+                    sqlcmd.Parameters.AddWithValue("@sid", servicingFRM.id)
+                    da.SelectCommand = sqlcmd
+                    da.SelectCommand.CommandTimeout = 30000
+                    da.Fill(DS, "relmobser")
+                    bs1.DataSource = DS
+                    bs1.DataMember = "relmobser"
+                Catch ex As Exception
+                    MsgBox(ex.ToString)
+                End Try
+            End Using
+        End Using
+
+    End Sub
+    Private Sub loadteam()
+        Dim str As String = "
+        select PERSONNEL,POSITION from PERSONNELTB where TEAMID = @teamid "
+        Dim DS As New DataSet
+        DS.Clear()
+        Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
+            Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
+                Try
+                    sqlcon.Open()
+                    Dim da As SqlDataAdapter = New SqlDataAdapter
+                    sqlcmd.Parameters.AddWithValue("@teamid", teamid)
+                    da.SelectCommand = sqlcmd
+                    da.SelectCommand.CommandTimeout = 30000
+                    da.Fill(DS, "PERSONNELTB")
+                    bs2.DataSource = DS
+                    bs2.DataMember = "PERSONNELTB"
+                Catch ex As Exception
+                    MsgBox(ex.ToString)
+                End Try
+            End Using
+        End Using
+    End Sub
+    Dim teamid As String
+    Private Sub mobgv_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles mobgv.CellClick
+        If mobgv.RowCount >= 0 And e.RowIndex >= 0 Then
+            teamid = mobgv.Item("teamid", e.RowIndex).Value.ToString
+            loadteam()
+        End If
     End Sub
 End Class

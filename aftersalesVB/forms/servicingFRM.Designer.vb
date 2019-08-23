@@ -24,15 +24,22 @@ Partial Class servicingFRM
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.servicingGRID = New ComponentFactory.Krypton.Toolkit.KryptonDataGridView()
-        Me.refresh = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
         Me.jo = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.address = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.projectname = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.KryptonLabel1 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
-        Me.newbtn = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.KryptonLabel2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
+        Me.MetroDateTime1 = New MetroFramework.Controls.MetroDateTime()
+        Me.servicingdate = New MetroFramework.Controls.MetroTextBox()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.refresh = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.remarks = New MetroFramework.Controls.MetroTextBox()
         CType(Me.servicingGRID, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'servicingGRID
@@ -53,14 +60,14 @@ Partial Class servicingFRM
         Me.servicingGRID.RowHeadersWidth = 30
         Me.servicingGRID.RowTemplate.Height = 30
         Me.servicingGRID.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.servicingGRID.Size = New System.Drawing.Size(1102, 298)
+        Me.servicingGRID.Size = New System.Drawing.Size(992, 237)
         Me.servicingGRID.StateCommon.Background.Color1 = System.Drawing.Color.White
         Me.servicingGRID.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
         Me.servicingGRID.StateCommon.DataCell.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right), ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
         Me.servicingGRID.StateCommon.DataCell.Content.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.servicingGRID.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.Olive
+        Me.servicingGRID.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.servicingGRID.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.servicingGRID.StateCommon.HeaderColumn.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Dashed
         Me.servicingGRID.StateCommon.HeaderColumn.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) _
@@ -72,78 +79,45 @@ Partial Class servicingFRM
         Me.servicingGRID.StateCommon.HeaderColumn.Content.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias
         Me.servicingGRID.TabIndex = 556
         '
-        'refresh
-        '
-        Me.refresh.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.refresh.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.refresh.Image = Nothing
-        Me.refresh.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.refresh.Location = New System.Drawing.Point(23, 156)
-        Me.refresh.Name = "refresh"
-        Me.refresh.Size = New System.Drawing.Size(119, 24)
-        Me.refresh.Style = MetroFramework.MetroColorStyle.Yellow
-        Me.refresh.TabIndex = 557
-        Me.refresh.Text = "refresh"
-        Me.refresh.UseCustomForeColor = True
-        Me.refresh.UseSelectable = True
-        Me.refresh.UseVisualStyleBackColor = True
-        '
         'jo
         '
-        Me.jo.Location = New System.Drawing.Point(23, 121)
+        Me.jo.Location = New System.Drawing.Point(14, 78)
         Me.jo.Name = "jo"
         Me.jo.Size = New System.Drawing.Size(93, 22)
-        Me.jo.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.jo.StateCommon.ShortText.Color1 = System.Drawing.Color.White
         Me.jo.StateCommon.ShortText.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.jo.TabIndex = 561
         Me.jo.Values.Text = "Job Order No"
         '
         'address
         '
-        Me.address.Location = New System.Drawing.Point(23, 89)
+        Me.address.Location = New System.Drawing.Point(14, 46)
         Me.address.Name = "address"
         Me.address.Size = New System.Drawing.Size(70, 26)
-        Me.address.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.address.StateCommon.ShortText.Color1 = System.Drawing.Color.White
         Me.address.StateCommon.ShortText.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.address.TabIndex = 560
         Me.address.Values.Text = "Address"
         '
         'projectname
         '
-        Me.projectname.Location = New System.Drawing.Point(23, 49)
+        Me.projectname.Location = New System.Drawing.Point(14, 6)
         Me.projectname.Name = "projectname"
         Me.projectname.Size = New System.Drawing.Size(145, 34)
-        Me.projectname.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.projectname.StateCommon.ShortText.Color1 = System.Drawing.Color.White
         Me.projectname.StateCommon.ShortText.Font = New System.Drawing.Font("Segoe UI", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.projectname.TabIndex = 559
         Me.projectname.Values.Text = "Project Name"
         '
         'KryptonLabel1
         '
-        Me.KryptonLabel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.KryptonLabel1.Location = New System.Drawing.Point(914, 147)
+        Me.KryptonLabel1.Location = New System.Drawing.Point(15, 214)
         Me.KryptonLabel1.Name = "KryptonLabel1"
         Me.KryptonLabel1.Size = New System.Drawing.Size(219, 37)
         Me.KryptonLabel1.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.KryptonLabel1.StateCommon.ShortText.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.KryptonLabel1.TabIndex = 562
         Me.KryptonLabel1.Values.Text = "Servicing Schedule"
-        '
-        'newbtn
-        '
-        Me.newbtn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.newbtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.newbtn.Image = Nothing
-        Me.newbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.newbtn.Location = New System.Drawing.Point(148, 156)
-        Me.newbtn.Name = "newbtn"
-        Me.newbtn.Size = New System.Drawing.Size(119, 24)
-        Me.newbtn.Style = MetroFramework.MetroColorStyle.Yellow
-        Me.newbtn.TabIndex = 563
-        Me.newbtn.Text = "new"
-        Me.newbtn.UseCustomForeColor = True
-        Me.newbtn.UseSelectable = True
-        Me.newbtn.UseVisualStyleBackColor = True
         '
         'Panel1
         '
@@ -152,39 +126,188 @@ Partial Class servicingFRM
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel1.Controls.Add(Me.servicingGRID)
-        Me.Panel1.Location = New System.Drawing.Point(23, 186)
+        Me.Panel1.Location = New System.Drawing.Point(23, 257)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1104, 300)
+        Me.Panel1.Size = New System.Drawing.Size(994, 239)
         Me.Panel1.TabIndex = 564
+        '
+        'KryptonLabel2
+        '
+        Me.KryptonLabel2.Location = New System.Drawing.Point(15, 141)
+        Me.KryptonLabel2.Name = "KryptonLabel2"
+        Me.KryptonLabel2.Size = New System.Drawing.Size(98, 22)
+        Me.KryptonLabel2.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.KryptonLabel2.StateCommon.ShortText.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KryptonLabel2.TabIndex = 566
+        Me.KryptonLabel2.Values.Text = "Servicing Date"
+        '
+        'MetroDateTime1
+        '
+        Me.MetroDateTime1.CustomFormat = "yyyy-MMM-dd"
+        Me.MetroDateTime1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.MetroDateTime1.Location = New System.Drawing.Point(15, 169)
+        Me.MetroDateTime1.MinimumSize = New System.Drawing.Size(0, 29)
+        Me.MetroDateTime1.Name = "MetroDateTime1"
+        Me.MetroDateTime1.Size = New System.Drawing.Size(134, 29)
+        Me.MetroDateTime1.Style = MetroFramework.MetroColorStyle.Red
+        Me.MetroDateTime1.TabIndex = 565
+        '
+        'servicingdate
+        '
+        '
+        '
+        '
+        Me.servicingdate.CustomButton.Image = Nothing
+        Me.servicingdate.CustomButton.Location = New System.Drawing.Point(163, 2)
+        Me.servicingdate.CustomButton.Name = ""
+        Me.servicingdate.CustomButton.Size = New System.Drawing.Size(23, 23)
+        Me.servicingdate.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.servicingdate.CustomButton.TabIndex = 1
+        Me.servicingdate.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.servicingdate.CustomButton.UseSelectable = True
+        Me.servicingdate.CustomButton.Visible = False
+        Me.servicingdate.DisplayIcon = True
+        Me.servicingdate.FontSize = MetroFramework.MetroTextBoxSize.Medium
+        Me.servicingdate.Lines = New String(-1) {}
+        Me.servicingdate.Location = New System.Drawing.Point(155, 170)
+        Me.servicingdate.MaxLength = 32767
+        Me.servicingdate.Multiline = True
+        Me.servicingdate.Name = "servicingdate"
+        Me.servicingdate.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.servicingdate.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.servicingdate.SelectedText = ""
+        Me.servicingdate.SelectionLength = 0
+        Me.servicingdate.SelectionStart = 0
+        Me.servicingdate.ShowClearButton = True
+        Me.servicingdate.Size = New System.Drawing.Size(189, 28)
+        Me.servicingdate.Style = MetroFramework.MetroColorStyle.Red
+        Me.servicingdate.TabIndex = 567
+        Me.servicingdate.UseCustomForeColor = True
+        Me.servicingdate.UseSelectable = True
+        Me.servicingdate.WaterMark = "Enter Servicing Date"
+        Me.servicingdate.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.servicingdate.WaterMarkFont = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        '
+        'Panel2
+        '
+        Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel2.Controls.Add(Me.projectname)
+        Me.Panel2.Controls.Add(Me.address)
+        Me.Panel2.Controls.Add(Me.jo)
+        Me.Panel2.Location = New System.Drawing.Point(0, 26)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(1041, 109)
+        Me.Panel2.TabIndex = 568
+        '
+        'refresh
+        '
+        Me.refresh.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.refresh.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.refresh.Location = New System.Drawing.Point(924, 229)
+        Me.refresh.Name = "refresh"
+        Me.refresh.Size = New System.Drawing.Size(92, 23)
+        Me.refresh.TabIndex = 575
+        Me.refresh.Text = "reload"
+        Me.refresh.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.Button2.Location = New System.Drawing.Point(709, 169)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(94, 23)
+        Me.Button2.TabIndex = 574
+        Me.Button2.Text = "add"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.Button1.Location = New System.Drawing.Point(809, 169)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(94, 23)
+        Me.Button1.TabIndex = 576
+        Me.Button1.Text = "update"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'remarks
+        '
+        '
+        '
+        '
+        Me.remarks.CustomButton.Image = Nothing
+        Me.remarks.CustomButton.Location = New System.Drawing.Point(327, 2)
+        Me.remarks.CustomButton.Name = ""
+        Me.remarks.CustomButton.Size = New System.Drawing.Size(23, 23)
+        Me.remarks.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.remarks.CustomButton.TabIndex = 1
+        Me.remarks.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.remarks.CustomButton.UseSelectable = True
+        Me.remarks.CustomButton.Visible = False
+        Me.remarks.DisplayIcon = True
+        Me.remarks.FontSize = MetroFramework.MetroTextBoxSize.Medium
+        Me.remarks.Lines = New String(-1) {}
+        Me.remarks.Location = New System.Drawing.Point(350, 170)
+        Me.remarks.MaxLength = 32767
+        Me.remarks.Multiline = True
+        Me.remarks.Name = "remarks"
+        Me.remarks.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.remarks.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.remarks.SelectedText = ""
+        Me.remarks.SelectionLength = 0
+        Me.remarks.SelectionStart = 0
+        Me.remarks.ShowClearButton = True
+        Me.remarks.Size = New System.Drawing.Size(353, 28)
+        Me.remarks.Style = MetroFramework.MetroColorStyle.Red
+        Me.remarks.TabIndex = 577
+        Me.remarks.UseCustomForeColor = True
+        Me.remarks.UseSelectable = True
+        Me.remarks.WaterMark = "Remarks"
+        Me.remarks.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.remarks.WaterMarkFont = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
         '
         'servicingFRM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1150, 509)
-        Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.newbtn)
-        Me.Controls.Add(Me.KryptonLabel1)
-        Me.Controls.Add(Me.jo)
-        Me.Controls.Add(Me.address)
-        Me.Controls.Add(Me.projectname)
+        Me.ClientSize = New System.Drawing.Size(1040, 509)
+        Me.Controls.Add(Me.remarks)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.refresh)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.Panel2)
+        Me.Controls.Add(Me.KryptonLabel2)
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.MetroDateTime1)
+        Me.Controls.Add(Me.KryptonLabel1)
+        Me.Controls.Add(Me.servicingdate)
         Me.MinimizeBox = False
         Me.Name = "servicingFRM"
-        Me.Style = MetroFramework.MetroColorStyle.Brown
+        Me.Style = MetroFramework.MetroColorStyle.Red
         CType(Me.servicingGRID, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents servicingGRID As ComponentFactory.Krypton.Toolkit.KryptonDataGridView
-    Friend WithEvents refresh As MetroFramework.Controls.MetroTextBox.MetroTextButton
     Friend WithEvents jo As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents address As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents projectname As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents KryptonLabel1 As ComponentFactory.Krypton.Toolkit.KryptonLabel
-    Friend WithEvents newbtn As MetroFramework.Controls.MetroTextBox.MetroTextButton
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents KryptonLabel2 As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Friend WithEvents MetroDateTime1 As MetroFramework.Controls.MetroDateTime
+    Friend WithEvents servicingdate As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents refresh As Button
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button1 As Button
+    Friend WithEvents remarks As MetroFramework.Controls.MetroTextBox
 End Class

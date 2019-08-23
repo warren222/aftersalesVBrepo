@@ -24,7 +24,7 @@ Partial Class mainform
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(mainform))
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.newPNL = New MetroFramework.Controls.MetroTile()
         Me.MetroTile1 = New MetroFramework.Controls.MetroTile()
         Me.MetroTile2 = New MetroFramework.Controls.MetroTile()
@@ -49,6 +49,7 @@ Partial Class mainform
         Me.ServicingToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.QuotationToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditAddressToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MetroTile6 = New MetroFramework.Controls.MetroTile()
         CType(Me.callinGRID, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -92,7 +93,7 @@ Partial Class mainform
         '
         Me.MetroTile2.ActiveControl = Nothing
         Me.MetroTile2.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(126, Byte), Integer))
-        Me.MetroTile2.Location = New System.Drawing.Point(10, 391)
+        Me.MetroTile2.Location = New System.Drawing.Point(10, 490)
         Me.MetroTile2.Name = "MetroTile2"
         Me.MetroTile2.Size = New System.Drawing.Size(107, 71)
         Me.MetroTile2.Style = MetroFramework.MetroColorStyle.Orange
@@ -178,8 +179,8 @@ Partial Class mainform
         Me.callinGRID.AllowUserToAddRows = False
         Me.callinGRID.AllowUserToDeleteRows = False
         Me.callinGRID.AllowUserToResizeRows = False
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.callinGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.callinGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
         Me.callinGRID.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -231,6 +232,7 @@ Partial Class mainform
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.Controls.Add(Me.MetroTile6)
         Me.Panel1.Controls.Add(Me.MetroTile4)
         Me.Panel1.Controls.Add(Me.MetroTile5)
         Me.Panel1.Controls.Add(Me.newPNL)
@@ -249,10 +251,9 @@ Partial Class mainform
         Me.MetroTile4.Location = New System.Drawing.Point(10, 313)
         Me.MetroTile4.Name = "MetroTile4"
         Me.MetroTile4.Size = New System.Drawing.Size(107, 71)
-        Me.MetroTile4.Style = MetroFramework.MetroColorStyle.Teal
+        Me.MetroTile4.Style = MetroFramework.MetroColorStyle.Yellow
         Me.MetroTile4.TabIndex = 559
         Me.MetroTile4.Text = "Schedule"
-        Me.MetroTile4.TileImage = CType(resources.GetObject("MetroTile4.TileImage"), System.Drawing.Image)
         Me.MetroTile4.TileImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.MetroTile4.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular
         Me.MetroTile4.UseSelectable = True
@@ -403,6 +404,21 @@ Partial Class mainform
         Me.EditAddressToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
         Me.EditAddressToolStripMenuItem.Text = "Edit Address"
         '
+        'MetroTile6
+        '
+        Me.MetroTile6.ActiveControl = Nothing
+        Me.MetroTile6.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(126, Byte), Integer))
+        Me.MetroTile6.Location = New System.Drawing.Point(10, 390)
+        Me.MetroTile6.Name = "MetroTile6"
+        Me.MetroTile6.Size = New System.Drawing.Size(107, 71)
+        Me.MetroTile6.Style = MetroFramework.MetroColorStyle.Blue
+        Me.MetroTile6.TabIndex = 560
+        Me.MetroTile6.Text = "Mobilization"
+        Me.MetroTile6.TileImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.MetroTile6.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular
+        Me.MetroTile6.UseSelectable = True
+        Me.MetroTile6.UseTileImage = True
+        '
         'mainform
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -448,4 +464,5 @@ Partial Class mainform
     Friend WithEvents ServicingToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents QuotationToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EditAddressToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MetroTile6 As MetroFramework.Controls.MetroTile
 End Class

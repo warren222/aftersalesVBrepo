@@ -197,6 +197,12 @@
     <Compile Include="forms\memberFRM.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="forms\mobiizationFRM.Designer.vb">
+      <DependentUpon>mobiizationFRM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\mobiizationFRM.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="forms\newaccessoriesFRM.Designer.vb">
       <DependentUpon>newaccessoriesFRM.vb</DependentUpon>
     </Compile>
@@ -311,6 +317,12 @@
     <Compile Include="forms\servicingFRM.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="forms\ServicingRPTfrm.Designer.vb">
+      <DependentUpon>ServicingRPTfrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\ServicingRPTfrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="forms\ServicingScheduleFRM.Designer.vb">
       <DependentUpon>ServicingScheduleFRM.vb</DependentUpon>
     </Compile>
@@ -371,6 +383,9 @@
     <EmbeddedResource Include="forms\memberFRM.resx">
       <DependentUpon>memberFRM.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms\mobiizationFRM.resx">
+      <DependentUpon>mobiizationFRM.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\newaccessoriesFRM.resx">
       <DependentUpon>newaccessoriesFRM.vb</DependentUpon>
     </EmbeddedResource>
@@ -427,6 +442,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\servicingFRM.resx">
       <DependentUpon>servicingFRM.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\servicingRPT.rdlc" />
+    <EmbeddedResource Include="forms\ServicingRPTfrm.resx">
+      <DependentUpon>ServicingRPTfrm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\ServicingScheduleFRM.resx">
       <DependentUpon>ServicingScheduleFRM.vb</DependentUpon>

@@ -89,8 +89,12 @@ from itemtb where aseno = @aseno
                              declare @netprice as decimal(10,2) = (select 
                                                                       sum(b.NETAMOUNT) from ITEMTB as a
                                                                       inner join partstb as b on a.id = b.iid and a.aseno = @aseno)
+                             declare @othercharges as decimal(10,2) = (select OTHERCHARGES from QUOTATIONTB where aseno  = @aseno)
 
-                             select @unitprice,@netprice
+                             declare @totalamount as decimal(10,2) = @netprice+@othercharges
+                             select format(@unitprice,'n2'),format(@netprice,'n2'),format(@othercharges,'n2'),format(@totalamount,'n2')
+
+                             update quotationtb set unitprice = @unitprice,NETPRICE=@NETPRICE where  aseno  = @aseno
 "
         Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
             Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
@@ -101,6 +105,8 @@ from itemtb where aseno = @aseno
                         While rd.Read
                             unitprice.Text = rd(0).ToString
                             netprice.Text = rd(1).ToString
+                            othercharges.Text = rd(2).ToString
+                            totalamount.Text = rd(3).ToString
                         End While
                     End Using
                 Catch ex As Exception
@@ -242,5 +248,39 @@ from itemtb where aseno = @aseno
             itemno.Text = ROW.Cells("ITEM_NO").Value.ToString
             wdwloc.Text = ROW.Cells("LOCATION").Value.ToString
         End If
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        othercharges.Text = othercharges.Text.Replace(",", "")
+        ActualPrice.Text = ActualPrice.Text.Replace(",", "")
+        If Not IsNumeric(othercharges.Text) Or Not IsNumeric(ActualPrice.Text) Then
+            MessageBox.Show("", "", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Exit Sub
+        End If
+        Dim str As String = "update quotationtb set othercharges=@othercharges , particular = @particular, actualprice = @actualprice where aseno = @aseno"
+        Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
+            Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
+                Try
+                    sqlcon.Open()
+                    sqlcmd.Parameters.AddWithValue("@aseno", quotationFRM.aseno)
+                    sqlcmd.Parameters.AddWithValue("@othercharges", othercharges.Text)
+                    sqlcmd.Parameters.AddWithValue("@particular", particular.Text)
+                    sqlcmd.Parameters.AddWithValue("@actualprice", ActualPrice.Text)
+                    sqlcmd.ExecuteNonQuery()
+                    MessageBox.Show("saved!", "", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Catch ex As Exception
+                    MsgBox(ex.ToString)
+                End Try
+            End Using
+        End Using
+        totalsummary()
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        ActualPrice.Text = totalamount.Text
+    End Sub
+
+    Private Sub Panel5_Paint(sender As Object, e As PaintEventArgs) Handles Panel5.Paint
+
     End Sub
 End Class

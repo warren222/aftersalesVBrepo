@@ -22,8 +22,8 @@ Partial Class newcallinFRM
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(newcallinFRM))
         Me.calldate = New MetroFramework.Controls.MetroTextBox()
         Me.calldategen = New MetroFramework.Controls.MetroDateTime()
@@ -191,9 +191,9 @@ Partial Class newcallinFRM
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(16, 294)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(53, 13)
+        Me.Label4.Size = New System.Drawing.Size(96, 13)
         Me.Label4.TabIndex = 510
-        Me.Label4.Text = "Concern :"
+        Me.Label4.Text = "Concern (remarks):"
         '
         'Panel4
         '
@@ -675,9 +675,9 @@ Partial Class newcallinFRM
         Me.answerGV.AllowUserToOrderColumns = True
         Me.answerGV.AllowUserToResizeColumns = False
         Me.answerGV.AllowUserToResizeRows = False
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        Me.answerGV.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        Me.answerGV.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.answerGV.ColumnHeadersHeight = 30
         Me.answerGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.answerGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1})
@@ -721,9 +721,9 @@ Partial Class newcallinFRM
         Me.questionGRID.AllowUserToOrderColumns = True
         Me.questionGRID.AllowUserToResizeColumns = False
         Me.questionGRID.AllowUserToResizeRows = False
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
-        Me.questionGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        Me.questionGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
         Me.questionGRID.ColumnHeadersHeight = 30
         Me.questionGRID.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.questionGRID.Cursor = System.Windows.Forms.Cursors.Hand

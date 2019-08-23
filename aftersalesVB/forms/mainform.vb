@@ -302,7 +302,7 @@ Public Class mainform
             servicingFRM.projectname.Text = row.Cells("project").Value.ToString
             servicingFRM.address.Text = row.Cells("address").Value.ToString
             servicingFRM.jo.Text = row.Cells("jo").Value.ToString
-
+            ServicingRPTfrm.specs = row.Cells("profile finish").Value.ToString
             telno = row.Cells("telno").Value.ToString
             faxno = row.Cells("faxno").Value.ToString
             quotationFRM.projectname.Text = row.Cells("project").Value.ToString
@@ -451,5 +451,9 @@ Public Class mainform
         If e.Button = MouseButtons.Right Then
             mymenu.Show(callinGRID, e.X, e.Y)
         End If
+    End Sub
+
+    Private Sub MetroTile6_Click(sender As Object, e As EventArgs) Handles MetroTile6.Click
+        mobiizationFRM.Show()
     End Sub
 End Class

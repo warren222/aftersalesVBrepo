@@ -18,8 +18,7 @@ Public Class servicingFRM
                             STATUSDATE AS [STATUS DATE],
                             SERVICING,
                             SDATE AS [SERVICING DATE],
-                            ASSIGNEDPERSONNEL AS [ASSIGNED PERSONNEL],
-                            teamid
+                            REMARKS
                             from servicingtb where cin = @cin ORDER BY SERVICING desc"
         Dim ds As New DataSet
         ds.Clear()
@@ -39,11 +38,11 @@ Public Class servicingFRM
                         servicingGRID.Columns("STATUS DATE").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
                         servicingGRID.Columns("SERVICING").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
                         servicingGRID.Columns("SERVICING DATE").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-                        servicingGRID.Columns("ASSIGNED PERSONNEL").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+
                         servicingGRID.Columns("id").Visible = False
                         servicingGRID.Columns("cin").Visible = False
                         servicingGRID.Columns("STATUS").Visible = False
-                        servicingGRID.Columns("teamid").Visible = False
+
                     Catch ex As Exception
                         MsgBox(ex.ToString)
                     End Try
@@ -100,7 +99,6 @@ Public Class servicingFRM
         Dim statusbtn As New DataGridViewButtonColumn
         Dim reportbtn As New DataGridViewButtonColumn
         Dim rd As New DataGridViewButtonColumn
-        Dim updatebtn As New DataGridViewButtonColumn
         Dim deletebtn As New DataGridViewButtonColumn
 
         statusbtn.Name = "statusbtn"
@@ -114,10 +112,6 @@ Public Class servicingFRM
         rd.HeaderText = ""
         rd.Text = "scanned report"
 
-        updatebtn.Name = "updatebtn"
-        updatebtn.HeaderText = ""
-        updatebtn.Text = "update"
-
         deletebtn.Name = "deletebtn"
         deletebtn.HeaderText = ""
         deletebtn.Text = "delete"
@@ -125,14 +119,12 @@ Public Class servicingFRM
         statusbtn.UseColumnTextForButtonValue = False
         reportbtn.UseColumnTextForButtonValue = True
         rd.UseColumnTextForButtonValue = True
-        updatebtn.UseColumnTextForButtonValue = True
         deletebtn.UseColumnTextForButtonValue = True
 
         servicingGRID.Columns.Insert(0, statusbtn)
         servicingGRID.Columns.Insert(8, reportbtn)
         servicingGRID.Columns.Insert(9, rd)
-        servicingGRID.Columns.Insert(10, updatebtn)
-        servicingGRID.Columns.Insert(11, deletebtn)
+        servicingGRID.Columns.Insert(10, deletebtn)
 
         For i As Integer = 0 To servicingGRID.RowCount - 1
             servicingGRID.Rows(i).Cells.Item(0).Value = servicingGRID.Item("STATUS", i).Value.ToString
@@ -160,6 +152,11 @@ Public Class servicingFRM
     Private Sub servicingGRID_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles servicingGRID.CellClick
         If servicingGRID.RowCount >= 0 And e.RowIndex >= 0 Then
 
+
+
+            id = servicingGRID.Item("id", e.RowIndex).Value.ToString
+            servicingdate.Text = servicingGRID.Item("servicing date", e.RowIndex).Value.ToString
+            remarks.Text = servicingGRID.Item("REMARKS", e.RowIndex).Value.ToString
             If e.ColumnIndex = 0 Then
                 id = servicingGRID.Item("id", e.RowIndex).Value.ToString
                 statusFRM.statusdate.Text = servicingGRID.Item("status date", e.RowIndex).Value.ToString
@@ -174,15 +171,6 @@ Public Class servicingFRM
                 scannedreportFRM.id = servicingGRID.Item("servicing", e.RowIndex).Value.ToString
                 scannedreportFRM.ShowDialog()
             ElseIf e.ColumnIndex = 10 Then
-                newservicingFRM.loadteam()
-                newservicingFRM.Text = "Editing"
-                newservicingFRM.save.Text = "save"
-                id = servicingGRID.Item("id", e.RowIndex).Value.ToString
-                newservicingFRM.servicingdate.Text = servicingGRID.Item("servicing date", e.RowIndex).Value.ToString
-                newservicingFRM.TEAM.Text = servicingGRID.Item("ASSIGNED PERSONNEL", e.RowIndex).Value.ToString
-                newservicingFRM.teamid.Text = servicingGRID.Item("teamid", e.RowIndex).Value.ToString
-                newservicingFRM.ShowDialog()
-            ElseIf e.ColumnIndex = 11 Then
                 If MetroFramework.MetroMessageBox.Show(Me, "Delete " & servicingGRID.Item("servicing", e.RowIndex).Value.ToString & "?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
                     Return
                 Else
@@ -218,7 +206,7 @@ Public Class servicingFRM
 
     End Sub
 
-    Private Sub newbtn_Click(sender As Object, e As EventArgs) Handles newbtn.Click
+    Private Sub newbtn_Click(sender As Object, e As EventArgs)
         newservicingFRM.loadteam()
         newservicingFRM.Text = "New"
         newservicingFRM.save.Text = "add"
@@ -228,5 +216,84 @@ Public Class servicingFRM
 
     Private Sub servicingGRID_RowPostPaint(sender As Object, e As DataGridViewRowPostPaintEventArgs) Handles servicingGRID.RowPostPaint
         sql.rownum(sender, e)
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        add()
+    End Sub
+    Public Sub add()
+        Try
+            Dim str As String = " declare @id as integer = (select isnull(max(id),0)+1 from servicingtb)
+
+                                  declare @sss as integer  = (select isnull(max(id),0) from servicingtb where cin = @cin)
+                                  update servicingtb set [status]='Reschedule',statusdate=@sdate where id = @sss
+                                  insert into servicingtb (id,cin,servicing,sdate,remarks)values(@id,@cin,@servicing,@sdate,@remarks)"
+
+            Dim str2 As String = "select isnull(count(id),0)+1 from servicingtb where cin = @cin"
+            Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
+                Using sqlcmd As SqlCommand = New SqlCommand(str2, sqlcon)
+                    sqlcon.Open()
+                    sqlcmd.Parameters.AddWithValue("@cin", mainform.tempcin)
+                    Using rd As SqlDataReader = sqlcmd.ExecuteReader
+                        While rd.Read
+                            scount = rd(0).ToString
+                        End While
+                    End Using
+                End Using
+                Dim x As String
+                Select Case scount
+                    Case 1
+                        x = "st"
+                    Case 2
+                        x = "nd"
+                    Case 3
+                        x = "rd"
+                    Case Else
+                        x = "th"
+                End Select
+                suffix = "" & scount & "" & x & " Servicing Schedule"
+
+                Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
+                    sqlcmd.Parameters.AddWithValue("@cin", mainform.tempcin)
+                    sqlcmd.Parameters.AddWithValue("@servicing", suffix)
+                    sqlcmd.Parameters.AddWithValue("@sdate", servicingdate.Text)
+                    sqlcmd.Parameters.AddWithValue("@remarks", remarks.Text)
+                    sqlcmd.ExecuteNonQuery()
+                End Using
+            End Using
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        Finally
+            refresh.PerformClick()
+        End Try
+    End Sub
+    Private Sub MetroDateTime1_ValueChanged(sender As Object, e As EventArgs) Handles MetroDateTime1.ValueChanged
+        servicingdate.Text = MetroDateTime1.Text
+    End Sub
+
+    Private Sub MetroDateTime1_MouseDown(sender As Object, e As MouseEventArgs) Handles MetroDateTime1.MouseDown
+        servicingdate.Text = MetroDateTime1.Text
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        updates()
+    End Sub
+    Public Sub updates()
+        Dim str As String = "update servicingtb set sdate=@sdate,remarks=@remarks where id = @id"
+        Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
+            Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
+                Try
+                    sqlcon.Open()
+                    sqlcmd.Parameters.AddWithValue("@id", id)
+                    sqlcmd.Parameters.AddWithValue("@sdate", servicingdate.Text)
+                    sqlcmd.Parameters.AddWithValue("@remarks", remarks.Text)
+                    sqlcmd.ExecuteNonQuery()
+                Catch ex As Exception
+                    MsgBox(ex.ToString)
+                Finally
+                    refresh.PerformClick()
+                End Try
+            End Using
+        End Using
     End Sub
 End Class
