@@ -179,7 +179,8 @@ SELECT a.[ID]
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Dim str As String = "
-       select TEAM
+       select a.id
+      ,TEAM
       ,b.[DATED]
       ,[PLATENO]
       ,[SMILEAGE]
@@ -240,10 +241,32 @@ SELECT a.[ID]
         End Using
     End Sub
     Dim teamid As String
+    Dim mobid As String
     Private Sub mobgv_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles mobgv.CellClick
         If mobgv.RowCount >= 0 And e.RowIndex >= 0 Then
             teamid = mobgv.Item("teamid", e.RowIndex).Value.ToString
+            mobid = mobgv.Item("id", e.RowIndex).Value.ToString
             loadteam()
         End If
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        If MessageBox.Show("delete record", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.No Then
+            Exit Sub
+        End If
+        Try
+            Dim str As String = "delete from relmobser where id = @id"
+            Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
+                Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
+                    sqlcon.Open()
+                    sqlcmd.Parameters.AddWithValue("@id", mobid)
+                    sqlcmd.ExecuteNonQuery()
+                End Using
+            End Using
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        Finally
+            Button3.PerformClick()
+        End Try
     End Sub
 End Class

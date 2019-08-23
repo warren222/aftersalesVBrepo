@@ -35,10 +35,10 @@ Public Class servicingFRM
                         bs.DataMember = "servicingtb"
                         servicingGRID.DataSource = bs
                         addbtn()
-                        servicingGRID.Columns("STATUS DATE").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-                        servicingGRID.Columns("SERVICING").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-                        servicingGRID.Columns("SERVICING DATE").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-
+                        'servicingGRID.Columns("STATUS DATE").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+                        'servicingGRID.Columns("SERVICING").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+                        'servicingGRID.Columns("SERVICING DATE").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+                        servicingGRID.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells
                         servicingGRID.Columns("id").Visible = False
                         servicingGRID.Columns("cin").Visible = False
                         servicingGRID.Columns("STATUS").Visible = False
@@ -106,7 +106,7 @@ Public Class servicingFRM
 
         reportbtn.Name = "reportbtn"
         reportbtn.HeaderText = ""
-        reportbtn.Text = "report"
+        reportbtn.Text = "report/mobilization"
 
         rd.Name = "rd"
         rd.HeaderText = ""
@@ -205,15 +205,6 @@ Public Class servicingFRM
     Private Sub metroTextButton1_Click(sender As Object, e As EventArgs)
 
     End Sub
-
-    Private Sub newbtn_Click(sender As Object, e As EventArgs)
-        newservicingFRM.loadteam()
-        newservicingFRM.Text = "New"
-        newservicingFRM.save.Text = "add"
-        newservicingFRM.servicingdate.Text = ""
-        newservicingFRM.ShowDialog()
-    End Sub
-
     Private Sub servicingGRID_RowPostPaint(sender As Object, e As DataGridViewRowPostPaintEventArgs) Handles servicingGRID.RowPostPaint
         sql.rownum(sender, e)
     End Sub
@@ -276,6 +267,9 @@ Public Class servicingFRM
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        If MessageBox.Show("save changes?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.No Then
+            Exit Sub
+        End If
         updates()
     End Sub
     Public Sub updates()

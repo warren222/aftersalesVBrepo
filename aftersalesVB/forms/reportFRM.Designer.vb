@@ -22,9 +22,9 @@ Partial Class reportFRM
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.reportGRID = New ComponentFactory.Krypton.Toolkit.KryptonDataGridView()
         Me.servicing = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -40,6 +40,7 @@ Partial Class reportFRM
         Me.KryptonLabel2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.teamgv = New ComponentFactory.Krypton.Toolkit.KryptonDataGridView()
+        Me.Button4 = New System.Windows.Forms.Button()
         CType(Me.reportGRID, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -53,8 +54,8 @@ Partial Class reportFRM
         Me.reportGRID.AllowUserToAddRows = False
         Me.reportGRID.AllowUserToDeleteRows = False
         Me.reportGRID.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.reportGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.reportGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
         Me.reportGRID.ColumnHeadersHeight = 32
         Me.reportGRID.Cursor = System.Windows.Forms.Cursors.Hand
         Me.reportGRID.Dock = System.Windows.Forms.DockStyle.Fill
@@ -132,7 +133,7 @@ Partial Class reportFRM
         '
         Me.refreshbtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.refreshbtn.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.refreshbtn.Location = New System.Drawing.Point(841, 293)
+        Me.refreshbtn.Location = New System.Drawing.Point(840, 293)
         Me.refreshbtn.Name = "refreshbtn"
         Me.refreshbtn.Size = New System.Drawing.Size(92, 23)
         Me.refreshbtn.TabIndex = 568
@@ -143,7 +144,7 @@ Partial Class reportFRM
         '
         Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.Button1.Location = New System.Drawing.Point(841, 322)
+        Me.Button1.Location = New System.Drawing.Point(840, 322)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(92, 23)
         Me.Button1.TabIndex = 569
@@ -176,7 +177,7 @@ Partial Class reportFRM
         '
         Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.Button2.Location = New System.Drawing.Point(839, 77)
+        Me.Button2.Location = New System.Drawing.Point(840, 77)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(94, 23)
         Me.Button2.TabIndex = 572
@@ -190,9 +191,9 @@ Partial Class reportFRM
         Me.mobgv.AllowUserToOrderColumns = True
         Me.mobgv.AllowUserToResizeColumns = False
         Me.mobgv.AllowUserToResizeRows = False
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        Me.mobgv.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black
+        Me.mobgv.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle8
         Me.mobgv.ColumnHeadersHeight = 30
         Me.mobgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.mobgv.Cursor = System.Windows.Forms.Cursors.Hand
@@ -259,9 +260,9 @@ Partial Class reportFRM
         Me.teamgv.AllowUserToOrderColumns = True
         Me.teamgv.AllowUserToResizeColumns = False
         Me.teamgv.AllowUserToResizeRows = False
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        Me.teamgv.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black
+        Me.teamgv.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle9
         Me.teamgv.ColumnHeadersHeight = 30
         Me.teamgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.teamgv.Cursor = System.Windows.Forms.Cursors.Hand
@@ -290,11 +291,23 @@ Partial Class reportFRM
         Me.teamgv.StateCommon.HeaderColumn.Content.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias
         Me.teamgv.TabIndex = 500
         '
+        'Button4
+        '
+        Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.Button4.Location = New System.Drawing.Point(840, 135)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(94, 23)
+        Me.Button4.TabIndex = 576
+        Me.Button4.Text = "remove"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
         'reportFRM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(943, 462)
+        Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.KryptonLabel2)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Button3)
@@ -337,4 +350,5 @@ Partial Class reportFRM
     Friend WithEvents KryptonLabel2 As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents Panel3 As Panel
     Friend WithEvents teamgv As ComponentFactory.Krypton.Toolkit.KryptonDataGridView
+    Friend WithEvents Button4 As Button
 End Class

@@ -245,12 +245,6 @@
     <Compile Include="forms\newreportFRM.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\newservicingFRM.Designer.vb">
-      <DependentUpon>newservicingFRM.vb</DependentUpon>
-    </Compile>
-    <Compile Include="forms\newservicingFRM.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="forms\partsFRM.Designer.vb">
       <DependentUpon>partsFRM.vb</DependentUpon>
     </Compile>
@@ -406,9 +400,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\newreportFRM.resx">
       <DependentUpon>newreportFRM.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="forms\newservicingFRM.resx">
-      <DependentUpon>newservicingFRM.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\partsFRM.resx">
       <DependentUpon>partsFRM.vb</DependentUpon>

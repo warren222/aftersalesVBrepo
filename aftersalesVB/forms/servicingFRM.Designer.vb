@@ -1,6 +1,6 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class servicingFRM
-    Inherits MetroFramework.Forms.MetroForm
+    Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
     <System.Diagnostics.DebuggerNonUserCode()>
@@ -60,15 +60,15 @@ Partial Class servicingFRM
         Me.servicingGRID.RowHeadersWidth = 30
         Me.servicingGRID.RowTemplate.Height = 30
         Me.servicingGRID.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.servicingGRID.Size = New System.Drawing.Size(992, 237)
+        Me.servicingGRID.Size = New System.Drawing.Size(542, 418)
         Me.servicingGRID.StateCommon.Background.Color1 = System.Drawing.Color.White
         Me.servicingGRID.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
         Me.servicingGRID.StateCommon.DataCell.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right), ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
         Me.servicingGRID.StateCommon.DataCell.Content.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.servicingGRID.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.servicingGRID.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.servicingGRID.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.servicingGRID.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(185, Byte), Integer))
         Me.servicingGRID.StateCommon.HeaderColumn.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Dashed
         Me.servicingGRID.StateCommon.HeaderColumn.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) _
@@ -81,37 +81,37 @@ Partial Class servicingFRM
         '
         'jo
         '
-        Me.jo.Location = New System.Drawing.Point(14, 78)
+        Me.jo.Location = New System.Drawing.Point(15, 471)
         Me.jo.Name = "jo"
         Me.jo.Size = New System.Drawing.Size(93, 22)
-        Me.jo.StateCommon.ShortText.Color1 = System.Drawing.Color.White
+        Me.jo.StateCommon.ShortText.Color1 = System.Drawing.Color.DimGray
         Me.jo.StateCommon.ShortText.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.jo.TabIndex = 561
         Me.jo.Values.Text = "Job Order No"
         '
         'address
         '
-        Me.address.Location = New System.Drawing.Point(14, 46)
+        Me.address.Location = New System.Drawing.Point(15, 439)
         Me.address.Name = "address"
         Me.address.Size = New System.Drawing.Size(70, 26)
-        Me.address.StateCommon.ShortText.Color1 = System.Drawing.Color.White
+        Me.address.StateCommon.ShortText.Color1 = System.Drawing.Color.DimGray
         Me.address.StateCommon.ShortText.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.address.TabIndex = 560
         Me.address.Values.Text = "Address"
         '
         'projectname
         '
-        Me.projectname.Location = New System.Drawing.Point(14, 6)
+        Me.projectname.Location = New System.Drawing.Point(15, 399)
         Me.projectname.Name = "projectname"
         Me.projectname.Size = New System.Drawing.Size(145, 34)
-        Me.projectname.StateCommon.ShortText.Color1 = System.Drawing.Color.White
+        Me.projectname.StateCommon.ShortText.Color1 = System.Drawing.Color.DimGray
         Me.projectname.StateCommon.ShortText.Font = New System.Drawing.Font("Segoe UI", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.projectname.TabIndex = 559
         Me.projectname.Values.Text = "Project Name"
         '
         'KryptonLabel1
         '
-        Me.KryptonLabel1.Location = New System.Drawing.Point(15, 214)
+        Me.KryptonLabel1.Location = New System.Drawing.Point(479, 30)
         Me.KryptonLabel1.Name = "KryptonLabel1"
         Me.KryptonLabel1.Size = New System.Drawing.Size(219, 37)
         Me.KryptonLabel1.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
@@ -126,14 +126,14 @@ Partial Class servicingFRM
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel1.Controls.Add(Me.servicingGRID)
-        Me.Panel1.Location = New System.Drawing.Point(23, 257)
+        Me.Panel1.Location = New System.Drawing.Point(479, 73)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(994, 239)
+        Me.Panel1.Size = New System.Drawing.Size(544, 420)
         Me.Panel1.TabIndex = 564
         '
         'KryptonLabel2
         '
-        Me.KryptonLabel2.Location = New System.Drawing.Point(15, 141)
+        Me.KryptonLabel2.Location = New System.Drawing.Point(13, 14)
         Me.KryptonLabel2.Name = "KryptonLabel2"
         Me.KryptonLabel2.Size = New System.Drawing.Size(98, 22)
         Me.KryptonLabel2.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
@@ -145,7 +145,7 @@ Partial Class servicingFRM
         '
         Me.MetroDateTime1.CustomFormat = "yyyy-MMM-dd"
         Me.MetroDateTime1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.MetroDateTime1.Location = New System.Drawing.Point(15, 169)
+        Me.MetroDateTime1.Location = New System.Drawing.Point(13, 42)
         Me.MetroDateTime1.MinimumSize = New System.Drawing.Size(0, 29)
         Me.MetroDateTime1.Name = "MetroDateTime1"
         Me.MetroDateTime1.Size = New System.Drawing.Size(134, 29)
@@ -158,7 +158,7 @@ Partial Class servicingFRM
         '
         '
         Me.servicingdate.CustomButton.Image = Nothing
-        Me.servicingdate.CustomButton.Location = New System.Drawing.Point(163, 2)
+        Me.servicingdate.CustomButton.Location = New System.Drawing.Point(160, 2)
         Me.servicingdate.CustomButton.Name = ""
         Me.servicingdate.CustomButton.Size = New System.Drawing.Size(23, 23)
         Me.servicingdate.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
@@ -169,7 +169,7 @@ Partial Class servicingFRM
         Me.servicingdate.DisplayIcon = True
         Me.servicingdate.FontSize = MetroFramework.MetroTextBoxSize.Medium
         Me.servicingdate.Lines = New String(-1) {}
-        Me.servicingdate.Location = New System.Drawing.Point(155, 170)
+        Me.servicingdate.Location = New System.Drawing.Point(153, 43)
         Me.servicingdate.MaxLength = 32767
         Me.servicingdate.Multiline = True
         Me.servicingdate.Name = "servicingdate"
@@ -179,7 +179,7 @@ Partial Class servicingFRM
         Me.servicingdate.SelectionLength = 0
         Me.servicingdate.SelectionStart = 0
         Me.servicingdate.ShowClearButton = True
-        Me.servicingdate.Size = New System.Drawing.Size(189, 28)
+        Me.servicingdate.Size = New System.Drawing.Size(186, 28)
         Me.servicingdate.Style = MetroFramework.MetroColorStyle.Red
         Me.servicingdate.TabIndex = 567
         Me.servicingdate.UseCustomForeColor = True
@@ -190,23 +190,22 @@ Partial Class servicingFRM
         '
         'Panel2
         '
-        Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Panel2.BackColor = System.Drawing.Color.Gainsboro
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel2.Controls.Add(Me.projectname)
-        Me.Panel2.Controls.Add(Me.address)
-        Me.Panel2.Controls.Add(Me.jo)
-        Me.Panel2.Location = New System.Drawing.Point(0, 26)
+        Me.Panel2.Controls.Add(Me.remarks)
+        Me.Panel2.Controls.Add(Me.KryptonLabel2)
+        Me.Panel2.Controls.Add(Me.servicingdate)
+        Me.Panel2.Controls.Add(Me.MetroDateTime1)
+        Me.Panel2.Location = New System.Drawing.Point(15, 73)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1041, 109)
+        Me.Panel2.Size = New System.Drawing.Size(358, 237)
         Me.Panel2.TabIndex = 568
         '
         'refresh
         '
         Me.refresh.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.refresh.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.refresh.Location = New System.Drawing.Point(924, 229)
+        Me.refresh.Location = New System.Drawing.Point(1029, 73)
         Me.refresh.Name = "refresh"
         Me.refresh.Size = New System.Drawing.Size(92, 23)
         Me.refresh.TabIndex = 575
@@ -216,7 +215,7 @@ Partial Class servicingFRM
         'Button2
         '
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.Button2.Location = New System.Drawing.Point(709, 169)
+        Me.Button2.Location = New System.Drawing.Point(379, 73)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(94, 23)
         Me.Button2.TabIndex = 574
@@ -226,7 +225,7 @@ Partial Class servicingFRM
         'Button1
         '
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.Button1.Location = New System.Drawing.Point(809, 169)
+        Me.Button1.Location = New System.Drawing.Point(379, 102)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(94, 23)
         Me.Button1.TabIndex = 576
@@ -239,7 +238,7 @@ Partial Class servicingFRM
         '
         '
         Me.remarks.CustomButton.Image = Nothing
-        Me.remarks.CustomButton.Location = New System.Drawing.Point(327, 2)
+        Me.remarks.CustomButton.Location = New System.Drawing.Point(303, 2)
         Me.remarks.CustomButton.Name = ""
         Me.remarks.CustomButton.Size = New System.Drawing.Size(23, 23)
         Me.remarks.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
@@ -250,7 +249,7 @@ Partial Class servicingFRM
         Me.remarks.DisplayIcon = True
         Me.remarks.FontSize = MetroFramework.MetroTextBoxSize.Medium
         Me.remarks.Lines = New String(-1) {}
-        Me.remarks.Location = New System.Drawing.Point(350, 170)
+        Me.remarks.Location = New System.Drawing.Point(13, 98)
         Me.remarks.MaxLength = 32767
         Me.remarks.Multiline = True
         Me.remarks.Name = "remarks"
@@ -260,7 +259,7 @@ Partial Class servicingFRM
         Me.remarks.SelectionLength = 0
         Me.remarks.SelectionStart = 0
         Me.remarks.ShowClearButton = True
-        Me.remarks.Size = New System.Drawing.Size(353, 28)
+        Me.remarks.Size = New System.Drawing.Size(329, 28)
         Me.remarks.Style = MetroFramework.MetroColorStyle.Red
         Me.remarks.TabIndex = 577
         Me.remarks.UseCustomForeColor = True
@@ -273,20 +272,18 @@ Partial Class servicingFRM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1040, 509)
-        Me.Controls.Add(Me.remarks)
+        Me.ClientSize = New System.Drawing.Size(1133, 509)
         Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.projectname)
+        Me.Controls.Add(Me.address)
         Me.Controls.Add(Me.refresh)
+        Me.Controls.Add(Me.jo)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Panel2)
-        Me.Controls.Add(Me.KryptonLabel2)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.MetroDateTime1)
         Me.Controls.Add(Me.KryptonLabel1)
-        Me.Controls.Add(Me.servicingdate)
         Me.MinimizeBox = False
         Me.Name = "servicingFRM"
-        Me.Style = MetroFramework.MetroColorStyle.Red
         CType(Me.servicingGRID, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
