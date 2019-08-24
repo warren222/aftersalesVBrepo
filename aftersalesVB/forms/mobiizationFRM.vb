@@ -7,6 +7,7 @@ Public Class mobiizationFRM
     Public id As String
     Private Sub mobiizationFRM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         mobGRID.DataSource = bs
+        teamgv.DataSource = bbs
         refreshbtn.PerformClick()
     End Sub
     Private Sub loaddata()
@@ -37,14 +38,31 @@ Public Class mobiizationFRM
                     da.SelectCommand = sqlcmd
                     da.SelectCommand.CommandTimeout = 30000
                     da.Fill(ds, "mobilizationtb")
+                    mobGRID.Columns.Clear()
                     bs.DataSource = ds
                     bs.DataMember = "mobilizationtb"
+                    addbtn
+                    With mobGRID
+                        .Columns("teamid").Visible = False
+                        .Columns("id").Visible = False
+                        .AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells
+                    End With
                 Catch ex As Exception
                     MsgBox(ex.ToString)
                 End Try
             End Using
         End Using
         loadteam()
+    End Sub
+    Private Sub addbtn()
+        Dim btn1 As New DataGridViewButtonColumn
+        With btn1
+            .Name = "deletebtn"
+            .Text = "delete"
+            .HeaderText = ""
+            .UseColumnTextForButtonValue = True
+        End With
+        mobGRID.Columns.Insert(12, btn1)
     End Sub
     Private Sub loadteam()
         Dim bsb As New BindingSource
@@ -75,7 +93,20 @@ select dated,team, (select id from teamtb where dated = tb.dated and team = tb.t
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        validation()
+        If bol = False Then
+            Exit Sub
+        End If
         addone()
+    End Sub
+    Private Sub validation()
+        If Not IsDate(dated.Text) Then
+            MessageBox.Show("error invalid date")
+            dated.Focus()
+            bol = False
+        Else
+            bol = True
+        End If
     End Sub
 
     Private Sub refreshbtn_Click(sender As Object, e As EventArgs) Handles refreshbtn.Click
@@ -134,6 +165,10 @@ insert into mobilizationtb
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        validation()
+        If bol = False Then
+            Exit Sub
+        End If
         If MessageBox.Show("save changes?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Information) = DialogResult.No Then
             Exit Sub
         End If
@@ -194,6 +229,9 @@ where id = @id
             overtime.Text = ROWS.Cells("overtime").Value.ToString
             teamcombo.Text = ROWS.Cells("team").Value.ToString
             teamid.Text = ROWS.Cells("teamid").Value.ToString
+            If e.ColumnIndex = 12 Then
+                deletesub()
+            End If
         End If
     End Sub
 
@@ -231,5 +269,64 @@ do you want to exit?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = D
             End Try
         End Using
 
+    End Sub
+    Dim bol As Boolean = True
+    Private Sub smileage_Leave(sender As Object, e As EventArgs) Handles tollfee.Leave, smileage.Leave, overtime.Leave, meals.Leave, emileage.Leave, busfare.Leave, airfare.Leave
+        If Not IsNumeric(sender.text) Then
+            MessageBox.Show("error invalid number")
+            sender.focus
+        Else
+        End If
+    End Sub
+    Private Sub deletesub()
+        If MessageBox.Show("Delete record?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
+            Exit Sub
+        End If
+        Dim str As String = "delete from mobilizationtb where id = @id"
+        Try
+
+            Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
+                sqlcon.Open()
+                Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
+                    sqlcmd.Parameters.AddWithValue("@id", id)
+                    sqlcmd.ExecuteNonQuery()
+                End Using
+            End Using
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        Finally
+            refreshbtn.PerformClick()
+        End Try
+    End Sub
+
+    Private Sub teamid_TextChanged(sender As Object, e As EventArgs) Handles teamid.TextChanged
+        loadpersonnel()
+    End Sub
+    Dim bbs As New BindingSource
+
+    Private Sub loadpersonnel()
+        Try
+            Dim ds As New DataSet
+            ds.Clear()
+            Dim str As String = "select * from [PERSONNELTB] where teamid = @teamid"
+            Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
+                Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
+                    sqlcon.Open()
+                    sqlcmd.Parameters.AddWithValue("@teamid", teamid.Text)
+                    Using da As SqlDataAdapter = New SqlDataAdapter()
+                        da.SelectCommand = sqlcmd
+                        da.Fill(ds, "[PERSONNELTB]")
+                        bbs.DataSource = ds
+                        bbs.DataMember = "[PERSONNELTB]"
+                        With teamgv
+                            .Columns("id").Visible = False
+                            .Columns("teamid").Visible = False
+                        End With
+                    End Using
+                End Using
+            End Using
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class

@@ -4,7 +4,7 @@ Public Class reportFRM
     Dim bs As New BindingSource
     Dim bs1 As New BindingSource
     Dim bs2 As New BindingSource
-    Public id As String
+    Public id As String = ""
     Private Sub reportFRM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         reportGRID.DataSource = bs
         mobgv.DataSource = bs1
@@ -211,6 +211,11 @@ SELECT a.[ID]
                     da.Fill(DS, "relmobser")
                     bs1.DataSource = DS
                     bs1.DataMember = "relmobser"
+                    With mobgv
+                        .AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells
+                        .Columns("id").Visible = False
+                        .Columns("teamid").Visible = False
+                    End With
                 Catch ex As Exception
                     MsgBox(ex.ToString)
                 End Try
@@ -246,6 +251,7 @@ SELECT a.[ID]
         If mobgv.RowCount >= 0 And e.RowIndex >= 0 Then
             teamid = mobgv.Item("teamid", e.RowIndex).Value.ToString
             mobid = mobgv.Item("id", e.RowIndex).Value.ToString
+            KryptonLabel2.Text = mobgv.Item("team", e.RowIndex).Value.ToString
             loadteam()
         End If
     End Sub

@@ -77,6 +77,7 @@ Public Class newreportFRM
         ccolor(itemno, clr)
         ccolor(KNO, clr)
         loadassessment()
+        Button1.PerformClick()
     End Sub
     Private Sub fromid(ByVal QRY As String)
         Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)

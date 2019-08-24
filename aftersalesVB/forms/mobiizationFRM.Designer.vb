@@ -22,7 +22,8 @@ Partial Class mobiizationFRM
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.mobGRID = New ComponentFactory.Krypton.Toolkit.KryptonDataGridView()
@@ -43,23 +44,27 @@ Partial Class mobiizationFRM
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label15 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.plateno = New MetroFramework.Controls.MetroTextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.calldategen = New MetroFramework.Controls.MetroDateTime()
         Me.dated = New MetroFramework.Controls.MetroTextBox()
+        Me.teamid = New MetroFramework.Controls.MetroTextBox()
+        Me.teamcombo = New System.Windows.Forms.ComboBox()
+        Me.Label15 = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.refreshbtn = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.insertbtn = New System.Windows.Forms.Button()
-        Me.teamcombo = New System.Windows.Forms.ComboBox()
-        Me.teamid = New MetroFramework.Controls.MetroTextBox()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.teamgv = New ComponentFactory.Krypton.Toolkit.KryptonDataGridView()
         Me.Panel1.SuspendLayout()
         CType(Me.mobGRID, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
+        Me.Panel3.SuspendLayout()
+        CType(Me.teamgv, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -88,8 +93,8 @@ Partial Class mobiizationFRM
         Me.mobGRID.AllowUserToAddRows = False
         Me.mobGRID.AllowUserToDeleteRows = False
         Me.mobGRID.AllowUserToResizeRows = False
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.mobGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.mobGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
         Me.mobGRID.ColumnHeadersHeight = 32
         Me.mobGRID.Cursor = System.Windows.Forms.Cursors.Hand
         Me.mobGRID.Dock = System.Windows.Forms.DockStyle.Fill
@@ -149,7 +154,7 @@ Partial Class mobiizationFRM
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(96, 166)
+        Me.Label5.Location = New System.Drawing.Point(126, 166)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(32, 13)
         Me.Label5.TabIndex = 5
@@ -197,7 +202,7 @@ Partial Class mobiizationFRM
         Me.smileage.CustomButton.UseSelectable = True
         Me.smileage.CustomButton.Visible = False
         Me.smileage.DisplayIcon = True
-        Me.smileage.Lines = New String(-1) {}
+        Me.smileage.Lines = New String() {"0"}
         Me.smileage.Location = New System.Drawing.Point(21, 192)
         Me.smileage.MaxLength = 32767
         Me.smileage.Name = "smileage"
@@ -210,6 +215,7 @@ Partial Class mobiizationFRM
         Me.smileage.Size = New System.Drawing.Size(102, 27)
         Me.smileage.Style = MetroFramework.MetroColorStyle.Teal
         Me.smileage.TabIndex = 508
+        Me.smileage.Text = "0"
         Me.smileage.UseCustomForeColor = True
         Me.smileage.UseSelectable = True
         Me.smileage.UseStyleColors = True
@@ -231,7 +237,7 @@ Partial Class mobiizationFRM
         Me.emileage.CustomButton.UseSelectable = True
         Me.emileage.CustomButton.Visible = False
         Me.emileage.DisplayIcon = True
-        Me.emileage.Lines = New String(-1) {}
+        Me.emileage.Lines = New String() {"0"}
         Me.emileage.Location = New System.Drawing.Point(129, 192)
         Me.emileage.MaxLength = 32767
         Me.emileage.Name = "emileage"
@@ -244,6 +250,7 @@ Partial Class mobiizationFRM
         Me.emileage.Size = New System.Drawing.Size(109, 27)
         Me.emileage.Style = MetroFramework.MetroColorStyle.Teal
         Me.emileage.TabIndex = 509
+        Me.emileage.Text = "0"
         Me.emileage.UseCustomForeColor = True
         Me.emileage.UseSelectable = True
         Me.emileage.UseStyleColors = True
@@ -265,7 +272,7 @@ Partial Class mobiizationFRM
         Me.tollfee.CustomButton.UseSelectable = True
         Me.tollfee.CustomButton.Visible = False
         Me.tollfee.DisplayIcon = True
-        Me.tollfee.Lines = New String(-1) {}
+        Me.tollfee.Lines = New String() {"0"}
         Me.tollfee.Location = New System.Drawing.Point(129, 231)
         Me.tollfee.MaxLength = 32767
         Me.tollfee.Name = "tollfee"
@@ -278,6 +285,7 @@ Partial Class mobiizationFRM
         Me.tollfee.Size = New System.Drawing.Size(109, 27)
         Me.tollfee.Style = MetroFramework.MetroColorStyle.Teal
         Me.tollfee.TabIndex = 510
+        Me.tollfee.Text = "0"
         Me.tollfee.UseCustomForeColor = True
         Me.tollfee.UseSelectable = True
         Me.tollfee.UseStyleColors = True
@@ -299,7 +307,7 @@ Partial Class mobiizationFRM
         Me.busfare.CustomButton.UseSelectable = True
         Me.busfare.CustomButton.Visible = False
         Me.busfare.DisplayIcon = True
-        Me.busfare.Lines = New String(-1) {}
+        Me.busfare.Lines = New String() {"0"}
         Me.busfare.Location = New System.Drawing.Point(129, 264)
         Me.busfare.MaxLength = 32767
         Me.busfare.Name = "busfare"
@@ -312,6 +320,7 @@ Partial Class mobiizationFRM
         Me.busfare.Size = New System.Drawing.Size(109, 27)
         Me.busfare.Style = MetroFramework.MetroColorStyle.Teal
         Me.busfare.TabIndex = 511
+        Me.busfare.Text = "0"
         Me.busfare.UseCustomForeColor = True
         Me.busfare.UseSelectable = True
         Me.busfare.UseStyleColors = True
@@ -333,7 +342,7 @@ Partial Class mobiizationFRM
         Me.airfare.CustomButton.UseSelectable = True
         Me.airfare.CustomButton.Visible = False
         Me.airfare.DisplayIcon = True
-        Me.airfare.Lines = New String(-1) {}
+        Me.airfare.Lines = New String() {"0"}
         Me.airfare.Location = New System.Drawing.Point(129, 297)
         Me.airfare.MaxLength = 32767
         Me.airfare.Name = "airfare"
@@ -346,6 +355,7 @@ Partial Class mobiizationFRM
         Me.airfare.Size = New System.Drawing.Size(109, 27)
         Me.airfare.Style = MetroFramework.MetroColorStyle.Teal
         Me.airfare.TabIndex = 512
+        Me.airfare.Text = "0"
         Me.airfare.UseCustomForeColor = True
         Me.airfare.UseSelectable = True
         Me.airfare.UseStyleColors = True
@@ -367,7 +377,7 @@ Partial Class mobiizationFRM
         Me.overtime.CustomButton.UseSelectable = True
         Me.overtime.CustomButton.Visible = False
         Me.overtime.DisplayIcon = True
-        Me.overtime.Lines = New String(-1) {}
+        Me.overtime.Lines = New String() {"0"}
         Me.overtime.Location = New System.Drawing.Point(129, 390)
         Me.overtime.MaxLength = 32767
         Me.overtime.Name = "overtime"
@@ -380,6 +390,7 @@ Partial Class mobiizationFRM
         Me.overtime.Size = New System.Drawing.Size(109, 27)
         Me.overtime.Style = MetroFramework.MetroColorStyle.Teal
         Me.overtime.TabIndex = 516
+        Me.overtime.Text = "0"
         Me.overtime.UseCustomForeColor = True
         Me.overtime.UseSelectable = True
         Me.overtime.UseStyleColors = True
@@ -401,7 +412,7 @@ Partial Class mobiizationFRM
         Me.meals.CustomButton.UseSelectable = True
         Me.meals.CustomButton.Visible = False
         Me.meals.DisplayIcon = True
-        Me.meals.Lines = New String(-1) {}
+        Me.meals.Lines = New String() {"0"}
         Me.meals.Location = New System.Drawing.Point(129, 357)
         Me.meals.MaxLength = 32767
         Me.meals.Name = "meals"
@@ -414,6 +425,7 @@ Partial Class mobiizationFRM
         Me.meals.Size = New System.Drawing.Size(109, 27)
         Me.meals.Style = MetroFramework.MetroColorStyle.Teal
         Me.meals.TabIndex = 515
+        Me.meals.Text = "0"
         Me.meals.UseCustomForeColor = True
         Me.meals.UseSelectable = True
         Me.meals.UseStyleColors = True
@@ -440,11 +452,10 @@ Partial Class mobiizationFRM
         '
         'Panel2
         '
+        Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Panel2.BackColor = System.Drawing.Color.White
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel2.Controls.Add(Me.teamid)
-        Me.Panel2.Controls.Add(Me.teamcombo)
-        Me.Panel2.Controls.Add(Me.Label15)
         Me.Panel2.Controls.Add(Me.Label14)
         Me.Panel2.Controls.Add(Me.Label13)
         Me.Panel2.Controls.Add(Me.plateno)
@@ -468,17 +479,8 @@ Partial Class mobiizationFRM
         Me.Panel2.Controls.Add(Me.emileage)
         Me.Panel2.Location = New System.Drawing.Point(14, 60)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(266, 511)
+        Me.Panel2.Size = New System.Drawing.Size(266, 338)
         Me.Panel2.TabIndex = 517
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(18, 439)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(37, 13)
-        Me.Label15.TabIndex = 595
-        Me.Label15.Text = "TEAM"
         '
         'Label14
         '
@@ -589,6 +591,63 @@ Partial Class mobiizationFRM
         Me.dated.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.dated.WaterMarkFont = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
+        'teamid
+        '
+        Me.teamid.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        '
+        '
+        '
+        Me.teamid.CustomButton.Image = Nothing
+        Me.teamid.CustomButton.Location = New System.Drawing.Point(6, 1)
+        Me.teamid.CustomButton.Name = ""
+        Me.teamid.CustomButton.Size = New System.Drawing.Size(25, 25)
+        Me.teamid.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.teamid.CustomButton.TabIndex = 1
+        Me.teamid.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.teamid.CustomButton.UseSelectable = True
+        Me.teamid.CustomButton.Visible = False
+        Me.teamid.DisplayIcon = True
+        Me.teamid.Enabled = False
+        Me.teamid.Lines = New String(-1) {}
+        Me.teamid.Location = New System.Drawing.Point(3, 101)
+        Me.teamid.MaxLength = 32767
+        Me.teamid.Name = "teamid"
+        Me.teamid.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.teamid.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.teamid.SelectedText = ""
+        Me.teamid.SelectionLength = 0
+        Me.teamid.SelectionStart = 0
+        Me.teamid.ShowClearButton = True
+        Me.teamid.Size = New System.Drawing.Size(32, 27)
+        Me.teamid.Style = MetroFramework.MetroColorStyle.Teal
+        Me.teamid.TabIndex = 597
+        Me.teamid.UseCustomForeColor = True
+        Me.teamid.UseSelectable = True
+        Me.teamid.UseStyleColors = True
+        Me.teamid.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.teamid.WaterMarkFont = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        '
+        'teamcombo
+        '
+        Me.teamcombo.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.teamcombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.teamcombo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.teamcombo.FormattingEnabled = True
+        Me.teamcombo.Location = New System.Drawing.Point(114, 404)
+        Me.teamcombo.Name = "teamcombo"
+        Me.teamcombo.Size = New System.Drawing.Size(166, 24)
+        Me.teamcombo.TabIndex = 596
+        '
+        'Label15
+        '
+        Me.Label15.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(26, 409)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(37, 13)
+        Me.Label15.TabIndex = 595
+        Me.Label15.Text = "TEAM"
+        '
         'Button3
         '
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.System
@@ -641,71 +700,79 @@ Partial Class mobiizationFRM
         Me.insertbtn.UseVisualStyleBackColor = True
         Me.insertbtn.Visible = False
         '
-        'teamcombo
+        'Panel3
         '
-        Me.teamcombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.teamcombo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.teamcombo.FormattingEnabled = True
-        Me.teamcombo.Location = New System.Drawing.Point(71, 434)
-        Me.teamcombo.Name = "teamcombo"
-        Me.teamcombo.Size = New System.Drawing.Size(167, 24)
-        Me.teamcombo.TabIndex = 596
+        Me.Panel3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel3.Controls.Add(Me.teamgv)
+        Me.Panel3.Controls.Add(Me.teamid)
+        Me.Panel3.Location = New System.Drawing.Point(14, 437)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(266, 133)
+        Me.Panel3.TabIndex = 598
         '
-        'teamid
+        'teamgv
         '
-        '
-        '
-        '
-        Me.teamid.CustomButton.Image = Nothing
-        Me.teamid.CustomButton.Location = New System.Drawing.Point(83, 1)
-        Me.teamid.CustomButton.Name = ""
-        Me.teamid.CustomButton.Size = New System.Drawing.Size(25, 25)
-        Me.teamid.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.teamid.CustomButton.TabIndex = 1
-        Me.teamid.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.teamid.CustomButton.UseSelectable = True
-        Me.teamid.CustomButton.Visible = False
-        Me.teamid.DisplayIcon = True
-        Me.teamid.Enabled = False
-        Me.teamid.Lines = New String(-1) {}
-        Me.teamid.Location = New System.Drawing.Point(129, 464)
-        Me.teamid.MaxLength = 32767
-        Me.teamid.Name = "teamid"
-        Me.teamid.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.teamid.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.teamid.SelectedText = ""
-        Me.teamid.SelectionLength = 0
-        Me.teamid.SelectionStart = 0
-        Me.teamid.ShowClearButton = True
-        Me.teamid.Size = New System.Drawing.Size(109, 27)
-        Me.teamid.Style = MetroFramework.MetroColorStyle.Teal
-        Me.teamid.TabIndex = 597
-        Me.teamid.UseCustomForeColor = True
-        Me.teamid.UseSelectable = True
-        Me.teamid.UseStyleColors = True
-        Me.teamid.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.teamid.WaterMarkFont = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        Me.teamgv.AllowUserToAddRows = False
+        Me.teamgv.AllowUserToDeleteRows = False
+        Me.teamgv.AllowUserToResizeRows = False
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.teamgv.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle8
+        Me.teamgv.ColumnHeadersHeight = 32
+        Me.teamgv.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.teamgv.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.teamgv.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
+        Me.teamgv.Location = New System.Drawing.Point(0, 0)
+        Me.teamgv.Name = "teamgv"
+        Me.teamgv.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Silver
+        Me.teamgv.RowHeadersWidth = 30
+        Me.teamgv.RowTemplate.Height = 30
+        Me.teamgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.teamgv.Size = New System.Drawing.Size(264, 131)
+        Me.teamgv.StateCommon.Background.Color1 = System.Drawing.Color.White
+        Me.teamgv.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
+        Me.teamgv.StateCommon.DataCell.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right), ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+        Me.teamgv.StateCommon.DataCell.Content.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.teamgv.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.teamgv.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(185, Byte), Integer))
+        Me.teamgv.StateCommon.HeaderColumn.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Dashed
+        Me.teamgv.StateCommon.HeaderColumn.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right), ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+        Me.teamgv.StateCommon.HeaderColumn.Border.Rounding = 0
+        Me.teamgv.StateCommon.HeaderColumn.Content.Color1 = System.Drawing.Color.White
+        Me.teamgv.StateCommon.HeaderColumn.Content.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.teamgv.StateCommon.HeaderColumn.Content.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias
+        Me.teamgv.TabIndex = 562
         '
         'mobiizationFRM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1025, 591)
+        Me.Controls.Add(Me.Panel2)
+        Me.Controls.Add(Me.Panel3)
+        Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.insertbtn)
+        Me.Controls.Add(Me.teamcombo)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.refreshbtn)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label1)
         Me.Name = "mobiizationFRM"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
         CType(Me.mobGRID, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        Me.Panel3.ResumeLayout(False)
+        CType(Me.teamgv, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -745,4 +812,6 @@ Partial Class mobiizationFRM
     Friend WithEvents insertbtn As Button
     Friend WithEvents teamid As MetroFramework.Controls.MetroTextBox
     Friend WithEvents teamcombo As ComboBox
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents teamgv As ComponentFactory.Krypton.Toolkit.KryptonDataGridView
 End Class

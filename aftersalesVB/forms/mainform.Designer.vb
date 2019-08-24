@@ -34,6 +34,7 @@ Partial Class mainform
         Me.callinGRID = New ComponentFactory.Krypton.Toolkit.KryptonDataGridView()
         Me.MetroTile3 = New MetroFramework.Controls.MetroTile()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.MetroTile6 = New MetroFramework.Controls.MetroTile()
         Me.MetroTile4 = New MetroFramework.Controls.MetroTile()
         Me.MetroTile5 = New MetroFramework.Controls.MetroTile()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -49,7 +50,6 @@ Partial Class mainform
         Me.ServicingToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.QuotationToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditAddressToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MetroTile6 = New MetroFramework.Controls.MetroTile()
         CType(Me.callinGRID, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -244,6 +244,21 @@ Partial Class mainform
         Me.Panel1.Size = New System.Drawing.Size(126, 561)
         Me.Panel1.TabIndex = 557
         '
+        'MetroTile6
+        '
+        Me.MetroTile6.ActiveControl = Nothing
+        Me.MetroTile6.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(126, Byte), Integer))
+        Me.MetroTile6.Location = New System.Drawing.Point(10, 390)
+        Me.MetroTile6.Name = "MetroTile6"
+        Me.MetroTile6.Size = New System.Drawing.Size(107, 71)
+        Me.MetroTile6.Style = MetroFramework.MetroColorStyle.Purple
+        Me.MetroTile6.TabIndex = 560
+        Me.MetroTile6.Text = "Mobilization"
+        Me.MetroTile6.TileImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.MetroTile6.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular
+        Me.MetroTile6.UseSelectable = True
+        Me.MetroTile6.UseTileImage = True
+        '
         'MetroTile4
         '
         Me.MetroTile4.ActiveControl = Nothing
@@ -251,7 +266,7 @@ Partial Class mainform
         Me.MetroTile4.Location = New System.Drawing.Point(10, 313)
         Me.MetroTile4.Name = "MetroTile4"
         Me.MetroTile4.Size = New System.Drawing.Size(107, 71)
-        Me.MetroTile4.Style = MetroFramework.MetroColorStyle.Yellow
+        Me.MetroTile4.Style = MetroFramework.MetroColorStyle.Brown
         Me.MetroTile4.TabIndex = 559
         Me.MetroTile4.Text = "Schedule"
         Me.MetroTile4.TileImageAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -403,21 +418,6 @@ Partial Class mainform
         Me.EditAddressToolStripMenuItem.Name = "EditAddressToolStripMenuItem"
         Me.EditAddressToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
         Me.EditAddressToolStripMenuItem.Text = "Edit Address"
-        '
-        'MetroTile6
-        '
-        Me.MetroTile6.ActiveControl = Nothing
-        Me.MetroTile6.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(126, Byte), Integer))
-        Me.MetroTile6.Location = New System.Drawing.Point(10, 390)
-        Me.MetroTile6.Name = "MetroTile6"
-        Me.MetroTile6.Size = New System.Drawing.Size(107, 71)
-        Me.MetroTile6.Style = MetroFramework.MetroColorStyle.Blue
-        Me.MetroTile6.TabIndex = 560
-        Me.MetroTile6.Text = "Mobilization"
-        Me.MetroTile6.TileImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.MetroTile6.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular
-        Me.MetroTile6.UseSelectable = True
-        Me.MetroTile6.UseTileImage = True
         '
         'mainform
         '
