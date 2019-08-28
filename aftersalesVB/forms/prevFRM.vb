@@ -19,6 +19,7 @@ Public Class prevFRM
         Dim param10 As ReportParameter = New ReportParameter("scopeofworks", scopeofworks.Text)
         Dim param11 As ReportParameter = New ReportParameter("preparedby", preparedby.Text)
         Dim param12 As ReportParameter = New ReportParameter("approvedby", approvedby.Text)
+        Dim param13 As ReportParameter = New ReportParameter("VISI", CheckBox1.Checked)
         With ReportViewer1.LocalReport
             .SetParameters(New ReportParameter() {param1})
             .SetParameters(New ReportParameter() {param2})
@@ -32,6 +33,7 @@ Public Class prevFRM
             .SetParameters(New ReportParameter() {param10})
             .SetParameters(New ReportParameter() {param11})
             .SetParameters(New ReportParameter() {param12})
+            .SetParameters(New ReportParameter() {param13})
         End With
         ReportViewer1.SetDisplayMode(DisplayMode.PrintLayout)
         ReportViewer1.ZoomMode = ZoomMode.PageWidth
@@ -69,6 +71,10 @@ Public Class prevFRM
     End Sub
 
     Private Sub ReportViewer1_ReportRefresh(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles ReportViewer1.ReportRefresh
+        re()
+    End Sub
+
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
         re()
     End Sub
 End Class

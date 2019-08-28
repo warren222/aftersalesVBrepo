@@ -3,6 +3,10 @@
 Public Class sharedmethods
     Public Shared joborderno As String
     Public Sub ServicingScheduleFRMinitialize()
+        With ServicingScheduleFRM.gv
+            .RowTemplate.Height = 50
+            .DefaultCellStyle.WrapMode = DataGridViewTriState.True
+        End With
         dgvproperties(ServicingScheduleFRM.gv)
     End Sub
 

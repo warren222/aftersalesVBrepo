@@ -24,8 +24,9 @@ Public Class ServicingScheduleFRM
     Private Sub bgw_completed(sender As Object, e As RunWorkerCompletedEventArgs)
         Select Case action
             Case "LOAD SCHEDULE"
+                starter("FORMAT SCHEDULE")
+            Case "FORMAT SCHEDULE"
 
-            Case ""
         End Select
     End Sub
 
@@ -37,6 +38,15 @@ Public Class ServicingScheduleFRM
                 If Not gvpnl.Controls.Contains(gv) Then
                     gvpnl.Controls.Add(gv)
                 End If
+            Case "FORMAT SCHEDULE"
+                With gv
+                    .Columns("project").Width = 150
+                    .Columns("address").Width = 250
+                    .Columns("date").Width = 100
+                    .Columns("remarks").Width = 200
+                    .Columns("SERVICING").Width = 200
+                    '.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells
+                End With
         End Select
     End Sub
 
@@ -44,6 +54,8 @@ Public Class ServicingScheduleFRM
         Select Case action
             Case "LOAD SCHEDULE"
                 queries("LOAD SCHEDULE")
+                bgw.ReportProgress(0)
+            Case "FORMAT SCHEDULE"
                 bgw.ReportProgress(0)
         End Select
     End Sub

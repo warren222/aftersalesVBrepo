@@ -172,6 +172,7 @@ Partial Class quotationFRM
         Me.Name = "quotationFRM"
         Me.Style = MetroFramework.MetroColorStyle.Red
         Me.Theme = MetroFramework.MetroThemeStyle.[Default]
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.quGRID, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)

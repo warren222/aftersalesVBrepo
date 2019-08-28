@@ -23,7 +23,7 @@ Partial Class prevFRM
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim ReportDataSource3 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(prevFRM))
         Me.ITEMTBBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.asdbDS = New aftersalesVB.asdbDS()
@@ -36,6 +36,7 @@ Partial Class prevFRM
         Me.kryptonLabel2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.KryptonLabel1 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.KryptonLabel3 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         CType(Me.ITEMTBBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.asdbDS, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -55,9 +56,9 @@ Partial Class prevFRM
         Me.ReportViewer1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        ReportDataSource1.Name = "DataSet1"
-        ReportDataSource1.Value = Me.ITEMTBBindingSource
-        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
+        ReportDataSource3.Name = "DataSet1"
+        ReportDataSource3.Value = Me.ITEMTBBindingSource
+        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource3)
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "aftersalesVB.qreport.rdlc"
         Me.ReportViewer1.Location = New System.Drawing.Point(499, 63)
         Me.ReportViewer1.Name = "ReportViewer1"
@@ -161,11 +162,22 @@ Partial Class prevFRM
         Me.KryptonLabel3.TabIndex = 495
         Me.KryptonLabel3.Values.Text = "Scope of Work(s)"
         '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(23, 40)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(88, 17)
+        Me.CheckBox1.TabIndex = 496
+        Me.CheckBox1.Text = "No Signature"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
         'prevFRM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(899, 599)
+        Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.KryptonLabel3)
         Me.Controls.Add(Me.KryptonLabel1)
         Me.Controls.Add(Me.kryptonLabel2)
@@ -195,4 +207,5 @@ Partial Class prevFRM
     Friend WithEvents kryptonLabel2 As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents KryptonLabel1 As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents KryptonLabel3 As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Friend WithEvents CheckBox1 As CheckBox
 End Class
