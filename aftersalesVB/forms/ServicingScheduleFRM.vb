@@ -40,11 +40,11 @@ Public Class ServicingScheduleFRM
                 End If
             Case "FORMAT SCHEDULE"
                 With gv
-                    .Columns("project").Width = 150
+                    .Columns("project").Width = 200
                     .Columns("address").Width = 250
                     .Columns("date").Width = 100
                     .Columns("remarks").Width = 200
-                    .Columns("SERVICING").Width = 200
+                    .Columns("SERVICING").Width = 150
                     '.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells
                 End With
         End Select
@@ -80,7 +80,7 @@ Public Class ServicingScheduleFRM
                     .Parameters.AddWithValue("@command", command)
                     .Parameters.AddWithValue("@sdate", sdate)
                     .Parameters.AddWithValue("@edate", edate)
-
+                    .Parameters.AddWithValue("@project", project.Text)
                 End With
                 Using da As SqlDataAdapter = New SqlDataAdapter
                     With da
