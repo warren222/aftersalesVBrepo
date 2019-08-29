@@ -10,6 +10,8 @@ Public Class ServicingScheduleFRM
     Dim ds As New DataSet
     Public bs As New BindingSource
     Dim sm As New sharedmethods
+    Dim tempcin As String = mainform.tempcin
+    Public id As String
     Private Sub ServicingScheduleFRM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         AddHandler bgw.DoWork, AddressOf bgw_dowork
         AddHandler bgw.ProgressChanged, AddressOf bgw_progresschanged
@@ -19,6 +21,34 @@ Public Class ServicingScheduleFRM
 
         gv.DataSource = bs
         sm.ServicingScheduleFRMinitialize()
+        Button1.PerformClick()
+    End Sub
+
+    Public Sub gv_SelectionChanged(sender As Object, e As EventArgs)
+        Dim rows As DataGridViewSelectedRowCollection = gv.SelectedRows
+        For Each row As DataGridViewRow In rows
+            mainform.tempcin = row.Cells("cin").Value.ToString
+            servicingFRM.projectname.Text = row.Cells("project").Value.ToString
+            servicingFRM.address.Text = row.Cells("address").Value.ToString
+            servicingFRM.jo.Text = row.Cells("jo").Value.ToString
+            id = row.Cells("id").Value.ToString
+            statusFRM.statusdate.Text = row.Cells("status date").Value.ToString
+            statusFRM.status.Text = row.Cells("status").Value.ToString
+        Next
+    End Sub
+
+    Public Sub gv_CellClick(sender As Object, e As DataGridViewCellEventArgs)
+        If gv.RowCount >= 0 And e.RowIndex >= 0 Then
+            Dim row As DataGridViewRow = gv.Rows(e.RowIndex)
+            mainform.tempcin = row.Cells("cin").Value.ToString
+            servicingFRM.projectname.Text = row.Cells("project").Value.ToString
+            servicingFRM.address.Text = row.Cells("address").Value.ToString
+            servicingFRM.jo.Text = row.Cells("jo").Value.ToString
+
+            id = gv.Item("id", e.RowIndex).Value.ToString
+            statusFRM.statusdate.Text = gv.Item("status date", e.RowIndex).Value.ToString
+            statusFRM.status.Text = gv.Item("status", e.RowIndex).Value.ToString
+        End If
     End Sub
 
     Private Sub bgw_completed(sender As Object, e As RunWorkerCompletedEventArgs)
@@ -26,7 +56,11 @@ Public Class ServicingScheduleFRM
             Case "LOAD SCHEDULE"
                 starter("FORMAT SCHEDULE")
             Case "FORMAT SCHEDULE"
-
+                For i As Integer = 0 To gv.RowCount - 1
+                    With gv
+                        .Rows(i).Cells("date").Style.Font = New Font("Century Gothic", 10, FontStyle.Bold)
+                    End With
+                Next
         End Select
     End Sub
 
@@ -45,6 +79,9 @@ Public Class ServicingScheduleFRM
                     .Columns("date").Width = 100
                     .Columns("remarks").Width = 200
                     .Columns("SERVICING").Width = 150
+                    .Columns("cin").Visible = False
+                    .Columns("id").Visible = False
+                    .Columns("status date").Visible = False
                     '.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells
                 End With
         End Select
@@ -72,6 +109,10 @@ Public Class ServicingScheduleFRM
         ds = New DataSet
         Dim sdate As String = DateTimePicker1.Text
         Dim edate As String = DateTimePicker2.Text
+        If donecheckbox.Checked = False Then
+            sdate = Date.MinValue
+            edate = Date.MaxValue
+        End If
         Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
             Using sqlcmd As SqlCommand = sqlcon.CreateCommand
                 With sqlcmd
@@ -94,10 +135,20 @@ Public Class ServicingScheduleFRM
     End Sub
 
     Private Sub ServicingScheduleFRM_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        mainform.tempcin = tempcin
         Me.Dispose()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         starter("LOAD SCHEDULE")
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        servicingFRM.ShowDialog()
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        statusFRM.source = "ServicingScheduleFRM"
+        statusFRM.ShowDialog()
     End Sub
 End Class

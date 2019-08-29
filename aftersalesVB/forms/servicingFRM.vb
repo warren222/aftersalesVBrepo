@@ -158,6 +158,7 @@ Public Class servicingFRM
             servicingdate.Text = servicingGRID.Item("servicing date", e.RowIndex).Value.ToString
             remarks.Text = servicingGRID.Item("REMARKS", e.RowIndex).Value.ToString
             If e.ColumnIndex = 0 Then
+                statusFRM.source = "ServicingFRM"
                 id = servicingGRID.Item("id", e.RowIndex).Value.ToString
                 statusFRM.statusdate.Text = servicingGRID.Item("status date", e.RowIndex).Value.ToString
                 statusFRM.status.Text = servicingGRID.Item("status", e.RowIndex).Value.ToString
@@ -218,7 +219,7 @@ Public Class servicingFRM
 
                                   declare @sss as integer  = (select isnull(max(id),0) from servicingtb where cin = @cin)
                                   update servicingtb set [status]='Reschedule',statusdate=@sdate where id = @sss
-                                  insert into servicingtb (id,cin,servicing,sdate,remarks)values(@id,@cin,@servicing,@sdate,@remarks)"
+                                  insert into servicingtb (id,cin,servicing,sdate,remarks,status)values(@id,@cin,@servicing,@sdate,@remarks,'Scheduled')"
 
             Dim str2 As String = "select isnull(count(id),0)+1 from servicingtb where cin = @cin"
             Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)

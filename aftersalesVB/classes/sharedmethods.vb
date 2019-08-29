@@ -5,9 +5,14 @@ Public Class sharedmethods
     Public Sub ServicingScheduleFRMinitialize()
         With ServicingScheduleFRM.gv
             .RowTemplate.Height = 50
+            .StateCommon.DataCell.Border.Color1 = Color.Black
+            .StateCommon.DataCell.Border.Width = 1
             .DefaultCellStyle.WrapMode = DataGridViewTriState.True
         End With
         dgvproperties(ServicingScheduleFRM.gv)
+
+        AddHandler ServicingScheduleFRM.gv.CellClick, AddressOf ServicingScheduleFRM.gv_CellClick
+        AddHandler ServicingScheduleFRM.gv.SelectionChanged, AddressOf ServicingScheduleFRM.gv_SelectionChanged
     End Sub
 
     Public Sub dgvproperties(ByVal dgv As KryptonDataGridView)

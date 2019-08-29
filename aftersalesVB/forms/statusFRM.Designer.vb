@@ -33,12 +33,11 @@ Partial Class statusFRM
         '
         Me.status.FormattingEnabled = True
         Me.status.ItemHeight = 23
-        Me.status.Items.AddRange(New Object() {"Reschedule", "For Costing", "Done"})
+        Me.status.Items.AddRange(New Object() {"Scheduled", "Reschedule", "For Costing", "Done"})
         Me.status.Location = New System.Drawing.Point(251, 105)
         Me.status.Name = "status"
         Me.status.Size = New System.Drawing.Size(152, 29)
         Me.status.TabIndex = 474
-        Me.status.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.status.UseSelectable = True
         '
         'KryptonLabel1
@@ -61,7 +60,6 @@ Partial Class statusFRM
         Me.MetroDateTime1.Size = New System.Drawing.Size(189, 29)
         Me.MetroDateTime1.Style = MetroFramework.MetroColorStyle.Red
         Me.MetroDateTime1.TabIndex = 487
-        Me.MetroDateTime1.Theme = MetroFramework.MetroThemeStyle.Dark
         '
         'statusdate
         '
@@ -79,7 +77,6 @@ Partial Class statusFRM
         Me.statusdate.CustomButton.Visible = False
         Me.statusdate.DisplayIcon = True
         Me.statusdate.FontSize = MetroFramework.MetroTextBoxSize.Medium
-        Me.statusdate.ForeColor = System.Drawing.Color.White
         Me.statusdate.Lines = New String(-1) {}
         Me.statusdate.Location = New System.Drawing.Point(35, 140)
         Me.statusdate.MaxLength = 32767
@@ -94,7 +91,6 @@ Partial Class statusFRM
         Me.statusdate.Size = New System.Drawing.Size(189, 28)
         Me.statusdate.Style = MetroFramework.MetroColorStyle.Red
         Me.statusdate.TabIndex = 489
-        Me.statusdate.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.statusdate.UseCustomForeColor = True
         Me.statusdate.UseSelectable = True
         Me.statusdate.WaterMark = "Enter Status Date"
@@ -134,7 +130,7 @@ Partial Class statusFRM
         Me.Name = "statusFRM"
         Me.Style = MetroFramework.MetroColorStyle.Red
         Me.Text = "Status"
-        Me.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.Theme = MetroFramework.MetroThemeStyle.[Default]
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
