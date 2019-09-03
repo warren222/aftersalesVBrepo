@@ -233,7 +233,7 @@ Partial Class newcallinFRM
         '
         'conversation
         '
-        Me.conversation.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.conversation.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.conversation.Location = New System.Drawing.Point(42, 104)
         Me.conversation.Name = "conversation"
         Me.conversation.Size = New System.Drawing.Size(695, 96)
