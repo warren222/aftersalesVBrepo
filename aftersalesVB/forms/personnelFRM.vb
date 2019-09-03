@@ -112,7 +112,7 @@ Public Class personnelFRM
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Dim str As String = "select * from teamtb"
+        Dim str As String = "select ID,TEAM,DATED,STUFF((SELECT ' ,'+PERSONNEL+char(10) FROM PERSONNELTB WHERE TEAMID = A.ID FOR XML PATH('')),1,2,'') AS MEMBERS from teamtb AS A"
         ds = New DataSet
         ds.Clear()
         teamgv.Columns.Clear()
@@ -135,10 +135,10 @@ Public Class personnelFRM
                     With btn
                         .Name = "btn"
                         .HeaderText = ""
-                        .Text = "members"
+                        .Text = "EDIT MEMBERS"
                         .UseColumnTextForButtonValue = True
                     End With
-                    teamgv.Columns.Insert(3, btn)
+                    teamgv.Columns.Insert(4, btn)
                 Catch ex As Exception
                     MsgBox(ex.ToString)
                 Finally
@@ -189,7 +189,7 @@ Public Class personnelFRM
             teamid = rows.Cells("id").Value.ToString
             team.Text = rows.Cells("team").Value.ToString
             teamdate.Text = rows.Cells("dated").Value.ToString
-            If e.ColumnIndex = 3 Then
+            If e.ColumnIndex = 4 Then
                 memberFRM.teamid = rows.Cells("id").Value.ToString
                 memberFRM.teamname.Text = rows.Cells("team").Value.ToString
                 memberFRM.Show()

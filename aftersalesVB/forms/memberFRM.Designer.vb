@@ -34,6 +34,7 @@ Partial Class memberFRM
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
+        Me.KryptonLabel3 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.Panel1.SuspendLayout()
         CType(Me.gv, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -116,7 +117,7 @@ Partial Class memberFRM
         Me.Panel2.Controls.Add(Me.KryptonLabel2)
         Me.Panel2.Controls.Add(Me.positions)
         Me.Panel2.Controls.Add(Me.KryptonLabel1)
-        Me.Panel2.Location = New System.Drawing.Point(12, 28)
+        Me.Panel2.Location = New System.Drawing.Point(12, 40)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(425, 86)
         Me.Panel2.TabIndex = 561
@@ -181,7 +182,7 @@ Partial Class memberFRM
         'Button1
         '
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.Button1.Location = New System.Drawing.Point(443, 28)
+        Me.Button1.Location = New System.Drawing.Point(443, 40)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(83, 23)
         Me.Button1.TabIndex = 574
@@ -208,11 +209,22 @@ Partial Class memberFRM
         Me.Button3.Text = "remove"
         Me.Button3.UseVisualStyleBackColor = True
         '
+        'KryptonLabel3
+        '
+        Me.KryptonLabel3.Location = New System.Drawing.Point(12, 12)
+        Me.KryptonLabel3.Name = "KryptonLabel3"
+        Me.KryptonLabel3.Size = New System.Drawing.Size(108, 20)
+        Me.KryptonLabel3.StateCommon.ShortText.Color1 = System.Drawing.Color.Black
+        Me.KryptonLabel3.StateCommon.ShortText.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KryptonLabel3.TabIndex = 577
+        Me.KryptonLabel3.Values.Text = "Select Personnel"
+        '
         'memberFRM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(536, 420)
+        Me.Controls.Add(Me.KryptonLabel3)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
@@ -244,4 +256,5 @@ Partial Class memberFRM
     Friend WithEvents Button2 As Button
     Friend WithEvents fullname As ComboBox
     Friend WithEvents Button3 As Button
+    Friend WithEvents KryptonLabel3 As ComponentFactory.Krypton.Toolkit.KryptonLabel
 End Class

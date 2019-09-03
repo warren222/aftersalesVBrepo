@@ -31,6 +31,7 @@ Public Class ServicingScheduleFRM
             servicingFRM.projectname.Text = row.Cells("project").Value.ToString
             servicingFRM.address.Text = row.Cells("address").Value.ToString
             servicingFRM.jo.Text = row.Cells("jo").Value.ToString
+            servicingFRM.KryptonLabel3.Text = row.Cells("cin").Value.ToString
             id = row.Cells("id").Value.ToString
             statusFRM.statusdate.Text = row.Cells("status date").Value.ToString
             statusFRM.status.Text = row.Cells("status").Value.ToString
@@ -44,7 +45,7 @@ Public Class ServicingScheduleFRM
             servicingFRM.projectname.Text = row.Cells("project").Value.ToString
             servicingFRM.address.Text = row.Cells("address").Value.ToString
             servicingFRM.jo.Text = row.Cells("jo").Value.ToString
-
+            servicingFRM.KryptonLabel3.Text = row.Cells("cin").Value.ToString
             id = gv.Item("id", e.RowIndex).Value.ToString
             statusFRM.statusdate.Text = gv.Item("status date", e.RowIndex).Value.ToString
             statusFRM.status.Text = gv.Item("status", e.RowIndex).Value.ToString
@@ -79,7 +80,7 @@ Public Class ServicingScheduleFRM
                     .Columns("date").Width = 100
                     .Columns("remarks").Width = 200
                     .Columns("SERVICING").Width = 150
-                    .Columns("cin").Visible = False
+                    .Columns("cin").Width = 100
                     .Columns("id").Visible = False
                     .Columns("status date").Visible = False
                     '.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells

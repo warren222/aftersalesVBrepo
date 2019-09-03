@@ -302,6 +302,7 @@ Public Class mainform
             servicingFRM.projectname.Text = row.Cells("project").Value.ToString
             servicingFRM.address.Text = row.Cells("address").Value.ToString
             servicingFRM.jo.Text = row.Cells("jo").Value.ToString
+            servicingFRM.KryptonLabel3.Text = row.Cells("cin").Value.ToString
             ServicingRPTfrm.specs = row.Cells("profile finish").Value.ToString
             telno = row.Cells("telno").Value.ToString
             faxno = row.Cells("faxno").Value.ToString

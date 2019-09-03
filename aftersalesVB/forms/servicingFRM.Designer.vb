@@ -22,7 +22,7 @@ Partial Class servicingFRM
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.servicingGRID = New ComponentFactory.Krypton.Toolkit.KryptonDataGridView()
         Me.jo = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.address = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
@@ -37,6 +37,7 @@ Partial Class servicingFRM
         Me.refresh = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.KryptonLabel3 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         CType(Me.servicingGRID, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -47,8 +48,8 @@ Partial Class servicingFRM
         Me.servicingGRID.AllowUserToAddRows = False
         Me.servicingGRID.AllowUserToDeleteRows = False
         Me.servicingGRID.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.servicingGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.servicingGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
         Me.servicingGRID.ColumnHeadersHeight = 32
         Me.servicingGRID.Cursor = System.Windows.Forms.Cursors.Hand
         Me.servicingGRID.Dock = System.Windows.Forms.DockStyle.Fill
@@ -103,9 +104,9 @@ Partial Class servicingFRM
         '
         Me.projectname.Location = New System.Drawing.Point(12, 12)
         Me.projectname.Name = "projectname"
-        Me.projectname.Size = New System.Drawing.Size(145, 34)
+        Me.projectname.Size = New System.Drawing.Size(135, 31)
         Me.projectname.StateCommon.ShortText.Color1 = System.Drawing.Color.DimGray
-        Me.projectname.StateCommon.ShortText.Font = New System.Drawing.Font("Segoe UI", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.projectname.StateCommon.ShortText.Font = New System.Drawing.Font("Calibri", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.projectname.TabIndex = 559
         Me.projectname.Values.Text = "Project Name"
         '
@@ -272,12 +273,26 @@ Partial Class servicingFRM
         Me.Button1.Text = "update"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'KryptonLabel3
+        '
+        Me.KryptonLabel3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.KryptonLabel3.AutoSize = False
+        Me.KryptonLabel3.Location = New System.Drawing.Point(854, 12)
+        Me.KryptonLabel3.Name = "KryptonLabel3"
+        Me.KryptonLabel3.Size = New System.Drawing.Size(129, 31)
+        Me.KryptonLabel3.StateCommon.ShortText.Color1 = System.Drawing.Color.DimGray
+        Me.KryptonLabel3.StateCommon.ShortText.Font = New System.Drawing.Font("Calibri", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KryptonLabel3.StateCommon.ShortText.TextH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Far
+        Me.KryptonLabel3.TabIndex = 577
+        Me.KryptonLabel3.Values.Text = "CIN"
+        '
         'servicingFRM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(995, 509)
+        Me.Controls.Add(Me.KryptonLabel3)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.refresh)
         Me.Controls.Add(Me.Panel2)
@@ -313,4 +328,5 @@ Partial Class servicingFRM
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
     Friend WithEvents remarks As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents KryptonLabel3 As ComponentFactory.Krypton.Toolkit.KryptonLabel
 End Class

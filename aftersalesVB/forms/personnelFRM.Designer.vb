@@ -22,8 +22,9 @@ Partial Class personnelFRM
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.personnelGRID = New ComponentFactory.Krypton.Toolkit.KryptonDataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -56,8 +57,8 @@ Partial Class personnelFRM
         Me.personnelGRID.AllowUserToAddRows = False
         Me.personnelGRID.AllowUserToDeleteRows = False
         Me.personnelGRID.AllowUserToResizeRows = False
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.personnelGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.personnelGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.personnelGRID.ColumnHeadersHeight = 32
         Me.personnelGRID.Cursor = System.Windows.Forms.Cursors.Hand
         Me.personnelGRID.Dock = System.Windows.Forms.DockStyle.Fill
@@ -69,7 +70,7 @@ Partial Class personnelFRM
         Me.personnelGRID.RowHeadersWidth = 30
         Me.personnelGRID.RowTemplate.Height = 30
         Me.personnelGRID.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.personnelGRID.Size = New System.Drawing.Size(278, 353)
+        Me.personnelGRID.Size = New System.Drawing.Size(147, 353)
         Me.personnelGRID.StateCommon.Background.Color1 = System.Drawing.Color.White
         Me.personnelGRID.StateCommon.Background.ColorAlign = ComponentFactory.Krypton.Toolkit.PaletteRectangleAlign.Control
         Me.personnelGRID.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
@@ -96,15 +97,15 @@ Partial Class personnelFRM
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel1.Controls.Add(Me.personnelGRID)
-        Me.Panel1.Location = New System.Drawing.Point(580, 51)
+        Me.Panel1.Location = New System.Drawing.Point(711, 51)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(280, 355)
+        Me.Panel1.Size = New System.Drawing.Size(149, 355)
         Me.Panel1.TabIndex = 559
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(580, 35)
+        Me.Label1.Location = New System.Drawing.Point(711, 35)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(51, 13)
         Me.Label1.TabIndex = 560
@@ -112,7 +113,7 @@ Partial Class personnelFRM
         '
         'KryptonLabel5
         '
-        Me.KryptonLabel5.Location = New System.Drawing.Point(580, 12)
+        Me.KryptonLabel5.Location = New System.Drawing.Point(711, 12)
         Me.KryptonLabel5.Name = "KryptonLabel5"
         Me.KryptonLabel5.Size = New System.Drawing.Size(110, 20)
         Me.KryptonLabel5.StateCommon.ShortText.Color1 = System.Drawing.Color.Black
@@ -150,7 +151,7 @@ Partial Class personnelFRM
         Me.Panel2.Controls.Add(Me.teamgv)
         Me.Panel2.Location = New System.Drawing.Point(22, 199)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(426, 206)
+        Me.Panel2.Size = New System.Drawing.Size(553, 206)
         Me.Panel2.TabIndex = 564
         '
         'teamgv
@@ -158,8 +159,9 @@ Partial Class personnelFRM
         Me.teamgv.AllowUserToAddRows = False
         Me.teamgv.AllowUserToDeleteRows = False
         Me.teamgv.AllowUserToResizeRows = False
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.teamgv.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.teamgv.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
+        Me.teamgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
         Me.teamgv.ColumnHeadersHeight = 32
         Me.teamgv.Cursor = System.Windows.Forms.Cursors.Hand
         Me.teamgv.Dock = System.Windows.Forms.DockStyle.Fill
@@ -169,9 +171,11 @@ Partial Class personnelFRM
         Me.teamgv.Name = "teamgv"
         Me.teamgv.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Silver
         Me.teamgv.RowHeadersWidth = 30
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.teamgv.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.teamgv.RowTemplate.Height = 30
         Me.teamgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.teamgv.Size = New System.Drawing.Size(424, 204)
+        Me.teamgv.Size = New System.Drawing.Size(551, 204)
         Me.teamgv.StateCommon.Background.Color1 = System.Drawing.Color.White
         Me.teamgv.StateCommon.Background.ColorAlign = ComponentFactory.Krypton.Toolkit.PaletteRectangleAlign.Control
         Me.teamgv.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
@@ -194,7 +198,7 @@ Partial Class personnelFRM
         'Button2
         '
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.Button2.Location = New System.Drawing.Point(454, 199)
+        Me.Button2.Location = New System.Drawing.Point(581, 199)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(83, 23)
         Me.Button2.TabIndex = 575
@@ -324,13 +328,13 @@ Partial Class personnelFRM
         Me.Panel3.Controls.Add(Me.teamdate)
         Me.Panel3.Location = New System.Drawing.Point(23, 52)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(425, 104)
+        Me.Panel3.Size = New System.Drawing.Size(552, 104)
         Me.Panel3.TabIndex = 573
         '
         'Button1
         '
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.Button1.Location = New System.Drawing.Point(454, 52)
+        Me.Button1.Location = New System.Drawing.Point(581, 52)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(83, 23)
         Me.Button1.TabIndex = 573
@@ -352,7 +356,7 @@ Partial Class personnelFRM
         Me.Panel4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel4.Location = New System.Drawing.Point(552, 12)
+        Me.Panel4.Location = New System.Drawing.Point(693, 12)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(1, 409)
         Me.Panel4.TabIndex = 575
@@ -360,7 +364,7 @@ Partial Class personnelFRM
         'Button3
         '
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.Button3.Location = New System.Drawing.Point(454, 81)
+        Me.Button3.Location = New System.Drawing.Point(581, 81)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(83, 23)
         Me.Button3.TabIndex = 576

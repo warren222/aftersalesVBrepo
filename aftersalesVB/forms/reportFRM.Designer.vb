@@ -22,9 +22,9 @@ Partial Class reportFRM
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.reportGRID = New ComponentFactory.Krypton.Toolkit.KryptonDataGridView()
         Me.servicing = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -34,8 +34,8 @@ Partial Class reportFRM
         Me.Button1 = New System.Windows.Forms.Button()
         Me.KryptonLabel1 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.mobgv = New ComponentFactory.Krypton.Toolkit.KryptonDataGridView()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.KryptonLabel2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -54,8 +54,8 @@ Partial Class reportFRM
         Me.reportGRID.AllowUserToAddRows = False
         Me.reportGRID.AllowUserToDeleteRows = False
         Me.reportGRID.AllowUserToResizeRows = False
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.reportGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.reportGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.reportGRID.ColumnHeadersHeight = 32
         Me.reportGRID.Cursor = System.Windows.Forms.Cursors.Hand
         Me.reportGRID.Dock = System.Windows.Forms.DockStyle.Fill
@@ -155,11 +155,11 @@ Partial Class reportFRM
         '
         Me.KryptonLabel1.Location = New System.Drawing.Point(284, 52)
         Me.KryptonLabel1.Name = "KryptonLabel1"
-        Me.KryptonLabel1.Size = New System.Drawing.Size(89, 20)
+        Me.KryptonLabel1.Size = New System.Drawing.Size(119, 20)
         Me.KryptonLabel1.StateCommon.ShortText.Color1 = System.Drawing.Color.Black
         Me.KryptonLabel1.StateCommon.ShortText.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.KryptonLabel1.TabIndex = 570
-        Me.KryptonLabel1.Values.Text = "Mobilization :"
+        Me.KryptonLabel1.Values.Text = "Mobilization Cost :"
         '
         'Panel2
         '
@@ -173,17 +173,6 @@ Partial Class reportFRM
         Me.Panel2.Size = New System.Drawing.Size(550, 145)
         Me.Panel2.TabIndex = 571
         '
-        'Button2
-        '
-        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.Button2.Location = New System.Drawing.Point(840, 77)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(94, 23)
-        Me.Button2.TabIndex = 572
-        Me.Button2.Text = "import"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
         'mobgv
         '
         Me.mobgv.AllowUserToAddRows = False
@@ -191,9 +180,9 @@ Partial Class reportFRM
         Me.mobgv.AllowUserToOrderColumns = True
         Me.mobgv.AllowUserToResizeColumns = False
         Me.mobgv.AllowUserToResizeRows = False
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black
-        Me.mobgv.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        Me.mobgv.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
         Me.mobgv.ColumnHeadersHeight = 30
         Me.mobgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.mobgv.Cursor = System.Windows.Forms.Cursors.Hand
@@ -221,6 +210,17 @@ Partial Class reportFRM
         Me.mobgv.StateCommon.HeaderColumn.Content.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.mobgv.StateCommon.HeaderColumn.Content.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias
         Me.mobgv.TabIndex = 500
+        '
+        'Button2
+        '
+        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.Button2.Location = New System.Drawing.Point(840, 77)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(94, 23)
+        Me.Button2.TabIndex = 572
+        Me.Button2.Text = "import"
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'Button3
         '
@@ -260,9 +260,9 @@ Partial Class reportFRM
         Me.teamgv.AllowUserToOrderColumns = True
         Me.teamgv.AllowUserToResizeColumns = False
         Me.teamgv.AllowUserToResizeRows = False
-        DataGridViewCellStyle9.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black
-        Me.teamgv.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        Me.teamgv.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
         Me.teamgv.ColumnHeadersHeight = 30
         Me.teamgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.teamgv.Cursor = System.Windows.Forms.Cursors.Hand

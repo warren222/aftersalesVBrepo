@@ -227,6 +227,7 @@ Partial Class ServicingScheduleFRM
         Me.Controls.Add(Me.gvpnl)
         Me.Name = "ServicingScheduleFRM"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
