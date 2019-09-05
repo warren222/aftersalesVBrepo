@@ -11,8 +11,16 @@ Public Class sharedmethods
         End With
         dgvproperties(ServicingScheduleFRM.gv)
 
-        AddHandler ServicingScheduleFRM.gv.CellClick, AddressOf ServicingScheduleFRM.gv_CellClick
-        AddHandler ServicingScheduleFRM.gv.SelectionChanged, AddressOf ServicingScheduleFRM.gv_SelectionChanged
+
+    End Sub
+    Public Sub assessmentsettingFRMinitialize()
+        With assessmentsettingFRM.gv
+            '.RowTemplate.Height = 50
+            '.StateCommon.DataCell.Border.Color1 = Color.Black
+            '.StateCommon.DataCell.Border.Width = 1
+            '.DefaultCellStyle.WrapMode = DataGridViewTriState.True
+        End With
+        dgvproperties(assessmentsettingFRM.gv)
     End Sub
 
     Public Sub dgvproperties(ByVal dgv As KryptonDataGridView)
@@ -38,7 +46,7 @@ Public Class sharedmethods
                 .HeaderColumn.Border.Width = 0
                 .HeaderColumn.Content.Color1 = Color.DimGray
                 .HeaderColumn.Content.Color2 = Color.Transparent
-                .HeaderColumn.Content.Font = New Font("Tahoma", 9.0!, FontStyle.Bold, GraphicsUnit.Point, CType(0, Byte))
+                .HeaderColumn.Content.Font = New Font("Calibri", 9.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
                 .HeaderColumn.Content.Hint = PaletteTextHint.AntiAlias
             End With
         End With

@@ -148,6 +148,30 @@
     <Compile Include="forms\assessmentFRM.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="forms\assessmentFRM\assessmentreportingFRM.Designer.vb">
+      <DependentUpon>assessmentreportingFRM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\assessmentFRM\assessmentreportingFRM.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\assessmentFRM\assessmentsettingFRM.Designer.vb">
+      <DependentUpon>assessmentsettingFRM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\assessmentFRM\assessmentsettingFRM.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\assessmentFRM\selectedsystemFRM.Designer.vb">
+      <DependentUpon>selectedsystemFRM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\assessmentFRM\selectedsystemFRM.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\assreportFRM.Designer.vb">
+      <DependentUpon>assreportFRM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\assreportFRM.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="forms\concernFRM.Designer.vb">
       <DependentUpon>concernFRM.vb</DependentUpon>
     </Compile>
@@ -352,6 +376,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\assessmentFRM.resx">
       <DependentUpon>assessmentFRM.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\assessmentFRM\assessmentreportingFRM.resx">
+      <DependentUpon>assessmentreportingFRM.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\assessmentFRM\assessmentsettingFRM.resx">
+      <DependentUpon>assessmentsettingFRM.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\assessmentFRM\selectedsystemFRM.resx">
+      <DependentUpon>selectedsystemFRM.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\assreportFRM.resx">
+      <DependentUpon>assreportFRM.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\concernFRM.resx">
       <DependentUpon>concernFRM.vb</DependentUpon>

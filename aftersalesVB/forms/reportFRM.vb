@@ -77,7 +77,8 @@ Public Class reportFRM
         If reportGRID.RowCount >= 0 And e.RowIndex >= 0 Then
             id = reportGRID.Item("id", e.RowIndex).Value.ToString
             If e.ColumnIndex = 6 Then
-                reportassessmentFRM.ShowDialog()
+                'reportassessmentFRM.ShowDialog()
+                assessmentreportingFRM.Show()
             ElseIf e.ColumnIndex = 7 Then
                 newreportFRM.locations.Text = reportGRID.Item("location", e.RowIndex).Value.ToString
                 newreportFRM.specification.Text = reportGRID.Item("specification", e.RowIndex).Value.ToString

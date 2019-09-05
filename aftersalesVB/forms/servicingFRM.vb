@@ -4,7 +4,7 @@ Public Class servicingFRM
     Dim sql As New sql
     Dim scount As String
     Dim suffix As String
-    Public id As String
+    Public Shared id As String
     Dim bs As New BindingSource
 
     Private Sub servicingFRM_Load(sender As Object, e As EventArgs) Handles MyBase.Load

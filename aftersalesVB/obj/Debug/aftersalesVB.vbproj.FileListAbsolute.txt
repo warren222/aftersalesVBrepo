@@ -73,3 +73,7 @@ C:\Users\kmdim\Desktop\aftersalesVB\aftersalesVBrepo\aftersalesVB\obj\Debug\afte
 C:\Users\kmdim\Desktop\aftersalesVB\aftersalesVBrepo\aftersalesVB\obj\Debug\aftersalesVB.vbprojResolveAssemblyReference.cache
 C:\Users\kmdim\Desktop\aftersalesVB\aftersalesVBrepo\aftersalesVB\obj\Debug\aftersalesVB.mobiizationFRM.resources
 C:\Users\kmdim\Desktop\aftersalesVB\aftersalesVBrepo\aftersalesVB\obj\Debug\aftersalesVB.ServicingRPTfrm.resources
+C:\Users\kmdim\Desktop\aftersalesVB\aftersalesVBrepo\aftersalesVB\obj\Debug\aftersalesVB.assessmentsettingFRM.resources
+C:\Users\kmdim\Desktop\aftersalesVB\aftersalesVBrepo\aftersalesVB\obj\Debug\aftersalesVB.assreportFRM.resources
+C:\Users\kmdim\Desktop\aftersalesVB\aftersalesVBrepo\aftersalesVB\obj\Debug\aftersalesVB.assessmentreportingFRM.resources
+C:\Users\kmdim\Desktop\aftersalesVB\aftersalesVBrepo\aftersalesVB\obj\Debug\aftersalesVB.selectedsystemFRM.resources

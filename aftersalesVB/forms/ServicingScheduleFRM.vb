@@ -23,8 +23,7 @@ Public Class ServicingScheduleFRM
         sm.ServicingScheduleFRMinitialize()
         Button1.PerformClick()
     End Sub
-
-    Public Sub gv_SelectionChanged(sender As Object, e As EventArgs)
+    Private Sub cellclick()
         Dim rows As DataGridViewSelectedRowCollection = gv.SelectedRows
         For Each row As DataGridViewRow In rows
             mainform.tempcin = row.Cells("cin").Value.ToString
@@ -35,22 +34,11 @@ Public Class ServicingScheduleFRM
             id = row.Cells("id").Value.ToString
             statusFRM.statusdate.Text = row.Cells("status date").Value.ToString
             statusFRM.status.Text = row.Cells("status").Value.ToString
+            servicingFRM.id = row.Cells("id").Value.ToString
+            reportFRM.servicing.Text = row.Cells("servicing").Value.ToString
         Next
     End Sub
 
-    Public Sub gv_CellClick(sender As Object, e As DataGridViewCellEventArgs)
-        If gv.RowCount >= 0 And e.RowIndex >= 0 Then
-            Dim row As DataGridViewRow = gv.Rows(e.RowIndex)
-            mainform.tempcin = row.Cells("cin").Value.ToString
-            servicingFRM.projectname.Text = row.Cells("project").Value.ToString
-            servicingFRM.address.Text = row.Cells("address").Value.ToString
-            servicingFRM.jo.Text = row.Cells("jo").Value.ToString
-            servicingFRM.KryptonLabel3.Text = row.Cells("cin").Value.ToString
-            id = gv.Item("id", e.RowIndex).Value.ToString
-            statusFRM.statusdate.Text = gv.Item("status date", e.RowIndex).Value.ToString
-            statusFRM.status.Text = gv.Item("status", e.RowIndex).Value.ToString
-        End If
-    End Sub
 
     Private Sub bgw_completed(sender As Object, e As RunWorkerCompletedEventArgs)
         Select Case action
@@ -145,11 +133,18 @@ Public Class ServicingScheduleFRM
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        cellclick()
         servicingFRM.ShowDialog()
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        cellclick()
         statusFRM.source = "ServicingScheduleFRM"
         statusFRM.ShowDialog()
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        cellclick()
+        reportFRM.ShowDialog()
     End Sub
 End Class
