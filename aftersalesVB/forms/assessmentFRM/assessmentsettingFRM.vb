@@ -11,6 +11,8 @@ Public Class assessmentsettingFRM
     Public bs As New BindingSource
     Dim sm As New sharedmethods
 
+    Public gv2 As New KryptonDataGridView
+    Dim bs2 As New BindingSource
     Private Sub assessmentsettingFRM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         AddHandler bgw.DoWork, AddressOf bgw_dowork
         AddHandler bgw.ProgressChanged, AddressOf bgw_progresschanged
@@ -18,6 +20,7 @@ Public Class assessmentsettingFRM
         bgw.WorkerSupportsCancellation = True
         bgw.WorkerReportsProgress = True
         gv.DataSource = bs
+        gv2.DataSource = bs2
         sm.assessmentsettingFRMinitialize()
         SYSTEMTXT.SelectedIndex = 0
     End Sub
@@ -29,11 +32,26 @@ Public Class assessmentsettingFRM
             MsgBox("busy")
         End If
     End Sub
+    Dim id As String
+
+    Public Sub gv_SelectionChanged(sender As Object, e As EventArgs)
+        Dim rows As DataGridViewSelectedRowCollection = gv.SelectedRows
+        For Each row As DataGridViewRow In rows
+            id = row.Cells("id").Value.ToString
+        Next
+    End Sub
 
     Private Sub bgw_completed(sender As Object, e As RunWorkerCompletedEventArgs)
         Select Case action
             Case "LOAD SYSTEM"
+                starter("FORMAT SYSTEM")
             Case "ADD SYSTEM"
+                systemval = SYSTEMTXT.Text
+                starter("LOAD SYSTEM")
+            Case "ADD ASSESSMENT"
+                systemval = SYSTEMTXT.Text
+                starter("LOAD ASSESSMENT")
+            Case "DELETE SYSTEM"
                 systemval = SYSTEMTXT.Text
                 starter("LOAD SYSTEM")
         End Select
@@ -47,12 +65,28 @@ Public Class assessmentsettingFRM
                 If Not Panel2.Controls.Contains(gv) Then
                     Panel2.Controls.Add(gv)
                 End If
+            Case "LOAD ASSESSMENT"
+                bs2.DataSource = ds
+                bs2.DataMember = "ASSESSMENTTB"
+                If Not Panel3.Controls.Contains(gv2) Then
+                    Panel3.Controls.Add(gv2)
+                End If
+            Case "FORMAT SYSTEM"
+                With gv
+                    .Columns("id").Visible = False
+                    .Columns("system").Visible = False
+                    .AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells
+                End With
         End Select
     End Sub
     Dim systemval As String
     Dim partsval As String
     Dim categoryval As String
     Dim OTHERSYSTEMVAL As String
+
+    Dim qualityaspectVAL As String
+    Dim possibleissueVAL As String
+    Dim posibblesolutionVAL As String
     Private Sub bgw_dowork(sender As Object, e As DoWorkEventArgs)
         Select Case action
             Case "LOAD SYSTEM"
@@ -61,6 +95,16 @@ Public Class assessmentsettingFRM
             Case "ADD SYSTEM"
                 Dim VAL As String = "'" & systemval & "','" & partsval & "','" & categoryval & "','" & OTHERSYSTEMVAL & "'"
                 queries("ADD SYSTEM", VAL)
+            Case "DELETE SYSTEM"
+                queries("DELETE SYSTEM", id)
+            Case "FORMAT SYSTEM"
+                bgw.ReportProgress(0)
+            Case "LOAD ASSESSMENT"
+                queries("LOAD ASSESSMENT", vbNull)
+                bgw.ReportProgress(0)
+            Case "ADD ASSESSMENT"
+                Dim VAL As String = "'" & systemval & "','" & qualityaspectVAL & "','" & possibleissueVAL & "','" & posibblesolutionVAL & "'"
+                queries("ADD ASSESSMENT", VAL)
         End Select
     End Sub
     Private Sub queries(ByVal command As String, ByVal val As String)
@@ -68,6 +112,7 @@ Public Class assessmentsettingFRM
         ds.Clear()
         Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
             Using sqlcmd As SqlCommand = sqlcon.CreateCommand
+                sqlcon.Open()
                 With sqlcmd
                     .CommandType = CommandType.StoredProcedure
                     .CommandText = "[SYSTEM_queries]"
@@ -76,11 +121,22 @@ Public Class assessmentsettingFRM
                     .Parameters.AddWithValue("@system", systemval)
                 End With
                 Using da As SqlDataAdapter = New SqlDataAdapter
-                    With da
-                        .SelectCommand = sqlcmd
-                        .SelectCommand.CommandTimeout = 30000
-                        .Fill(ds, "SYSTEMTB")
-                    End With
+                    If command = "LOAD SYSTEM" Then
+                        With da
+                            .SelectCommand = sqlcmd
+                            .SelectCommand.CommandTimeout = 30000
+                            .Fill(ds, "SYSTEMTB")
+                        End With
+                    ElseIf command = "LOAD ASSESSMENT" Then
+                        With da
+                            .SelectCommand = sqlcmd
+                            .SelectCommand.CommandTimeout = 30000
+                            .Fill(ds, "assessmenttb")
+                        End With
+                    Else
+                        sqlcmd.ExecuteNonQuery()
+                    End If
+
                 End Using
             End Using
         End Using
@@ -101,9 +157,7 @@ Public Class assessmentsettingFRM
 
     Private Sub SYSTEMTXT_SelectedIndexChanged(sender As Object, e As EventArgs) Handles SYSTEMTXT.SelectedIndexChanged
         Button2.PerformClick()
-        partsbol = True
         categorybol = True
-        PARTSTXT.SelectedIndex = -1
         CATEGORYTXT.SelectedIndex = -1
         OTHERSYSTEMTXT.SelectedIndex = -1
         Select Case SYSTEMTXT.Text
@@ -144,29 +198,17 @@ Public Class assessmentsettingFRM
         End Select
     End Sub
 
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs)
 
     End Sub
-    Dim partsbol As Boolean = True
+
     Dim categorybol As Boolean = True
 
-    Private Sub PARTSTXT_MouseDown(sender As Object, e As MouseEventArgs) Handles PARTSTXT.MouseDown, CATEGORYTXT.MouseDown, OTHERSYSTEMTXT.MouseDown
+    Private Sub PARTSTXT_MouseDown(sender As Object, e As MouseEventArgs) Handles CATEGORYTXT.MouseDown, OTHERSYSTEMTXT.MouseDown
         Select Case sender.name
             Case "OTHERSYSTEMTXT"
-
                 Dim str As String = "select Distinct othersystem from systemtb where system = '" & SYSTEMTXT.Text & "'"
                 LOADDROPDOWNVAL(str, OTHERSYSTEMTXT, "OTHERSYSTEM")
-
-            Case "PARTSTXT"
-                If partsbol = True Then
-                    Dim str As String = ""
-                    If SYSTEMTXT.Text = "INSECT PROTECTION SYSTEM" Then
-                        str = "select Distinct parts from systemtb where system = '" & SYSTEMTXT.Text & "' and othersystem = '" & OTHERSYSTEMTXT.Text & "'"
-                    Else
-                        str = "select Distinct parts from systemtb where system = '" & SYSTEMTXT.Text & "'"
-                    End If
-                    LOADDROPDOWNVAL(str, PARTSTXT, "parts")
-                End If
             Case "CATEGORYTXT"
                 If categorybol = True Then
                     Dim str As String = "select distinct category from  systemtb where system = '" & SYSTEMTXT.Text & "'"
@@ -193,17 +235,32 @@ Public Class assessmentsettingFRM
                     Select Case obj.name
                         Case "OTHERSYSTEMTXT"
                             If SYSTEMTXT.Text = "INSECT PROTECTION SYSTEM" Then
-                                partsbol = True
                                 categorybol = True
                             End If
-                        Case "PARTSTXT"
-                            partsbol = False
-                            categorybol = True
                         Case "CATEGORYTXT"
                             categorybol = False
                     End Select
                 End Try
             End Using
         End Using
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        If MessageBox.Show("", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
+            Exit Sub
+        End If
+        starter("DELETE SYSTEM")
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        systemval = SYSTEMTXT.Text
+        starter("LOAD ASSESSMENT")
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        qualityaspectVAL = qualityaspect.Text
+        possibleissueVAL = possibleissue.Text
+        posibblesolutionVAL = posibblesolution.Text
+        starter("ADD ASSESSMENT")
     End Sub
 End Class

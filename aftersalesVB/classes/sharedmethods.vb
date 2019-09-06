@@ -21,6 +21,8 @@ Public Class sharedmethods
             '.DefaultCellStyle.WrapMode = DataGridViewTriState.True
         End With
         dgvproperties(assessmentsettingFRM.gv)
+        dgvproperties(assessmentsettingFRM.gv2)
+        AddHandler assessmentsettingFRM.gv.SelectionChanged, AddressOf assessmentsettingFRM.gv_SelectionChanged
     End Sub
 
     Public Sub dgvproperties(ByVal dgv As KryptonDataGridView)

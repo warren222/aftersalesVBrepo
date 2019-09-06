@@ -27,7 +27,6 @@ Partial Class assessmentsettingFRM
         Me.SYSTEMTXT = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.PARTSTXT = New System.Windows.Forms.ComboBox()
         Me.CATEGORYTXT = New System.Windows.Forms.ComboBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Button4 = New System.Windows.Forms.Button()
@@ -36,27 +35,33 @@ Partial Class assessmentsettingFRM
         Me.OTHERSYSTEMTXT = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.seelctedsystem = New System.Windows.Forms.Label()
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.possibleissue = New System.Windows.Forms.ComboBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.qualityaspect = New System.Windows.Forms.ComboBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.project = New MetroFramework.Controls.MetroTextBox()
+        Me.posibblesolution = New MetroFramework.Controls.MetroTextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.PARTSTXT = New MetroFramework.Controls.MetroTextBox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.Panel1.SuspendLayout()
+        CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SplitContainer1.Panel1.SuspendLayout()
+        Me.SplitContainer1.Panel2.SuspendLayout()
+        Me.SplitContainer1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Calibri", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(18, 20)
+        Me.Label1.Location = New System.Drawing.Point(26, 74)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(48, 17)
         Me.Label1.TabIndex = 0
@@ -68,7 +73,7 @@ Partial Class assessmentsettingFRM
         Me.SYSTEMTXT.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SYSTEMTXT.FormattingEnabled = True
         Me.SYSTEMTXT.Items.AddRange(New Object() {"FRAMING SYSTEM", "GLAZING SYSTEM", "MECHANISM", "WEATHER TIGHTNESS", "INSECT PROTECTION SYSTEM"})
-        Me.SYSTEMTXT.Location = New System.Drawing.Point(129, 20)
+        Me.SYSTEMTXT.Location = New System.Drawing.Point(121, 74)
         Me.SYSTEMTXT.Name = "SYSTEMTXT"
         Me.SYSTEMTXT.Size = New System.Drawing.Size(245, 27)
         Me.SYSTEMTXT.TabIndex = 1
@@ -77,7 +82,7 @@ Partial Class assessmentsettingFRM
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Calibri", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(18, 119)
+        Me.Label2.Location = New System.Drawing.Point(26, 214)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(59, 17)
         Me.Label2.TabIndex = 4
@@ -87,26 +92,17 @@ Partial Class assessmentsettingFRM
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Calibri", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(18, 86)
+        Me.Label3.Location = New System.Drawing.Point(26, 181)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(37, 17)
         Me.Label3.TabIndex = 5
         Me.Label3.Text = "Parts"
         '
-        'PARTSTXT
-        '
-        Me.PARTSTXT.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PARTSTXT.FormattingEnabled = True
-        Me.PARTSTXT.Location = New System.Drawing.Point(129, 86)
-        Me.PARTSTXT.Name = "PARTSTXT"
-        Me.PARTSTXT.Size = New System.Drawing.Size(245, 27)
-        Me.PARTSTXT.TabIndex = 6
-        '
         'CATEGORYTXT
         '
         Me.CATEGORYTXT.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CATEGORYTXT.FormattingEnabled = True
-        Me.CATEGORYTXT.Location = New System.Drawing.Point(129, 119)
+        Me.CATEGORYTXT.Location = New System.Drawing.Point(121, 214)
         Me.CATEGORYTXT.Name = "CATEGORYTXT"
         Me.CATEGORYTXT.Size = New System.Drawing.Size(152, 27)
         Me.CATEGORYTXT.TabIndex = 7
@@ -118,16 +114,16 @@ Partial Class assessmentsettingFRM
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel2.BackColor = System.Drawing.Color.White
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel2.Location = New System.Drawing.Point(21, 202)
+        Me.Panel2.Location = New System.Drawing.Point(121, 278)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(401, 143)
+        Me.Panel2.Size = New System.Drawing.Size(334, 150)
         Me.Panel2.TabIndex = 9
         '
         'Button4
         '
         Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button4.Font = New System.Drawing.Font("Calibri", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.Location = New System.Drawing.Point(428, 202)
+        Me.Button4.Location = New System.Drawing.Point(461, 278)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(70, 27)
         Me.Button4.TabIndex = 850
@@ -138,7 +134,7 @@ Partial Class assessmentsettingFRM
         '
         Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button3.Font = New System.Drawing.Font("Calibri", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(428, 235)
+        Me.Button3.Location = New System.Drawing.Point(461, 311)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(70, 27)
         Me.Button3.TabIndex = 849
@@ -149,7 +145,7 @@ Partial Class assessmentsettingFRM
         '
         Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button2.Font = New System.Drawing.Font("Calibri", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(428, 268)
+        Me.Button2.Location = New System.Drawing.Point(461, 344)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(70, 27)
         Me.Button2.TabIndex = 848
@@ -160,7 +156,7 @@ Partial Class assessmentsettingFRM
         '
         Me.OTHERSYSTEMTXT.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.OTHERSYSTEMTXT.FormattingEnabled = True
-        Me.OTHERSYSTEMTXT.Location = New System.Drawing.Point(129, 53)
+        Me.OTHERSYSTEMTXT.Location = New System.Drawing.Point(121, 148)
         Me.OTHERSYSTEMTXT.Name = "OTHERSYSTEMTXT"
         Me.OTHERSYSTEMTXT.Size = New System.Drawing.Size(245, 27)
         Me.OTHERSYSTEMTXT.TabIndex = 9
@@ -169,7 +165,7 @@ Partial Class assessmentsettingFRM
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Calibri", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(18, 53)
+        Me.Label4.Location = New System.Drawing.Point(26, 148)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(89, 17)
         Me.Label4.TabIndex = 8
@@ -179,62 +175,36 @@ Partial Class assessmentsettingFRM
         '
         Me.seelctedsystem.AutoSize = True
         Me.seelctedsystem.Font = New System.Drawing.Font("Calibri", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.seelctedsystem.Location = New System.Drawing.Point(23, 9)
+        Me.seelctedsystem.Location = New System.Drawing.Point(3, 9)
         Me.seelctedsystem.Name = "seelctedsystem"
         Me.seelctedsystem.Size = New System.Drawing.Size(359, 33)
         Me.seelctedsystem.TabIndex = 851
         Me.seelctedsystem.Text = "Window / Door System Settings"
         '
-        'Panel1
-        '
-        Me.Panel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel1.Controls.Add(Me.Label5)
-        Me.Panel1.Controls.Add(Me.Button4)
-        Me.Panel1.Controls.Add(Me.Button2)
-        Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Controls.Add(Me.Button3)
-        Me.Panel1.Controls.Add(Me.Label3)
-        Me.Panel1.Controls.Add(Me.OTHERSYSTEMTXT)
-        Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.PARTSTXT)
-        Me.Panel1.Controls.Add(Me.Panel2)
-        Me.Panel1.Controls.Add(Me.Label4)
-        Me.Panel1.Controls.Add(Me.SYSTEMTXT)
-        Me.Panel1.Controls.Add(Me.CATEGORYTXT)
-        Me.Panel1.Location = New System.Drawing.Point(29, 55)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(520, 371)
-        Me.Panel1.TabIndex = 852
-        '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Calibri", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(18, 182)
+        Me.Label5.Location = New System.Drawing.Point(26, 278)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(69, 17)
         Me.Label5.TabIndex = 851
         Me.Label5.Text = "Data Table"
         '
-        'ComboBox1
+        'possibleissue
         '
-        Me.ComboBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ComboBox1.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(740, 88)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(208, 27)
-        Me.ComboBox1.TabIndex = 856
+        Me.possibleissue.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.possibleissue.FormattingEnabled = True
+        Me.possibleissue.Location = New System.Drawing.Point(169, 181)
+        Me.possibleissue.Name = "possibleissue"
+        Me.possibleissue.Size = New System.Drawing.Size(208, 27)
+        Me.possibleissue.TabIndex = 856
         '
         'Label6
         '
-        Me.Label6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Calibri", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(587, 88)
+        Me.Label6.Location = New System.Drawing.Point(29, 181)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(134, 17)
         Me.Label6.TabIndex = 855
@@ -242,20 +212,18 @@ Partial Class assessmentsettingFRM
         '
         'qualityaspect
         '
-        Me.qualityaspect.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.qualityaspect.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.qualityaspect.FormattingEnabled = True
-        Me.qualityaspect.Location = New System.Drawing.Point(740, 55)
+        Me.qualityaspect.Location = New System.Drawing.Point(169, 148)
         Me.qualityaspect.Name = "qualityaspect"
         Me.qualityaspect.Size = New System.Drawing.Size(208, 27)
         Me.qualityaspect.TabIndex = 854
         '
         'Label7
         '
-        Me.Label7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Calibri", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(587, 55)
+        Me.Label7.Location = New System.Drawing.Point(29, 148)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(126, 17)
         Me.Label7.TabIndex = 853
@@ -263,60 +231,57 @@ Partial Class assessmentsettingFRM
         '
         'Label8
         '
-        Me.Label8.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Calibri", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(587, 121)
+        Me.Label8.Location = New System.Drawing.Point(29, 214)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(100, 17)
         Me.Label8.TabIndex = 857
         Me.Label8.Text = "Possible Solution"
         '
-        'project
-        '
-        Me.project.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        'posibblesolution
         '
         '
         '
-        Me.project.CustomButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.project.CustomButton.Image = CType(resources.GetObject("resource.Image"), System.Drawing.Image)
-        Me.project.CustomButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.project.CustomButton.Location = New System.Drawing.Point(180, 1)
-        Me.project.CustomButton.Name = ""
-        Me.project.CustomButton.Size = New System.Drawing.Size(27, 27)
-        Me.project.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.project.CustomButton.TabIndex = 1
-        Me.project.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.project.CustomButton.UseSelectable = True
-        Me.project.CustomButton.UseVisualStyleBackColor = False
-        Me.project.CustomButton.Visible = False
-        Me.project.DisplayIcon = True
-        Me.project.FontSize = MetroFramework.MetroTextBoxSize.Medium
-        Me.project.Lines = New String(-1) {}
-        Me.project.Location = New System.Drawing.Point(740, 121)
-        Me.project.MaxLength = 32767
-        Me.project.Name = "project"
-        Me.project.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.project.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.project.SelectedText = ""
-        Me.project.SelectionLength = 0
-        Me.project.SelectionStart = 0
-        Me.project.ShowClearButton = True
-        Me.project.Size = New System.Drawing.Size(208, 29)
-        Me.project.Style = MetroFramework.MetroColorStyle.Red
-        Me.project.TabIndex = 858
-        Me.project.UseCustomForeColor = True
-        Me.project.UseSelectable = True
-        Me.project.WaterMark = "Enter Solution Here"
-        Me.project.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.project.WaterMarkFont = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        '
+        Me.posibblesolution.CustomButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.posibblesolution.CustomButton.Image = CType(resources.GetObject("resource.Image"), System.Drawing.Image)
+        Me.posibblesolution.CustomButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.posibblesolution.CustomButton.Location = New System.Drawing.Point(180, 1)
+        Me.posibblesolution.CustomButton.Name = ""
+        Me.posibblesolution.CustomButton.Size = New System.Drawing.Size(27, 27)
+        Me.posibblesolution.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.posibblesolution.CustomButton.TabIndex = 1
+        Me.posibblesolution.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.posibblesolution.CustomButton.UseSelectable = True
+        Me.posibblesolution.CustomButton.UseVisualStyleBackColor = False
+        Me.posibblesolution.CustomButton.Visible = False
+        Me.posibblesolution.DisplayIcon = True
+        Me.posibblesolution.FontSize = MetroFramework.MetroTextBoxSize.Medium
+        Me.posibblesolution.Lines = New String(-1) {}
+        Me.posibblesolution.Location = New System.Drawing.Point(169, 214)
+        Me.posibblesolution.MaxLength = 32767
+        Me.posibblesolution.Name = "posibblesolution"
+        Me.posibblesolution.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.posibblesolution.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.posibblesolution.SelectedText = ""
+        Me.posibblesolution.SelectionLength = 0
+        Me.posibblesolution.SelectionStart = 0
+        Me.posibblesolution.ShowClearButton = True
+        Me.posibblesolution.Size = New System.Drawing.Size(208, 29)
+        Me.posibblesolution.Style = MetroFramework.MetroColorStyle.Red
+        Me.posibblesolution.TabIndex = 858
+        Me.posibblesolution.UseCustomForeColor = True
+        Me.posibblesolution.UseSelectable = True
+        Me.posibblesolution.WaterMark = "Enter Solution Here"
+        Me.posibblesolution.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.posibblesolution.WaterMarkFont = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'Label9
         '
-        Me.Label9.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Calibri", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(587, 175)
+        Me.Label9.Location = New System.Drawing.Point(29, 278)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(69, 17)
         Me.Label9.TabIndex = 863
@@ -326,7 +291,7 @@ Partial Class assessmentsettingFRM
         '
         Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button1.Font = New System.Drawing.Font("Calibri", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(906, 195)
+        Me.Button1.Location = New System.Drawing.Point(486, 278)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(70, 27)
         Me.Button1.TabIndex = 862
@@ -337,7 +302,7 @@ Partial Class assessmentsettingFRM
         '
         Me.Button5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button5.Font = New System.Drawing.Font("Calibri", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button5.Location = New System.Drawing.Point(906, 261)
+        Me.Button5.Location = New System.Drawing.Point(486, 344)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(70, 27)
         Me.Button5.TabIndex = 860
@@ -348,7 +313,7 @@ Partial Class assessmentsettingFRM
         '
         Me.Button6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button6.Font = New System.Drawing.Font("Calibri", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button6.Location = New System.Drawing.Point(906, 228)
+        Me.Button6.Location = New System.Drawing.Point(486, 311)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(70, 27)
         Me.Button6.TabIndex = 861
@@ -357,38 +322,120 @@ Partial Class assessmentsettingFRM
         '
         'Panel3
         '
-        Me.Panel3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel3.BackColor = System.Drawing.Color.White
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel3.Location = New System.Drawing.Point(590, 195)
+        Me.Panel3.Location = New System.Drawing.Point(169, 278)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(310, 231)
+        Me.Panel3.Size = New System.Drawing.Size(310, 150)
         Me.Panel3.TabIndex = 859
+        '
+        'PARTSTXT
+        '
+        '
+        '
+        '
+        Me.PARTSTXT.CustomButton.Image = Nothing
+        Me.PARTSTXT.CustomButton.Location = New System.Drawing.Point(219, 2)
+        Me.PARTSTXT.CustomButton.Name = ""
+        Me.PARTSTXT.CustomButton.Size = New System.Drawing.Size(23, 23)
+        Me.PARTSTXT.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.PARTSTXT.CustomButton.TabIndex = 1
+        Me.PARTSTXT.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.PARTSTXT.CustomButton.UseSelectable = True
+        Me.PARTSTXT.CustomButton.Visible = False
+        Me.PARTSTXT.DisplayIcon = True
+        Me.PARTSTXT.FontSize = MetroFramework.MetroTextBoxSize.Medium
+        Me.PARTSTXT.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.PARTSTXT.Lines = New String(-1) {}
+        Me.PARTSTXT.Location = New System.Drawing.Point(121, 181)
+        Me.PARTSTXT.MaxLength = 32767
+        Me.PARTSTXT.Multiline = True
+        Me.PARTSTXT.Name = "PARTSTXT"
+        Me.PARTSTXT.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.PARTSTXT.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.PARTSTXT.SelectedText = ""
+        Me.PARTSTXT.SelectionLength = 0
+        Me.PARTSTXT.SelectionStart = 0
+        Me.PARTSTXT.ShowClearButton = True
+        Me.PARTSTXT.Size = New System.Drawing.Size(245, 28)
+        Me.PARTSTXT.Style = MetroFramework.MetroColorStyle.Red
+        Me.PARTSTXT.TabIndex = 864
+        Me.PARTSTXT.UseCustomForeColor = True
+        Me.PARTSTXT.UseSelectable = True
+        Me.PARTSTXT.WaterMark = "Enter Parts here"
+        Me.PARTSTXT.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.PARTSTXT.WaterMarkFont = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.SystemColors.Control
+        Me.Panel1.Controls.Add(Me.seelctedsystem)
+        Me.Panel1.Controls.Add(Me.PARTSTXT)
+        Me.Panel1.Controls.Add(Me.CATEGORYTXT)
+        Me.Panel1.Controls.Add(Me.Label5)
+        Me.Panel1.Controls.Add(Me.SYSTEMTXT)
+        Me.Panel1.Controls.Add(Me.Button4)
+        Me.Panel1.Controls.Add(Me.Label4)
+        Me.Panel1.Controls.Add(Me.Button2)
+        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.OTHERSYSTEMTXT)
+        Me.Panel1.Controls.Add(Me.Button3)
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.Panel2)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(552, 450)
+        Me.Panel1.TabIndex = 865
+        '
+        'SplitContainer1
+        '
+        Me.SplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SplitContainer1.Location = New System.Drawing.Point(0, 0)
+        Me.SplitContainer1.Name = "SplitContainer1"
+        '
+        'SplitContainer1.Panel1
+        '
+        Me.SplitContainer1.Panel1.Controls.Add(Me.Panel1)
+        '
+        'SplitContainer1.Panel2
+        '
+        Me.SplitContainer1.Panel2.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.SplitContainer1.Panel2.Controls.Add(Me.Label7)
+        Me.SplitContainer1.Panel2.Controls.Add(Me.Label9)
+        Me.SplitContainer1.Panel2.Controls.Add(Me.qualityaspect)
+        Me.SplitContainer1.Panel2.Controls.Add(Me.Button1)
+        Me.SplitContainer1.Panel2.Controls.Add(Me.Label6)
+        Me.SplitContainer1.Panel2.Controls.Add(Me.Button5)
+        Me.SplitContainer1.Panel2.Controls.Add(Me.possibleissue)
+        Me.SplitContainer1.Panel2.Controls.Add(Me.Button6)
+        Me.SplitContainer1.Panel2.Controls.Add(Me.Label8)
+        Me.SplitContainer1.Panel2.Controls.Add(Me.Panel3)
+        Me.SplitContainer1.Panel2.Controls.Add(Me.posibblesolution)
+        Me.SplitContainer1.Size = New System.Drawing.Size(1126, 450)
+        Me.SplitContainer1.SplitterDistance = 552
+        Me.SplitContainer1.TabIndex = 866
         '
         'assessmentsettingFRM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(987, 450)
-        Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.Button5)
-        Me.Controls.Add(Me.Button6)
-        Me.Controls.Add(Me.Panel3)
-        Me.Controls.Add(Me.project)
-        Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.ComboBox1)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.qualityaspect)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.seelctedsystem)
+        Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.ClientSize = New System.Drawing.Size(1126, 450)
+        Me.Controls.Add(Me.SplitContainer1)
         Me.Name = "assessmentsettingFRM"
-        Me.Text = "assessmentsettingFRM"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.SplitContainer1.Panel1.ResumeLayout(False)
+        Me.SplitContainer1.Panel2.ResumeLayout(False)
+        Me.SplitContainer1.Panel2.PerformLayout()
+        CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.SplitContainer1.ResumeLayout(False)
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -396,7 +443,6 @@ Partial Class assessmentsettingFRM
     Friend WithEvents SYSTEMTXT As ComboBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents PARTSTXT As ComboBox
     Friend WithEvents CATEGORYTXT As ComboBox
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Button4 As Button
@@ -405,17 +451,19 @@ Partial Class assessmentsettingFRM
     Friend WithEvents OTHERSYSTEMTXT As ComboBox
     Friend WithEvents Label4 As Label
     Friend WithEvents seelctedsystem As Label
-    Friend WithEvents Panel1 As Panel
     Friend WithEvents Label5 As Label
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents possibleissue As ComboBox
     Friend WithEvents Label6 As Label
     Friend WithEvents qualityaspect As ComboBox
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
-    Friend WithEvents project As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents posibblesolution As MetroFramework.Controls.MetroTextBox
     Friend WithEvents Label9 As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents Button5 As Button
     Friend WithEvents Button6 As Button
     Friend WithEvents Panel3 As Panel
+    Friend WithEvents PARTSTXT As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents SplitContainer1 As SplitContainer
 End Class
