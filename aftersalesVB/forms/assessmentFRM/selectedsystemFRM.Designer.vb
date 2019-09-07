@@ -22,8 +22,8 @@ Partial Class selectedsystemFRM
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.OTHERSYSTEMTXT = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -62,6 +62,7 @@ Partial Class selectedsystemFRM
         Me.Label16 = New System.Windows.Forms.Label()
         Me.pf = New System.Windows.Forms.ComboBox()
         Me.kno = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         CType(Me.solutionGV, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -72,6 +73,7 @@ Partial Class selectedsystemFRM
         'Panel2
         '
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel2.Controls.Add(Me.Button1)
         Me.Panel2.Controls.Add(Me.kno)
         Me.Panel2.Controls.Add(Me.Label16)
         Me.Panel2.Controls.Add(Me.pf)
@@ -176,7 +178,7 @@ Partial Class selectedsystemFRM
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(75, 23)
         Me.Button6.TabIndex = 14
-        Me.Button6.Text = "save"
+        Me.Button6.Text = "SAVE"
         Me.Button6.UseVisualStyleBackColor = True
         '
         'Label5
@@ -205,9 +207,9 @@ Partial Class selectedsystemFRM
         Me.solutionGV.AllowUserToOrderColumns = True
         Me.solutionGV.AllowUserToResizeColumns = False
         Me.solutionGV.AllowUserToResizeRows = False
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black
-        Me.solutionGV.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        Me.solutionGV.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
         Me.solutionGV.ColumnHeadersHeight = 30
         Me.solutionGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.solutionGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.PossibleSolution, Me.ID})
@@ -383,7 +385,7 @@ Partial Class selectedsystemFRM
         Me.Panel1.Controls.Add(Me.sumgv)
         Me.Panel1.Location = New System.Drawing.Point(21, 398)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(810, 114)
+        Me.Panel1.Size = New System.Drawing.Size(730, 114)
         Me.Panel1.TabIndex = 30
         '
         'sumgv
@@ -393,9 +395,9 @@ Partial Class selectedsystemFRM
         Me.sumgv.AllowUserToOrderColumns = True
         Me.sumgv.AllowUserToResizeColumns = False
         Me.sumgv.AllowUserToResizeRows = False
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black
-        Me.sumgv.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        Me.sumgv.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.sumgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.sumgv.ColumnHeadersHeight = 30
         Me.sumgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
@@ -412,7 +414,7 @@ Partial Class selectedsystemFRM
         Me.sumgv.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.WhiteSmoke
         Me.sumgv.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black
         Me.sumgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.sumgv.Size = New System.Drawing.Size(808, 112)
+        Me.sumgv.Size = New System.Drawing.Size(728, 112)
         Me.sumgv.StateCommon.Background.Color1 = System.Drawing.Color.WhiteSmoke
         Me.sumgv.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
         Me.sumgv.StateCommon.DataCell.Border.DrawBorders = CType((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right), ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
@@ -548,6 +550,15 @@ Partial Class selectedsystemFRM
         Me.kno.TabIndex = 59
         Me.kno.Text = "K#"
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(757, 399)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 60
+        Me.Button1.Text = "REMOVE"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'selectedsystemFRM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -607,4 +618,5 @@ Partial Class selectedsystemFRM
     Friend WithEvents Label16 As Label
     Friend WithEvents pf As ComboBox
     Friend WithEvents kno As Label
+    Friend WithEvents Button1 As Button
 End Class
