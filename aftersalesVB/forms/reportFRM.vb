@@ -78,6 +78,12 @@ Public Class reportFRM
             id = reportGRID.Item("id", e.RowIndex).Value.ToString
             If e.ColumnIndex = 6 Then
                 'reportassessmentFRM.ShowDialog()
+                Dim a As String = reportGRID.Item("kno", e.RowIndex).Value.ToString
+                Dim b As String = reportGRID.Item("itemno", e.RowIndex).Value.ToString()
+                Dim c As String = reportGRID.Item("specification", e.RowIndex).Value.ToString()
+                Dim d As String = reportGRID.Item("location", e.RowIndex).Value.ToString
+                assessmentreportingFRM.kno = c + " / " + a + " / " + b + " / " + d
+
                 assessmentreportingFRM.Show()
             ElseIf e.ColumnIndex = 7 Then
                 newreportFRM.locations.Text = reportGRID.Item("location", e.RowIndex).Value.ToString

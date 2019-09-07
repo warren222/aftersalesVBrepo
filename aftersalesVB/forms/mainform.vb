@@ -208,12 +208,12 @@ Public Class mainform
         newcallinFRM.updateBTN.Visible = False
         newcallinFRM.ShowDialog()
     End Sub
-
+    Public ccolor As String
     Private Sub callinGRID_SelectionChanged(sender As Object, e As EventArgs) Handles callinGRID.SelectionChanged
         Dim selecteditems As DataGridViewSelectedRowCollection = callinGRID.SelectedRows
         For Each row As DataGridViewRow In selecteditems
             tempcin = row.Cells("cin").Value.ToString
-
+            ccolor = row.Cells("profile finish").Value.ToString
             jo = row.Cells("jo").Value.ToString
             newcallinFRM.cin.Text = row.Cells("CIN").Value.ToString
             newcallinFRM.telno.Text = row.Cells("TELNO").Value.ToString

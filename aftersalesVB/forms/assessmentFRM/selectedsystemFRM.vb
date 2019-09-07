@@ -6,19 +6,95 @@ Public Class selectedsystemFRM
 
         Select Case seelctedsystem.Text
             Case "Framing System"
-                CATEGORYlabel.Visible = False
-                category.Visible = False
+                invicategory(False)
+                invicolor(True)
+                loadcolors(pf)
+                invi(False)
             Case "Glazing System"
                 CATEGORYlabel.Text = "Glass specs"
+                invicategory(True)
+                invi(False)
+                invicolor(False)
             Case "Weather Tightness"
                 CATEGORYlabel.Text = "Seals"
+                invicategory(True)
+                invi(False)
+                invicolor(False)
             Case "Mechanism"
                 CATEGORYlabel.Text = "Hardware"
+                invicategory(True)
+                invi(False)
+                invicolor(False)
             Case "Insect Protection System"
-                Label1.Visible = True
-                OTHERSYSTEMTXT.Visible = True
+                invicategory(True)
+                invi(True)
+                invicolor(False)
                 CATEGORYlabel.Text = "Insect Screens"
         End Select
+        Label15.Text = CATEGORYlabel.Text
+        sumgv.DataSource = sumbs
+        loadsum()
+    End Sub
+    Private Sub invi(ByVal bol As Boolean)
+        Label1.Visible = bol
+        OTHERSYSTEMTXT.Visible = bol
+    End Sub
+    Private Sub invicolor(ByVal bol As Boolean)
+        Label16.Visible = bol
+        pf.Visible = bol
+    End Sub
+    Private Sub invicategory(ByVal bol As Boolean)
+        CATEGORYlabel.Visible = bol
+        category.Visible = bol
+    End Sub
+    Public Sub loadcolors(ByVal ob As Object)
+        ob.Items.Clear()
+        Dim words As String()
+        Dim comma As Char = ","
+        words = mainform.ccolor.Split(comma)
+        Dim word As String
+        For Each word In words
+            If word.Contains(",") Then
+                word = word.Replace(",", "")
+            End If
+            ob.Items.Add(word)
+        Next
+    End Sub
+    Dim sumbs As New BindingSource
+    Private Sub loadsum()
+        Dim ds As New DataSet
+        ds.Clear()
+        Dim str As String
+        Select Case seelctedsystem.Text
+            Case "FRAMING SYSTEM"
+                str = "Select '  **  '+PARTS+'  >>>  '+QUALITYASPECT+'  >>  '+POSSIBLEISSUE+'  >  '+POSSIBLESOLUTION from ASSESSMENTREPORTTB where rid = @rid and system = @system"
+            Case "Insect Protection System"
+                str = "select '  *** '+OTHERSYSTEM + '  **  '+PARTS+'  *  '+CATEGORY+'  >>>  '+QUALITYASPECT+'  >>  '+POSSIBLEISSUE+'  >  '+POSSIBLESOLUTION from ASSESSMENTREPORTTB where rid = @rid and system = @system"
+            Case Else
+                str = "select '  **  '+PARTS+'  *  '+CATEGORY+'  >>>  '+QUALITYASPECT+'  >>  '+POSSIBLEISSUE+'  >  '+POSSIBLESOLUTION from ASSESSMENTREPORTTB where rid = @rid and system = @system"
+
+        End Select
+
+        Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
+            Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
+                Try
+                    sqlcon.Open()
+                    With sqlcmd
+                        .Parameters.AddWithValue("@rid", reportFRM.id)
+                        .Parameters.AddWithValue("@system", seelctedsystem.Text)
+                    End With
+                    Dim da As SqlDataAdapter = New SqlDataAdapter()
+                    da.SelectCommand = sqlcmd
+                    da.SelectCommand.CommandTimeout = 30000
+                    da.Fill(ds, "ASSESSMENTREPORTTB")
+
+                    sumbs.DataSource = ds
+                    sumbs.DataMember = "ASSESSMENTREPORTTB"
+                Catch ex As Exception
+                    MsgBox(ex.ToString)
+                End Try
+            End Using
+        End Using
     End Sub
     Dim partsbol As Boolean = True
     Dim categorybol As Boolean = True
@@ -141,15 +217,23 @@ Public Class selectedsystemFRM
         '    End Using
         'End Using
     End Sub
-
+    Dim idarray As New ArrayList
     Private Sub solutionGV_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles solutionGV.CellClick
         If solutionGV.RowCount >= 0 And e.RowIndex >= 0 Then
-
+            Dim row As DataGridViewRow = solutionGV.Rows(e.RowIndex)
+            Dim chkd As Boolean = Convert.ToBoolean(Row.Cells(Column1.Name).Value)
+            If chkd = True Then
+                row.Cells(Column1.Name).Value = False
+                idarray.Remove(row.Cells("id").Value.ToString)
+            Else
+                row.Cells(Column1.Name).Value = True
+                idarray.Add(row.Cells("id").Value.ToString)
+            End If
         End If
-
     End Sub
 
     Private Sub possibleissue_SelectedIndexChanged(sender As Object, e As EventArgs) Handles possibleissue.SelectedIndexChanged
+        idarray = New ArrayList
         Dim DS As New DataSet
         DS.Clear()
         Dim str As String = "SELECT * FROM ASSESSMENTTB WHERE SYSTEM = @SYSTEM AND QUALITYASPECT=@QUALITYASPECT AND POSSIBLEISSUE=@POSSIBLEISSUE"
@@ -178,8 +262,89 @@ Public Class selectedsystemFRM
         tb = DS.Tables("ASSESSMENTTB")
         For i As Integer = 0 To tb.Rows.Count - 1
             Dim row As DataRow = tb.Rows(i)
-            solutionGV.Rows.Insert(0, 0, row.Item("POSSIBLESOLUTION").ToString)
+            solutionGV.Rows.Insert(0, 0, row.Item("POSSIBLESOLUTION").ToString, row.Item("id").ToString)
         Next
 
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        Try
+            Dim x As String = seelctedsystem.Text
+            If x = "Glazing System" Or x = "Weather Tightness" Or x = "Mechanism" Then
+                If parts.Text = "" Or category.Text = "" Or qualityaspect.Text = "" Or possibleissue.Text = "" Then
+                    MessageBox.Show("Please fill all fields", "Unsaved", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                    Exit Sub
+                End If
+            ElseIf x = "Framing System" Then
+                If parts.Text = "" Or pf.Text = "" Or qualityaspect.Text = "" Or possibleissue.Text = "" Then
+                    MessageBox.Show("Please fill all fields", "Unsaved", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                    Exit Sub
+                End If
+            ElseIf x = "Insect Protection System" Then
+                If OTHERSYSTEMTXT.Text = "" Or parts.Text = "" Or category.Text = "" Or qualityaspect.Text = "" Or possibleissue.Text = "" Then
+                    MessageBox.Show("Please fill all fields", "Unsaved", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                    Exit Sub
+                End If
+            End If
+            For i As Integer = 0 To idarray.Count - 1
+                    addassessment(idarray(i))
+                Next
+        Catch ex As Exception
+        Finally
+            loadsum()
+        End Try
+
+    End Sub
+    Private Sub addassessment(ByVal assid As String)
+        Dim str As String = "
+                                declare @system as varchar(max) = (select system from assessmenttb where id = @assid)
+                                declare @QUALITYASPECT as varchar(max) = (select QUALITYASPECT from assessmenttb where id = @assid)
+                                declare @POSSIBLEISSUE as varchar(max) = (select POSSIBLEISSUE from assessmenttb where id = @assid)
+                                declare @POSSIBLESOLUTION as varchar(max) = (select POSSIBLESOLUTION from assessmenttb where id = @assid)
+
+                                declare @id as integer = (select isnull(max(isnull(id,0)),0)+1 from ASSESSMENTREPORTTB)
+
+                                insert into assessmentreporttb(
+                                ID,
+                                RID,
+                                SYSTEM,
+                                OTHERSYSTEM,
+                                PARTS,
+                                CATEGORY,
+                                QUALITYASPECT,
+                                POSSIBLEISSUE,
+                                POSSIBLESOLUTION)
+                                values
+                                (@id,
+                                @rid,
+                                @system,
+                                @OTHERSYSTEM,
+                                @PARTS,
+                                @CATEGORY,
+                                @QUALITYASPECT,
+                                @POSSIBLEISSUE,
+                                @POSSIBLESOLUTION)
+                                "
+        Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
+            Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
+                Try
+                    sqlcon.Open()
+                    With sqlcmd
+                        .Parameters.AddWithValue("@assid", assid)
+                        .Parameters.AddWithValue("@rid", reportFRM.id)
+                        .Parameters.AddWithValue("@OTHERSYSTEM", OTHERSYSTEMTXT.Text)
+                        .Parameters.AddWithValue("@PARTS", parts.Text)
+                        .Parameters.AddWithValue("@CATEGORY", category.Text)
+                    End With
+                    sqlcmd.ExecuteNonQuery()
+                Catch ex As Exception
+                    MsgBox(ex.ToString)
+                End Try
+            End Using
+        End Using
+    End Sub
+
+    Private Sub selectedsystemFRM_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Me.Dispose()
     End Sub
 End Class
