@@ -22,15 +22,10 @@ Partial Class newreportFRM
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.specification = New System.Windows.Forms.ComboBox()
         Me.KryptonLabel1 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.KryptonLabel2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
-        Me.answerGV = New ComponentFactory.Krypton.Toolkit.KryptonDataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.MetroTextButton3 = New MetroFramework.Controls.MetroTextBox.MetroTextButton()
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.KryptonLabel3 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.KNO = New MetroFramework.Controls.MetroTextBox()
         Me.KryptonLabel4 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
@@ -41,14 +36,11 @@ Partial Class newreportFRM
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.KryptonLabel5 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.KryptonLabel6 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.save = New System.Windows.Forms.Button()
         Me.KryptonLabel7 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Button2 = New System.Windows.Forms.Button()
-        CType(Me.answerGV, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.knogv, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
@@ -62,20 +54,21 @@ Partial Class newreportFRM
         Me.specification.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.specification.FormattingEnabled = True
         Me.specification.IntegralHeight = False
-        Me.specification.Location = New System.Drawing.Point(135, 111)
+        Me.specification.Items.AddRange(New Object() {"Window", "Door"})
+        Me.specification.Location = New System.Drawing.Point(136, 166)
         Me.specification.Name = "specification"
         Me.specification.Size = New System.Drawing.Size(194, 28)
         Me.specification.TabIndex = 2
         '
         'KryptonLabel1
         '
-        Me.KryptonLabel1.Location = New System.Drawing.Point(27, 106)
+        Me.KryptonLabel1.Location = New System.Drawing.Point(28, 161)
         Me.KryptonLabel1.Name = "KryptonLabel1"
-        Me.KryptonLabel1.Size = New System.Drawing.Size(88, 22)
+        Me.KryptonLabel1.Size = New System.Drawing.Size(97, 22)
         Me.KryptonLabel1.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.KryptonLabel1.StateCommon.ShortText.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.KryptonLabel1.TabIndex = 496
-        Me.KryptonLabel1.Values.Text = "Specification"
+        Me.KryptonLabel1.Values.Text = "Window/Door"
         '
         'KryptonLabel2
         '
@@ -86,77 +79,6 @@ Partial Class newreportFRM
         Me.KryptonLabel2.StateCommon.ShortText.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.KryptonLabel2.TabIndex = 498
         Me.KryptonLabel2.Values.Text = "Location"
-        '
-        'answerGV
-        '
-        Me.answerGV.AllowUserToAddRows = False
-        Me.answerGV.AllowUserToDeleteRows = False
-        Me.answerGV.AllowUserToOrderColumns = True
-        Me.answerGV.AllowUserToResizeColumns = False
-        Me.answerGV.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        Me.answerGV.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        Me.answerGV.ColumnHeadersHeight = 30
-        Me.answerGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.answerGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1})
-        Me.answerGV.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.answerGV.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.answerGV.Location = New System.Drawing.Point(0, 0)
-        Me.answerGV.MultiSelect = False
-        Me.answerGV.Name = "answerGV"
-        Me.answerGV.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Silver
-        Me.answerGV.ReadOnly = True
-        Me.answerGV.RowHeadersVisible = False
-        Me.answerGV.RowHeadersWidth = 40
-        Me.answerGV.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black
-        Me.answerGV.RowTemplate.Height = 27
-        Me.answerGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.answerGV.Size = New System.Drawing.Size(344, 187)
-        Me.answerGV.StateCommon.Background.Color1 = System.Drawing.Color.White
-        Me.answerGV.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
-        Me.answerGV.StateCommon.DataCell.Border.DrawBorders = CType((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right), ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
-        Me.answerGV.StateCommon.DataCell.Content.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.answerGV.StateCommon.HeaderColumn.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Dashed
-        Me.answerGV.StateCommon.HeaderColumn.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) _
-            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) _
-            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right), ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
-        Me.answerGV.StateCommon.HeaderColumn.Border.Width = 0
-        Me.answerGV.StateCommon.HeaderColumn.Content.Color1 = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.answerGV.StateCommon.HeaderColumn.Content.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.answerGV.StateCommon.HeaderColumn.Content.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias
-        Me.answerGV.TabIndex = 499
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = ""
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        '
-        'MetroTextButton3
-        '
-        Me.MetroTextButton3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.MetroTextButton3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.MetroTextButton3.Image = Nothing
-        Me.MetroTextButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.MetroTextButton3.Location = New System.Drawing.Point(335, 232)
-        Me.MetroTextButton3.Name = "MetroTextButton3"
-        Me.MetroTextButton3.Size = New System.Drawing.Size(48, 20)
-        Me.MetroTextButton3.Style = MetroFramework.MetroColorStyle.Silver
-        Me.MetroTextButton3.TabIndex = 500
-        Me.MetroTextButton3.Text = "+"
-        Me.MetroTextButton3.UseCustomForeColor = True
-        Me.MetroTextButton3.UseSelectable = True
-        Me.MetroTextButton3.UseVisualStyleBackColor = True
-        '
-        'Panel1
-        '
-        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel1.Controls.Add(Me.answerGV)
-        Me.Panel1.Location = New System.Drawing.Point(37, 257)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(346, 189)
-        Me.Panel1.TabIndex = 501
         '
         'KryptonLabel3
         '
@@ -296,9 +218,9 @@ Partial Class newreportFRM
         Me.knogv.AllowUserToOrderColumns = True
         Me.knogv.AllowUserToResizeColumns = False
         Me.knogv.AllowUserToResizeRows = False
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        Me.knogv.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        Me.knogv.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
         Me.knogv.ColumnHeadersHeight = 30
         Me.knogv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.knogv.Cursor = System.Windows.Forms.Cursors.Hand
@@ -340,7 +262,7 @@ Partial Class newreportFRM
         Me.Panel3.Controls.Add(Me.itemno)
         Me.Panel3.Location = New System.Drawing.Point(37, 53)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(346, 154)
+        Me.Panel3.Size = New System.Drawing.Size(346, 227)
         Me.Panel3.TabIndex = 514
         '
         'KryptonLabel5
@@ -362,16 +284,6 @@ Partial Class newreportFRM
         Me.Button1.TabIndex = 516
         Me.Button1.Text = "reload"
         Me.Button1.UseVisualStyleBackColor = True
-        '
-        'KryptonLabel6
-        '
-        Me.KryptonLabel6.Location = New System.Drawing.Point(37, 232)
-        Me.KryptonLabel6.Name = "KryptonLabel6"
-        Me.KryptonLabel6.Size = New System.Drawing.Size(89, 20)
-        Me.KryptonLabel6.StateCommon.ShortText.Color1 = System.Drawing.Color.Black
-        Me.KryptonLabel6.StateCommon.ShortText.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.KryptonLabel6.TabIndex = 517
-        Me.KryptonLabel6.Values.Text = "Assessment :"
         '
         'save
         '
@@ -429,20 +341,14 @@ Partial Class newreportFRM
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.KryptonLabel7)
         Me.Controls.Add(Me.save)
-        Me.Controls.Add(Me.KryptonLabel6)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.KryptonLabel5)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
-        Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.MetroTextButton3)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "newreportFRM"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "5"
-        CType(Me.answerGV, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         CType(Me.knogv, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
@@ -454,10 +360,6 @@ Partial Class newreportFRM
     Friend WithEvents specification As ComboBox
     Friend WithEvents KryptonLabel1 As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents KryptonLabel2 As ComponentFactory.Krypton.Toolkit.KryptonLabel
-    Friend WithEvents answerGV As ComponentFactory.Krypton.Toolkit.KryptonDataGridView
-    Private WithEvents Column1 As DataGridViewCheckBoxColumn
-    Friend WithEvents MetroTextButton3 As MetroFramework.Controls.MetroTextBox.MetroTextButton
-    Friend WithEvents Panel1 As Panel
     Friend WithEvents KryptonLabel3 As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents KNO As MetroFramework.Controls.MetroTextBox
     Friend WithEvents KryptonLabel4 As ComponentFactory.Krypton.Toolkit.KryptonLabel
@@ -468,7 +370,6 @@ Partial Class newreportFRM
     Friend WithEvents Panel3 As Panel
     Friend WithEvents KryptonLabel5 As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents Button1 As Button
-    Friend WithEvents KryptonLabel6 As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents save As Button
     Friend WithEvents KryptonLabel7 As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents Panel4 As Panel

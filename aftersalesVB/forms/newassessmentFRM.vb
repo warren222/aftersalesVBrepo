@@ -21,7 +21,7 @@ Public Class newassessmentFRM
         End Select
         Select Case bol
             Case True
-                newreportFRM.loadassessment()
+
             Case False
                 assessmentFRM.refreshbtn.PerformClick()
         End Select

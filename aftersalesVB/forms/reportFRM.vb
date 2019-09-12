@@ -124,7 +124,6 @@ Public Class reportFRM
         newreportFRM.specification.Text = ""
         newreportFRM.Text = "New"
         newreportFRM.save.Text = "add"
-        newreportFRM.loadspecification()
         newreportFRM.ShowDialog()
     End Sub
 
@@ -141,22 +140,20 @@ Public Class reportFRM
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim str As String = "
-select * into #temptb1 from(
-SELECT a.[ID]
-      ,[SID]
-      ,[KNO]
-      ,[ITEMNO]
-      ,[LOCATION]
-      ,[SPECIFICATION]
-	  ,c.ASSESSMENT
-  FROM (([REPORTTB] as a
-  inner join relrepass as b
-  on a.id = b.REPID)
-  inner join ASSESSMENTTB as c
-  on b.ASSID = c.ID) where a.[sid] = @sid
-  ) as tb 
-  
-  select distinct kno,id,itemno,LOCATION,specification,stuff((select ' ,'+assessment from #temptb1 where id = a.id for xml path('')),1,2,'') as assessment from #temptb1 as a
+SELECT A.ID,[SPECIFICATION],[KNO],[ITEMNO],[LOCATION],B.[SYSTEM],'  **  '+PARTS+' '+isnull(color,'')+''+'  >>>  '+QUALITYASPECT+'  >>  '+POSSIBLEISSUE+'  >  '+POSSIBLESOLUTION AS ASSESSMENT
+FROM [REPORTTB] as a 
+INNER JOIN [ASSESSMENTREPORTTB] AS B
+ON A.ID=B.RID WHERE B.[SYSTEM] = 'Framing System' and a.[SID] = @sid
+union all
+select A.ID,[SPECIFICATION],[KNO],[ITEMNO],[LOCATION],B.[SYSTEM],'  *** '+OTHERSYSTEM + '  **  '+PARTS+'  *  '+CATEGORY+'  >>>  '+QUALITYASPECT+'  >>  '+POSSIBLEISSUE+'  >  '+POSSIBLESOLUTION AS ASSESSMENT
+FROM [REPORTTB] as a 
+INNER JOIN [ASSESSMENTREPORTTB] AS B
+ON A.ID=B.RID WHERE B.[SYSTEM] = 'Insect Protection System' and a.[SID] = @sid
+union all
+select A.ID,[SPECIFICATION],[KNO],[ITEMNO],[LOCATION],B.[SYSTEM],'  **  '+PARTS+'  *  '+CATEGORY+'  >>>  '+QUALITYASPECT+'  >>  '+POSSIBLEISSUE+'  >  '+POSSIBLESOLUTION AS ASSESSMENT
+FROM [REPORTTB] as a 
+INNER JOIN [ASSESSMENTREPORTTB] AS B
+ON A.ID=B.RID WHERE not B.[SYSTEM] = 'Insect Protection System' and not B.[SYSTEM] = 'Framing System' and a.[SID] = @sid
 "
         Dim DS As New asdbDS
         DS.Clear()

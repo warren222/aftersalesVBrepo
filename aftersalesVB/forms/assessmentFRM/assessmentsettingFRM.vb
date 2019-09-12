@@ -32,6 +32,14 @@ Public Class assessmentsettingFRM
             MsgBox("busy")
         End If
     End Sub
+
+    Public Sub gv2_SelectionChanged(sender As Object, e As EventArgs)
+        Dim rows As DataGridViewSelectedRowCollection = gv2.SelectedRows
+        For Each row As DataGridViewRow In rows
+            solid = row.Cells("id").Value.ToString
+        Next
+    End Sub
+    Dim solid As String
     Dim id As String
 
     Public Sub gv_SelectionChanged(sender As Object, e As EventArgs)
@@ -40,7 +48,7 @@ Public Class assessmentsettingFRM
             id = row.Cells("id").Value.ToString
         Next
     End Sub
-
+    Dim assbol As Boolean = True
     Private Sub bgw_completed(sender As Object, e As RunWorkerCompletedEventArgs)
         Select Case action
             Case "LOAD SYSTEM"
@@ -54,6 +62,13 @@ Public Class assessmentsettingFRM
             Case "DELETE SYSTEM"
                 systemval = SYSTEMTXT.Text
                 starter("LOAD SYSTEM")
+            Case "FORMAT SYSTEM"
+                If assbol = True Then
+                    assbol = False
+                    starter("LOAD ASSESSMENT")
+                End If
+            Case "DELETE ASSESSMENT"
+                starter("LOAD ASSESSMENT")
         End Select
     End Sub
 
@@ -71,6 +86,12 @@ Public Class assessmentsettingFRM
                 If Not Panel3.Controls.Contains(gv2) Then
                     Panel3.Controls.Add(gv2)
                 End If
+
+                With gv2
+                    .Columns("id").Visible = False
+                    .Columns("system").Visible = False
+                    .AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells
+                End With
             Case "FORMAT SYSTEM"
                 With gv
                     .Columns("id").Visible = False
@@ -97,6 +118,8 @@ Public Class assessmentsettingFRM
                 queries("ADD SYSTEM", VAL)
             Case "DELETE SYSTEM"
                 queries("DELETE SYSTEM", id)
+            Case "DELETE ASSESSMENT"
+                queries("DELETE ASSESSMENT", solid)
             Case "FORMAT SYSTEM"
                 bgw.ReportProgress(0)
             Case "LOAD ASSESSMENT"
@@ -105,6 +128,7 @@ Public Class assessmentsettingFRM
             Case "ADD ASSESSMENT"
                 Dim VAL As String = "'" & systemval & "','" & qualityaspectVAL & "','" & possibleissueVAL & "','" & posibblesolutionVAL & "'"
                 queries("ADD ASSESSMENT", VAL)
+
         End Select
     End Sub
     Private Sub queries(ByVal command As String, ByVal val As String)
@@ -156,7 +180,10 @@ Public Class assessmentsettingFRM
     End Sub
 
     Private Sub SYSTEMTXT_SelectedIndexChanged(sender As Object, e As EventArgs) Handles SYSTEMTXT.SelectedIndexChanged
+        assbol = True
         Button2.PerformClick()
+
+
         categorybol = True
         CATEGORYTXT.SelectedIndex = -1
         OTHERSYSTEMTXT.SelectedIndex = -1
@@ -246,7 +273,7 @@ Public Class assessmentsettingFRM
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        If MessageBox.Show("", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
+        If MessageBox.Show("delete record?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
             Exit Sub
         End If
         starter("DELETE SYSTEM")
@@ -262,5 +289,12 @@ Public Class assessmentsettingFRM
         possibleissueVAL = possibleissue.Text
         posibblesolutionVAL = posibblesolution.Text
         starter("ADD ASSESSMENT")
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        If MessageBox.Show("delete record?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
+            Exit Sub
+        End If
+        starter("DELETE ASSESSMENT")
     End Sub
 End Class

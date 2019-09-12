@@ -1031,7 +1031,9 @@ Partial Public Class asdbDS
         
         Private columnKNO As Global.System.Data.DataColumn
         
-        Private columnID As Global.System.Data.DataColumn
+        Private columnASSESSMENT As Global.System.Data.DataColumn
+        
+        Private columnSYSTEM As Global.System.Data.DataColumn
         
         Private columnITEMNO As Global.System.Data.DataColumn
         
@@ -1039,7 +1041,9 @@ Partial Public Class asdbDS
         
         Private columnSPECIFICATION As Global.System.Data.DataColumn
         
-        Private columnASSESSMENT As Global.System.Data.DataColumn
+        Private columnID As Global.System.Data.DataColumn
+        
+        Private columnCOLOR As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -1086,9 +1090,17 @@ Partial Public Class asdbDS
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property IDColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property ASSESSMENTColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnID
+                Return Me.columnASSESSMENT
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property SYSTEMColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnSYSTEM
             End Get
         End Property
         
@@ -1118,9 +1130,17 @@ Partial Public Class asdbDS
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property ASSESSMENTColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property IDColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnASSESSMENT
+                Return Me.columnID
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property COLORColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCOLOR
             End Get
         End Property
         
@@ -1161,9 +1181,9 @@ Partial Public Class asdbDS
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddASSESSMENTTBRow(ByVal KNO As String, ByVal ID As String, ByVal ITEMNO As String, ByVal LOCATION As String, ByVal SPECIFICATION As String, ByVal ASSESSMENT As String) As ASSESSMENTTBRow
+        Public Overloads Function AddASSESSMENTTBRow(ByVal KNO As String, ByVal ASSESSMENT As String, ByVal SYSTEM As String, ByVal ITEMNO As String, ByVal LOCATION As String, ByVal SPECIFICATION As String, ByVal ID As String, ByVal COLOR As String) As ASSESSMENTTBRow
             Dim rowASSESSMENTTBRow As ASSESSMENTTBRow = CType(Me.NewRow,ASSESSMENTTBRow)
-            Dim columnValuesArray() As Object = New Object() {KNO, ID, ITEMNO, LOCATION, SPECIFICATION, ASSESSMENT}
+            Dim columnValuesArray() As Object = New Object() {KNO, ASSESSMENT, SYSTEM, ITEMNO, LOCATION, SPECIFICATION, ID, COLOR}
             rowASSESSMENTTBRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowASSESSMENTTBRow)
             Return rowASSESSMENTTBRow
@@ -1187,11 +1207,13 @@ Partial Public Class asdbDS
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub InitVars()
             Me.columnKNO = MyBase.Columns("KNO")
-            Me.columnID = MyBase.Columns("ID")
+            Me.columnASSESSMENT = MyBase.Columns("ASSESSMENT")
+            Me.columnSYSTEM = MyBase.Columns("SYSTEM")
             Me.columnITEMNO = MyBase.Columns("ITEMNO")
             Me.columnLOCATION = MyBase.Columns("LOCATION")
             Me.columnSPECIFICATION = MyBase.Columns("SPECIFICATION")
-            Me.columnASSESSMENT = MyBase.Columns("ASSESSMENT")
+            Me.columnID = MyBase.Columns("ID")
+            Me.columnCOLOR = MyBase.Columns("COLOR")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1199,16 +1221,20 @@ Partial Public Class asdbDS
         Private Sub InitClass()
             Me.columnKNO = New Global.System.Data.DataColumn("KNO", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnKNO)
-            Me.columnID = New Global.System.Data.DataColumn("ID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnID)
+            Me.columnASSESSMENT = New Global.System.Data.DataColumn("ASSESSMENT", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnASSESSMENT)
+            Me.columnSYSTEM = New Global.System.Data.DataColumn("SYSTEM", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSYSTEM)
             Me.columnITEMNO = New Global.System.Data.DataColumn("ITEMNO", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnITEMNO)
             Me.columnLOCATION = New Global.System.Data.DataColumn("LOCATION", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnLOCATION)
             Me.columnSPECIFICATION = New Global.System.Data.DataColumn("SPECIFICATION", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnSPECIFICATION)
-            Me.columnASSESSMENT = New Global.System.Data.DataColumn("ASSESSMENT", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnASSESSMENT)
+            Me.columnID = New Global.System.Data.DataColumn("ID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnID)
+            Me.columnCOLOR = New Global.System.Data.DataColumn("COLOR", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCOLOR)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1807,16 +1833,31 @@ Partial Public Class asdbDS
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property ID() As String
+        Public Property ASSESSMENT() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableASSESSMENTTB.IDColumn),String)
+                    Return CType(Me(Me.tableASSESSMENTTB.ASSESSMENTColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'ID' in table 'ASSESSMENTTB' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'ASSESSMENT' in table 'ASSESSMENTTB' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableASSESSMENTTB.IDColumn) = value
+                Me(Me.tableASSESSMENTTB.ASSESSMENTColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property SYSTEM() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableASSESSMENTTB.SYSTEMColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'SYSTEM' in table 'ASSESSMENTTB' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableASSESSMENTTB.SYSTEMColumn) = value
             End Set
         End Property
         
@@ -1867,16 +1908,31 @@ Partial Public Class asdbDS
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property ASSESSMENT() As String
+        Public Property ID() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableASSESSMENTTB.ASSESSMENTColumn),String)
+                    Return CType(Me(Me.tableASSESSMENTTB.IDColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'ASSESSMENT' in table 'ASSESSMENTTB' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'ID' in table 'ASSESSMENTTB' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableASSESSMENTTB.ASSESSMENTColumn) = value
+                Me(Me.tableASSESSMENTTB.IDColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property COLOR() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableASSESSMENTTB.COLORColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'COLOR' in table 'ASSESSMENTTB' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableASSESSMENTTB.COLORColumn) = value
             End Set
         End Property
         
@@ -1894,14 +1950,26 @@ Partial Public Class asdbDS
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsIDNull() As Boolean
-            Return Me.IsNull(Me.tableASSESSMENTTB.IDColumn)
+        Public Function IsASSESSMENTNull() As Boolean
+            Return Me.IsNull(Me.tableASSESSMENTTB.ASSESSMENTColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetIDNull()
-            Me(Me.tableASSESSMENTTB.IDColumn) = Global.System.Convert.DBNull
+        Public Sub SetASSESSMENTNull()
+            Me(Me.tableASSESSMENTTB.ASSESSMENTColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsSYSTEMNull() As Boolean
+            Return Me.IsNull(Me.tableASSESSMENTTB.SYSTEMColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetSYSTEMNull()
+            Me(Me.tableASSESSMENTTB.SYSTEMColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1942,14 +2010,26 @@ Partial Public Class asdbDS
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsASSESSMENTNull() As Boolean
-            Return Me.IsNull(Me.tableASSESSMENTTB.ASSESSMENTColumn)
+        Public Function IsIDNull() As Boolean
+            Return Me.IsNull(Me.tableASSESSMENTTB.IDColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetASSESSMENTNull()
-            Me(Me.tableASSESSMENTTB.ASSESSMENTColumn) = Global.System.Convert.DBNull
+        Public Sub SetIDNull()
+            Me(Me.tableASSESSMENTTB.IDColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsCOLORNull() As Boolean
+            Return Me.IsNull(Me.tableASSESSMENTTB.COLORColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetCOLORNull()
+            Me(Me.tableASSESSMENTTB.COLORColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     

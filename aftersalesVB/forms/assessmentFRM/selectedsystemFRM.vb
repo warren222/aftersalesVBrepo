@@ -3,7 +3,6 @@
 Public Class selectedsystemFRM
     Dim sql As New sql
     Private Sub selectedsystemFRM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
         Select Case seelctedsystem.Text
             Case "Framing System"
                 invicategory(False)
@@ -34,7 +33,10 @@ Public Class selectedsystemFRM
         Label15.Text = CATEGORYlabel.Text
         sumgv.DataSource = sumbs
         loadsum()
+
+
     End Sub
+
     Private Sub invi(ByVal bol As Boolean)
         Label1.Visible = bol
         OTHERSYSTEMTXT.Visible = bol
@@ -66,12 +68,12 @@ Public Class selectedsystemFRM
         ds.Clear()
         Dim str As String
         Select Case seelctedsystem.Text
-            Case "FRAMING SYSTEM"
-                str = "Select '  **  '+PARTS+'  >>>  '+QUALITYASPECT+'  >>  '+POSSIBLEISSUE+'  >  '+POSSIBLESOLUTION from ASSESSMENTREPORTTB where rid = @rid and system = @system"
+            Case "Framing System"
+                str = "Select id,'  **  '+PARTS+' '+isnull(color,'')+''+'  >>>  '+QUALITYASPECT+'  >>  '+POSSIBLEISSUE+'  >  '+POSSIBLESOLUTION from ASSESSMENTREPORTTB where rid = @rid and system = @system"
             Case "Insect Protection System"
-                str = "select '  *** '+OTHERSYSTEM + '  **  '+PARTS+'  *  '+CATEGORY+'  >>>  '+QUALITYASPECT+'  >>  '+POSSIBLEISSUE+'  >  '+POSSIBLESOLUTION from ASSESSMENTREPORTTB where rid = @rid and system = @system"
+                str = "select id,'  *** '+OTHERSYSTEM + '  **  '+PARTS+'  *  '+CATEGORY+'  >>>  '+QUALITYASPECT+'  >>  '+POSSIBLEISSUE+'  >  '+POSSIBLESOLUTION from ASSESSMENTREPORTTB where rid = @rid and system = @system"
             Case Else
-                str = "select '  **  '+PARTS+'  *  '+CATEGORY+'  >>>  '+QUALITYASPECT+'  >>  '+POSSIBLEISSUE+'  >  '+POSSIBLESOLUTION from ASSESSMENTREPORTTB where rid = @rid and system = @system"
+                str = "select id,'  **  '+PARTS+'  *  '+CATEGORY+'  >>>  '+QUALITYASPECT+'  >>  '+POSSIBLEISSUE+'  >  '+POSSIBLESOLUTION from ASSESSMENTREPORTTB where rid = @rid and system = @system"
 
         End Select
 
@@ -90,6 +92,8 @@ Public Class selectedsystemFRM
 
                     sumbs.DataSource = ds
                     sumbs.DataMember = "ASSESSMENTREPORTTB"
+
+                    sumgv.Columns("id").Visible = False
                 Catch ex As Exception
                     MsgBox(ex.ToString)
                 End Try
@@ -313,7 +317,8 @@ Public Class selectedsystemFRM
                                 CATEGORY,
                                 QUALITYASPECT,
                                 POSSIBLEISSUE,
-                                POSSIBLESOLUTION)
+                                POSSIBLESOLUTION,
+                                COLOR)
                                 values
                                 (@id,
                                 @rid,
@@ -323,7 +328,8 @@ Public Class selectedsystemFRM
                                 @CATEGORY,
                                 @QUALITYASPECT,
                                 @POSSIBLEISSUE,
-                                @POSSIBLESOLUTION)
+                                @POSSIBLESOLUTION,
+                                @COLOR)
                                 "
         Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
             Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
@@ -335,6 +341,7 @@ Public Class selectedsystemFRM
                         .Parameters.AddWithValue("@OTHERSYSTEM", OTHERSYSTEMTXT.Text)
                         .Parameters.AddWithValue("@PARTS", parts.Text)
                         .Parameters.AddWithValue("@CATEGORY", category.Text)
+                        .Parameters.AddWithValue("@COLOR", pf.Text)
                     End With
                     sqlcmd.ExecuteNonQuery()
                 Catch ex As Exception
@@ -346,5 +353,86 @@ Public Class selectedsystemFRM
 
     Private Sub selectedsystemFRM_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Me.Dispose()
+    End Sub
+    Dim idd As String = ""
+    Private Sub sumgv_SelectionChanged(sender As Object, e As EventArgs) Handles sumgv.SelectionChanged
+        Dim rows As DataGridViewSelectedRowCollection = sumgv.SelectedRows
+        For Each row As DataGridViewRow In rows
+            idd = row.Cells("id").Value.ToString
+        Next
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim str As String = "delete from ASSESSMENTREPORTTB where id = @id"
+        Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
+            Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
+                Try
+                    sqlcon.Open()
+                    sqlcmd.Parameters.AddWithValue("@id", idd)
+                    sqlcmd.ExecuteNonQuery()
+                Catch ex As Exception
+                Finally
+                    loadsum()
+                End Try
+            End Using
+        End Using
+    End Sub
+
+    Private Sub addtooltip(ByVal sender As Object)
+
+        Dim txt As String = ""
+        Select Case sender.name
+            Case "parts"
+                If seelctedsystem.Text = "Glazing System" Then
+                    If (parts.Text = "COATED (SINGLE)" Or parts.Text = "COATED (DUAL)") Then
+                        txt = "lowE, reflective"
+                    ElseIf (parts.Text = "FILMED (SINGLE)" Or parts.Text = "FILMED (DUAL)") Then
+                        txt = "frosting, safety, Security, solar heat protection"
+                    Else
+                        txt = ""
+                    End If
+                ElseIf seelctedsystem.text = "Mechanism" Then
+                    If parts.Text = "HINGE" Then
+                        txt = "1. Friction Stay
+2. 2D Hinge
+3. 3D Hinge
+4. Butt-hinge
+5. S/P Hinge"
+                    Else
+                        txt = ""
+                    End If
+                Else
+                End If
+            Case "category"
+                If seelctedsystem.Text = "Glazing System" Then
+                    If category.Text = "DOUBLE" Then
+                        txt = "IGU/Laminated"
+                    Else
+                        txt = ""
+                    End If
+                Else
+                End If
+            Case "OTHERSYSTEMTXT"
+                Select Case OTHERSYSTEMTXT.Text
+                    Case "Roll up System"
+                        txt = "Roll-up/Chain Driven - System 41, 46, 67/Zipped"
+                    Case "Sideroll System"
+                        txt = "Sideroll/Built-in Screen/Rollout Maxxy"
+                    Case "Plisse System"
+                        txt = "Standad/Advance/Train/Plisse Rd/Train Rd/SR (a.k.a. Zigzag)/Magnum"
+                    Case "Sliding System"
+                        txt = "Sliding with: Regular / Tuff Mesh / Pet Mesh / Security mesh  #11 & #12"
+                    Case "Casement System"
+                        txt = "Inward casement screen/ Inward Awning / Araknis"
+                    Case "Fixed System"
+                        txt = "Piconet / Built-in Fixed Screen / Fixed Framed Screen"
+                End Select
+        End Select
+        ToolTip2.SetToolTip(sender, txt)
+
+    End Sub
+
+    Private Sub parts_SelectedIndexChanged(sender As Object, e As EventArgs) Handles parts.SelectedIndexChanged, category.SelectedIndexChanged, OTHERSYSTEMTXT.SelectedIndexChanged
+        addtooltip(sender)
     End Sub
 End Class
