@@ -115,9 +115,9 @@ Partial Class assessmentsettingFRM
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel2.BackColor = System.Drawing.Color.White
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel2.Location = New System.Drawing.Point(121, 278)
+        Me.Panel2.Location = New System.Drawing.Point(29, 278)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(334, 150)
+        Me.Panel2.Size = New System.Drawing.Size(426, 150)
         Me.Panel2.TabIndex = 9
         '
         'Button4
@@ -186,7 +186,7 @@ Partial Class assessmentsettingFRM
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Calibri", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(26, 278)
+        Me.Label5.Location = New System.Drawing.Point(26, 251)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(69, 17)
         Me.Label5.TabIndex = 851
@@ -282,7 +282,7 @@ Partial Class assessmentsettingFRM
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Calibri", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(29, 278)
+        Me.Label9.Location = New System.Drawing.Point(29, 251)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(69, 17)
         Me.Label9.TabIndex = 863
@@ -303,7 +303,7 @@ Partial Class assessmentsettingFRM
         '
         Me.Button5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button5.Font = New System.Drawing.Font("Calibri", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button5.Location = New System.Drawing.Point(486, 344)
+        Me.Button5.Location = New System.Drawing.Point(488, 377)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(70, 27)
         Me.Button5.TabIndex = 860
@@ -314,7 +314,7 @@ Partial Class assessmentsettingFRM
         '
         Me.Button6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button6.Font = New System.Drawing.Font("Calibri", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button6.Location = New System.Drawing.Point(486, 311)
+        Me.Button6.Location = New System.Drawing.Point(488, 344)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(70, 27)
         Me.Button6.TabIndex = 861
@@ -328,9 +328,9 @@ Partial Class assessmentsettingFRM
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel3.BackColor = System.Drawing.Color.White
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel3.Location = New System.Drawing.Point(169, 278)
+        Me.Panel3.Location = New System.Drawing.Point(32, 278)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(310, 150)
+        Me.Panel3.Size = New System.Drawing.Size(447, 150)
         Me.Panel3.TabIndex = 859
         '
         'PARTSTXT

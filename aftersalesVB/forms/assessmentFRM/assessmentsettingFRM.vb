@@ -70,6 +70,10 @@ Public Class assessmentsettingFRM
                 End If
             Case "DELETE ASSESSMENT"
                 starter("LOAD ASSESSMENT")
+            Case "UPDATE SYSTEM"
+                starter("LOAD SYSTEM")
+            Case "UPDATE ASSESSMENT"
+                starter("LOAD ASSESSMENT")
         End Select
     End Sub
 
@@ -129,7 +133,12 @@ Public Class assessmentsettingFRM
             Case "ADD ASSESSMENT"
                 Dim VAL As String = "'" & systemval & "','" & qualityaspectVAL & "','" & possibleissueVAL & "','" & posibblesolutionVAL & "'"
                 queries("ADD ASSESSMENT", VAL)
-
+            Case "UPDATE ASSESSMENT"
+                Dim VAL As String = "UPDATE ASSESSMENTTB SET QUALITYASPECT='" & qualityaspectVAL & "',POSSIBLEISSUE='" & possibleissueVAL & "',POSSIBLESOLUTION='" & posibblesolutionVAL & "' WHERE ID = '" & solid & "'"
+                queries("UPDATE ASSESSMENT", VAL)
+            Case "UPDATE ASSESSMENT"
+                Dim VAL As String = "UPDATE SYSTEMTB SET PARTS='" & partsval & "',CATEGORY='" & categoryval & "',OTHERSYSTEM='" & OTHERSYSTEMVAL & "' WHERE ID  = '" & id & "'"
+                queries("UPDATE SYSTEM", VAL)
         End Select
     End Sub
     Private Sub queries(ByVal command As String, ByVal val As String)
@@ -300,6 +309,6 @@ Public Class assessmentsettingFRM
     End Sub
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
-
+        starter("UPDATE ASSESSMENT")
     End Sub
 End Class
