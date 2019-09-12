@@ -24,6 +24,8 @@ Public Class sharedmethods
         dgvproperties(assessmentsettingFRM.gv2)
         AddHandler assessmentsettingFRM.gv.SelectionChanged, AddressOf assessmentsettingFRM.gv_SelectionChanged
         AddHandler assessmentsettingFRM.gv2.SelectionChanged, AddressOf assessmentsettingFRM.gv2_SelectionChanged
+
+
     End Sub
 
     Public Sub dgvproperties(ByVal dgv As KryptonDataGridView)

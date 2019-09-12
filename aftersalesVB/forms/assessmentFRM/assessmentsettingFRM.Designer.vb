@@ -50,6 +50,7 @@ Partial Class assessmentsettingFRM
         Me.PARTSTXT = New MetroFramework.Controls.MetroTextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
+        Me.Button7 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
@@ -134,7 +135,7 @@ Partial Class assessmentsettingFRM
         '
         Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button3.Font = New System.Drawing.Font("Calibri", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(461, 311)
+        Me.Button3.Location = New System.Drawing.Point(461, 344)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(70, 27)
         Me.Button3.TabIndex = 849
@@ -145,7 +146,7 @@ Partial Class assessmentsettingFRM
         '
         Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button2.Font = New System.Drawing.Font("Calibri", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(461, 344)
+        Me.Button2.Location = New System.Drawing.Point(461, 377)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(70, 27)
         Me.Button2.TabIndex = 848
@@ -372,6 +373,7 @@ Partial Class assessmentsettingFRM
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.Control
+        Me.Panel1.Controls.Add(Me.Button7)
         Me.Panel1.Controls.Add(Me.seelctedsystem)
         Me.Panel1.Controls.Add(Me.PARTSTXT)
         Me.Panel1.Controls.Add(Me.CATEGORYTXT)
@@ -420,6 +422,17 @@ Partial Class assessmentsettingFRM
         Me.SplitContainer1.SplitterDistance = 552
         Me.SplitContainer1.TabIndex = 866
         '
+        'Button7
+        '
+        Me.Button7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button7.Font = New System.Drawing.Font("Calibri", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button7.Location = New System.Drawing.Point(461, 311)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(70, 27)
+        Me.Button7.TabIndex = 865
+        Me.Button7.Text = "update"
+        Me.Button7.UseVisualStyleBackColor = True
+        '
         'assessmentsettingFRM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -466,4 +479,5 @@ Partial Class assessmentsettingFRM
     Friend WithEvents PARTSTXT As MetroFramework.Controls.MetroTextBox
     Friend WithEvents Panel1 As Panel
     Friend WithEvents SplitContainer1 As SplitContainer
+    Friend WithEvents Button7 As Button
 End Class

@@ -203,6 +203,7 @@
                       <rd:DefaultName>ASSESSMENT</rd:DefaultName>
                       <Style>
                         <Border>
+                          <Color>DimGray</Color>
                           <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>

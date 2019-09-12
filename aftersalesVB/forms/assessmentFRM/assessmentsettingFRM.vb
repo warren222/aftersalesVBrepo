@@ -37,6 +37,7 @@ Public Class assessmentsettingFRM
         Dim rows As DataGridViewSelectedRowCollection = gv2.SelectedRows
         For Each row As DataGridViewRow In rows
             solid = row.Cells("id").Value.ToString
+
         Next
     End Sub
     Dim solid As String
@@ -296,5 +297,9 @@ Public Class assessmentsettingFRM
             Exit Sub
         End If
         starter("DELETE ASSESSMENT")
+    End Sub
+
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+
     End Sub
 End Class
