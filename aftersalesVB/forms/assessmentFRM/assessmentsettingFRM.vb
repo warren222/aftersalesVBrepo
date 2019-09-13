@@ -37,7 +37,9 @@ Public Class assessmentsettingFRM
         Dim rows As DataGridViewSelectedRowCollection = gv2.SelectedRows
         For Each row As DataGridViewRow In rows
             solid = row.Cells("id").Value.ToString
-
+            qualityaspect.Text = row.Cells("qualityaspect").Value.ToString
+            possibleissue.Text = row.Cells("possibleissue").Value.ToString
+            possiblesolution.Text = row.Cells("POSSIBLESOLUTION").Value.ToString
         Next
     End Sub
     Dim solid As String
@@ -47,6 +49,9 @@ Public Class assessmentsettingFRM
         Dim rows As DataGridViewSelectedRowCollection = gv.SelectedRows
         For Each row As DataGridViewRow In rows
             id = row.Cells("id").Value.ToString
+            PARTSTXT.Text = row.Cells("parts").Value.ToString
+            CATEGORYTXT.Text = row.Cells(3).Value.ToString
+            OTHERSYSTEMTXT.Text = row.Cells("SCREEN SYSTEM").Value.ToString
         Next
     End Sub
     Dim assbol As Boolean = True
@@ -95,13 +100,23 @@ Public Class assessmentsettingFRM
                 With gv2
                     .Columns("id").Visible = False
                     .Columns("system").Visible = False
-                    .AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells
+                    '.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells
                 End With
             Case "FORMAT SYSTEM"
                 With gv
                     .Columns("id").Visible = False
                     .Columns("system").Visible = False
-                    .AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells
+                    If systemval = "INSECT PROTECTION SYSTEM" Then
+                        .Columns("screen system").Visible = True
+                    Else
+                        .Columns("screen system").Visible = False
+                    End If
+                    If systemval = "FRAMING SYSTEM" Then
+                        .Columns(3).Visible = False
+                    Else
+                        .Columns(3).Visible = True
+                    End If
+                    '.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells
                 End With
         End Select
     End Sub
@@ -113,9 +128,22 @@ Public Class assessmentsettingFRM
     Dim qualityaspectVAL As String
     Dim possibleissueVAL As String
     Dim posibblesolutionVAL As String
+    Dim AL As String = "COLUMN1"
     Private Sub bgw_dowork(sender As Object, e As DoWorkEventArgs)
         Select Case action
             Case "LOAD SYSTEM"
+                Select Case systemval
+                    Case "FRAMING SYSTEM"
+                        AL = "COLUMN1"
+                    Case "GLAZING SYSTEM"
+                        AL = "[Glass Specs]"
+                    Case "MECHANISM"
+                        AL = "Hardware"
+                    Case "WEATHER TIGHTNESS"
+                        AL = "[Seals]"
+                    Case "INSECT PROTECTION SYSTEM"
+                        AL = "[Insect Screens]"
+                End Select
                 queries("LOAD SYSTEM", vbNull)
                 bgw.ReportProgress(0)
             Case "ADD SYSTEM"
@@ -136,9 +164,10 @@ Public Class assessmentsettingFRM
             Case "UPDATE ASSESSMENT"
                 Dim VAL As String = "UPDATE ASSESSMENTTB SET QUALITYASPECT='" & qualityaspectVAL & "',POSSIBLEISSUE='" & possibleissueVAL & "',POSSIBLESOLUTION='" & posibblesolutionVAL & "' WHERE ID = '" & solid & "'"
                 queries("UPDATE ASSESSMENT", VAL)
-            Case "UPDATE ASSESSMENT"
+            Case "UPDATE SYSTEM"
                 Dim VAL As String = "UPDATE SYSTEMTB SET PARTS='" & partsval & "',CATEGORY='" & categoryval & "',OTHERSYSTEM='" & OTHERSYSTEMVAL & "' WHERE ID  = '" & id & "'"
                 queries("UPDATE SYSTEM", VAL)
+                Console.WriteLine(VAL)
         End Select
     End Sub
     Private Sub queries(ByVal command As String, ByVal val As String)
@@ -153,6 +182,7 @@ Public Class assessmentsettingFRM
                     .Parameters.AddWithValue("@command", command)
                     .Parameters.AddWithValue("@val", val)
                     .Parameters.AddWithValue("@system", systemval)
+                    .Parameters.AddWithValue("@alias", AL)
                 End With
                 Using da As SqlDataAdapter = New SqlDataAdapter
                     If command = "LOAD SYSTEM" Then
@@ -197,6 +227,7 @@ Public Class assessmentsettingFRM
         categorybol = True
         CATEGORYTXT.SelectedIndex = -1
         OTHERSYSTEMTXT.SelectedIndex = -1
+
         Select Case SYSTEMTXT.Text
             Case "FRAMING SYSTEM"
                 Label2.Visible = False
@@ -297,7 +328,7 @@ Public Class assessmentsettingFRM
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         qualityaspectVAL = qualityaspect.Text
         possibleissueVAL = possibleissue.Text
-        posibblesolutionVAL = posibblesolution.Text
+        posibblesolutionVAL = possiblesolution.Text
         starter("ADD ASSESSMENT")
     End Sub
 
@@ -309,6 +340,61 @@ Public Class assessmentsettingFRM
     End Sub
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        systemval = SYSTEMTXT.Text
+        partsval = PARTSTXT.Text
+        categoryval = CATEGORYTXT.Text
+        OTHERSYSTEMVAL = OTHERSYSTEMTXT.Text
+        starter("UPDATE SYSTEM")
+    End Sub
+
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+        qualityaspectVAL = qualityaspect.Text
+        possibleissueVAL = possibleissue.Text
+        posibblesolutionVAL = possiblesolution.Text
         starter("UPDATE ASSESSMENT")
+    End Sub
+
+    Private Sub qualityaspect_MouseDown(sender As Object, e As MouseEventArgs) Handles qualityaspect.MouseDown
+        Dim str As String = "select distinct QUALITYASPECT from assessmenttb where [system] = @system"
+        Dim ds As New DataSet
+        ds.Clear()
+        Dim da As SqlDataAdapter = New SqlDataAdapter
+        Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
+            Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
+                Try
+                    sqlcon.Open()
+                    sqlcmd.Parameters.AddWithValue("@system", systemval)
+                    da.SelectCommand = sqlcmd
+                    da.SelectCommand.CommandTimeout = 30000
+                    da.Fill(ds, "assessmenttb")
+                    qualityaspect.DataSource = ds.Tables("assessmenttb")
+                    qualityaspect.DisplayMember = "QUALITYASPECT"
+                Catch ex As Exception
+                    MsgBox(ex.ToString)
+                End Try
+            End Using
+        End Using
+    End Sub
+
+    Private Sub possibleissue_MouseDown(sender As Object, e As MouseEventArgs) Handles possibleissue.MouseDown
+        Dim str As String = "select distinct POSSIBLEISSUE from assessmenttb where [system] = @system"
+        Dim ds As New DataSet
+        ds.Clear()
+        Dim da As SqlDataAdapter = New SqlDataAdapter
+        Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
+            Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
+                Try
+                    sqlcon.Open()
+                    sqlcmd.Parameters.AddWithValue("@system", systemval)
+                    da.SelectCommand = sqlcmd
+                    da.SelectCommand.CommandTimeout = 30000
+                    da.Fill(ds, "assessmenttb")
+                    possibleissue.DataSource = ds.Tables("assessmenttb")
+                    possibleissue.DisplayMember = "POSSIBLEISSUE"
+                Catch ex As Exception
+                    MsgBox(ex.ToString)
+                End Try
+            End Using
+        End Using
     End Sub
 End Class

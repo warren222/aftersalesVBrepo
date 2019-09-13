@@ -41,7 +41,7 @@ Partial Class assessmentsettingFRM
         Me.qualityaspect = New System.Windows.Forms.ComboBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.posibblesolution = New MetroFramework.Controls.MetroTextBox()
+        Me.possiblesolution = New MetroFramework.Controls.MetroTextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
@@ -51,6 +51,7 @@ Partial Class assessmentsettingFRM
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.Button7 = New System.Windows.Forms.Button()
+        Me.Button8 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
@@ -81,29 +82,32 @@ Partial Class assessmentsettingFRM
         '
         'Label2
         '
-        Me.Label2.AutoSize = True
+        Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label2.Font = New System.Drawing.Font("Calibri", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(26, 214)
+        Me.Label2.Location = New System.Drawing.Point(0, 214)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(59, 17)
+        Me.Label2.Size = New System.Drawing.Size(175, 17)
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "Category"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Label3
         '
-        Me.Label3.AutoSize = True
+        Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label3.Font = New System.Drawing.Font("Calibri", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(26, 181)
+        Me.Label3.Location = New System.Drawing.Point(0, 181)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(37, 17)
+        Me.Label3.Size = New System.Drawing.Size(175, 17)
         Me.Label3.TabIndex = 5
         Me.Label3.Text = "Parts"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'CATEGORYTXT
         '
+        Me.CATEGORYTXT.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.CATEGORYTXT.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CATEGORYTXT.FormattingEnabled = True
-        Me.CATEGORYTXT.Location = New System.Drawing.Point(121, 214)
+        Me.CATEGORYTXT.Location = New System.Drawing.Point(181, 214)
         Me.CATEGORYTXT.Name = "CATEGORYTXT"
         Me.CATEGORYTXT.Size = New System.Drawing.Size(152, 27)
         Me.CATEGORYTXT.TabIndex = 7
@@ -115,16 +119,16 @@ Partial Class assessmentsettingFRM
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel2.BackColor = System.Drawing.Color.White
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel2.Location = New System.Drawing.Point(29, 278)
+        Me.Panel2.Location = New System.Drawing.Point(29, 299)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(426, 150)
+        Me.Panel2.Size = New System.Drawing.Size(502, 129)
         Me.Panel2.TabIndex = 9
         '
         'Button4
         '
         Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button4.Font = New System.Drawing.Font("Calibri", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.Location = New System.Drawing.Point(461, 278)
+        Me.Button4.Location = New System.Drawing.Point(461, 148)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(70, 27)
         Me.Button4.TabIndex = 850
@@ -135,7 +139,7 @@ Partial Class assessmentsettingFRM
         '
         Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button3.Font = New System.Drawing.Font("Calibri", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(461, 344)
+        Me.Button3.Location = New System.Drawing.Point(461, 214)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(70, 27)
         Me.Button3.TabIndex = 849
@@ -146,7 +150,7 @@ Partial Class assessmentsettingFRM
         '
         Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button2.Font = New System.Drawing.Font("Calibri", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(461, 377)
+        Me.Button2.Location = New System.Drawing.Point(461, 247)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(70, 27)
         Me.Button2.TabIndex = 848
@@ -155,30 +159,32 @@ Partial Class assessmentsettingFRM
         '
         'OTHERSYSTEMTXT
         '
+        Me.OTHERSYSTEMTXT.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.OTHERSYSTEMTXT.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.OTHERSYSTEMTXT.FormattingEnabled = True
-        Me.OTHERSYSTEMTXT.Location = New System.Drawing.Point(121, 148)
+        Me.OTHERSYSTEMTXT.Location = New System.Drawing.Point(181, 148)
         Me.OTHERSYSTEMTXT.Name = "OTHERSYSTEMTXT"
         Me.OTHERSYSTEMTXT.Size = New System.Drawing.Size(245, 27)
         Me.OTHERSYSTEMTXT.TabIndex = 9
         '
         'Label4
         '
-        Me.Label4.AutoSize = True
+        Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label4.Font = New System.Drawing.Font("Calibri", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(26, 148)
+        Me.Label4.Location = New System.Drawing.Point(0, 148)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(89, 17)
+        Me.Label4.Size = New System.Drawing.Size(175, 17)
         Me.Label4.TabIndex = 8
         Me.Label4.Text = "Screen System"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'seelctedsystem
         '
         Me.seelctedsystem.AutoSize = True
-        Me.seelctedsystem.Font = New System.Drawing.Font("Calibri", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.seelctedsystem.Location = New System.Drawing.Point(3, 9)
+        Me.seelctedsystem.Font = New System.Drawing.Font("Bodoni MT Poster Compressed", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.seelctedsystem.Location = New System.Drawing.Point(23, 19)
         Me.seelctedsystem.Name = "seelctedsystem"
-        Me.seelctedsystem.Size = New System.Drawing.Size(359, 33)
+        Me.seelctedsystem.Size = New System.Drawing.Size(230, 31)
         Me.seelctedsystem.TabIndex = 851
         Me.seelctedsystem.Text = "Window / Door System Settings"
         '
@@ -186,7 +192,7 @@ Partial Class assessmentsettingFRM
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Calibri", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(26, 251)
+        Me.Label5.Location = New System.Drawing.Point(29, 268)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(69, 17)
         Me.Label5.TabIndex = 851
@@ -194,95 +200,104 @@ Partial Class assessmentsettingFRM
         '
         'possibleissue
         '
+        Me.possibleissue.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.possibleissue.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.possibleissue.FormattingEnabled = True
-        Me.possibleissue.Location = New System.Drawing.Point(169, 181)
+        Me.possibleissue.Location = New System.Drawing.Point(238, 181)
         Me.possibleissue.Name = "possibleissue"
         Me.possibleissue.Size = New System.Drawing.Size(208, 27)
         Me.possibleissue.TabIndex = 856
         '
         'Label6
         '
+        Me.Label6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Calibri", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(29, 181)
+        Me.Label6.Location = New System.Drawing.Point(94, 181)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(134, 17)
         Me.Label6.TabIndex = 855
         Me.Label6.Text = "Possible Issue/Concern"
+        Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'qualityaspect
         '
+        Me.qualityaspect.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.qualityaspect.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.qualityaspect.FormattingEnabled = True
-        Me.qualityaspect.Location = New System.Drawing.Point(169, 148)
+        Me.qualityaspect.Location = New System.Drawing.Point(238, 148)
         Me.qualityaspect.Name = "qualityaspect"
         Me.qualityaspect.Size = New System.Drawing.Size(208, 27)
         Me.qualityaspect.TabIndex = 854
         '
         'Label7
         '
+        Me.Label7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Calibri", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(29, 148)
+        Me.Label7.Location = New System.Drawing.Point(102, 148)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(126, 17)
         Me.Label7.TabIndex = 853
         Me.Label7.Text = "Select Quality Aspect"
+        Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Label8
         '
+        Me.Label8.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Calibri", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(29, 214)
+        Me.Label8.Location = New System.Drawing.Point(128, 214)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(100, 17)
         Me.Label8.TabIndex = 857
         Me.Label8.Text = "Possible Solution"
+        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'posibblesolution
+        'possiblesolution
+        '
+        Me.possiblesolution.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         '
         '
         '
-        '
-        Me.posibblesolution.CustomButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.posibblesolution.CustomButton.Image = CType(resources.GetObject("resource.Image"), System.Drawing.Image)
-        Me.posibblesolution.CustomButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.posibblesolution.CustomButton.Location = New System.Drawing.Point(180, 1)
-        Me.posibblesolution.CustomButton.Name = ""
-        Me.posibblesolution.CustomButton.Size = New System.Drawing.Size(27, 27)
-        Me.posibblesolution.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.posibblesolution.CustomButton.TabIndex = 1
-        Me.posibblesolution.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.posibblesolution.CustomButton.UseSelectable = True
-        Me.posibblesolution.CustomButton.UseVisualStyleBackColor = False
-        Me.posibblesolution.CustomButton.Visible = False
-        Me.posibblesolution.DisplayIcon = True
-        Me.posibblesolution.FontSize = MetroFramework.MetroTextBoxSize.Medium
-        Me.posibblesolution.Lines = New String(-1) {}
-        Me.posibblesolution.Location = New System.Drawing.Point(169, 214)
-        Me.posibblesolution.MaxLength = 32767
-        Me.posibblesolution.Name = "posibblesolution"
-        Me.posibblesolution.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.posibblesolution.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.posibblesolution.SelectedText = ""
-        Me.posibblesolution.SelectionLength = 0
-        Me.posibblesolution.SelectionStart = 0
-        Me.posibblesolution.ShowClearButton = True
-        Me.posibblesolution.Size = New System.Drawing.Size(208, 29)
-        Me.posibblesolution.Style = MetroFramework.MetroColorStyle.Red
-        Me.posibblesolution.TabIndex = 858
-        Me.posibblesolution.UseCustomForeColor = True
-        Me.posibblesolution.UseSelectable = True
-        Me.posibblesolution.WaterMark = "Enter Solution Here"
-        Me.posibblesolution.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.posibblesolution.WaterMarkFont = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        Me.possiblesolution.CustomButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.possiblesolution.CustomButton.Image = CType(resources.GetObject("resource.Image"), System.Drawing.Image)
+        Me.possiblesolution.CustomButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.possiblesolution.CustomButton.Location = New System.Drawing.Point(180, 1)
+        Me.possiblesolution.CustomButton.Name = ""
+        Me.possiblesolution.CustomButton.Size = New System.Drawing.Size(27, 27)
+        Me.possiblesolution.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.possiblesolution.CustomButton.TabIndex = 1
+        Me.possiblesolution.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.possiblesolution.CustomButton.UseSelectable = True
+        Me.possiblesolution.CustomButton.UseVisualStyleBackColor = False
+        Me.possiblesolution.CustomButton.Visible = False
+        Me.possiblesolution.DisplayIcon = True
+        Me.possiblesolution.FontSize = MetroFramework.MetroTextBoxSize.Medium
+        Me.possiblesolution.Lines = New String(-1) {}
+        Me.possiblesolution.Location = New System.Drawing.Point(238, 214)
+        Me.possiblesolution.MaxLength = 32767
+        Me.possiblesolution.Name = "possiblesolution"
+        Me.possiblesolution.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.possiblesolution.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.possiblesolution.SelectedText = ""
+        Me.possiblesolution.SelectionLength = 0
+        Me.possiblesolution.SelectionStart = 0
+        Me.possiblesolution.ShowClearButton = True
+        Me.possiblesolution.Size = New System.Drawing.Size(208, 29)
+        Me.possiblesolution.Style = MetroFramework.MetroColorStyle.Red
+        Me.possiblesolution.TabIndex = 858
+        Me.possiblesolution.UseCustomForeColor = True
+        Me.possiblesolution.UseSelectable = True
+        Me.possiblesolution.WaterMark = "Enter Solution Here"
+        Me.possiblesolution.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.possiblesolution.WaterMarkFont = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'Label9
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Calibri", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(29, 251)
+        Me.Label9.Location = New System.Drawing.Point(20, 268)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(69, 17)
         Me.Label9.TabIndex = 863
@@ -292,7 +307,7 @@ Partial Class assessmentsettingFRM
         '
         Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button1.Font = New System.Drawing.Font("Calibri", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(486, 278)
+        Me.Button1.Location = New System.Drawing.Point(479, 148)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(70, 27)
         Me.Button1.TabIndex = 862
@@ -303,7 +318,7 @@ Partial Class assessmentsettingFRM
         '
         Me.Button5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button5.Font = New System.Drawing.Font("Calibri", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button5.Location = New System.Drawing.Point(488, 377)
+        Me.Button5.Location = New System.Drawing.Point(479, 247)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(70, 27)
         Me.Button5.TabIndex = 860
@@ -314,7 +329,7 @@ Partial Class assessmentsettingFRM
         '
         Me.Button6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button6.Font = New System.Drawing.Font("Calibri", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button6.Location = New System.Drawing.Point(488, 344)
+        Me.Button6.Location = New System.Drawing.Point(479, 214)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(70, 27)
         Me.Button6.TabIndex = 861
@@ -328,13 +343,14 @@ Partial Class assessmentsettingFRM
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel3.BackColor = System.Drawing.Color.White
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel3.Location = New System.Drawing.Point(32, 278)
+        Me.Panel3.Location = New System.Drawing.Point(23, 299)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(447, 150)
+        Me.Panel3.Size = New System.Drawing.Size(526, 129)
         Me.Panel3.TabIndex = 859
         '
         'PARTSTXT
         '
+        Me.PARTSTXT.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         '
         '
         '
@@ -349,9 +365,9 @@ Partial Class assessmentsettingFRM
         Me.PARTSTXT.CustomButton.Visible = False
         Me.PARTSTXT.DisplayIcon = True
         Me.PARTSTXT.FontSize = MetroFramework.MetroTextBoxSize.Medium
-        Me.PARTSTXT.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.PARTSTXT.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.PARTSTXT.Lines = New String(-1) {}
-        Me.PARTSTXT.Location = New System.Drawing.Point(121, 181)
+        Me.PARTSTXT.Location = New System.Drawing.Point(181, 181)
         Me.PARTSTXT.MaxLength = 32767
         Me.PARTSTXT.Multiline = True
         Me.PARTSTXT.Name = "PARTSTXT"
@@ -406,7 +422,8 @@ Partial Class assessmentsettingFRM
         '
         'SplitContainer1.Panel2
         '
-        Me.SplitContainer1.Panel2.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.SplitContainer1.Panel2.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.SplitContainer1.Panel2.Controls.Add(Me.Button8)
         Me.SplitContainer1.Panel2.Controls.Add(Me.Label7)
         Me.SplitContainer1.Panel2.Controls.Add(Me.Label9)
         Me.SplitContainer1.Panel2.Controls.Add(Me.qualityaspect)
@@ -417,7 +434,7 @@ Partial Class assessmentsettingFRM
         Me.SplitContainer1.Panel2.Controls.Add(Me.Button6)
         Me.SplitContainer1.Panel2.Controls.Add(Me.Label8)
         Me.SplitContainer1.Panel2.Controls.Add(Me.Panel3)
-        Me.SplitContainer1.Panel2.Controls.Add(Me.posibblesolution)
+        Me.SplitContainer1.Panel2.Controls.Add(Me.possiblesolution)
         Me.SplitContainer1.Size = New System.Drawing.Size(1126, 450)
         Me.SplitContainer1.SplitterDistance = 552
         Me.SplitContainer1.TabIndex = 866
@@ -426,12 +443,23 @@ Partial Class assessmentsettingFRM
         '
         Me.Button7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button7.Font = New System.Drawing.Font("Calibri", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button7.Location = New System.Drawing.Point(461, 311)
+        Me.Button7.Location = New System.Drawing.Point(461, 181)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(70, 27)
         Me.Button7.TabIndex = 865
         Me.Button7.Text = "update"
         Me.Button7.UseVisualStyleBackColor = True
+        '
+        'Button8
+        '
+        Me.Button8.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button8.Font = New System.Drawing.Font("Calibri", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button8.Location = New System.Drawing.Point(479, 181)
+        Me.Button8.Name = "Button8"
+        Me.Button8.Size = New System.Drawing.Size(70, 27)
+        Me.Button8.TabIndex = 864
+        Me.Button8.Text = "update"
+        Me.Button8.UseVisualStyleBackColor = True
         '
         'assessmentsettingFRM
         '
@@ -470,7 +498,7 @@ Partial Class assessmentsettingFRM
     Friend WithEvents qualityaspect As ComboBox
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
-    Friend WithEvents posibblesolution As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents possiblesolution As MetroFramework.Controls.MetroTextBox
     Friend WithEvents Label9 As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents Button5 As Button
@@ -480,4 +508,5 @@ Partial Class assessmentsettingFRM
     Friend WithEvents Panel1 As Panel
     Friend WithEvents SplitContainer1 As SplitContainer
     Friend WithEvents Button7 As Button
+    Friend WithEvents Button8 As Button
 End Class

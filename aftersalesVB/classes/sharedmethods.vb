@@ -15,7 +15,13 @@ Public Class sharedmethods
     End Sub
     Public Sub assessmentsettingFRMinitialize()
         With assessmentsettingFRM.gv
-            '.RowTemplate.Height = 50
+            .RowTemplate.Height = 35
+            '.StateCommon.DataCell.Border.Color1 = Color.Black
+            '.StateCommon.DataCell.Border.Width = 1
+            '.DefaultCellStyle.WrapMode = DataGridViewTriState.True
+        End With
+        With assessmentsettingFRM.gv2
+            .RowTemplate.Height = 35
             '.StateCommon.DataCell.Border.Color1 = Color.Black
             '.StateCommon.DataCell.Border.Width = 1
             '.DefaultCellStyle.WrapMode = DataGridViewTriState.True

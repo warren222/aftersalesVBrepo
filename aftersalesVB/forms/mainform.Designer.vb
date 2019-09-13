@@ -24,7 +24,7 @@ Partial Class mainform
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(mainform))
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.newPNL = New MetroFramework.Controls.MetroTile()
         Me.MetroTile1 = New MetroFramework.Controls.MetroTile()
         Me.MetroTile2 = New MetroFramework.Controls.MetroTile()
@@ -179,8 +179,8 @@ Partial Class mainform
         Me.callinGRID.AllowUserToAddRows = False
         Me.callinGRID.AllowUserToDeleteRows = False
         Me.callinGRID.AllowUserToResizeRows = False
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.callinGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.callinGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.callinGRID.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -253,7 +253,7 @@ Partial Class mainform
         Me.MetroTile6.Size = New System.Drawing.Size(107, 71)
         Me.MetroTile6.Style = MetroFramework.MetroColorStyle.Purple
         Me.MetroTile6.TabIndex = 560
-        Me.MetroTile6.Text = "Mobilization"
+        Me.MetroTile6.Text = "Windows" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "and" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Doors"
         Me.MetroTile6.TileImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.MetroTile6.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular
         Me.MetroTile6.UseSelectable = True

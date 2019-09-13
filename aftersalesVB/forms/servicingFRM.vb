@@ -106,7 +106,7 @@ Public Class servicingFRM
 
         reportbtn.Name = "reportbtn"
         reportbtn.HeaderText = ""
-        reportbtn.Text = "report/mobilization"
+        reportbtn.Text = "report"
 
         rd.Name = "rd"
         rd.HeaderText = ""
