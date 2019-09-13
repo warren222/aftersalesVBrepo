@@ -49,8 +49,8 @@ Partial Class assessmentsettingFRM
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.PARTSTXT = New MetroFramework.Controls.MetroTextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.Button7 = New System.Windows.Forms.Button()
+        Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.Button8 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -410,6 +410,17 @@ Partial Class assessmentsettingFRM
         Me.Panel1.Size = New System.Drawing.Size(552, 450)
         Me.Panel1.TabIndex = 865
         '
+        'Button7
+        '
+        Me.Button7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button7.Font = New System.Drawing.Font("Calibri", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button7.Location = New System.Drawing.Point(461, 181)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(70, 27)
+        Me.Button7.TabIndex = 865
+        Me.Button7.Text = "update"
+        Me.Button7.UseVisualStyleBackColor = True
+        '
         'SplitContainer1
         '
         Me.SplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -439,17 +450,6 @@ Partial Class assessmentsettingFRM
         Me.SplitContainer1.SplitterDistance = 552
         Me.SplitContainer1.TabIndex = 866
         '
-        'Button7
-        '
-        Me.Button7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button7.Font = New System.Drawing.Font("Calibri", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button7.Location = New System.Drawing.Point(461, 181)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(70, 27)
-        Me.Button7.TabIndex = 865
-        Me.Button7.Text = "update"
-        Me.Button7.UseVisualStyleBackColor = True
-        '
         'Button8
         '
         Me.Button8.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -469,6 +469,7 @@ Partial Class assessmentsettingFRM
         Me.ClientSize = New System.Drawing.Size(1126, 450)
         Me.Controls.Add(Me.SplitContainer1)
         Me.Name = "assessmentsettingFRM"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.SplitContainer1.Panel1.ResumeLayout(False)
