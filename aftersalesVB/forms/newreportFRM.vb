@@ -79,12 +79,7 @@ Public Class newreportFRM
     Private Sub ccolor(ByVal ob As Object, ByVal c As Color)
         ob.ForeColor = c
     End Sub
-    Private Sub MetroTextButton3_Click(sender As Object, e As EventArgs)
-        newassessmentFRM.bol = True
-        newassessmentFRM.Text = "New"
-        newassessmentFRM.save.Text = "add"
-        newassessmentFRM.ShowDialog()
-    End Sub
+
 
     Private Sub KryptonLabel5_Paint(sender As Object, e As PaintEventArgs) Handles KryptonLabel5.Paint
 

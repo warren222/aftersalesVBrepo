@@ -419,7 +419,7 @@ Public Class selectedsystemFRM
                     Case "Sideroll System"
                         txt = "Sideroll/Built-in Screen/Rollout Maxxy"
                     Case "Plisse System"
-                        txt = "Standad/Advance/Train/Plisse Rd/Train Rd/SR (a.k.a. Zigzag)/Magnum"
+                        txt = "Standard/Advance/Train/Plisse Rd/Train Rd/SR (a.k.a. Zigzag)/Magnum"
                     Case "Sliding System"
                         txt = "Sliding with: Regular / Tuff Mesh / Pet Mesh / Security mesh  #11 & #12"
                     Case "Casement System"

@@ -414,9 +414,7 @@ Public Class mainform
         End If
     End Sub
 
-    Private Sub MetroTile5_Click(sender As Object, e As EventArgs) Handles MetroTile5.Click
-        assessmentFRM.ShowDialog()
-    End Sub
+
 
     Private Sub mainform_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         loginFRM.Close()

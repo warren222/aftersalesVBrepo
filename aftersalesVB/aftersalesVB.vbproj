@@ -142,12 +142,6 @@
     <Compile Include="forms\accessoriesFRM.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\assessmentFRM.Designer.vb">
-      <DependentUpon>assessmentFRM.vb</DependentUpon>
-    </Compile>
-    <Compile Include="forms\assessmentFRM.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="forms\assessmentFRM\assessmentreportingFRM.Designer.vb">
       <DependentUpon>assessmentreportingFRM.vb</DependentUpon>
     </Compile>
@@ -164,12 +158,6 @@
       <DependentUpon>selectedsystemFRM.vb</DependentUpon>
     </Compile>
     <Compile Include="forms\assessmentFRM\selectedsystemFRM.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\assreportFRM.Designer.vb">
-      <DependentUpon>assreportFRM.vb</DependentUpon>
-    </Compile>
-    <Compile Include="forms\assreportFRM.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\concernFRM.Designer.vb">
@@ -231,12 +219,6 @@
       <DependentUpon>newaccessoriesFRM.vb</DependentUpon>
     </Compile>
     <Compile Include="forms\newaccessoriesFRM.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\newassessmentFRM.Designer.vb">
-      <DependentUpon>newassessmentFRM.vb</DependentUpon>
-    </Compile>
-    <Compile Include="forms\newassessmentFRM.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\newcallinFRM.Designer.vb">
@@ -305,12 +287,6 @@
     <Compile Include="forms\quotationstatusFRM.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\reportassessmentFRM.Designer.vb">
-      <DependentUpon>reportassessmentFRM.vb</DependentUpon>
-    </Compile>
-    <Compile Include="forms\reportassessmentFRM.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="forms\reportFRM.Designer.vb">
       <DependentUpon>reportFRM.vb</DependentUpon>
     </Compile>
@@ -374,9 +350,6 @@
     <EmbeddedResource Include="forms\accessoriesFRM.resx">
       <DependentUpon>accessoriesFRM.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\assessmentFRM.resx">
-      <DependentUpon>assessmentFRM.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="forms\assessmentFRM\assessmentreportingFRM.resx">
       <DependentUpon>assessmentreportingFRM.vb</DependentUpon>
     </EmbeddedResource>
@@ -385,9 +358,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\assessmentFRM\selectedsystemFRM.resx">
       <DependentUpon>selectedsystemFRM.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="forms\assreportFRM.resx">
-      <DependentUpon>assreportFRM.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\concernFRM.resx">
       <DependentUpon>concernFRM.vb</DependentUpon>
@@ -418,9 +388,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\newaccessoriesFRM.resx">
       <DependentUpon>newaccessoriesFRM.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="forms\newassessmentFRM.resx">
-      <DependentUpon>newassessmentFRM.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\newcallinFRM.resx">
       <DependentUpon>newcallinFRM.vb</DependentUpon>
@@ -454,9 +421,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\quotationstatusFRM.resx">
       <DependentUpon>quotationstatusFRM.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="forms\reportassessmentFRM.resx">
-      <DependentUpon>reportassessmentFRM.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\reportFRM.resx">
       <DependentUpon>reportFRM.vb</DependentUpon>

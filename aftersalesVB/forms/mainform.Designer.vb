@@ -24,7 +24,7 @@ Partial Class mainform
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(mainform))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.newPNL = New MetroFramework.Controls.MetroTile()
         Me.MetroTile1 = New MetroFramework.Controls.MetroTile()
         Me.MetroTile2 = New MetroFramework.Controls.MetroTile()
@@ -36,7 +36,6 @@ Partial Class mainform
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.MetroTile6 = New MetroFramework.Controls.MetroTile()
         Me.MetroTile4 = New MetroFramework.Controls.MetroTile()
-        Me.MetroTile5 = New MetroFramework.Controls.MetroTile()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.KryptonLabel3 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
@@ -179,8 +178,8 @@ Partial Class mainform
         Me.callinGRID.AllowUserToAddRows = False
         Me.callinGRID.AllowUserToDeleteRows = False
         Me.callinGRID.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.callinGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.callinGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
         Me.callinGRID.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -215,7 +214,7 @@ Partial Class mainform
         '
         Me.MetroTile3.ActiveControl = Nothing
         Me.MetroTile3.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(126, Byte), Integer))
-        Me.MetroTile3.Location = New System.Drawing.Point(10, 236)
+        Me.MetroTile3.Location = New System.Drawing.Point(10, 159)
         Me.MetroTile3.Name = "MetroTile3"
         Me.MetroTile3.Size = New System.Drawing.Size(107, 71)
         Me.MetroTile3.Style = MetroFramework.MetroColorStyle.Teal
@@ -234,7 +233,6 @@ Partial Class mainform
         Me.Panel1.BackColor = System.Drawing.Color.White
         Me.Panel1.Controls.Add(Me.MetroTile6)
         Me.Panel1.Controls.Add(Me.MetroTile4)
-        Me.Panel1.Controls.Add(Me.MetroTile5)
         Me.Panel1.Controls.Add(Me.newPNL)
         Me.Panel1.Controls.Add(Me.MetroTile3)
         Me.Panel1.Controls.Add(Me.MetroTile1)
@@ -248,7 +246,7 @@ Partial Class mainform
         '
         Me.MetroTile6.ActiveControl = Nothing
         Me.MetroTile6.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(126, Byte), Integer))
-        Me.MetroTile6.Location = New System.Drawing.Point(10, 390)
+        Me.MetroTile6.Location = New System.Drawing.Point(10, 313)
         Me.MetroTile6.Name = "MetroTile6"
         Me.MetroTile6.Size = New System.Drawing.Size(107, 71)
         Me.MetroTile6.Style = MetroFramework.MetroColorStyle.Purple
@@ -263,7 +261,7 @@ Partial Class mainform
         '
         Me.MetroTile4.ActiveControl = Nothing
         Me.MetroTile4.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(126, Byte), Integer))
-        Me.MetroTile4.Location = New System.Drawing.Point(10, 313)
+        Me.MetroTile4.Location = New System.Drawing.Point(10, 236)
         Me.MetroTile4.Name = "MetroTile4"
         Me.MetroTile4.Size = New System.Drawing.Size(107, 71)
         Me.MetroTile4.Style = MetroFramework.MetroColorStyle.Brown
@@ -273,22 +271,6 @@ Partial Class mainform
         Me.MetroTile4.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular
         Me.MetroTile4.UseSelectable = True
         Me.MetroTile4.UseTileImage = True
-        '
-        'MetroTile5
-        '
-        Me.MetroTile5.ActiveControl = Nothing
-        Me.MetroTile5.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(126, Byte), Integer))
-        Me.MetroTile5.Location = New System.Drawing.Point(10, 159)
-        Me.MetroTile5.Name = "MetroTile5"
-        Me.MetroTile5.Size = New System.Drawing.Size(107, 71)
-        Me.MetroTile5.Style = MetroFramework.MetroColorStyle.Black
-        Me.MetroTile5.TabIndex = 558
-        Me.MetroTile5.Text = "Assessment"
-        Me.MetroTile5.TileImage = CType(resources.GetObject("MetroTile5.TileImage"), System.Drawing.Image)
-        Me.MetroTile5.TileImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.MetroTile5.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular
-        Me.MetroTile5.UseSelectable = True
-        Me.MetroTile5.UseTileImage = True
         '
         'Panel2
         '
@@ -457,7 +439,6 @@ Partial Class mainform
     Friend WithEvents KryptonLabel2 As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents MetroToggle1 As MetroFramework.Controls.MetroToggle
     Friend WithEvents KryptonLabel3 As ComponentFactory.Krypton.Toolkit.KryptonLabel
-    Friend WithEvents MetroTile5 As MetroFramework.Controls.MetroTile
     Friend WithEvents MetroTile4 As MetroFramework.Controls.MetroTile
     Friend WithEvents mymenu As ContextMenuStrip
     Friend WithEvents UpdateToolStripMenuItem As ToolStripMenuItem
