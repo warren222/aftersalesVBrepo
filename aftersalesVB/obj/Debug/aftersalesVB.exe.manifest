@@ -58,14 +58,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="aftersalesVB.exe" size="1140696">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="aftersalesVB.exe" size="1137112">
       <assemblyIdentity name="aftersalesVB" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>qW4WVvkwAGqy7osXcC2+n+87PGS7YjusiIE61sshABo=</dsig:DigestValue>
+        <dsig:DigestValue>Feq/ilM4OwW9rYANnaVXVgwvX4q+fUsPyjovCrYY/GI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

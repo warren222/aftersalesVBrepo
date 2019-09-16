@@ -35,14 +35,18 @@ Public Class servicingFRM
                         bs.DataMember = "servicingtb"
                         servicingGRID.DataSource = bs
                         addbtn()
-                        'servicingGRID.Columns("STATUS DATE").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-                        'servicingGRID.Columns("SERVICING").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-                        'servicingGRID.Columns("SERVICING DATE").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-                        servicingGRID.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells
+                        servicingGRID.Columns("STATUS DATE").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+                        servicingGRID.Columns("SERVICING").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+                        servicingGRID.Columns("SERVICING DATE").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+                        servicingGRID.Columns("REMARKS").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+                        'servicingGRID.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells
                         servicingGRID.Columns("id").Visible = False
                         servicingGRID.Columns("cin").Visible = False
                         servicingGRID.Columns("STATUS").Visible = False
-
+                        servicingGRID.Columns("rd").Width = 100
+                        servicingGRID.Columns("statusbtn").Width = 100
+                        servicingGRID.Columns("reportbtn").Width = 100
+                        servicingGRID.Columns("deletebtn").Width = 100
                     Catch ex As Exception
                         MsgBox(ex.ToString)
                     End Try
@@ -100,6 +104,7 @@ Public Class servicingFRM
         Dim reportbtn As New DataGridViewButtonColumn
         Dim rd As New DataGridViewButtonColumn
         Dim deletebtn As New DataGridViewButtonColumn
+        Dim evabtn As New DataGridViewButtonColumn
 
         statusbtn.Name = "statusbtn"
         statusbtn.HeaderText = "STATUS"
@@ -116,15 +121,22 @@ Public Class servicingFRM
         deletebtn.HeaderText = ""
         deletebtn.Text = "delete"
 
+        evabtn.Name = "evabtn"
+        evabtn.HeaderText = ""
+        evabtn.Text = "evaluation"
+
         statusbtn.UseColumnTextForButtonValue = False
         reportbtn.UseColumnTextForButtonValue = True
         rd.UseColumnTextForButtonValue = True
         deletebtn.UseColumnTextForButtonValue = True
+        evabtn.UseColumnTextForButtonValue = True
 
         servicingGRID.Columns.Insert(0, statusbtn)
         servicingGRID.Columns.Insert(8, reportbtn)
         servicingGRID.Columns.Insert(9, rd)
-        servicingGRID.Columns.Insert(10, deletebtn)
+        servicingGRID.Columns.Insert(10, evabtn)
+        servicingGRID.Columns.Insert(11, deletebtn)
+
 
         For i As Integer = 0 To servicingGRID.RowCount - 1
             servicingGRID.Rows(i).Cells.Item(0).Value = servicingGRID.Item("STATUS", i).Value.ToString
@@ -172,6 +184,9 @@ Public Class servicingFRM
                 scannedreportFRM.id = servicingGRID.Item("servicing", e.RowIndex).Value.ToString
                 scannedreportFRM.ShowDialog()
             ElseIf e.ColumnIndex = 10 Then
+                id = servicingGRID.Item("id", e.RowIndex).Value.ToString
+                evaFRM.ShowDialog()
+            ElseIf e.ColumnIndex = 11 Then
                 If MetroFramework.MetroMessageBox.Show(Me, "Delete " & servicingGRID.Item("servicing", e.RowIndex).Value.ToString & "?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
                     Return
                 Else

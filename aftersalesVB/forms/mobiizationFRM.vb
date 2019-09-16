@@ -329,4 +329,11 @@ do you want to exit?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = D
 
         End Try
     End Sub
+
+    Private Sub mobGRID_SelectionChanged(sender As Object, e As EventArgs) Handles mobGRID.SelectionChanged
+        Dim rows As DataGridViewSelectedRowCollection = mobGRID.SelectedRows
+        For Each row As DataGridViewRow In rows
+            id = row.Cells("id").Value.ToString
+        Next
+    End Sub
 End Class

@@ -184,6 +184,12 @@
     <Compile Include="forms\editpersonnelFRM.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="forms\evaFRM.Designer.vb">
+      <DependentUpon>evaFRM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\evaFRM.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="forms\itemFRM.Designer.vb">
       <DependentUpon>itemFRM.vb</DependentUpon>
     </Compile>
@@ -370,6 +376,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\editpersonnelFRM.resx">
       <DependentUpon>editpersonnelFRM.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\evaFRM.resx">
+      <DependentUpon>evaFRM.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\itemFRM.resx">
       <DependentUpon>itemFRM.vb</DependentUpon>

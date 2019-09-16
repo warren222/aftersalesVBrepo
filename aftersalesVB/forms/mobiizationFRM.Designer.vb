@@ -22,8 +22,8 @@ Partial Class mobiizationFRM
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.mobGRID = New ComponentFactory.Krypton.Toolkit.KryptonDataGridView()
@@ -93,8 +93,8 @@ Partial Class mobiizationFRM
         Me.mobGRID.AllowUserToAddRows = False
         Me.mobGRID.AllowUserToDeleteRows = False
         Me.mobGRID.AllowUserToResizeRows = False
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.mobGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.mobGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.mobGRID.ColumnHeadersHeight = 32
         Me.mobGRID.Cursor = System.Windows.Forms.Cursors.Hand
         Me.mobGRID.Dock = System.Windows.Forms.DockStyle.Fill
@@ -716,8 +716,8 @@ Partial Class mobiizationFRM
         Me.teamgv.AllowUserToAddRows = False
         Me.teamgv.AllowUserToDeleteRows = False
         Me.teamgv.AllowUserToResizeRows = False
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.teamgv.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.teamgv.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
         Me.teamgv.ColumnHeadersHeight = 32
         Me.teamgv.Cursor = System.Windows.Forms.Cursors.Hand
         Me.teamgv.Dock = System.Windows.Forms.DockStyle.Fill
