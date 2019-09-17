@@ -41,6 +41,12 @@ Partial Class reportFRM
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.teamgv = New ComponentFactory.Krypton.Toolkit.KryptonDataGridView()
         Me.Button4 = New System.Windows.Forms.Button()
+        Me.KryptonLabel3 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
+        Me.calldategen = New MetroFramework.Controls.MetroDateTime()
+        Me.dated = New MetroFramework.Controls.MetroTextBox()
+        Me.KryptonLabel4 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
+        Me.EVALUATION = New System.Windows.Forms.RichTextBox()
+        Me.Button5 = New System.Windows.Forms.Button()
         CType(Me.reportGRID, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -67,7 +73,7 @@ Partial Class reportFRM
         Me.reportGRID.RowHeadersWidth = 30
         Me.reportGRID.RowTemplate.Height = 30
         Me.reportGRID.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.reportGRID.Size = New System.Drawing.Size(818, 185)
+        Me.reportGRID.Size = New System.Drawing.Size(389, 185)
         Me.reportGRID.StateCommon.Background.Color1 = System.Drawing.Color.White
         Me.reportGRID.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
         Me.reportGRID.StateCommon.DataCell.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) _
@@ -88,7 +94,7 @@ Partial Class reportFRM
         '
         'servicing
         '
-        Me.servicing.Location = New System.Drawing.Point(12, 12)
+        Me.servicing.Location = New System.Drawing.Point(14, 12)
         Me.servicing.Name = "servicing"
         Me.servicing.Size = New System.Drawing.Size(101, 34)
         Me.servicing.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
@@ -103,14 +109,14 @@ Partial Class reportFRM
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel1.Controls.Add(Me.reportGRID)
-        Me.Panel1.Location = New System.Drawing.Point(13, 263)
+        Me.Panel1.Location = New System.Drawing.Point(12, 235)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(820, 187)
+        Me.Panel1.Size = New System.Drawing.Size(391, 187)
         Me.Panel1.TabIndex = 565
         '
         'KryptonLabel7
         '
-        Me.KryptonLabel7.Location = New System.Drawing.Point(13, 237)
+        Me.KryptonLabel7.Location = New System.Drawing.Point(12, 209)
         Me.KryptonLabel7.Name = "KryptonLabel7"
         Me.KryptonLabel7.Size = New System.Drawing.Size(97, 20)
         Me.KryptonLabel7.StateCommon.ShortText.Color1 = System.Drawing.Color.Black
@@ -122,9 +128,9 @@ Partial Class reportFRM
         '
         Me.newbtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.newbtn.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.newbtn.Location = New System.Drawing.Point(840, 264)
+        Me.newbtn.Location = New System.Drawing.Point(408, 236)
         Me.newbtn.Name = "newbtn"
-        Me.newbtn.Size = New System.Drawing.Size(94, 23)
+        Me.newbtn.Size = New System.Drawing.Size(70, 23)
         Me.newbtn.TabIndex = 567
         Me.newbtn.Text = "new"
         Me.newbtn.UseVisualStyleBackColor = True
@@ -133,9 +139,9 @@ Partial Class reportFRM
         '
         Me.refreshbtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.refreshbtn.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.refreshbtn.Location = New System.Drawing.Point(840, 293)
+        Me.refreshbtn.Location = New System.Drawing.Point(408, 265)
         Me.refreshbtn.Name = "refreshbtn"
-        Me.refreshbtn.Size = New System.Drawing.Size(92, 23)
+        Me.refreshbtn.Size = New System.Drawing.Size(70, 23)
         Me.refreshbtn.TabIndex = 568
         Me.refreshbtn.Text = "reload"
         Me.refreshbtn.UseVisualStyleBackColor = True
@@ -144,16 +150,16 @@ Partial Class reportFRM
         '
         Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.Button1.Location = New System.Drawing.Point(840, 322)
+        Me.Button1.Location = New System.Drawing.Point(408, 294)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(92, 23)
+        Me.Button1.Size = New System.Drawing.Size(70, 23)
         Me.Button1.TabIndex = 569
         Me.Button1.Text = "preview"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'KryptonLabel1
         '
-        Me.KryptonLabel1.Location = New System.Drawing.Point(284, 52)
+        Me.KryptonLabel1.Location = New System.Drawing.Point(13, 52)
         Me.KryptonLabel1.Name = "KryptonLabel1"
         Me.KryptonLabel1.Size = New System.Drawing.Size(119, 20)
         Me.KryptonLabel1.StateCommon.ShortText.Color1 = System.Drawing.Color.Black
@@ -168,9 +174,9 @@ Partial Class reportFRM
         Me.Panel2.BackColor = System.Drawing.Color.White
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel2.Controls.Add(Me.mobgv)
-        Me.Panel2.Location = New System.Drawing.Point(284, 77)
+        Me.Panel2.Location = New System.Drawing.Point(13, 77)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(550, 145)
+        Me.Panel2.Size = New System.Drawing.Size(465, 126)
         Me.Panel2.TabIndex = 571
         '
         'mobgv
@@ -196,7 +202,7 @@ Partial Class reportFRM
         Me.mobgv.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black
         Me.mobgv.RowTemplate.Height = 27
         Me.mobgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.mobgv.Size = New System.Drawing.Size(548, 143)
+        Me.mobgv.Size = New System.Drawing.Size(463, 124)
         Me.mobgv.StateCommon.Background.Color1 = System.Drawing.Color.White
         Me.mobgv.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
         Me.mobgv.StateCommon.DataCell.Border.DrawBorders = CType((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right), ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
@@ -215,9 +221,9 @@ Partial Class reportFRM
         '
         Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.Button2.Location = New System.Drawing.Point(840, 77)
+        Me.Button2.Location = New System.Drawing.Point(484, 78)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(94, 23)
+        Me.Button2.Size = New System.Drawing.Size(70, 23)
         Me.Button2.TabIndex = 572
         Me.Button2.Text = "import"
         Me.Button2.UseVisualStyleBackColor = True
@@ -226,16 +232,17 @@ Partial Class reportFRM
         '
         Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.Button3.Location = New System.Drawing.Point(840, 106)
+        Me.Button3.Location = New System.Drawing.Point(484, 107)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(92, 23)
+        Me.Button3.Size = New System.Drawing.Size(70, 23)
         Me.Button3.TabIndex = 573
         Me.Button3.Text = "reload"
         Me.Button3.UseVisualStyleBackColor = True
         '
         'KryptonLabel2
         '
-        Me.KryptonLabel2.Location = New System.Drawing.Point(12, 52)
+        Me.KryptonLabel2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.KryptonLabel2.Location = New System.Drawing.Point(579, 52)
         Me.KryptonLabel2.Name = "KryptonLabel2"
         Me.KryptonLabel2.Size = New System.Drawing.Size(53, 20)
         Me.KryptonLabel2.StateCommon.ShortText.Color1 = System.Drawing.Color.Black
@@ -245,12 +252,13 @@ Partial Class reportFRM
         '
         'Panel3
         '
+        Me.Panel3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel3.BackColor = System.Drawing.Color.White
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel3.Controls.Add(Me.teamgv)
-        Me.Panel3.Location = New System.Drawing.Point(12, 77)
+        Me.Panel3.Location = New System.Drawing.Point(578, 77)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(266, 145)
+        Me.Panel3.Size = New System.Drawing.Size(353, 152)
         Me.Panel3.TabIndex = 575
         '
         'teamgv
@@ -272,11 +280,12 @@ Partial Class reportFRM
         Me.teamgv.Name = "teamgv"
         Me.teamgv.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Silver
         Me.teamgv.ReadOnly = True
+        Me.teamgv.RowHeadersVisible = False
         Me.teamgv.RowHeadersWidth = 40
         Me.teamgv.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black
         Me.teamgv.RowTemplate.Height = 27
         Me.teamgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.teamgv.Size = New System.Drawing.Size(264, 143)
+        Me.teamgv.Size = New System.Drawing.Size(351, 150)
         Me.teamgv.StateCommon.Background.Color1 = System.Drawing.Color.White
         Me.teamgv.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
         Me.teamgv.StateCommon.DataCell.Border.DrawBorders = CType((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right), ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
@@ -295,18 +304,119 @@ Partial Class reportFRM
         '
         Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.Button4.Location = New System.Drawing.Point(840, 135)
+        Me.Button4.Location = New System.Drawing.Point(484, 136)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(94, 23)
+        Me.Button4.Size = New System.Drawing.Size(70, 23)
         Me.Button4.TabIndex = 576
         Me.Button4.Text = "remove"
         Me.Button4.UseVisualStyleBackColor = True
+        '
+        'KryptonLabel3
+        '
+        Me.KryptonLabel3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.KryptonLabel3.Location = New System.Drawing.Point(524, 265)
+        Me.KryptonLabel3.Name = "KryptonLabel3"
+        Me.KryptonLabel3.Size = New System.Drawing.Size(190, 20)
+        Me.KryptonLabel3.StateCommon.ShortText.Color1 = System.Drawing.Color.Black
+        Me.KryptonLabel3.StateCommon.ShortText.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KryptonLabel3.TabIndex = 577
+        Me.KryptonLabel3.Values.Text = "After Sales-Admin Evaluation :"
+        '
+        'calldategen
+        '
+        Me.calldategen.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.calldategen.CalendarFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.calldategen.CustomFormat = "yyyy-MMM-dd"
+        Me.calldategen.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.calldategen.Location = New System.Drawing.Point(524, 404)
+        Me.calldategen.MinimumSize = New System.Drawing.Size(0, 29)
+        Me.calldategen.Name = "calldategen"
+        Me.calldategen.Size = New System.Drawing.Size(130, 29)
+        Me.calldategen.Style = MetroFramework.MetroColorStyle.Red
+        Me.calldategen.TabIndex = 601
+        '
+        'dated
+        '
+        Me.dated.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        '
+        '
+        '
+        Me.dated.CustomButton.Image = Nothing
+        Me.dated.CustomButton.Location = New System.Drawing.Point(114, 1)
+        Me.dated.CustomButton.Name = ""
+        Me.dated.CustomButton.Size = New System.Drawing.Size(25, 25)
+        Me.dated.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.dated.CustomButton.TabIndex = 1
+        Me.dated.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.dated.CustomButton.UseSelectable = True
+        Me.dated.CustomButton.Visible = False
+        Me.dated.DisplayIcon = True
+        Me.dated.FontSize = MetroFramework.MetroTextBoxSize.Medium
+        Me.dated.Lines = New String(-1) {}
+        Me.dated.Location = New System.Drawing.Point(660, 404)
+        Me.dated.MaxLength = 32767
+        Me.dated.Name = "dated"
+        Me.dated.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.dated.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.dated.SelectedText = ""
+        Me.dated.SelectionLength = 0
+        Me.dated.SelectionStart = 0
+        Me.dated.ShowClearButton = True
+        Me.dated.Size = New System.Drawing.Size(140, 27)
+        Me.dated.Style = MetroFramework.MetroColorStyle.Teal
+        Me.dated.TabIndex = 602
+        Me.dated.UseCustomForeColor = True
+        Me.dated.UseSelectable = True
+        Me.dated.UseStyleColors = True
+        Me.dated.WaterMark = "DATE"
+        Me.dated.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.dated.WaterMarkFont = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        '
+        'KryptonLabel4
+        '
+        Me.KryptonLabel4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.KryptonLabel4.Location = New System.Drawing.Point(524, 378)
+        Me.KryptonLabel4.Name = "KryptonLabel4"
+        Me.KryptonLabel4.Size = New System.Drawing.Size(118, 20)
+        Me.KryptonLabel4.StateCommon.ShortText.Color1 = System.Drawing.Color.Black
+        Me.KryptonLabel4.StateCommon.ShortText.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KryptonLabel4.TabIndex = 603
+        Me.KryptonLabel4.Values.Text = "Date Completion :"
+        '
+        'EVALUATION
+        '
+        Me.EVALUATION.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.EVALUATION.Font = New System.Drawing.Font("Calibri", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EVALUATION.Location = New System.Drawing.Point(524, 294)
+        Me.EVALUATION.Name = "EVALUATION"
+        Me.EVALUATION.Size = New System.Drawing.Size(407, 78)
+        Me.EVALUATION.TabIndex = 604
+        Me.EVALUATION.Text = ""
+        '
+        'Button5
+        '
+        Me.Button5.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.Button5.Font = New System.Drawing.Font("Calibri", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button5.Location = New System.Drawing.Point(806, 404)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(124, 27)
+        Me.Button5.TabIndex = 605
+        Me.Button5.Text = "save evaluation"
+        Me.Button5.UseVisualStyleBackColor = True
         '
         'reportFRM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(943, 462)
+        Me.Controls.Add(Me.Button5)
+        Me.Controls.Add(Me.EVALUATION)
+        Me.Controls.Add(Me.KryptonLabel4)
+        Me.Controls.Add(Me.calldategen)
+        Me.Controls.Add(Me.dated)
+        Me.Controls.Add(Me.KryptonLabel3)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.KryptonLabel2)
         Me.Controls.Add(Me.Panel3)
@@ -351,4 +461,10 @@ Partial Class reportFRM
     Friend WithEvents Panel3 As Panel
     Friend WithEvents teamgv As ComponentFactory.Krypton.Toolkit.KryptonDataGridView
     Friend WithEvents Button4 As Button
+    Friend WithEvents KryptonLabel3 As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Friend WithEvents calldategen As MetroFramework.Controls.MetroDateTime
+    Friend WithEvents dated As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents KryptonLabel4 As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Friend WithEvents EVALUATION As RichTextBox
+    Friend WithEvents Button5 As Button
 End Class

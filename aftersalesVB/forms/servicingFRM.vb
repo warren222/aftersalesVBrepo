@@ -104,14 +104,15 @@ Public Class servicingFRM
         Dim reportbtn As New DataGridViewButtonColumn
         Dim rd As New DataGridViewButtonColumn
         Dim deletebtn As New DataGridViewButtonColumn
-        Dim evabtn As New DataGridViewButtonColumn
+
+        Dim prevreportbtn As New DataGridViewButtonColumn
 
         statusbtn.Name = "statusbtn"
         statusbtn.HeaderText = "STATUS"
 
         reportbtn.Name = "reportbtn"
         reportbtn.HeaderText = ""
-        reportbtn.Text = "report"
+        reportbtn.Text = "edit report"
 
         rd.Name = "rd"
         rd.HeaderText = ""
@@ -121,20 +122,23 @@ Public Class servicingFRM
         deletebtn.HeaderText = ""
         deletebtn.Text = "delete"
 
-        evabtn.Name = "evabtn"
-        evabtn.HeaderText = ""
-        evabtn.Text = "evaluation"
+
+
+        prevreportbtn.Name = "evabtn"
+        prevreportbtn.HeaderText = ""
+        prevreportbtn.Text = "report prev"
 
         statusbtn.UseColumnTextForButtonValue = False
         reportbtn.UseColumnTextForButtonValue = True
         rd.UseColumnTextForButtonValue = True
         deletebtn.UseColumnTextForButtonValue = True
-        evabtn.UseColumnTextForButtonValue = True
 
+        prevreportbtn.UseColumnTextForButtonValue = True
         servicingGRID.Columns.Insert(0, statusbtn)
         servicingGRID.Columns.Insert(8, reportbtn)
-        servicingGRID.Columns.Insert(9, rd)
-        servicingGRID.Columns.Insert(10, evabtn)
+        servicingGRID.Columns.Insert(9, prevreportbtn)
+        servicingGRID.Columns.Insert(10, rd)
+
         servicingGRID.Columns.Insert(11, deletebtn)
 
 
@@ -181,11 +185,11 @@ Public Class servicingFRM
                 reportFRM.ShowDialog()
             ElseIf e.ColumnIndex = 9 Then
                 id = servicingGRID.Item("id", e.RowIndex).Value.ToString
-                scannedreportFRM.id = servicingGRID.Item("servicing", e.RowIndex).Value.ToString
-                scannedreportFRM.ShowDialog()
+                loadreport()
             ElseIf e.ColumnIndex = 10 Then
                 id = servicingGRID.Item("id", e.RowIndex).Value.ToString
-                evaFRM.ShowDialog()
+                scannedreportFRM.id = servicingGRID.Item("servicing", e.RowIndex).Value.ToString
+                scannedreportFRM.ShowDialog()
             ElseIf e.ColumnIndex = 11 Then
                 If MetroFramework.MetroMessageBox.Show(Me, "Delete " & servicingGRID.Item("servicing", e.RowIndex).Value.ToString & "?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
                     Return
@@ -208,7 +212,43 @@ Public Class servicingFRM
             End If
             End If
     End Sub
-
+    Private Sub loadreport()
+        Dim str As String = "
+SELECT A.ID,[SPECIFICATION],[KNO],[ITEMNO],[LOCATION],B.[SYSTEM],'  **  '+PARTS+' '+isnull(color,'')+''+'  >>>  '+QUALITYASPECT+'  >>  '+POSSIBLEISSUE+'  >  '+POSSIBLESOLUTION AS ASSESSMENT
+FROM [REPORTTB] as a 
+INNER JOIN [ASSESSMENTREPORTTB] AS B
+ON A.ID=B.RID WHERE B.[SYSTEM] = 'Framing System' and a.[SID] = @sid
+union all
+select A.ID,[SPECIFICATION],[KNO],[ITEMNO],[LOCATION],B.[SYSTEM],'  *** '+OTHERSYSTEM + '  **  '+PARTS+'  *  '+CATEGORY+'  >>>  '+QUALITYASPECT+'  >>  '+POSSIBLEISSUE+'  >  '+POSSIBLESOLUTION AS ASSESSMENT
+FROM [REPORTTB] as a 
+INNER JOIN [ASSESSMENTREPORTTB] AS B
+ON A.ID=B.RID WHERE B.[SYSTEM] = 'Insect Protection System' and a.[SID] = @sid
+union all
+select A.ID,[SPECIFICATION],[KNO],[ITEMNO],[LOCATION],B.[SYSTEM],'  **  '+PARTS+'  *  '+CATEGORY+'  >>>  '+QUALITYASPECT+'  >>  '+POSSIBLEISSUE+'  >  '+POSSIBLESOLUTION AS ASSESSMENT
+FROM [REPORTTB] as a 
+INNER JOIN [ASSESSMENTREPORTTB] AS B
+ON A.ID=B.RID WHERE not B.[SYSTEM] = 'Insect Protection System' and not B.[SYSTEM] = 'Framing System' and a.[SID] = @sid
+"
+        Dim DS As New asdbDS
+        DS.Clear()
+        Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
+            Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
+                Try
+                    sqlcon.Open()
+                    Dim da As SqlDataAdapter = New SqlDataAdapter
+                    sqlcmd.Parameters.AddWithValue("@sid", id)
+                    da.SelectCommand = sqlcmd
+                    da.SelectCommand.CommandTimeout = 30000
+                    da.Fill(DS.ASSESSMENTTB)
+                    ServicingRPTfrm.ASSESSMENTTBBindingSource.DataSource = DS.ASSESSMENTTB.DefaultView
+                Catch ex As Exception
+                    MsgBox(ex.ToString)
+                Finally
+                    ServicingRPTfrm.Show()
+                End Try
+            End Using
+        End Using
+    End Sub
     Private Sub servicingFRM_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         'mainform.searchtext.CustomButton.PerformClick()
         Me.Dispose()

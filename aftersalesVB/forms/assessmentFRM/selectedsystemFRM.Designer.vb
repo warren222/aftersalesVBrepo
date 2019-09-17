@@ -118,7 +118,7 @@ Partial Class selectedsystemFRM
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 60
-        Me.Button1.Text = "REMOVE"
+        Me.Button1.Text = "remove"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'kno
@@ -427,7 +427,7 @@ Partial Class selectedsystemFRM
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(75, 23)
         Me.Button6.TabIndex = 14
-        Me.Button6.Text = "SAVE"
+        Me.Button6.Text = "add"
         Me.Button6.UseVisualStyleBackColor = True
         '
         'Label5

@@ -11,6 +11,26 @@ Public Class reportFRM
         teamgv.DataSource = bs2
         Button3.PerformClick()
         loadreport()
+        loadeva()
+    End Sub
+    Private Sub loadeva()
+        Dim str As String = "select evaluation,completion from evaluationtb where sid = @sid"
+        Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
+            Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
+                Try
+                    sqlcon.Open()
+                    sqlcmd.Parameters.AddWithValue("@sid", servicingFRM.id)
+                    Using rd As SqlDataReader = sqlcmd.ExecuteReader
+                        While rd.Read
+                            EVALUATION.Text = rd(0).ToString
+                            dated.Text = rd(1).ToString
+                        End While
+                    End Using
+                Catch ex As Exception
+                    MsgBox(ex.ToString)
+                End Try
+            End Using
+        End Using
     End Sub
     Public Sub loadreport()
         Dim str As String = "select * from reporttb where sid = @sid"
@@ -32,6 +52,8 @@ Public Class reportFRM
                         With reportGRID
                             .Columns("id").Visible = False
                             .Columns("sid").Visible = False
+                            .Columns("kno").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+                            .Columns("itemno").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
                             .Columns("location").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
                             .Columns("specification").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
                         End With
@@ -163,17 +185,17 @@ ON A.ID=B.RID WHERE not B.[SYSTEM] = 'Insect Protection System' and not B.[SYSTE
                     sqlcon.Open()
                     Dim da As SqlDataAdapter = New SqlDataAdapter
                     sqlcmd.Parameters.AddWithValue("@sid", servicingFRM.id)
-                    Console.WriteLine(servicingFRM.id)
                     da.SelectCommand = sqlcmd
                     da.SelectCommand.CommandTimeout = 30000
                     da.Fill(DS.ASSESSMENTTB)
                     ServicingRPTfrm.ASSESSMENTTBBindingSource.DataSource = DS.ASSESSMENTTB.DefaultView
                 Catch ex As Exception
                     MsgBox(ex.ToString)
+                Finally
+                    ServicingRPTfrm.Show()
                 End Try
             End Using
         End Using
-        ServicingRPTfrm.Show()
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -243,6 +265,7 @@ ON A.ID=B.RID WHERE not B.[SYSTEM] = 'Insect Protection System' and not B.[SYSTE
                     da.Fill(DS, "PERSONNELTB")
                     bs2.DataSource = DS
                     bs2.DataMember = "PERSONNELTB"
+                    teamgv.Columns("personnel").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
                 Catch ex As Exception
                     MsgBox(ex.ToString)
                 End Try
@@ -278,5 +301,53 @@ ON A.ID=B.RID WHERE not B.[SYSTEM] = 'Insect Protection System' and not B.[SYSTE
         Finally
             Button3.PerformClick()
         End Try
+    End Sub
+
+    Private Sub calldategen_MouseDown(sender As Object, e As MouseEventArgs) Handles calldategen.MouseDown, calldategen.ValueChanged
+        dated.Text = calldategen.Text
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        If MessageBox.Show("save changes?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
+            Exit Sub
+        End If
+        EVALUATION.Text = EVALUATION.Text.Replace("'", "`")
+        UPDATESUB()
+    End Sub
+    Private Sub UPDATESUB()
+        Dim STR As String = "
+
+DECLARE @SID AS VARCHAR(100) = '" & servicingFRM.id & "'
+DECLARE @COMPLETION AS VARCHAR(max) = '" & dated.Text & "'
+DECLARE @EVALUATION AS VARCHAR(max) = '" & EVALUATION.Text & "'
+DECLARE @COUNT AS INTEGER = (SELECT COUNT(ISNULL(ID,0)) FROM EVALUATIONTB WHERE SID = @SID)
+
+
+DECLARE @QRY AS VARCHAR(MAX)
+				SET @QRY=
+				(
+				CASE WHEN @COUNT >0 THEN
+				'UPDATE EVALUATIONTB SET EVALUATION = '''+@EVALUATION+''', COMPLETION = '''+@COMPLETION+''' WHERE SID = '''+@SID+''''
+				ELSE
+
+				'DECLARE @ID AS INTEGER = (SELECT ISNULL(MAX(ISNULL(ID,0)),0)+1 FROM EVALUATIONTB)
+				INSERT INTO EVALUATIONTB (ID,SID,EVALUATION,COMPLETION)VALUES(@ID,'''+@SID+''','''+@EVALUATION+''','''+@COMPLETION+''')'
+				END
+				)
+
+				EXEC(@QRY)
+"
+        Using SQLCON As SqlConnection = New SqlConnection(sql.sqlcon1str)
+            Using SQLCMD As SqlCommand = New SqlCommand(STR, SQLCON)
+                Try
+                    SQLCON.Open()
+                    SQLCMD.ExecuteNonQuery()
+                Catch ex As Exception
+                    MsgBox(ex.ToString)
+                Finally
+                    MessageBox.Show("evaluation saved!", "", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                End Try
+            End Using
+        End Using
     End Sub
 End Class
