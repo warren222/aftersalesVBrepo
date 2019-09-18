@@ -1,6 +1,6 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class quotationFRM
-    Inherits MetroFramework.Forms.MetroForm
+    Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
     <System.Diagnostics.DebuggerNonUserCode()>
@@ -170,8 +170,6 @@ Partial Class quotationFRM
         Me.Controls.Add(Me.newbtn)
         Me.MinimizeBox = False
         Me.Name = "quotationFRM"
-        Me.Style = MetroFramework.MetroColorStyle.Red
-        Me.Theme = MetroFramework.MetroThemeStyle.[Default]
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.quGRID, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)

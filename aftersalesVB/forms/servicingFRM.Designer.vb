@@ -22,7 +22,7 @@ Partial Class servicingFRM
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.servicingGRID = New ComponentFactory.Krypton.Toolkit.KryptonDataGridView()
         Me.jo = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.address = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
@@ -48,8 +48,8 @@ Partial Class servicingFRM
         Me.servicingGRID.AllowUserToAddRows = False
         Me.servicingGRID.AllowUserToDeleteRows = False
         Me.servicingGRID.AllowUserToResizeRows = False
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.servicingGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.servicingGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.servicingGRID.ColumnHeadersHeight = 32
         Me.servicingGRID.Cursor = System.Windows.Forms.Cursors.Hand
         Me.servicingGRID.Dock = System.Windows.Forms.DockStyle.Fill
@@ -290,7 +290,7 @@ Partial Class servicingFRM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.White
+        Me.BackColor = System.Drawing.Color.WhiteSmoke
         Me.ClientSize = New System.Drawing.Size(995, 509)
         Me.Controls.Add(Me.KryptonLabel3)
         Me.Controls.Add(Me.Button1)
