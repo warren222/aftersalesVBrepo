@@ -22,7 +22,7 @@ Partial Class servicingFRM
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.servicingGRID = New ComponentFactory.Krypton.Toolkit.KryptonDataGridView()
         Me.jo = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.address = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
@@ -48,8 +48,8 @@ Partial Class servicingFRM
         Me.servicingGRID.AllowUserToAddRows = False
         Me.servicingGRID.AllowUserToDeleteRows = False
         Me.servicingGRID.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.servicingGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.servicingGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
         Me.servicingGRID.ColumnHeadersHeight = 32
         Me.servicingGRID.Cursor = System.Windows.Forms.Cursors.Hand
         Me.servicingGRID.Dock = System.Windows.Forms.DockStyle.Fill
@@ -193,7 +193,7 @@ Partial Class servicingFRM
         '
         Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel2.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel2.BackColor = System.Drawing.Color.White
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel2.Controls.Add(Me.remarks)
         Me.Panel2.Controls.Add(Me.KryptonLabel2)
@@ -221,7 +221,7 @@ Partial Class servicingFRM
         Me.remarks.DisplayIcon = True
         Me.remarks.FontSize = MetroFramework.MetroTextBoxSize.Medium
         Me.remarks.Lines = New String(-1) {}
-        Me.remarks.Location = New System.Drawing.Point(347, 36)
+        Me.remarks.Location = New System.Drawing.Point(339, 35)
         Me.remarks.MaxLength = 32767
         Me.remarks.Multiline = True
         Me.remarks.Name = "remarks"

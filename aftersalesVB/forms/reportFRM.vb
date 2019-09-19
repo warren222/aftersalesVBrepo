@@ -2,16 +2,16 @@
 Public Class reportFRM
     Dim sql As New sql
     Dim bs As New BindingSource
-    Dim bs1 As New BindingSource
-    Dim bs2 As New BindingSource
+    Dim teambs As New BindingSource
+
     Public id As String = ""
+    Public Shared teamid As String
     Private Sub reportFRM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         reportGRID.DataSource = bs
-        mobgv.DataSource = bs1
-        teamgv.DataSource = bs2
-        Button3.PerformClick()
+        teamgv.DataSource = teambs
         loadreport()
         loadeva()
+        loadteam()
     End Sub
     Private Sub loadeva()
         Dim str As String = "select evaluation,completion from evaluationtb where sid = @sid"
@@ -56,6 +56,7 @@ Public Class reportFRM
                             .Columns("itemno").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
                             .Columns("location").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
                             .Columns("specification").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+                            .Columns("mobilizationcost").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
                         End With
                     Catch ex As Exception
                         MsgBox(ex.ToString)
@@ -86,19 +87,22 @@ Public Class reportFRM
             .Text = "delete"
             .UseColumnTextForButtonValue = True
         End With
-        reportGRID.Columns.Insert(6, assessmentbtn)
-        reportGRID.Columns.Insert(7, updatebtn)
-        reportGRID.Columns.Insert(8, deletebtn)
+        reportGRID.Columns.Insert(7, assessmentbtn)
+        reportGRID.Columns.Insert(8, updatebtn)
+        reportGRID.Columns.Insert(9, deletebtn)
     End Sub
 
     Private Sub reportFRM_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        If reloadbol = True Then
+            servicingFRM.refresh.PerformClick()
+        End If
         Me.Dispose()
     End Sub
 
     Private Sub reportGRID_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles reportGRID.CellClick
         If reportGRID.RowCount >= 0 And e.RowIndex >= 0 Then
             id = reportGRID.Item("id", e.RowIndex).Value.ToString
-            If e.ColumnIndex = 6 Then
+            If e.ColumnIndex = 7 Then
                 'reportassessmentFRM.ShowDialog()
                 Dim a As String = reportGRID.Item("kno", e.RowIndex).Value.ToString
                 Dim b As String = reportGRID.Item("itemno", e.RowIndex).Value.ToString()
@@ -107,7 +111,8 @@ Public Class reportFRM
                 assessmentreportingFRM.kno = c + " / " + a + " / " + b + " / " + d
 
                 assessmentreportingFRM.Show()
-            ElseIf e.ColumnIndex = 7 Then
+            ElseIf e.ColumnIndex = 8 Then
+                newreportFRM.mobilization.Text = reportGRID.Item("mobilizationcost", e.RowIndex).Value.ToString
                 newreportFRM.locations.Text = reportGRID.Item("location", e.RowIndex).Value.ToString
                 newreportFRM.specification.Text = reportGRID.Item("specification", e.RowIndex).Value.ToString
                 newreportFRM.KNO.Text = reportGRID.Item("kno", e.RowIndex).Value.ToString
@@ -115,7 +120,7 @@ Public Class reportFRM
                 newreportFRM.Text = "Editing"
                 newreportFRM.save.Text = "save"
                 newreportFRM.ShowDialog()
-            ElseIf e.ColumnIndex = 8 Then
+            ElseIf e.ColumnIndex = 9 Then
                 If MetroFramework.MetroMessageBox.Show(Me, "Delete selected report?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
                     Return
                 Else
@@ -197,112 +202,6 @@ ON A.ID=B.RID WHERE not B.[SYSTEM] = 'Insect Protection System' and not B.[SYSTE
             End Using
         End Using
     End Sub
-
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        mobiizationFRM.insertbtn.Visible = True
-        mobiizationFRM.Show()
-    End Sub
-
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        Dim str As String = "
-       select a.id
-      ,TEAM
-      ,b.[DATED]
-      ,[PLATENO]
-      ,[SMILEAGE]
-      ,[EMILEAGE]
-      ,[TOLLFEE]
-      ,[BUSFARE]
-      ,[AIRFARE]
-      ,[MEALS]
-      ,[OVERTIME]
-      ,b.teamid
-	  
-	  from (RELMOBSER as a
-	  inner join MOBILIZATIONTB as b
-	  on a.MOBID=b.ID)
-	  left join TEAMTB as c 
-	  on b.teamid = c.id
-	  where a.serid = @sid"
-        Dim DS As New DataSet
-        DS.Clear()
-        Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
-            Using sqlcmd As SqlCommand = New SqlCommand(Str, sqlcon)
-                Try
-                    sqlcon.Open()
-                    Dim da As SqlDataAdapter = New SqlDataAdapter
-                    sqlcmd.Parameters.AddWithValue("@sid", servicingFRM.id)
-                    da.SelectCommand = sqlcmd
-                    da.SelectCommand.CommandTimeout = 30000
-                    da.Fill(DS, "relmobser")
-                    bs1.DataSource = DS
-                    bs1.DataMember = "relmobser"
-                    With mobgv
-                        .AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells
-                        .Columns("id").Visible = False
-                        .Columns("teamid").Visible = False
-                    End With
-                Catch ex As Exception
-                    MsgBox(ex.ToString)
-                End Try
-            End Using
-        End Using
-
-    End Sub
-    Private Sub loadteam()
-        Dim str As String = "
-        select PERSONNEL,POSITION from PERSONNELTB where TEAMID = @teamid "
-        Dim DS As New DataSet
-        DS.Clear()
-        Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
-            Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
-                Try
-                    sqlcon.Open()
-                    Dim da As SqlDataAdapter = New SqlDataAdapter
-                    sqlcmd.Parameters.AddWithValue("@teamid", teamid)
-                    da.SelectCommand = sqlcmd
-                    da.SelectCommand.CommandTimeout = 30000
-                    da.Fill(DS, "PERSONNELTB")
-                    bs2.DataSource = DS
-                    bs2.DataMember = "PERSONNELTB"
-                    teamgv.Columns("personnel").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-                Catch ex As Exception
-                    MsgBox(ex.ToString)
-                End Try
-            End Using
-        End Using
-    End Sub
-    Dim teamid As String
-    Dim mobid As String
-    Private Sub mobgv_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles mobgv.CellClick
-        If mobgv.RowCount >= 0 And e.RowIndex >= 0 Then
-            teamid = mobgv.Item("teamid", e.RowIndex).Value.ToString
-            mobid = mobgv.Item("id", e.RowIndex).Value.ToString
-            KryptonLabel2.Text = mobgv.Item("team", e.RowIndex).Value.ToString
-            loadteam()
-        End If
-    End Sub
-
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        If MessageBox.Show("delete record", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.No Then
-            Exit Sub
-        End If
-        Try
-            Dim str As String = "delete from relmobser where id = @id"
-            Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
-                Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
-                    sqlcon.Open()
-                    sqlcmd.Parameters.AddWithValue("@id", mobid)
-                    sqlcmd.ExecuteNonQuery()
-                End Using
-            End Using
-        Catch ex As Exception
-            MsgBox(ex.ToString)
-        Finally
-            Button3.PerformClick()
-        End Try
-    End Sub
-
     Private Sub calldategen_MouseDown(sender As Object, e As MouseEventArgs) Handles calldategen.MouseDown, calldategen.ValueChanged
         dated.Text = calldategen.Text
     End Sub
@@ -346,6 +245,71 @@ DECLARE @QRY AS VARCHAR(MAX)
                     MsgBox(ex.ToString)
                 Finally
                     MessageBox.Show("evaluation saved!", "", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                End Try
+            End Using
+        End Using
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        personnelFRM.caller = Me.Name.ToString
+        personnelFRM.Show()
+    End Sub
+    Public Sub loadteam()
+        Dim ds As New DataSet
+        ds.Clear
+        Dim str As String = "
+select a.id,personnel,position,TEAMID,b.TEAM from PERSONNELTB as a
+left join TEAMTB as b
+on a.TEAMID = b.ID where a.teamid=@teamid"
+        Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
+            Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
+                Try
+                    sqlcon.Open()
+                    sqlcmd.Parameters.AddWithValue("@teamid", teamid)
+                    Dim da As SqlDataAdapter = New SqlDataAdapter
+                    da.SelectCommand = sqlcmd
+                    da.SelectCommand.CommandTimeout = 30000
+                    da.Fill(ds, "personneltb")
+                    teambs.DataSource = ds
+                    teambs.DataMember = "personneltb"
+                    With teamgv
+                        .Columns("id").Visible = False
+                        .Columns("teamid").Visible = False
+                        .Columns("team").Visible = False
+                        .AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells
+                    End With
+                    teamgv.ClearSelection()
+                    Using rd As SqlDataReader = sqlcmd.ExecuteReader
+                        If rd.HasRows = True Then
+                            With rd.Read
+                                KryptonLabel1.Text = rd(4).ToString
+                            End With
+                            rd.Close()
+                        End If
+                    End Using
+                Catch ex As Exception
+                    MsgBox(ex.ToString)
+                Finally
+
+                End Try
+            End Using
+        End Using
+    End Sub
+    Dim reloadbol As Boolean = False
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Dim str As String = "update servicingtb set teamid=@teamid where id = @id"
+        Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
+            Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
+                Try
+                    sqlcon.Open()
+                    sqlcmd.Parameters.AddWithValue("@teamid", teamid)
+                    sqlcmd.Parameters.AddWithValue("@id", servicingFRM.id)
+                    sqlcmd.ExecuteNonQuery()
+                Catch ex As Exception
+                    MsgBox(ex.ToString)
+                Finally
+                    MessageBox.Show("team saved", "", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    reloadbol = True
                 End Try
             End Using
         End Using

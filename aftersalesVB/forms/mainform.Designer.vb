@@ -24,7 +24,7 @@ Partial Class mainform
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(mainform))
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.newPNL = New MetroFramework.Controls.MetroTile()
         Me.MetroTile1 = New MetroFramework.Controls.MetroTile()
         Me.MetroTile2 = New MetroFramework.Controls.MetroTile()
@@ -178,8 +178,8 @@ Partial Class mainform
         Me.callinGRID.AllowUserToAddRows = False
         Me.callinGRID.AllowUserToDeleteRows = False
         Me.callinGRID.AllowUserToResizeRows = False
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.callinGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.callinGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.callinGRID.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -219,7 +219,7 @@ Partial Class mainform
         Me.MetroTile3.Size = New System.Drawing.Size(107, 71)
         Me.MetroTile3.Style = MetroFramework.MetroColorStyle.Teal
         Me.MetroTile3.TabIndex = 556
-        Me.MetroTile3.Text = "Personnel"
+        Me.MetroTile3.Text = "Teams"
         Me.MetroTile3.TileImage = CType(resources.GetObject("MetroTile3.TileImage"), System.Drawing.Image)
         Me.MetroTile3.TileImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.MetroTile3.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular

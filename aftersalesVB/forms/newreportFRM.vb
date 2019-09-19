@@ -10,6 +10,15 @@ Public Class newreportFRM
     End Sub
 
     Private Sub save_Click(sender As Object, e As EventArgs) Handles save.Click
+
+        If mobilization.Text = "" Then
+            mobilization.Text = 0
+        End If
+        If Not IsNumeric(mobilization.Text) Then
+            MessageBox.Show("mobilization value must be numeric", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Exit Sub
+        End If
+
         If save.Text = "add" Then
             add()
         ElseIf save.Text = "save" Then
@@ -19,7 +28,7 @@ Public Class newreportFRM
     End Sub
     Public Sub add()
         Dim str As String = "declare @id as integer = (select isnull(max(id),0)+1 from reporttb)
-                             insert into reporttb (id,[sid],location,specification,kno,itemno)values(@id,@sid,@location,@specification,@kno,@itemno)"
+                             insert into reporttb (id,[sid],location,specification,kno,itemno,mobilizationcost)values(@id,@sid,@location,@specification,@kno,@itemno,@mobilization)"
         Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
             Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
                 Try
@@ -29,8 +38,8 @@ Public Class newreportFRM
                     sqlcmd.Parameters.AddWithValue("@specification", specification.Text)
                     sqlcmd.Parameters.AddWithValue("@kno", KNO.Text)
                     sqlcmd.Parameters.AddWithValue("@itemno", itemno.Text)
+                    sqlcmd.Parameters.AddWithValue("@mobilization", mobilization.Text)
                     sqlcmd.ExecuteNonQuery()
-
                 Catch ex As Exception
                     MsgBox(ex.ToString)
                 Finally
@@ -40,7 +49,7 @@ Public Class newreportFRM
         End Using
     End Sub
     Public Sub updated()
-        Dim str As String = "update reporttb set location=@location,specification=@specification,kno=@kno,itemno=@itemno where id = @id"
+        Dim str As String = "update reporttb set location=@location,specification=@specification,kno=@kno,itemno=@itemno,mobilizationcost=@mobilization where id = @id"
         Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
             Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
                 Try
@@ -50,6 +59,7 @@ Public Class newreportFRM
                     sqlcmd.Parameters.AddWithValue("@specification", specification.Text)
                     sqlcmd.Parameters.AddWithValue("@kno", KNO.Text)
                     sqlcmd.Parameters.AddWithValue("@itemno", itemno.Text)
+                    sqlcmd.Parameters.AddWithValue("@mobilization", mobilization.Text)
                     sqlcmd.ExecuteNonQuery()
 
                 Catch ex As Exception
@@ -73,6 +83,7 @@ Public Class newreportFRM
         ccolor(locations, clr)
         ccolor(itemno, clr)
         ccolor(KNO, clr)
+        ccolor(mobilization, clr)
         Button1.PerformClick()
     End Sub
 

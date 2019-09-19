@@ -100,7 +100,7 @@ Public Class assessmentsettingFRM
                 With gv2
                     .Columns("id").Visible = False
                     .Columns("system").Visible = False
-                    '.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells
+                    .AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells
                 End With
             Case "FORMAT SYSTEM"
                 With gv
@@ -116,7 +116,7 @@ Public Class assessmentsettingFRM
                     Else
                         .Columns(3).Visible = True
                     End If
-                    '.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells
+                    .AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells
                 End With
         End Select
     End Sub

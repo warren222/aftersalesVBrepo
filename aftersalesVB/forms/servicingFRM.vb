@@ -18,7 +18,8 @@ Public Class servicingFRM
                             STATUSDATE AS [STATUS DATE],
                             SERVICING,
                             SDATE AS [SERVICING DATE],
-                            REMARKS
+                            REMARKS,
+                            teamid
                             from servicingtb where cin = @cin ORDER BY SERVICING desc"
         Dim ds As New DataSet
         ds.Clear()
@@ -43,6 +44,7 @@ Public Class servicingFRM
                         servicingGRID.Columns("id").Visible = False
                         servicingGRID.Columns("cin").Visible = False
                         servicingGRID.Columns("STATUS").Visible = False
+                        servicingGRID.Columns("teamid").Visible = False
                         servicingGRID.Columns("rd").Width = 100
                         servicingGRID.Columns("statusbtn").Width = 100
                         servicingGRID.Columns("reportbtn").Width = 100
@@ -182,6 +184,7 @@ Public Class servicingFRM
             ElseIf e.ColumnIndex = 8 Then
                 id = servicingGRID.Item("id", e.RowIndex).Value.ToString
                 reportFRM.servicing.Text = servicingGRID.Item("servicing", e.RowIndex).Value.ToString
+                reportFRM.teamid = servicingGRID.Item("teamid", e.RowIndex).Value.ToString
                 reportFRM.ShowDialog()
             ElseIf e.ColumnIndex = 9 Then
                 id = servicingGRID.Item("id", e.RowIndex).Value.ToString

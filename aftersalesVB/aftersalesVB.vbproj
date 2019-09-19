@@ -209,12 +209,6 @@
     <Compile Include="forms\memberFRM.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\mobiizationFRM.Designer.vb">
-      <DependentUpon>mobiizationFRM.vb</DependentUpon>
-    </Compile>
-    <Compile Include="forms\mobiizationFRM.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="forms\newaccessoriesFRM.Designer.vb">
       <DependentUpon>newaccessoriesFRM.vb</DependentUpon>
     </Compile>
@@ -382,9 +376,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\memberFRM.resx">
       <DependentUpon>memberFRM.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="forms\mobiizationFRM.resx">
-      <DependentUpon>mobiizationFRM.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\newaccessoriesFRM.resx">
       <DependentUpon>newaccessoriesFRM.vb</DependentUpon>

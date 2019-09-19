@@ -41,6 +41,8 @@ Partial Class newreportFRM
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.mobilization = New MetroFramework.Controls.MetroTextBox()
+        Me.KryptonLabel6 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.Panel2.SuspendLayout()
         CType(Me.knogv, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
@@ -55,34 +57,34 @@ Partial Class newreportFRM
         Me.specification.FormattingEnabled = True
         Me.specification.IntegralHeight = False
         Me.specification.Items.AddRange(New Object() {"Window", "Door"})
-        Me.specification.Location = New System.Drawing.Point(136, 166)
+        Me.specification.Location = New System.Drawing.Point(137, 171)
         Me.specification.Name = "specification"
-        Me.specification.Size = New System.Drawing.Size(194, 28)
+        Me.specification.Size = New System.Drawing.Size(125, 28)
         Me.specification.TabIndex = 2
         '
         'KryptonLabel1
         '
-        Me.KryptonLabel1.Location = New System.Drawing.Point(28, 161)
+        Me.KryptonLabel1.Location = New System.Drawing.Point(34, 171)
         Me.KryptonLabel1.Name = "KryptonLabel1"
         Me.KryptonLabel1.Size = New System.Drawing.Size(97, 22)
-        Me.KryptonLabel1.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.KryptonLabel1.StateCommon.ShortText.Color1 = System.Drawing.Color.Black
         Me.KryptonLabel1.StateCommon.ShortText.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.KryptonLabel1.TabIndex = 496
         Me.KryptonLabel1.Values.Text = "Window/Door"
         '
         'KryptonLabel2
         '
-        Me.KryptonLabel2.Location = New System.Drawing.Point(27, 78)
+        Me.KryptonLabel2.Location = New System.Drawing.Point(68, 102)
         Me.KryptonLabel2.Name = "KryptonLabel2"
         Me.KryptonLabel2.Size = New System.Drawing.Size(63, 22)
-        Me.KryptonLabel2.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.KryptonLabel2.StateCommon.ShortText.Color1 = System.Drawing.Color.Black
         Me.KryptonLabel2.StateCommon.ShortText.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.KryptonLabel2.TabIndex = 498
         Me.KryptonLabel2.Values.Text = "Location"
         '
         'KryptonLabel3
         '
-        Me.KryptonLabel3.Location = New System.Drawing.Point(27, 12)
+        Me.KryptonLabel3.Location = New System.Drawing.Point(103, 36)
         Me.KryptonLabel3.Name = "KryptonLabel3"
         Me.KryptonLabel3.Size = New System.Drawing.Size(28, 20)
         Me.KryptonLabel3.StateCommon.ShortText.Color1 = System.Drawing.Color.Black
@@ -96,7 +98,7 @@ Partial Class newreportFRM
         '
         '
         Me.KNO.CustomButton.Image = Nothing
-        Me.KNO.CustomButton.Location = New System.Drawing.Point(168, 1)
+        Me.KNO.CustomButton.Location = New System.Drawing.Point(99, 1)
         Me.KNO.CustomButton.Name = ""
         Me.KNO.CustomButton.Size = New System.Drawing.Size(25, 25)
         Me.KNO.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
@@ -106,7 +108,7 @@ Partial Class newreportFRM
         Me.KNO.CustomButton.Visible = False
         Me.KNO.DisplayIcon = True
         Me.KNO.Lines = New String(-1) {}
-        Me.KNO.Location = New System.Drawing.Point(135, 12)
+        Me.KNO.Location = New System.Drawing.Point(137, 36)
         Me.KNO.MaxLength = 32767
         Me.KNO.Name = "KNO"
         Me.KNO.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -115,7 +117,7 @@ Partial Class newreportFRM
         Me.KNO.SelectionLength = 0
         Me.KNO.SelectionStart = 0
         Me.KNO.ShowClearButton = True
-        Me.KNO.Size = New System.Drawing.Size(194, 27)
+        Me.KNO.Size = New System.Drawing.Size(125, 27)
         Me.KNO.Style = MetroFramework.MetroColorStyle.Teal
         Me.KNO.TabIndex = 507
         Me.KNO.UseCustomForeColor = True
@@ -126,7 +128,7 @@ Partial Class newreportFRM
         '
         'KryptonLabel4
         '
-        Me.KryptonLabel4.Location = New System.Drawing.Point(27, 45)
+        Me.KryptonLabel4.Location = New System.Drawing.Point(83, 69)
         Me.KryptonLabel4.Name = "KryptonLabel4"
         Me.KryptonLabel4.Size = New System.Drawing.Size(48, 20)
         Me.KryptonLabel4.StateCommon.ShortText.Color1 = System.Drawing.Color.Black
@@ -140,7 +142,7 @@ Partial Class newreportFRM
         '
         '
         Me.itemno.CustomButton.Image = Nothing
-        Me.itemno.CustomButton.Location = New System.Drawing.Point(168, 1)
+        Me.itemno.CustomButton.Location = New System.Drawing.Point(99, 1)
         Me.itemno.CustomButton.Name = ""
         Me.itemno.CustomButton.Size = New System.Drawing.Size(25, 25)
         Me.itemno.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
@@ -150,7 +152,7 @@ Partial Class newreportFRM
         Me.itemno.CustomButton.Visible = False
         Me.itemno.DisplayIcon = True
         Me.itemno.Lines = New String(-1) {}
-        Me.itemno.Location = New System.Drawing.Point(136, 45)
+        Me.itemno.Location = New System.Drawing.Point(138, 69)
         Me.itemno.MaxLength = 32767
         Me.itemno.Name = "itemno"
         Me.itemno.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -159,7 +161,7 @@ Partial Class newreportFRM
         Me.itemno.SelectionLength = 0
         Me.itemno.SelectionStart = 0
         Me.itemno.ShowClearButton = True
-        Me.itemno.Size = New System.Drawing.Size(194, 27)
+        Me.itemno.Size = New System.Drawing.Size(125, 27)
         Me.itemno.Style = MetroFramework.MetroColorStyle.Teal
         Me.itemno.TabIndex = 509
         Me.itemno.UseCustomForeColor = True
@@ -174,7 +176,7 @@ Partial Class newreportFRM
         '
         '
         Me.locations.CustomButton.Image = Nothing
-        Me.locations.CustomButton.Location = New System.Drawing.Point(168, 1)
+        Me.locations.CustomButton.Location = New System.Drawing.Point(143, 1)
         Me.locations.CustomButton.Name = ""
         Me.locations.CustomButton.Size = New System.Drawing.Size(25, 25)
         Me.locations.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
@@ -184,7 +186,7 @@ Partial Class newreportFRM
         Me.locations.CustomButton.Visible = False
         Me.locations.DisplayIcon = True
         Me.locations.Lines = New String(-1) {}
-        Me.locations.Location = New System.Drawing.Point(135, 78)
+        Me.locations.Location = New System.Drawing.Point(137, 102)
         Me.locations.MaxLength = 32767
         Me.locations.Name = "locations"
         Me.locations.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -193,7 +195,7 @@ Partial Class newreportFRM
         Me.locations.SelectionLength = 0
         Me.locations.SelectionStart = 0
         Me.locations.ShowClearButton = True
-        Me.locations.Size = New System.Drawing.Size(194, 27)
+        Me.locations.Size = New System.Drawing.Size(169, 27)
         Me.locations.Style = MetroFramework.MetroColorStyle.Teal
         Me.locations.TabIndex = 511
         Me.locations.UseCustomForeColor = True
@@ -251,7 +253,10 @@ Partial Class newreportFRM
         '
         'Panel3
         '
+        Me.Panel3.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel3.Controls.Add(Me.mobilization)
+        Me.Panel3.Controls.Add(Me.KryptonLabel6)
         Me.Panel3.Controls.Add(Me.KryptonLabel3)
         Me.Panel3.Controls.Add(Me.specification)
         Me.Panel3.Controls.Add(Me.KryptonLabel1)
@@ -262,7 +267,7 @@ Partial Class newreportFRM
         Me.Panel3.Controls.Add(Me.itemno)
         Me.Panel3.Location = New System.Drawing.Point(37, 53)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(346, 227)
+        Me.Panel3.Size = New System.Drawing.Size(346, 336)
         Me.Panel3.TabIndex = 514
         '
         'KryptonLabel5
@@ -331,6 +336,50 @@ Partial Class newreportFRM
         Me.Button2.Text = "cancel"
         Me.Button2.UseVisualStyleBackColor = True
         '
+        'mobilization
+        '
+        '
+        '
+        '
+        Me.mobilization.CustomButton.Image = Nothing
+        Me.mobilization.CustomButton.Location = New System.Drawing.Point(153, 1)
+        Me.mobilization.CustomButton.Name = ""
+        Me.mobilization.CustomButton.Size = New System.Drawing.Size(25, 25)
+        Me.mobilization.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.mobilization.CustomButton.TabIndex = 1
+        Me.mobilization.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.mobilization.CustomButton.UseSelectable = True
+        Me.mobilization.CustomButton.Visible = False
+        Me.mobilization.DisplayIcon = True
+        Me.mobilization.Lines = New String(-1) {}
+        Me.mobilization.Location = New System.Drawing.Point(137, 262)
+        Me.mobilization.MaxLength = 32767
+        Me.mobilization.Name = "mobilization"
+        Me.mobilization.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.mobilization.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.mobilization.SelectedText = ""
+        Me.mobilization.SelectionLength = 0
+        Me.mobilization.SelectionStart = 0
+        Me.mobilization.ShowClearButton = True
+        Me.mobilization.Size = New System.Drawing.Size(179, 27)
+        Me.mobilization.Style = MetroFramework.MetroColorStyle.Teal
+        Me.mobilization.TabIndex = 513
+        Me.mobilization.UseCustomForeColor = True
+        Me.mobilization.UseSelectable = True
+        Me.mobilization.UseStyleColors = True
+        Me.mobilization.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.mobilization.WaterMarkFont = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        '
+        'KryptonLabel6
+        '
+        Me.KryptonLabel6.Location = New System.Drawing.Point(14, 262)
+        Me.KryptonLabel6.Name = "KryptonLabel6"
+        Me.KryptonLabel6.Size = New System.Drawing.Size(117, 22)
+        Me.KryptonLabel6.StateCommon.ShortText.Color1 = System.Drawing.Color.Black
+        Me.KryptonLabel6.StateCommon.ShortText.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KryptonLabel6.TabIndex = 512
+        Me.KryptonLabel6.Values.Text = "Mobilization Cost"
+        '
         'newreportFRM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -375,4 +424,6 @@ Partial Class newreportFRM
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Panel5 As Panel
     Friend WithEvents Button2 As Button
+    Friend WithEvents mobilization As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents KryptonLabel6 As ComponentFactory.Krypton.Toolkit.KryptonLabel
 End Class

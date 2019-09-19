@@ -52,8 +52,9 @@ Public Class personnelFRM
         personnelGRID.Columns.Insert(3, updatebtn)
         personnelGRID.Columns.Insert(4, deletebtn)
     End Sub
-
+    Public Shared caller As String
     Private Sub personnelFRM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         teamgv.DataSource = teambs
         loadpersonnel()
         Button2.PerformClick()
@@ -97,6 +98,9 @@ Public Class personnelFRM
     End Sub
 
     Private Sub personnelFRM_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        If caller = reportFRM.Name.ToString Then
+            reportFRM.loadteam()
+        End If
         Me.Dispose()
     End Sub
 
@@ -189,6 +193,7 @@ Public Class personnelFRM
             teamid = rows.Cells("id").Value.ToString
             team.Text = rows.Cells("team").Value.ToString
             teamdate.Text = rows.Cells("dated").Value.ToString
+            reportFRM.teamid = teamid
             If e.ColumnIndex = 4 Then
                 memberFRM.teamid = rows.Cells("id").Value.ToString
                 memberFRM.teamname.Text = rows.Cells("team").Value.ToString
