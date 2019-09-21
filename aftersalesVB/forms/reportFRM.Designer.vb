@@ -87,7 +87,7 @@ Partial Class reportFRM
         '
         'servicing
         '
-        Me.servicing.Location = New System.Drawing.Point(14, 12)
+        Me.servicing.Location = New System.Drawing.Point(34, 12)
         Me.servicing.Name = "servicing"
         Me.servicing.Size = New System.Drawing.Size(101, 34)
         Me.servicing.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))

@@ -241,12 +241,7 @@ Public Class mainform
     End Sub
 
     Private Sub MetroTile1_Click(sender As Object, e As EventArgs) Handles MetroTile1.Click
-        Select Case accttype
-            Case "Admin"
-                accessoriesFRM.ShowDialog()
-            Case Else
-                MetroMessageBox.Show(Me, "Invalid access", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-        End Select
+        accessoriesFRM.ShowDialog()
     End Sub
     Public Sub storeqa()
         Dim str As String = "update answertb set chk = '0'
