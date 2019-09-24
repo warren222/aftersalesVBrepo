@@ -65,6 +65,7 @@ Partial Class selectedsystemFRM
         Me.Label4 = New System.Windows.Forms.Label()
         Me.seelctedsystem = New System.Windows.Forms.Label()
         Me.ToolTip2 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.sumgv, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -567,11 +568,21 @@ Partial Class selectedsystemFRM
         Me.ToolTip2.ForeColor = System.Drawing.SystemColors.HighlightText
         Me.ToolTip2.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
         '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(621, 573)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(230, 23)
+        Me.Button2.TabIndex = 61
+        Me.Button2.Text = "request for replacement/repair"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'selectedsystemFRM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(886, 579)
+        Me.ClientSize = New System.Drawing.Size(886, 609)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.seelctedsystem)
         Me.Controls.Add(Me.Panel2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
@@ -628,4 +639,5 @@ Partial Class selectedsystemFRM
     Friend WithEvents kno As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents ToolTip2 As ToolTip
+    Friend WithEvents Button2 As Button
 End Class

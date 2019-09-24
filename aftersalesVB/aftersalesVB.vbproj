@@ -154,6 +154,12 @@
     <Compile Include="forms\assessmentFRM\assessmentsettingFRM.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="forms\assessmentFRM\REQreplacementFRM.Designer.vb">
+      <DependentUpon>REQreplacementFRM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\assessmentFRM\REQreplacementFRM.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="forms\assessmentFRM\selectedsystemFRM.Designer.vb">
       <DependentUpon>selectedsystemFRM.vb</DependentUpon>
     </Compile>
@@ -349,6 +355,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\assessmentFRM\assessmentsettingFRM.resx">
       <DependentUpon>assessmentsettingFRM.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\assessmentFRM\REQreplacementFRM.resx">
+      <DependentUpon>REQreplacementFRM.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\assessmentFRM\selectedsystemFRM.resx">
       <DependentUpon>selectedsystemFRM.vb</DependentUpon>

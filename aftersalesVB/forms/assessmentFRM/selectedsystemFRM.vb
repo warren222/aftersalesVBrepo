@@ -435,4 +435,13 @@ Public Class selectedsystemFRM
     Private Sub parts_SelectedIndexChanged(sender As Object, e As EventArgs) Handles parts.SelectedIndexChanged, category.SelectedIndexChanged, OTHERSYSTEMTXT.SelectedIndexChanged
         addtooltip(sender)
     End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        If seelctedsystem.Text = "Insect Protection System" Then
+            REQreplacementFRM.requestype.Text = "REQUEST FOR SCREEN REPAIR"
+        Else
+            REQreplacementFRM.requestype.Text = "REQUEST FOR REPLACEMENTS"
+        End If
+        REQreplacementFRM.ShowDialog()
+    End Sub
 End Class
