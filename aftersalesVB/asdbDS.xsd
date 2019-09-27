@@ -53,6 +53,21 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="REPLACEMENTTB" msprop:Generator_TableClassName="REPLACEMENTTBDataTable" msprop:Generator_TableVarName="tableREPLACEMENTTB" msprop:Generator_RowChangedName="REPLACEMENTTBRowChanged" msprop:Generator_TablePropName="REPLACEMENTTB" msprop:Generator_RowDeletingName="REPLACEMENTTBRowDeleting" msprop:Generator_RowChangingName="REPLACEMENTTBRowChanging" msprop:Generator_RowEvHandlerName="REPLACEMENTTBRowChangeEventHandler" msprop:Generator_RowDeletedName="REPLACEMENTTBRowDeleted" msprop:Generator_RowClassName="REPLACEMENTTBRow" msprop:Generator_UserTableName="REPLACEMENTTB" msprop:Generator_RowEvArgName="REPLACEMENTTBRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:string" minOccurs="0" />
+              <xs:element name="RID" msprop:Generator_ColumnVarNameInTable="columnRID" msprop:Generator_ColumnPropNameInRow="RID" msprop:Generator_ColumnPropNameInTable="RIDColumn" msprop:Generator_UserColumnName="RID" type="xs:string" minOccurs="0" />
+              <xs:element name="DESCRIPTION" msprop:Generator_ColumnVarNameInTable="columnDESCRIPTION" msprop:Generator_ColumnPropNameInRow="DESCRIPTION" msprop:Generator_ColumnPropNameInTable="DESCRIPTIONColumn" msprop:Generator_UserColumnName="DESCRIPTION" type="xs:string" minOccurs="0" />
+              <xs:element name="QTY" msprop:Generator_ColumnVarNameInTable="columnQTY" msprop:Generator_ColumnPropNameInRow="QTY" msprop:Generator_ColumnPropNameInTable="QTYColumn" msprop:Generator_UserColumnName="QTY" type="xs:string" minOccurs="0" />
+              <xs:element name="REMARKS" msprop:Generator_ColumnVarNameInTable="columnREMARKS" msprop:Generator_ColumnPropNameInRow="REMARKS" msprop:Generator_ColumnPropNameInTable="REMARKSColumn" msprop:Generator_UserColumnName="REMARKS" type="xs:string" minOccurs="0" />
+              <xs:element name="REQUESTTYPE" msprop:Generator_ColumnVarNameInTable="columnREQUESTTYPE" msprop:Generator_ColumnPropNameInRow="REQUESTTYPE" msprop:Generator_ColumnPropNameInTable="REQUESTTYPEColumn" msprop:Generator_UserColumnName="REQUESTTYPE" type="xs:string" minOccurs="0" />
+              <xs:element name="KNO" msprop:Generator_ColumnVarNameInTable="columnKNO" msprop:Generator_ColumnPropNameInRow="KNO" msprop:Generator_ColumnPropNameInTable="KNOColumn" msprop:Generator_UserColumnName="KNO" type="xs:string" minOccurs="0" />
+              <xs:element name="ITEMNO" msprop:Generator_ColumnVarNameInTable="columnITEMNO" msprop:Generator_ColumnPropNameInRow="ITEMNO" msprop:Generator_ColumnPropNameInTable="ITEMNOColumn" msprop:Generator_UserColumnName="ITEMNO" type="xs:string" minOccurs="0" />
+              <xs:element name="LOCATION" msprop:Generator_ColumnVarNameInTable="columnLOCATION" msprop:Generator_ColumnPropNameInRow="LOCATION" msprop:Generator_ColumnPropNameInTable="LOCATIONColumn" msprop:Generator_UserColumnName="LOCATION" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>

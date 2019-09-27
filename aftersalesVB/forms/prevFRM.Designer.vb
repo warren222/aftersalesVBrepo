@@ -23,7 +23,7 @@ Partial Class prevFRM
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ReportDataSource3 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(prevFRM))
         Me.ITEMTBBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.asdbDS = New aftersalesVB.asdbDS()
@@ -37,8 +37,10 @@ Partial Class prevFRM
         Me.KryptonLabel1 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.KryptonLabel3 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         CType(Me.ITEMTBBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.asdbDS, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'ITEMTBBindingSource
@@ -53,16 +55,15 @@ Partial Class prevFRM
         '
         'ReportViewer1
         '
-        Me.ReportViewer1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        ReportDataSource3.Name = "DataSet1"
-        ReportDataSource3.Value = Me.ITEMTBBindingSource
-        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource3)
+        Me.ReportViewer1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        ReportDataSource1.Name = "DataSet1"
+        ReportDataSource1.Value = Me.ITEMTBBindingSource
+        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "aftersalesVB.qreport.rdlc"
-        Me.ReportViewer1.Location = New System.Drawing.Point(499, 63)
+        Me.ReportViewer1.Location = New System.Drawing.Point(482, 38)
         Me.ReportViewer1.Name = "ReportViewer1"
-        Me.ReportViewer1.Size = New System.Drawing.Size(377, 511)
+        Me.ReportViewer1.Size = New System.Drawing.Size(902, 508)
         Me.ReportViewer1.TabIndex = 0
         '
         'dear
@@ -71,7 +72,7 @@ Partial Class prevFRM
         Me.dear.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dear.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dear.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.dear.Location = New System.Drawing.Point(23, 63)
+        Me.dear.Location = New System.Drawing.Point(13, 38)
         Me.dear.Multiline = True
         Me.dear.Name = "dear"
         Me.dear.Size = New System.Drawing.Size(455, 155)
@@ -84,7 +85,7 @@ Partial Class prevFRM
         Me.note.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.note.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.note.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.note.Location = New System.Drawing.Point(31, 283)
+        Me.note.Location = New System.Drawing.Point(21, 258)
         Me.note.Multiline = True
         Me.note.Name = "note"
         Me.note.Size = New System.Drawing.Size(455, 47)
@@ -98,7 +99,7 @@ Partial Class prevFRM
         Me.scopeofworks.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.scopeofworks.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.scopeofworks.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.scopeofworks.Location = New System.Drawing.Point(31, 394)
+        Me.scopeofworks.Location = New System.Drawing.Point(21, 369)
         Me.scopeofworks.Multiline = True
         Me.scopeofworks.Name = "scopeofworks"
         Me.scopeofworks.Size = New System.Drawing.Size(455, 47)
@@ -112,7 +113,7 @@ Partial Class prevFRM
         Me.preparedby.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.preparedby.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.preparedby.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.preparedby.Location = New System.Drawing.Point(31, 527)
+        Me.preparedby.Location = New System.Drawing.Point(21, 502)
         Me.preparedby.Multiline = True
         Me.preparedby.Name = "preparedby"
         Me.preparedby.Size = New System.Drawing.Size(189, 47)
@@ -125,7 +126,7 @@ Partial Class prevFRM
         Me.approvedby.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.approvedby.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.approvedby.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.approvedby.Location = New System.Drawing.Point(243, 527)
+        Me.approvedby.Location = New System.Drawing.Point(233, 502)
         Me.approvedby.Multiline = True
         Me.approvedby.Name = "approvedby"
         Me.approvedby.Size = New System.Drawing.Size(189, 47)
@@ -134,7 +135,7 @@ Partial Class prevFRM
         '
         'kryptonLabel2
         '
-        Me.kryptonLabel2.Location = New System.Drawing.Point(66, 499)
+        Me.kryptonLabel2.Location = New System.Drawing.Point(56, 474)
         Me.kryptonLabel2.Name = "kryptonLabel2"
         Me.kryptonLabel2.Size = New System.Drawing.Size(83, 22)
         Me.kryptonLabel2.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
@@ -144,7 +145,7 @@ Partial Class prevFRM
         '
         'KryptonLabel1
         '
-        Me.KryptonLabel1.Location = New System.Drawing.Point(275, 499)
+        Me.KryptonLabel1.Location = New System.Drawing.Point(265, 474)
         Me.KryptonLabel1.Name = "KryptonLabel1"
         Me.KryptonLabel1.Size = New System.Drawing.Size(86, 22)
         Me.KryptonLabel1.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
@@ -154,7 +155,7 @@ Partial Class prevFRM
         '
         'KryptonLabel3
         '
-        Me.KryptonLabel3.Location = New System.Drawing.Point(31, 366)
+        Me.KryptonLabel3.Location = New System.Drawing.Point(21, 341)
         Me.KryptonLabel3.Name = "KryptonLabel3"
         Me.KryptonLabel3.Size = New System.Drawing.Size(110, 22)
         Me.KryptonLabel3.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
@@ -165,34 +166,45 @@ Partial Class prevFRM
         'CheckBox1
         '
         Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(23, 40)
+        Me.CheckBox1.Location = New System.Drawing.Point(13, 15)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(88, 17)
         Me.CheckBox1.TabIndex = 496
         Me.CheckBox1.Text = "No Signature"
         Me.CheckBox1.UseVisualStyleBackColor = True
         '
+        'Panel1
+        '
+        Me.Panel1.AutoScroll = True
+        Me.Panel1.Controls.Add(Me.CheckBox1)
+        Me.Panel1.Controls.Add(Me.ReportViewer1)
+        Me.Panel1.Controls.Add(Me.dear)
+        Me.Panel1.Controls.Add(Me.KryptonLabel3)
+        Me.Panel1.Controls.Add(Me.note)
+        Me.Panel1.Controls.Add(Me.KryptonLabel1)
+        Me.Panel1.Controls.Add(Me.scopeofworks)
+        Me.Panel1.Controls.Add(Me.kryptonLabel2)
+        Me.Panel1.Controls.Add(Me.preparedby)
+        Me.Panel1.Controls.Add(Me.approvedby)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel1.Location = New System.Drawing.Point(20, 60)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(822, 519)
+        Me.Panel1.TabIndex = 497
+        '
         'prevFRM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(899, 599)
-        Me.Controls.Add(Me.CheckBox1)
-        Me.Controls.Add(Me.KryptonLabel3)
-        Me.Controls.Add(Me.KryptonLabel1)
-        Me.Controls.Add(Me.kryptonLabel2)
-        Me.Controls.Add(Me.approvedby)
-        Me.Controls.Add(Me.preparedby)
-        Me.Controls.Add(Me.scopeofworks)
-        Me.Controls.Add(Me.note)
-        Me.Controls.Add(Me.dear)
-        Me.Controls.Add(Me.ReportViewer1)
+        Me.ClientSize = New System.Drawing.Size(862, 599)
+        Me.Controls.Add(Me.Panel1)
         Me.MinimizeBox = False
         Me.Name = "prevFRM"
         CType(Me.ITEMTBBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.asdbDS, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -208,4 +220,5 @@ Partial Class prevFRM
     Friend WithEvents KryptonLabel1 As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents KryptonLabel3 As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents Panel1 As Panel
 End Class

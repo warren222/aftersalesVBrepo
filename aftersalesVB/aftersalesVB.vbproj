@@ -452,6 +452,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="reports\qareport.rdlc" />
     <EmbeddedResource Include="reports\qreport.rdlc" />
+    <EmbeddedResource Include="reports\replreqRPT.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="aftersalesVB_TemporaryKey.pfx" />

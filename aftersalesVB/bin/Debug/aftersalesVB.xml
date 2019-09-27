@@ -42,6 +42,11 @@ Represents the strongly named DataTable class.
 Represents the strongly named DataTable class.
 </summary>
 </member>
+<member name="T:aftersalesVB.asdbDS.REPLACEMENTTBDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
 <member name="T:aftersalesVB.asdbDS.QATBRow">
 <summary>
 Represents strongly named DataRow class.
@@ -57,6 +62,11 @@ Represents strongly named DataRow class.
 Represents strongly named DataRow class.
 </summary>
 </member>
+<member name="T:aftersalesVB.asdbDS.REPLACEMENTTBRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
 <member name="T:aftersalesVB.asdbDS.QATBRowChangeEvent">
 <summary>
 Row event argument class
@@ -68,6 +78,11 @@ Row event argument class
 </summary>
 </member>
 <member name="T:aftersalesVB.asdbDS.ASSESSMENTTBRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:aftersalesVB.asdbDS.REPLACEMENTTBRowChangeEvent">
 <summary>
 Row event argument class
 </summary>

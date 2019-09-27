@@ -87,7 +87,7 @@ Partial Class reportFRM
         '
         'servicing
         '
-        Me.servicing.Location = New System.Drawing.Point(34, 12)
+        Me.servicing.Location = New System.Drawing.Point(42, 12)
         Me.servicing.Name = "servicing"
         Me.servicing.Size = New System.Drawing.Size(101, 34)
         Me.servicing.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
@@ -153,7 +153,7 @@ Partial Class reportFRM
         'KryptonLabel3
         '
         Me.KryptonLabel3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.KryptonLabel3.Location = New System.Drawing.Point(506, 235)
+        Me.KryptonLabel3.Location = New System.Drawing.Point(506, 239)
         Me.KryptonLabel3.Name = "KryptonLabel3"
         Me.KryptonLabel3.Size = New System.Drawing.Size(190, 20)
         Me.KryptonLabel3.StateCommon.ShortText.Color1 = System.Drawing.Color.Black
@@ -227,9 +227,9 @@ Partial Class reportFRM
         Me.EVALUATION.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.EVALUATION.Font = New System.Drawing.Font("Calibri", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.EVALUATION.Location = New System.Drawing.Point(506, 264)
+        Me.EVALUATION.Location = New System.Drawing.Point(506, 265)
         Me.EVALUATION.Name = "EVALUATION"
-        Me.EVALUATION.Size = New System.Drawing.Size(407, 92)
+        Me.EVALUATION.Size = New System.Drawing.Size(407, 103)
         Me.EVALUATION.TabIndex = 604
         Me.EVALUATION.Text = ""
         '
@@ -263,7 +263,7 @@ Partial Class reportFRM
         Me.Panel2.Controls.Add(Me.teamgv)
         Me.Panel2.Location = New System.Drawing.Point(620, 101)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(289, 111)
+        Me.Panel2.Size = New System.Drawing.Size(289, 115)
         Me.Panel2.TabIndex = 608
         '
         'teamgv
@@ -292,7 +292,7 @@ Partial Class reportFRM
         Me.teamgv.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.WhiteSmoke
         Me.teamgv.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black
         Me.teamgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.teamgv.Size = New System.Drawing.Size(289, 111)
+        Me.teamgv.Size = New System.Drawing.Size(289, 115)
         Me.teamgv.StateCommon.Background.Color1 = System.Drawing.Color.WhiteSmoke
         Me.teamgv.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
         Me.teamgv.StateCommon.DataCell.Border.DrawBorders = CType((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right), ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)

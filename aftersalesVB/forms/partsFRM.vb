@@ -254,8 +254,8 @@ update itemtb set parts=@parts where id = @iid"
                     Try
                         sqlcon.Open()
                         knogv.Columns.Clear()
-                        sqlcmd.Parameters.AddWithValue("@description", "%" & description.Text & "%")
-                        sqlcmd.Parameters.AddWithValue("@articleno", "%" & articleno.Text & "%")
+                        sqlcmd.Parameters.AddWithValue("@description", "%" & ComboBox1.Text & "%")
+                        sqlcmd.Parameters.AddWithValue("@articleno", "%" & ComboBox2.Text & "%")
                         sqlcmd.Parameters.AddWithValue("@specification", "%" & specification.Text & "%")
                         da.SelectCommand = sqlcmd
                         da.Fill(ds, "ACCESSORIESTB")
