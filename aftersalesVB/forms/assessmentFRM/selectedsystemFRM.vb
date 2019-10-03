@@ -429,7 +429,6 @@ Public Class selectedsystemFRM
                 End Select
         End Select
         ToolTip2.SetToolTip(sender, txt)
-
     End Sub
 
     Private Sub parts_SelectedIndexChanged(sender As Object, e As EventArgs) Handles parts.SelectedIndexChanged, category.SelectedIndexChanged, OTHERSYSTEMTXT.SelectedIndexChanged

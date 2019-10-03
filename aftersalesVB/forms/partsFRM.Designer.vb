@@ -22,8 +22,8 @@ Partial Class partsFRM
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.partsGRID = New ComponentFactory.Krypton.Toolkit.KryptonDataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.KryptonLabel2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
@@ -70,8 +70,8 @@ Partial Class partsFRM
         Me.partsGRID.AllowUserToAddRows = False
         Me.partsGRID.AllowUserToDeleteRows = False
         Me.partsGRID.AllowUserToResizeRows = False
-        DataGridViewCellStyle9.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.partsGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.partsGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.partsGRID.ColumnHeadersHeight = 32
         Me.partsGRID.Cursor = System.Windows.Forms.Cursors.Hand
         Me.partsGRID.Dock = System.Windows.Forms.DockStyle.Fill
@@ -118,11 +118,11 @@ Partial Class partsFRM
         Me.KryptonLabel2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.KryptonLabel2.Location = New System.Drawing.Point(653, 192)
         Me.KryptonLabel2.Name = "KryptonLabel2"
-        Me.KryptonLabel2.Size = New System.Drawing.Size(184, 20)
+        Me.KryptonLabel2.Size = New System.Drawing.Size(64, 20)
         Me.KryptonLabel2.StateCommon.ShortText.Color1 = System.Drawing.Color.Black
         Me.KryptonLabel2.StateCommon.ShortText.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.KryptonLabel2.TabIndex = 585
-        Me.KryptonLabel2.Values.Text = "Select Accessories / Materials"
+        Me.KryptonLabel2.Values.Text = "Price List"
         '
         'Panel2
         '
@@ -142,9 +142,9 @@ Partial Class partsFRM
         Me.knogv.AllowUserToOrderColumns = True
         Me.knogv.AllowUserToResizeColumns = False
         Me.knogv.AllowUserToResizeRows = False
-        DataGridViewCellStyle10.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black
-        Me.knogv.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        Me.knogv.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
         Me.knogv.ColumnHeadersHeight = 30
         Me.knogv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.knogv.Cursor = System.Windows.Forms.Cursors.Hand
