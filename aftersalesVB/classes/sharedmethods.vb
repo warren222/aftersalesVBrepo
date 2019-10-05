@@ -33,7 +33,28 @@ Public Class sharedmethods
 
 
     End Sub
+    Public Sub insightinitialized()
+        dgvproperties(insightFRM.gv)
 
+        With insightFRM.gv
+            .RowTemplate.Height = 40
+            With .StateCommon
+                .DataCell.Border.Width = 0
+                .Background.Color1 = Color.White
+                .DataCell.Content.Font = New Font("Calibri", 10.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                .HeaderColumn.Back.ColorAngle = -1
+                .HeaderColumn.Back.ColorStyle = PaletteColorStyle.Dashed
+                .HeaderColumn.Border.Width = 0
+                .HeaderColumn.Content.Color1 = Color.DimGray
+                .HeaderColumn.Content.Color2 = Color.Transparent
+                .HeaderColumn.Content.Font = New Font("Calibri", 9.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                .HeaderColumn.Content.Hint = PaletteTextHint.AntiAlias
+            End With
+        End With
+
+        AddHandler insightFRM.gv.SelectionChanged, AddressOf insightFRM.gv_SelectionChanged
+        AddHandler insightFRM.gv.CellDoubleClick, AddressOf insightFRM.gv_CellDoubleClick
+    End Sub
     Public Sub dgvproperties(ByVal dgv As KryptonDataGridView)
         With dgv
             .Dock = DockStyle.Fill

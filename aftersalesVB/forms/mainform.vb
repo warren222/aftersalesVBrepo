@@ -451,4 +451,8 @@ Public Class mainform
         'mobiizationFRM.Show()
         assessmentsettingFRM.Show()
     End Sub
+
+    Private Sub MetroTile5_Click(sender As Object, e As EventArgs) Handles MetroTile5.Click
+        insightFRM.Show()
+    End Sub
 End Class
