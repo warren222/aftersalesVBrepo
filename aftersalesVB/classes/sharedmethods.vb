@@ -39,7 +39,6 @@ Public Class sharedmethods
         With insightFRM.gv
             .RowTemplate.Height = 40
             With .StateCommon
-                .DataCell.Border.Width = 0
                 .Background.Color1 = Color.White
                 .DataCell.Content.Font = New Font("Calibri", 10.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
                 .HeaderColumn.Back.ColorAngle = -1
@@ -54,6 +53,7 @@ Public Class sharedmethods
 
         AddHandler insightFRM.gv.SelectionChanged, AddressOf insightFRM.gv_SelectionChanged
         AddHandler insightFRM.gv.CellDoubleClick, AddressOf insightFRM.gv_CellDoubleClick
+        AddHandler insightFRM.gv.RowPostPaint, AddressOf insightFRM.gv_RowPostPaint
     End Sub
     Public Sub dgvproperties(ByVal dgv As KryptonDataGridView)
         With dgv
