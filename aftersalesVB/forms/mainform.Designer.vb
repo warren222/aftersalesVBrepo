@@ -1,6 +1,6 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class mainform
-    Inherits MetroFramework.Forms.MetroForm
+    Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
     <System.Diagnostics.DebuggerNonUserCode()>
@@ -24,7 +24,7 @@ Partial Class mainform
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(mainform))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.newPNL = New MetroFramework.Controls.MetroTile()
         Me.MetroTile1 = New MetroFramework.Controls.MetroTile()
         Me.MetroTile2 = New MetroFramework.Controls.MetroTile()
@@ -39,8 +39,6 @@ Partial Class mainform
         Me.MetroTile4 = New MetroFramework.Controls.MetroTile()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.KryptonLabel3 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
-        Me.MetroToggle1 = New MetroFramework.Controls.MetroToggle()
         Me.KryptonLabel1 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.toprows = New MetroFramework.Controls.MetroComboBox()
         Me.donecheckbox = New MetroFramework.Controls.MetroToggle()
@@ -179,8 +177,8 @@ Partial Class mainform
         Me.callinGRID.AllowUserToAddRows = False
         Me.callinGRID.AllowUserToDeleteRows = False
         Me.callinGRID.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.callinGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.callinGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
         Me.callinGRID.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -231,7 +229,7 @@ Partial Class mainform
         '
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.BackColor = System.Drawing.Color.Silver
         Me.Panel1.Controls.Add(Me.MetroTile5)
         Me.Panel1.Controls.Add(Me.MetroTile6)
         Me.Panel1.Controls.Add(Me.MetroTile4)
@@ -304,9 +302,7 @@ Partial Class mainform
         '
         'Panel3
         '
-        Me.Panel3.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Panel3.Controls.Add(Me.KryptonLabel3)
-        Me.Panel3.Controls.Add(Me.MetroToggle1)
+        Me.Panel3.BackColor = System.Drawing.Color.LightGray
         Me.Panel3.Controls.Add(Me.KryptonLabel1)
         Me.Panel3.Controls.Add(Me.toprows)
         Me.Panel3.Controls.Add(Me.donecheckbox)
@@ -319,31 +315,9 @@ Partial Class mainform
         Me.Panel3.Size = New System.Drawing.Size(927, 69)
         Me.Panel3.TabIndex = 559
         '
-        'KryptonLabel3
-        '
-        Me.KryptonLabel3.Location = New System.Drawing.Point(10, 35)
-        Me.KryptonLabel3.Name = "KryptonLabel3"
-        Me.KryptonLabel3.Size = New System.Drawing.Size(33, 18)
-        Me.KryptonLabel3.StateCommon.ShortText.Color1 = System.Drawing.Color.DimGray
-        Me.KryptonLabel3.StateCommon.ShortText.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.KryptonLabel3.TabIndex = 843
-        Me.KryptonLabel3.Values.Text = "Dark"
-        '
-        'MetroToggle1
-        '
-        Me.MetroToggle1.AutoSize = True
-        Me.MetroToggle1.Location = New System.Drawing.Point(53, 36)
-        Me.MetroToggle1.Name = "MetroToggle1"
-        Me.MetroToggle1.Size = New System.Drawing.Size(80, 17)
-        Me.MetroToggle1.Style = MetroFramework.MetroColorStyle.Red
-        Me.MetroToggle1.TabIndex = 842
-        Me.MetroToggle1.Tag = ""
-        Me.MetroToggle1.Text = "Off"
-        Me.MetroToggle1.UseSelectable = True
-        '
         'KryptonLabel1
         '
-        Me.KryptonLabel1.Location = New System.Drawing.Point(10, 12)
+        Me.KryptonLabel1.Location = New System.Drawing.Point(13, 32)
         Me.KryptonLabel1.Name = "KryptonLabel1"
         Me.KryptonLabel1.Size = New System.Drawing.Size(36, 18)
         Me.KryptonLabel1.StateCommon.ShortText.Color1 = System.Drawing.Color.DimGray
@@ -368,7 +342,7 @@ Partial Class mainform
         Me.donecheckbox.AutoSize = True
         Me.donecheckbox.Checked = True
         Me.donecheckbox.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.donecheckbox.Location = New System.Drawing.Point(52, 12)
+        Me.donecheckbox.Location = New System.Drawing.Point(55, 32)
         Me.donecheckbox.Name = "donecheckbox"
         Me.donecheckbox.Size = New System.Drawing.Size(80, 17)
         Me.donecheckbox.Style = MetroFramework.MetroColorStyle.Red
@@ -379,11 +353,12 @@ Partial Class mainform
         '
         'KryptonLabel2
         '
-        Me.KryptonLabel2.Location = New System.Drawing.Point(13, 20)
+        Me.KryptonLabel2.Location = New System.Drawing.Point(12, 12)
         Me.KryptonLabel2.Name = "KryptonLabel2"
-        Me.KryptonLabel2.Size = New System.Drawing.Size(148, 35)
-        Me.KryptonLabel2.StateCommon.ShortText.Color1 = System.Drawing.Color.Black
-        Me.KryptonLabel2.StateCommon.ShortText.Font = New System.Drawing.Font("Segoe UI", 17.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KryptonLabel2.Size = New System.Drawing.Size(184, 41)
+        Me.KryptonLabel2.StateCommon.ShortText.Color1 = System.Drawing.Color.White
+        Me.KryptonLabel2.StateCommon.ShortText.Font = New System.Drawing.Font("Segoe UI", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KryptonLabel2.StateCommon.ShortText.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias
         Me.KryptonLabel2.TabIndex = 842
         Me.KryptonLabel2.Values.Text = "AFTER SALES"
         '
@@ -422,12 +397,12 @@ Partial Class mainform
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.ControlDark
         Me.ClientSize = New System.Drawing.Size(1059, 634)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.KryptonLabel2)
         Me.Controls.Add(Me.Panel2)
         Me.Name = "mainform"
-        Me.Style = MetroFramework.MetroColorStyle.Purple
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.callinGRID, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
@@ -454,8 +429,6 @@ Partial Class mainform
     Friend WithEvents KryptonLabel1 As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents donecheckbox As MetroFramework.Controls.MetroToggle
     Friend WithEvents KryptonLabel2 As ComponentFactory.Krypton.Toolkit.KryptonLabel
-    Friend WithEvents MetroToggle1 As MetroFramework.Controls.MetroToggle
-    Friend WithEvents KryptonLabel3 As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents MetroTile4 As MetroFramework.Controls.MetroTile
     Friend WithEvents mymenu As ContextMenuStrip
     Friend WithEvents UpdateToolStripMenuItem As ToolStripMenuItem

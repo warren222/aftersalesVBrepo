@@ -67,7 +67,7 @@ Partial Class reportFRM
         Me.reportGRID.RowTemplate.Height = 30
         Me.reportGRID.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.reportGRID.Size = New System.Drawing.Size(479, 335)
-        Me.reportGRID.StateCommon.Background.Color1 = System.Drawing.Color.White
+        Me.reportGRID.StateCommon.Background.Color1 = System.Drawing.Color.Silver
         Me.reportGRID.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
         Me.reportGRID.StateCommon.DataCell.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) _
@@ -168,7 +168,7 @@ Partial Class reportFRM
         Me.calldategen.CustomFormat = "yyyy-MMM-dd"
         Me.calldategen.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.calldategen.Location = New System.Drawing.Point(506, 400)
-        Me.calldategen.MinimumSize = New System.Drawing.Size(0, 29)
+        Me.calldategen.MinimumSize = New System.Drawing.Size(4, 29)
         Me.calldategen.Name = "calldategen"
         Me.calldategen.Size = New System.Drawing.Size(130, 29)
         Me.calldategen.Style = MetroFramework.MetroColorStyle.Red

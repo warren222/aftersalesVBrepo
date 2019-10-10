@@ -23,6 +23,11 @@ Public Class ServicingScheduleFRM
         sm.ServicingScheduleFRMinitialize()
         Button1.PerformClick()
     End Sub
+
+    Public Sub gv_RowPostPaint(sender As Object, e As DataGridViewRowPostPaintEventArgs)
+        sql.rownum(sender, e)
+    End Sub
+
     Private Sub cellclick()
         Dim rows As DataGridViewSelectedRowCollection = gv.SelectedRows
         For Each row As DataGridViewRow In rows

@@ -22,7 +22,7 @@ Partial Class servicingFRM
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.servicingGRID = New ComponentFactory.Krypton.Toolkit.KryptonDataGridView()
         Me.jo = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.address = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
@@ -48,8 +48,8 @@ Partial Class servicingFRM
         Me.servicingGRID.AllowUserToAddRows = False
         Me.servicingGRID.AllowUserToDeleteRows = False
         Me.servicingGRID.AllowUserToResizeRows = False
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.servicingGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.servicingGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
         Me.servicingGRID.ColumnHeadersHeight = 32
         Me.servicingGRID.Cursor = System.Windows.Forms.Cursors.Hand
         Me.servicingGRID.Dock = System.Windows.Forms.DockStyle.Fill
@@ -62,7 +62,7 @@ Partial Class servicingFRM
         Me.servicingGRID.RowTemplate.Height = 30
         Me.servicingGRID.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.servicingGRID.Size = New System.Drawing.Size(871, 250)
-        Me.servicingGRID.StateCommon.Background.Color1 = System.Drawing.Color.White
+        Me.servicingGRID.StateCommon.Background.Color1 = System.Drawing.Color.Silver
         Me.servicingGRID.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
         Me.servicingGRID.StateCommon.DataCell.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) _
@@ -193,7 +193,7 @@ Partial Class servicingFRM
         '
         Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel2.BackColor = System.Drawing.Color.White
+        Me.Panel2.BackColor = System.Drawing.Color.LightGray
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel2.Controls.Add(Me.remarks)
         Me.Panel2.Controls.Add(Me.KryptonLabel2)
@@ -290,7 +290,7 @@ Partial Class servicingFRM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(995, 509)
         Me.Controls.Add(Me.KryptonLabel3)
         Me.Controls.Add(Me.Button1)

@@ -38,6 +38,8 @@ Partial Class ServicingScheduleFRM
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Button4 = New System.Windows.Forms.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'gvpnl
@@ -47,9 +49,9 @@ Partial Class ServicingScheduleFRM
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.gvpnl.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.gvpnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.gvpnl.Location = New System.Drawing.Point(15, 122)
+        Me.gvpnl.Location = New System.Drawing.Point(-1, 110)
         Me.gvpnl.Name = "gvpnl"
-        Me.gvpnl.Size = New System.Drawing.Size(807, 264)
+        Me.gvpnl.Size = New System.Drawing.Size(823, 287)
         Me.gvpnl.TabIndex = 0
         '
         'DateTimePicker1
@@ -57,7 +59,7 @@ Partial Class ServicingScheduleFRM
         Me.DateTimePicker1.CustomFormat = "MMM dd, yyyy"
         Me.DateTimePicker1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker1.Location = New System.Drawing.Point(620, 75)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(614, 35)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(119, 23)
         Me.DateTimePicker1.TabIndex = 3
@@ -67,7 +69,7 @@ Partial Class ServicingScheduleFRM
         Me.DateTimePicker2.CustomFormat = "MMM dd, yyyy"
         Me.DateTimePicker2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker2.Location = New System.Drawing.Point(777, 75)
+        Me.DateTimePicker2.Location = New System.Drawing.Point(771, 35)
         Me.DateTimePicker2.Name = "DateTimePicker2"
         Me.DateTimePicker2.Size = New System.Drawing.Size(119, 23)
         Me.DateTimePicker2.TabIndex = 4
@@ -75,7 +77,7 @@ Partial Class ServicingScheduleFRM
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(580, 75)
+        Me.Label1.Location = New System.Drawing.Point(574, 35)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(34, 13)
         Me.Label1.TabIndex = 3
@@ -84,7 +86,7 @@ Partial Class ServicingScheduleFRM
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(745, 75)
+        Me.Label2.Location = New System.Drawing.Point(739, 35)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(26, 13)
         Me.Label2.TabIndex = 4
@@ -93,7 +95,7 @@ Partial Class ServicingScheduleFRM
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Calibri", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(419, 75)
+        Me.Button1.Location = New System.Drawing.Point(413, 35)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(57, 29)
         Me.Button1.TabIndex = 2
@@ -103,7 +105,7 @@ Partial Class ServicingScheduleFRM
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(479, 53)
+        Me.Label4.Location = New System.Drawing.Point(473, 13)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(76, 13)
         Me.Label4.TabIndex = 7
@@ -129,7 +131,7 @@ Partial Class ServicingScheduleFRM
         Me.project.DisplayIcon = True
         Me.project.FontSize = MetroFramework.MetroTextBoxSize.Medium
         Me.project.Lines = New String(-1) {}
-        Me.project.Location = New System.Drawing.Point(16, 75)
+        Me.project.Location = New System.Drawing.Point(10, 35)
         Me.project.MaxLength = 32767
         Me.project.Name = "project"
         Me.project.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -150,7 +152,7 @@ Partial Class ServicingScheduleFRM
         'donecheckbox
         '
         Me.donecheckbox.AutoSize = True
-        Me.donecheckbox.Location = New System.Drawing.Point(482, 75)
+        Me.donecheckbox.Location = New System.Drawing.Point(476, 35)
         Me.donecheckbox.Name = "donecheckbox"
         Me.donecheckbox.Size = New System.Drawing.Size(80, 17)
         Me.donecheckbox.Style = MetroFramework.MetroColorStyle.Red
@@ -162,7 +164,7 @@ Partial Class ServicingScheduleFRM
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(13, 53)
+        Me.Label5.Location = New System.Drawing.Point(7, 13)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(56, 13)
         Me.Label5.TabIndex = 842
@@ -171,10 +173,11 @@ Partial Class ServicingScheduleFRM
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Calibri", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(21, 18)
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(12, 5)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(163, 24)
+        Me.Label3.Size = New System.Drawing.Size(191, 28)
         Me.Label3.TabIndex = 843
         Me.Label3.Text = "Servicing Schedule"
         '
@@ -182,7 +185,7 @@ Partial Class ServicingScheduleFRM
         '
         Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button2.Font = New System.Drawing.Font("Calibri", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(828, 122)
+        Me.Button2.Location = New System.Drawing.Point(827, 115)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(135, 27)
         Me.Button2.TabIndex = 844
@@ -193,7 +196,7 @@ Partial Class ServicingScheduleFRM
         '
         Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button3.Font = New System.Drawing.Font("Calibri", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(828, 188)
+        Me.Button3.Location = New System.Drawing.Point(827, 181)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(135, 27)
         Me.Button3.TabIndex = 845
@@ -203,7 +206,7 @@ Partial Class ServicingScheduleFRM
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(617, 53)
+        Me.Label6.Location = New System.Drawing.Point(611, 13)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(65, 13)
         Me.Label6.TabIndex = 846
@@ -213,36 +216,50 @@ Partial Class ServicingScheduleFRM
         '
         Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button4.Font = New System.Drawing.Font("Calibri", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.Location = New System.Drawing.Point(828, 155)
+        Me.Button4.Location = New System.Drawing.Point(827, 148)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(135, 27)
         Me.Button4.TabIndex = 847
         Me.Button4.Text = "report/mobilization"
         Me.Button4.UseVisualStyleBackColor = True
         '
+        'Panel1
+        '
+        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.BackColor = System.Drawing.Color.LightGray
+        Me.Panel1.Controls.Add(Me.Label5)
+        Me.Panel1.Controls.Add(Me.DateTimePicker1)
+        Me.Panel1.Controls.Add(Me.Label6)
+        Me.Panel1.Controls.Add(Me.DateTimePicker2)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.Button1)
+        Me.Panel1.Controls.Add(Me.Label4)
+        Me.Panel1.Controls.Add(Me.donecheckbox)
+        Me.Panel1.Controls.Add(Me.project)
+        Me.Panel1.Location = New System.Drawing.Point(-1, 36)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(979, 73)
+        Me.Panel1.TabIndex = 848
+        '
         'ServicingScheduleFRM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.ControlDark
         Me.ClientSize = New System.Drawing.Size(974, 398)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.donecheckbox)
-        Me.Controls.Add(Me.project)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.DateTimePicker2)
-        Me.Controls.Add(Me.DateTimePicker1)
         Me.Controls.Add(Me.gvpnl)
         Me.Name = "ServicingScheduleFRM"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -263,4 +280,5 @@ Partial Class ServicingScheduleFRM
     Friend WithEvents Button3 As Button
     Friend WithEvents Label6 As Label
     Friend WithEvents Button4 As Button
+    Friend WithEvents Panel1 As Panel
 End Class

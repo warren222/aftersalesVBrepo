@@ -22,7 +22,7 @@ Partial Class newreportFRM
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.specification = New System.Windows.Forms.ComboBox()
         Me.KryptonLabel1 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.KryptonLabel2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
@@ -34,6 +34,8 @@ Partial Class newreportFRM
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.knogv = New ComponentFactory.Krypton.Toolkit.KryptonDataGridView()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.mobilization = New MetroFramework.Controls.MetroTextBox()
+        Me.KryptonLabel6 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.KryptonLabel5 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.save = New System.Windows.Forms.Button()
@@ -41,8 +43,6 @@ Partial Class newreportFRM
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.mobilization = New MetroFramework.Controls.MetroTextBox()
-        Me.KryptonLabel6 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.Panel2.SuspendLayout()
         CType(Me.knogv, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
@@ -220,9 +220,9 @@ Partial Class newreportFRM
         Me.knogv.AllowUserToOrderColumns = True
         Me.knogv.AllowUserToResizeColumns = False
         Me.knogv.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        Me.knogv.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        Me.knogv.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
         Me.knogv.ColumnHeadersHeight = 30
         Me.knogv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.knogv.Cursor = System.Windows.Forms.Cursors.Hand
@@ -237,7 +237,7 @@ Partial Class newreportFRM
         Me.knogv.RowTemplate.Height = 27
         Me.knogv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.knogv.Size = New System.Drawing.Size(465, 376)
-        Me.knogv.StateCommon.Background.Color1 = System.Drawing.Color.White
+        Me.knogv.StateCommon.Background.Color1 = System.Drawing.Color.Silver
         Me.knogv.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
         Me.knogv.StateCommon.DataCell.Border.DrawBorders = CType((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right), ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
         Me.knogv.StateCommon.DataCell.Content.Font = New System.Drawing.Font("Segoe UI", 10.0!)
@@ -253,7 +253,7 @@ Partial Class newreportFRM
         '
         'Panel3
         '
-        Me.Panel3.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Panel3.BackColor = System.Drawing.Color.LightGray
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel3.Controls.Add(Me.mobilization)
         Me.Panel3.Controls.Add(Me.KryptonLabel6)
@@ -269,6 +269,50 @@ Partial Class newreportFRM
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(346, 336)
         Me.Panel3.TabIndex = 514
+        '
+        'mobilization
+        '
+        '
+        '
+        '
+        Me.mobilization.CustomButton.Image = Nothing
+        Me.mobilization.CustomButton.Location = New System.Drawing.Point(153, 1)
+        Me.mobilization.CustomButton.Name = ""
+        Me.mobilization.CustomButton.Size = New System.Drawing.Size(25, 25)
+        Me.mobilization.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.mobilization.CustomButton.TabIndex = 1
+        Me.mobilization.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.mobilization.CustomButton.UseSelectable = True
+        Me.mobilization.CustomButton.Visible = False
+        Me.mobilization.DisplayIcon = True
+        Me.mobilization.Lines = New String(-1) {}
+        Me.mobilization.Location = New System.Drawing.Point(137, 262)
+        Me.mobilization.MaxLength = 32767
+        Me.mobilization.Name = "mobilization"
+        Me.mobilization.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.mobilization.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.mobilization.SelectedText = ""
+        Me.mobilization.SelectionLength = 0
+        Me.mobilization.SelectionStart = 0
+        Me.mobilization.ShowClearButton = True
+        Me.mobilization.Size = New System.Drawing.Size(179, 27)
+        Me.mobilization.Style = MetroFramework.MetroColorStyle.Teal
+        Me.mobilization.TabIndex = 513
+        Me.mobilization.UseCustomForeColor = True
+        Me.mobilization.UseSelectable = True
+        Me.mobilization.UseStyleColors = True
+        Me.mobilization.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.mobilization.WaterMarkFont = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        '
+        'KryptonLabel6
+        '
+        Me.KryptonLabel6.Location = New System.Drawing.Point(14, 262)
+        Me.KryptonLabel6.Name = "KryptonLabel6"
+        Me.KryptonLabel6.Size = New System.Drawing.Size(117, 22)
+        Me.KryptonLabel6.StateCommon.ShortText.Color1 = System.Drawing.Color.Black
+        Me.KryptonLabel6.StateCommon.ShortText.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KryptonLabel6.TabIndex = 512
+        Me.KryptonLabel6.Values.Text = "Mobilization Cost"
         '
         'KryptonLabel5
         '
@@ -336,54 +380,11 @@ Partial Class newreportFRM
         Me.Button2.Text = "cancel"
         Me.Button2.UseVisualStyleBackColor = True
         '
-        'mobilization
-        '
-        '
-        '
-        '
-        Me.mobilization.CustomButton.Image = Nothing
-        Me.mobilization.CustomButton.Location = New System.Drawing.Point(153, 1)
-        Me.mobilization.CustomButton.Name = ""
-        Me.mobilization.CustomButton.Size = New System.Drawing.Size(25, 25)
-        Me.mobilization.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.mobilization.CustomButton.TabIndex = 1
-        Me.mobilization.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.mobilization.CustomButton.UseSelectable = True
-        Me.mobilization.CustomButton.Visible = False
-        Me.mobilization.DisplayIcon = True
-        Me.mobilization.Lines = New String(-1) {}
-        Me.mobilization.Location = New System.Drawing.Point(137, 262)
-        Me.mobilization.MaxLength = 32767
-        Me.mobilization.Name = "mobilization"
-        Me.mobilization.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.mobilization.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.mobilization.SelectedText = ""
-        Me.mobilization.SelectionLength = 0
-        Me.mobilization.SelectionStart = 0
-        Me.mobilization.ShowClearButton = True
-        Me.mobilization.Size = New System.Drawing.Size(179, 27)
-        Me.mobilization.Style = MetroFramework.MetroColorStyle.Teal
-        Me.mobilization.TabIndex = 513
-        Me.mobilization.UseCustomForeColor = True
-        Me.mobilization.UseSelectable = True
-        Me.mobilization.UseStyleColors = True
-        Me.mobilization.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.mobilization.WaterMarkFont = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
-        '
-        'KryptonLabel6
-        '
-        Me.KryptonLabel6.Location = New System.Drawing.Point(14, 262)
-        Me.KryptonLabel6.Name = "KryptonLabel6"
-        Me.KryptonLabel6.Size = New System.Drawing.Size(117, 22)
-        Me.KryptonLabel6.StateCommon.ShortText.Color1 = System.Drawing.Color.Black
-        Me.KryptonLabel6.StateCommon.ShortText.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.KryptonLabel6.TabIndex = 512
-        Me.KryptonLabel6.Values.Text = "Mobilization Cost"
-        '
         'newreportFRM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Gainsboro
         Me.ClientSize = New System.Drawing.Size(1014, 513)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Panel5)

@@ -5,12 +5,13 @@ Public Class sharedmethods
     Public Sub ServicingScheduleFRMinitialize()
         With ServicingScheduleFRM.gv
             .RowTemplate.Height = 50
-            .StateCommon.DataCell.Border.Color1 = Color.Black
-            .StateCommon.DataCell.Border.Width = 1
+            '.StateCommon.DataCell.Border.Color1 = Color.Black
+            .StateCommon.DataCell.Border.Width = -1
             .DefaultCellStyle.WrapMode = DataGridViewTriState.True
+            .AlternatingRowsDefaultCellStyle.BackColor = Color.WhiteSmoke
         End With
         dgvproperties(ServicingScheduleFRM.gv)
-
+        AddHandler ServicingScheduleFRM.gv.RowPostPaint, AddressOf ServicingScheduleFRM.gv_RowPostPaint
 
     End Sub
     Public Sub assessmentsettingFRMinitialize()

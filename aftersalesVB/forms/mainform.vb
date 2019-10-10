@@ -390,19 +390,6 @@ Public Class mainform
     Private Sub callinGRID_RowPostPaint(sender As Object, e As DataGridViewRowPostPaintEventArgs) Handles callinGRID.RowPostPaint
         sql.rownum(sender, e)
     End Sub
-
-    Private Sub MetroToggle1_Click(sender As Object, e As EventArgs) Handles MetroToggle1.Click
-        If MetroToggle1.Checked = False Then
-            Me.Theme = MetroFramework.MetroThemeStyle.Light
-            KryptonLabel2.StateCommon.ShortText.Color1 = Color.Black
-            Panel1.BackColor = Color.White
-        Else
-            Me.Theme = MetroFramework.MetroThemeStyle.Dark
-            KryptonLabel2.StateCommon.ShortText.Color1 = Color.White
-            Panel1.BackColor = Color.FromArgb(0, 0, 64)
-        End If
-        Me.Refresh()
-    End Sub
     Private Sub searchtext_KeyDown(sender As Object, e As KeyEventArgs) Handles searchtext.KeyDown
         If e.KeyData = Keys.Enter Then
             searchtext.CustomButton.PerformClick()

@@ -83,7 +83,7 @@ Partial Class partsFRM
         Me.partsGRID.RowTemplate.Height = 30
         Me.partsGRID.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.partsGRID.Size = New System.Drawing.Size(529, 205)
-        Me.partsGRID.StateCommon.Background.Color1 = System.Drawing.Color.White
+        Me.partsGRID.StateCommon.Background.Color1 = System.Drawing.Color.DarkGray
         Me.partsGRID.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
         Me.partsGRID.StateCommon.DataCell.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) _
@@ -159,7 +159,7 @@ Partial Class partsFRM
         Me.knogv.RowTemplate.Height = 27
         Me.knogv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.knogv.Size = New System.Drawing.Size(473, 272)
-        Me.knogv.StateCommon.Background.Color1 = System.Drawing.Color.White
+        Me.knogv.StateCommon.Background.Color1 = System.Drawing.Color.DarkGray
         Me.knogv.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
         Me.knogv.StateCommon.DataCell.Border.DrawBorders = CType((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right), ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
         Me.knogv.StateCommon.DataCell.Content.Font = New System.Drawing.Font("Segoe UI", 10.0!)
@@ -177,7 +177,7 @@ Partial Class partsFRM
         '
         Me.Panel3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel3.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel3.BackColor = System.Drawing.Color.LightGray
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel3.Controls.Add(Me.KryptonLabel3)
         Me.Panel3.Controls.Add(Me.netamount)
@@ -529,7 +529,7 @@ Partial Class partsFRM
         'Panel6
         '
         Me.Panel6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel6.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel6.BackColor = System.Drawing.Color.LightGray
         Me.Panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel6.Controls.Add(Me.KryptonLabel1)
         Me.Panel6.Controls.Add(Me.KryptonLabel10)
@@ -658,6 +658,7 @@ Partial Class partsFRM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Gainsboro
         Me.ClientSize = New System.Drawing.Size(1220, 515)
         Me.Controls.Add(Me.KryptonLabel13)
         Me.Controls.Add(Me.KryptonLabel12)

@@ -167,7 +167,7 @@ Partial Class newcallinFRM
         'bodypnl
         '
         Me.bodypnl.AutoScroll = True
-        Me.bodypnl.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.bodypnl.BackColor = System.Drawing.Color.LightGray
         Me.bodypnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.bodypnl.Controls.Add(Me.Label4)
         Me.bodypnl.Controls.Add(Me.Panel4)
@@ -197,7 +197,7 @@ Partial Class newcallinFRM
         '
         'Panel4
         '
-        Me.Panel4.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel4.BackColor = System.Drawing.Color.Silver
         Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel4.Controls.Add(Me.Label6)
         Me.Panel4.Controls.Add(Me.Label5)
@@ -302,7 +302,7 @@ Partial Class newcallinFRM
         '
         'Panel3
         '
-        Me.Panel3.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel3.BackColor = System.Drawing.Color.Silver
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel3.Controls.Add(Me.Button2)
         Me.Panel3.Controls.Add(Me.Button1)
@@ -788,7 +788,7 @@ Partial Class newcallinFRM
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel1.BackColor = System.Drawing.Color.DarkGray
         Me.Panel1.Controls.Add(Me.updateBTN)
         Me.Panel1.Controls.Add(Me.addBTN)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom

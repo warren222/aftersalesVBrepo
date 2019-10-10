@@ -53,7 +53,7 @@ Partial Class quotationFRM
         Me.quGRID.RowTemplate.Height = 30
         Me.quGRID.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.quGRID.Size = New System.Drawing.Size(1049, 283)
-        Me.quGRID.StateCommon.Background.Color1 = System.Drawing.Color.White
+        Me.quGRID.StateCommon.Background.Color1 = System.Drawing.Color.Silver
         Me.quGRID.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
         Me.quGRID.StateCommon.DataCell.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) _
@@ -160,6 +160,7 @@ Partial Class quotationFRM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Gainsboro
         Me.ClientSize = New System.Drawing.Size(1097, 486)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.projectname)
