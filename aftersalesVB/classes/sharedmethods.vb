@@ -32,7 +32,8 @@ Public Class sharedmethods
         AddHandler assessmentsettingFRM.gv.SelectionChanged, AddressOf assessmentsettingFRM.gv_SelectionChanged
         AddHandler assessmentsettingFRM.gv2.SelectionChanged, AddressOf assessmentsettingFRM.gv2_SelectionChanged
 
-
+        AddHandler assessmentsettingFRM.gv.RowPostPaint, AddressOf assessmentsettingFRM.gv_RowPostPaint
+        AddHandler assessmentsettingFRM.gv2.RowPostPaint, AddressOf assessmentsettingFRM.gv2_RowPostPaint
     End Sub
     Public Sub insightinitialized()
         dgvproperties(insightFRM.gv)

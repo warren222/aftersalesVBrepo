@@ -137,7 +137,7 @@ Partial Class assessmentsettingFRM
         '
         Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button4.Font = New System.Drawing.Font("Calibri", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.Location = New System.Drawing.Point(402, 39)
+        Me.Button4.Location = New System.Drawing.Point(405, 40)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(70, 27)
         Me.Button4.TabIndex = 850
@@ -148,7 +148,7 @@ Partial Class assessmentsettingFRM
         '
         Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button3.Font = New System.Drawing.Font("Calibri", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(402, 105)
+        Me.Button3.Location = New System.Drawing.Point(405, 106)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(70, 27)
         Me.Button3.TabIndex = 849
@@ -159,7 +159,7 @@ Partial Class assessmentsettingFRM
         '
         Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button2.Font = New System.Drawing.Font("Calibri", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(402, 138)
+        Me.Button2.Location = New System.Drawing.Point(405, 139)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(70, 27)
         Me.Button2.TabIndex = 848
@@ -433,7 +433,7 @@ Partial Class assessmentsettingFRM
         '
         Me.Button7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button7.Font = New System.Drawing.Font("Calibri", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button7.Location = New System.Drawing.Point(402, 72)
+        Me.Button7.Location = New System.Drawing.Point(405, 73)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(70, 27)
         Me.Button7.TabIndex = 865

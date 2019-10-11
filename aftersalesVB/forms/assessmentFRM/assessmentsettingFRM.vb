@@ -43,6 +43,15 @@ Public Class assessmentsettingFRM
         Next
     End Sub
     Dim solid As String
+
+    Public Sub gv_RowPostPaint(sender As Object, e As DataGridViewRowPostPaintEventArgs)
+        sql.rownum(sender, e)
+    End Sub
+
+    Public Sub gv2_RowPostPaint(sender As Object, e As DataGridViewRowPostPaintEventArgs)
+        sql.rownum(sender, e)
+    End Sub
+
     Dim id As String
 
     Public Sub gv_SelectionChanged(sender As Object, e As EventArgs)
