@@ -23,9 +23,9 @@ Partial Class REQreplacementFRM
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim ReportDataSource2 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.REPLACEMENTTBBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.asdbDS = New aftersalesVB.asdbDS()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -344,7 +344,7 @@ Partial Class REQreplacementFRM
         Me.Panel1.Controls.Add(Me.partsGRID)
         Me.Panel1.Location = New System.Drawing.Point(2, 206)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(538, 137)
+        Me.Panel1.Size = New System.Drawing.Size(538, 179)
         Me.Panel1.TabIndex = 605
         '
         'partsGRID
@@ -352,8 +352,8 @@ Partial Class REQreplacementFRM
         Me.partsGRID.AllowUserToAddRows = False
         Me.partsGRID.AllowUserToDeleteRows = False
         Me.partsGRID.AllowUserToResizeRows = False
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.partsGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.partsGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.partsGRID.ColumnHeadersHeight = 32
         Me.partsGRID.Cursor = System.Windows.Forms.Cursors.Hand
         Me.partsGRID.Dock = System.Windows.Forms.DockStyle.Fill
@@ -364,7 +364,7 @@ Partial Class REQreplacementFRM
         Me.partsGRID.RowHeadersWidth = 30
         Me.partsGRID.RowTemplate.Height = 30
         Me.partsGRID.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.partsGRID.Size = New System.Drawing.Size(536, 135)
+        Me.partsGRID.Size = New System.Drawing.Size(536, 177)
         Me.partsGRID.StateCommon.Background.Color1 = System.Drawing.Color.White
         Me.partsGRID.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
         Me.partsGRID.StateCommon.DataCell.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) _
@@ -424,7 +424,7 @@ Partial Class REQreplacementFRM
         Me.Panel9.Controls.Add(Me.Panel5)
         Me.Panel9.Location = New System.Drawing.Point(1143, 6)
         Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(845, 349)
+        Me.Panel9.Size = New System.Drawing.Size(845, 391)
         Me.Panel9.TabIndex = 616
         '
         'KryptonLabel1
@@ -444,19 +444,19 @@ Partial Class REQreplacementFRM
         Me.Panel5.Controls.Add(Me.ReportViewer1)
         Me.Panel5.Location = New System.Drawing.Point(3, 39)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(820, 304)
+        Me.Panel5.Size = New System.Drawing.Size(820, 346)
         Me.Panel5.TabIndex = 613
         '
         'ReportViewer1
         '
         Me.ReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
-        ReportDataSource2.Name = "DataSet1"
-        ReportDataSource2.Value = Me.REPLACEMENTTBBindingSource
-        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource2)
+        ReportDataSource1.Name = "DataSet1"
+        ReportDataSource1.Value = Me.REPLACEMENTTBBindingSource
+        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "aftersalesVB.replreqRPT.rdlc"
         Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
         Me.ReportViewer1.Name = "ReportViewer1"
-        Me.ReportViewer1.Size = New System.Drawing.Size(820, 304)
+        Me.ReportViewer1.Size = New System.Drawing.Size(820, 346)
         Me.ReportViewer1.TabIndex = 0
         '
         'Panel8
@@ -473,7 +473,7 @@ Partial Class REQreplacementFRM
         Me.Panel8.Controls.Add(Me.Panel3)
         Me.Panel8.Location = New System.Drawing.Point(502, 6)
         Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(635, 349)
+        Me.Panel8.Size = New System.Drawing.Size(635, 391)
         Me.Panel8.TabIndex = 615
         '
         'Button2
@@ -495,7 +495,7 @@ Partial Class REQreplacementFRM
         Me.Panel4.Controls.Add(Me.Panel6)
         Me.Panel4.Location = New System.Drawing.Point(12, 6)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(484, 349)
+        Me.Panel4.Size = New System.Drawing.Size(484, 391)
         Me.Panel4.TabIndex = 614
         '
         'KryptonLabel7
@@ -516,7 +516,7 @@ Partial Class REQreplacementFRM
         Me.Panel7.Controls.Add(Me.knogv)
         Me.Panel7.Location = New System.Drawing.Point(3, 173)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(475, 170)
+        Me.Panel7.Size = New System.Drawing.Size(475, 212)
         Me.Panel7.TabIndex = 597
         '
         'knogv
@@ -526,9 +526,9 @@ Partial Class REQreplacementFRM
         Me.knogv.AllowUserToOrderColumns = True
         Me.knogv.AllowUserToResizeColumns = False
         Me.knogv.AllowUserToResizeRows = False
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
-        Me.knogv.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        Me.knogv.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
         Me.knogv.ColumnHeadersHeight = 30
         Me.knogv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.knogv.Cursor = System.Windows.Forms.Cursors.Hand
@@ -542,7 +542,7 @@ Partial Class REQreplacementFRM
         Me.knogv.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black
         Me.knogv.RowTemplate.Height = 27
         Me.knogv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.knogv.Size = New System.Drawing.Size(473, 168)
+        Me.knogv.Size = New System.Drawing.Size(473, 210)
         Me.knogv.StateCommon.Background.Color1 = System.Drawing.Color.White
         Me.knogv.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
         Me.knogv.StateCommon.DataCell.Border.DrawBorders = CType((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right), ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
