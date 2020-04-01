@@ -258,6 +258,7 @@ Public Class newcallinFRM
     End Sub
 
     Private Sub newcallinFRM_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        mainform.callinGRID.ClearSelection()
         Me.Dispose()
     End Sub
 

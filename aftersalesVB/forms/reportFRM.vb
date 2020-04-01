@@ -258,9 +258,10 @@ DECLARE @QRY AS VARCHAR(MAX)
         Dim ds As New DataSet
         ds.Clear
         Dim str As String = "
-select a.id,personnel,position,TEAMID,b.TEAM from PERSONNELTB as a
-left join TEAMTB as b
-on a.TEAMID = b.ID where a.teamid=@teamid"
+                            select a.id,personnel,position,TEAMID,b.TEAM from PERSONNELTB as a
+                            left join TEAMTB as b
+                            on a.TEAMID = b.ID where a.teamid=@teamid
+                            "
         Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
             Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
                 Try
@@ -313,5 +314,15 @@ on a.TEAMID = b.ID where a.teamid=@teamid"
                 End Try
             End Using
         End Using
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        REQreplacementFRM.requestype.Text = "REQUEST FORM FOR SCREEN REPAIR"
+        REQreplacementFRM.ShowDialog()
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        REQreplacementFRM.requestype.Text = "REQUEST FORM FOR REPLACEMENTS"
+        REQreplacementFRM.ShowDialog()
     End Sub
 End Class

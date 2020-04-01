@@ -74,8 +74,7 @@ Public Class mainform
                             inner join
                             heretosave.dbo.addendum_to_contract_tb as b
                             on b.job_order_no = a.jo
-                            where " & condition & " " & done & " order by 
-                            case when isdate(cdate)=1 then cast(cdate as date) else cdate end asc, autonum asc"
+                            where " & condition & " " & done & " order by autonum asc"
         Dim ds As New DataSet
         ds.Clear()
         Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
@@ -111,7 +110,6 @@ Public Class mainform
                             .Columns("address").AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
                         End With
 
-
                         For i As Integer = 0 To callinGRID.RowCount - 1
                             Dim a As String = callinGRID.Rows(i).Cells("STATUS").Value.ToString()
                             If a = "Done" Then
@@ -125,10 +123,10 @@ Public Class mainform
                             ElseIf a = "Reschedule" Then
                                 With callinGRID
                                     .Rows(i).Cells("STATUS").Style.Font = New Font("Century Gothic", 10, FontStyle.Bold)
-                                    .Rows(i).Cells("STATUS").Style.BackColor = System.Drawing.Color.LimeGreen
-                                    .Rows(i).Cells("STATUS").Style.ForeColor = System.Drawing.Color.White
-                                    .Rows(i).Cells("STATUS").Style.SelectionBackColor = Color.LimeGreen
-                                    .Rows(i).Cells("STATUS").Style.SelectionForeColor = Color.White
+                                    .Rows(i).Cells("STATUS").Style.BackColor = System.Drawing.Color.Yellow
+                                    .Rows(i).Cells("STATUS").Style.ForeColor = System.Drawing.Color.Black
+                                    .Rows(i).Cells("STATUS").Style.SelectionBackColor = Color.Yellow
+                                    .Rows(i).Cells("STATUS").Style.SelectionForeColor = Color.Black
                                 End With
                             ElseIf a = "For Costing" Then
                                 With callinGRID
@@ -441,5 +439,9 @@ Public Class mainform
 
     Private Sub MetroTile5_Click(sender As Object, e As EventArgs) Handles MetroTile5.Click
         insightFRM.Show()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        FRMpersonnel.Show()
     End Sub
 End Class

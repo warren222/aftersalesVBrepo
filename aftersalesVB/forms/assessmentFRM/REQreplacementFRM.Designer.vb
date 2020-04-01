@@ -91,7 +91,7 @@ Partial Class REQreplacementFRM
         '
         'Panel3
         '
-        Me.Panel3.BackColor = System.Drawing.Color.White
+        Me.Panel3.BackColor = System.Drawing.Color.LightGray
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel3.Controls.Add(Me.KryptonLabel8)
         Me.Panel3.Controls.Add(Me.reqdate)
@@ -344,7 +344,7 @@ Partial Class REQreplacementFRM
         Me.Panel1.Controls.Add(Me.partsGRID)
         Me.Panel1.Location = New System.Drawing.Point(2, 206)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(538, 179)
+        Me.Panel1.Size = New System.Drawing.Size(538, 145)
         Me.Panel1.TabIndex = 605
         '
         'partsGRID
@@ -364,8 +364,8 @@ Partial Class REQreplacementFRM
         Me.partsGRID.RowHeadersWidth = 30
         Me.partsGRID.RowTemplate.Height = 30
         Me.partsGRID.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.partsGRID.Size = New System.Drawing.Size(536, 177)
-        Me.partsGRID.StateCommon.Background.Color1 = System.Drawing.Color.White
+        Me.partsGRID.Size = New System.Drawing.Size(536, 143)
+        Me.partsGRID.StateCommon.Background.Color1 = System.Drawing.Color.Silver
         Me.partsGRID.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
         Me.partsGRID.StateCommon.DataCell.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) _
@@ -406,7 +406,7 @@ Partial Class REQreplacementFRM
         'Panel2
         '
         Me.Panel2.AutoScroll = True
-        Me.Panel2.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel2.BackColor = System.Drawing.Color.Gainsboro
         Me.Panel2.Controls.Add(Me.Panel9)
         Me.Panel2.Controls.Add(Me.Panel8)
         Me.Panel2.Controls.Add(Me.Panel4)
@@ -424,7 +424,7 @@ Partial Class REQreplacementFRM
         Me.Panel9.Controls.Add(Me.Panel5)
         Me.Panel9.Location = New System.Drawing.Point(1143, 6)
         Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(845, 391)
+        Me.Panel9.Size = New System.Drawing.Size(845, 357)
         Me.Panel9.TabIndex = 616
         '
         'KryptonLabel1
@@ -444,7 +444,7 @@ Partial Class REQreplacementFRM
         Me.Panel5.Controls.Add(Me.ReportViewer1)
         Me.Panel5.Location = New System.Drawing.Point(3, 39)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(820, 346)
+        Me.Panel5.Size = New System.Drawing.Size(820, 312)
         Me.Panel5.TabIndex = 613
         '
         'ReportViewer1
@@ -456,13 +456,14 @@ Partial Class REQreplacementFRM
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "aftersalesVB.replreqRPT.rdlc"
         Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
         Me.ReportViewer1.Name = "ReportViewer1"
-        Me.ReportViewer1.Size = New System.Drawing.Size(820, 346)
+        Me.ReportViewer1.Size = New System.Drawing.Size(820, 312)
         Me.ReportViewer1.TabIndex = 0
         '
         'Panel8
         '
         Me.Panel8.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Panel8.BackColor = System.Drawing.SystemColors.ControlDark
         Me.Panel8.Controls.Add(Me.requestype)
         Me.Panel8.Controls.Add(Me.Panel1)
         Me.Panel8.Controls.Add(Me.Button4)
@@ -473,7 +474,7 @@ Partial Class REQreplacementFRM
         Me.Panel8.Controls.Add(Me.Panel3)
         Me.Panel8.Location = New System.Drawing.Point(502, 6)
         Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(635, 391)
+        Me.Panel8.Size = New System.Drawing.Size(635, 357)
         Me.Panel8.TabIndex = 615
         '
         'Button2
@@ -490,12 +491,13 @@ Partial Class REQreplacementFRM
         '
         Me.Panel4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Panel4.BackColor = System.Drawing.SystemColors.ControlDark
         Me.Panel4.Controls.Add(Me.KryptonLabel7)
         Me.Panel4.Controls.Add(Me.Panel7)
         Me.Panel4.Controls.Add(Me.Panel6)
         Me.Panel4.Location = New System.Drawing.Point(12, 6)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(484, 391)
+        Me.Panel4.Size = New System.Drawing.Size(484, 357)
         Me.Panel4.TabIndex = 614
         '
         'KryptonLabel7
@@ -516,7 +518,7 @@ Partial Class REQreplacementFRM
         Me.Panel7.Controls.Add(Me.knogv)
         Me.Panel7.Location = New System.Drawing.Point(3, 173)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(475, 212)
+        Me.Panel7.Size = New System.Drawing.Size(475, 178)
         Me.Panel7.TabIndex = 597
         '
         'knogv
@@ -542,8 +544,8 @@ Partial Class REQreplacementFRM
         Me.knogv.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black
         Me.knogv.RowTemplate.Height = 27
         Me.knogv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.knogv.Size = New System.Drawing.Size(473, 210)
-        Me.knogv.StateCommon.Background.Color1 = System.Drawing.Color.White
+        Me.knogv.Size = New System.Drawing.Size(473, 176)
+        Me.knogv.StateCommon.Background.Color1 = System.Drawing.Color.Silver
         Me.knogv.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
         Me.knogv.StateCommon.DataCell.Border.DrawBorders = CType((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right), ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
         Me.knogv.StateCommon.DataCell.Content.Font = New System.Drawing.Font("Segoe UI", 10.0!)
@@ -559,7 +561,7 @@ Partial Class REQreplacementFRM
         '
         'Panel6
         '
-        Me.Panel6.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel6.BackColor = System.Drawing.Color.LightGray
         Me.Panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel6.Controls.Add(Me.KryptonLabel2)
         Me.Panel6.Controls.Add(Me.Button5)

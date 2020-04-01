@@ -28,7 +28,7 @@
     <InstallUrl>http://121.58.229.248:8083/aftersales/</InstallUrl>
     <ProductName>After Sales System</ProductName>
     <PublisherName>warren</PublisherName>
-    <ApplicationRevision>15</ApplicationRevision>
+    <ApplicationRevision>18</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -79,7 +79,7 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>icons8-request-service-48.ico</ApplicationIcon>
@@ -352,6 +352,18 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="teamForms\FRMpersonnel.Designer.vb">
+      <DependentUpon>FRMpersonnel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="teamForms\FRMpersonnel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="teamForms\myteamFRM.Designer.vb">
+      <DependentUpon>myteamFRM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="teamForms\myteamFRM.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="forms\accessoriesFRM.resx">
@@ -463,6 +475,12 @@
     <EmbeddedResource Include="reports\qareport.rdlc" />
     <EmbeddedResource Include="reports\qreport.rdlc" />
     <EmbeddedResource Include="reports\replreqRPT.rdlc" />
+    <EmbeddedResource Include="teamForms\FRMpersonnel.resx">
+      <DependentUpon>FRMpersonnel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="teamForms\myteamFRM.resx">
+      <DependentUpon>myteamFRM.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="aftersalesVB_TemporaryKey.pfx" />
@@ -503,6 +521,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icons8-request-service-48.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="classes\NewFolder1\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

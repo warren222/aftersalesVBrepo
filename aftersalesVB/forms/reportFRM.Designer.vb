@@ -22,8 +22,8 @@ Partial Class reportFRM
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.reportGRID = New ComponentFactory.Krypton.Toolkit.KryptonDataGridView()
         Me.servicing = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -42,6 +42,9 @@ Partial Class reportFRM
         Me.teamgv = New ComponentFactory.Krypton.Toolkit.KryptonDataGridView()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.KryptonLabel2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         CType(Me.reportGRID, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -53,8 +56,8 @@ Partial Class reportFRM
         Me.reportGRID.AllowUserToAddRows = False
         Me.reportGRID.AllowUserToDeleteRows = False
         Me.reportGRID.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.reportGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.reportGRID.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
         Me.reportGRID.ColumnHeadersHeight = 32
         Me.reportGRID.Cursor = System.Windows.Forms.Cursors.Hand
         Me.reportGRID.Dock = System.Windows.Forms.DockStyle.Fill
@@ -153,7 +156,7 @@ Partial Class reportFRM
         'KryptonLabel3
         '
         Me.KryptonLabel3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.KryptonLabel3.Location = New System.Drawing.Point(506, 239)
+        Me.KryptonLabel3.Location = New System.Drawing.Point(506, 274)
         Me.KryptonLabel3.Name = "KryptonLabel3"
         Me.KryptonLabel3.Size = New System.Drawing.Size(190, 20)
         Me.KryptonLabel3.StateCommon.ShortText.Color1 = System.Drawing.Color.Black
@@ -168,7 +171,7 @@ Partial Class reportFRM
         Me.calldategen.CustomFormat = "yyyy-MMM-dd"
         Me.calldategen.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.calldategen.Location = New System.Drawing.Point(506, 400)
-        Me.calldategen.MinimumSize = New System.Drawing.Size(4, 29)
+        Me.calldategen.MinimumSize = New System.Drawing.Size(0, 29)
         Me.calldategen.Name = "calldategen"
         Me.calldategen.Size = New System.Drawing.Size(130, 29)
         Me.calldategen.Style = MetroFramework.MetroColorStyle.Red
@@ -227,9 +230,9 @@ Partial Class reportFRM
         Me.EVALUATION.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.EVALUATION.Font = New System.Drawing.Font("Calibri", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.EVALUATION.Location = New System.Drawing.Point(506, 265)
+        Me.EVALUATION.Location = New System.Drawing.Point(506, 300)
         Me.EVALUATION.Name = "EVALUATION"
-        Me.EVALUATION.Size = New System.Drawing.Size(407, 103)
+        Me.EVALUATION.Size = New System.Drawing.Size(407, 68)
         Me.EVALUATION.TabIndex = 604
         Me.EVALUATION.Text = ""
         '
@@ -273,9 +276,9 @@ Partial Class reportFRM
         Me.teamgv.AllowUserToOrderColumns = True
         Me.teamgv.AllowUserToResizeColumns = False
         Me.teamgv.AllowUserToResizeRows = False
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        Me.teamgv.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black
+        Me.teamgv.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle8
         Me.teamgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.teamgv.ColumnHeadersHeight = 30
         Me.teamgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
@@ -329,12 +332,48 @@ Partial Class reportFRM
         Me.Button3.Text = "save"
         Me.Button3.UseVisualStyleBackColor = True
         '
+        'Button4
+        '
+        Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.Button4.Location = New System.Drawing.Point(506, 245)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(70, 23)
+        Me.Button4.TabIndex = 612
+        Me.Button4.Text = "replacement"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'Button6
+        '
+        Me.Button6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.Button6.Location = New System.Drawing.Point(506, 220)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(70, 23)
+        Me.Button6.TabIndex = 611
+        Me.Button6.Text = "screen repair"
+        Me.Button6.UseVisualStyleBackColor = True
+        '
+        'KryptonLabel2
+        '
+        Me.KryptonLabel2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.KryptonLabel2.Location = New System.Drawing.Point(506, 206)
+        Me.KryptonLabel2.Name = "KryptonLabel2"
+        Me.KryptonLabel2.Size = New System.Drawing.Size(50, 15)
+        Me.KryptonLabel2.StateCommon.ShortText.Color1 = System.Drawing.Color.Black
+        Me.KryptonLabel2.StateCommon.ShortText.Font = New System.Drawing.Font("Tahoma", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KryptonLabel2.TabIndex = 613
+        Me.KryptonLabel2.Values.Text = "Request :"
+        '
         'reportFRM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.WhiteSmoke
         Me.ClientSize = New System.Drawing.Size(943, 462)
+        Me.Controls.Add(Me.KryptonLabel2)
+        Me.Controls.Add(Me.Button4)
+        Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Panel2)
@@ -382,4 +421,7 @@ Partial Class reportFRM
     Friend WithEvents teamgv As ComponentFactory.Krypton.Toolkit.KryptonDataGridView
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
+    Friend WithEvents Button4 As Button
+    Friend WithEvents Button6 As Button
+    Friend WithEvents KryptonLabel2 As ComponentFactory.Krypton.Toolkit.KryptonLabel
 End Class

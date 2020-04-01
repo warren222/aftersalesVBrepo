@@ -5,6 +5,7 @@ Public Class servicingFRM
     Dim scount As String
     Dim suffix As String
     Public Shared id As String
+    Public Shared tid As String
     Dim bs As New BindingSource
 
     Private Sub servicingFRM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -12,15 +13,20 @@ Public Class servicingFRM
         loadservicing()
     End Sub
     Public Sub loadservicing()
-        Dim str As String = "select ID,
-                            CIN,
-                            STATUS,
-                            STATUSDATE AS [STATUS DATE],
-                            SERVICING,
-                            SDATE AS [SERVICING DATE],
-                            REMARKS,
-                            teamid
-                            from servicingtb where cin = @cin ORDER BY SERVICING desc"
+        Dim str As String = "select a.ID,
+                            a.CIN,
+                            a.STATUS,
+                            a.STATUSDATE AS [STATUS DATE],
+                            a.SERVICING,
+                            a.SDATE AS [SERVICING DATE],
+                            a.REMARKS,
+                            a.teamid,
+                            b.TEAMNAME
+                            from servicingtb as a
+                            left join
+                            tblteam as b
+                            on a.teamid = b.tid
+                            where a.cin = @cin ORDER BY a.SERVICING desc"
         Dim ds As New DataSet
         ds.Clear()
         Using sqlcon As SqlConnection = New SqlConnection(sql.sqlcon1str)
@@ -108,7 +114,7 @@ Public Class servicingFRM
         Dim deletebtn As New DataGridViewButtonColumn
 
         Dim prevreportbtn As New DataGridViewButtonColumn
-
+        Dim teambtn As New DataGridViewButtonColumn
         statusbtn.Name = "statusbtn"
         statusbtn.HeaderText = "STATUS"
 
@@ -130,18 +136,23 @@ Public Class servicingFRM
         prevreportbtn.HeaderText = ""
         prevreportbtn.Text = "report prev"
 
+        teambtn.Name = "teambtn"
+        teambtn.HeaderText = ""
+        teambtn.Text = "team"
+
         statusbtn.UseColumnTextForButtonValue = False
         reportbtn.UseColumnTextForButtonValue = True
         rd.UseColumnTextForButtonValue = True
         deletebtn.UseColumnTextForButtonValue = True
-
         prevreportbtn.UseColumnTextForButtonValue = True
-        servicingGRID.Columns.Insert(0, statusbtn)
-        servicingGRID.Columns.Insert(8, reportbtn)
-        servicingGRID.Columns.Insert(9, prevreportbtn)
-        servicingGRID.Columns.Insert(10, rd)
+        teambtn.UseColumnTextForButtonValue = True
 
-        servicingGRID.Columns.Insert(11, deletebtn)
+        servicingGRID.Columns.Insert(0, statusbtn)
+        servicingGRID.Columns.Insert(9, reportbtn)
+        servicingGRID.Columns.Insert(10, prevreportbtn)
+        servicingGRID.Columns.Insert(11, rd)
+        servicingGRID.Columns.Insert(12, teambtn)
+        servicingGRID.Columns.Insert(13, deletebtn)
 
 
         For i As Integer = 0 To servicingGRID.RowCount - 1
@@ -181,19 +192,23 @@ Public Class servicingFRM
                 statusFRM.statusdate.Text = servicingGRID.Item("status date", e.RowIndex).Value.ToString
                 statusFRM.status.Text = servicingGRID.Item("status", e.RowIndex).Value.ToString
                 statusFRM.ShowDialog()
-            ElseIf e.ColumnIndex = 8 Then
+            ElseIf e.ColumnIndex = 9 Then
                 id = servicingGRID.Item("id", e.RowIndex).Value.ToString
                 reportFRM.servicing.Text = servicingGRID.Item("servicing", e.RowIndex).Value.ToString
                 reportFRM.teamid = servicingGRID.Item("teamid", e.RowIndex).Value.ToString
                 reportFRM.ShowDialog()
-            ElseIf e.ColumnIndex = 9 Then
+            ElseIf e.ColumnIndex = 10 Then
                 id = servicingGRID.Item("id", e.RowIndex).Value.ToString
                 loadreport()
-            ElseIf e.ColumnIndex = 10 Then
+            ElseIf e.ColumnIndex = 11 Then
                 id = servicingGRID.Item("id", e.RowIndex).Value.ToString
                 scannedreportFRM.id = servicingGRID.Item("servicing", e.RowIndex).Value.ToString
                 scannedreportFRM.ShowDialog()
-            ElseIf e.ColumnIndex = 11 Then
+            ElseIf e.ColumnIndex = 12 Then
+                id = servicingGRID.Item("id", e.RowIndex).Value.ToString
+                tid = servicingGRID.Item("teamid", e.RowIndex).Value.ToString
+                myteamFRM.Show()
+            ElseIf e.ColumnIndex = 13 Then
                 If MetroFramework.MetroMessageBox.Show(Me, "Delete " & servicingGRID.Item("servicing", e.RowIndex).Value.ToString & "?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
                     Return
                 Else
@@ -213,7 +228,7 @@ Public Class servicingFRM
                     refresh.PerformClick()
                 End If
             End If
-            End If
+        End If
     End Sub
     Private Sub loadreport()
         Dim str As String = "

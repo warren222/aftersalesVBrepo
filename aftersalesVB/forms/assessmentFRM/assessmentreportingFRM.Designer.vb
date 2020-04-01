@@ -161,6 +161,7 @@ Partial Class assessmentreportingFRM
         Me.Controls.Add(Me.Button1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "assessmentreportingFRM"
+        Me.Text = "ol"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

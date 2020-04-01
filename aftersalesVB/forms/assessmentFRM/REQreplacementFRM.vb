@@ -294,7 +294,7 @@ DATED AS [DATE]
 
                             on a.rid=b.ID
 
-                            where b.[SID] =  @sid
+                            where b.[SID] =  @sid and [REQUESTTYPE] = @REQUESTTYPE
                             "
         Dim ds As New asdbDS
         ds.Clear()
@@ -304,6 +304,7 @@ DATED AS [DATE]
                 Try
                     sqlcon.Open()
                     sqlcmd.Parameters.AddWithValue("@sid", servicingFRM.id)
+                    sqlcmd.Parameters.AddWithValue("@REQUESTTYPE", category)
                     Using da As SqlDataAdapter = New SqlDataAdapter
                         With da
                             .SelectCommand = sqlcmd
