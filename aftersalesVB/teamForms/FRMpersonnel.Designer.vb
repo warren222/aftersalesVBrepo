@@ -27,6 +27,8 @@ Partial Class FRMpersonnel
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel11 = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -66,9 +68,8 @@ Partial Class FRMpersonnel
         Me.cboxpersonnel = New System.Windows.Forms.ComboBox()
         Me.btnmsave = New System.Windows.Forms.Button()
         Me.KryptonLabel6 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
-        Me.Panel11 = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
+        Me.Panel11.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -85,19 +86,36 @@ Partial Class FRMpersonnel
         CType(Me.GVmember, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel9.SuspendLayout()
         Me.Panel10.SuspendLayout()
-        Me.Panel11.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(237, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(245, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.Panel11)
         Me.Panel1.Controls.Add(Me.TabControl1)
+        Me.Panel1.Controls.Add(Me.Panel11)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(758, 422)
         Me.Panel1.TabIndex = 0
+        '
+        'Panel11
+        '
+        Me.Panel11.Controls.Add(Me.Button1)
+        Me.Panel11.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel11.Location = New System.Drawing.Point(0, 375)
+        Me.Panel11.Name = "Panel11"
+        Me.Panel11.Size = New System.Drawing.Size(758, 47)
+        Me.Panel11.TabIndex = 1
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(671, 12)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 0
+        Me.Button1.Text = "save"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'TabControl1
         '
@@ -110,7 +128,7 @@ Partial Class FRMpersonnel
         Me.TabControl1.Location = New System.Drawing.Point(0, 0)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(758, 422)
+        Me.TabControl1.Size = New System.Drawing.Size(758, 375)
         Me.TabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
         Me.TabControl1.TabIndex = 0
         '
@@ -122,7 +140,7 @@ Partial Class FRMpersonnel
         Me.TabPage1.Location = New System.Drawing.Point(4, 34)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(750, 384)
+        Me.TabPage1.Size = New System.Drawing.Size(750, 337)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Personnel"
         '
@@ -133,7 +151,7 @@ Partial Class FRMpersonnel
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel2.Location = New System.Drawing.Point(300, 3)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(447, 378)
+        Me.Panel2.Size = New System.Drawing.Size(447, 331)
         Me.Panel2.TabIndex = 619
         '
         'GVpersonnel
@@ -154,7 +172,7 @@ Partial Class FRMpersonnel
         Me.GVpersonnel.RowHeadersWidth = 30
         Me.GVpersonnel.RowTemplate.Height = 35
         Me.GVpersonnel.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.GVpersonnel.Size = New System.Drawing.Size(447, 350)
+        Me.GVpersonnel.Size = New System.Drawing.Size(447, 303)
         Me.GVpersonnel.StateCommon.Background.Color1 = System.Drawing.Color.White
         Me.GVpersonnel.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
         Me.GVpersonnel.StateCommon.DataCell.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) _
@@ -241,7 +259,7 @@ Partial Class FRMpersonnel
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel4.Location = New System.Drawing.Point(3, 3)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(297, 378)
+        Me.Panel4.Size = New System.Drawing.Size(297, 331)
         Me.Panel4.TabIndex = 620
         '
         'KryptonLabel3
@@ -344,7 +362,7 @@ Partial Class FRMpersonnel
         Me.TabPage2.Location = New System.Drawing.Point(4, 34)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(750, 384)
+        Me.TabPage2.Size = New System.Drawing.Size(750, 337)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Team"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -356,7 +374,7 @@ Partial Class FRMpersonnel
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel5.Location = New System.Drawing.Point(300, 3)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(447, 378)
+        Me.Panel5.Size = New System.Drawing.Size(447, 331)
         Me.Panel5.TabIndex = 621
         '
         'GVteam
@@ -380,7 +398,7 @@ Partial Class FRMpersonnel
         Me.GVteam.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.GVteam.RowTemplate.Height = 35
         Me.GVteam.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.GVteam.Size = New System.Drawing.Size(447, 350)
+        Me.GVteam.Size = New System.Drawing.Size(447, 303)
         Me.GVteam.StateCommon.Background.Color1 = System.Drawing.Color.White
         Me.GVteam.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
         Me.GVteam.StateCommon.DataCell.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) _
@@ -465,7 +483,7 @@ Partial Class FRMpersonnel
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel7.Location = New System.Drawing.Point(3, 3)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(297, 378)
+        Me.Panel7.Size = New System.Drawing.Size(297, 331)
         Me.Panel7.TabIndex = 622
         '
         'KryptonLabel2
@@ -550,7 +568,7 @@ Partial Class FRMpersonnel
         Me.TabPage3.Location = New System.Drawing.Point(4, 34)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(750, 384)
+        Me.TabPage3.Size = New System.Drawing.Size(750, 337)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Member"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -562,7 +580,7 @@ Partial Class FRMpersonnel
         Me.Panel8.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel8.Location = New System.Drawing.Point(300, 3)
         Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(447, 378)
+        Me.Panel8.Size = New System.Drawing.Size(447, 331)
         Me.Panel8.TabIndex = 621
         '
         'GVmember
@@ -583,7 +601,7 @@ Partial Class FRMpersonnel
         Me.GVmember.RowHeadersWidth = 30
         Me.GVmember.RowTemplate.Height = 35
         Me.GVmember.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.GVmember.Size = New System.Drawing.Size(447, 350)
+        Me.GVmember.Size = New System.Drawing.Size(447, 303)
         Me.GVmember.StateCommon.Background.Color1 = System.Drawing.Color.White
         Me.GVmember.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
         Me.GVmember.StateCommon.DataCell.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) _
@@ -653,7 +671,7 @@ Partial Class FRMpersonnel
         Me.Panel10.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel10.Location = New System.Drawing.Point(3, 3)
         Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(297, 378)
+        Me.Panel10.Size = New System.Drawing.Size(297, 331)
         Me.Panel10.TabIndex = 622
         '
         'tboxteam
@@ -736,24 +754,6 @@ Partial Class FRMpersonnel
         Me.KryptonLabel6.TabIndex = 572
         Me.KryptonLabel6.Values.Text = "Personnel :"
         '
-        'Panel11
-        '
-        Me.Panel11.Controls.Add(Me.Button1)
-        Me.Panel11.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel11.Location = New System.Drawing.Point(0, 375)
-        Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(758, 47)
-        Me.Panel11.TabIndex = 1
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(671, 12)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "save"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'FRMpersonnel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -764,6 +764,7 @@ Partial Class FRMpersonnel
         Me.Name = "FRMpersonnel"
         Me.Text = "FRMpersonnel"
         Me.Panel1.ResumeLayout(False)
+        Me.Panel11.ResumeLayout(False)
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
@@ -783,7 +784,6 @@ Partial Class FRMpersonnel
         Me.Panel9.ResumeLayout(False)
         Me.Panel10.ResumeLayout(False)
         Me.Panel10.PerformLayout()
-        Me.Panel11.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub

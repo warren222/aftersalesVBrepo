@@ -26,6 +26,8 @@ Partial Class myteamFRM
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GVteam = New ComponentFactory.Krypton.Toolkit.KryptonDataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -37,12 +39,20 @@ Partial Class myteamFRM
         Me.fullname = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.KryptonLabel2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.KryptonLabel5 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.KryptonLabel6 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.tboxteam = New MetroFramework.Controls.MetroTextBox()
         Me.btnmsave = New System.Windows.Forms.Button()
         Me.cboxpersonnel = New System.Windows.Forms.ComboBox()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.KryptonDataGridView2 = New ComponentFactory.Krypton.Toolkit.KryptonDataGridView()
+        Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.KryptonLabel3 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         CType(Me.GVteam, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -50,6 +60,10 @@ Partial Class myteamFRM
         CType(Me.KryptonDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
         Me.Panel4.SuspendLayout()
+        Me.Panel6.SuspendLayout()
+        CType(Me.KryptonDataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel8.SuspendLayout()
+        Me.Panel7.SuspendLayout()
         Me.SuspendLayout()
         '
         'GVteam
@@ -60,7 +74,6 @@ Partial Class myteamFRM
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer))
         Me.GVteam.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.GVteam.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.GVteam.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
         Me.GVteam.ColumnHeadersHeight = 32
         Me.GVteam.Cursor = System.Windows.Forms.Cursors.Hand
         Me.GVteam.Dock = System.Windows.Forms.DockStyle.Fill
@@ -80,7 +93,7 @@ Partial Class myteamFRM
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right), ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
         Me.GVteam.StateCommon.DataCell.Border.Width = 0
-        Me.GVteam.StateCommon.DataCell.Content.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GVteam.StateCommon.DataCell.Content.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GVteam.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(103, Byte), Integer), CType(CType(178, Byte), Integer))
         Me.GVteam.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(103, Byte), Integer), CType(CType(178, Byte), Integer))
         Me.GVteam.StateCommon.HeaderColumn.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Dashed
@@ -112,7 +125,7 @@ Partial Class myteamFRM
         '
         'KryptonLabel1
         '
-        Me.KryptonLabel1.Location = New System.Drawing.Point(12, 29)
+        Me.KryptonLabel1.Location = New System.Drawing.Point(12, 36)
         Me.KryptonLabel1.Name = "KryptonLabel1"
         Me.KryptonLabel1.Size = New System.Drawing.Size(151, 29)
         Me.KryptonLabel1.StateCommon.ShortText.Color1 = System.Drawing.Color.Black
@@ -126,7 +139,7 @@ Partial Class myteamFRM
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(139, 29)
         Me.Button1.TabIndex = 621
-        Me.Button1.Text = "save team"
+        Me.Button1.Text = "assign new team"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Panel2
@@ -169,7 +182,7 @@ Partial Class myteamFRM
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right), ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
         Me.KryptonDataGridView1.StateCommon.DataCell.Border.Width = 0
-        Me.KryptonDataGridView1.StateCommon.DataCell.Content.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KryptonDataGridView1.StateCommon.DataCell.Content.Font = New System.Drawing.Font("Calibri", 12.0!)
         Me.KryptonDataGridView1.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(103, Byte), Integer), CType(CType(178, Byte), Integer))
         Me.KryptonDataGridView1.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(103, Byte), Integer), CType(CType(178, Byte), Integer))
         Me.KryptonDataGridView1.StateCommon.HeaderColumn.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Dashed
@@ -185,6 +198,7 @@ Partial Class myteamFRM
         Me.id.HeaderText = "id"
         Me.id.Name = "id"
         Me.id.ReadOnly = True
+        Me.id.Visible = False
         '
         'fullname
         '
@@ -203,6 +217,7 @@ Partial Class myteamFRM
         '
         'Panel4
         '
+        Me.Panel4.Controls.Add(Me.KryptonLabel2)
         Me.Panel4.Controls.Add(Me.Button2)
         Me.Panel4.Controls.Add(Me.KryptonLabel5)
         Me.Panel4.Controls.Add(Me.KryptonLabel6)
@@ -214,6 +229,16 @@ Partial Class myteamFRM
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(404, 142)
         Me.Panel4.TabIndex = 628
+        '
+        'KryptonLabel2
+        '
+        Me.KryptonLabel2.Location = New System.Drawing.Point(29, 11)
+        Me.KryptonLabel2.Name = "KryptonLabel2"
+        Me.KryptonLabel2.Size = New System.Drawing.Size(176, 29)
+        Me.KryptonLabel2.StateCommon.ShortText.Color1 = System.Drawing.Color.Black
+        Me.KryptonLabel2.StateCommon.ShortText.Font = New System.Drawing.Font("Tahoma", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KryptonLabel2.TabIndex = 628
+        Me.KryptonLabel2.Values.Text = "Create New Team"
         '
         'Button2
         '
@@ -231,7 +256,7 @@ Partial Class myteamFRM
         '
         'KryptonLabel5
         '
-        Me.KryptonLabel5.Location = New System.Drawing.Point(33, 16)
+        Me.KryptonLabel5.Location = New System.Drawing.Point(33, 45)
         Me.KryptonLabel5.Name = "KryptonLabel5"
         Me.KryptonLabel5.Size = New System.Drawing.Size(91, 20)
         Me.KryptonLabel5.StateCommon.ShortText.Color1 = System.Drawing.Color.Black
@@ -267,7 +292,7 @@ Partial Class myteamFRM
         Me.tboxteam.FontSize = MetroFramework.MetroTextBoxSize.Medium
         Me.tboxteam.ForeColor = System.Drawing.Color.Black
         Me.tboxteam.Lines = New String(-1) {}
-        Me.tboxteam.Location = New System.Drawing.Point(130, 12)
+        Me.tboxteam.Location = New System.Drawing.Point(130, 41)
         Me.tboxteam.MaxLength = 32767
         Me.tboxteam.Name = "tboxteam"
         Me.tboxteam.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -301,19 +326,120 @@ Partial Class myteamFRM
         '
         'cboxpersonnel
         '
+        Me.cboxpersonnel.DropDownHeight = 200
         Me.cboxpersonnel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboxpersonnel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboxpersonnel.FormattingEnabled = True
+        Me.cboxpersonnel.IntegralHeight = False
         Me.cboxpersonnel.Location = New System.Drawing.Point(130, 76)
         Me.cboxpersonnel.Name = "cboxpersonnel"
         Me.cboxpersonnel.Size = New System.Drawing.Size(255, 24)
         Me.cboxpersonnel.TabIndex = 623
         '
+        'Panel6
+        '
+        Me.Panel6.Controls.Add(Me.KryptonDataGridView2)
+        Me.Panel6.Controls.Add(Me.Panel8)
+        Me.Panel6.Controls.Add(Me.Panel7)
+        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel6.Location = New System.Drawing.Point(731, 0)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(384, 448)
+        Me.Panel6.TabIndex = 623
+        '
+        'KryptonDataGridView2
+        '
+        Me.KryptonDataGridView2.AllowUserToAddRows = False
+        Me.KryptonDataGridView2.AllowUserToDeleteRows = False
+        Me.KryptonDataGridView2.AllowUserToResizeRows = False
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.KryptonDataGridView2.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
+        Me.KryptonDataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
+        Me.KryptonDataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
+        Me.KryptonDataGridView2.ColumnHeadersHeight = 32
+        Me.KryptonDataGridView2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.KryptonDataGridView2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.KryptonDataGridView2.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
+        Me.KryptonDataGridView2.Location = New System.Drawing.Point(0, 65)
+        Me.KryptonDataGridView2.MultiSelect = False
+        Me.KryptonDataGridView2.Name = "KryptonDataGridView2"
+        Me.KryptonDataGridView2.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Silver
+        Me.KryptonDataGridView2.RowHeadersWidth = 30
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.KryptonDataGridView2.RowsDefaultCellStyle = DataGridViewCellStyle6
+        Me.KryptonDataGridView2.RowTemplate.Height = 35
+        Me.KryptonDataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.KryptonDataGridView2.Size = New System.Drawing.Size(384, 340)
+        Me.KryptonDataGridView2.StateCommon.Background.Color1 = System.Drawing.Color.White
+        Me.KryptonDataGridView2.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
+        Me.KryptonDataGridView2.StateCommon.DataCell.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right), ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+        Me.KryptonDataGridView2.StateCommon.DataCell.Border.Width = 0
+        Me.KryptonDataGridView2.StateCommon.DataCell.Content.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KryptonDataGridView2.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(103, Byte), Integer), CType(CType(178, Byte), Integer))
+        Me.KryptonDataGridView2.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(103, Byte), Integer), CType(CType(178, Byte), Integer))
+        Me.KryptonDataGridView2.StateCommon.HeaderColumn.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Dashed
+        Me.KryptonDataGridView2.StateCommon.HeaderColumn.Border.DrawBorders = CType((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right), ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+        Me.KryptonDataGridView2.StateCommon.HeaderColumn.Border.Rounding = 0
+        Me.KryptonDataGridView2.StateCommon.HeaderColumn.Content.Color1 = System.Drawing.Color.White
+        Me.KryptonDataGridView2.StateCommon.HeaderColumn.Content.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.KryptonDataGridView2.StateCommon.HeaderColumn.Content.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias
+        Me.KryptonDataGridView2.TabIndex = 620
+        '
+        'Panel8
+        '
+        Me.Panel8.Controls.Add(Me.Button4)
+        Me.Panel8.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel8.Location = New System.Drawing.Point(0, 405)
+        Me.Panel8.Name = "Panel8"
+        Me.Panel8.Size = New System.Drawing.Size(384, 43)
+        Me.Panel8.TabIndex = 631
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(221, 6)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(139, 29)
+        Me.Button4.TabIndex = 621
+        Me.Button4.Text = "assign selected team"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'Panel7
+        '
+        Me.Panel7.Controls.Add(Me.Button3)
+        Me.Panel7.Controls.Add(Me.KryptonLabel3)
+        Me.Panel7.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel7.Location = New System.Drawing.Point(0, 0)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(384, 65)
+        Me.Panel7.TabIndex = 630
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(284, 21)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(76, 29)
+        Me.Button3.TabIndex = 630
+        Me.Button3.Text = "refresh"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'KryptonLabel3
+        '
+        Me.KryptonLabel3.Location = New System.Drawing.Point(176, 21)
+        Me.KryptonLabel3.Name = "KryptonLabel3"
+        Me.KryptonLabel3.Size = New System.Drawing.Size(102, 29)
+        Me.KryptonLabel3.StateCommon.ShortText.Color1 = System.Drawing.Color.Black
+        Me.KryptonLabel3.StateCommon.ShortText.Font = New System.Drawing.Font("Tahoma", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KryptonLabel3.TabIndex = 629
+        Me.KryptonLabel3.Values.Text = "Team List"
+        '
         'myteamFRM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(884, 448)
+        Me.ClientSize = New System.Drawing.Size(1115, 448)
+        Me.Controls.Add(Me.Panel6)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "myteamFRM"
@@ -327,6 +453,11 @@ Partial Class myteamFRM
         Me.Panel5.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
+        Me.Panel6.ResumeLayout(False)
+        CType(Me.KryptonDataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel8.ResumeLayout(False)
+        Me.Panel7.ResumeLayout(False)
+        Me.Panel7.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -341,11 +472,19 @@ Partial Class myteamFRM
     Friend WithEvents cboxpersonnel As ComboBox
     Friend WithEvents btnmsave As Button
     Friend WithEvents KryptonLabel6 As ComponentFactory.Krypton.Toolkit.KryptonLabel
-    Friend WithEvents id As DataGridViewTextBoxColumn
-    Friend WithEvents fullname As DataGridViewTextBoxColumn
     Friend WithEvents Panel3 As Panel
     Friend WithEvents KryptonLabel1 As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents Panel5 As Panel
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Button2 As Button
+    Friend WithEvents KryptonLabel2 As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Friend WithEvents Panel6 As Panel
+    Friend WithEvents KryptonDataGridView2 As ComponentFactory.Krypton.Toolkit.KryptonDataGridView
+    Friend WithEvents Panel7 As Panel
+    Friend WithEvents KryptonLabel3 As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Panel8 As Panel
+    Friend WithEvents Button4 As Button
+    Friend WithEvents id As DataGridViewTextBoxColumn
+    Friend WithEvents fullname As DataGridViewTextBoxColumn
 End Class

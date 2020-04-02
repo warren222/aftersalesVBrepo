@@ -148,11 +148,11 @@ Public Class servicingFRM
         teambtn.UseColumnTextForButtonValue = True
 
         servicingGRID.Columns.Insert(0, statusbtn)
-        servicingGRID.Columns.Insert(9, reportbtn)
-        servicingGRID.Columns.Insert(10, prevreportbtn)
-        servicingGRID.Columns.Insert(11, rd)
-        servicingGRID.Columns.Insert(12, teambtn)
-        servicingGRID.Columns.Insert(13, deletebtn)
+        servicingGRID.Columns.Insert(10, reportbtn)
+        servicingGRID.Columns.Insert(11, prevreportbtn)
+        servicingGRID.Columns.Insert(12, rd)
+        servicingGRID.Columns.Insert(13, teambtn)
+        servicingGRID.Columns.Insert(14, deletebtn)
 
 
         For i As Integer = 0 To servicingGRID.RowCount - 1
@@ -192,23 +192,23 @@ Public Class servicingFRM
                 statusFRM.statusdate.Text = servicingGRID.Item("status date", e.RowIndex).Value.ToString
                 statusFRM.status.Text = servicingGRID.Item("status", e.RowIndex).Value.ToString
                 statusFRM.ShowDialog()
-            ElseIf e.ColumnIndex = 9 Then
+            ElseIf e.ColumnIndex = 10 Then
                 id = servicingGRID.Item("id", e.RowIndex).Value.ToString
                 reportFRM.servicing.Text = servicingGRID.Item("servicing", e.RowIndex).Value.ToString
                 reportFRM.teamid = servicingGRID.Item("teamid", e.RowIndex).Value.ToString
                 reportFRM.ShowDialog()
-            ElseIf e.ColumnIndex = 10 Then
+            ElseIf e.ColumnIndex = 11 Then
                 id = servicingGRID.Item("id", e.RowIndex).Value.ToString
                 loadreport()
-            ElseIf e.ColumnIndex = 11 Then
+            ElseIf e.ColumnIndex = 12 Then
                 id = servicingGRID.Item("id", e.RowIndex).Value.ToString
                 scannedreportFRM.id = servicingGRID.Item("servicing", e.RowIndex).Value.ToString
                 scannedreportFRM.ShowDialog()
-            ElseIf e.ColumnIndex = 12 Then
+            ElseIf e.ColumnIndex = 13 Then
                 id = servicingGRID.Item("id", e.RowIndex).Value.ToString
                 tid = servicingGRID.Item("teamid", e.RowIndex).Value.ToString
                 myteamFRM.Show()
-            ElseIf e.ColumnIndex = 13 Then
+            ElseIf e.ColumnIndex = 14 Then
                 If MetroFramework.MetroMessageBox.Show(Me, "Delete " & servicingGRID.Item("servicing", e.RowIndex).Value.ToString & "?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
                     Return
                 Else
